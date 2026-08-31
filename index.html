@@ -1,899 +1,512 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>【11月イタリア旅行】HIS8日間ツアー 検討・評価レポート</title>
-    <style>
-        :root {
-            --primary: #0071e3;
-            --primary-hover: #0077ed;
-            --accent: #ff9500;
-            --success: #34c759;
-            --danger: #ff3b30;
-            --bg: #f2f2f7;
-            --card-bg: #ffffff;
-            --text: #1c1c1e;
-            --text-secondary: #8e8e93;
-            --border: #e5e5ea;
-            --shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
-            --radius: 16px;
-        }
-
-        * {
-            box-sizing: border-box;
-            -webkit-tap-highlight-color: transparent;
-        }
-
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Hiragino Sans", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
-            background-color: var(--bg);
-            color: var(--text);
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        /* iOS風 ナビゲーションバー */
-        .navbar {
-            position: sticky;
-            top: 0;
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--border);
-            z-index: 1000;
-            padding: 12px 16px;
-            text-align: center;
-            font-size: 15px;
-            font-weight: 600;
-            color: var(--text);
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 16px 16px 60px 16px;
-        }
-
-        /* ヒーローセクション */
-        .hero-card {
-            background: linear-gradient(135deg, #1d3557 0%, #457b9d 100%);
-            color: white;
-            border-radius: var(--radius);
-            padding: 24px;
-            margin-bottom: 20px;
-            box-shadow: 0 8px 24px rgba(29, 53, 87, 0.2);
-            text-align: left;
-        }
-
-        .badge {
-            display: inline-block;
-            background: rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px);
-            padding: 4px 10px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
-
-        .hero-card h1 {
-            font-size: 22px;
-            margin: 0 0 10px 0;
-            line-height: 1.35;
-        }
-
-        .hero-recipient {
-            font-size: 15px;
-            opacity: 0.9;
-            margin-bottom: 12px;
-        }
-
-        .hero-stats {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 10px;
-            margin-top: 18px;
-            padding-top: 16px;
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
-            text-align: center;
-        }
-
-        .stat-item .val {
-            font-size: 18px;
-            font-weight: 700;
-        }
-
-        .stat-item .lbl {
-            font-size: 11px;
-            opacity: 0.8;
-            margin-top: 2px;
-        }
-
-        /* クイックメニュー */
-        .quick-nav {
-            display: flex;
-            gap: 8px;
-            overflow-x: auto;
-            padding-bottom: 8px;
-            margin-bottom: 20px;
-            -webkit-overflow-scrolling: touch;
-        }
-
-        .quick-nav::-webkit-scrollbar {
-            display: none;
-        }
-
-        .nav-chip {
-            background: var(--card-bg);
-            color: var(--text);
-            text-decoration: none;
-            padding: 8px 14px;
-            border-radius: 20px;
-            font-size: 13px;
-            font-weight: 600;
-            white-space: nowrap;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.04);
-            border: 1px solid var(--border);
-            display: inline-flex;
-            align-items: center;
-            gap: 4px;
-        }
-
-        /* セクション見出し */
-        .section-header {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 18px;
-            font-weight: 700;
-            color: var(--text);
-            margin: 28px 0 12px 0;
-            padding-left: 4px;
-        }
-
-        /* カード汎用 */
-        .card {
-            background: var(--card-bg);
-            border-radius: var(--radius);
-            padding: 20px;
-            margin-bottom: 16px;
-            box-shadow: var(--shadow);
-            border: 1px solid var(--border);
-        }
-
-        /* 結論カード */
-        .conclusion-card {
-            background: #ffffff;
-            border-left: 6px solid var(--primary);
-        }
-
-        .conclusion-title {
-            font-size: 16px;
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 8px;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        /* 評価グリッド */
-        .eval-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 14px;
-        }
-
-        @media (min-width: 600px) {
-            .eval-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-
-        .eval-card {
-            background: var(--card-bg);
-            border-radius: var(--radius);
-            padding: 16px 18px;
-            box-shadow: var(--shadow);
-            border: 1px solid var(--border);
-        }
-
-        .eval-card h3 {
-            margin: 0 0 12px 0;
-            font-size: 15px;
-            color: var(--text);
-            font-weight: 700;
-        }
-
-        .point-item {
-            display: flex;
-            gap: 8px;
-            margin-bottom: 10px;
-            font-size: 13.5px;
-            line-height: 1.5;
-        }
-
-        .tag {
-            display: inline-block;
-            font-size: 11px;
-            font-weight: 700;
-            padding: 2px 6px;
-            border-radius: 6px;
-            white-space: nowrap;
-            height: fit-content;
-        }
-
-        .tag-pro {
-            background: #e8f8ed;
-            color: var(--success);
-        }
-
-        .tag-con {
-            background: #feeceb;
-            color: var(--danger);
-        }
-
-        /* 費用リスト */
-        .cost-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 12px 0;
-            border-bottom: 1px solid var(--border);
-            font-size: 14px;
-        }
-
-        .cost-row:last-child {
-            border-bottom: none;
-        }
-
-        .cost-label {
-            font-weight: 600;
-        }
-
-        .cost-sub {
-            font-size: 12px;
-            color: var(--text-secondary);
-            margin-top: 2px;
-        }
-
-        .cost-val {
-            font-weight: 700;
-            font-size: 15px;
-            text-align: right;
-            white-space: nowrap;
-        }
-
-        .cost-total {
-            background: #fff9e6;
-            margin: 16px -20px -20px -20px;
-            padding: 16px 20px;
-            border-radius: 0 0 var(--radius) var(--radius);
-            border-top: 1px solid #fed7aa;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .cost-total .total-label {
-            font-size: 16px;
-            font-weight: 700;
-            color: #92400e;
-        }
-
-        .cost-total .total-val {
-            font-size: 20px;
-            font-weight: 800;
-            color: #b45309;
-        }
-
-        /* タスクリスト（インタラクティブ） */
-        .task-group-title {
-            font-size: 13px;
-            font-weight: 700;
-            color: var(--text-secondary);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin: 14px 0 8px 0;
-        }
-
-        .task-group-title:first-child {
-            margin-top: 0;
-        }
-
-        .task-label {
-            display: flex;
-            align-items: flex-start;
-            gap: 12px;
-            padding: 10px 0;
-            border-bottom: 1px solid var(--border);
-            cursor: pointer;
-            font-size: 14px;
-        }
-
-        .task-label:last-child {
-            border-bottom: none;
-        }
-
-        .task-label input[type="checkbox"] {
-            width: 20px;
-            height: 20px;
-            margin-top: 2px;
-            accent-color: var(--primary);
-            border-radius: 6px;
-            cursor: pointer;
-        }
-
-        .task-text {
-            flex: 1;
-        }
-
-        .task-text strong {
-            display: block;
-            color: var(--text);
-            margin-bottom: 2px;
-        }
-
-        /* マップセクション (Google Maps iframe) */
-        .map-wrapper {
-            position: relative;
-            border-radius: 12px;
-            overflow: hidden;
-            border: 1px solid var(--border);
-            margin-top: 14px;
-            height: 320px;
-        }
-
-        .map-wrapper iframe {
-            width: 100%;
-            height: 100%;
-            border: 0;
-        }
-
-        .btn-maps {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            background: #ffffff;
-            color: var(--primary);
-            border: 1.5px solid var(--primary);
-            text-decoration: none;
-            padding: 12px;
-            border-radius: 12px;
-            font-weight: 700;
-            font-size: 14px;
-            margin-top: 12px;
-            text-align: center;
-            box-shadow: 0 2px 6px rgba(0,113,227,0.1);
-        }
-
-        .btn-maps:active {
-            background: #f0f7ff;
-        }
-
-        .product-link {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            background: #ffffff;
-            color: var(--primary);
-            border: 1px solid rgba(255, 255, 255, 0.4);
-            text-decoration: none;
-            padding: 10px 16px;
-            border-radius: 999px;
-            font-weight: 700;
-            font-size: 13px;
-            margin-top: 14px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.12);
-        }
-
-        .product-link:active {
-            transform: translateY(1px);
-        }
-
-        .guide-link {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            background: rgba(255, 255, 255, 0.12);
-            color: #ffffff;
-            border: 1px solid rgba(255, 255, 255, 0.4);
-            text-decoration: none;
-            padding: 10px 16px;
-            border-radius: 999px;
-            font-weight: 700;
-            font-size: 13px;
-            margin-top: 12px;
-            margin-left: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-        }
-
-        .guide-link:active {
-            transform: translateY(1px);
-        }
-
-        /* 行程表 タイムライン */
-        .timeline {
-            position: relative;
-            padding-left: 20px;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 7px;
-            top: 10px;
-            bottom: 20px;
-            width: 2px;
-            background: #d1d5db;
-        }
-
-        .day-card {
-            position: relative;
-            background: var(--card-bg);
-            border-radius: 12px;
-            padding: 16px;
-            margin-bottom: 14px;
-            border: 1px solid var(--border);
-            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-        }
-
-        .day-card::before {
-            content: '';
-            position: absolute;
-            left: -20px;
-            top: 20px;
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: var(--primary);
-            border: 2px solid white;
-            box-shadow: 0 0 0 2px var(--primary);
-        }
-
-        .day-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 8px;
-        }
-
-        .day-num {
-            font-size: 15px;
-            font-weight: 800;
-            color: var(--primary);
-        }
-
-        .day-date {
-            font-size: 12px;
-            font-weight: 600;
-            color: var(--text-secondary);
-            background: #e5e7eb;
-            padding: 2px 8px;
-            border-radius: 10px;
-        }
-
-        .day-title {
-            font-size: 14.5px;
-            font-weight: 700;
-            color: var(--text);
-            margin-bottom: 6px;
-        }
-
-        .day-detail {
-            font-size: 13px;
-            color: #4b5563;
-            line-height: 1.5;
-            margin-bottom: 8px;
-        }
-
-        .day-meta {
-            display: flex;
-            gap: 12px;
-            font-size: 12px;
-            color: var(--text-secondary);
-            background: var(--bg);
-            padding: 6px 10px;
-            border-radius: 8px;
-        }
-
-        /* フッター */
-        .footer {
-            text-align: center;
-            font-size: 12px;
-            color: var(--text-secondary);
-            margin-top: 30px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>アンディアーモ！イタリア8日間 新婚旅行ガイドポータル | 鈴木 健太・めぐみ様</title>
+  <meta name="description" content="鈴木健太・めぐみ様 イタリア新婚旅行（HIS Tour OI-KMI2811: イタリア7都市周遊8日間 2026年11月15日〜11月22日）の総合ガイドポータル。全日程スケジュール、マップ、食事マトリクス、お土産、教会音楽ガイド。">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="navbar">
-        🇮🇹 イタリア8日間ツアー検討レポート
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand-title">
+        <span style="font-size: 1.5rem;">🇮🇹</span>
+        <div>
+          <h1>イタリア7都市周遊 8日間</h1>
+          <span class="brand-subtitle">HIS Tour OI-KMI2811 | Kenta & Megumi Honeymoon</span>
+        </div>
+      </div>
+      <nav class="main-nav">
+        <a href="index.html" class="nav-link active">🏠 ホーム</a>
+        <a href="tour-map.html" class="nav-link">🗺️ 全体ルートMAP</a>
+        <a href="free-meal-guide.html" class="nav-link">🍽️ 自由食・グルメ</a>
+        <a href="souvenir-guide.html" class="nav-link">🎁 お土産ガイド</a>
+        <a href="rome-free-day-guide.html" class="nav-link">🎻 ローマ自由行動</a>
+      </nav>
     </div>
+  </header>
 
+  <!-- Hero Banner -->
+  <div class="hero-banner">
     <div class="container">
-
-        <!-- ヒーローセクション -->
-        <div class="hero-card">
-            <span class="badge">HIS アンディアーモ！イタリア</span>
-            <h1>【11月イタリア旅行】<br>8日間ツアー 検討・評価レポート</h1>
-            <div class="hero-recipient">報告書</div>
-            <p style="margin: 0; font-size: 13.5px; opacity: 0.95;">
-                11月15日出発のHISツアーについて、費用・日程・気候・夜の過ごし方を多角的に分析・整理しました。
-            </p>
-            <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px;">
-                <a class="product-link" href="https://tour.his-j.com/sp/04A_30/OI-KMI2811/?lcid=kansa_search_item_imp" target="_blank" rel="noopener noreferrer">
-                    🔗 商品ページを見る
-                </a>
-                <a class="guide-link" href="rome-free-day-guide.html">
-                    🎶 ローマフリー日程まとめ
-                </a>
-                <a class="guide-link" href="free-meal-guide.html">
-                    🍽️ 自由食事ガイド
-                </a>
-            </div>
-            <div class="hero-stats">
-                <div class="stat-item">
-                    <div class="val">11/15〜</div>
-                    <div class="lbl">出発日程</div>
-                </div>
-                <div class="stat-item">
-                    <div class="val">8日間</div>
-                    <div class="lbl">旅行期間</div>
-                </div>
-                <div class="stat-item">
-                    <div class="val">約42.8万</div>
-                    <div class="lbl">実質総額/人</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- クイックナビゲーション -->
-        <div class="quick-nav">
-            <a href="#summary" class="nav-chip">📊 総合結論</a>
-            <a href="#eval" class="nav-chip">🔍 徹底評価</a>
-            <a href="#cost" class="nav-chip">💰 概算費用</a>
-            <a href="#tasks" class="nav-chip">✅ 事前タスク</a>
-            <a href="#hotel" class="nav-chip">🗺️ ホテル周辺</a>
-            <a href="#schedule" class="nav-chip">📅 8日間行程</a>
-        </div>
-
-        <!-- 総合結論 -->
-        <div id="summary" class="card conclusion-card">
-            <div class="conclusion-title">📊 総合結論：非常に優秀な「買い」のツアー</div>
-            <p style="margin: 0; font-size: 14px; color: var(--text);">
-                現在のヨーロッパツアー相場において、<strong>燃油代込み30万円は破格</strong>です。初めてのイタリア旅行として間違いなくおすすめできます。<br>
-                特に後半ローマでの2連泊＆終日自由行動のバランスが良く、11月中旬（11/15〜）は現地祝日もなく快適に観光できる好条件です。
-            </p>
-        </div>
-
-        <div class="card" style="background: #f7f9ff; border-left: 5px solid var(--primary);">
-            <div class="conclusion-title" style="margin-bottom: 6px; color: var(--primary);">🍽️ 自由食レポートも参考にすると実際の旅行が楽に進みます</div>
-            <p style="margin: 0; font-size: 13.5px; color: var(--text);">
-                行程中に食事が含まれない箇所のおすすめ店を、<a href="free-meal-guide.html" style="color: var(--primary); font-weight: 700;">自由食事ガイド</a>としてまとめています。<br>
-                ベネチア・フィレンツェ・ローマの昼食、ディナー、カフェ別に、Google Mapsの評価や予約の目安まで見られるので、出発前の食事計画に便利です。
-            </p>
-        </div>
-
-        <!-- 徹底評価 -->
-        <div id="eval" class="section-header">🔍 1. 徹底評価・分析</div>
-        <div class="eval-grid">
-            <div class="eval-card">
-                <h3>👥 初心者適性・スケジュール</h3>
-                <div class="point-item">
-                    <span class="tag tag-pro">長所</span>
-                    <div><strong>王道の7都市制覇：</strong> ウフィツィ美術館やコロッセオなど主要世界遺産を効率よく網羅。</div>
-                </div>
-                <div class="point-item">
-                    <span class="tag tag-pro">長所</span>
-                    <div><strong>食事の安心感：</strong> 日本人の口に合うイタリア料理中心でリスク極小。</div>
-                </div>
-                <div class="point-item">
-                    <span class="tag tag-pro">長所</span>
-                    <div><strong>ローマ連泊：</strong> 後半はテルミニ駅周辺に2連泊。自由行動と夜の散策が非常にスムーズ。</div>
-                </div>
-            </div>
-
-            <div class="eval-card">
-                <h3>⛅ 11月気候・日程条件</h3>
-                <div class="point-item">
-                    <span class="tag tag-pro">長所</span>
-                    <div><strong>混雑緩和：</strong> 夏のピーク時のような混雑がなく快適に鑑賞・街歩き可能。</div>
-                </div>
-                <div class="point-item">
-                    <span class="tag tag-pro">長所</span>
-                    <div><strong>祝日影響ゼロ：</strong> 滞在中に祝日なし。ローマ自由行動日も金曜で通常営業。</div>
-                </div>
-                <div class="point-item">
-                    <span class="tag tag-con">注意</span>
-                    <div><strong>雨季・冷え込み：</strong> 朝晩は約10℃。ベネチア高潮対策・防水対策が必須。</div>
-                </div>
-            </div>
-
-            <div class="eval-card">
-                <h3>🌙 日照時間と夜の過ごし方</h3>
-                <div class="point-item">
-                    <span class="tag tag-pro">長所</span>
-                    <div><strong>安全な夜景散策：</strong> 日没直後（17〜19時）の治安が安定した時間にライトアップを満喫。</div>
-                </div>
-                <div class="point-item">
-                    <span class="tag tag-pro">長所</span>
-                    <div><strong>夜間営業：</strong> 観光地店舗は19:30〜20:00、駅地下スーパーは21時以降も営業。</div>
-                </div>
-                <div class="point-item">
-                    <span class="tag tag-pro">長所</span>
-                    <div><strong>アペリティーボ：</strong> 夕食前のバールで一杯＆おつまみ文化を体験。</div>
-                </div>
-            </div>
-
-            <div class="eval-card">
-                <h3>🍝 食事条件の自由度</h3>
-                <div class="point-item">
-                    <span class="tag tag-pro">長所</span>
-                    <div><strong>食費コントロール：</strong> 全食縛りではなく、計7回の指定食以外は自由手配。</div>
-                </div>
-                <div class="point-item">
-                    <span class="tag tag-pro">長所</span>
-                    <div><strong>ローカル食体験：</strong> 自分好みのカフェやトラットリアを開拓可能。</div>
-                </div>
-                <div class="point-item">
-                    <span class="tag tag-con">注意</span>
-                    <div><strong>追加予算：</strong> フリー食約10回分の費用を事前確保する必要あり。</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- 費用シミュレーション -->
-        <div id="cost" class="section-header">💰 2. 概算費用シミュレーション（1人あたり）</div>
-        <div class="card">
-            <p style="margin: 0 0 14px 0; font-size: 13.5px; color: var(--text-secondary);">
-                現地でのフリー食事代や観光入場料を含めた「実質総額」の試算です。
-            </p>
-            <div class="cost-row">
-                <div>
-                    <div class="cost-label">ツアー基本代金</div>
-                    <div class="cost-sub">燃油サーチャージ込み</div>
-                </div>
-                <div class="cost-val">299,000 円</div>
-            </div>
-            <div class="cost-row">
-                <div>
-                    <div class="cost-label">国内外諸税等</div>
-                    <div class="cost-sub">空港使用料・国際観光旅客税など</div>
-                </div>
-                <div class="cost-val">約 34,000 円</div>
-            </div>
-            <div class="cost-row">
-                <div>
-                    <div class="cost-label">現地宿泊税 (City Tax)</div>
-                    <div class="cost-sub">チェックアウト時に支払い（現金推奨）</div>
-                </div>
-                <div class="cost-val">約 5,000 円</div>
-            </div>
-            <div class="cost-row">
-                <div>
-                    <div class="cost-label">追加食費・カフェ代</div>
-                    <div class="cost-sub">フリー食約10回（昼3,500円/夜8,000円想定）</div>
-                </div>
-                <div class="cost-val">約 60,000 円</div>
-            </div>
-            <div class="cost-row">
-                <div>
-                    <div class="cost-label">観光・入場料</div>
-                    <div class="cost-sub">コロッセオ・バチカン美術館等</div>
-                </div>
-                <div class="cost-val">約 20,000 円</div>
-            </div>
-            <div class="cost-row">
-                <div>
-                    <div class="cost-label">現地交通費・雑費</div>
-                    <div class="cost-sub">地下鉄・バス・公衆トイレ代など</div>
-                </div>
-                <div class="cost-val">約 10,000 円</div>
-            </div>
-            <div class="cost-total">
-                <div class="total-label">実質総額（目安）</div>
-                <div class="total-val">約 428,000 円</div>
-            </div>
-        </div>
-
-        <!-- 出発前タスク -->
-        <div id="tasks" class="section-header">✅ 3. 出発前タスク＆防犯対策</div>
-        <div class="card">
-            <div class="task-group-title">申し込み・事前手配</div>
-            <label class="task-label">
-                <input type="checkbox">
-                <div class="task-text">
-                    <strong>ハネムーン特典の申請</strong>
-                    申し込み時に申告し、ダブルベッド手配をリクエスト
-                </div>
-            </label>
-            <label class="task-label">
-                <input type="checkbox">
-                <div class="task-text">
-                    <strong>並び席手配の追加（推奨）</strong>
-                    フライト疲労軽減のため並び席確約（片道2万円/人）を追加
-                </div>
-            </label>
-            <label class="task-label">
-                <input type="checkbox">
-                <div class="task-text">
-                    <strong>主要観光施設の事前チケット予約</strong>
-                    ローマの美術館等は1〜2ヶ月前に日時指定チケットを確保
-                </div>
-            </label>
-
-            <div class="task-group-title">現地の安全・持ち物対策</div>
-            <label class="task-label">
-                <input type="checkbox">
-                <div class="task-text">
-                    <strong>スリ対策（最重要）</strong>
-                    ファスナー付き斜め掛けバッグ＋スマホ盗難防止ストラップ
-                </div>
-            </label>
-            <label class="task-label">
-                <input type="checkbox">
-                <div class="task-text">
-                    <strong>石畳・歩き疲れ対策</strong>
-                    1日1〜2万歩に耐えるクッション性の高い履き慣れたスニーカー
-                </div>
-            </label>
-            <label class="task-label">
-                <input type="checkbox">
-                <div class="task-text">
-                    <strong>雨・寒さ対策</strong>
-                    防水スニーカー、折りたたみ傘、ウルトラライトダウン
-                </div>
-            </label>
-        </div>
-
-        <!-- ホテル周辺環境 (Google Maps) -->
-        <div id="hotel" class="section-header">🗺️ 4. 宿泊ホテル周辺環境（ローマ：テルミニ駅）</div>
-        <div class="card">
-            <p style="margin: 0 0 10px 0; font-size: 13.5px;">
-                ローマ滞在時の2連泊は交通の中心<strong>「テルミニ駅（Roma Termini）周辺」</strong>で確定しています。
-            </p>
-            <ul style="margin: 0 0 14px 0; padding-left: 18px; font-size: 13.5px; color: var(--text);">
-                <li><strong>利便性：</strong> 地下鉄A線・B線が交差。コロッセオ（2駅）やバチカン（直通）へ直結。</li>
-                <li><strong>買い物：</strong> 駅地下の大型スーパー「CONAD」は夜遅くまで営業。お土産や水調達に便利。</li>
-                <li><strong>食事：</strong> 駅構内フードコート「Mercato Centrale」で手軽に絶品パスタ・ピザ。</li>
-            </ul>
-
-            <!-- Google Maps 埋め込み (リアルタイムGoogleマップ) -->
-            <div class="map-wrapper">
-                <iframe 
-                    src="https://maps.google.com/maps?q=Roma+Termini+Station+Italy&hl=ja&z=15&output=embed" 
-                    allowfullscreen="" 
-                    loading="lazy" 
-                    referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
-            </div>
-
-            <a class="btn-maps" href="https://maps.google.com/?q=Roma+Termini" target="_blank" rel="noopener noreferrer">
-                <span>📍 Google Maps アプリ / ブラウザで開く</span>
-            </a>
-        </div>
-
-        <!-- 8日間 行程表 -->
-        <div id="schedule" class="section-header">📅 5. 8日間 行程表（11/15出発）</div>
-        <div class="timeline">
-            <div class="day-card">
-                <div class="day-header">
-                    <div class="day-num">1日目</div>
-                    <div class="day-date">11/15 (日)</div>
-                </div>
-                <div class="day-title">✈️ 出発・ミラノへ移動</div>
-                <div class="day-detail">関西国際空港 発 ✈（乗継便）✈ ミラノ到着後、ホテルへ。</div>
-                <div class="day-meta">
-                    <span>🏨 宿泊：ミラノ近郊</span>
-                    <span>🍽️ 朝:× 昼:機 夕:機</span>
-                </div>
-            </div>
-
-            <div class="day-card">
-                <div class="day-header">
-                    <div class="day-num">2日目</div>
-                    <div class="day-date">11/16 (月)</div>
-                </div>
-                <div class="day-title">🏛️ ミラノ・ベローナ観光 → ベネチアへ</div>
-                <div class="day-detail">午前：ミラノ市内（ドゥオーモ等）観光<br>午後：ロミオとジュリエットの舞台ベローナ散策後、ベネチア近郊へ移動。</div>
-                <div class="day-meta">
-                    <span>🏨 宿泊：ベネチア近郊</span>
-                    <span>🍽️ 朝:〇 昼:〇 夕:〇</span>
-                </div>
-            </div>
-
-            <div class="day-card">
-                <div class="day-header">
-                    <div class="day-num">3日目</div>
-                    <div class="day-date">11/17 (火)</div>
-                </div>
-                <div class="day-title">🛶 ベネチア観光 → フィレンツェへ</div>
-                <div class="day-detail">午前：サンマルコ広場等観光<br>午後：自由行動（ゴンドラ乗船等）後、フィレンツェ近郊へ。</div>
-                <div class="day-meta">
-                    <span>🏨 宿泊：フィレンツェ近郊</span>
-                    <span>🍽️ 朝:〇 昼:× 夕:〇</span>
-                </div>
-            </div>
-
-            <div class="day-card">
-                <div class="day-header">
-                    <div class="day-num">4日目</div>
-                    <div class="day-date">11/18 (水)</div>
-                </div>
-                <div class="day-title">🎨 フィレンツェ・サンジミニャーノ観光</div>
-                <div class="day-detail">午前：市内観光・ミケランジェロ広場<br>午後：自由行動後、世界遺産の塔の街サンジミニャーノへ。</div>
-                <div class="day-meta">
-                    <span>🏨 宿泊：サンジミニャーノ近郊</span>
-                    <span>🍽️ 朝:〇 昼:× 夕:〇</span>
-                </div>
-            </div>
-
-            <div class="day-card">
-                <div class="day-header">
-                    <div class="day-num">5日目</div>
-                    <div class="day-date">11/19 (木)</div>
-                </div>
-                <div class="day-title">⛪ ローマ・バチカン観光</div>
-                <div class="day-detail">朝：ローマへ移動<br>午後：バチカン＆ローマ観光（サンピエトロ大聖堂、コロッセオ等）。</div>
-                <div class="day-meta">
-                    <span>🏨 宿泊：ローマ（テルミニ駅周辺）</span>
-                    <span>🍽️ 朝:〇 昼:〇 夕:〇</span>
-                </div>
-            </div>
-
-            <div class="day-card">
-                <div class="day-header">
-                    <div class="day-num">6日目</div>
-                    <div class="day-date">11/20 (金)</div>
-                </div>
-                <div class="day-title">🚶‍♂️ ローマ 終日自由行動</div>
-                <div class="day-detail">ローマ滞在。平日のため各施設は通常営業、ショッピングや街歩きに最適。</div>
-                <div class="day-meta">
-                    <span>🏨 宿泊：ローマ（テルミニ駅周辺）</span>
-                    <span>🍽️ 朝:〇 昼:× 夕:×</span>
-                </div>
-            </div>
-
-            <div class="day-card">
-                <div class="day-header">
-                    <div class="day-num">7日目</div>
-                    <div class="day-date">11/21 (土)</div>
-                </div>
-                <div class="day-title">🛫 帰国の途へ</div>
-                <div class="day-detail">空港へ移動。<br>ローマ 発 ✈（乗継便）✈ 機中泊</div>
-                <div class="day-meta">
-                    <span>🏨 宿泊：機内</span>
-                    <span>🍽️ 朝:〇 昼:× 夕:機</span>
-                </div>
-            </div>
-
-            <div class="day-card">
-                <div class="day-header">
-                    <div class="day-num">8日目</div>
-                    <div class="day-date">11/22 (日)</div>
-                </div>
-                <div class="day-title">🇯🇵 日本到着</div>
-                <div class="day-detail">関西国際空港 着。お疲れ様でした！</div>
-                <div class="day-meta">
-                    <span>🏨 宿泊：-</span>
-                    <span>🍽️ 朝:機 昼:× 夕:×</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="footer">
-            © 2026 イタリア新婚旅行 計画レポート
-        </div>
-
+      <span class="hero-tag">💍 HIS Honeymoon Special Tour</span>
+      <h2 class="hero-title">アンディアーモ！イタリア8日間<br>新婚旅行ガイドポータル</h2>
+      <p class="hero-names">鈴木 健太 様 ❤️ めぐみ 様 ご夫妻</p>
+      <p class="hero-desc">
+        2026年11月15日(日) 出発 〜 11月22日(日) 帰国（8日間）<br>
+        ミラノ・ベローナ・ベネチア・フィレンツェ・ピサ・サンジミニャーノ・ローマの珠玉の7都市を巡る一生の宝物になる旅へ。
+      </p>
+      <div class="hero-stats">
+        <div class="stat-chip">✈️ 関西国際空港(KIX)発着</div>
+        <div class="stat-chip">🏛️ イタリア世界遺産・7都市周遊</div>
+        <div class="stat-chip">🚌 全行程・専用バス移動</div>
+        <div class="stat-chip">🏨 スーペリアホテル（ダブルベッド確約）</div>
+      </div>
     </div>
+  </div>
+
+  <main class="container">
+
+    <!-- Quick Navigation Grid -->
+    <section class="section">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">🧭 クイックナビゲーション</h2>
+          <span class="section-subtitle">スマートフォンでいつでも確認できる4大パーソナルガイド</span>
+        </div>
+      </div>
+
+      <div class="quick-nav-grid">
+        
+        <!-- Map -->
+        <a href="tour-map.html" class="quick-card card-map">
+          <div>
+            <div class="quick-card-icon">🗺️</div>
+            <h3 class="quick-card-title">全体ツアールートMAP</h3>
+            <p class="quick-card-desc">
+              Leaflet & OpenStreetMap連動のインタラクティブマップ。50箇所以上の観光地・ホテル・グルメ・お土産店をGPS座標とGoogle Maps連携で確認！
+            </p>
+          </div>
+          <span class="quick-card-badge" style="background:#dbeafe; color:#1e40af;">📍 50+スポット・ルート描画</span>
+        </a>
+
+        <!-- Food Guide -->
+        <a href="free-meal-guide.html" class="quick-card card-food">
+          <div>
+            <div class="quick-card-icon">🍽️</div>
+            <h3 class="quick-card-title">自由食事・グルメガイド</h3>
+            <p class="quick-card-desc">
+              ルイーニのパンツェロッティ、最古のカフェ・フローリアン、フィレンツェのTボーンステーキ、世界一のジェラート、ローマのティラミスを厳選。
+            </p>
+          </div>
+          <span class="quick-card-badge" style="background:#fee2e2; color:#991b1b;">🍷 名物料理＆おすすめ店</span>
+        </a>
+
+        <!-- Souvenir Guide -->
+        <a href="souvenir-guide.html" class="quick-card card-gift">
+          <div>
+            <div class="quick-card-icon">🎁</div>
+            <h3 class="quick-card-title">お土産・ショッピングガイド</h3>
+            <p class="quick-card-desc">
+              サンタ・マリア・ノヴェッラ薬局の香水、ベネチアングラス、高級オリーブオイル、リモンチェッロ、免税（Tax Refund）手続きの手順。
+            </p>
+          </div>
+          <span class="quick-card-badge" style="background:#f3e8ff; color:#6b21a8;">🛍️ 都市別ベストギフト</span>
+        </a>
+
+        <!-- Music & Churches in Rome -->
+        <a href="rome-free-day-guide.html" class="quick-card card-music">
+          <div>
+            <div class="quick-card-icon">🎻</div>
+            <h3 class="quick-card-title">ローマ自由行動＆音楽教会ガイド</h3>
+            <p class="quick-card-desc">
+              合唱・音楽を愛する健太さんに贈る、オルガンと天井画が響き合う荘厳な教会巡り（カラヴァッジョ絵画、ジェズ教会、バチカン）プラン。
+            </p>
+          </div>
+          <span class="quick-card-badge" style="background:#fef3c7; color:#92400e;">⛪ 音楽・芸術散策モデルコース</span>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- Honeymoon Special Benefits Checklist -->
+    <section class="section">
+      <div class="honeymoon-box">
+        <div class="honeymoon-title">
+          <span>💍</span> HIS ハネムーン 3大特別特典チェックリスト
+        </div>
+        <p style="font-size: 0.88rem; color: #744210;">
+          お二人の新婚旅行を最高に快適で想い出深いものにするため、HISより確約されたスペシャル特典です。
+        </p>
+
+        <div class="benefit-grid">
+          
+          <div class="benefit-item">
+            <div class="icon">🛏️</div>
+            <div>
+              <h4>1. 全ホテル ダブルベッド確約</h4>
+              <p>ミラノ、ベネチア（メストレ）、フィレンツェ、ローマの全宿泊ホテルにて、ダブルベッド仕様の客室をリクエスト・確約手配済みです。</p>
+            </div>
+          </div>
+
+          <div class="benefit-item">
+            <div class="icon">✈️</div>
+            <div>
+              <h4>2. 国際線 ペアシート確約</h4>
+              <p>関西国際空港(KIX)発着の往復国際線フライトにおいて、お隣同士でお座りいただけるペアシートを確保しています。</p>
+            </div>
+          </div>
+
+          <div class="benefit-item">
+            <div class="icon">📖</div>
+            <div>
+              <h4>3. フォトプラスブック作成クーポン</h4>
+              <p>旅行中に撮影したたくさんの思い出写真で高品質なオリジナルフォトブックが作れる特別クーポン付き！帰国後に作成いただけます。</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Day-by-Day Itinerary Cards -->
+    <section class="section">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">📅 デイリー詳細スケジュール (Day 1 〜 Day 8)</h2>
+          <span class="section-subtitle">食事マトリクス（ツアー設定 vs 各自自由食）と各日の見どころ</span>
+        </div>
+      </div>
+
+      <div class="itinerary-grid">
+
+        <!-- Day 1 -->
+        <div class="day-card">
+          <div class="day-badge-col">
+            <span class="day-number">Day 1</span>
+            <span class="day-date">11/15 (日)</span>
+            <div class="day-cities">関空 ✈️ ミラノ</div>
+          </div>
+          <div class="day-info-col">
+            <h3>関西国際空港 出発 ➔ ミラノ到着</h3>
+            <p class="day-highlights">
+              関空より国際線にて出発（ペアシート確約）。ミラノ・マルペンサ空港(MXP)到着後、専用バスでホテルへ。
+            </p>
+            <div class="meal-matrix-row">
+              <span class="meal-pill free">朝：各自/機内</span>
+              <span class="meal-pill included">昼：機内食</span>
+              <span class="meal-pill included">夕：機内食/軽食</span>
+            </div>
+          </div>
+          <div class="day-action-col">
+            <a href="day1.html" class="btn btn-primary btn-sm">Day 1 詳細 ➔</a>
+            <a href="tour-map.html" class="btn btn-secondary btn-sm">MAPで確認</a>
+          </div>
+        </div>
+
+        <!-- Day 2 -->
+        <div class="day-card">
+          <div class="day-badge-col">
+            <span class="day-number">Day 2</span>
+            <span class="day-date">11/16 (月)</span>
+            <div class="day-cities">ミラノ ➔ ベローナ ➔ ベネチア</div>
+          </div>
+          <div class="day-info-col">
+            <h3>ミラノ半日観光 ➔ ベローナ散策 ➔ ベネチア歓迎ディナー</h3>
+            <p class="day-highlights">
+              ミラノ大聖堂(ドゥオーモ)、ガッレリアの牡牛モザイク、スカラ座、スフォルツェスコ城。ベローナでジュリエットの家とアレーナ。夜はツアーディナー！
+            </p>
+            <div class="meal-matrix-row">
+              <span class="meal-pill included">朝：ホテル (ツアー込 1/5)</span>
+              <span class="meal-pill free">昼：各自自由食 (ミラノ名物)</span>
+              <span class="meal-pill included">夕：イタリア郷土料理 (ツアー込 1/1)</span>
+            </div>
+          </div>
+          <div class="day-action-col">
+            <a href="day2.html" class="btn btn-primary btn-sm">Day 2 詳細 ➔</a>
+            <a href="tour-map.html" class="btn btn-secondary btn-sm">MAPで確認</a>
+          </div>
+        </div>
+
+        <!-- Day 3 -->
+        <div class="day-card">
+          <div class="day-badge-col">
+            <span class="day-number">Day 3</span>
+            <span class="day-date">11/17 (火)</span>
+            <div class="day-cities">ベネチア ➔ フィレンツェ</div>
+          </div>
+          <div class="day-info-col">
+            <h3>水の都ベネチア観光 ＆ ゴンドラ遊覧 ➔ フィレンツェへ</h3>
+            <p class="day-highlights">
+              専用ボートで本島へ。サン・マルコ広場、寺院、ドゥカーレ宮殿、ため息橋、ゴンドラ遊覧、最古のカフェ・フローリアン。夕刻バスでトスカーナへ移動。
+            </p>
+            <div class="meal-matrix-row">
+              <span class="meal-pill included">朝：ホテル (ツアー込 2/5)</span>
+              <span class="meal-pill free">昼：各自自由食 (バカロ/カフェ)</span>
+              <span class="meal-pill free">夕：各自自由食 (SA/フィレンツェ)</span>
+            </div>
+          </div>
+          <div class="day-action-col">
+            <a href="day3.html" class="btn btn-primary btn-sm">Day 3 詳細 ➔</a>
+            <a href="tour-map.html" class="btn btn-secondary btn-sm">MAPで確認</a>
+          </div>
+        </div>
+
+        <!-- Day 4 -->
+        <div class="day-card">
+          <div class="day-badge-col">
+            <span class="day-number">Day 4</span>
+            <span class="day-date">11/18 (水)</span>
+            <div class="day-cities">フィレンツェ (ピサOP)</div>
+          </div>
+          <div class="day-info-col">
+            <h3>花の都フィレンツェ徒歩観光 ＆ 【OP】ピサの斜塔</h3>
+            <p class="day-highlights">
+              サンタ・マリア・デル・フィオーレ大聖堂、シニョーリア広場、ヴェッキオ橋。午後は市内自由散策またはピサの斜塔OP観光。夜は名物Tボーンステーキ！
+            </p>
+            <div class="meal-matrix-row">
+              <span class="meal-pill included">朝：ホテル (ツアー込 3/5)</span>
+              <span class="meal-pill free">昼：各自自由食 (中央市場/パニーノ)</span>
+              <span class="meal-pill free">夕：各自自由食 (ビステッカ)</span>
+            </div>
+          </div>
+          <div class="day-action-col">
+            <a href="day4.html" class="btn btn-primary btn-sm">Day 4 詳細 ➔</a>
+            <a href="tour-map.html" class="btn btn-secondary btn-sm">MAPで確認</a>
+          </div>
+        </div>
+
+        <!-- Day 5 -->
+        <div class="day-card">
+          <div class="day-badge-col">
+            <span class="day-number">Day 5</span>
+            <span class="day-date">11/19 (木)</span>
+            <div class="day-cities">サンジミニャーノ ➔ ローマ</div>
+          </div>
+          <div class="day-info-col">
+            <h3>中世の塔の街サンジミニャーノ ＆ ピッツァランチ ➔ ローマ</h3>
+            <p class="day-highlights">
+              トスカーナの美しい塔の街散策＆世界一のジェラート。ツアー設定ピッツァランチ後、永遠の都ローマへ南下。夜はライトアップされたトレビの泉へ！
+            </p>
+            <div class="meal-matrix-row">
+              <span class="meal-pill included">朝：ホテル (ツアー込 4/5)</span>
+              <span class="meal-pill included">昼：本場ピッツァ (ツアー込 1/1)</span>
+              <span class="meal-pill free">夕：各自自由食 (ローマ夜景＆パスタ)</span>
+            </div>
+          </div>
+          <div class="day-action-col">
+            <a href="day5.html" class="btn btn-primary btn-sm">Day 5 詳細 ➔</a>
+            <a href="tour-map.html" class="btn btn-secondary btn-sm">MAPで確認</a>
+          </div>
+        </div>
+
+        <!-- Day 6 -->
+        <div class="day-card">
+          <div class="day-badge-col">
+            <span class="day-number">Day 6</span>
+            <span class="day-date">11/20 (金)</span>
+            <div class="day-cities">ローマ ＆ バチカン</div>
+          </div>
+          <div class="day-info-col">
+            <h3>ローマ市内 ＆ バチカン市国 終日自由行動・音楽教会散策</h3>
+            <p class="day-highlights">
+              サン・ピエトロ大聖堂、バチカン美術館、コロッセオ、パンテオン、スペイン広場。カラヴァッジョ名作やパイプオルガンが響く美しい教会巡り。
+            </p>
+            <div class="meal-matrix-row">
+              <span class="meal-pill included">朝：ホテル (ツアー込 5/5)</span>
+              <span class="meal-pill free">昼：各自自由食 (バチカン周辺)</span>
+              <span class="meal-pill free">夕：各自自由食 (ラストディナー)</span>
+            </div>
+          </div>
+          <div class="day-action-col">
+            <a href="day6.html" class="btn btn-primary btn-sm">Day 6 詳細 ➔</a>
+            <a href="rome-free-day-guide.html" class="btn btn-secondary btn-sm">教会ガイド</a>
+          </div>
+        </div>
+
+        <!-- Day 7 -->
+        <div class="day-card">
+          <div class="day-badge-col">
+            <span class="day-number">Day 7</span>
+            <span class="day-date">11/21 (土)</span>
+            <div class="day-cities">ローマ ✈️ (機中泊)</div>
+          </div>
+          <div class="day-info-col">
+            <h3>ローマ・フィウミチーノ空港 出発 ➔ 帰国の途へ</h3>
+            <p class="day-highlights">
+              専用バスにて空港(FCO)へ。免税手続き(Tax Refund)と免税ショッピング。国際線搭乗（ペアシート確約）。
+            </p>
+            <div class="meal-matrix-row">
+              <span class="meal-pill included">朝：ホテル (軽食/BOX)</span>
+              <span class="meal-pill free">昼：空港/機内食</span>
+              <span class="meal-pill included">夕：機内食</span>
+            </div>
+          </div>
+          <div class="day-action-col">
+            <a href="day7.html" class="btn btn-primary btn-sm">Day 7 詳細 ➔</a>
+            <a href="tour-map.html" class="btn btn-secondary btn-sm">MAPで確認</a>
+          </div>
+        </div>
+
+        <!-- Day 8 -->
+        <div class="day-card">
+          <div class="day-badge-col">
+            <span class="day-number">Day 8</span>
+            <span class="day-date">11/22 (日)</span>
+            <div class="day-cities">経由地 ✈️ 関空</div>
+          </div>
+          <div class="day-info-col">
+            <h3>関西国際空港 到着 ➔ ご帰宅</h3>
+            <p class="day-highlights">
+              関西国際空港到着。税関手続き後、ツアー解散。お二人でたくさんの思い出と共にご自宅（大阪・摂津）へ。
+            </p>
+            <div class="meal-matrix-row">
+              <span class="meal-pill included">朝：機内食</span>
+              <span class="meal-pill free">昼：各自/空港</span>
+              <span class="meal-pill free">夕：ご自宅</span>
+            </div>
+          </div>
+          <div class="day-action-col">
+            <a href="day8.html" class="btn btn-primary btn-sm">Day 8 詳細 ➔</a>
+            <a href="souvenir-guide.html" class="btn btn-secondary btn-sm">お土産確認</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Tour Summary Table -->
+    <section class="section">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">📊 ツアー基本情報・食事条件サマリー</h2>
+          <span class="section-subtitle">HIS Tour OI-KMI2811 の公式概要データ</span>
+        </div>
+      </div>
+
+      <div class="table-responsive">
+        <table class="custom-table">
+          <thead>
+            <tr>
+              <th>項目</th>
+              <th>内容・条件</th>
+              <th>備考・ハネムーン仕様</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>ツアー名称</strong></td>
+              <td>HIS OI-KMI2811 イタリア7都市周遊 8日間</td>
+              <td>添乗員同行・全行程専用バス利用</td>
+            </tr>
+            <tr>
+              <td><strong>旅行日程</strong></td>
+              <td>2026年11月15日(日) 〜 11月22日(日) 8日間</td>
+              <td>秋の美しいイタリアを満喫</td>
+            </tr>
+            <tr>
+              <td><strong>フライト</strong></td>
+              <td>関西国際空港(KIX)発着 国際線往復</td>
+              <td><span style="color:var(--secondary-color); font-weight:700;">国際線往復ペアシート確約</span></td>
+            </tr>
+            <tr>
+              <td><strong>宿泊ホテル</strong></td>
+              <td>
+                ・Day 1: ミラノ近郊 スーペリアクラス<br>
+                ・Day 2: ベネチア・メストレ スーペリアクラス<br>
+                ・Day 3-4: フィレンツェ スーペリアクラス (2連泊)<br>
+                ・Day 5-6: ローマ スーペリアクラス (2連泊)
+              </td>
+              <td><span style="color:var(--secondary-color); font-weight:700;">全宿泊ホテル ダブルベッド確約</span></td>
+            </tr>
+            <tr>
+              <td><strong>含まれる食事 (計7回)</strong></td>
+              <td>
+                ・朝食：<strong>5回</strong> (ホテルビュッフェ)<br>
+                ・昼食：<strong>1回</strong> (Day 5 サンジミニャーノ 本場ピッツァ)<br>
+                ・夕食：<strong>1回</strong> (Day 2 ベネチア イタリア郷土料理)
+              </td>
+              <td>
+                自由食は各都市の名店ガイドを参考にセレクト！
+              </td>
+            </tr>
+            <tr>
+              <td><strong>訪問都市 (7都市)</strong></td>
+              <td>ミラノ、ベローナ、ベネチア、フィレンツェ、ピサ(OP)、サンジミニャーノ、ローマ (+バチカン市国)</td>
+              <td>北から南へ効率的な縦断ゴールデンルート</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Packing & Preparation Guide for November in Italy -->
+    <section class="section">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">🧳 11月のイタリア旅行 準備＆持ち物・安心ガイド</h2>
+          <span class="section-subtitle">気候・服装・通信・防犯・通貨の必須チェックポイント</span>
+        </div>
+      </div>
+
+      <div class="tips-grid">
+        
+        <!-- Climate & Clothing -->
+        <div class="tip-card">
+          <div class="tip-header">
+            <span>🧥</span> 気候と服装（11月中旬）
+          </div>
+          <ul>
+            <li><strong>気温目安：</strong> 日中 12〜16℃、朝晩 5〜9℃（東京・大阪の11月下旬〜12月上旬と同等）。</li>
+            <li><strong>重ね着（レイヤード）：</strong> ヒートテック＋薄手ニット＋ウールコートまたは軽量ダウン。室内やバス内は暖房が効いています。</li>
+            <li><strong>足元：</strong> 石畳の道が多いため、クッション性の高い歩きやすいスニーカーが必須。</li>
+            <li><strong>雨具：</strong> 11月は秋の雨期にあたるため、軽量な折りたたみ傘を携帯しましょう。</li>
+          </ul>
+        </div>
+
+        <!-- Plugs & Electronic -->
+        <div class="tip-card">
+          <div class="tip-header">
+            <span>🔌</span> 電源プラグ ＆ 通信 (eSIM/Wi-Fi)
+          </div>
+          <ul>
+            <li><strong>プラグ形状：</strong> イタリアは主に <strong>Cタイプ</strong>（丸ピン2本）または <strong>SEタイプ</strong>。変換プラグを2〜3個持参。</li>
+            <li><strong>電圧：</strong> 230V（日本のスマホ・デジカメ充電器はほぼ100〜240V対応でそのまま使用可能）。</li>
+            <li><strong>通信：</strong> ヨーロッパ周遊対応の <strong>eSIM</strong>（Airalo, Ubigi, Holafly等）が便利。お二人それぞれ設定しておくと別行動時も安心。</li>
+            <li><strong>モバイルバッテリー：</strong> Google Mapsや写真撮影で消耗が早いため、10000mAh程度を機内持ち込み手荷物へ。</li>
+          </ul>
+        </div>
+
+        <!-- Security & Anti-theft -->
+        <div class="tip-card">
+          <div class="tip-header">
+            <span>🛡️</span> スリ対策 ＆ 安全・防犯の心得
+          </div>
+          <ul>
+            <li><strong>警戒エリア：</strong> ローマの地下鉄（Metro A/B線）、テルミニ駅、コロッセオ周辺、ミラノのドゥオーモ前、ベネチアのリアルト橋付近。</li>
+            <li><strong>貴重品管理：</strong> パスポート・大金はセーフティポーチ（首下げ・腹巻）へ。リュックは人混みで前に抱える。</li>
+            <li><strong>スマートフォンの紛失防止：</strong> ショルダーストラップ（斜めがけ）を活用し、歩行中の不用意な手持ちを避ける。</li>
+            <li><strong>親切な声かけに注意：</strong> ミサンガ売り、署名運動、写真を撮ってあげると言ってカメラを持ち去る手口に注意。</li>
+          </ul>
+        </div>
+
+        <!-- Currency & Payment -->
+        <div class="tip-card">
+          <div class="tip-header">
+            <span>💶</span> 通貨・クレジットカード ＆ マナー
+          </div>
+          <ul>
+            <li><strong>キャッシュレス：</strong> Visa/Mastercardのタッチ決済が90%以上で利用可能（Apple Payも対応）。</li>
+            <li><strong>現金（ユーロ）：</strong> 有料公衆トイレ（€0.5〜1.5）、少額のチップ、屋台用に1人€50〜100程度の小額紙幣を持参。</li>
+            <li><strong>チップ習慣：</strong> レストランのレシートに「Coperto（席料/パン代）」や「Servizio（サービス料）」が含まれていればチップは不要。端数を切り上げる程度でスマート。</li>
+            <li><strong>教会入場マナー：</strong> 肩や膝が出る服装は厳禁。スカーフやストールをバッグに入れておくと便利です。</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-credits">
+        <h4>🇮🇹 Kenta & Megumi's Italian Honeymoon Portal</h4>
+        <p>HIS Tour OI-KMI2811 (2026/11/15 - 11/22) | Produced with ❤️ for Suzuki Family</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">トップポータル</a>
+        <a href="tour-map.html">ルートMAP</a>
+        <a href="free-meal-guide.html">グルメガイド</a>
+        <a href="souvenir-guide.html">お土産ガイド</a>
+        <a href="rome-free-day-guide.html">音楽教会ガイド</a>
+      </div>
+    </div>
+  </footer>
 
 </body>
 </html>
