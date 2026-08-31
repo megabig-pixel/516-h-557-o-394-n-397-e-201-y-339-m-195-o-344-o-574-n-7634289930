@@ -1,0 +1,1383 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>全体ツアールートMAP | イタリア7都市周遊8日間 ハネムーン</title>
+  <meta name="description" content="鈴木健太・めぐみ様 イタリア新婚旅行（HIS Tour OI-KMI2811）のインタラクティブルートMAP。ミラノ、ベローナ、ベネチア、フィレンツェ、ピサ、サンジミニャーノ、ローマの全観光地・グルメ・お土産・ホテルを完全網羅。">
+  
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+  
+  <style>
+    .map-header-box {
+      background: linear-gradient(135deg, #1a365d 0%, #2b6cb0 100%);
+      color: #ffffff;
+      padding: 24px 16px;
+      border-radius: var(--radius-lg);
+      margin-bottom: 20px;
+      box-shadow: var(--shadow-md);
+    }
+    .map-title-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .map-title-row h2 {
+      font-size: 1.5rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .map-legend {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      background: rgba(255,255,255,0.15);
+      padding: 6px 14px;
+      border-radius: var(--radius-full);
+      font-size: 0.8rem;
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .legend-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+    .legend-dot.blue { background: #2563eb; }
+    .legend-dot.red { background: #dc2626; }
+    .legend-dot.purple { background: #9333ea; }
+    .legend-dot.green { background: #16a34a; }
+    
+    .map-stat-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #edf2f7;
+      padding: 8px 14px;
+      border-radius: var(--radius-md);
+      font-size: 0.85rem;
+      margin-top: 10px;
+    }
+    .search-box-wrap {
+      margin-top: 10px;
+      display: flex;
+      gap: 8px;
+    }
+    .search-input {
+      flex: 1;
+      padding: 8px 14px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-color);
+      font-size: 0.88rem;
+    }
+    .search-input:focus {
+      outline: none;
+      border-color: var(--primary-light);
+      box-shadow: 0 0 0 2px rgba(43, 108, 176, 0.2);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand-title">
+        <span style="font-size: 1.5rem;">🇮🇹</span>
+        <div>
+          <h1>イタリア7都市周遊 8日間</h1>
+          <span class="brand-subtitle">HIS Tour OI-KMI2811 | Kenta & Megumi Honeymoon</span>
+        </div>
+      </div>
+      <nav class="main-nav">
+        <a href="index.html" class="nav-link">🏠 ホーム</a>
+        <a href="tour-map.html" class="nav-link active">🗺️ 全体ルートMAP</a>
+        <a href="free-meal-guide.html" class="nav-link">🍽️ 自由食・グルメ</a>
+        <a href="souvenir-guide.html" class="nav-link">🎁 お土産ガイド</a>
+        <a href="rome-free-day-guide.html" class="nav-link">🎻 ローマ自由行動</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container" style="margin-top: 24px;">
+
+    <!-- Map Title Banner -->
+    <div class="map-header-box">
+      <div class="map-title-row">
+        <div>
+          <span class="hero-tag">Interactive GPS & Route Navigator</span>
+          <h2>🗺️ イタリア7都市周遊 インタラクティブルートMAP</h2>
+          <p style="font-size: 0.9rem; opacity: 0.95; margin-top: 4px;">
+            全行程（ミラノ → ベローナ → ベネチア → フィレンツェ → ピサ → サンジミニャーノ → ローマ）の移動ルート、見どころ、グルメ、お土産店、ホテルを網羅！
+          </p>
+        </div>
+        <div class="map-legend">
+          <span class="legend-item"><span class="legend-dot blue"></span> 🏛️ 観光名所</span>
+          <span class="legend-item"><span class="legend-dot red"></span> 🍽️ グルメ/食事</span>
+          <span class="legend-item"><span class="legend-dot purple"></span> 🎁 お土産/買物</span>
+          <span class="legend-item"><span class="legend-dot green"></span> 🏨 ホテル/拠点</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Map Layout -->
+    <div class="map-layout">
+
+      <!-- Filter Controls Panel -->
+      <div class="map-controls-panel">
+        
+        <!-- Category Filter -->
+        <div class="filter-group">
+          <label class="filter-label">🏷️ カテゴリー絞り込み</label>
+          <div class="filter-chips" id="category-filters">
+            <button type="button" class="chip-btn active" data-category="all">すべて (All)</button>
+            <button type="button" class="chip-btn" data-category="sightseeing">🏛️ 観光スポット</button>
+            <button type="button" class="chip-btn" data-category="dining">🍽️ グルメ</button>
+            <button type="button" class="chip-btn" data-category="souvenir">🎁 お土産</button>
+            <button type="button" class="chip-btn" data-category="hotel">🏨 ホテル・拠点</button>
+          </div>
+        </div>
+
+        <!-- Day Filter -->
+        <div class="filter-group" style="margin-top: 14px;">
+          <label class="filter-label">📅 日程・都市で絞り込み</label>
+          <div class="filter-chips" id="day-filters">
+            <button type="button" class="chip-btn active" data-day="all">全行程 (Day 1〜7)</button>
+            <button type="button" class="chip-btn" data-day="Day 2">Day 2 ミラノ/ベローナ</button>
+            <button type="button" class="chip-btn" data-day="Day 3">Day 3 ベネチア</button>
+            <button type="button" class="chip-btn" data-day="Day 4">Day 4 フィレンツェ/ピサ</button>
+            <button type="button" class="chip-btn" data-day="Day 5">Day 5 サンジミニャーノ/ローマ</button>
+            <button type="button" class="chip-btn" data-day="Day 6">Day 6 ローマ/バチカン</button>
+            <button type="button" class="chip-btn" data-day="Day 7">Day 7 ローマ帰国</button>
+          </div>
+        </div>
+
+        <!-- Search Bar & Counter -->
+        <div class="search-box-wrap">
+          <input type="text" id="spot-search-input" class="search-input" placeholder="🔍 スポット名やキーワードで検索（例: ドゥオーモ, ティラミス, ピサ, 薬局）...">
+          <button type="button" class="btn btn-secondary btn-sm" id="reset-filter-btn" style="white-space: nowrap;">🔄 フィルター解除</button>
+        </div>
+
+        <div class="map-stat-bar">
+          <div>表示中スポット: <strong id="visible-spots-count" style="color: var(--primary-color);">0</strong> 件</div>
+          <div style="font-size: 0.78rem; color: var(--text-muted);">💡 マーカーをクリックすると詳細情報・Google Mapsリンクが開きます</div>
+        </div>
+      </div>
+
+      <!-- Map Container -->
+      <div id="tour-map"></div>
+
+    </div>
+
+    <!-- Route Distances & Travel Time Summary Cards -->
+    <section class="section">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">🚌 日程別 移動距離・所要時間・ツアールート要覧</h2>
+          <span class="section-subtitle">オフラインでも安心！移動日ごとのバス走行距離・高速道路ルート・休憩ポイント一覧</span>
+        </div>
+      </div>
+
+      <div class="route-summary-grid">
+        
+        <!-- Day 1 -->
+        <div class="route-card">
+          <div>
+            <div class="route-header">
+              <span class="route-day">Day 1 (11/15 日)</span>
+              <span class="route-distance">✈️ 国際線フライト</span>
+            </div>
+            <h3 class="route-path">関空 (KIX) ✈️ 経由地 ✈️ ミラノ (MXP)</h3>
+            <p class="route-stops">
+              ・関西国際空港集合・出発<br>
+              ・国際線機内（HISハネムーン特典：ペアシート確約）<br>
+              ・ミラノ・マルペンサ空港到着後、専用バスでホテルへ移動（約45分・約45km）
+            </p>
+          </div>
+          <div class="route-note">
+            💡 到着後は時差（日本-8時間）対策のため、無理せずホテルで休養しましょう。
+          </div>
+        </div>
+
+        <!-- Day 2 -->
+        <div class="route-card">
+          <div>
+            <div class="route-header">
+              <span class="route-day">Day 2 (11/16 月)</span>
+              <span class="route-distance">🚌 約 290 km / バス計 約4.5時間</span>
+            </div>
+            <h3 class="route-path">ミラノ ➔ ベローナ ➔ ベネチア・メストレ</h3>
+            <p class="route-stops">
+              ・午前：ミラノ市内観光（ドゥオーモ、ガッレリア、スカラ座、スフォルツェスコ城）<br>
+              ・午後：専用バスにて高速A4経由でベローナへ（約160km・約2時間15分）<br>
+              ・夕刻：ベローナ散策後、ベネチア・メストレへ（約130km・約1時間45分）<br>
+              ・夜：ツアー歓迎ディナー（イタリア郷土料理）
+            </p>
+          </div>
+          <div class="route-note">
+            💡 ジュリエットの家で右胸に触れて恋愛成就の祈願＆ガッレリアの牡牛モザイクで3回転！
+          </div>
+        </div>
+
+        <!-- Day 3 -->
+        <div class="route-card">
+          <div>
+            <div class="route-header">
+              <span class="route-day">Day 3 (11/17 火)</span>
+              <span class="route-distance">🚤 ボート ＋ 🚌 約 260 km / バス約3.5時間</span>
+            </div>
+            <h3 class="route-path">ベネチア本島 ➔ フィレンツェ</h3>
+            <p class="route-stops">
+              ・朝：専用ボートでベネチア本島へ渡航（約25分）<br>
+              ・午前：サン・マルコ寺院、ドゥカーレ宮殿、ため息橋、ゴンドラ遊覧<br>
+              ・午後：本島自由行動（カフェ・フローリアン、バカロ、グラス工房）<br>
+              ・夕刻：ボートで戻り、バスにて高速A13/A1経由でフィレンツェへ南下（約260km・約3.5時間、途中SA休憩あり）
+            </p>
+          </div>
+          <div class="route-note">
+            💡 アペニン山脈を越えてトスカーナへ。フィレンツェは嬉しい2連泊！
+          </div>
+        </div>
+
+        <!-- Day 4 -->
+        <div class="route-card">
+          <div>
+            <div class="route-header">
+              <span class="route-day">Day 4 (11/18 水)</span>
+              <span class="route-distance">🚶 徒歩 ＆ 🚌 [OP] 往復約 170 km</span>
+            </div>
+            <h3 class="route-path">フィレンツェ 終日 (午後: ピサOP観光)</h3>
+            <p class="route-stops">
+              ・午前：フィレンツェ徒歩観光（ドゥオーモ、ジョットの鐘楼、シニョーリア広場、ヴェッキオ橋）<br>
+              ・午後プランA：市内自由行動（ウフィツィ美術館、サンタ・マリア・ノヴェッラ薬局、中央市場）<br>
+              ・午後プランB【OP】：専用バスでピサ往復観光（片道約85km・約1時間15分、斜塔登頂）<br>
+              ・夜：名物ビステッカ・アッラ・フィオレンティーナのディナー
+            </p>
+          </div>
+          <div class="route-note">
+            💡 ピサの斜塔トリック写真＆ミケランジェロ広場のトスカーナ夕景は一生の記念になります。
+          </div>
+        </div>
+
+        <!-- Day 5 -->
+        <div class="route-card">
+          <div>
+            <div class="route-header">
+              <span class="route-day">Day 5 (11/19 木)</span>
+              <span class="route-distance">🚌 約 280 km / バス計 約4.5時間</span>
+            </div>
+            <h3 class="route-path">フィレンツェ ➔ サンジミニャーノ ➔ ローマ</h3>
+            <p class="route-stops">
+              ・朝：トスカーナの丘陵ドライブでサンジミニャーノへ（約60km・約1時間15分）<br>
+              ・午前：中世の塔の街散策＆世界一のジェラート（ドンドリ）<br>
+              ・昼食：【ツアー設定・本場ピッツァランチ】<br>
+              ・午後：高速A1「太陽の高速道路（Autostrada del Sole）」でローマへ南下（約220km・約3時間）<br>
+              ・夜：ローマ到着・チェックイン。ライトアップされたトレビの泉へ
+            </p>
+          </div>
+          <div class="route-note">
+            💡 途中のトスカーナ田園風景（オリーブ畑や糸杉）の車窓はシャッターチャンス！
+          </div>
+        </div>
+
+        <!-- Day 6 & 7 -->
+        <div class="route-card">
+          <div>
+            <div class="route-header">
+              <span class="route-day">Day 6 & 7 (11/20-21)</span>
+              <span class="route-distance">🚇 市内交通 ＆ 🚌 空港約 35 km ➔ ✈️ 帰国</span>
+            </div>
+            <h3 class="route-path">ローマ・バチカン ➔ FCO空港 ✈️ 関空 (KIX)</h3>
+            <p class="route-stops">
+              ・Day 6：バチカン市国（サン・ピエトロ大聖堂、美術館）、コロッセオ、パンテオン、スペイン広場、音楽教会巡り<br>
+              ・Day 7：専用バスでローマ・フィウミチーノ空港へ（約35km・約45分）。免税手続き後、国際線搭乗<br>
+              ・Day 8：関西国際空港到着・帰国
+            </p>
+          </div>
+          <div class="route-note">
+            💡 トレビの泉でコイン投げ（再訪を約束）、ポンピのティラミスで新婚旅行を締めくくり！
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-credits">
+        <h4>🇮🇹 Kenta & Megumi's Italian Honeymoon Portal</h4>
+        <p>HIS Tour OI-KMI2811 (2026/11/15 - 11/22) | Produced with ❤️ for Suzuki Family</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">トップポータル</a>
+        <a href="tour-map.html">ルートMAP</a>
+        <a href="free-meal-guide.html">グルメガイド</a>
+        <a href="souvenir-guide.html">お土産ガイド</a>
+        <a href="rome-free-day-guide.html">音楽教会ガイド</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  
+  <script>
+    // 1. Data Definition (Spots from spots.csv)
+    const spotsData = [
+  {
+    "spot_id": "mxp_airport",
+    "name_ja": "ミラノ・マルペンサ空港",
+    "name_it": "Aeroporto di Milano-Malpensa",
+    "city": "Milan",
+    "day": "Day 1",
+    "category": "hotel",
+    "lat": 45.63,
+    "lng": 8.723,
+    "reservation_required": "不要（ツアー送迎バス利用）",
+    "official_url": "https://www.milanomalpensa-airport.com/",
+    "gmaps_url": "https://maps.google.com/?q=Milan+Malpensa+Airport",
+    "recommended_item_or_feature": "北イタリアの玄関口。到着ロビー出口でツアー添乗員・専用バスと合流",
+    "page_link": "day1.html"
+  },
+  {
+    "spot_id": "hotel_milan",
+    "name_ja": "ホテル（ミラノ近郊宿泊地）",
+    "name_it": "Hotel Milan Area (Superior Class)",
+    "city": "Milan",
+    "day": "Day 1",
+    "category": "hotel",
+    "lat": 45.4654,
+    "lng": 9.1859,
+    "reservation_required": "ツアー予約済（ダブルベッド確約）",
+    "official_url": "https://www.his-j.com/",
+    "gmaps_url": "https://maps.google.com/?q=Milan+Hotel",
+    "recommended_item_or_feature": "ハネムーン特典ダブルベッド確約。フライト後の疲れを癒やす快適な客室",
+    "page_link": "day1.html"
+  },
+  {
+    "spot_id": "milano_duomo",
+    "name_ja": "ミラノ大聖堂 (ドゥオーモ)",
+    "name_it": "Duomo di Milano",
+    "city": "Milan",
+    "day": "Day 2",
+    "category": "sightseeing",
+    "lat": 45.4642,
+    "lng": 9.1919,
+    "reservation_required": "要（ツアー外入場時）",
+    "official_url": "https://www.duomomilano.it/",
+    "gmaps_url": "https://maps.google.com/?q=Duomo+di+Milano",
+    "recommended_item_or_feature": "135本の尖塔がそびえる世界最大級のゴシック建築。大聖堂前広場でのツーショット撮影は必須",
+    "page_link": "day2.html"
+  },
+  {
+    "spot_id": "galleria_vittorio",
+    "name_ja": "ヴィットーリオ・エマヌエーレ2世のガッレリア",
+    "name_it": "Galleria Vittorio Emanuele II",
+    "city": "Milan",
+    "day": "Day 2",
+    "category": "sightseeing",
+    "lat": 45.4658,
+    "lng": 9.19,
+    "reservation_required": "不要（見学自由）",
+    "official_url": "https://www.comune.milano.it/",
+    "gmaps_url": "https://maps.google.com/?q=Galleria+Vittorio+Emanuele+II+Milano",
+    "recommended_item_or_feature": "ガラス天井と美しいモザイク床。床にある牡牛のモザイクの上で踵をつけて3回転すると幸福が訪れるというハネムーンジンクス！",
+    "page_link": "day2.html"
+  },
+  {
+    "spot_id": "teatro_scala",
+    "name_ja": "スカラ座 (歌劇場)",
+    "name_it": "Teatro alla Scala",
+    "city": "Milan",
+    "day": "Day 2",
+    "category": "sightseeing",
+    "lat": 45.4674,
+    "lng": 9.1895,
+    "reservation_required": "要（博物館・公演入場時）",
+    "official_url": "https://www.teatroallascala.org/",
+    "gmaps_url": "https://maps.google.com/?q=Teatro+alla+Scala+Milano",
+    "recommended_item_or_feature": "オペラの殿堂。合唱・クラシック音楽好きの健太さんに特別な感動を与える歴史的劇場",
+    "page_link": "day2.html"
+  },
+  {
+    "spot_id": "castello_sforzesco",
+    "name_ja": "スフォルツェスコ城",
+    "name_it": "Castello Sforzesco",
+    "city": "Milan",
+    "day": "Day 2",
+    "category": "sightseeing",
+    "lat": 45.4705,
+    "lng": 9.1793,
+    "reservation_required": "不要（中庭無料・博物館要）",
+    "official_url": "https://www.milanocastello.it/",
+    "gmaps_url": "https://maps.google.com/?q=Castello+Sforzesco+Milano",
+    "recommended_item_or_feature": "ミケランジェロ最後の未完の傑作『ロンダニーニのピエタ』が収蔵されたルネサンスの城塞",
+    "page_link": "day2.html"
+  },
+  {
+    "spot_id": "luini_panzerotti",
+    "name_ja": "ルイーニ (名物パンツェロッティ)",
+    "name_it": "Luini Panzerotti",
+    "city": "Milan",
+    "day": "Day 2",
+    "category": "dining",
+    "lat": 45.4656,
+    "lng": 9.1925,
+    "reservation_required": "不要（テイクアウト行列店）",
+    "official_url": "https://www.luini.it/",
+    "gmaps_url": "https://maps.google.com/?q=Luini+Panzerotti+Milano",
+    "recommended_item_or_feature": "1888年創業の老舗。熱々とろ〜りモッツァレラ＆トマトの揚げ包みピザ（Panzerotto Pomodoro e Mozzarella）は絶品！",
+    "page_link": "free-meal-guide.html"
+  },
+  {
+    "spot_id": "rinascente_milan",
+    "name_ja": "リナシェンテ ミラノ旗艦店",
+    "name_it": "Rinascente Milano Piazza Duomo",
+    "city": "Milan",
+    "day": "Day 2",
+    "category": "souvenir",
+    "lat": 45.4651,
+    "lng": 9.1932,
+    "reservation_required": "不要",
+    "official_url": "https://www.rinascente.it/",
+    "gmaps_url": "https://maps.google.com/?q=Rinascente+Milano+Piazza+Duomo",
+    "recommended_item_or_feature": "最上階フードホールには高級オリーブオイル、バルサミコ酢、イタリアチョコが勢揃い。ドゥオーモのテラスを眺めるカフェも",
+    "page_link": "souvenir-guide.html"
+  },
+  {
+    "spot_id": "verona_arena",
+    "name_ja": "アレーナ・ディ・ヴェローナ (古代円形闘技場)",
+    "name_it": "Arena di Verona",
+    "city": "Verona",
+    "day": "Day 2",
+    "category": "sightseeing",
+    "lat": 45.439,
+    "lng": 10.9944,
+    "reservation_required": "不要（外観見学）",
+    "official_url": "https://www.arena.it/",
+    "gmaps_url": "https://maps.google.com/?q=Arena+di+Verona",
+    "recommended_item_or_feature": "紀元1世紀建造の古代ローマ円形闘技場。夏期は世界最高峰の野外オペラ祭の舞台となる音楽の聖地",
+    "page_link": "day2.html"
+  },
+  {
+    "spot_id": "casa_giulietta",
+    "name_ja": "ジュリエットの家",
+    "name_it": "Casa di Giulietta",
+    "city": "Verona",
+    "day": "Day 2",
+    "category": "sightseeing",
+    "lat": 45.4419,
+    "lng": 10.9984,
+    "reservation_required": "不要（中庭見学）/ 内部要",
+    "official_url": "https://casadigiulietta.comune.verona.it/",
+    "gmaps_url": "https://maps.google.com/?q=Casa+di+Giulietta+Verona",
+    "recommended_item_or_feature": "シェイクスピア『ロミオとジュリエット』の舞台。中庭にあるジュリエット像の右胸に触れると「永遠の愛と幸運」がもたらされるハネムーン必訪スポット！",
+    "page_link": "day2.html"
+  },
+  {
+    "spot_id": "piazza_erbe",
+    "name_ja": "エルベ広場",
+    "name_it": "Piazza delle Erbe",
+    "city": "Verona",
+    "day": "Day 2",
+    "category": "sightseeing",
+    "lat": 45.4429,
+    "lng": 10.9972,
+    "reservation_required": "不要",
+    "official_url": "https://www.visitverona.it/",
+    "gmaps_url": "https://maps.google.com/?q=Piazza+delle+Erbe+Verona",
+    "recommended_item_or_feature": "かつてのローマ時代のフォーラム跡。フレスコ画が残るマッツァンティの家や露店が立ち並ぶ活気ある美しい広場",
+    "page_link": "day2.html"
+  },
+  {
+    "spot_id": "hotel_venice",
+    "name_ja": "ホテル（ベネチア・メストレ宿泊地）",
+    "name_it": "Hotel Venice Mestre Area (Superior Class)",
+    "city": "Venice",
+    "day": "Day 2",
+    "category": "hotel",
+    "lat": 45.4831,
+    "lng": 12.2355,
+    "reservation_required": "ツアー予約済（ダブルベッド確約）",
+    "official_url": "https://www.his-j.com/",
+    "gmaps_url": "https://maps.google.com/?q=Venice+Mestre+Hotel",
+    "recommended_item_or_feature": "Day 2夕食（ツアーディナー）会場＆宿泊ホテル。快適な客室でベネチア本島観光へ向けて休養",
+    "page_link": "day2.html"
+  },
+  {
+    "spot_id": "piazza_san_marco",
+    "name_ja": "サン・マルコ広場",
+    "name_it": "Piazza San Marco",
+    "city": "Venice",
+    "day": "Day 3",
+    "category": "sightseeing",
+    "lat": 45.4342,
+    "lng": 12.3385,
+    "reservation_required": "不要（散策自由）",
+    "official_url": "https://www.comune.venezia.it/",
+    "gmaps_url": "https://maps.google.com/?q=Piazza+San+Marco+Venezia",
+    "recommended_item_or_feature": "ナポレオンが「世界で最も美しい客間」と称賛した大広場。回廊の楽団による優雅な生演奏が響きます",
+    "page_link": "day3.html"
+  },
+  {
+    "spot_id": "basilica_san_marco",
+    "name_ja": "サン・マルコ寺院",
+    "name_it": "Basilica di San Marco",
+    "city": "Venice",
+    "day": "Day 3",
+    "category": "sightseeing",
+    "lat": 45.4345,
+    "lng": 12.3397,
+    "reservation_required": "ツアー入場または現地要",
+    "official_url": "http://www.basilicasanmarco.it/",
+    "gmaps_url": "https://maps.google.com/?q=Basilica+di+San+Marco+Venezia",
+    "recommended_item_or_feature": "ビザンティン建築の傑作。黄金に輝く天井モザイク「黄金のパラ・ドーロ」は息をのむ美しさ",
+    "page_link": "day3.html"
+  },
+  {
+    "spot_id": "palazzo_ducale",
+    "name_ja": "ドゥカーレ宮殿",
+    "name_it": "Palazzo Ducale",
+    "city": "Venice",
+    "day": "Day 3",
+    "category": "sightseeing",
+    "lat": 45.4337,
+    "lng": 12.3404,
+    "reservation_required": "要（入場時）",
+    "official_url": "https://palazzoducale.visitmuve.it/",
+    "gmaps_url": "https://maps.google.com/?q=Palazzo+Ducale+Venezia",
+    "recommended_item_or_feature": "かつてのベネチア共和国総督邸。ティントレット作の世界最大級の油彩画『天国』が飾られた大評議会の間は圧巻",
+    "page_link": "day3.html"
+  },
+  {
+    "spot_id": "ponte_dei_sospiri",
+    "name_ja": "ため息橋",
+    "name_it": "Ponte dei Sospiri",
+    "city": "Venice",
+    "day": "Day 3",
+    "category": "sightseeing",
+    "lat": 45.434,
+    "lng": 12.3408,
+    "reservation_required": "不要（運河沿いから鑑賞）",
+    "official_url": "https://palazzoducale.visitmuve.it/",
+    "gmaps_url": "https://maps.google.com/?q=Ponte+dei+Sospiri+Venezia",
+    "recommended_item_or_feature": "「日没時にこの橋の下でゴンドラに揺られながらキスをした恋人たちは永遠に結ばれる」という伝説があるロマンチックな橋",
+    "page_link": "day3.html"
+  },
+  {
+    "spot_id": "gondola_station",
+    "name_ja": "ゴンドラ遊覧乗り場（バチーノ・オルセオロ）",
+    "name_it": "Stazione Gondole Bacino Orseolo",
+    "city": "Venice",
+    "day": "Day 3",
+    "category": "sightseeing",
+    "lat": 45.4352,
+    "lng": 12.3375,
+    "reservation_required": "ツアー組込 / 現地手配",
+    "official_url": "https://www.gondolavenezia.it/",
+    "gmaps_url": "https://maps.google.com/?q=Bacino+Orseolo+Gondola+Venice",
+    "recommended_item_or_feature": "水上から見上げる歴史的宮殿と細い運河の静けさ。ハネムーン最大のハイライト！記念写真のベストアングル",
+    "page_link": "day3.html"
+  },
+  {
+    "spot_id": "ponte_di_rialto",
+    "name_ja": "リアルト橋",
+    "name_it": "Ponte di Rialto",
+    "city": "Venice",
+    "day": "Day 3",
+    "category": "sightseeing",
+    "lat": 45.438,
+    "lng": 12.3359,
+    "reservation_required": "不要",
+    "official_url": "https://www.comune.venezia.it/",
+    "gmaps_url": "https://maps.google.com/?q=Ponte+di+Rialto+Venezia",
+    "recommended_item_or_feature": "大運河（カナル・グランデ）に架かる白い大理石の橋。橋上からの大運河のパノラマビューは必見",
+    "page_link": "day3.html"
+  },
+  {
+    "spot_id": "caffe_florian",
+    "name_ja": "カフェ・フローリアン (1720年創業 イタリア最古のカフェ)",
+    "name_it": "Caffè Florian",
+    "city": "Venice",
+    "day": "Day 3",
+    "category": "dining",
+    "lat": 45.4336,
+    "lng": 12.3378,
+    "reservation_required": "不要（直接来店）",
+    "official_url": "https://www.caffeflorian.com/",
+    "gmaps_url": "https://maps.google.com/?q=Caff%C3%A8+Florian+Venezia",
+    "recommended_item_or_feature": "カサノヴァやゲーテも通った世界最古のカフェ。銀のトレイでサーブされるカフェラテやホットチョコレート、クラシカルな室内装飾でハネムーンの乾杯を",
+    "page_link": "free-meal-guide.html"
+  },
+  {
+    "spot_id": "cantina_do_mori",
+    "name_ja": "カンティーナ・ド・モーリ (1462年創業の最古バカロ)",
+    "name_it": "Cantina Do Mori",
+    "city": "Venice",
+    "day": "Day 3",
+    "category": "dining",
+    "lat": 45.4384,
+    "lng": 12.3347,
+    "reservation_required": "不要（立ち飲みバカロ）",
+    "official_url": "https://www.cantinadomori.com/",
+    "gmaps_url": "https://maps.google.com/?q=Cantina+Do+Mori+Venice",
+    "recommended_item_or_feature": "銅鍋が天井から無数に吊るされた風情ある名店。プロセッコやオンブラ（ハウスワイン）と小皿料理「チケッティ（小蛸のマリネ、バッカラ・マンテカート等）」を手軽に満喫",
+    "page_link": "free-meal-guide.html"
+  },
+  {
+    "spot_id": "murano_glass_shop",
+    "name_ja": "ベネチアングラス専門店（ヴェニーニ等）",
+    "name_it": "Venini & Murano Glass Masters",
+    "city": "Venice",
+    "day": "Day 3",
+    "category": "souvenir",
+    "lat": 45.435,
+    "lng": 12.337,
+    "reservation_required": "不要",
+    "official_url": "https://www.venini.com/",
+    "gmaps_url": "https://maps.google.com/?q=Murano+Glass+Piazza+San+Marco",
+    "recommended_item_or_feature": "マエストロの熟練の技が光るペアワイングラス、ミルフィオリのペンダント、美しい花瓶など新婚生活を彩る記念品に最適",
+    "page_link": "souvenir-guide.html"
+  },
+  {
+    "spot_id": "hotel_florence",
+    "name_ja": "ホテル（フィレンツェ宿泊地）",
+    "name_it": "Hotel Florence Area (Superior Class)",
+    "city": "Florence",
+    "day": "Day 3",
+    "category": "hotel",
+    "lat": 43.776,
+    "lng": 11.248,
+    "reservation_required": "ツアー予約済（連泊・ダブルベッド確約）",
+    "official_url": "https://www.his-j.com/",
+    "gmaps_url": "https://maps.google.com/?q=Florence+Hotel",
+    "recommended_item_or_feature": "フィレンツェ2連泊の拠点。荷物を広げたままゆったりと観光できる快適ホテル",
+    "page_link": "day4.html"
+  },
+  {
+    "spot_id": "duomo_firenze",
+    "name_ja": "サンタ・マリア・デル・フィオーレ大聖堂 (花の聖母マリア)",
+    "name_it": "Cattedrale di Santa Maria del Fiore (Duomo di Firenze)",
+    "city": "Florence",
+    "day": "Day 4",
+    "category": "sightseeing",
+    "lat": 43.7731,
+    "lng": 11.256,
+    "reservation_required": "大聖堂入場無料/クーポラ要予約",
+    "official_url": "https://duomo.firenze.it/",
+    "gmaps_url": "https://maps.google.com/?q=Cattedrale+di+Santa+Maria+del+Fiore+Firenze",
+    "recommended_item_or_feature": "白・緑・ピンクの大理石で彩られたルネサンスの象徴。ブルネレスキ設計の巨大クーポラは映画『冷静と情熱のあいだ』の舞台としても有名",
+    "page_link": "day4.html"
+  },
+  {
+    "spot_id": "campanile_giotto",
+    "name_ja": "ジョットの鐘楼",
+    "name_it": "Campanile di Giotto",
+    "city": "Florence",
+    "day": "Day 4",
+    "category": "sightseeing",
+    "lat": 43.7729,
+    "lng": 11.2556,
+    "reservation_required": "要（登頂時）",
+    "official_url": "https://duomo.firenze.it/",
+    "gmaps_url": "https://maps.google.com/?q=Campanile+di+Giotto+Firenze",
+    "recommended_item_or_feature": "高さ約84mの優美な鐘楼。外観の彫刻群と幾何学模様が美しく、ドゥオーモのすぐ隣に佇みます",
+    "page_link": "day4.html"
+  },
+  {
+    "spot_id": "piazza_signoria",
+    "name_ja": "シニョーリア広場 ＆ ヴェッキオ宮殿",
+    "name_it": "Piazza della Signoria & Palazzo Vecchio",
+    "city": "Florence",
+    "day": "Day 4",
+    "category": "sightseeing",
+    "lat": 43.7696,
+    "lng": 11.2558,
+    "reservation_required": "広場自由 / 宮殿入場要",
+    "official_url": "https://cultura.comune.fi.it/pagina/musei-civici-fiorentini/palazzo-vecchio",
+    "gmaps_url": "https://maps.google.com/?q=Piazza+della+Signoria+Firenze",
+    "recommended_item_or_feature": "ミケランジェロの『ダヴィデ像』（レプリカ）やネプチューンの噴水など、野外彫刻美術館のような歴史ある広場",
+    "page_link": "day4.html"
+  },
+  {
+    "spot_id": "galleria_uffizi",
+    "name_ja": "ウフィツィ美術館",
+    "name_it": "Galleria degli Uffizi",
+    "city": "Florence",
+    "day": "Day 4",
+    "category": "sightseeing",
+    "lat": 43.7678,
+    "lng": 11.2553,
+    "reservation_required": "要事前予約推奨（午後自由行動時）",
+    "official_url": "https://www.uffizi.it/",
+    "gmaps_url": "https://maps.google.com/?q=Galleria+degli+Uffizi+Firenze",
+    "recommended_item_or_feature": "ボッティチェッリ『ヴィーナスの誕生』『春（プリマヴェーラ）』、レオナルド・ダ・ヴィンチ『受胎告知』など世界最高峰のルネサンス絵画の宝庫",
+    "page_link": "day4.html"
+  },
+  {
+    "spot_id": "ponte_vecchio",
+    "name_ja": "ポンテ・ヴェッキオ (ヴェッキオ橋)",
+    "name_it": "Ponte Vecchio",
+    "city": "Florence",
+    "day": "Day 4",
+    "category": "sightseeing",
+    "lat": 43.7679,
+    "lng": 11.2531,
+    "reservation_required": "不要",
+    "official_url": "https://www.feelflorence.it/",
+    "gmaps_url": "https://maps.google.com/?q=Ponte+Vecchio+Firenze",
+    "recommended_item_or_feature": "アルノ川に架かるフィレンツェ最古の橋。橋上には伝統的な金銀細工・ジュエリー店が並び、ハネムーンの記念ジュエリー選びにぴったり",
+    "page_link": "day4.html"
+  },
+  {
+    "spot_id": "piazzale_michelangelo",
+    "name_ja": "ミケランジェロ広場",
+    "name_it": "Piazzale Michelangelo",
+    "city": "Florence",
+    "day": "Day 4",
+    "category": "sightseeing",
+    "lat": 43.7628,
+    "lng": 11.265,
+    "reservation_required": "不要（タクシーまたはバス利用推奨）",
+    "official_url": "https://www.feelflorence.it/",
+    "gmaps_url": "https://maps.google.com/?q=Piazzale+Michelangelo+Firenze",
+    "recommended_item_or_feature": "フィレンツェ市内を一望できる丘の上の展望広場。夕暮れ時に赤く染まるドゥオーモとポンテ・ヴェッキオの眺望は感動必至！",
+    "page_link": "day4.html"
+  },
+  {
+    "spot_id": "trattoria_zaza",
+    "name_ja": "トラットリア・ザザ (名物Tボーンステーキ)",
+    "name_it": "Trattoria Zà Zà",
+    "city": "Florence",
+    "day": "Day 4",
+    "category": "dining",
+    "lat": 43.7766,
+    "lng": 11.2535,
+    "reservation_required": "要予約推奨（公式サイトよりオンライン可）",
+    "official_url": "https://www.trattoriazaza.it/",
+    "gmaps_url": "https://maps.google.com/?q=Trattoria+ZaZa+Firenze",
+    "recommended_item_or_feature": "炭火で豪快に焼き上げる本場「ビステッカ・アッラ・フィオレンティーナ（1kg〜）」。トスカーナの赤ワイン（キャンティ）と合わせてお二人でシェア！",
+    "page_link": "free-meal-guide.html"
+  },
+  {
+    "spot_id": "farmacia_santa_maria_novella",
+    "name_ja": "サンタ・マリア・ノヴェッラ薬局 (世界最古の薬局)",
+    "name_it": "Officina Profumo-Farmaceutica di Santa Maria Novella",
+    "city": "Florence",
+    "day": "Day 4",
+    "category": "souvenir",
+    "lat": 43.7744,
+    "lng": 11.2483,
+    "reservation_required": "不要（美術館のような店内）",
+    "official_url": "https://buy.smnovella.com/",
+    "gmaps_url": "https://maps.google.com/?q=Officina+Profumo-Farmaceutica+di+Santa+Maria+Novella+Firenze",
+    "recommended_item_or_feature": "1221年創業。カテリーナ・ディ・メディチが愛した香水「アックア・デッラ・レジーナ（王妃の水）」やローズウォーター、ソープなどハネムーン最高のギフト",
+    "page_link": "souvenir-guide.html"
+  },
+  {
+    "spot_id": "mercato_centrale_firenze",
+    "name_ja": "フィレンツェ中央市場 (メルカート・チェントラーレ)",
+    "name_it": "Mercato Centrale Firenze",
+    "city": "Florence",
+    "day": "Day 4",
+    "category": "dining",
+    "lat": 43.7765,
+    "lng": 11.253,
+    "reservation_required": "不要",
+    "official_url": "https://www.mercatocentrale.it/firenze/",
+    "gmaps_url": "https://maps.google.com/?q=Mercato+Centrale+Firenze",
+    "recommended_item_or_feature": "1階は食材市場、2階はお洒落な巨大フードコート。名物モツ煮込みパニーノ「ランプレドット」やポルチーニパスタを手軽に味わえます",
+    "page_link": "free-meal-guide.html"
+  },
+  {
+    "spot_id": "pisa_torre",
+    "name_ja": "ピサの斜塔",
+    "name_it": "Torre di Pisa (Torre Pendente)",
+    "city": "Pisa",
+    "day": "Day 4",
+    "category": "sightseeing",
+    "lat": 43.723,
+    "lng": 10.3966,
+    "reservation_required": "要（オプショナルツアー組込または事前Web予約）",
+    "official_url": "https://www.opapisa.it/",
+    "gmaps_url": "https://maps.google.com/?q=Torre+di+Pisa",
+    "recommended_item_or_feature": "約4度傾斜した世界遺産の白大理石鐘楼。お二人で塔を支えたり押したりするお茶目なハネムーン記念トリック写真は鉄板！",
+    "page_link": "day4.html"
+  },
+  {
+    "spot_id": "pisa_duomo",
+    "name_ja": "ピサ大聖堂 ＆ 奇跡の広場",
+    "name_it": "Duomo di Pisa & Piazza dei Miracoli",
+    "city": "Pisa",
+    "day": "Day 4",
+    "category": "sightseeing",
+    "lat": 43.7233,
+    "lng": 10.3955,
+    "reservation_required": "斜塔チケットに含まれる / 無料入場枠あり",
+    "official_url": "https://www.opapisa.it/",
+    "gmaps_url": "https://maps.google.com/?q=Piazza+dei+Miracoli+Pisa",
+    "recommended_item_or_feature": "青々とした芝生に白亜の大理石建築が輝く奇跡の空間。ガリレオが振り子の原理を発見したとされる「ガリレオのランプ」が有名",
+    "page_link": "day4.html"
+  },
+  {
+    "spot_id": "piazza_cisterna",
+    "name_ja": "チステルナ広場",
+    "name_it": "Piazza della Cisterna",
+    "city": "San Gimignano",
+    "day": "Day 5",
+    "category": "sightseeing",
+    "lat": 43.4677,
+    "lng": 11.0431,
+    "reservation_required": "不要",
+    "official_url": "https://www.comune.sangimignano.si.it/",
+    "gmaps_url": "https://maps.google.com/?q=Piazza+della+Cisterna+San+Gimignano",
+    "recommended_item_or_feature": "中央に八角形の古井戸（チステルナ）が佇む中世の石畳広場。周囲を取り囲む中世貴族の塔がタイムスリップしたような美しさ",
+    "page_link": "day5.html"
+  },
+  {
+    "spot_id": "torre_grossa",
+    "name_ja": "トッレ・グロッサ (サンジミニャーノ最大の塔)",
+    "name_it": "Torre Grossa & Palazzo del Popolo",
+    "city": "San Gimignano",
+    "day": "Day 5",
+    "category": "sightseeing",
+    "lat": 43.4682,
+    "lng": 11.0435,
+    "reservation_required": "要（市庁舎登頂時）",
+    "official_url": "https://www.sangimignanomusei.it/",
+    "gmaps_url": "https://maps.google.com/?q=Torre+Grossa+San+Gimignano",
+    "recommended_item_or_feature": "高さ54m、町で最も高い塔。頂上からはオリーブ畑や糸杉が広がるトスカーナのパノラマ絶景が見渡せます",
+    "page_link": "day5.html"
+  },
+  {
+    "spot_id": "gelateria_dondoli",
+    "name_ja": "ジェラテリア・ドンドリ (ジェラート世界チャンピオン)",
+    "name_it": "Gelateria Dondoli (Campione del Mondo)",
+    "city": "San Gimignano",
+    "day": "Day 5",
+    "category": "dining",
+    "lat": 43.4678,
+    "lng": 11.043,
+    "reservation_required": "不要（行列必至）",
+    "official_url": "https://www.gelateriadondoli.com/",
+    "gmaps_url": "https://maps.google.com/?q=Gelateria+Dondoli+San+Gimignano",
+    "recommended_item_or_feature": "世界ジェラート大会で連覇した世界最高峰の味！名物「クレーマ・ディ・サンタ・フィナ（サフランと松の実）」や「ヴェルナッチャワイン風味」はここでしか味わえない感動の美味しさ",
+    "page_link": "free-meal-guide.html"
+  },
+  {
+    "spot_id": "pizza_lunch_restaurant",
+    "name_ja": "トスカーナ・ピッツェリア (ツアーランチ会場)",
+    "name_it": "Ristorante Pizzeria Toscana (Tour Included Lunch)",
+    "city": "San Gimignano",
+    "day": "Day 5",
+    "category": "dining",
+    "lat": 43.466,
+    "lng": 11.041,
+    "reservation_required": "ツアー設定済（ランチ込 1/1）",
+    "official_url": "https://www.his-j.com/",
+    "gmaps_url": "https://maps.google.com/?q=Pizzeria+San+Gimignano",
+    "recommended_item_or_feature": "HISツアー設定の本場ピッツァランチ！石窯で香ばしく焼き上げたマルゲリータやトスカーナ前菜を堪能",
+    "page_link": "day5.html"
+  },
+  {
+    "spot_id": "hotel_rome",
+    "name_ja": "ホテル（ローマ市内宿泊地）",
+    "name_it": "Hotel Rome Area (Superior Class)",
+    "city": "Rome",
+    "day": "Day 5",
+    "category": "hotel",
+    "lat": 41.9028,
+    "lng": 12.4964,
+    "reservation_required": "ツアー予約済（2連泊・ダブルベッド確約）",
+    "official_url": "https://www.his-j.com/",
+    "gmaps_url": "https://maps.google.com/?q=Rome+Hotel",
+    "recommended_item_or_feature": "永遠の都ローマ2連泊。地下鉄や主要観光地へのアクセス良好なハネムーン仕様の客室",
+    "page_link": "day5.html"
+  },
+  {
+    "spot_id": "basilica_san_pietro",
+    "name_ja": "サン・ピエトロ大聖堂 (バチカン市国)",
+    "name_it": "Basilica di San Pietro in Vaticano",
+    "city": "Rome",
+    "day": "Day 6",
+    "category": "sightseeing",
+    "lat": 41.9022,
+    "lng": 12.4539,
+    "reservation_required": "入場無料（手荷物検査列あり・早朝推奨）",
+    "official_url": "https://www.vatican.va/",
+    "gmaps_url": "https://maps.google.com/?q=Basilica+di+San+Pietro+Vaticano",
+    "recommended_item_or_feature": "カトリックの総本山。ミケランジェロ24歳の傑作『ピエタ像』、ベルニーニ設計の天蓋（バルダッキーノ）、壮大なパイプオルガンと聖なる響き",
+    "page_link": "rome-free-day-guide.html"
+  },
+  {
+    "spot_id": "musei_vaticani",
+    "name_ja": "バチカン美術館 ＆ システィーナ礼拝堂",
+    "name_it": "Musei Vaticani & Cappella Sistina",
+    "city": "Rome",
+    "day": "Day 6",
+    "category": "sightseeing",
+    "lat": 41.9065,
+    "lng": 12.4536,
+    "reservation_required": "要事前予約（公式サイトで早めのチケット確保必須）",
+    "official_url": "https://www.museivaticani.va/",
+    "gmaps_url": "https://maps.google.com/?q=Musei+Vaticani+Roma",
+    "recommended_item_or_feature": "ラファエロの間『アテネの学堂』、システィーナ礼拝堂のミケランジェロ作『天地創造』『最後の審判』。人類美術の最高峰",
+    "page_link": "rome-free-day-guide.html"
+  },
+  {
+    "spot_id": "colosseo",
+    "name_ja": "コロッセオ (古代円形闘技場)",
+    "name_it": "Colosseo (Anfiteatro Flavio)",
+    "city": "Rome",
+    "day": "Day 6",
+    "category": "sightseeing",
+    "lat": 41.8902,
+    "lng": 12.4922,
+    "reservation_required": "要事前日時指定予約",
+    "official_url": "https://colosseo.it/",
+    "gmaps_url": "https://maps.google.com/?q=Colosseo+Roma",
+    "recommended_item_or_feature": "約2000年前に建てられた古代ローマ帝国の象徴。外観のアーチ構造だけでも圧倒的な迫力でフォトスポットとして外せません",
+    "page_link": "day6.html"
+  },
+  {
+    "spot_id": "foro_romano",
+    "name_ja": "フォロ・ロマーノ",
+    "name_it": "Foro Romano",
+    "city": "Rome",
+    "day": "Day 6",
+    "category": "sightseeing",
+    "lat": 41.8925,
+    "lng": 12.4853,
+    "reservation_required": "コロッセオ共通チケット要",
+    "official_url": "https://colosseo.it/",
+    "gmaps_url": "https://maps.google.com/?q=Foro+Romano+Roma",
+    "recommended_item_or_feature": "古代ローマの政治・経済・宗教の中心地遺跡。カエサルが火葬された神殿跡や凱旋門が並ぶロマンあふれる散策路",
+    "page_link": "day6.html"
+  },
+  {
+    "spot_id": "pantheon",
+    "name_ja": "パンテオン (万神殿)",
+    "name_it": "Pantheon (Basilica di Santa Maria ad Martyres)",
+    "city": "Rome",
+    "day": "Day 6",
+    "category": "sightseeing",
+    "lat": 41.8986,
+    "lng": 12.4769,
+    "reservation_required": "要（入場料5ユーロ・現地またはWeb予約）",
+    "official_url": "https://pantheonroma.com/",
+    "gmaps_url": "https://maps.google.com/?q=Pantheon+Roma",
+    "recommended_item_or_feature": "古代コンクリート造の完全な半球ドーム建築。中央の天窓（オクルス）から差し込む光の筋、巨匠ラファエロの墓所",
+    "page_link": "day6.html"
+  },
+  {
+    "spot_id": "fontana_di_trevi",
+    "name_ja": "トレビの泉",
+    "name_it": "Fontana di Trevi",
+    "city": "Rome",
+    "day": "Day 6",
+    "category": "sightseeing",
+    "lat": 41.9009,
+    "lng": 12.4833,
+    "reservation_required": "不要（早朝または夜のライトアップがおすすめ）",
+    "official_url": "https://www.turismoroma.it/",
+    "gmaps_url": "https://maps.google.com/?q=Fontana+di+Trevi+Roma",
+    "recommended_item_or_feature": "ポーリ宮殿の壁面を飾るバロック屈指の噴水。「後ろ向きにコインを1枚投げると再びローマに戻ってこられる」というハネムーンの誓いのコイン投げを！",
+    "page_link": "day6.html"
+  },
+  {
+    "spot_id": "piazza_di_spagna",
+    "name_ja": "スペイン広場 ＆ スペイン階段",
+    "name_it": "Piazza di Spagna & Scalinata di Trinità dei Monti",
+    "city": "Rome",
+    "day": "Day 6",
+    "category": "sightseeing",
+    "lat": 41.9059,
+    "lng": 12.4828,
+    "reservation_required": "不要",
+    "official_url": "https://www.turismoroma.it/",
+    "gmaps_url": "https://maps.google.com/?q=Piazza+di+Spagna+Roma",
+    "recommended_item_or_feature": "映画『ローマの休日』でオードリー・ヘプバーンが訪れた不朽の名所。階段上のトリニタ・デイ・モンティ教会からの夕景やコンドッティ通りの散策",
+    "page_link": "day6.html"
+  },
+  {
+    "spot_id": "chiesa_san_luigi",
+    "name_ja": "サン・ルイジ・デイ・フランチェージ教会",
+    "name_it": "Chiesa di San Luigi dei Francesi",
+    "city": "Rome",
+    "day": "Day 6",
+    "category": "sightseeing",
+    "lat": 41.8995,
+    "lng": 12.4746,
+    "reservation_required": "不要（入場無料・コイン式照明あり）",
+    "official_url": "https://saintlouis-rome.net/",
+    "gmaps_url": "https://maps.google.com/?q=Chiesa+di+San+Luigi+dei+Francesi+Roma",
+    "recommended_item_or_feature": "カラヴァッジョ初期の三連作『聖マタイの召命』『聖マタイの霊感』『聖マタイの殉教』を無料鑑賞。教会内に響く荘厳なオルガンと合唱の響きに感動する音楽愛好家必見の聖堂",
+    "page_link": "rome-free-day-guide.html"
+  },
+  {
+    "spot_id": "chiesa_del_gesu",
+    "name_ja": "ジェズ教会 (イエズス会総本山)",
+    "name_it": "Chiesa del Gesù",
+    "city": "Rome",
+    "day": "Day 6",
+    "category": "sightseeing",
+    "lat": 41.8959,
+    "lng": 12.4798,
+    "reservation_required": "不要（入場無料）",
+    "official_url": "https://www.chiesadelgesu.org/",
+    "gmaps_url": "https://maps.google.com/?q=Chiesa+del+Gesu+Roma",
+    "recommended_item_or_feature": "バロック建築の先駆。バチッチョ作の天井フレスコ画『イエスの御名の勝利』は天国が開かれたかのような錯視効果。聖歌隊・合唱音楽の音響が世界屈指",
+    "page_link": "rome-free-day-guide.html"
+  },
+  {
+    "spot_id": "chiesa_sant_ignazio",
+    "name_ja": "サンティニャツィオ教会 (だまし絵天井画)",
+    "name_it": "Chiesa di Sant'Ignazio di Loyola",
+    "city": "Rome",
+    "day": "Day 6",
+    "category": "sightseeing",
+    "lat": 41.8992,
+    "lng": 12.4797,
+    "reservation_required": "不要（鏡による撮影列あり）",
+    "official_url": "https://santignazio.gesuiti.it/",
+    "gmaps_url": "https://maps.google.com/?q=Chiesa+di+Sant%27Ignazio+di+Loyola+Roma",
+    "recommended_item_or_feature": "アンドレア・ポッツォによる圧巻の遠視画法（トロンプ・ルイユ）。平らな天井に描かれた巨大な偽クーポラや天国へ昇る聖イグナティウスの天井画",
+    "page_link": "rome-free-day-guide.html"
+  },
+  {
+    "spot_id": "pompi_tiramisu",
+    "name_ja": "ポンピ (ローマNo.1のティラミス専門店)",
+    "name_it": "Pompi Tiramisù (Il Regno del Tiramisù)",
+    "city": "Rome",
+    "day": "Day 6",
+    "category": "dining",
+    "lat": 41.905,
+    "lng": 12.4812,
+    "reservation_required": "不要（テイクアウト）",
+    "official_url": "https://barpompi.it/",
+    "gmaps_url": "https://maps.google.com/?q=Pompi+Tiramisu+Via+della+Croce+Roma",
+    "recommended_item_or_feature": "スペイン広場近く。一番人気の「クラシコ（クラシックマスカルポーネ＆エスプレッソ）」や「フラーゴラ（苺）」を新婚旅行の甘いご褒美に",
+    "page_link": "free-meal-guide.html"
+  },
+  {
+    "spot_id": "castroni_rome",
+    "name_ja": "カストローニ (高級食材・コーヒー・ワインの老舗)",
+    "name_it": "Castroni Ottaviano / Cola di Rienzo",
+    "city": "Rome",
+    "day": "Day 6",
+    "category": "souvenir",
+    "lat": 41.907,
+    "lng": 12.4632,
+    "reservation_required": "不要",
+    "official_url": "https://www.castronicoladirienzo.com/",
+    "gmaps_url": "https://maps.google.com/?q=Castroni+Via+Ottaviano+Roma",
+    "recommended_item_or_feature": "1932年創業。自社焙煎エスプレッソ豆、高級トリュフオイル、パスタ、Baciチョコ、リモンチェッロなどお土産がすべて揃うワンダーランド",
+    "page_link": "souvenir-guide.html"
+  },
+  {
+    "spot_id": "eataly_rome",
+    "name_ja": "イータリー ローマ旗艦店 (大型イタリア食材モール)",
+    "name_it": "Eataly Roma Ostiense",
+    "city": "Rome",
+    "day": "Day 6",
+    "category": "souvenir",
+    "lat": 41.8708,
+    "lng": 12.485,
+    "reservation_required": "不要",
+    "official_url": "https://www.eataly.net/it_it/negozi/roma",
+    "gmaps_url": "https://maps.google.com/?q=Eataly+Roma",
+    "recommended_item_or_feature": "全4フロアの巨大食のテーマパーク。チーズ、生ハム、ワイン、お菓子をじっくり吟味できます",
+    "page_link": "souvenir-guide.html"
+  },
+  {
+    "spot_id": "fco_airport",
+    "name_ja": "ローマ・フィウミチーノ空港 (レオナルド・ダ・ヴィンチ空港)",
+    "name_it": "Aeroporto di Roma-Fiumicino (Leonardo da Vinci)",
+    "city": "Rome",
+    "day": "Day 7",
+    "category": "hotel",
+    "lat": 41.7999,
+    "lng": 12.2462,
+    "reservation_required": "ツアー送迎バス利用（国際線搭乗）",
+    "official_url": "https://www.adr.it/fiumicino",
+    "gmaps_url": "https://maps.google.com/?q=Leonardo+da+Vinci+International+Airport+Rome",
+    "recommended_item_or_feature": "イタリア出国手続き＆免税手続き（Tax Refund）。免税エリア『Avenance Area A/E』で最後のイタリアンショッピング",
+    "page_link": "day7.html"
+  }
+];
+
+    // Category mappings
+    const categoryConfig = {
+      sightseeing: { label: '🏛️ 観光スポット', icon: '🏛️', class: 'icon-sightseeing', color: '#2563eb' },
+      dining: { label: '🍽️ グルメ', icon: '🍽️', class: 'icon-dining', color: '#dc2626' },
+      souvenir: { label: '🎁 お土産', icon: '🎁', class: 'icon-souvenir', color: '#9333ea' },
+      hotel: { label: '🏨 ホテル・拠点', icon: '🏨', class: 'icon-hotel', color: '#16a34a' }
+    };
+
+    // 2. Initialize Leaflet Map
+    // Italy Center ~ [43.5, 12.0], zoom ~ 6.5
+    const map = L.map('tour-map', {
+      center: [43.2, 11.8],
+      zoom: 6.5,
+      zoomSnap: 0.25,
+      scrollWheelZoom: true
+    });
+
+    // OpenStreetMap Tile Layer
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors | Suzuki Honeymoon Tour',
+      maxZoom: 18
+    }).addTo(map);
+
+    // 3. Draw Route Polylines
+    // Day 2 Route: Milan -> Verona -> Venice Mestre
+    const routeDay2 = L.polyline([
+      [45.6300, 8.7230],   // Malpensa
+      [45.4642, 9.1919],   // Milan Duomo
+      [45.5416, 10.2118],  // Brescia
+      [45.4390, 10.9944],  // Verona Arena
+      [45.4064, 11.8768],  // Padova
+      [45.4831, 12.2355]   // Venice Mestre
+    ], {
+      color: '#3b82f6',
+      weight: 4,
+      opacity: 0.85,
+      dashArray: '8, 6'
+    }).addTo(map).bindTooltip("Day 2: ミラノ ➔ ベローナ ➔ ベネチア (約290km)", { sticky: true });
+
+    // Day 3 Route: Venice -> Florence (via A13/A1)
+    const routeDay3 = L.polyline([
+      [45.4831, 12.2355],  // Venice Mestre
+      [45.4342, 12.3385],  // Venice San Marco (Boat)
+      [45.4831, 12.2355],  // Return Mestre
+      [45.4064, 11.8768],  // Padova
+      [44.8381, 11.6198],  // Ferrara
+      [44.4949, 11.3426],  // Bologna
+      [43.7731, 11.2560]   // Florence Duomo
+    ], {
+      color: '#10b981',
+      weight: 4,
+      opacity: 0.85
+    }).addTo(map).bindTooltip("Day 3: ベネチア ➔ フィレンツェ (約260km)", { sticky: true });
+
+    // Day 4 Route: Florence <-> Pisa (Optional)
+    const routeDay4Pisa = L.polyline([
+      [43.7731, 11.2560],  // Florence
+      [43.7167, 10.9486],  // Empoli
+      [43.7230, 10.3966],  // Pisa
+      [43.7167, 10.9486],  // Empoli
+      [43.7731, 11.2560]   // Return Florence
+    ], {
+      color: '#f59e0b',
+      weight: 3,
+      opacity: 0.8,
+      dashArray: '5, 5'
+    }).addTo(map).bindTooltip("Day 4 [OP]: フィレンツェ ⇆ ピサ (往復約170km)", { sticky: true });
+
+    // Day 5 Route: Florence -> San Gimignano -> Rome
+    const routeDay5 = L.polyline([
+      [43.7731, 11.2560],  // Florence
+      [43.4677, 11.0431],  // San Gimignano
+      [43.3188, 11.3308],  // Siena bypass
+      [42.7187, 12.1121],  // Orvieto (A1)
+      [42.2274, 12.4842],  // Orte
+      [41.9028, 12.4964]   // Rome Hotel
+    ], {
+      color: '#ef4444',
+      weight: 4,
+      opacity: 0.85
+    }).addTo(map).bindTooltip("Day 5: フィレンツェ ➔ サンジミニャーノ ➔ ローマ (約280km)", { sticky: true });
+
+    // Day 6 Rome Internal Route
+    const routeDay6 = L.polyline([
+      [41.9028, 12.4964],  // Rome Hotel
+      [41.8902, 12.4922],  // Colosseo
+      [41.8986, 12.4769],  // Pantheon
+      [41.9009, 12.4833],  // Trevi
+      [41.9059, 12.4828],  // Spagna
+      [41.9022, 12.4539]   // Vatican
+    ], {
+      color: '#8b5cf6',
+      weight: 3,
+      opacity: 0.85,
+      dashArray: '6, 4'
+    }).addTo(map).bindTooltip("Day 6: ローマ市内＆バチカン市国 散策ルート", { sticky: true });
+
+    // Day 7 Route: Rome -> FCO
+    const routeDay7 = L.polyline([
+      [41.9028, 12.4964],  // Rome Hotel
+      [41.7999, 12.2462]   // FCO Airport
+    ], {
+      color: '#0284c7',
+      weight: 4,
+      opacity: 0.85,
+      dashArray: '8, 6'
+    }).addTo(map).bindTooltip("Day 7: ローマ ➔ フィウミチーノ空港 (約35km)", { sticky: true });
+
+    // 4. Custom Icon Generator
+    function createCustomMarkerIcon(category) {
+      const cfg = categoryConfig[category] || categoryConfig.sightseeing;
+      return L.divIcon({
+        className: 'custom-div-icon',
+        html: `<div class="custom-map-icon ${cfg.class}"><span>${cfg.icon}</span></div>`,
+        iconSize: [32, 32],
+        iconAnchor: [16, 32],
+        popupAnchor: [0, -32]
+      });
+    }
+
+    // 5. Build Markers and Popups
+    const markerInstances = [];
+
+    spotsData.forEach(spot => {
+      const cfg = categoryConfig[spot.category] || categoryConfig.sightseeing;
+      const marker = L.marker([spot.lat, spot.lng], {
+        icon: createCustomMarkerIcon(spot.category),
+        title: spot.name_ja
+      });
+
+      // Custom Popup HTML
+      const popupHtml = `
+        <div class="popup-card">
+          <div class="popup-header" style="background: linear-gradient(135deg, ${cfg.color}, #1a365d);">
+            <span class="popup-category-badge">${cfg.label}</span>
+            <div class="popup-title-ja">${spot.name_ja}</div>
+            <div class="popup-title-it">${spot.name_it}</div>
+          </div>
+          <div class="popup-body">
+            <div class="popup-meta-row">
+              <span class="popup-badge">📍 ${spot.city}</span>
+              <span class="popup-badge">📅 ${spot.day}</span>
+              <span class="popup-badge">🎟️ ${spot.reservation_required}</span>
+            </div>
+            <div class="popup-desc">${spot.recommended_item_or_feature}</div>
+            <div class="popup-tip">
+              💍 <strong>Honeymoon Point:</strong> お二人で素敵な思い出と写真を！
+            </div>
+            <div class="popup-actions">
+              <a href="${spot.gmaps_url}" target="_blank" rel="noopener" class="popup-btn popup-btn-gmaps">
+                🗺️ Google Maps
+              </a>
+              <a href="${spot.page_link}" class="popup-btn popup-btn-detail">
+                📖 詳細ガイド
+              </a>
+            </div>
+          </div>
+        </div>
+      `;
+
+      marker.bindPopup(popupHtml, {
+        className: 'custom-popup',
+        maxWidth: 320,
+        minWidth: 280
+      });
+
+      marker._spotData = spot;
+      marker.addTo(map);
+      markerInstances.push(marker);
+    });
+
+    // 6. Filtering Logic
+    let currentCategory = 'all';
+    let currentDay = 'all';
+    let currentSearch = '';
+
+    const visibleCountEl = document.getElementById('visible-spots-count');
+
+    function applyFilters() {
+      let visibleCount = 0;
+      const bounds = L.latLngBounds();
+
+      markerInstances.forEach(marker => {
+        const spot = marker._spotData;
+        const matchCategory = (currentCategory === 'all' || spot.category === currentCategory);
+        const matchDay = (currentDay === 'all' || spot.day.includes(currentDay));
+        const matchSearch = (!currentSearch || 
+          spot.name_ja.toLowerCase().includes(currentSearch) ||
+          spot.name_it.toLowerCase().includes(currentSearch) ||
+          spot.city.toLowerCase().includes(currentSearch) ||
+          spot.recommended_item_or_feature.toLowerCase().includes(currentSearch)
+        );
+
+        if (matchCategory && matchDay && matchSearch) {
+          marker.addTo(map);
+          bounds.extend(marker.getLatLng());
+          visibleCount++;
+        } else {
+          map.removeLayer(marker);
+        }
+      });
+
+      visibleCountEl.textContent = visibleCount;
+
+      // Adjust map bounds if filtered to a specific day
+      if (currentDay !== 'all' && bounds.isValid()) {
+        map.fitBounds(bounds, { padding: [40, 40], maxZoom: 14 });
+      } else if (currentDay === 'all' && currentCategory === 'all' && !currentSearch) {
+        map.setView([43.2, 11.8], 6.5);
+      }
+    }
+
+    // Category button events
+    document.querySelectorAll('#category-filters .chip-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('#category-filters .chip-btn').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        currentCategory = this.getAttribute('data-category');
+        applyFilters();
+      });
+    });
+
+    // Day button events
+    document.querySelectorAll('#day-filters .chip-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('#day-filters .chip-btn').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        currentDay = this.getAttribute('data-day');
+        applyFilters();
+      });
+    });
+
+    // Search input event
+    const searchInput = document.getElementById('spot-search-input');
+    searchInput.addEventListener('input', function() {
+      currentSearch = this.value.trim().toLowerCase();
+      applyFilters();
+    });
+
+    // Reset button event
+    document.getElementById('reset-filter-btn').addEventListener('click', function() {
+      currentCategory = 'all';
+      currentDay = 'all';
+      currentSearch = '';
+      searchInput.value = '';
+      
+      document.querySelectorAll('#category-filters .chip-btn').forEach(b => b.classList.remove('active'));
+      document.querySelector('#category-filters [data-category="all"]').classList.add('active');
+
+      document.querySelectorAll('#day-filters .chip-btn').forEach(b => b.classList.remove('active'));
+      document.querySelector('#day-filters [data-day="all"]').classList.add('active');
+
+      applyFilters();
+      map.setView([43.2, 11.8], 6.5);
+    });
+
+    // Initial count
+    applyFilters();
+  </script>
+</body>
+</html>
