@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>ローマ フリー日程情報まとめ</title>
+    <style>
+        :root {
+            --primary: #0071e3;
+            --primary-hover: #0077ed;
+            --accent: #ff9500;
+            --success: #34c759;
+            --danger: #ff3b30;
+            --bg: #f2f2f7;
+            --card-bg: #ffffff;
+            --text: #1c1c1e;
+            --text-secondary: #8e8e93;
+            --border: #e5e5ea;
+            --shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+            --radius: 16px;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Hiragino Sans", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        .navbar {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+            padding: 12px 16px;
+            text-align: center;
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--text);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 16px 16px 60px;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #0b1f3a 0%, #3f6a91 100%);
+            color: #fff;
+            padding: 24px;
+            border-radius: var(--radius);
+            box-shadow: 0 8px 24px rgba(11,31,58,0.2);
+            margin-bottom: 20px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 6px 10px;
+            border-radius: 999px;
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .hero h1 {
+            margin: 0 0 10px;
+            font-size: 24px;
+            line-height: 1.35;
+        }
+
+        .hero p {
+            margin: 0;
+            font-size: 14px;
+            opacity: 0.95;
+        }
+
+        .cta-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 18px;
+        }
+
+        .primary-link, .secondary-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            text-decoration: none;
+            border-radius: 999px;
+            padding: 10px 16px;
+            font-weight: 700;
+            font-size: 13px;
+            transition: all 0.2s ease;
+        }
+
+        .primary-link {
+            background: #fff;
+            color: var(--primary);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+        }
+
+        .secondary-link {
+            background: rgba(255,255,255,0.10);
+            color: #fff;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 19px;
+            font-weight: 800;
+            margin: 28px 0 12px;
+            padding-left: 4px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            padding: 20px;
+            margin-bottom: 18px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+        }
+
+        .note {
+            font-size: 14px;
+            color: var(--text);
+            margin: 0;
+        }
+
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+        }
+
+        @media (min-width: 700px) {
+            .two-col {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .info-card {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+            padding: 18px;
+            box-shadow: var(--shadow);
+        }
+
+        .info-card h3 {
+            margin: 0 0 10px;
+            font-size: 16px;
+        }
+
+        .mini-tag {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 4px 8px;
+            border-radius: 8px;
+            margin-bottom: 8px;
+            background: #eef8ff;
+            color: var(--primary);
+        }
+
+        .info-card ul {
+            margin: 10px 0 0 18px;
+            padding: 0;
+        }
+
+        .info-card li {
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        .media-block {
+            margin-top: 16px;
+            display: grid;
+            gap: 10px;
+        }
+
+        .media-block img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            display: block;
+        }
+
+        .map-wrapper {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            height: 180px;
+            background: #eef2f7;
+        }
+
+        .map-wrapper iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+            display: block;
+        }
+
+        .highlight {
+            background: #fff9e6;
+            border-left: 4px solid #f59e0b;
+            padding: 14px 16px;
+            border-radius: 10px;
+            font-size: 14px;
+            margin: 16px 0;
+        }
+
+        .schedule-list {
+            margin: 0;
+            padding-left: 18px;
+        }
+
+        .schedule-list li {
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        .footer {
+            text-align: center;
+            font-size: 12px;
+            color: var(--text-secondary);
+            margin-top: 26px;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">🎶 ローマ フリー日程情報まとめ</div>
+
+    <div class="container">
+        <div class="hero">
+            <span class="badge">11月20日（金）〜21日（土）向け</span>
+            <h1>ローマの夜は音楽と教会の響きで満たされる</h1>
+            <p>
+                ローマは宗教音楽の中心地です。日常的に無料で質の高い合唱やクラシックを聴ける環境が整っており、
+                連泊の自由時間を最大限に活かすためのおすすめをまとめました。
+            </p>
+            <div class="cta-row">
+                <a class="primary-link" href="index.html">← 旅行レポートに戻る</a>
+                <a class="secondary-link" href="https://tour.his-j.com/sp/04A_30/OI-KMI2811/?lcid=kansa_search_item_imp" target="_blank" rel="noopener noreferrer">🔗 商品ページを見る</a>
+            </div>
+        </div>
+
+        <div class="section-header">🎼 1. 無料で聴ける宗教音楽のおすすめ</div>
+
+        <div class="two-col">
+            <div class="info-card">
+                <div class="mini-tag">1. サン・ピエトロ大聖堂</div>
+                <h3>夕のミサ（毎日開催・無料）</h3>
+                <p class="note">
+                    コンサートという形式ではありませんが、世界最高峰の教会音響と聖歌隊の歌声が無料で堪能できます。
+                </p>
+                <ul>
+                    <li><strong>時間：</strong> 毎日 17:00〜（16:45頃から晩の祈りが始まる場合あり）</li>
+                    <li><strong>場所：</strong> サン・ピエトロ大聖堂内（カテドラの祭壇）</li>
+                    <li><strong>内容：</strong> カペラ・ジュリアや巡礼者の合唱団が典礼音楽を奉唱。広大な空間に響くハーモニーは圧巻です。</li>
+                </ul>
+                <div class="media-block">
+                    <img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=1200&q=80" alt="サン・ピエトロ大聖堂の外観">
+                    <div class="map-wrapper">
+                        <iframe src="https://maps.google.com/maps?q=St.%20Peter%27s%20Basilica%20Rome&hl=ja&z=15&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-card">
+                <div class="mini-tag">2. サンティニャーツィオ教会</div>
+                <h3>無料コンサート（学生・海外合唱団）</h3>
+                <p class="note">
+                    パンテオンのすぐ近くにあり、アメリカやヨーロッパから訪れる大学合唱団・学生聖歌隊の定番会場です。
+                </p>
+                <ul>
+                    <li><strong>時間：</strong> 夜の無料コンサートが比較的頻繁に開催（20:30頃〜）</li>
+                    <li><strong>場所：</strong> Chiesa di Sant'Ignazio di Loyola</li>
+                    <li><strong>ポイント：</strong> 教会前の掲示板やSNSで発表されることが多く、昼間に入口のポスターをチェックするのが最短ルートです。</li>
+                </ul>
+                <div class="media-block">
+                    <img src="https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?auto=format&fit=crop&w=1200&q=80" alt="ローマの古い教会と建築物">
+                    <div class="map-wrapper">
+                        <iframe src="https://maps.google.com/maps?q=Chiesa%20di%20Sant%27Ignazio%20di%20Loyola%20Rome&hl=ja&z=15&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="mini-tag">3. 第25回 国際宗教音楽・芸術祭</div>
+            <h3>2026年11月21日〜25日</h3>
+            <p class="note">
+                世界中のトップクラスの合唱団が集まる、ローマ最大級の無料宗教音楽フェスティバル。夜のメイン演奏会が中心ですが、
+                21日の午前中にオープニングの合唱ミサや公開リハーサルが行われる可能性もあります。
+            </p>
+            <ul class="schedule-list">
+                <li><strong>日程：</strong> 2026年11月21日〜25日</li>
+                <li><strong>状況：</strong> 21日（土）はツアー最終日と重なるため、出発直前に公式スケジュールを確認しておくと良いです。</li>
+                <li><strong>おすすめの回り方：</strong> 11月20日（金）の夕方にサン・ピエトロ大聖堂で合唱を聞き、その後食事をしてサンティニャーツィオ教会へ。</li>
+            </ul>
+        </div>
+
+        <div class="section-header">🎵 2. 11/20（金）と11/21（土）午前の最適プラン</div>
+
+        <div class="card">
+            <div class="mini-tag">11/20（金）夜：オペラとクラシック音楽</div>
+            <p class="note">
+                ローマの連泊ホテルがテルミニ駅周辺であることは、夜の音楽鑑賞にとって大きな強みです。以下の2会場は、テルミニ駅からアクセスが良く、夜の演奏を楽しみやすいです。
+            </p>
+            <div class="two-col" style="margin-top:16px;">
+                <div class="info-card">
+                    <h3>ローマ歌劇場（Teatro dell'Opera di Roma）</h3>
+                    <ul>
+                        <li><strong>立地：</strong> テルミニ駅から徒歩約10分</li>
+                        <li><strong>特徴：</strong> 名門オペラハウス。11月は新シーズン開幕の時期で、オペラやバレエの公演が多いです。</li>
+                        <li><strong>おすすめ：</strong> 新婚旅行の特別な夜として、少しドレスアップして本場の雰囲気を楽しむのに最適です。</li>
+                    </ul>
+                    <div class="media-block">
+                        <img src="https://images.unsplash.com/photo-1505761671935-60e5b5d249b5?auto=format&fit=crop&w=1200&q=80" alt="ローマ歌劇場の外観のイメージ">
+                        <div class="map-wrapper">
+                            <iframe src="https://maps.google.com/maps?q=Teatro%20dell%27Opera%20di%20Roma&hl=ja&z=15&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <h3>セント・ポールズ・ウィズイン・ザ・ウォールズ教会</h3>
+                    <ul>
+                        <li><strong>立地：</strong> テルミニ駅から徒歩約10分</li>
+                        <li><strong>特徴：</strong> 教会ならではの素晴らしい音響と、プロの歌手・オーケストラの演奏が楽しめます。</li>
+                        <li><strong>おすすめ：</strong> ドレスコードが厳しくなく、当日券が出ることも多く、旅行者にとってハードルが低いです。</li>
+                    </ul>
+                    <div class="media-block">
+                        <img src="https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?auto=format&fit=crop&w=1200&q=80" alt="ローマの教会と夕景">
+                        <div class="map-wrapper">
+                            <iframe src="https://maps.google.com/maps?q=St.%20Paul%27s%20Within%20the%20Walls%20Rome&hl=ja&z=15&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="mini-tag">11/20（金）日中：美術館を効率よく楽しむ</div>
+            <ul class="schedule-list">
+                <li><strong>バチカン美術館：</strong> システィーナ礼拝堂は必見。神聖な空間であり、音楽好きの方にとっては感慨深い場所です。最低3時間を見込んで早めに予約を取りましょう。</li>
+                <li><strong>ボルゲーゼ美術館：</strong> ベルニーニの名作や、静かな館内で美術に浸れる場所。完全予約制で見学時間も管理されているため、混雑が軽くゆったり見られます。</li>
+                <li><strong>ポイント：</strong> 金曜日は通常営業日で、午前中に早めに入るのがベストです。館内でゆっくり歩き、午後に食事と散策へ回ると満足度が高いです。</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <div class="mini-tag">11/21（土）午前：出発直前のローマ散歩</div>
+            <ul class="schedule-list">
+                <li><strong>サンタ・マリア・マッジョーレ大聖堂：</strong> テルミニ駅から徒歩約5分。朝7時前後から見学可能で、黄金のモザイクや静かな空気を味わえます。</li>
+                <li><strong>サンタ・マリア・デッリ・アンジェリ教会：</strong> テルミニ駅の目の前にあり、古代ローマの浴場跡を改装した壮大な空間です。朝の静けさが非常に好ましいです。</li>
+                <li><strong>最後のイタリアン・バール体験：</strong> カプチーノやクロワッサン、マリトッツォで最後の朝を締めくくると、旅の余韻がより深くなります。</li>
+            </ul>
+        </div>
+
+        <div class="highlight">
+            お二人の趣味（合唱・音楽）と、連泊の利点を上手に活かせば、金曜日の夜と土曜日の朝を非常に濃い時間にできます。
+            11月20日（金）の夕方にサン・ピエトロ大聖堂で合唱を楽しみ、その後に食事や小さなコンサートへ足を伸ばすプランは特におすすめです。
+        </div>
+
+        <div class="cta-row" style="margin-top: 10px;">
+            <a class="primary-link" href="index.html">📊 旅行レポートへ戻る</a>
+            <a class="secondary-link" href="https://tour.his-j.com/sp/04A_30/OI-KMI2811/?lcid=kansa_search_item_imp" target="_blank" rel="noopener noreferrer">🔗 商品ページへ</a>
+        </div>
+
+        <div class="footer">© 2026 ローマ フリー日程情報まとめ</div>
+    </div>
+</body>
+</html>
