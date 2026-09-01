@@ -3,301 +3,173 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=no">
-  <title>全体ツアールートMAP | イタリア7都市周遊8日間 ハネムーンしおり</title>
-  <meta name="description" content="日別ルートナビゲーション、スポットタップでの半径500m周辺施設拡大、イタリア全域俯瞰ズームリセット機能を搭載したインタラクティブMAP">
+  <title>全体ツアールートMAP ＆ 宿泊ホテル候補 | イタリア新婚旅行8日間</title>
+  <meta name="description" content="HISイタリア8日間ツアールート、各都市観光スポット、レストラン、お土産店、宿泊ホテル候補一覧を完全網羅したインタラクティブMAP">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+  <style>
+    #tour-map {
+      width: 100%;
+      height: 52vh;
+      min-height: 320px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-sm);
+      z-index: 10;
+    }
+    .map-controls-panel {
+      background: #ffffff;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-color);
+      padding: 8px;
+      margin: 8px 0 10px;
+      box-shadow: var(--shadow-sm);
+    }
+    .map-filters-bar {
+      display: flex;
+      gap: 5px;
+      overflow-x: auto;
+      padding-bottom: 4px;
+      margin-bottom: 8px;
+      scrollbar-width: none;
+    }
+    .map-filters-bar::-webkit-scrollbar { display: none; }
+    .nearby-drawer {
+      display: none;
+      background: #ffffff;
+      border: 2px solid var(--primary-light);
+      border-radius: var(--radius-md);
+      padding: 8px;
+      margin-top: 8px;
+      box-shadow: var(--shadow-md);
+      animation: fadeIn 0.2s ease-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
 </head>
 <body>
   <main class="container" style="padding-top: 6px;">
 
-    <!-- Compact Map Container Card (320px Canvas per specification) -->
-    <div style="background:#ffffff; border-radius:var(--radius-lg); border:1px solid var(--border-color); overflow:hidden; box-shadow:var(--shadow-sm); margin-bottom:10px;">
-      
-      <!-- Header & Day Navigator -->
-      <div style="background:#1e293b; color:#ffffff; padding:6px 10px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:4px;">
-        <div style="display:flex; align-items:center; gap:5px;">
-          <button id="map-prev-day" class="btn btn-secondary" style="padding:2px 8px; font-size:0.7rem; min-height:26px; background:#334155; color:#fff !important; border-color:#475569;">◀ 前の日</button>
-          <strong id="map-day-indicator" style="font-size:0.85rem; color:#fbd38d;">📅 Day 2: ミラノ ➔ ベローナ ➔ ベネチア</strong>
-          <button id="map-next-day" class="btn btn-secondary" style="padding:2px 8px; font-size:0.7rem; min-height:26px; background:#334155; color:#fff !important; border-color:#475569;">次の日 ▶</button>
+    <!-- Hero Header -->
+    <div class="hero-card" style="background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);">
+      <span class="hero-tag">🗺️ インタラクティブGPSナビ</span>
+      <h2 class="hero-title">全体ツアールートMAP ＆ 宿泊ホテル候補</h2>
+      <p class="hero-subtitle">
+        ミラノ・ベローナ・ベネチア・フィレンツェ・ピサ・サンジミニャーノ・ローマの観光地、レストラン、お土産店、宿泊ホテル候補（メストレ・トスカーナ・テルミニ駅周辺）を完全網羅！
+      </p>
+    </div>
+
+    <!-- Map Container -->
+    <div id="tour-map"></div>
+
+    <!-- Map Controls Panel -->
+    <div class="map-controls-panel">
+      <!-- Category Filter Chips -->
+      <div class="map-filters-bar">
+        <button class="day-chip map-filter-cat active" data-cat="all">全て表示</button>
+        <button class="day-chip map-filter-cat" data-cat="sightseeing">🏛️ 観光・名所</button>
+        <button class="day-chip map-filter-cat" data-cat="dining">🍽️ グルメ・カフェ</button>
+        <button class="day-chip map-filter-cat" data-cat="souvenir">🎁 お土産・免税</button>
+        <button class="day-chip map-filter-cat" data-cat="hotel">🏨 宿泊ホテル候補</button>
+      </div>
+
+      <!-- Day Navigation and View Controls -->
+      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
+        <div style="display:flex; gap:4px; align-items:center;">
+          <button id="map-prev-day" class="btn btn-secondary" style="padding:3px 8px; font-size:0.72rem;">◀ 前日</button>
+          <span id="map-day-indicator" style="font-size:0.78rem; font-weight:800; color:var(--primary-color);">📅 Day 2: ミラノ➔ベローナ➔ベネチア</span>
+          <button id="map-next-day" class="btn btn-secondary" style="padding:3px 8px; font-size:0.72rem;">翌日 ▶</button>
         </div>
         <div style="display:flex; gap:4px;">
-          <button id="btn-zoom-italy" class="btn btn-secondary" style="padding:2px 6px; font-size:0.68rem; min-height:26px; background:#475569; color:#fff !important; border:none;">🇮🇹 全体俯瞰</button>
-          <button id="btn-zoom-city" class="btn btn-secondary" style="padding:2px 6px; font-size:0.68rem; min-height:26px; background:#475569; color:#fff !important; border:none;">🎯 拡大</button>
+          <button id="btn-zoom-city" class="btn btn-primary" style="padding:3px 8px; font-size:0.72rem;">🔍 都市拡大</button>
+          <button id="btn-zoom-italy" class="btn btn-secondary" style="padding:3px 8px; font-size:0.72rem;">🇮🇹 全体俯瞰</button>
         </div>
       </div>
 
-      <!-- Leaflet Map Canvas (320px Height as instructed) -->
-      <div id="tour-map" style="width:100%; height:320px; z-index:1;"></div>
+      <!-- Nearby Facilities Drawer (Appears when a pin is tapped) -->
+      <div id="nearby-drawer" class="nearby-drawer">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px; border-bottom:1px solid var(--border-color); padding-bottom:4px;">
+          <span id="nearby-spot-title" style="font-size:0.8rem; font-weight:800; color:var(--primary-color);">📍 周辺スポット情報</span>
+          <button id="btn-close-nearby" class="btn btn-secondary" style="padding:1px 6px; font-size:0.68rem;">✕ 閉じる</button>
+        </div>
+        <div id="nearby-items-grid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:5px;"></div>
+      </div>
 
-      <!-- Current Day Summary Banner -->
-      <div id="map-day-summary-card" style="background:#f1f5f9; padding:6px 10px; border-top:1px solid var(--border-color); font-size:0.74rem;">
-        <div style="display:flex; justify-content:space-between; align-items:center; gap:6px;">
-          <div style="flex:1; overflow:hidden;">
-            <strong id="day-summary-title" style="color:var(--primary-color); font-size:0.8rem; display:block; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">Day 2: ミラノ半日観光 ➔ ベローナ ➔ ベネチア</strong>
-            <span id="day-summary-desc" style="color:var(--text-muted); font-size:0.68rem; display:block; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">移動: 専用バス約290km | 朝ホテル込 / 昼各自 / 夕ツアー込</span>
+      <!-- Current Day Summary Box -->
+      <div id="day-summary-box" style="background:#f8fafc; border-radius:var(--radius-sm); border:1px solid var(--border-color); padding:6px 8px; margin-top:8px; display:flex; justify-content:space-between; align-items:center;">
+        <div>
+          <strong id="day-summary-title" style="font-size:0.78rem; color:var(--primary-color);">Day 2: ミラノ半日観光 ➔ ベローナ散策 ➔ ベネチア歓迎ディナー</strong><br>
+          <small id="day-summary-desc" style="color:var(--text-muted); font-size:0.68rem;">移動: 専用バス約290km | 朝ホテル込 / 昼各自 / 夕ツアー込</small>
+        </div>
+        <a id="day-summary-link" href="day2.html" class="btn btn-primary" style="font-size:0.68rem; padding:3px 8px; white-space:nowrap;">Day 2 しおり ➔</a>
+      </div>
+    </div>
+
+    <!-- Hotel Candidates Information Card -->
+    <section class="section" style="margin-top:14px;">
+      <div class="section-header">
+        <h2 class="section-title">🏨 HIS ツアー宿泊ホテル候補一覧</h2>
+        <span class="section-subtitle">HIS Impresso 条件書・利用予定ホテル</span>
+      </div>
+      
+      <div class="cards-grid">
+        <!-- Venice / Mestre Hotels -->
+        <div class="spot-card">
+          <div class="spot-body">
+            <span class="hero-tag" style="background:#0284c7; color:#fff;">Day 2 宿泊地 • メストレ地区</span>
+            <h3 class="spot-name-ja">ベネチア（メストレ地区）宿泊ホテル候補</h3>
+            <p class="spot-desc">
+              ● <strong>ホテル プラザ</strong> (駅前すぐ・大型快適)<br>
+              ● <strong>レオナルド ロイヤル ホテル ベネチア メストレ</strong> (スタイリッシュ4つ星)<br>
+              ● <strong>ベストウェスタン プラス ホテル ボローニャ</strong> (駅前好立地)<br>
+              ● <strong>NH ベネチア ラグーナ パレス</strong> (マリーナ沿い)<br>
+              ● <strong>ホテル デルフィーノ / アンバシアトーリ</strong> (バス停前)
+            </p>
+            <div class="spot-mime-tip"><strong>【みめTip】</strong> メストレ地区のホテルは客室が広めで静か。翌日の本島観光に備えてしっかり充電！</div>
           </div>
-          <a id="day-summary-link" href="day2.html" class="btn btn-primary" style="padding:3px 8px; font-size:0.72rem; min-height:26px; flex-shrink:0;">Day 2 しおり ➔</a>
         </div>
-      </div>
-    </div>
 
-    <!-- Nearby Facilities Drawer (Auto-populated on marker click) -->
-    <div id="nearby-drawer" style="background:#ffffff; border:1px solid var(--border-color); border-radius:var(--radius-md); padding:8px 10px; margin-bottom:10px; box-shadow:var(--shadow-sm); display:none;">
-      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
-        <strong id="nearby-spot-title" style="font-size:0.82rem; color:var(--primary-color);">📍 選択スポットの周辺施設（半径500m以内）</strong>
-        <button id="btn-close-nearby" class="btn btn-secondary" style="padding:1px 6px; font-size:0.65rem; min-height:22px;">閉じる ✕</button>
-      </div>
-      <div id="nearby-items-grid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(180px, 1fr)); gap:6px;">
-        <!-- Injected via JavaScript -->
-      </div>
-    </div>
+        <!-- Florence & Suburbs Hotels -->
+        <div class="spot-card">
+          <div class="spot-body">
+            <span class="hero-tag" style="background:#7c3aed; color:#fff;">Day 3 &amp; 4 宿泊地 • トスカーナ地区</span>
+            <h3 class="spot-name-ja">フィレンツェ・近郊 宿泊ホテル候補（2連泊）</h3>
+            <p class="spot-desc">
+              ● <strong>B&amp;B ホテル カレンツァーノ ファースト</strong> (高速IC至近)<br>
+              ● <strong>ホテル デルタ フィレンツェ</strong> (大型4つ星)<br>
+              ● <strong>アート ホテル ミロ / ムセオ</strong> (モダンデザイン)<br>
+              ● <strong>スターホテルズ ヴェスプッチ</strong> (カンピ・ビセンツィオ)<br>
+              ● <strong>グランド ホテル クローチェ ディ マルタ</strong> (モンテカティーニ温泉街)
+            </p>
+            <div class="spot-mime-tip"><strong>【みめTip】</strong> 2連泊なのでスーツケースを広げて整理可能。翌日のピサ観光用の身軽なバッグを準備しましょう。</div>
+          </div>
+        </div>
 
-    <!-- Filter & Search (Below Map) -->
-    <section class="section">
-      <div style="display:flex; gap:4px; margin-bottom:8px;">
-        <input type="text" id="search-input" class="calc-input" placeholder="🔍 スポット名・都市名・名物で検索..." style="font-size:0.78rem; padding:4px 6px;">
-      </div>
-      <div style="display:flex; gap:4px; overflow-x:auto; padding-bottom:4px; scrollbar-width:none;">
-        <button class="day-chip map-filter-cat active" data-cat="all" style="min-width:55px; padding:3px 6px; font-size:0.68rem;">すべて(53)</button>
-        <button class="day-chip map-filter-cat" data-cat="sightseeing" style="min-width:65px; padding:3px 6px; font-size:0.68rem;">🏛️ 観光(20)</button>
-        <button class="day-chip map-filter-cat" data-cat="dining" style="min-width:65px; padding:3px 6px; font-size:0.68rem;">🍽️ グルメ(21)</button>
-        <button class="day-chip map-filter-cat" data-cat="souvenir" style="min-width:65px; padding:3px 6px; font-size:0.68rem;">🎁 お土産(6)</button>
-        <button class="day-chip map-filter-cat" data-cat="hotel" style="min-width:65px; padding:3px 6px; font-size:0.68rem;">🏨 拠点(6)</button>
+        <!-- Rome Termini Area Hotels -->
+        <div class="spot-card">
+          <div class="spot-body">
+            <span class="hero-tag" style="background:#dc2626; color:#fff;">Day 5 &amp; 6 宿泊地 • テルミニ駅周辺</span>
+            <h3 class="spot-name-ja">ローマ（テルミニ駅周辺）宿泊ホテル候補（2連泊）</h3>
+            <p class="spot-desc">
+              ● <strong>ホテル アルキメーデ</strong> (テルミニ駅北口徒歩3分)<br>
+              ● <strong>スターホテルズ メトロポール</strong> (オペラ座至近・高級感)<br>
+              ● <strong>BW プレミア ホテル ロイヤル サンティーナ</strong> (モダン設備)<br>
+              ● <strong>BW プラス ホテル ユニバース</strong> (朝食充実)<br>
+              ● <strong>ジョベルティ アート ホテル</strong> (デザイン性抜群)<br>
+              ● <strong>ホテル マッシモ ダゼリオ</strong> (老舗名門クラシック)
+            </p>
+            <div class="spot-mime-tip"><strong>【みめTip】</strong> テルミニ駅周辺は地下鉄A線・B線が交差し自由行動に最適！夜間の一人歩きは避け大通りを利用。</div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <script>
-      document.addEventListener('DOMContentLoaded', () => {
-        if (typeof L === 'undefined') return;
-
-        const map = L.map('tour-map', {
-          zoomControl: true,
-          scrollWheelZoom: true
-        }).setView([43.2, 11.8], 6);
-
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-          maxZoom: 19,
-          attribution: '© OpenStreetMap contributors'
-        }).addTo(map);
-
-        const dayConfig = {
-          1: { title: "Day 1: 関西国際空港 出発 ➔ ドーハ乗継 ➔ ミラノ着", desc: "移動: 国際線フライト ➔ 専用バス | 食事: 機内食 / 軽食", center: [45.6300, 8.7230], zoom: 11, link: "day1.html" },
-          2: { title: "Day 2: ミラノ半日観光 ➔ ベローナ散策 ➔ ベネチア歓迎ディナー", desc: "移動: 専用バス約290km | 朝ホテル込 / 昼各自 / 夕ツアー込", center: [45.4642, 9.1919], zoom: 13, link: "day2.html" },
-          3: { title: "Day 3: 水の都ベネチア観光 ＆ ゴンドラ遊覧 ➔ フィレンツェへ", desc: "移動: 専用ボート ＆ 専用バス約260km | 朝ホテル込 / 昼各自 / 夕各自", center: [45.4342, 12.3389], zoom: 14, link: "day3.html" },
-          4: { title: "Day 4: フィレンツェ終日観光 ＆ 【OP】ピサの斜塔", desc: "移動: 徒歩・市内バス（ピサ約170km）| 朝ホテル込 / 昼各自 / 夕各自", center: [43.7731, 11.2560], zoom: 14, link: "day4.html" },
-          5: { title: "Day 5: サンジミニャーノ ＆ ピッツァ昼食 ➔ 永遠の都ローマへ", desc: "移動: 専用バス約280km | 朝ホテル込 / 昼ピッツァ込 / 夕各自", center: [43.4677, 11.0433], zoom: 13, link: "day5.html" },
-          6: { title: "Day 6: ローマ ＆ バチカン市国 終日自由行動・音楽教会散策", desc: "移動: 地下鉄・徒歩 | 朝ホテル込 / 昼各自 / 夕各自ラストディナー", center: [41.9022, 12.4700], zoom: 14, link: "day6.html" },
-          7: { title: "Day 7: ローマ自由行動 ➔ FCO空港発 ➔ 免税手続き ➔ 帰国便", desc: "移動: 専用バス ➔ 国際線フライト | 朝ホテル込 / 昼各自 / 夕機内食", center: [41.7999, 12.2462], zoom: 11, link: "day7.html" },
-          8: { title: "Day 8: 関西国際空港 到着 ➔ ツアー解散 ➔ ご自宅へ", desc: "移動: 国際線フライト ➔ JR/南海 | 食事: 機内食 / ご自宅", center: [34.4347, 135.2440], zoom: 10, link: "day8.html" }
-        };
-
-        const allSpots = [
-          { id: "s_duomo", day: 2, city: "Milan", cat: "sightseeing", name: "ミラノ大聖堂 (Duomo)", lat: 45.4642, lng: 9.1919, tip: "肩・膝隠すストール必須。ハト餌・ミサンガ売り完全無視！", url: "https://maps.google.com/?q=Duomo+di+Milano" },
-          { id: "s_galleria", day: 2, city: "Milan", cat: "sightseeing", name: "ガッレリア・アーケード", lat: 45.4658, lng: 9.1900, tip: "牡牛モザイクで踵3回転幸運ジンクス！", url: "https://maps.google.com/?q=Galleria+Vittorio+Emanuele+II+Milano" },
-          { id: "s_scala", day: 2, city: "Milan", cat: "sightseeing", name: "スカラ座 (歌劇場)", lat: 45.4674, lng: 9.1895, tip: "オペラの聖地。合唱・音楽好き必見。", url: "https://maps.google.com/?q=Teatro+alla+Scala+Milano" },
-          { id: "s_sforzesco", day: 2, city: "Milan", cat: "sightseeing", name: "スフォルツェスコ城", lat: 45.4705, lng: 9.1793, tip: "ミケランジェロ最後のピエタ像収蔵。中庭見学無料。", url: "https://maps.google.com/?q=Castello+Sforzesco+Milano" },
-          { id: "d_luini", day: 2, city: "Milan", cat: "dining", name: "ルイーニ (包み揚げピザ)", lat: 45.4656, lng: 9.1925, tip: "熱々モッツァレラ＆トマト！ウェットティッシュ必須。", url: "https://maps.google.com/?q=Luini+Panzerotti+Milano" },
-          { id: "d_spontini", day: 2, city: "Milan", cat: "dining", name: "スポンティーニ (厚焼きピザ)", lat: 45.4657, lng: 9.1928, tip: "カリカリふわふわのマルゲリータ！", url: "https://maps.google.com/?q=Spontini+Duomo+Milano" },
-          { id: "g_rinascente", day: 2, city: "Milan", cat: "souvenir", name: "リナシェンテ百貨店", lat: 45.4651, lng: 9.1932, tip: "7階フードホールでお土産＆綺麗トイレ。", url: "https://maps.google.com/?q=Rinascente+Milano" },
-          { id: "s_giulietta", day: 2, city: "Verona", cat: "sightseeing", name: "ジュリエットの家", lat: 45.4419, lng: 10.9984, tip: "右胸に触れると永遠の愛の幸運！", url: "https://maps.google.com/?q=Casa+di+Giulietta+Verona" },
-          { id: "s_arena", day: 2, city: "Verona", cat: "sightseeing", name: "アレーナ (古代闘技場)", lat: 45.4390, lng: 10.9944, tip: "紀元1世紀の古代闘技場。", url: "https://maps.google.com/?q=Arena+di+Verona" },
-          { id: "s_sanmarco", day: 3, city: "Venice", cat: "sightseeing", name: "サン・マルコ大聖堂", lat: 45.4342, lng: 12.3389, tip: "黄金のモザイク天井。バールでトイレ利用。", url: "https://maps.google.com/?q=Piazza+San+Marco+Venezia" },
-          { id: "s_ducale", day: 3, city: "Venice", cat: "sightseeing", name: "ドゥカーレ宮殿＆ため息橋", lat: 45.4338, lng: 12.3406, tip: "ゴンドラでため息橋下キス＝永遠の愛！", url: "https://maps.google.com/?q=Palazzo+Ducale+Venezia" },
-          { id: "d_florian", day: 3, city: "Venice", cat: "dining", name: "カフェ・フローリアン", lat: 45.4336, lng: 12.3382, tip: "1720年創業世界最古カフェ。", url: "https://maps.google.com/?q=Caffe+Florian+Venezia" },
-          { id: "d_domori", day: 3, city: "Venice", cat: "dining", name: "カンティーナ・ド・モーリ", lat: 45.4385, lng: 12.3340, tip: "最古バカロ。チケッティと白ワイン。", url: "https://maps.google.com/?q=Cantina+Do+Mori+Venezia" },
-          { id: "s_rialto", day: 3, city: "Venice", cat: "sightseeing", name: "リアルト橋", lat: 45.4380, lng: 12.3359, tip: "大運河パノラマ絶景！スリ注意。", url: "https://maps.google.com/?q=Ponte+di+Rialto+Venezia" },
-          { id: "s_michelangelo", day: 4, city: "Florence", cat: "sightseeing", name: "ミケランジェロ広場", lat: 43.7629, lng: 11.2650, tip: "フィレンツェ全景パノラマ記念撮影！", url: "https://maps.google.com/?q=Piazzale+Michelangelo+Firenze" },
-          { id: "s_duomo_fl", day: 4, city: "Florence", cat: "sightseeing", name: "フィレンツェ大聖堂", lat: 43.7731, lng: 11.2560, tip: "赤褐色のクーポラと大理石ファサード。", url: "https://maps.google.com/?q=Duomo+Firenze" },
-          { id: "s_vecchio", day: 4, city: "Florence", cat: "sightseeing", name: "ポンテ・ヴェッキオ", lat: 43.7680, lng: 11.2532, tip: "最古の橋。金銀ジュエリー店街。", url: "https://maps.google.com/?q=Ponte+Vecchio+Firenze" },
-          { id: "g_smn", day: 4, city: "Florence", cat: "souvenir", name: "SMN世界最古薬局", lat: 43.7744, lng: 11.2483, tip: "王妃の水、ザクロ石鹸。€70.01〜免税！", url: "https://maps.google.com/?q=Santa+Maria+Novella+Pharmacy+Firenze" },
-          { id: "d_zaza", day: 4, city: "Florence", cat: "dining", name: "トラットリア・ザザ", lat: 43.7766, lng: 11.2536, tip: "名物Tボーンステーキ2人シェア！", url: "https://maps.google.com/?q=Trattoria+ZaZa+Firenze" },
-          { id: "s_pisa", day: 4, city: "Pisa", cat: "sightseeing", name: "ピサの斜塔＆奇跡の広場", lat: 43.7230, lng: 10.3966, tip: "【超重要】乗車前打刻厳守！罰金回避。", url: "https://maps.google.com/?q=Tower+of+Pisa" },
-          { id: "s_cisterna", day: 5, city: "San Gimignano", cat: "sightseeing", name: "チステルナ広場", lat: 43.4677, lng: 11.0433, tip: "中世の塔の街世界遺産。", url: "https://maps.google.com/?q=Piazza+della+Cisterna+San+Gimignano" },
-          { id: "d_dondoli", day: 5, city: "San Gimignano", cat: "dining", name: "ドンドリジェラート", lat: 43.4677, lng: 11.0435, tip: "世界一サフラン＆松の実ジェラート！", url: "https://maps.google.com/?q=Gelateria+Dondoli+San+Gimignano" },
-          { id: "s_vatican", day: 6, city: "Rome", cat: "sightseeing", name: "バチカン美術館＆システィーナ", lat: 41.9065, lng: 12.4536, tip: "最後の審判は完全撮影禁止・私語厳禁！", url: "https://maps.google.com/?q=Vatican+Museums" },
-          { id: "s_sanpietro", day: 6, city: "Rome", cat: "sightseeing", name: "サン・ピエトロ大聖堂 (夕ミサ)", lat: 41.9022, lng: 12.4539, tip: "17:00聖歌隊合唱＆オルガン無料拝聴！", url: "https://maps.google.com/?q=St+Peter+Basilica+Rome" },
-          { id: "s_colosseo", day: 6, city: "Rome", cat: "sightseeing", name: "コロッセオ＆フォロロマーノ", lat: 41.8902, lng: 12.4922, tip: "ミサンガ売り完全無視！", url: "https://maps.google.com/?q=Colosseum+Rome" },
-          { id: "s_trevi", day: 5, city: "Rome", cat: "sightseeing", name: "トレビの泉", lat: 41.9009, lng: 12.4833, tip: "コイン2枚で愛する人と一生一緒！", url: "https://maps.google.com/?q=Trevi+Fountain+Rome" },
-          { id: "s_pantheon", day: 6, city: "Rome", cat: "sightseeing", name: "パンテオン (万神殿)", lat: 41.8986, lng: 12.4769, tip: "古代ローマ建築の奇跡。音響絶美。", url: "https://maps.google.com/?q=Pantheon+Rome" },
-          { id: "s_spagna", day: 6, city: "Rome", cat: "sightseeing", name: "スペイン広場階段", lat: 41.9060, lng: 12.4828, tip: "階段での飲食・座り込み禁止。", url: "https://maps.google.com/?q=Piazza+di+Spagna+Rome" },
-          { id: "s_sanluigi", day: 6, city: "Rome", cat: "sightseeing", name: "サン・ルイジ教会", lat: 41.8997, lng: 12.4750, tip: "カラヴァッジョ三部作無料鑑賞！", url: "https://maps.google.com/?q=San+Luigi+dei+Francesi+Rome" },
-          { id: "d_denzo", day: 6, city: "Rome", cat: "dining", name: "トラットリア・ダ・エンツォ", lat: 41.8878, lng: 12.4770, tip: "本場濃厚カルボナーラ＆カチョエペペ！", url: "https://maps.google.com/?q=Da+Enzo+al+29+Rome" },
-          { id: "d_pompi", day: 6, city: "Rome", cat: "dining", name: "ポンピ (ティラミス)", lat: 41.9054, lng: 12.4800, tip: "ティラミスの王様！", url: "https://maps.google.com/?q=Pompi+Tiramisu+Rome" }
-        ];
-
-        let currentMarkers = [];
-        let activeCircle = null;
-
-        function getMarkerColor(cat) {
-          if (cat === 'sightseeing') return '#2563eb';
-          if (cat === 'dining') return '#dc2626';
-          if (cat === 'souvenir') return '#9333ea';
-          return '#16a34a';
-        }
-
-        function calculateDistance(lat1, lon1, lat2, lon2) {
-          const R = 6371e3;
-          const φ1 = lat1 * Math.PI/180;
-          const φ2 = lat2 * Math.PI/180;
-          const Δφ = (lat2-lat1) * Math.PI/180;
-          const Δλ = (lon2-lon1) * Math.PI/180;
-          const a = Math.sin(Δφ/2) * Math.sin(Δφ/2) +
-                    Math.cos(φ1) * Math.cos(φ2) *
-                    Math.sin(Δλ/2) * Math.sin(Δλ/2);
-          const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
-          return Math.round(R * c);
-        }
-
-        function showNearbyFacilities(spot) {
-          const drawer = document.getElementById('nearby-drawer');
-          const titleEl = document.getElementById('nearby-spot-title');
-          const gridEl = document.getElementById('nearby-items-grid');
-          if (!drawer || !gridEl) return;
-
-          titleEl.innerHTML = `📍 <strong>${spot.name}</strong> の周辺（500m以内）`;
-          
-          const nearby = allSpots.filter(s => s.id !== spot.id && calculateDistance(spot.lat, spot.lng, s.lat, s.lng) <= 500);
-
-          if (nearby.length === 0) {
-            gridEl.innerHTML = '<div style="color:var(--text-muted); padding:4px; font-size:0.72rem;">半径500m以内に他の登録スポットはありません（周辺バール・トイレをご利用ください）。</div>';
-          } else {
-            gridEl.innerHTML = nearby.map(s => {
-              const dist = calculateDistance(spot.lat, spot.lng, s.lat, s.lng);
-              return `
-                <div style="background:#f8fafc; border:1px solid var(--border-color); border-radius:4px; padding:4px 6px; font-size:0.72rem;">
-                  <strong style="color:var(--primary-color);">${s.name}</strong>
-                  <span style="color:var(--secondary-color); font-size:0.68rem;">(徒歩${Math.round(dist/70)}分/${dist}m)</span>
-                  <div style="color:#7c2d12; font-size:0.68rem;">💡 ${s.tip}</div>
-                  <a href="${s.url}" target="_blank" style="font-size:0.68rem; color:#2563eb; font-weight:700;">Maps ➔</a>
-                </div>
-              `;
-            }).join('');
-          }
-
-          drawer.style.display = 'block';
-        }
-
-        function renderMarkers(filterDay = null, filterCat = 'all') {
-          currentMarkers.forEach(m => map.removeLayer(m));
-          currentMarkers = [];
-          if (activeCircle) map.removeLayer(activeCircle);
-
-          allSpots.forEach(s => {
-            const matchesDay = (filterDay === null || s.day === filterDay);
-            const matchesCat = (filterCat === 'all' || s.cat === filterCat);
-
-            if (matchesDay && matchesCat) {
-              const color = getMarkerColor(s.cat);
-              const customIcon = L.divIcon({
-                className: 'custom-map-pin',
-                html: `<div style="background:${color}; width:20px; height:20px; border-radius:50%; border:2px solid #fff; box-shadow:0 1px 3px rgba(0,0,0,0.3); display:flex; align-items:center; justify-content:center; color:#fff; font-size:10px; font-weight:900;">${s.day}</div>`,
-                iconSize: [20, 20],
-                iconAnchor: [10, 10]
-              });
-
-              const marker = L.marker([s.lat, s.lng], { icon: customIcon }).addTo(map);
-              
-              marker.bindPopup(`
-                <div style="font-family:sans-serif; min-width:180px; font-size:0.78rem;">
-                  <strong style="color:#1a365d;">${s.name}</strong><br>
-                  <span style="color:#64748b; font-size:0.7rem;">${s.city} • Day ${s.day}</span>
-                  <p style="color:#c2410c; margin:4px 0; font-size:0.72rem; line-height:1.35;">💡 ${s.tip}</p>
-                  <a href="${s.url}" target="_blank" style="background:#ea4335; color:#fff; padding:2px 6px; border-radius:3px; font-size:0.68rem; text-decoration:none; font-weight:700;">📍 Mapsで開く</a>
-                </div>
-              `);
-
-              marker.on('click', () => {
-                map.flyTo([s.lat, s.lng], 16, { duration: 0.8 });
-                if (activeCircle) map.removeLayer(activeCircle);
-                activeCircle = L.circle([s.lat, s.lng], {
-                  radius: 500,
-                  color: '#3b82f6',
-                  fillColor: '#60a5fa',
-                  fillOpacity: 0.15,
-                  weight: 1.5,
-                  dashArray: '3, 3'
-                }).addTo(map);
-
-                showNearbyFacilities(s);
-              });
-
-              currentMarkers.push(marker);
-            }
-          });
-        }
-
-        const routeCoords = [
-          [45.6300, 8.7230],  // MXP (Day 1)
-          [45.4642, 9.1919],  // Milan (Day 2)
-          [45.4390, 10.9944], // Verona (Day 2)
-          [45.4342, 12.3389], // Venice (Day 3)
-          [43.7731, 11.2560], // Florence (Day 4)
-          [43.7230, 10.3966], // Pisa (Day 4)
-          [43.4677, 11.0433], // San Gimignano (Day 5)
-          [41.9022, 12.4539], // Rome (Day 5, 6)
-          [41.7999, 12.2462]  // FCO (Day 7)
-        ];
-        L.polyline(routeCoords, { color: '#2563eb', weight: 3, opacity: 0.7, dashArray: '5, 6' }).addTo(map);
-
-        let activeDay = 2;
-
-        function setDay(dayNum) {
-          activeDay = Math.max(1, Math.min(8, dayNum));
-          const config = dayConfig[activeDay];
-
-          const ind = document.getElementById('map-day-indicator');
-          const sumTitle = document.getElementById('day-summary-title');
-          const sumDesc = document.getElementById('day-summary-desc');
-          const sumLink = document.getElementById('day-summary-link');
-
-          if (ind) ind.textContent = `📅 Day ${activeDay}: ${config.title.split('➔')[0]}`;
-          if (sumTitle) sumTitle.textContent = config.title;
-          if (sumDesc) sumDesc.textContent = config.desc;
-          if (sumLink) {
-            sumLink.href = config.link;
-            sumLink.textContent = `Day ${activeDay} しおり ➔`;
-          }
-
-          map.flyTo(config.center, config.zoom, { duration: 1.0 });
-          renderMarkers(activeDay);
-        }
-
-        document.getElementById('map-prev-day')?.addEventListener('click', () => setDay(activeDay - 1));
-        document.getElementById('map-next-day')?.addEventListener('click', () => setDay(activeDay + 1));
-
-        document.getElementById('btn-zoom-italy')?.addEventListener('click', () => {
-          map.flyTo([43.0, 12.5], 6, { duration: 1.0 });
-          renderMarkers(null);
-        });
-
-        document.getElementById('btn-zoom-city')?.addEventListener('click', () => {
-          const config = dayConfig[activeDay];
-          map.flyTo(config.center, config.zoom + 2, { duration: 0.8 });
-        });
-
-        document.getElementById('btn-close-nearby')?.addEventListener('click', () => {
-          document.getElementById('nearby-drawer').style.display = 'none';
-          if (activeCircle) map.removeLayer(activeCircle);
-        });
-
-        document.querySelectorAll('.map-filter-cat').forEach(chip => {
-          chip.addEventListener('click', (e) => {
-            e.preventDefault();
-            document.querySelectorAll('.map-filter-cat').forEach(c => c.classList.remove('active'));
-            chip.classList.add('active');
-            renderMarkers(activeDay, chip.dataset.cat);
-          });
-        });
-
-        setDay(2);
-      });
-    </script>
-
   </main>
 
-  <!-- Bottom Tab Bar -->
-    <!-- Bottom Tab Bar (iOS Safe Area Ready) -->
+  <!-- Bottom Tab Bar (iOS Safe Area Ready) -->
   <nav class="bottom-tab-bar">
     <a href="index.html" class="tab-item ">
       <span class="tab-icon">🏠</span>
@@ -356,7 +228,6 @@
   </nav>
 
   <!-- Site Footer -->
-    <!-- Site Footer -->
   <footer class="site-footer">
     <div class="container footer-inner">
       <div>
@@ -378,12 +249,791 @@
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
   <script src="app.js"></script>
   <script>
-    document.addEventListener('click', function(e) {
-      document.querySelectorAll('details.day-popover-details, details.day-nav-details').forEach(function(d) {
-        if (!d.contains(e.target) && d.hasAttribute('open')) {
-          d.removeAttribute('open');
+    document.addEventListener('DOMContentLoaded', () => {
+      if (typeof L === 'undefined') return;
+
+      const map = L.map('tour-map', {
+        zoomControl: true,
+        scrollWheelZoom: true
+      }).setView([43.2, 11.8], 6);
+
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '© OpenStreetMap contributors'
+      }).addTo(map);
+
+      const dayConfig = {
+        1: { title: "Day 1: 関西国際空港 出発 ➔ ドーハ乗継 ➔ ミラノ着", desc: "移動: 国際線フライト ➔ 専用バス | 食事: 機内食 / 軽食", center: [45.6300, 8.7230], zoom: 11, link: "day1.html" },
+        2: { title: "Day 2: ミラノ半日観光 ➔ ベローナ散策 ➔ ベネチア歓迎ディナー", desc: "移動: 専用バス約290km | 朝ホテル込 / 昼各自 / 夕ツアー込", center: [45.4642, 9.1919], zoom: 12, link: "day2.html" },
+        3: { title: "Day 3: 水の都ベネチア観光 ＆ ゴンドラ遊覧 ➔ フィレンツェへ", desc: "移動: 専用ボート ＆ 専用バス約260km | 朝ホテル込 / 昼各自 / 夕各自", center: [45.4342, 12.3389], zoom: 13, link: "day3.html" },
+        4: { title: "Day 4: フィレンツェ終日観光 ＆ 【OP】ピサの斜塔", desc: "移動: 徒歩・市内バス（ピサ約170km）| 朝ホテル込 / 昼各自 / 夕各自", center: [43.7731, 11.2560], zoom: 12, link: "day4.html" },
+        5: { title: "Day 5: サンジミニャーノ ＆ ピッツァ昼食 ➔ 永遠の都ローマへ", desc: "移動: 専用バス約280km | 朝ホテル込 / 昼ピッツァ込 / 夕各自", center: [43.4677, 11.0433], zoom: 12, link: "day5.html" },
+        6: { title: "Day 6: ローマ ＆ バチカン市国 終日自由行動・音楽教会散策", desc: "移動: 地下鉄・徒歩 | 朝ホテル込 / 昼各自 / 夕各自ラストディナー", center: [41.9022, 12.4700], zoom: 13, link: "day6.html" },
+        7: { title: "Day 7: ローマ自由行動 ➔ FCO空港発 ➔ 免税手続き ➔ 帰国便", desc: "移動: 専用バス ➔ 国際線フライト | 朝ホテル込 / 昼各自 / 夕機内食", center: [41.7999, 12.2462], zoom: 11, link: "day7.html" },
+        8: { title: "Day 8: 関西国際空港 到着 ➔ ツアー解散 ➔ ご自宅へ", desc: "移動: 国際線フライト ➔ JR/南海 | 食事: 機内食 / ご自宅", center: [34.4347, 135.2440], zoom: 10, link: "day8.html" }
+      };
+
+      const allSpots = [
+  {
+    "id": "s_duomo",
+    "day": 2,
+    "city": "Milan",
+    "cat": "sightseeing",
+    "name": "ミラノ大聖堂 (Duomo)",
+    "lat": 45.4642,
+    "lng": 9.1919,
+    "tip": "肩・膝隠すストール必須。ハト餌・ミサンガ売り完全無視！",
+    "url": "https://maps.google.com/?q=Duomo+di+Milano"
+  },
+  {
+    "id": "s_galleria",
+    "day": 2,
+    "city": "Milan",
+    "cat": "sightseeing",
+    "name": "ガッレリア・アーケード",
+    "lat": 45.4658,
+    "lng": 9.19,
+    "tip": "牡牛モザイクで踵3回転幸運ジンクス！",
+    "url": "https://maps.google.com/?q=Galleria+Vittorio+Emanuele+II+Milano"
+  },
+  {
+    "id": "s_scala",
+    "day": 2,
+    "city": "Milan",
+    "cat": "sightseeing",
+    "name": "スカラ座 (歌劇場)",
+    "lat": 45.4674,
+    "lng": 9.1895,
+    "tip": "オペラの聖地。合唱・音楽好き必見。",
+    "url": "https://maps.google.com/?q=Teatro+alla+Scala+Milano"
+  },
+  {
+    "id": "s_sforzesco",
+    "day": 2,
+    "city": "Milan",
+    "cat": "sightseeing",
+    "name": "スフォルツェスコ城",
+    "lat": 45.4705,
+    "lng": 9.1793,
+    "tip": "ミケランジェロ最後のピエタ像収蔵。中庭見学無料。",
+    "url": "https://maps.google.com/?q=Castello+Sforzesco+Milano"
+  },
+  {
+    "id": "d_luini",
+    "day": 2,
+    "city": "Milan",
+    "cat": "dining",
+    "name": "ルイーニ (包み揚げピザ)",
+    "lat": 45.4656,
+    "lng": 9.1925,
+    "tip": "熱々モッツァレラ＆トマト！ウェットティッシュ必須。",
+    "url": "https://maps.google.com/?q=Luini+Panzerotti+Milano"
+  },
+  {
+    "id": "d_spontini",
+    "day": 2,
+    "city": "Milan",
+    "cat": "dining",
+    "name": "スポンティーニ (厚焼きピザ)",
+    "lat": 45.4657,
+    "lng": 9.1928,
+    "tip": "カリカリふわふわのマルゲリータ！",
+    "url": "https://maps.google.com/?q=Spontini+Duomo+Milano"
+  },
+  {
+    "id": "g_rinascente",
+    "day": 2,
+    "city": "Milan",
+    "cat": "souvenir",
+    "name": "リナシェンテ百貨店",
+    "lat": 45.4651,
+    "lng": 9.1932,
+    "tip": "7階フードホールでお土産＆綺麗トイレ。",
+    "url": "https://maps.google.com/?q=Rinascente+Milano"
+  },
+  {
+    "id": "s_giulietta",
+    "day": 2,
+    "city": "Verona",
+    "cat": "sightseeing",
+    "name": "ジュリエットの家",
+    "lat": 45.4419,
+    "lng": 10.9984,
+    "tip": "右胸に触れると永遠の愛の幸運！",
+    "url": "https://maps.google.com/?q=Casa+di+Giulietta+Verona"
+  },
+  {
+    "id": "s_arena",
+    "day": 2,
+    "city": "Verona",
+    "cat": "sightseeing",
+    "name": "アレーナ (古代闘技場)",
+    "lat": 45.439,
+    "lng": 10.9944,
+    "tip": "紀元1世紀の古代闘技場。",
+    "url": "https://maps.google.com/?q=Arena+di+Verona"
+  },
+  {
+    "id": "s_sanmarco",
+    "day": 3,
+    "city": "Venice",
+    "cat": "sightseeing",
+    "name": "サン・マルコ大聖堂",
+    "lat": 45.4342,
+    "lng": 12.3389,
+    "tip": "黄金のモザイク天井。バールでトイレ利用。",
+    "url": "https://maps.google.com/?q=Piazza+San+Marco+Venezia"
+  },
+  {
+    "id": "s_ducale",
+    "day": 3,
+    "city": "Venice",
+    "cat": "sightseeing",
+    "name": "ドゥカーレ宮殿＆ため息橋",
+    "lat": 45.4338,
+    "lng": 12.3406,
+    "tip": "ゴンドラでため息橋下キス＝永遠の愛！",
+    "url": "https://maps.google.com/?q=Palazzo+Ducale+Venezia"
+  },
+  {
+    "id": "d_florian",
+    "day": 3,
+    "city": "Venice",
+    "cat": "dining",
+    "name": "カフェ・フローリアン",
+    "lat": 45.4336,
+    "lng": 12.3382,
+    "tip": "1720年創業世界最古カフェ。",
+    "url": "https://maps.google.com/?q=Caffe+Florian+Venezia"
+  },
+  {
+    "id": "d_domori",
+    "day": 3,
+    "city": "Venice",
+    "cat": "dining",
+    "name": "カンティーナ・ド・モーリ",
+    "lat": 45.4385,
+    "lng": 12.334,
+    "tip": "最古バカロ。チケッティと白ワイン。",
+    "url": "https://maps.google.com/?q=Cantina+Do+Mori+Venezia"
+  },
+  {
+    "id": "s_rialto",
+    "day": 3,
+    "city": "Venice",
+    "cat": "sightseeing",
+    "name": "リアルト橋",
+    "lat": 45.438,
+    "lng": 12.3359,
+    "tip": "大運河パノラマ絶景！スリ注意。",
+    "url": "https://maps.google.com/?q=Ponte+di+Rialto+Venezia"
+  },
+  {
+    "id": "s_michelangelo",
+    "day": 4,
+    "city": "Florence",
+    "cat": "sightseeing",
+    "name": "ミケランジェロ広場",
+    "lat": 43.7629,
+    "lng": 11.265,
+    "tip": "フィレンツェ全景パノラマ記念撮影！",
+    "url": "https://maps.google.com/?q=Piazzale+Michelangelo+Firenze"
+  },
+  {
+    "id": "s_duomo_fl",
+    "day": 4,
+    "city": "Florence",
+    "cat": "sightseeing",
+    "name": "フィレンツェ大聖堂",
+    "lat": 43.7731,
+    "lng": 11.256,
+    "tip": "赤褐色のクーポラと大理石ファサード。",
+    "url": "https://maps.google.com/?q=Duomo+Firenze"
+  },
+  {
+    "id": "s_vecchio",
+    "day": 4,
+    "city": "Florence",
+    "cat": "sightseeing",
+    "name": "ポンテ・ヴェッキオ",
+    "lat": 43.768,
+    "lng": 11.2532,
+    "tip": "最古の橋。金銀ジュエリー店街。",
+    "url": "https://maps.google.com/?q=Ponte+Vecchio+Firenze"
+  },
+  {
+    "id": "g_smn",
+    "day": 4,
+    "city": "Florence",
+    "cat": "souvenir",
+    "name": "SMN世界最古薬局",
+    "lat": 43.7744,
+    "lng": 11.2483,
+    "tip": "王妃の水、ザクロ石鹸。€70.01〜免税！",
+    "url": "https://maps.google.com/?q=Santa+Maria+Novella+Pharmacy+Firenze"
+  },
+  {
+    "id": "d_zaza",
+    "day": 4,
+    "city": "Florence",
+    "cat": "dining",
+    "name": "トラットリア・ザザ",
+    "lat": 43.7766,
+    "lng": 11.2536,
+    "tip": "名物Tボーンステーキ2人シェア！",
+    "url": "https://maps.google.com/?q=Trattoria+ZaZa+Firenze"
+  },
+  {
+    "id": "s_pisa",
+    "day": 4,
+    "city": "Pisa",
+    "cat": "sightseeing",
+    "name": "ピサの斜塔＆奇跡の広場",
+    "lat": 43.723,
+    "lng": 10.3966,
+    "tip": "【超重要】乗車前打刻厳守！罰金回避。",
+    "url": "https://maps.google.com/?q=Tower+of+Pisa"
+  },
+  {
+    "id": "s_cisterna",
+    "day": 5,
+    "city": "San Gimignano",
+    "cat": "sightseeing",
+    "name": "チステルナ広場",
+    "lat": 43.4677,
+    "lng": 11.0433,
+    "tip": "中世の塔の街世界遺産。",
+    "url": "https://maps.google.com/?q=Piazza+della+Cisterna+San+Gimignano"
+  },
+  {
+    "id": "d_dondoli",
+    "day": 5,
+    "city": "San Gimignano",
+    "cat": "dining",
+    "name": "ドンドリジェラート",
+    "lat": 43.4677,
+    "lng": 11.0435,
+    "tip": "世界一サフラン＆松の実ジェラート！",
+    "url": "https://maps.google.com/?q=Gelateria+Dondoli+San+Gimignano"
+  },
+  {
+    "id": "s_vatican",
+    "day": 6,
+    "city": "Rome",
+    "cat": "sightseeing",
+    "name": "バチカン美術館＆システィーナ",
+    "lat": 41.9065,
+    "lng": 12.4536,
+    "tip": "最後の審判は完全撮影禁止・私語厳禁！",
+    "url": "https://maps.google.com/?q=Vatican+Museums"
+  },
+  {
+    "id": "s_sanpietro",
+    "day": 6,
+    "city": "Rome",
+    "cat": "sightseeing",
+    "name": "サン・ピエトロ大聖堂 (夕ミサ)",
+    "lat": 41.9022,
+    "lng": 12.4539,
+    "tip": "17:00聖歌隊合唱＆オルガン無料拝聴！",
+    "url": "https://maps.google.com/?q=St+Peter+Basilica+Rome"
+  },
+  {
+    "id": "s_colosseo",
+    "day": 6,
+    "city": "Rome",
+    "cat": "sightseeing",
+    "name": "コロッセオ＆フォロロマーノ",
+    "lat": 41.8902,
+    "lng": 12.4922,
+    "tip": "ミサンガ売り完全無視！",
+    "url": "https://maps.google.com/?q=Colosseum+Rome"
+  },
+  {
+    "id": "s_trevi",
+    "day": 5,
+    "city": "Rome",
+    "cat": "sightseeing",
+    "name": "トレビの泉",
+    "lat": 41.9009,
+    "lng": 12.4833,
+    "tip": "コイン2枚で愛する人と一生一緒！",
+    "url": "https://maps.google.com/?q=Trevi+Fountain+Rome"
+  },
+  {
+    "id": "s_pantheon",
+    "day": 6,
+    "city": "Rome",
+    "cat": "sightseeing",
+    "name": "パンテオン (万神殿)",
+    "lat": 41.8986,
+    "lng": 12.4769,
+    "tip": "古代ローマ建築の奇跡。音響絶美。",
+    "url": "https://maps.google.com/?q=Pantheon+Rome"
+  },
+  {
+    "id": "s_spagna",
+    "day": 6,
+    "city": "Rome",
+    "cat": "sightseeing",
+    "name": "スペイン広場階段",
+    "lat": 41.906,
+    "lng": 12.4828,
+    "tip": "階段での飲食・座り込み禁止。",
+    "url": "https://maps.google.com/?q=Piazza+di+Spagna+Rome"
+  },
+  {
+    "id": "s_sanluigi",
+    "day": 6,
+    "city": "Rome",
+    "cat": "sightseeing",
+    "name": "サン・ルイジ教会",
+    "lat": 41.8997,
+    "lng": 12.475,
+    "tip": "カラヴァッジョ三部作無料鑑賞！",
+    "url": "https://maps.google.com/?q=San+Luigi+dei+Francesi+Rome"
+  },
+  {
+    "id": "d_denzo",
+    "day": 6,
+    "city": "Rome",
+    "cat": "dining",
+    "name": "トラットリア・ダ・エンツォ",
+    "lat": 41.8878,
+    "lng": 12.477,
+    "tip": "本場濃厚カルボナーラ＆カチョエペペ！",
+    "url": "https://maps.google.com/?q=Da+Enzo+al+29+Rome"
+  },
+  {
+    "id": "d_pompi",
+    "day": 6,
+    "city": "Rome",
+    "cat": "dining",
+    "name": "ポンピ (ティラミス)",
+    "lat": 41.9054,
+    "lng": 12.48,
+    "tip": "ティラミスの王様！",
+    "url": "https://maps.google.com/?q=Pompi+Tiramisu+Rome"
+  },
+  {
+    "id": "h_plaza_mestre",
+    "day": 2,
+    "city": "Mestre (Venice)",
+    "cat": "hotel",
+    "name": "ホテル プラザ (Hotel Plaza Mestre)",
+    "lat": 45.4828,
+    "lng": 12.2323,
+    "tip": "メストレ駅前すぐ！本島行きバス・電車に直結した大型快適スーペリアホテル。",
+    "url": "https://maps.google.com/?q=Hotel+Plaza+Mestre"
+  },
+  {
+    "id": "h_leonardo_mestre",
+    "day": 2,
+    "city": "Mestre (Venice)",
+    "cat": "hotel",
+    "name": "レオナルド ロイヤル ホテル ベネチア メストレ",
+    "lat": 45.4815,
+    "lng": 12.2348,
+    "tip": "モダンで上質な4つ星スーペリア。清潔感と充実した設備がハネムーンに好評。",
+    "url": "https://maps.google.com/?q=Leonardo+Royal+Hotel+Venice+Mestre"
+  },
+  {
+    "id": "h_bologna_mestre",
+    "day": 2,
+    "city": "Mestre (Venice)",
+    "cat": "hotel",
+    "name": "ベストウェスタン プラス ホテル ボローニャ",
+    "lat": 45.4831,
+    "lng": 12.233,
+    "tip": "メストレ駅正面。落ち着いたインテリアと美味しい朝食が人気。",
+    "url": "https://maps.google.com/?q=Best+Western+Plus+Hotel+Bologna+Mestre"
+  },
+  {
+    "id": "h_nh_laguna",
+    "day": 2,
+    "city": "Mestre (Venice)",
+    "cat": "hotel",
+    "name": "NH ベネチア ラグーナ パレス",
+    "lat": 45.482,
+    "lng": 12.253,
+    "tip": "近代的なラグーナマリーナ沿いホテル。広々とした客室で快適滞在。",
+    "url": "https://maps.google.com/?q=NH+Venezia+Laguna+Palace"
+  },
+  {
+    "id": "h_delfino_mestre",
+    "day": 2,
+    "city": "Mestre (Venice)",
+    "cat": "hotel",
+    "name": "ホテル デルフィーノ (Hotel Delfino)",
+    "lat": 45.4852,
+    "lng": 12.2395,
+    "tip": "ポポロ通り沿い。ベネチア本島行きバス停が目の前でアクセス抜群。",
+    "url": "https://maps.google.com/?q=Hotel+Delfino+Mestre"
+  },
+  {
+    "id": "h_ambasciatori_mestre",
+    "day": 2,
+    "city": "Mestre (Venice)",
+    "cat": "hotel",
+    "name": "ホテル アンバシアトーリ (Hotel Ambasciatori)",
+    "lat": 45.4845,
+    "lng": 12.2385,
+    "tip": "デルフィーノ隣接の4つ星。フィットネスやレストランも完備。",
+    "url": "https://maps.google.com/?q=Hotel+Ambasciatori+Mestre"
+  },
+  {
+    "id": "h_tritone_mestre",
+    "day": 2,
+    "city": "Mestre (Venice)",
+    "cat": "hotel",
+    "name": "ホテル トリトーネ (Hotel Tritone)",
+    "lat": 45.4825,
+    "lng": 12.2338,
+    "tip": "メストレ駅目の前。早朝出発や夜間到着にも安心の好ロケーション。",
+    "url": "https://maps.google.com/?q=Hotel+Tritone+Mestre"
+  },
+  {
+    "id": "h_bb_calenzano",
+    "day": 3,
+    "city": "Calenzano (Florence)",
+    "cat": "hotel",
+    "name": "B&B ホテル フィレンツェ カレンツァーノ ファースト",
+    "lat": 43.856,
+    "lng": 11.1645,
+    "tip": "高速IC近くでツアーバス発着に便利。モダンで機能的な客室。",
+    "url": "https://maps.google.com/?q=BB+Hotel+Firenze+Calenzano+First"
+  },
+  {
+    "id": "h_delta_florence",
+    "day": 3,
+    "city": "Calenzano (Florence)",
+    "cat": "hotel",
+    "name": "ホテル デルタ フィレンツェ (Hotel Delta Florence)",
+    "lat": 43.858,
+    "lng": 11.168,
+    "tip": "カレンツァーノの大型4つ星ホテル。広々としたロビーとレストラン完備。",
+    "url": "https://maps.google.com/?q=Hotel+Delta+Florence+Calenzano"
+  },
+  {
+    "id": "h_art_miro",
+    "day": 3,
+    "city": "Calenzano (Florence)",
+    "cat": "hotel",
+    "name": "アート ホテル ミロ (Art Hotel Miro)",
+    "lat": 43.8568,
+    "lng": 11.1632,
+    "tip": "ミロのアート作品を配したお洒落なホテル。快適なベッドとバスタブ付き客室多数。",
+    "url": "https://maps.google.com/?q=Art+Hotel+Miro+Calenzano"
+  },
+  {
+    "id": "h_president_prato",
+    "day": 3,
+    "city": "Prato (Florence)",
+    "cat": "hotel",
+    "name": "ホテル プレジデント プラート (Hotel President)",
+    "lat": 43.8745,
+    "lng": 11.0965,
+    "tip": "プラート駅近く。トスカーナ観光の拠点として静かで落ち着いた環境。",
+    "url": "https://maps.google.com/?q=Hotel+President+Prato"
+  },
+  {
+    "id": "h_starhotels_vespucci",
+    "day": 4,
+    "city": "Campi Bisenzio (Florence)",
+    "cat": "hotel",
+    "name": "スターホテルズ ヴェスプッチ (Starhotels Vespucci)",
+    "lat": 43.824,
+    "lng": 11.137,
+    "tip": "洗練されたイタリアンブランドホテル。大型ショッピングモール至近。",
+    "url": "https://maps.google.com/?q=Starhotels+Vespucci+Campi+Bisenzio"
+  },
+  {
+    "id": "h_croce_malta",
+    "day": 4,
+    "city": "Montecatini Terme",
+    "cat": "hotel",
+    "name": "グランド ホテル クローチェ ディ マルタ",
+    "lat": 43.886,
+    "lng": 10.771,
+    "tip": "名門温泉保養地モンテカティーニの優雅な4つ星。トスカーナの風情を満喫。",
+    "url": "https://maps.google.com/?q=Grand+Hotel+Croce+di+Malta+Montecatini"
+  },
+  {
+    "id": "h_nilhotel",
+    "day": 4,
+    "city": "Florence",
+    "cat": "hotel",
+    "name": "ニルホテル フィレンツェ (NilHotel Florence)",
+    "lat": 43.798,
+    "lng": 11.222,
+    "tip": "フィレンツェ北部ノボリ地区の4つ星スーペリア。市内中心部へトラムで直結。",
+    "url": "https://maps.google.com/?q=NilHotel+Florence"
+  },
+  {
+    "id": "h_archimede_rome",
+    "day": 5,
+    "city": "Rome (Termini)",
+    "cat": "hotel",
+    "name": "ホテル アルキメーデ (Hotel Archimede Roma)",
+    "lat": 41.9038,
+    "lng": 12.502,
+    "tip": "テルミニ駅北側徒歩3分！地下鉄・バスでのローマ自由行動に最高のロケーション。",
+    "url": "https://maps.google.com/?q=Hotel+Archimede+Roma"
+  },
+  {
+    "id": "h_starhotels_metropole",
+    "day": 5,
+    "city": "Rome (Termini)",
+    "cat": "hotel",
+    "name": "スターホテルズ メトロポール (Starhotels Metropole)",
+    "lat": 41.9002,
+    "lng": 12.4975,
+    "tip": "オペラ座近くの洗練された4つ星スーペリア。治安も良く上質なハネムーン滞在。",
+    "url": "https://maps.google.com/?q=Starhotels+Metropole+Roma"
+  },
+  {
+    "id": "h_royal_santina",
+    "day": 5,
+    "city": "Rome (Termini)",
+    "cat": "hotel",
+    "name": "ベストウェスタン プレミア ホテル ロイヤル サンティーナ",
+    "lat": 41.9035,
+    "lng": 12.5025,
+    "tip": "テルミニ駅マルサラ口すぐ。LED照明とモダンな客室設備が評判の4つ星。",
+    "url": "https://maps.google.com/?q=Hotel+Royal+Santina+Roma"
+  },
+  {
+    "id": "h_universo_rome",
+    "day": 5,
+    "city": "Rome (Termini)",
+    "cat": "hotel",
+    "name": "ベストウェスタン プラス ホテル ユニバース",
+    "lat": 41.9008,
+    "lng": 12.4978,
+    "tip": "オペラ座隣接。広々とした客室とバラエティ豊かな朝食ビュッフェが魅力。",
+    "url": "https://maps.google.com/?q=Hotel+Universo+Roma"
+  },
+  {
+    "id": "h_gioberti_art",
+    "day": 6,
+    "city": "Rome (Termini)",
+    "cat": "hotel",
+    "name": "ジョベルティ アート ホテル (Gioberti Art Hotel)",
+    "lat": 41.8998,
+    "lng": 12.5005,
+    "tip": "テルミニ駅徒歩2分。現代アートが彩るスタイリッシュな4つ星スーペリア。",
+    "url": "https://maps.google.com/?q=Gioberti+Art+Hotel+Roma"
+  },
+  {
+    "id": "h_massimo_dazeglio",
+    "day": 6,
+    "city": "Rome (Termini)",
+    "cat": "hotel",
+    "name": "ホテル マッシモ ダゼリオ (Hotel Massimo d'Azeglio)",
+    "lat": 41.8997,
+    "lng": 12.4985,
+    "tip": "1875年創業の老舗名門。クラシカルな木調の落ち着いた雰囲気。",
+    "url": "https://maps.google.com/?q=Hotel+Massimo+dAzeglio+Roma"
+  },
+  {
+    "id": "h_nord_nuova",
+    "day": 6,
+    "city": "Rome (Termini)",
+    "cat": "hotel",
+    "name": "ホテル ノルド ヌオーヴァ ローマ",
+    "lat": 41.9012,
+    "lng": 12.4988,
+    "tip": "テルミニ駅徒歩3分。ローマの街並みを見渡せるルーフトップバー付き。",
+    "url": "https://maps.google.com/?q=Hotel+Nord+Nuova+Roma"
+  },
+  {
+    "id": "h_unahotels_deco",
+    "day": 6,
+    "city": "Rome (Termini)",
+    "cat": "hotel",
+    "name": "ウナホテルズ デコ ローマ (UNAHOTELS Decò Roma)",
+    "lat": 41.9005,
+    "lng": 12.4972,
+    "tip": "アールデコ様式の洗練された高級感。テルミニ駅近で自由行動に抜群。",
+    "url": "https://maps.google.com/?q=UNAHOTELS+Deco+Roma"
+  }
+];
+
+      let currentMarkers = [];
+      let activeCircle = null;
+
+      function getMarkerColor(cat) {
+        if (cat === 'sightseeing') return '#2563eb';
+        if (cat === 'dining') return '#dc2626';
+        if (cat === 'souvenir') return '#9333ea';
+        if (cat === 'hotel') return '#059669'; // Green for Hotels
+        return '#d97706';
+      }
+
+      function getMarkerIconLabel(s) {
+        if (s.cat === 'hotel') return '🏨';
+        return s.day;
+      }
+
+      function calculateDistance(lat1, lon1, lat2, lon2) {
+        const R = 6371e3;
+        const φ1 = lat1 * Math.PI/180;
+        const φ2 = lat2 * Math.PI/180;
+        const Δφ = (lat2-lat1) * Math.PI/180;
+        const Δλ = (lon2-lon1) * Math.PI/180;
+        const a = Math.sin(Δφ/2) * Math.sin(Δφ/2) +
+                  Math.cos(φ1) * Math.cos(φ2) *
+                  Math.sin(Δλ/2) * Math.sin(Δλ/2);
+        const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+        return Math.round(R * c);
+      }
+
+      function showNearbyFacilities(spot) {
+        const drawer = document.getElementById('nearby-drawer');
+        const titleEl = document.getElementById('nearby-spot-title');
+        const gridEl = document.getElementById('nearby-items-grid');
+        if (!drawer || !gridEl) return;
+
+        titleEl.innerHTML = `📍 <strong>${spot.name}</strong> の周辺（1km以内）`;
+        
+        const nearby = allSpots.filter(s => s.id !== spot.id && calculateDistance(spot.lat, spot.lng, s.lat, s.lng) <= 1000);
+
+        if (nearby.length === 0) {
+          gridEl.innerHTML = '<div style="color:var(--text-muted); padding:4px; font-size:0.72rem;">半径1km以内に他の登録スポットはありません。</div>';
+        } else {
+          gridEl.innerHTML = nearby.map(s => {
+            const dist = calculateDistance(spot.lat, spot.lng, s.lat, s.lng);
+            return `
+              <div style="background:#f8fafc; border:1px solid var(--border-color); border-radius:4px; padding:4px 6px; font-size:0.72rem;">
+                <strong style="color:${getMarkerColor(s.cat)};">${s.name}</strong>
+                <span style="color:var(--secondary-color); font-size:0.68rem;">(${dist}m)</span>
+                <div style="color:#7c2d12; font-size:0.68rem;">💡 ${s.tip}</div>
+                <a href="${s.url}" target="_blank" style="font-size:0.68rem; color:#2563eb; font-weight:700;">Maps ➔</a>
+              </div>
+            `;
+          }).join('');
         }
+
+        drawer.style.display = 'block';
+      }
+
+      function renderMarkers(filterDay = null, filterCat = 'all') {
+        currentMarkers.forEach(m => map.removeLayer(m));
+        currentMarkers = [];
+        if (activeCircle) map.removeLayer(activeCircle);
+
+        allSpots.forEach(s => {
+          const matchesDay = (filterDay === null || s.day === filterDay);
+          const matchesCat = (filterCat === 'all' || s.cat === filterCat);
+
+          if (matchesDay && matchesCat) {
+            const color = getMarkerColor(s.cat);
+            const iconLabel = getMarkerIconLabel(s);
+            const customIcon = L.divIcon({
+              className: 'custom-map-pin',
+              html: `<div style="background:${color}; width:22px; height:22px; border-radius:50%; border:2px solid #fff; box-shadow:0 1px 4px rgba(0,0,0,0.35); display:flex; align-items:center; justify-content:center; color:#fff; font-size:10px; font-weight:900;">${iconLabel}</div>`,
+              iconSize: [22, 22],
+              iconAnchor: [11, 11]
+            });
+
+            const marker = L.marker([s.lat, s.lng], { icon: customIcon }).addTo(map);
+            
+            marker.bindPopup(`
+              <div style="font-family:sans-serif; min-width:190px; font-size:0.78rem;">
+                <strong style="color:#1a365d;">${s.name}</strong><br>
+                <span style="color:#64748b; font-size:0.7rem;">${s.city} • Day ${s.day}</span>
+                <p style="color:#c2410c; margin:4px 0; font-size:0.72rem; line-height:1.35;">💡 ${s.tip}</p>
+                <a href="${s.url}" target="_blank" style="background:#ea4335; color:#fff; padding:2px 6px; border-radius:3px; font-size:0.68rem; text-decoration:none; font-weight:700; display:inline-block;">📍 Google Mapsで開く</a>
+              </div>
+            `);
+
+            marker.on('click', () => {
+              map.flyTo([s.lat, s.lng], 15, { duration: 0.8 });
+              if (activeCircle) map.removeLayer(activeCircle);
+              activeCircle = L.circle([s.lat, s.lng], {
+                radius: 1000,
+                color: color,
+                fillColor: color,
+                fillOpacity: 0.12,
+                weight: 1.5,
+                dashArray: '3, 3'
+              }).addTo(map);
+
+              showNearbyFacilities(s);
+            });
+
+            currentMarkers.push(marker);
+          }
+        });
+      }
+
+      const routeCoords = [
+        [45.6300, 8.7230],  // MXP (Day 1)
+        [45.4642, 9.1919],  // Milan (Day 2)
+        [45.4390, 10.9944], // Verona (Day 2)
+        [45.4342, 12.3389], // Venice (Day 3)
+        [43.7731, 11.2560], // Florence (Day 4)
+        [43.7230, 10.3966], // Pisa (Day 4)
+        [43.4677, 11.0433], // San Gimignano (Day 5)
+        [41.9022, 12.4539], // Rome (Day 5, 6)
+        [41.7999, 12.2462]  // FCO (Day 7)
+      ];
+      L.polyline(routeCoords, { color: '#2563eb', weight: 3, opacity: 0.7, dashArray: '5, 6' }).addTo(map);
+
+      let activeDay = 2;
+
+      function setDay(dayNum) {
+        activeDay = Math.max(1, Math.min(8, dayNum));
+        const config = dayConfig[activeDay];
+
+        const ind = document.getElementById('map-day-indicator');
+        const sumTitle = document.getElementById('day-summary-title');
+        const sumDesc = document.getElementById('day-summary-desc');
+        const sumLink = document.getElementById('day-summary-link');
+
+        if (ind) ind.textContent = `📅 Day ${activeDay}: ${config.title.split('➔')[0]}`;
+        if (sumTitle) sumTitle.textContent = config.title;
+        if (sumDesc) sumDesc.textContent = config.desc;
+        if (sumLink) {
+          sumLink.href = config.link;
+          sumLink.textContent = `Day ${activeDay} しおり ➔`;
+        }
+
+        map.flyTo(config.center, config.zoom, { duration: 1.0 });
+        const activeFilter = document.querySelector('.map-filter-cat.active')?.dataset.cat || 'all';
+        renderMarkers(activeDay, activeFilter);
+      }
+
+      document.getElementById('map-prev-day')?.addEventListener('click', () => setDay(activeDay - 1));
+      document.getElementById('map-next-day')?.addEventListener('click', () => setDay(activeDay + 1));
+
+      document.getElementById('btn-zoom-italy')?.addEventListener('click', () => {
+        map.flyTo([43.0, 12.5], 6, { duration: 1.0 });
+        const activeFilter = document.querySelector('.map-filter-cat.active')?.dataset.cat || 'all';
+        renderMarkers(null, activeFilter);
       });
+
+      document.getElementById('btn-zoom-city')?.addEventListener('click', () => {
+        const config = dayConfig[activeDay];
+        map.flyTo(config.center, config.zoom + 2, { duration: 0.8 });
+      });
+
+      document.getElementById('btn-close-nearby')?.addEventListener('click', () => {
+        document.getElementById('nearby-drawer').style.display = 'none';
+        if (activeCircle) map.removeLayer(activeCircle);
+      });
+
+      document.querySelectorAll('.map-filter-cat').forEach(chip => {
+        chip.addEventListener('click', (e) => {
+          e.preventDefault();
+          document.querySelectorAll('.map-filter-cat').forEach(c => c.classList.remove('active'));
+          chip.classList.add('active');
+          const day = (activeDay === null) ? null : activeDay;
+          renderMarkers(day, chip.dataset.cat);
+        });
+      });
+
+      setDay(2);
     });
   </script>
 </body>

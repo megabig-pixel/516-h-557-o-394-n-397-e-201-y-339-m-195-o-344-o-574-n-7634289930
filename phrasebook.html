@@ -47,11 +47,11 @@
     </div>
 
     <!-- Search & Category Filters -->
-    <div style="margin-bottom:16px;">
+    <div style="margin-bottom:12px;">
       <input type="text" id="search-input" class="calc-input" placeholder="🔍 日本語・イタリア語・読み方でリアルタイム検索...">
     </div>
 
-    <div style="display:flex; gap:6px; overflow-x:auto; padding-bottom:10px; margin-bottom:16px; scrollbar-width:none;">
+    <div style="display:flex; gap:6px; overflow-x:auto; padding-bottom:8px; margin-bottom:14px; scrollbar-width:none;">
       <button class="day-chip filter-chip active" data-cat="all" style="min-width:65px;">全70フレーズ</button>
       <button class="day-chip filter-chip" data-cat="general" style="min-width:85px;">🌟 基本・マナー</button>
       <button class="day-chip filter-chip" data-cat="dining" style="min-width:95px;">🍷 レストラン・バール</button>
@@ -62,17 +62,925 @@
       <button class="day-chip filter-chip" data-cat="honeymoon" style="min-width:95px;">💍 新婚旅行・写真</button>
     </div>
 
-    <!-- Phrases Grid List -->
+    <!-- Phrases Grid List (All 70 Phrases Live Interactive) -->
     <section class="section">
       <div class="phrase-grid">
-        {''.join(phrases_html)}
+        <div class="phrase-card" data-cat="general">
+          <div class="phrase-text-wrap">
+            <div class="phrase-category-badge">🌟 基本挨拶</div>
+            <div class="phrase-ja">おはようございます / こんにちは</div>
+            <div class="phrase-it">Buongiorno!</div>
+            <div class="phrase-kana">ボンジョルノ！</div>
+            <div style="font-size:0.68rem; color:#7c2d12; margin-top:2px;">💡 日中の基本挨拶。お店に入る時は笑顔で！</div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:4px; align-items:center; flex-shrink:0;">
+            <button type="button" class="speak-btn" data-phrase="Buongiorno!" title="発音を再生">🔊</button>
+            <button type="button" class="copy-phrase-btn" data-phrase="Buongiorno!" title="コピー">📋</button>
+          </div>
+        </div>
+        <div class="phrase-card" data-cat="general">
+          <div class="phrase-text-wrap">
+            <div class="phrase-category-badge">🌟 基本挨拶</div>
+            <div class="phrase-ja">こんばんは</div>
+            <div class="phrase-it">Buonasera!</div>
+            <div class="phrase-kana">ボナセーラ！</div>
+            <div style="font-size:0.68rem; color:#7c2d12; margin-top:2px;">💡 午後（16時頃〜）から夜の挨拶。</div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:4px; align-items:center; flex-shrink:0;">
+            <button type="button" class="speak-btn" data-phrase="Buonasera!" title="発音を再生">🔊</button>
+            <button type="button" class="copy-phrase-btn" data-phrase="Buonasera!" title="コピー">📋</button>
+          </div>
+        </div>
+        <div class="phrase-card" data-cat="general">
+          <div class="phrase-text-wrap">
+            <div class="phrase-category-badge">🌟 基本挨拶</div>
+            <div class="phrase-ja">おやすみなさい</div>
+            <div class="phrase-it">Buonanotte!</div>
+            <div class="phrase-kana">ボアナノッテ！</div>
+            <div style="font-size:0.68rem; color:#7c2d12; margin-top:2px;">💡 就寝前や別れ際の挨拶。</div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:4px; align-items:center; flex-shrink:0;">
+            <button type="button" class="speak-btn" data-phrase="Buonanotte!" title="発音を再生">🔊</button>
+            <button type="button" class="copy-phrase-btn" data-phrase="Buonanotte!" title="コピー">📋</button>
+          </div>
+        </div>
+        <div class="phrase-card" data-cat="general">
+          <div class="phrase-text-wrap">
+            <div class="phrase-category-badge">🌟 基本挨拶</div>
+            <div class="phrase-ja">さようなら</div>
+            <div class="phrase-it">Arrivederci!</div>
+            <div class="phrase-kana">アッリヴェデルチ！</div>
+            <div style="font-size:0.68rem; color:#7c2d12; margin-top:2px;">💡 お店を出る時の丁寧な挨拶。</div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:4px; align-items:center; flex-shrink:0;">
+            <button type="button" class="speak-btn" data-phrase="Arrivederci!" title="発音を再生">🔊</button>
+            <button type="button" class="copy-phrase-btn" data-phrase="Arrivederci!" title="コピー">📋</button>
+          </div>
+        </div>
+        <div class="phrase-card" data-cat="general">
+          <div class="phrase-text-wrap">
+            <div class="phrase-category-badge">🌟 感謝</div>
+            <div class="phrase-ja">ありがとう</div>
+            <div class="phrase-it">Grazie!</div>
+            <div class="phrase-kana">グラツィエ！</div>
+            <div style="font-size:0.68rem; color:#7c2d12; margin-top:2px;">💡 最も大切な感謝の言葉。</div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:4px; align-items:center; flex-shrink:0;">
+            <button type="button" class="speak-btn" data-phrase="Grazie!" title="発音を再生">🔊</button>
+            <button type="button" class="copy-phrase-btn" data-phrase="Grazie!" title="コピー">📋</button>
+          </div>
+        </div>
+        <div class="phrase-card" data-cat="general">
+          <div class="phrase-text-wrap">
+            <div class="phrase-category-badge">🌟 感謝</div>
+            <div class="phrase-ja">どうもありがとうございます</div>
+            <div class="phrase-it">Grazie mille!</div>
+            <div class="phrase-kana">グラツィエ・ミッレ！</div>
+            <div style="font-size:0.68rem; color:#7c2d12; margin-top:2px;">💡 とても感謝している時に。</div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:4px; align-items:center; flex-shrink:0;">
+            <button type="button" class="speak-btn" data-phrase="Grazie mille!" title="発音を再生">🔊</button>
+            <button type="button" class="copy-phrase-btn" data-phrase="Grazie mille!" title="コピー">📋</button>
+          </div>
+        </div>
+        <div class="phrase-card" data-cat="general">
+          <div class="phrase-text-wrap">
+            <div class="phrase-category-badge">🌟 礼儀</div>
+            <div class="phrase-ja">どういたしまして</div>
+            <div class="phrase-it">Prego!</div>
+            <div class="phrase-kana">プレーゴ！</div>
+            <div style="font-size:0.68rem; color:#7c2d12; margin-top:2px;">💡 「どうぞ」「いらっしゃい」の意味でも使われます。</div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:4px; align-items:center; flex-shrink:0;">
+            <button type="button" class="speak-btn" data-phrase="Prego!" title="発音を再生">🔊</button>
+            <button type="button" class="copy-phrase-btn" data-phrase="Prego!" title="コピー">📋</button>
+          </div>
+        </div>
+        <div class="phrase-card" data-cat="general">
+          <div class="phrase-text-wrap">
+            <div class="phrase-category-badge">🌟 呼びかけ</div>
+            <div class="phrase-ja">すみません / 失礼します</div>
+            <div class="phrase-it">Scusi!</div>
+            <div class="phrase-kana">スクージ！</div>
+            <div style="font-size:0.68rem; color:#7c2d12; margin-top:2px;">💡 店員さんを呼ぶ時や人混みを通る時に。</div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:4px; align-items:center; flex-shrink:0;">
+            <button type="button" class="speak-btn" data-phrase="Scusi!" title="発音を再生">🔊</button>
+            <button type="button" class="copy-phrase-btn" data-phrase="Scusi!" title="コピー">📋</button>
+          </div>
+        </div>
+        <div class="phrase-card" data-cat="general">
+          <div class="phrase-text-wrap">
+            <div class="phrase-category-badge">🌟 お詫び</div>
+            <div class="phrase-ja">ごめんなさい</div>
+            <div class="phrase-it">Mi scusi / Scusa!</div>
+            <div class="phrase-kana">ミ・スクージ / スクーザ！</div>
+            <div style="font-size:0.68rem; color:#7c2d12; margin-top:2px;">💡 軽くぶつかった時などに。</div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:4px; align-items:center; flex-shrink:0;">
+            <button type="button" class="speak-btn" data-phrase="Mi scusi / Scusa!" title="発音を再生">🔊</button>
+            <button type="button" class="copy-phrase-btn" data-phrase="Mi scusi / Scusa!" title="コピー">📋</button>
+          </div>
+        </div>
+        <div class="phrase-card" data-cat="general">
+          <div class="phrase-text-wrap">
+            <div class="phrase-category-badge">🌟 返答</div>
+            <div class="phrase-ja">はい / いいえ</div>
+            <div class="phrase-it">Sì / No</div>
+            <div class="phrase-kana">スィ / ノー</div>
+            <div style="font-size:0.68rem; color:#7c2d12; margin-top:2px;">💡 基本の意思表示。</div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:4px; align-items:center; flex-shrink:0;">
+            <button type="button" class="speak-btn" data-phrase="Sì / No" title="発音を再生">🔊</button>
+            <button type="button" class="copy-phrase-btn" data-phrase="Sì / No" title="コピー">📋</button>
+          </div>
+        </div>
+        <div class="phrase-card" data-cat="general">
+          <div class="phrase-text-wrap">
+            <div class="phrase-category-badge">🌟 防犯・断り</div>
+            <div class="phrase-ja">結構です（断る時）</div>
+            <div class="phrase-it">No, grazie!</div>
+            <div class="phrase-kana">ノー、グラツィエ！</div>
+            <div style="font-size:0.68rem; color:#7c2d12; margin-top:2px;">💡 ミサンガやハト餌売りの客引きを撃退する決め台詞！</div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:4px; align-items:center; flex-shrink:0;">
+            <button type="button" class="speak-btn" data-phrase="No, grazie!" title="発音を再生">🔊</button>
+            <button type="button" class="copy-phrase-btn" data-phrase="No, grazie!" title="コピー">📋</button>
+          </div>
+        </div>
+        <div class="phrase-card" data-cat="general">
+          <div class="phrase-text-wrap">
+            <div class="phrase-category-badge">🌟 言語</div>
+            <div class="phrase-ja">英語を話せますか？</div>
+            <div class="phrase-it">Parla inglese?</div>
+            <div class="phrase-kana">パルラ・イングレーゼ？</div>
+            <div style="font-size:0.68rem; color:#7c2d12; margin-top:2px;">💡 英語が通じるか確認する時に。</div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:4px; align-items:center; flex-shrink:0;">
+            <button type="button" class="speak-btn" data-phrase="Parla inglese?" title="発音を再生">🔊</button>
+            <button type="button" class="copy-phrase-btn" data-phrase="Parla inglese?" title="コピー">📋</button>
+          </div>
+        </div>
+        <div class="phrase-card" data-cat="dining">
+          <div class="phrase-text-wrap">
+            <div class="phrase-category-badge">🍷 人数</div>
+            <div class="phrase-ja">2名です（席をお願いします）</div>
+            <div class="phrase-it">Un tavolo per due, per favore.</div>
+            <div class="phrase-kana">ウン・ターヴォロ・ペル・ドゥーエ、ペル・ファヴォーレ</div>
+            <div style="font-size:0.68rem; color:#7c2d12; margin-top:2px;">💡 レストラン入店時の定番フレーズ。</div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:4px; align-items:center; flex-shrink:0;">
+            <button type="button" class="speak-btn" data-phrase="Un tavolo per due, per favore." title="発音を再生">🔊</button>
+            <button type="button" class="copy-phrase-btn" data-phrase="Un tavolo per due, per favore." title="コピー">📋</button>
+          </div>
+        </div>
+        <div class="phrase-card" data-cat="dining">
+          <div class="phrase-text-wrap">
+            <div class="phrase-category-badge">🍷 メニュー</div>
+            <div class="phrase-ja">メニューを見せてください</div>
+            <div class="phrase-it">Il menu, per favore.</div>
+            <div class="phrase-kana">イル・メニュー、ペル・ファヴォーレ</div>
+            <div style="font-size:0.68rem; color:#7c2d12; margin-top:2px;">💡 メニューをお願いする時。</div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:4px; align-items:center; flex-shrink:0;">
+            <button type="button" class="speak-btn" data-phrase="Il menu, per favore." title="発音を再生">🔊</button>
+            <button type="button" class="copy-phrase-btn" data-phrase="Il menu, per favore." title="コピー">📋</button>
+          </div>
+        </div>
+        <div class="phrase-card" data-cat="dining">
+          <div class="phrase-text-wrap">
+            <div class="phrase-category-badge">🍷 メニュー</div>
+            <div class="phrase-ja">日本語メニューはありますか？</div>
+            <div class="phrase-it">Avete il menu in giapponese?</div>
+            <div class="phrase-kana">アヴェーテ・イル・メニュー・イン・ジャッポネーゼ？</div>
+            <div style="font-size:0.68rem; color:#7c2d12; margin-top:2px;">💡 観光地レストランで尋ねる時。</div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:4px; align-items:center; flex-shrink:0;">
+            <button type="button" class="speak-btn" data-phrase="Avete il menu in giapponese?" title="発音を再生">🔊</button>
+            <button type="button" class="copy-phrase-btn" data-phrase="Avete il menu in giapponese?" title="コピー">📋</button>
+          </div>
+        </div>
+        <div class="phrase-card" data-cat="dining">
+          <div class="phrase-text-wrap">
+            <div class="phrase-category-badge">🍷 注文</div>
+            <div class="phrase-ja">おすすめは何ですか？</div>
+            <div class="phrase-it">Che cosa ci consiglia?</div>
+            <div class="phrase-kana">ケ・コーザ・チ・コンスィーリャ？</div>
+            <div style="font-size:0.68rem; color:#7c2d12; margin-top:2px;">💡 シェフや店員のおすすめを聞く時。</div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:4px; align-items:center; flex-shrink:0;">
+            <button type="button" class="speak-btn" data-phrase="Che cosa ci consiglia?" title="発音を再生">🔊</button>
+            <button type="button" class="copy-phrase-btn" data-phrase="Che cosa ci consiglia?" title="コピー">📋</button>
+          </div>
+        </div>
+        <div class="phrase-card" data-cat="dining">
+          <div class="phrase-text-wrap">
+            <div class="phrase-category-badge">🍷 注文</div>
+            <div class="phrase-ja">これをお願いします（指差しながら）</div>
+            <div class="phrase-it">Questo, per favore.</div>
+            <div class="phrase-kana">クエスト、ペル・ファヴォーレ</div>
+            <div style="font-size:0.68rem; color:#7c2d12; margin-top:2px;">💡 メニューを指差しながら注文。</div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:4px; align-items:center; flex-shrink:0;">
+            <button type="button" class="speak-btn" data-phrase="Questo, per favore." title="発音を再生">🔊</button>
+            <button type="button" class="copy-phrase-btn" data-phrase="Questo, per favore." title="コピー">📋</button>
+          </div>
+        </div>
+        <div class="phrase-card" data-cat="dining">
+          <div class="phrase-text-wrap">
+            <div class="phrase-category-badge">🍷 お水</div>
+            <div class="phrase-ja">ガスなし水を1本ください</div>
+            <div class="phrase-it">Un'acqua naturale, per favore.</div>
+            <div class="phrase-kana">ウナックア・ナトゥラーレ、ペル・ファヴォーレ</div>
+            <div style="font-size:0.68rem; color:#7c2d12; margin-top:2px;">💡 【みめ直伝】普通の常温/冷水を頼む時の必須表現！</div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:4px; align-items:center; flex-shrink:0;">
+            <button type="button" class="speak-btn" data-phrase="Un'acqua naturale, per favore." title="発音を再生">🔊</button>
+            <button type="button" class="copy-phrase-btn" data-phrase="Un'acqua naturale, per favore." title="コピー">📋</button>
+          </div>
+        </div>
+        <div class="phrase-card" data-cat="dining">
+          <div class="phrase-text-wrap">
+            <div class="phrase-category-badge">🍷 お水</div>
+            <div class="phrase-ja">炭酸水を1本ください</div>
+            <div class="phrase-it">Un'acqua frizzante, per favore.</div>
+            <div class="phrase-kana">ウナックア・フリッツァンテ、ペル・ファヴォーレ</div>
+            <div style="font-size:0.68rem; color:#7c2d12; margin-top:2px;">💡 シュワシュワの炭酸入りミネラルウォーター。</div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:4px; align-items:center; flex-shrink:0;">
+            <button type="button" class="speak-btn" data-phrase="Un'acqua frizzante, per favore." title="発音を再生">🔊</button>
+            <button type="button" class="copy-phrase-btn" data-phrase="Un'acqua frizzante, per favore." title="コピー">📋</button>
+          </div>
+        </div>
+        <div class="phrase-card" data-cat="dining">
+          <div class="phrase-text-wrap">
+            <div class="phrase-category-badge">🍷 お酒</div>
+            <div class="phrase-ja">ハウスワインの赤/白をデキャンタで</div>
+            <div class="phrase-it">Un quarto di vino rosso / bianco, per favore.</div>
+            <div class="phrase-kana">ウン・クアルト・ディ・ヴィーノ・ロッソ / ビアンコ</div>
+            <div style="font-size:0.68rem; color:#7c2d12; margin-top:2px;">💡 お得で美味しいカラフェ（1/4L）ワイン。</div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:4px; align-items:center; flex-shrink:0;">
+            <button type="button" class="speak-btn" data-phrase="Un quarto di vino rosso / bianco, per favore." title="発音を再生">🔊</button>
+            <button type="button" class="copy-phrase-btn" data-phrase="Un quarto di vino rosso / bianco, per favore." title="コピー">📋</button>
+          </div>
+        </div>
+        <div class="phrase-card" data-cat="dining">
+          <div class="phrase-text-wrap">
+            <div class="phrase-category-badge">🍷 乾杯</div>
+            <div class="phrase-ja">乾杯！</div>
+            <div class="phrase-it">Salute! / Cin cin!</div>
+            <div class="phrase-kana">サルーテ！ / チンチン！</div>
+            <div style="font-size:0.68rem; color:#7c2d12; margin-top:2px;">💡 【みめ直伝】相手の目を見て乾杯するのがマナー！</div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:4px; align-items:center; flex-shrink:0;">
+            <button type="button" class="speak-btn" data-phrase="Salute! / Cin cin!" title="発音を再生">🔊</button>
+            <button type="button" class="copy-phrase-btn" data-phrase="Salute! / Cin cin!" title="コピー">📋</button>
+          </div>
+        </div>
+        <div class="phrase-card" data-cat="dining">
+          <div class="phrase-text-wrap">
+            <div class="phrase-category-badge">🍷 称賛</div>
+            <div class="phrase-ja">とても美味しいです！</div>
+            <div class="phrase-it">È buonissimo!</div>
+            <div class="phrase-kana">エ・ブオニッシモ！</div>
+            <div style="font-size:0.68rem; color:#7c2d12; margin-top:2px;">💡 美味しさを伝えるとシェフも大喜び。</div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:4px; align-items:center; flex-shrink:0;">
+            <button type="button" class="speak-btn" data-phrase="È buonissimo!" title="発音を再生">🔊</button>
+            <button type="button" class="copy-phrase-btn" data-phrase="È buonissimo!" title="コピー">📋</button>
+          </div>
+        </div>
+        <div class="phrase-card" data-cat="dining">
+          <div class="phrase-text-wrap">
+            <div class="phrase-category-badge">🍷 バール</div>
+            <div class="phrase-ja">エスプレッソを1杯（バールで）</div>
+            <div class="phrase-it">Un caffè, per favore.</div>
+            <div class="phrase-kana">ウン・カッフェ、ペル・ファヴォーレ</div>
+            <div style="font-size:0.68rem; color:#7c2d12; margin-top:2px;">💡 バールでコーヒー＝濃厚エスプレッソ。</div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:4px; align-items:center; flex-shrink:0;">
+            <button type="button" class="speak-btn" data-phrase="Un caffè, per favore." title="発音を再生">🔊</button>
+            <button type="button" class="copy-phrase-btn" data-phrase="Un caffè, per favore." title="コピー">📋</button>
+          </div>
+        </div>
+        <div class="phrase-card" data-cat="dining">
+          <div class="phrase-text-wrap">
+            <div class="phrase-category-badge">🍷 会計</div>
+            <div class="phrase-ja">お会計をお願いします</div>
+            <div class="phrase-it">Il conto, per favore.</div>
+            <div class="phrase-kana">イル・コント、ペル・ファヴォーレ</div>
+            <div style="font-size:0.68rem; color:#7c2d12; margin-top:2px;">💡 テーブル会計をお願いする時。</div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:4px; align-items:center; flex-shrink:0;">
+            <button type="button" class="speak-btn" data-phrase="Il conto, per favore." title="発音を再生">🔊</button>
+            <button type="button" class="copy-phrase-btn" data-phrase="Il conto, per favore." title="コピー">📋</button>
+          </div>
+        </div>
+        <div class="phrase-card" data-cat="dining">
+          <div class="phrase-text-wrap">
+            <div class="phrase-category-badge">🍷 会計</div>
+            <div class="phrase-ja">カードで支払えますか？</div>
+            <div class="phrase-it">Posso pagare con la carta?</div>
+            <div class="phrase-kana">ポッソ・パガーレ・コン・ラ・カルタ？</div>
+            <div style="font-size:0.68rem; color:#7c2d12; margin-top:2px;">💡 タッチ決済（Contactless）対応確認。</div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:4px; align-items:center; flex-shrink:0;">
+            <button type="button" class="speak-btn" data-phrase="Posso pagare con la carta?" title="発音を再生">🔊</button>
+            <button type="button" class="copy-phrase-btn" data-phrase="Posso pagare con la carta?" title="コピー">📋</button>
+          </div>
+        </div>
+        <div class="phrase-card" data-cat="dining">
+          <div class="phrase-text-wrap">
+            <div class="phrase-category-badge">🍷 会計</div>
+            <div class="phrase-ja">別々に支払えますか？</div>
+            <div class="phrase-it">Possiamo pagare separatamente?</div>
+            <div class="phrase-kana">ポッシアーモ・パガーレ・セパラタメンテ？</div>
+            <div style="font-size:0.68rem; color:#7c2d12; margin-top:2px;">💡 割り勘会計を希望する時。</div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:4px; align-items:center; flex-shrink:0;">
+            <button type="button" class="speak-btn" data-phrase="Possiamo pagare separatamente?" title="発音を再生">🔊</button>
+            <button type="button" class="copy-phrase-btn" data-phrase="Possiamo pagare separatamente?" title="コピー">📋</button>
+          </div>
+        </div>
+        <div class="phrase-card" data-cat="shopping">
+          <div class="phrase-text-wrap">
+            <div class="phrase-category-badge">🛍️ マナー</div>
+            <div class="phrase-ja">触ってもいいですか？</div>
+            <div class="phrase-it">Posso toccare?</div>
+            <div class="phrase-kana">ポッソ・トッカード？</div>
+            <div style="font-size:0.68rem; color:#7c2d12; margin-top:2px;">💡 【みめ直伝】勝手に商品を触らず敬意を示す一言！</div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:4px; align-items:center; flex-shrink:0;">
+            <button type="button" class="speak-btn" data-phrase="Posso toccare?" title="発音を再生">🔊</button>
+            <button type="button" class="copy-phrase-btn" data-phrase="Posso toccare?" title="コピー">📋</button>
+          </div>
+        </div>
+        <div class="phrase-card" data-cat="shopping">
+          <div class="phrase-text-wrap">
+            <div class="phrase-category-badge">🛍️ 接客</div>
+            <div class="phrase-ja">見ているだけです</div>
+            <div class="phrase-it">Sto solo guardando, grazie.</div>
+            <div class="phrase-kana">スト・ソーロ・グアルダンド、グラツィエ</div>
+            <div style="font-size:0.68rem; color:#7c2d12; margin-top:2px;">💡 店員さんに声をかけられた時の返し。</div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:4px; align-items:center; flex-shrink:0;">
+            <button type="button" class="speak-btn" data-phrase="Sto solo guardando, grazie." title="発音を再生">🔊</button>
+            <button type="button" class="copy-phrase-btn" data-phrase="Sto solo guardando, grazie." title="コピー">📋</button>
+          </div>
+        </div>
+        <div class="phrase-card" data-cat="shopping">
+          <div class="phrase-text-wrap">
+            <div class="phrase-category-badge">🛍️ 価格</div>
+            <div class="phrase-ja">これはいくらですか？</div>
+            <div class="phrase-it">Quanto costa questo?</div>
+            <div class="phrase-kana">クアント・コスタ・クエスト？</div>
+            <div style="font-size:0.68rem; color:#7c2d12; margin-top:2px;">💡 値段を確認する時。</div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:4px; align-items:center; flex-shrink:0;">
+            <button type="button" class="speak-btn" data-phrase="Quanto costa questo?" title="発音を再生">🔊</button>
+            <button type="button" class="copy-phrase-btn" data-phrase="Quanto costa questo?" title="コピー">📋</button>
+          </div>
+        </div>
+        <div class="phrase-card" data-cat="shopping">
+          <div class="phrase-text-wrap">
+            <div class="phrase-category-badge">🛍️ 試着</div>
+            <div class="phrase-ja">試着してもいいですか？</div>
+            <div class="phrase-it">Posso provarlo?</div>
+            <div class="phrase-kana">ポッソ・プロヴァールロ？</div>
+            <div style="font-size:0.68rem; color:#7c2d12; margin-top:2px;">💡 洋服やストールを試着したい時。</div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:4px; align-items:center; flex-shrink:0;">
+            <button type="button" class="speak-btn" data-phrase="Posso provarlo?" title="発音を再生">🔊</button>
+            <button type="button" class="copy-phrase-btn" data-phrase="Posso provarlo?" title="コピー">📋</button>
+          </div>
+        </div>
+        <div class="phrase-card" data-cat="shopping">
+          <div class="phrase-text-wrap">
+            <div class="phrase-category-badge">🛍️ 在庫</div>
+            <div class="phrase-ja">別の色/サイズはありますか？</div>
+            <div class="phrase-it">Ha un altro colore / un'altra taglia?</div>
+            <div class="phrase-kana">ア・ウン・アルトロ・コローレ / ウナルトラ・ターリャ？</div>
+            <div style="font-size:0.68rem; color:#7c2d12; margin-top:2px;">💡 サイズ違いや色違いを探す時。</div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:4px; align-items:center; flex-shrink:0;">
+            <button type="button" class="speak-btn" data-phrase="Ha un altro colore / un'altra taglia?" title="発音を再生">🔊</button>
+            <button type="button" class="copy-phrase-btn" data-phrase="Ha un altro colore / un'altra taglia?" title="コピー">📋</button>
+          </div>
+        </div>
+        <div class="phrase-card" data-cat="shopping">
+          <div class="phrase-text-wrap">
+            <div class="phrase-category-badge">🛍️ 包装</div>
+            <div class="phrase-ja">お土産用に小分けの袋をください</div>
+            <div class="phrase-it">Posso avere dei sacchetti regalo?</div>
+            <div class="phrase-kana">ポッソ・アヴェーレ・デイ・サッケッティ・レガーロ？</div>
+            <div style="font-size:0.68rem; color:#7c2d12; margin-top:2px;">💡 配り用お土産小袋をもらう時。</div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:4px; align-items:center; flex-shrink:0;">
+            <button type="button" class="speak-btn" data-phrase="Posso avere dei sacchetti regalo?" title="発音を再生">🔊</button>
+            <button type="button" class="copy-phrase-btn" data-phrase="Posso avere dei sacchetti regalo?" title="コピー">📋</button>
+          </div>
+        </div>
+        <div class="phrase-card" data-cat="shopping">
+          <div class="phrase-text-wrap">
+            <div class="phrase-category-badge">🛍️ 免税</div>
+            <div class="phrase-ja">免税書類を作っていただけますか？</div>
+            <div class="phrase-it">Tax Refund, per favore.</div>
+            <div class="phrase-kana">タックス・リファンド、ペル・ファヴォーレ</div>
+            <div style="font-size:0.68rem; color:#7c2d12; margin-top:2px;">💡 【みめ直伝】€70.01以上でパスポート提示！</div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:4px; align-items:center; flex-shrink:0;">
+            <button type="button" class="speak-btn" data-phrase="Tax Refund, per favore." title="発音を再生">🔊</button>
+            <button type="button" class="copy-phrase-btn" data-phrase="Tax Refund, per favore." title="コピー">📋</button>
+          </div>
+        </div>
+        <div class="phrase-card" data-cat="shopping">
+          <div class="phrase-text-wrap">
+            <div class="phrase-category-badge">🛍️ 包装</div>
+            <div class="phrase-ja">これを包んでください</div>
+            <div class="phrase-it">Me lo incarta, per favore?</div>
+            <div class="phrase-kana">メ・ロ・インカルタ、ペル・ファヴォーレ？</div>
+            <div style="font-size:0.68rem; color:#7c2d12; margin-top:2px;">💡 プレゼント包装をお願いする時。</div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:4px; align-items:center; flex-shrink:0;">
+            <button type="button" class="speak-btn" data-phrase="Me lo incarta, per favore?" title="発音を再生">🔊</button>
+            <button type="button" class="copy-phrase-btn" data-phrase="Me lo incarta, per favore?" title="コピー">📋</button>
+          </div>
+        </div>
+        <div class="phrase-card" data-cat="shopping">
+          <div class="phrase-text-wrap">
+            <div class="phrase-category-badge">🛍️ 会計</div>
+            <div class="phrase-ja">レシートをください</div>
+            <div class="phrase-it">Lo scontrino, per favore.</div>
+            <div class="phrase-kana">ロ・スコントリーノ、ペル・ファヴォーレ</div>
+            <div style="font-size:0.68rem; color:#7c2d12; margin-top:2px;">💡 税関検査・免税確認でレシート必須。</div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:4px; align-items:center; flex-shrink:0;">
+            <button type="button" class="speak-btn" data-phrase="Lo scontrino, per favore." title="発音を再生">🔊</button>
+            <button type="button" class="copy-phrase-btn" data-phrase="Lo scontrino, per favore." title="コピー">📋</button>
+          </div>
+        </div>
+        <div class="phrase-card" data-cat="shopping">
+          <div class="phrase-text-wrap">
+            <div class="phrase-category-badge">🛍️ 交渉</div>
+            <div class="phrase-ja">少し安くしてもらえますか？</div>
+            <div class="phrase-it">Mi fa un po' di sconto?</div>
+            <div class="phrase-kana">ミ・ファ・ウン・ポ・ディ・スコント？</div>
+            <div style="font-size:0.68rem; color:#7c2d12; margin-top:2px;">💡 市場などでまとめ買いした時の交渉。</div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:4px; align-items:center; flex-shrink:0;">
+            <button type="button" class="speak-btn" data-phrase="Mi fa un po' di sconto?" title="発音を再生">🔊</button>
+            <button type="button" class="copy-phrase-btn" data-phrase="Mi fa un po' di sconto?" title="コピー">📋</button>
+          </div>
+        </div>
+        <div class="phrase-card" data-cat="airport_hotel">
+          <div class="phrase-text-wrap">
+            <div class="phrase-category-badge">🏨 到着</div>
+            <div class="phrase-ja">チェックインをお願いします</div>
+            <div class="phrase-it">Vorrei fare il check-in, per favore.</div>
+            <div class="phrase-kana">ヴォッレイ・ファーレ・イル・チェックイン</div>
+            <div style="font-size:0.68rem; color:#7c2d12; margin-top:2px;">💡 ホテル到着時の受付で。</div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:4px; align-items:center; flex-shrink:0;">
+            <button type="button" class="speak-btn" data-phrase="Vorrei fare il check-in, per favore." title="発音を再生">🔊</button>
+            <button type="button" class="copy-phrase-btn" data-phrase="Vorrei fare il check-in, per favore." title="コピー">📋</button>
+          </div>
+        </div>
+        <div class="phrase-card" data-cat="airport_hotel">
+          <div class="phrase-text-wrap">
+            <div class="phrase-category-badge">🏨 荷物</div>
+            <div class="phrase-ja">荷物を預かってもらえますか？</div>
+            <div class="phrase-it">Posso lasciare i bagagli qui?</div>
+            <div class="phrase-kana">ポッソ・ラッシャーレ・イ・バガーリ・クイ？</div>
+            <div style="font-size:0.68rem; color:#7c2d12; margin-top:2px;">💡 チェックイン前やチェックアウト後に荷物預け。</div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:4px; align-items:center; flex-shrink:0;">
+            <button type="button" class="speak-btn" data-phrase="Posso lasciare i bagagli qui?" title="発音を再生">🔊</button>
+            <button type="button" class="copy-phrase-btn" data-phrase="Posso lasciare i bagagli qui?" title="コピー">📋</button>
+          </div>
+        </div>
+        <div class="phrase-card" data-cat="airport_hotel">
+          <div class="phrase-text-wrap">
+            <div class="phrase-category-badge">🏨 客室</div>
+            <div class="phrase-ja">ダブルベッドの部屋をお願いします</div>
+            <div class="phrase-it">Una camera matrimoniale, per favore.</div>
+            <div class="phrase-kana">ウナ・カメラ・マトリモニアーレ、ペル・ファヴォーレ</div>
+            <div style="font-size:0.68rem; color:#7c2d12; margin-top:2px;">💡 ハネムーン特典ダブルベッドの確認。</div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:4px; align-items:center; flex-shrink:0;">
+            <button type="button" class="speak-btn" data-phrase="Una camera matrimoniale, per favore." title="発音を再生">🔊</button>
+            <button type="button" class="copy-phrase-btn" data-phrase="Una camera matrimoniale, per favore." title="コピー">📋</button>
+          </div>
+        </div>
+        <div class="phrase-card" data-cat="airport_hotel">
+          <div class="phrase-text-wrap">
+            <div class="phrase-category-badge">🏨 通信</div>
+            <div class="phrase-ja">Wi-Fiのパスワードは何ですか？</div>
+            <div class="phrase-it">Qual è la password del Wi-Fi?</div>
+            <div class="phrase-kana">クアル・エ・ラ・パスワード・デル・ワイファイ？</div>
+            <div style="font-size:0.68rem; color:#7c2d12; margin-top:2px;">💡 ホテルやカフェでネット接続。</div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:4px; align-items:center; flex-shrink:0;">
+            <button type="button" class="speak-btn" data-phrase="Qual è la password del Wi-Fi?" title="発音を再生">🔊</button>
+            <button type="button" class="copy-phrase-btn" data-phrase="Qual è la password del Wi-Fi?" title="コピー">📋</button>
+          </div>
+        </div>
+        <div class="phrase-card" data-cat="airport_hotel">
+          <div class="phrase-text-wrap">
+            <div class="phrase-category-badge">🏨 設備</div>
+            <div class="phrase-ja">お湯が出ません / エアコンが動きません</div>
+            <div class="phrase-it">Non c'è acqua calda / Non funziona l'aria condizionata.</div>
+            <div class="phrase-kana">ノン・チェ・アックア・カルダ / ノン・フンツィオーナ・ラリア・コンディツィオナータ</div>
+            <div style="font-size:0.68rem; color:#7c2d12; margin-top:2px;">💡 客室トラブルの申し出。</div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:4px; align-items:center; flex-shrink:0;">
+            <button type="button" class="speak-btn" data-phrase="Non c'è acqua calda / Non funziona l'aria condizionata." title="発音を再生">🔊</button>
+            <button type="button" class="copy-phrase-btn" data-phrase="Non c'è acqua calda / Non funziona l'aria condizionata." title="コピー">📋</button>
+          </div>
+        </div>
+        <div class="phrase-card" data-cat="airport_hotel">
+          <div class="phrase-text-wrap">
+            <div class="phrase-category-badge">🏨 移動</div>
+            <div class="phrase-ja">タクシーを呼んでいただけますか？</div>
+            <div class="phrase-it">Può chiamarmi un taxi, per favore?</div>
+            <div class="phrase-kana">プオ・キアマルミ・ウン・タクシー、ペル・ファヴォーレ？</div>
+            <div style="font-size:0.68rem; color:#7c2d12; margin-top:2px;">💡 フロントでタクシー手配依頼。</div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:4px; align-items:center; flex-shrink:0;">
+            <button type="button" class="speak-btn" data-phrase="Può chiamarmi un taxi, per favore?" title="発音を再生">🔊</button>
+            <button type="button" class="copy-phrase-btn" data-phrase="Può chiamarmi un taxi, per favore?" title="コピー">📋</button>
+          </div>
+        </div>
+        <div class="phrase-card" data-cat="airport_hotel">
+          <div class="phrase-text-wrap">
+            <div class="phrase-category-badge">🏨 食事</div>
+            <div class="phrase-ja">朝食は何時から何時までですか？</div>
+            <div class="phrase-it">A che ora è la colazione?</div>
+            <div class="phrase-kana">ア・ケ・オーラ・エ・ラ・コラツィオーネ？</div>
+            <div style="font-size:0.68rem; color:#7c2d12; margin-top:2px;">💡 朝食時間の確認。</div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:4px; align-items:center; flex-shrink:0;">
+            <button type="button" class="speak-btn" data-phrase="A che ora è la colazione?" title="発音を再生">🔊</button>
+            <button type="button" class="copy-phrase-btn" data-phrase="A che ora è la colazione?" title="コピー">📋</button>
+          </div>
+        </div>
+        <div class="phrase-card" data-cat="airport_hotel">
+          <div class="phrase-text-wrap">
+            <div class="phrase-category-badge">🏨 出発</div>
+            <div class="phrase-ja">チェックアウトをお願いします</div>
+            <div class="phrase-it">Vorrei fare il check-out, per favore.</div>
+            <div class="phrase-kana">ヴォッレイ・ファーレ・イル・チェックアウト</div>
+            <div style="font-size:0.68rem; color:#7c2d12; margin-top:2px;">💡 ホテル出発時の精算・手続き。</div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:4px; align-items:center; flex-shrink:0;">
+            <button type="button" class="speak-btn" data-phrase="Vorrei fare il check-out, per favore." title="発音を再生">🔊</button>
+            <button type="button" class="copy-phrase-btn" data-phrase="Vorrei fare il check-out, per favore." title="コピー">📋</button>
+          </div>
+        </div>
+        <div class="phrase-card" data-cat="airport_hotel">
+          <div class="phrase-text-wrap">
+            <div class="phrase-category-badge">✈️ 免税</div>
+            <div class="phrase-ja">免税キオスクはどこですか？</div>
+            <div class="phrase-it">Dov'è il chiosco Otello / Tax Free?</div>
+            <div class="phrase-kana">ドヴェ・イル・キオスコ・オテッロ / タックス・フリー？</div>
+            <div style="font-size:0.68rem; color:#7c2d12; margin-top:2px;">💡 空港でデジタル免税端末を探す時。</div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:4px; align-items:center; flex-shrink:0;">
+            <button type="button" class="speak-btn" data-phrase="Dov'è il chiosco Otello / Tax Free?" title="発音を再生">🔊</button>
+            <button type="button" class="copy-phrase-btn" data-phrase="Dov'è il chiosco Otello / Tax Free?" title="コピー">📋</button>
+          </div>
+        </div>
+        <div class="phrase-card" data-cat="transport">
+          <div class="phrase-text-wrap">
+            <div class="phrase-category-badge">🚆 切符</div>
+            <div class="phrase-ja">切符売り場はどこですか？</div>
+            <div class="phrase-it">Dov'è la biglietteria?</div>
+            <div class="phrase-kana">ドヴェ・ラ・ビリエッテリア？</div>
+            <div style="font-size:0.68rem; color:#7c2d12; margin-top:2px;">💡 駅や停留所で切符売り場を探す時。</div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:4px; align-items:center; flex-shrink:0;">
+            <button type="button" class="speak-btn" data-phrase="Dov'è la biglietteria?" title="発音を再生">🔊</button>
+            <button type="button" class="copy-phrase-btn" data-phrase="Dov'è la biglietteria?" title="コピー">📋</button>
+          </div>
+        </div>
+        <div class="phrase-card" data-cat="transport">
+          <div class="phrase-text-wrap">
+            <div class="phrase-category-badge">🚆 切符</div>
+            <div class="phrase-ja">ローマ/フィレンツェ行きの切符を2枚</div>
+            <div class="phrase-it">Due biglietti per Roma / Firenze, per favore.</div>
+            <div class="phrase-kana">ドゥーエ・ビリエッティ・ペル・ローマ / フィレンツェ</div>
+            <div style="font-size:0.68rem; color:#7c2d12; margin-top:2px;">💡 電車やバスの切符購入。</div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:4px; align-items:center; flex-shrink:0;">
+            <button type="button" class="speak-btn" data-phrase="Due biglietti per Roma / Firenze, per favore." title="発音を再生">🔊</button>
+            <button type="button" class="copy-phrase-btn" data-phrase="Due biglietti per Roma / Firenze, per favore." title="コピー">📋</button>
+          </div>
+        </div>
+        <div class="phrase-card" data-cat="transport">
+          <div class="phrase-text-wrap">
+            <div class="phrase-category-badge">🚆 案内</div>
+            <div class="phrase-ja">この電車はどこ行きですか？</div>
+            <div class="phrase-it">Dove va questo treno?</div>
+            <div class="phrase-kana">ドーヴェ・ヴァ・クエスト・トレーノ？</div>
+            <div style="font-size:0.68rem; color:#7c2d12; margin-top:2px;">💡 電車の行先確認。</div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:4px; align-items:center; flex-shrink:0;">
+            <button type="button" class="speak-btn" data-phrase="Dove va questo treno?" title="発音を再生">🔊</button>
+            <button type="button" class="copy-phrase-btn" data-phrase="Dove va questo treno?" title="コピー">📋</button>
+          </div>
+        </div>
+        <div class="phrase-card" data-cat="transport">
+          <div class="phrase-text-wrap">
+            <div class="phrase-category-badge">🚆 ホーム</div>
+            <div class="phrase-ja">何番線から出発しますか？</div>
+            <div class="phrase-it">Da quale binario parte?</div>
+            <div class="phrase-kana">ダ・クアレ・ビナーリオ・パルテ？</div>
+            <div style="font-size:0.68rem; color:#7c2d12; margin-top:2px;">💡 電車の発車ホーム（Binario）確認。</div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:4px; align-items:center; flex-shrink:0;">
+            <button type="button" class="speak-btn" data-phrase="Da quale binario parte?" title="発音を再生">🔊</button>
+            <button type="button" class="copy-phrase-btn" data-phrase="Da quale binario parte?" title="コピー">📋</button>
+          </div>
+        </div>
+        <div class="phrase-card" data-cat="transport">
+          <div class="phrase-text-wrap">
+            <div class="phrase-category-badge">🚆 刻印</div>
+            <div class="phrase-ja">打刻機はどこですか？</div>
+            <div class="phrase-it">Dov'è la macchinetta per timbrare?</div>
+            <div class="phrase-kana">ドヴェ・ラ・マッキネッタ・ペル・ティンブラーレ？</div>
+            <div style="font-size:0.68rem; color:#7c2d12; margin-top:2px;">💡 【みめ超警告】乗車前刻印忘れは罰金対象！</div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:4px; align-items:center; flex-shrink:0;">
+            <button type="button" class="speak-btn" data-phrase="Dov'è la macchinetta per timbrare?" title="発音を再生">🔊</button>
+            <button type="button" class="copy-phrase-btn" data-phrase="Dov'è la macchinetta per timbrare?" title="コピー">📋</button>
+          </div>
+        </div>
+        <div class="phrase-card" data-cat="transport">
+          <div class="phrase-text-wrap">
+            <div class="phrase-category-badge">🚆 地下鉄</div>
+            <div class="phrase-ja">地下鉄の駅はどこですか？</div>
+            <div class="phrase-it">Dov'è la stazione della metropolitana?</div>
+            <div class="phrase-kana">ドヴェ・ラ・スタツィオーネ・デッラ・メトロポリターナ？</div>
+            <div style="font-size:0.68rem; color:#7c2d12; margin-top:2px;">💡 地下鉄（Metro）入口を探す時。</div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:4px; align-items:center; flex-shrink:0;">
+            <button type="button" class="speak-btn" data-phrase="Dov'è la stazione della metropolitana?" title="発音を再生">🔊</button>
+            <button type="button" class="copy-phrase-btn" data-phrase="Dov'è la stazione della metropolitana?" title="コピー">📋</button>
+          </div>
+        </div>
+        <div class="phrase-card" data-cat="transport">
+          <div class="phrase-text-wrap">
+            <div class="phrase-category-badge">🚆 バス</div>
+            <div class="phrase-ja">次の停留所で降ります</div>
+            <div class="phrase-it">Scendo alla prossima fermata.</div>
+            <div class="phrase-kana">シェンド・アッラ・プロッスィマ・フェルマータ</div>
+            <div style="font-size:0.68rem; color:#7c2d12; margin-top:2px;">💡 バスやトラムを降りる合図。</div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:4px; align-items:center; flex-shrink:0;">
+            <button type="button" class="speak-btn" data-phrase="Scendo alla prossima fermata." title="発音を再生">🔊</button>
+            <button type="button" class="copy-phrase-btn" data-phrase="Scendo alla prossima fermata." title="コピー">📋</button>
+          </div>
+        </div>
+        <div class="phrase-card" data-cat="transport">
+          <div class="phrase-text-wrap">
+            <div class="phrase-category-badge">🚆 タクシー</div>
+            <div class="phrase-ja">この場所まで行ってください（地図提示）</div>
+            <div class="phrase-it">Mi porti a questo indirizzo, per favore.</div>
+            <div class="phrase-kana">ミ・ポルティ・ア・クエスト・インディリッツォ</div>
+            <div style="font-size:0.68rem; color:#7c2d12; margin-top:2px;">💡 タクシー運転手に地図を見せて伝える。</div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:4px; align-items:center; flex-shrink:0;">
+            <button type="button" class="speak-btn" data-phrase="Mi porti a questo indirizzo, per favore." title="発音を再生">🔊</button>
+            <button type="button" class="copy-phrase-btn" data-phrase="Mi porti a questo indirizzo, per favore." title="コピー">📋</button>
+          </div>
+        </div>
+        <div class="phrase-card" data-cat="transport">
+          <div class="phrase-text-wrap">
+            <div class="phrase-category-badge">🛶 ベネチア</div>
+            <div class="phrase-ja">ゴンドラに乗りたいです</div>
+            <div class="phrase-it">Vorremmo fare un giro in gondola.</div>
+            <div class="phrase-kana">ヴォレンモ・ファーレ・ウン・ジーロ・イン・ゴンドラ</div>
+            <div style="font-size:0.68rem; color:#7c2d12; margin-top:2px;">💡 ベネチアでゴンドラに乗る時。</div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:4px; align-items:center; flex-shrink:0;">
+            <button type="button" class="speak-btn" data-phrase="Vorremmo fare un giro in gondola." title="発音を再生">🔊</button>
+            <button type="button" class="copy-phrase-btn" data-phrase="Vorremmo fare un giro in gondola." title="コピー">📋</button>
+          </div>
+        </div>
+        <div class="phrase-card" data-cat="emergency">
+          <div class="phrase-text-wrap">
+            <div class="phrase-category-badge">🚨 トイレ</div>
+            <div class="phrase-ja">トイレをお借りできますか？</div>
+            <div class="phrase-it">Posso usare il bagno?</div>
+            <div class="phrase-kana">ポッソ・ウザーレ・イル・バーニョ？</div>
+            <div style="font-size:0.68rem; color:#7c2d12; margin-top:2px;">💡 【みめ直伝】バールでトイレを借りる黄金フレーズ！</div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:4px; align-items:center; flex-shrink:0;">
+            <button type="button" class="speak-btn" data-phrase="Posso usare il bagno?" title="発音を再生">🔊</button>
+            <button type="button" class="copy-phrase-btn" data-phrase="Posso usare il bagno?" title="コピー">📋</button>
+          </div>
+        </div>
+        <div class="phrase-card" data-cat="emergency">
+          <div class="phrase-text-wrap">
+            <div class="phrase-category-badge">🚨 トイレ</div>
+            <div class="phrase-ja">トイレはどこですか？</div>
+            <div class="phrase-it">Dov'è il bagno?</div>
+            <div class="phrase-kana">ドヴェ・イル・バーニョ？</div>
+            <div style="font-size:0.68rem; color:#7c2d12; margin-top:2px;">💡 店や施設内でトイレを探す時。</div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:4px; align-items:center; flex-shrink:0;">
+            <button type="button" class="speak-btn" data-phrase="Dov'è il bagno?" title="発音を再生">🔊</button>
+            <button type="button" class="copy-phrase-btn" data-phrase="Dov'è il bagno?" title="コピー">📋</button>
+          </div>
+        </div>
+        <div class="phrase-card" data-cat="emergency">
+          <div class="phrase-text-wrap">
+            <div class="phrase-category-badge">🚨 緊急</div>
+            <div class="phrase-ja">助けてください！</div>
+            <div class="phrase-it">Aiuto!</div>
+            <div class="phrase-kana">アイウート！</div>
+            <div style="font-size:0.68rem; color:#7c2d12; margin-top:2px;">💡 緊急時に大声で叫ぶ言葉。</div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:4px; align-items:center; flex-shrink:0;">
+            <button type="button" class="speak-btn" data-phrase="Aiuto!" title="発音を再生">🔊</button>
+            <button type="button" class="copy-phrase-btn" data-phrase="Aiuto!" title="コピー">📋</button>
+          </div>
+        </div>
+        <div class="phrase-card" data-cat="emergency">
+          <div class="phrase-text-wrap">
+            <div class="phrase-category-badge">🚨 警察</div>
+            <div class="phrase-ja">警察を呼んでください！</div>
+            <div class="phrase-it">Chiami la polizia, per favore!</div>
+            <div class="phrase-kana">キアーミ・ラ・ポリツィア、ペル・ファヴォーレ！</div>
+            <div style="font-size:0.68rem; color:#7c2d12; margin-top:2px;">💡 警察（112/113）の要請。</div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:4px; align-items:center; flex-shrink:0;">
+            <button type="button" class="speak-btn" data-phrase="Chiami la polizia, per favore!" title="発音を再生">🔊</button>
+            <button type="button" class="copy-phrase-btn" data-phrase="Chiami la polizia, per favore!" title="コピー">📋</button>
+          </div>
+        </div>
+        <div class="phrase-card" data-cat="emergency">
+          <div class="phrase-text-wrap">
+            <div class="phrase-category-badge">🚨 盗難</div>
+            <div class="phrase-ja">パスポートを盗まれました / なくしました</div>
+            <div class="phrase-it">Ho perso il mio passaporto.</div>
+            <div class="phrase-kana">オ・ペルソ・イル・ミオ・パッサポルト</div>
+            <div style="font-size:0.68rem; color:#7c2d12; margin-top:2px;">💡 大使館や警察署での盗難届・紛失届。</div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:4px; align-items:center; flex-shrink:0;">
+            <button type="button" class="speak-btn" data-phrase="Ho perso il mio passaporto." title="発音を再生">🔊</button>
+            <button type="button" class="copy-phrase-btn" data-phrase="Ho perso il mio passaporto." title="コピー">📋</button>
+          </div>
+        </div>
+        <div class="phrase-card" data-cat="emergency">
+          <div class="phrase-text-wrap">
+            <div class="phrase-category-badge">🚨 体調</div>
+            <div class="phrase-ja">気分が悪いです / お腹が痛いです</div>
+            <div class="phrase-it">Mi sento male / Ho mal di pancia.</div>
+            <div class="phrase-kana">ミ・セント・マーレ / オ・マル・ディ・パンチャ</div>
+            <div style="font-size:0.68rem; color:#7c2d12; margin-top:2px;">💡 薬局や病院で体調不良を伝える時。</div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:4px; align-items:center; flex-shrink:0;">
+            <button type="button" class="speak-btn" data-phrase="Mi sento male / Ho mal di pancia." title="発音を再生">🔊</button>
+            <button type="button" class="copy-phrase-btn" data-phrase="Mi sento male / Ho mal di pancia." title="コピー">📋</button>
+          </div>
+        </div>
+        <div class="phrase-card" data-cat="emergency">
+          <div class="phrase-text-wrap">
+            <div class="phrase-category-badge">🚨 薬局</div>
+            <div class="phrase-ja">胃腸薬 / 絆創膏はありますか？</div>
+            <div class="phrase-it">Ha una medicina per lo stomaco / dei cerotti?</div>
+            <div class="phrase-kana">ア・ウナ・メディチーナ・ペル・ロ・ストマコ / デイ・チェロッティ？</div>
+            <div style="font-size:0.68rem; color:#7c2d12; margin-top:2px;">💡 薬局（Farmacia）での相談。</div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:4px; align-items:center; flex-shrink:0;">
+            <button type="button" class="speak-btn" data-phrase="Ha una medicina per lo stomaco / dei cerotti?" title="発音を再生">🔊</button>
+            <button type="button" class="copy-phrase-btn" data-phrase="Ha una medicina per lo stomaco / dei cerotti?" title="コピー">📋</button>
+          </div>
+        </div>
+        <div class="phrase-card" data-cat="emergency">
+          <div class="phrase-text-wrap">
+            <div class="phrase-category-badge">🚨 大使館</div>
+            <div class="phrase-ja">日本大使館に連絡してください</div>
+            <div class="phrase-it">Vorrei contattare l'Ambasciata del Giappone.</div>
+            <div class="phrase-kana">ヴォッレイ・コンタッターレ・ランバッシャータ・デル・ジャッポーネ</div>
+            <div style="font-size:0.68rem; color:#7c2d12; margin-top:2px;">💡 重大トラブル時の連絡要請。</div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:4px; align-items:center; flex-shrink:0;">
+            <button type="button" class="speak-btn" data-phrase="Vorrei contattare l'Ambasciata del Giappone." title="発音を再生">🔊</button>
+            <button type="button" class="copy-phrase-btn" data-phrase="Vorrei contattare l'Ambasciata del Giappone." title="コピー">📋</button>
+          </div>
+        </div>
+        <div class="phrase-card" data-cat="honeymoon">
+          <div class="phrase-text-wrap">
+            <div class="phrase-category-badge">💍 記念</div>
+            <div class="phrase-ja">私たちは新婚旅行中です！</div>
+            <div class="phrase-it">Siamo in luna di miele!</div>
+            <div class="phrase-kana">スィアーモ・イン・ルーナ・ディ・ミエーレ！</div>
+            <div style="font-size:0.68rem; color:#7c2d12; margin-top:2px;">💡 【みめ直伝】サプライズや祝福を受ける魔法の言葉！</div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:4px; align-items:center; flex-shrink:0;">
+            <button type="button" class="speak-btn" data-phrase="Siamo in luna di miele!" title="発音を再生">🔊</button>
+            <button type="button" class="copy-phrase-btn" data-phrase="Siamo in luna di miele!" title="コピー">📋</button>
+          </div>
+        </div>
+        <div class="phrase-card" data-cat="honeymoon">
+          <div class="phrase-text-wrap">
+            <div class="phrase-category-badge">💍 写真</div>
+            <div class="phrase-ja">写真を撮っていただけますか？</div>
+            <div class="phrase-it">Ci può fare una foto, per favore?</div>
+            <div class="phrase-kana">チ・プオ・ファーレ・ウナ・フォト、ペル・ファヴォーレ？</div>
+            <div style="font-size:0.68rem; color:#7c2d12; margin-top:2px;">💡 ツーショット写真撮影のお願い。</div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:4px; align-items:center; flex-shrink:0;">
+            <button type="button" class="speak-btn" data-phrase="Ci può fare una foto, per favore?" title="発音を再生">🔊</button>
+            <button type="button" class="copy-phrase-btn" data-phrase="Ci può fare una foto, per favore?" title="コピー">📋</button>
+          </div>
+        </div>
+        <div class="phrase-card" data-cat="honeymoon">
+          <div class="phrase-text-wrap">
+            <div class="phrase-category-badge">💍 写真</div>
+            <div class="phrase-ja">もう1枚撮っていただけますか？</div>
+            <div class="phrase-it">Ne può fare un'altra?</div>
+            <div class="phrase-kana">ネ・プオ・ファーレ・ウナルトラ？</div>
+            <div style="font-size:0.68rem; color:#7c2d12; margin-top:2px;">💡 縦向きや別アングルでもう1枚お願いする時。</div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:4px; align-items:center; flex-shrink:0;">
+            <button type="button" class="speak-btn" data-phrase="Ne può fare un'altra?" title="発音を再生">🔊</button>
+            <button type="button" class="copy-phrase-btn" data-phrase="Ne può fare un'altra?" title="コピー">📋</button>
+          </div>
+        </div>
+        <div class="phrase-card" data-cat="honeymoon">
+          <div class="phrase-text-wrap">
+            <div class="phrase-category-badge">💍 写真</div>
+            <div class="phrase-ja">この景色を背景に入れてください</div>
+            <div class="phrase-it">Con questo sfondo, per favore.</div>
+            <div class="phrase-kana">コン・クエスト・スフォンド、ペル・ファヴォーレ</div>
+            <div style="font-size:0.68rem; color:#7c2d12; margin-top:2px;">💡 名所や建物を背景に入れてほしい時。</div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:4px; align-items:center; flex-shrink:0;">
+            <button type="button" class="speak-btn" data-phrase="Con questo sfondo, per favore." title="発音を再生">🔊</button>
+            <button type="button" class="copy-phrase-btn" data-phrase="Con questo sfondo, per favore." title="コピー">📋</button>
+          </div>
+        </div>
+        <div class="phrase-card" data-cat="honeymoon">
+          <div class="phrase-text-wrap">
+            <div class="phrase-category-badge">💍 記念</div>
+            <div class="phrase-ja">結婚記念日です</div>
+            <div class="phrase-it">È il nostro anniversario di matrimonio.</div>
+            <div class="phrase-kana">エ・イル・ノストロ・アンニヴェルサーリオ・ディ・マトリモーニオ</div>
+            <div style="font-size:0.68rem; color:#7c2d12; margin-top:2px;">💡 記念ディナーなどで伝える時。</div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:4px; align-items:center; flex-shrink:0;">
+            <button type="button" class="speak-btn" data-phrase="È il nostro anniversario di matrimonio." title="発音を再生">🔊</button>
+            <button type="button" class="copy-phrase-btn" data-phrase="È il nostro anniversario di matrimonio." title="コピー">📋</button>
+          </div>
+        </div>
+        <div class="phrase-card" data-cat="honeymoon">
+          <div class="phrase-text-wrap">
+            <div class="phrase-category-badge">💍 感動</div>
+            <div class="phrase-ja">とても美しいですね！</div>
+            <div class="phrase-it">È bellissimo / bellissima!</div>
+            <div class="phrase-kana">エ・ベッリッシモ / ベッリッシマ！</div>
+            <div style="font-size:0.68rem; color:#7c2d12; margin-top:2px;">💡 教会や街並み、夜景に感動した時。</div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:4px; align-items:center; flex-shrink:0;">
+            <button type="button" class="speak-btn" data-phrase="È bellissimo / bellissima!" title="発音を再生">🔊</button>
+            <button type="button" class="copy-phrase-btn" data-phrase="È bellissimo / bellissima!" title="コピー">📋</button>
+          </div>
+        </div>
+        <div class="phrase-card" data-cat="honeymoon">
+          <div class="phrase-text-wrap">
+            <div class="phrase-category-badge">💍 感謝</div>
+            <div class="phrase-ja">素晴らしい時間をありがとう！</div>
+            <div class="phrase-it">Grazie per il tempo meraviglioso!</div>
+            <div class="phrase-kana">グラツィエ・ペル・イル・テンポ・メラヴィリオーゾ！</div>
+            <div style="font-size:0.68rem; color:#7c2d12; margin-top:2px;">💡 ガイドさんやお店への温かい感謝。</div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:4px; align-items:center; flex-shrink:0;">
+            <button type="button" class="speak-btn" data-phrase="Grazie per il tempo meraviglioso!" title="発音を再生">🔊</button>
+            <button type="button" class="copy-phrase-btn" data-phrase="Grazie per il tempo meraviglioso!" title="コピー">📋</button>
+          </div>
+        </div>
+        <div class="phrase-card" data-cat="honeymoon">
+          <div class="phrase-text-wrap">
+            <div class="phrase-category-badge">💍 再訪</div>
+            <div class="phrase-ja">またイタリアに来ます！</div>
+            <div class="phrase-it">Torneremo sicuramente in Italia!</div>
+            <div class="phrase-kana">トルネレモ・スクラメンテ・イン・イタリア！</div>
+            <div style="font-size:0.68rem; color:#7c2d12; margin-top:2px;">💡 トレビの泉でコインを投げながら！</div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:4px; align-items:center; flex-shrink:0;">
+            <button type="button" class="speak-btn" data-phrase="Torneremo sicuramente in Italia!" title="発音を再生">🔊</button>
+            <button type="button" class="copy-phrase-btn" data-phrase="Torneremo sicuramente in Italia!" title="コピー">📋</button>
+          </div>
+        </div>
       </div>
     </section>
 
   </main>
 
-  <!-- Bottom Tab Bar -->
-    <!-- Bottom Tab Bar (iOS Safe Area Ready) -->
+  <!-- Bottom Tab Bar (iOS Safe Area Ready) -->
   <nav class="bottom-tab-bar">
     <a href="index.html" class="tab-item ">
       <span class="tab-icon">🏠</span>
@@ -131,7 +1039,6 @@
   </nav>
 
   <!-- Site Footer -->
-    <!-- Site Footer -->
   <footer class="site-footer">
     <div class="container footer-inner">
       <div>
@@ -152,14 +1059,5 @@
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
   <script src="app.js"></script>
-  <script>
-    document.addEventListener('click', function(e) {
-      document.querySelectorAll('details.day-popover-details, details.day-nav-details').forEach(function(d) {
-        if (!d.contains(e.target) && d.hasAttribute('open')) {
-          d.removeAttribute('open');
-        }
-      });
-    });
-  </script>
 </body>
 </html>

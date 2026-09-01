@@ -1,7 +1,25 @@
 /* ==========================================================================
-   イタリア新婚旅行ガイドポータル 共通JavaScript (app.js v8)
+   イタリア新婚旅行ガイドポータル 共通JavaScript (app.js v7)
    鈴木 健太・めぐみ 様 (HIS Tour OI-KMI2811: 2026年11月15日〜22日)
    ========================================================================== */
+
+// Global Day Selection Popover Handler (Appears directly above the '日程' label)
+window.toggleDayPopover = function(show) {
+  const menu = document.getElementById('day-popover-menu');
+  const overlay = document.getElementById('day-popover-overlay');
+  if (!menu || !overlay) return;
+
+  const isVisible = menu.classList.contains('show');
+  const targetState = (typeof show === 'boolean') ? show : !isVisible;
+
+  if (targetState) {
+    overlay.classList.add('show');
+    menu.classList.add('show');
+  } else {
+    overlay.classList.remove('show');
+    menu.classList.remove('show');
+  }
+};
 
 document.addEventListener('DOMContentLoaded', () => {
   initDayPopover();
@@ -10,44 +28,25 @@ document.addEventListener('DOMContentLoaded', () => {
   initTaxRefundCalculator();
   initSpeech();
   initSearch();
-  initGlobalEvents();
 });
 
-/* 1. Day Popover & Bottom Sheet Drawer Initializer */
+/* 1. Day Popover Initializer */
 function initDayPopover() {
-  const popoverDetails = document.querySelectorAll('details.day-popover-details');
-  const navDetails = document.querySelectorAll('details.day-nav-details');
-
-  // Auto-close open details when clicking outside or pressing Escape
-  document.addEventListener('click', (e) => {
-    popoverDetails.forEach((d) => {
-      if (d.hasAttribute('open') && !d.contains(e.target)) {
-        d.removeAttribute('open');
-      }
+  const btn = document.getElementById('btn-day-popover');
+  const overlay = document.getElementById('day-popover-overlay');
+  
+  if (btn) {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.toggleDayPopover();
     });
-    navDetails.forEach((d) => {
-      if (d.hasAttribute('open') && !d.contains(e.target)) {
-        d.removeAttribute('open');
-      }
-    });
-  });
+  }
 
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-      popoverDetails.forEach((d) => d.removeAttribute('open'));
-      navDetails.forEach((d) => d.removeAttribute('open'));
-    }
-  });
-
-  // Ensure clicking close buttons or items properly closes drawer
-  document.querySelectorAll('.day-popover-close, .day-popover-backdrop').forEach((btn) => {
-    btn.addEventListener('click', function(e) {
-      const details = this.closest('details');
-      if (details) {
-        details.removeAttribute('open');
-      }
+  if (overlay) {
+    overlay.addEventListener('click', () => {
+      window.toggleDayPopover(false);
     });
-  });
+  }
 }
 
 /* 2. Interactive Checklist with localStorage */
@@ -70,7 +69,7 @@ function initChecklist() {
     let total = checkItems.length;
     let checkedCount = 0;
     
-    checkItems.forEach((cb) => {
+    checkItems.forEach(cb => {
       const id = cb.dataset.id || cb.id || cb.name;
       if (savedState[id]) {
         cb.checked = true;
@@ -88,7 +87,7 @@ function initChecklist() {
     if (progressText) progressText.textContent = `準備完了: ${checkedCount} / ${total} 項目 (${percent}%)`;
   }
 
-  checkItems.forEach((cb) => {
+  checkItems.forEach(cb => {
     cb.addEventListener('change', () => {
       const id = cb.dataset.id || cb.id || cb.name;
       savedState[id] = cb.checked;
@@ -102,7 +101,7 @@ function initChecklist() {
   const selectAllBtn = document.getElementById('btn-select-all');
   if (selectAllBtn) {
     selectAllBtn.addEventListener('click', () => {
-      checkItems.forEach((cb) => {
+      checkItems.forEach(cb => {
         cb.checked = true;
         const id = cb.dataset.id || cb.id || cb.name;
         savedState[id] = true;
@@ -116,7 +115,7 @@ function initChecklist() {
   if (resetAllBtn) {
     resetAllBtn.addEventListener('click', () => {
       if (confirm('チェックリストをすべてリセットしますか？')) {
-        checkItems.forEach((cb) => {
+        checkItems.forEach(cb => {
           cb.checked = false;
           const id = cb.dataset.id || cb.id || cb.name;
           savedState[id] = false;
@@ -146,7 +145,7 @@ function initCalculator() {
     const rate = parseFloat(rateInput?.value || 165) || 165;
     const baseEur = parseFloat(euroInput.value) || 0;
     const copertoPerPerson = parseFloat(copertoSelect?.value || 0) || 0;
-    const copertoTotal = copertoPerPerson * 2; // 2 travelers (Kenta & Megumi)
+    const copertoTotal = copertoPerPerson * 2; // 2 travelers
     const tipRate = parseFloat(tipSelect?.value || 0) || 0;
     
     const tipEur = (baseEur * tipRate) / 100;
@@ -158,7 +157,7 @@ function initCalculator() {
 
     if (resultBreakdown) {
       resultBreakdown.innerHTML = `
-        <small style="color:var(--text-muted); font-size:0.7rem;">
+        <small style="color:var(--text-muted);">
           料理: €${baseEur.toFixed(2)} + 席料(2名): €${copertoTotal.toFixed(2)} + チップ(${tipRate}%): €${tipEur.toFixed(2)}
         </small>
       `;
@@ -170,7 +169,7 @@ function initCalculator() {
   if (copertoSelect) copertoSelect.addEventListener('change', calculate);
   if (tipSelect) tipSelect.addEventListener('change', calculate);
 
-  document.querySelectorAll('.btn-preset-eur').forEach((btn) => {
+  document.querySelectorAll('.btn-preset-eur').forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
       euroInput.value = btn.dataset.amount;
@@ -197,8 +196,9 @@ function initTaxRefundCalculator() {
     if (total < 70.01) {
       taxRefundEur.textContent = '€0.00';
       taxRefundJpy.textContent = '¥0';
-      if (taxStatus) taxStatus.innerHTML = '<span style="color:#dc2626; font-weight:700;">※ 最低購入額 €70.01 未満のため免税対象外です</span>';
+      if (taxStatus) taxStatus.innerHTML = '<span style="color:#dc2626;">※ 最低購入額 €70.01 未満のため免税対象外です</span>';
     } else {
+      // Standard Italian standard VAT refund ~12.5% net
       const refund = total * 0.125;
       const jpy = Math.round(refund * rate);
       taxRefundEur.textContent = `約 €${refund.toFixed(2)}`;
@@ -213,7 +213,7 @@ function initTaxRefundCalculator() {
 
 /* 5. Italian Speech Synthesis (Web Speech API) & Copy */
 function initSpeech() {
-  document.querySelectorAll('.speak-btn').forEach((btn) => {
+  document.querySelectorAll('.speak-btn').forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
       const text = btn.dataset.phrase || btn.getAttribute('data-phrase');
@@ -238,7 +238,7 @@ function initSpeech() {
     });
   });
 
-  document.querySelectorAll('.copy-phrase-btn').forEach((btn) => {
+  document.querySelectorAll('.copy-phrase-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       const text = btn.dataset.phrase;
       if (navigator.clipboard) {
@@ -261,13 +261,13 @@ function initSearch() {
   function filterCards() {
     const query = searchInput ? searchInput.value.toLowerCase().trim() : '';
     const activeChip = document.querySelector('.filter-chip.active');
-    const selectedCategory = activeChip ? activeChip.dataset.cat || activeChip.dataset.city : 'all';
+    const selectedCategory = activeChip ? activeChip.dataset.cat : 'all';
 
-    cards.forEach((card) => {
+    cards.forEach(card => {
       const cardCategory = card.dataset.cat || card.dataset.city || '';
       const text = card.textContent.toLowerCase();
       
-      const matchesCat = (!selectedCategory || selectedCategory === 'all' || cardCategory === selectedCategory);
+      const matchesCat = (selectedCategory === 'all' || cardCategory === selectedCategory);
       const matchesQuery = (!query || text.includes(query));
 
       if (matchesCat && matchesQuery) {
@@ -282,23 +282,22 @@ function initSearch() {
     searchInput.addEventListener('input', filterCards);
   }
 
-  filterChips.forEach((chip) => {
+  filterChips.forEach(chip => {
     chip.addEventListener('click', (e) => {
       e.preventDefault();
-      filterChips.forEach((c) => c.classList.remove('active'));
+      filterChips.forEach(c => c.classList.remove('active'));
       chip.classList.add('active');
       filterCards();
     });
   });
 }
 
-/* 7. Toast Notification Helper */
 function showToast(msg) {
   let toast = document.getElementById('app-toast');
   if (!toast) {
     toast = document.createElement('div');
     toast.id = 'app-toast';
-    toast.style.cssText = 'position:fixed; bottom:56px; left:50%; transform:translateX(-50%); background:rgba(15,23,42,0.9); color:#fff; padding:6px 14px; border-radius:20px; font-size:0.74rem; font-weight:700; z-index:999999; transition:opacity 0.25s ease; pointer-events:none; box-shadow:0 4px 12px rgba(0,0,0,0.2);';
+    toast.style.cssText = 'position:fixed; bottom:52px; left:50%; transform:translateX(-50%); background:rgba(0,0,0,0.85); color:#fff; padding:5px 12px; border-radius:14px; font-size:0.72rem; font-weight:700; z-index:999999; transition:all 0.3s; pointer-events:none;';
     document.body.appendChild(toast);
   }
   toast.textContent = msg;
@@ -306,13 +305,4 @@ function showToast(msg) {
   setTimeout(() => {
     toast.style.opacity = '0';
   }, 1800);
-}
-
-function initGlobalEvents() {
-  // Prevent accidental zoom gestures on double-tap for iOS
-  document.addEventListener('dblclick', (e) => {
-    if (e.target.closest('.btn, .tab-item, .day-pill, .filter-chip')) {
-      e.preventDefault();
-    }
-  }, { passive: false });
 }
