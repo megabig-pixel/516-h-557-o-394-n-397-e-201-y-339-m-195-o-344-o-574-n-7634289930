@@ -416,23 +416,24 @@
   </main>
 
   <!-- Bottom Tab Bar -->
+    <!-- Bottom Tab Bar (iOS Safe Area Ready) -->
   <nav class="bottom-tab-bar">
-    <a href="index.html" class="tab-item">
+    <a href="index.html" class="tab-item ">
       <span class="tab-icon">🏠</span>
       <span class="tab-label">ホーム</span>
     </a>
 
-    <!-- Native HTML5 Day Popover (Solid White Card with Dimmed Backdrop) -->
+    <!-- Day Selection Bottom Sheet Drawer -->
     <details class="day-popover-details" id="day-popover-details">
-      <summary class="tab-item">
+      <summary class="tab-item ">
         <span class="tab-icon">📅</span>
         <span class="tab-label">日程</span>
       </summary>
-      <div class="day-popover-backdrop" onclick="this.closest('details').removeAttribute('open');"></div>
+      <div class="day-popover-backdrop"></div>
       <div class="day-popover-dropdown">
         <div class="day-popover-header">
           <span class="day-popover-title">📅 全8日間 日程詳細を選択</span>
-          <button type="button" class="day-popover-close" onclick="this.closest('details').removeAttribute('open');">✕</button>
+          <button type="button" class="day-popover-close" aria-label="閉じる">✕</button>
         </div>
         <div class="day-popover-grid">
           <a href="day1.html" class="day-popover-item"><span class="dp-badge">Day 1</span> 11/15(日) 関空➔ミラノ</a>
@@ -447,19 +448,19 @@
       </div>
     </details>
 
-    <a href="beginner-guide.html" class="tab-item">
+    <a href="beginner-guide.html" class="tab-item ">
       <span class="tab-icon">🔰</span>
       <span class="tab-label">初心者</span>
     </a>
-    <a href="tour-map.html" class="tab-item">
+    <a href="tour-map.html" class="tab-item ">
       <span class="tab-icon">🗺️</span>
       <span class="tab-label">MAP</span>
     </a>
-    <a href="sightseeing-guide.html" class="tab-item">
+    <a href="sightseeing-guide.html" class="tab-item ">
       <span class="tab-icon">🏛️</span>
       <span class="tab-label">観光</span>
     </a>
-    <a href="phrasebook.html" class="tab-item">
+    <a href="phrasebook.html" class="tab-item ">
       <span class="tab-icon">🗣️</span>
       <span class="tab-label">会話</span>
     </a>
@@ -467,13 +468,14 @@
       <span class="tab-icon">🍽️</span>
       <span class="tab-label">グルメ</span>
     </a>
-    <a href="souvenir-guide.html" class="tab-item">
+    <a href="souvenir-guide.html" class="tab-item ">
       <span class="tab-icon">🎁</span>
       <span class="tab-label">お土産</span>
     </a>
   </nav>
 
   <!-- Site Footer -->
+    <!-- Site Footer -->
   <footer class="site-footer">
     <div class="container footer-inner">
       <div>

@@ -11,12 +11,22 @@
 <body>
   <main class="container" style="padding-top: 6px;">
 
-    <!-- Top Prev/Next Navigation Strip -->
-    
+        <!-- Horizontal Quick Day Pills & Navigation Strip -->
+    <div class="day-quick-pills">
+      <a href="day1.html" class="day-pill">Day 1<small>11/15</small></a>
+      <a href="day2.html" class="day-pill">Day 2<small>11/16</small></a>
+      <a href="day3.html" class="day-pill">Day 3<small>11/17</small></a>
+      <a href="day4.html" class="day-pill">Day 4<small>11/18</small></a>
+      <a href="day5.html" class="day-pill">Day 5<small>11/19</small></a>
+      <a href="day6.html" class="day-pill">Day 6<small>11/20</small></a>
+      <a href="day7.html" class="day-pill active">Day 7<small>11/21</small></a>
+      <a href="day8.html" class="day-pill">Day 8<small>11/22</small></a>
+    </div>
+
     <div class="day-nav-strip">
-      <a href="day6.html" class="btn btn-secondary" style="font-size:0.7rem; padding:4px 6px;">◀ Day 6</a>
+      <a href="day6.html" class="btn btn-secondary">◀ Day 6</a>
       <details class="day-nav-details">
-        <summary class="btn btn-primary" style="font-size:0.7rem; padding:4px 8px;">📅 日程選択 ▾</summary>
+        <summary class="btn btn-primary">📅 日程選択 ▾</summary>
         <div class="day-nav-dropdown">
           <a href="day1.html" class="dp-nav-link">Day 1: 11/15(日) 関空➔ミラノ</a>
           <a href="day2.html" class="dp-nav-link">Day 2: 11/16(月) ミラノ➔ベネチア</a>
@@ -27,6 +37,9 @@
           <a href="day7.html" class="dp-nav-link">Day 7: 11/21(土) ローマ➔FCO空港発</a>
           <a href="day8.html" class="dp-nav-link">Day 8: 11/22(日) 関空帰着・解散</a>
         </div>
+      </details>
+      <a href="day8.html" class="btn btn-secondary">Day 8 ▶</a>
+    </div>
       </details>
       <a href="day8.html" class="btn btn-secondary" style="font-size:0.7rem; padding:4px 6px;">Day 8 ▶</a>
     </div>
@@ -187,10 +200,22 @@
 
     <!-- Bottom Prev/Next Navigation Strip -->
     
+        <!-- Horizontal Quick Day Pills & Navigation Strip -->
+    <div class="day-quick-pills">
+      <a href="day1.html" class="day-pill">Day 1<small>11/15</small></a>
+      <a href="day2.html" class="day-pill">Day 2<small>11/16</small></a>
+      <a href="day3.html" class="day-pill">Day 3<small>11/17</small></a>
+      <a href="day4.html" class="day-pill">Day 4<small>11/18</small></a>
+      <a href="day5.html" class="day-pill">Day 5<small>11/19</small></a>
+      <a href="day6.html" class="day-pill">Day 6<small>11/20</small></a>
+      <a href="day7.html" class="day-pill active">Day 7<small>11/21</small></a>
+      <a href="day8.html" class="day-pill">Day 8<small>11/22</small></a>
+    </div>
+
     <div class="day-nav-strip">
-      <a href="day6.html" class="btn btn-secondary" style="font-size:0.7rem; padding:4px 6px;">◀ Day 6</a>
+      <a href="day6.html" class="btn btn-secondary">◀ Day 6</a>
       <details class="day-nav-details">
-        <summary class="btn btn-primary" style="font-size:0.7rem; padding:4px 8px;">📅 日程選択 ▾</summary>
+        <summary class="btn btn-primary">📅 日程選択 ▾</summary>
         <div class="day-nav-dropdown">
           <a href="day1.html" class="dp-nav-link">Day 1: 11/15(日) 関空➔ミラノ</a>
           <a href="day2.html" class="dp-nav-link">Day 2: 11/16(月) ミラノ➔ベネチア</a>
@@ -202,29 +227,33 @@
           <a href="day8.html" class="dp-nav-link">Day 8: 11/22(日) 関空帰着・解散</a>
         </div>
       </details>
+      <a href="day8.html" class="btn btn-secondary">Day 8 ▶</a>
+    </div>
+      </details>
       <a href="day8.html" class="btn btn-secondary" style="font-size:0.7rem; padding:4px 6px;">Day 8 ▶</a>
     </div>
     
   </main>
 
   <!-- Bottom Tab Bar -->
+    <!-- Bottom Tab Bar (iOS Safe Area Ready) -->
   <nav class="bottom-tab-bar">
-    <a href="index.html" class="tab-item active">
+    <a href="index.html" class="tab-item ">
       <span class="tab-icon">🏠</span>
       <span class="tab-label">ホーム</span>
     </a>
 
-    <!-- Native HTML5 Day Popover (Solid White Card with Dimmed Backdrop) -->
+    <!-- Day Selection Bottom Sheet Drawer -->
     <details class="day-popover-details" id="day-popover-details">
-      <summary class="tab-item">
+      <summary class="tab-item active">
         <span class="tab-icon">📅</span>
         <span class="tab-label">日程</span>
       </summary>
-      <div class="day-popover-backdrop" onclick="this.closest('details').removeAttribute('open');"></div>
+      <div class="day-popover-backdrop"></div>
       <div class="day-popover-dropdown">
         <div class="day-popover-header">
           <span class="day-popover-title">📅 全8日間 日程詳細を選択</span>
-          <button type="button" class="day-popover-close" onclick="this.closest('details').removeAttribute('open');">✕</button>
+          <button type="button" class="day-popover-close" aria-label="閉じる">✕</button>
         </div>
         <div class="day-popover-grid">
           <a href="day1.html" class="day-popover-item"><span class="dp-badge">Day 1</span> 11/15(日) 関空➔ミラノ</a>
@@ -239,33 +268,34 @@
       </div>
     </details>
 
-    <a href="beginner-guide.html" class="tab-item">
+    <a href="beginner-guide.html" class="tab-item ">
       <span class="tab-icon">🔰</span>
       <span class="tab-label">初心者</span>
     </a>
-    <a href="tour-map.html" class="tab-item">
+    <a href="tour-map.html" class="tab-item ">
       <span class="tab-icon">🗺️</span>
       <span class="tab-label">MAP</span>
     </a>
-    <a href="sightseeing-guide.html" class="tab-item">
+    <a href="sightseeing-guide.html" class="tab-item ">
       <span class="tab-icon">🏛️</span>
       <span class="tab-label">観光</span>
     </a>
-    <a href="phrasebook.html" class="tab-item">
+    <a href="phrasebook.html" class="tab-item ">
       <span class="tab-icon">🗣️</span>
       <span class="tab-label">会話</span>
     </a>
-    <a href="free-meal-guide.html" class="tab-item">
+    <a href="free-meal-guide.html" class="tab-item ">
       <span class="tab-icon">🍽️</span>
       <span class="tab-label">グルメ</span>
     </a>
-    <a href="souvenir-guide.html" class="tab-item">
+    <a href="souvenir-guide.html" class="tab-item ">
       <span class="tab-icon">🎁</span>
       <span class="tab-label">お土産</span>
     </a>
   </nav>
 
   <!-- Site Footer -->
+    <!-- Site Footer -->
   <footer class="site-footer">
     <div class="container footer-inner">
       <div>

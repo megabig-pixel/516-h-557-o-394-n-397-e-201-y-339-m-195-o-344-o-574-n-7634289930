@@ -220,7 +220,7 @@
               <span class="spot-chip">夕：機内食/軽食</span>
             </div>
             <p class="spot-desc">関空より国際線ペアシートにて出発。手荷物と預け荷物をしっかり仕分けて機内へ。</p>
-            <div class="spot-mime-tip"><strong>【みめTip】</strong> 搭乗したら時計をイタリア時間（-8時間）に合わせ、機内乾燥対策と到着日は即就寝で時差ボケ予防！</div>
+            <div class="spot-mime-tip"><strong>【みめTip】</strong> 搭乗したら時計をイタリア時間（-8時間）に合わせ、機内乾燥対策（マスク・目薬）と到着日は即就寝で時差ボケ予防！</div>
             <a href="day1.html" class="btn btn-primary" style="margin-top:auto;">Day 1 詳細ページ ➔</a>
           </div>
         </div>
@@ -338,27 +338,191 @@
         </div>
       </div>
     </section>
+"""
 
+with open(f'{site_dir}/index.html', 'w', encoding='utf-8') as f:
+    f.write(page_layout_v3(
+        "アンディアーモ！イタリア8日間 新婚旅行ガイドポータル | 鈴木 健太・めぐみ 様",
+        "HISイタリア周遊8日間新婚旅行専用ポータル。YouTubeイタリアガイドみめ直伝ノウハウ・動的ツール完備",
+        "active_home",
+        "home",
+        index_content_v3
+    ))
+print("index.html updated to v3.")
+
+# -------------------------------------------------------------
+# 3. phrasebook.html (Re-export v3)
+# -------------------------------------------------------------
+from gen_phrasebook import phrasebook_content
+with open(f'{site_dir}/phrasebook.html', 'w', encoding='utf-8') as f:
+    f.write(page_layout_v3(
+        "実践イタリア語 指差し会話帳＆音声バイブル | イタリア新婚旅行8日間",
+        "レストラン・お土産屋・空港・ホテル・緊急時に使える厳選70フレーズ。Web Speech APIによる音声発音＆ワンタップコピー機能付き",
+        "active_phrase",
+        "ph",
+        phrasebook_content
+    ))
+print("phrasebook.html updated to v3.")
+
+# -------------------------------------------------------------
+# 4. tour-map.html (Re-export v3)
+# -------------------------------------------------------------
+from gen_tour_map_v2 import tour_map_content
+with open(f'{site_dir}/tour-map.html', 'w', encoding='utf-8') as f:
+    f.write(page_layout_v3(
+        "全体ツアールートMAP | イタリア7都市周遊8日間 ハネムーンしおり",
+        "日別ルートナビゲーション、スポットタップでの半径500m周辺施設拡大、イタリア全域俯瞰ズームリセット機能を搭載したインタラクティブMAP",
+        "active_map",
+        "map",
+        tour_map_content
+    ))
+print("tour-map.html updated to v3.")
+
+# -------------------------------------------------------------
+# 5. free-meal-guide.html & dining-guide.html (Re-export v3)
+# -------------------------------------------------------------
+from gen_all_remaining_pages import dining_content, souvenir_content, rome_content
+
+for p in ['free-meal-guide.html', 'dining-guide.html']:
+    with open(f'{site_dir}/{p}', 'w', encoding='utf-8') as f:
+        f.write(page_layout_v3(
+            "イタリア自由食事＆レストラン完全ガイド｜HIS 8日間 7都市35選",
+            "YouTubeイタリアガイドみめ直伝のレストラン＆バール利用マナー、コペルト・チップ・お水ルールと7都市35店舗の名物グルメガイド",
+            "active_food",
+            "food",
+            dining_content
+        ))
+print("free-meal-guide.html & dining-guide.html updated to v3.")
+
+# -------------------------------------------------------------
+# 6. souvenir-guide.html (Re-export v3)
+# -------------------------------------------------------------
+with open(f'{site_dir}/souvenir-guide.html', 'w', encoding='utf-8') as f:
+    f.write(page_layout_v3(
+        "イタリアお土産＆ショッピング完全ガイド｜HIS 8日間 25選",
+        "YouTubeイタリアガイドみめ直伝の免税手続き（€70.01〜）、液体物パッキング、肉製品持ち込み禁止警告と都市別おすすめお土産",
+        "active_gift",
+        "gift",
+        souvenir_content
+    ))
+print("souvenir-guide.html updated to v3.")
+
+# -------------------------------------------------------------
+# 7. rome-free-day-guide.html (Re-export v3)
+# -------------------------------------------------------------
+with open(f'{site_dir}/rome-free-day-guide.html', 'w', encoding='utf-8') as f:
+    f.write(page_layout_v3(
+        "ローマ終日自由行動＆教会音楽 完全攻略ガイド | イタリア新婚旅行8日間",
+        "合唱・音楽を愛するお二人のためのサンピエトロ夕のミサ聖歌隊合唱、カラヴァッジョ教会巡礼、3大モデルコース",
+        "active_rome",
+        "rf",
+        rome_content
+    ))
+print("rome-free-day-guide.html updated to v3.")
+
+# -------------------------------------------------------------
+# 8. day1 to day8 (Re-export v3)
+# -------------------------------------------------------------
+from gen_days import days_data
+for d in days_data:
+    b_stat, l_stat, d_stat = d["meals"]
+    mime_cards_html = "".join([f"""
+        <div class="mime-tip-card">
+          <h4>💡 {t[0]}</h4>
+          <p>{t[1]}</p>
+        </div>""" for t in d["mime_tips"]])
+    
+    timeline_html = "".join([f"""
+        <li class="timeline-item">
+          <div class="timeline-time">{t[0]}</div>
+          <div class="timeline-desc">{t[1]}</div>
+        </li>""" for t in d["timeline"]])
+
+    content = f"""
+    <!-- Hero Header -->
+    <div class="hero-card hero-day">
+      <span class="hero-tag">💍 HIS Honeymoon Tour</span>
+      <h2 class="hero-title">{d["hero_title"]}</h2>
+      <p class="hero-subtitle">{d["hero_sub"]}</p>
+    </div>
+
+    <!-- Meal Status Box -->
+    <div class="meal-status-box">
+      <div class="meal-status-header">
+        <h3>🍽️ 本日の食事条件</h3>
+      </div>
+      <div class="meal-grid-3">
+        <div class="meal-col">
+          <div class="meal-col-title">朝食</div>
+          <span class="meal-badge {'included' if '込' in b_stat else 'free'}">{b_stat}</span>
+        </div>
+        <div class="meal-col">
+          <div class="meal-col-title">昼食</div>
+          <span class="meal-badge {'included' if '込' in b_stat else 'free'}">{l_stat}</span>
+        </div>
+        <div class="meal-col">
+          <div class="meal-col-title">夕食</div>
+          <span class="meal-badge {'included' if '込' in d_stat else 'free'}">{d_stat}</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mime Special Advice Box -->
+    <div class="mime-callout">
+      <div class="mime-header">
+        <div class="mime-title">
+          <span style="font-size: 1.5rem;">🎥</span>
+          <h3 style="margin:0;">【Mime直伝】本日の実践アドバイス ＆ 注意点</h3>
+        </div>
+        <span class="mime-badge">公認ガイド直伝</span>
+      </div>
+      <div class="mime-tips-grid">
+        {mime_cards_html}
+      </div>
+    </div>
+
+    <!-- Timeline Section -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">⏱️ 本日のタイムライン・行動スケジュール</h2>
+      </div>
+      <ul class="timeline-list">
+        {timeline_html}
+      </ul>
+    </section>
+    """
+
+    with open(f'{site_dir}/{d["file"]}', 'w', encoding='utf-8') as f:
+        f.write(page_layout_v3(
+            d["title"],
+            f"{d['hero_title']}。食事条件、タイムライン、YouTubeイタリアガイドみめ直伝ノウハウ",
+            "active_home",
+            d["key"],
+            content
+        ))
+    print(f"{d['file']} updated to v3.")
+
+print("\n🎉 ALL 17 HTML PAGES UPDATED TO V3 (NO HEADER, DUAL CLOCK, 8 BOTTOM TABS)!")
   </main>
 
-  <!-- Bottom Tab Bar (iOS Safe Area Ready) -->
+  <!-- Bottom Tab Bar -->
   <nav class="bottom-tab-bar">
     <a href="index.html" class="tab-item active">
       <span class="tab-icon">🏠</span>
       <span class="tab-label">ホーム</span>
     </a>
 
-    <!-- Day Selection Bottom Sheet Drawer -->
+    <!-- Native HTML5 Day Popover (Solid White Card with Dimmed Backdrop) -->
     <details class="day-popover-details" id="day-popover-details">
-      <summary class="tab-item ">
+      <summary class="tab-item">
         <span class="tab-icon">📅</span>
         <span class="tab-label">日程</span>
       </summary>
-      <div class="day-popover-backdrop"></div>
+      <div class="day-popover-backdrop" onclick="this.closest('details').removeAttribute('open');"></div>
       <div class="day-popover-dropdown">
         <div class="day-popover-header">
           <span class="day-popover-title">📅 全8日間 日程詳細を選択</span>
-          <button type="button" class="day-popover-close" aria-label="閉じる">✕</button>
+          <button type="button" class="day-popover-close" onclick="this.closest('details').removeAttribute('open');">✕</button>
         </div>
         <div class="day-popover-grid">
           <a href="day1.html" class="day-popover-item"><span class="dp-badge">Day 1</span> 11/15(日) 関空➔ミラノ</a>
@@ -373,27 +537,27 @@
       </div>
     </details>
 
-    <a href="beginner-guide.html" class="tab-item ">
+    <a href="beginner-guide.html" class="tab-item">
       <span class="tab-icon">🔰</span>
       <span class="tab-label">初心者</span>
     </a>
-    <a href="tour-map.html" class="tab-item ">
+    <a href="tour-map.html" class="tab-item">
       <span class="tab-icon">🗺️</span>
       <span class="tab-label">MAP</span>
     </a>
-    <a href="sightseeing-guide.html" class="tab-item ">
+    <a href="sightseeing-guide.html" class="tab-item">
       <span class="tab-icon">🏛️</span>
       <span class="tab-label">観光</span>
     </a>
-    <a href="phrasebook.html" class="tab-item ">
+    <a href="phrasebook.html" class="tab-item">
       <span class="tab-icon">🗣️</span>
       <span class="tab-label">会話</span>
     </a>
-    <a href="free-meal-guide.html" class="tab-item ">
+    <a href="free-meal-guide.html" class="tab-item">
       <span class="tab-icon">🍽️</span>
       <span class="tab-label">グルメ</span>
     </a>
-    <a href="souvenir-guide.html" class="tab-item ">
+    <a href="souvenir-guide.html" class="tab-item">
       <span class="tab-icon">🎁</span>
       <span class="tab-label">お土産</span>
     </a>
@@ -420,5 +584,14 @@
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
   <script src="app.js"></script>
+  <script>
+    document.addEventListener('click', function(e) {
+      document.querySelectorAll('details.day-popover-details, details.day-nav-details').forEach(function(d) {
+        if (!d.contains(e.target) && d.hasAttribute('open')) {
+          d.removeAttribute('open');
+        }
+      });
+    });
+  </script>
 </body>
 </html>
