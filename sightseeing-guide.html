@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=no">
+  <title>イタリア世界遺産・主要観光施設 完全攻略ガイド｜HIS 8日間 7都市</title>
+  <meta name="description" content="ミラノ・ベローナ・ベネチア・フィレンツェ・ピサ・サンジミニャーノ・ローマ・バチカンの世界遺産・観光施設入場予約・服装マナー・Mime直伝ガイド">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+</head>
+<body>
+  <!-- Dual World Clock Bar (Sticky Top) -->
+  <div class="clock-bar">
+    <div class="container clock-inner">
+      <div class="clock-item">
+        <span>🇮🇹 イタリア (ローマ/ミラノ):</span>
+        <span id="clock-rome" class="clock-time">--:--:--</span>
+      </div>
+      <div class="clock-item">
+        <span>🇯🇵 日本 (大阪/東京):</span>
+        <span id="clock-japan" class="clock-time">--:--:--</span>
+        <small style="color:#94a3b8;">(時差 -8h)</small>
+      </div>
+    </div>
+  </div>
+  <!-- Day & Guide Switcher Bar -->
+  <div class="day-switcher-bar">
+    <div class="day-switcher-scroll">
+      <a href="index.html" class="day-chip"><span>🏠 ホーム</span><small>トップ</small></a> <a href="day1.html" class="day-chip"><span>Day 1</span><small>11/15 (日)</small></a> <a href="day2.html" class="day-chip"><span>Day 2</span><small>11/16 (月)</small></a> <a href="day3.html" class="day-chip"><span>Day 3</span><small>11/17 (火)</small></a> <a href="day4.html" class="day-chip"><span>Day 4</span><small>11/18 (水)</small></a> <a href="day5.html" class="day-chip"><span>Day 5</span><small>11/19 (木)</small></a> <a href="day6.html" class="day-chip"><span>Day 6</span><small>11/20 (金)</small></a> <a href="day7.html" class="day-chip"><span>Day 7</span><small>11/21 (土)</small></a> <a href="day8.html" class="day-chip"><span>Day 8</span><small>11/22 (日)</small></a> <a href="beginner-guide.html" class="day-chip"><span>🔰 初心者</span><small>安心バイブル</small></a> <a href="sightseeing-guide.html" class="day-chip active"><span>🏛️ 観光</span><small>30選ガイド</small></a> <a href="tour-map.html" class="day-chip"><span>🗺️ MAP</span><small>ルート地図</small></a> <a href="phrasebook.html" class="day-chip"><span>🗣️ 会話</span><small>指差し帳</small></a> <a href="free-meal-guide.html" class="day-chip"><span>🍽️ グルメ</span><small>35選ガイド</small></a> <a href="souvenir-guide.html" class="day-chip"><span>🎁 お土産</span><small>25選ガイド</small></a> <a href="rome-free-day-guide.html" class="day-chip"><span>🎻 ローマ</span><small>教会音楽特集</small></a>
+    </div>
+  </div>
+  <main class="container" style="padding-top: 10px;">
+
+    <!-- Hero Header -->
+    <div class="hero-card" style="background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);">
+      <span class="hero-tag" style="background:#dbeafe; color:#1e40af;">🏛️ 7都市厳選 世界遺産・観光名所</span>
+      <h2 class="hero-title">イタリア世界遺産・主要観光施設 完全攻略ガイド</h2>
+      <p class="hero-subtitle">
+        ミラノ、ベローナ、ベネチア、フィレンツェ、ピサ、サンジミニャーノ、ローマ、バチカン市国<br>
+        入場予約ルール、服装マナー、保安検査、みめ直伝のベスト鑑賞術を完全網羅！
+      </p>
+    </div>
+
+    <!-- Mime Sightseeing Rules Callout -->
+    <div class="mime-callout">
+      <div class="mime-header">
+        <div class="mime-title">
+          <span style="font-size: 1.5rem;">⛪</span>
+          <h3 style="margin:0;">【Mime直伝】イタリア観光施設見学の5大鉄則</h3>
+        </div>
+        <span class="mime-badge">必読ルール</span>
+      </div>
+      <div class="mime-tips-grid">
+        <div class="mime-tip-card">
+          <h4>1. カトリック教会のドレスコード厳守</h4>
+          <p>肩（ノースリーブ）や膝（短パン・ミニスカ）の露出は即入場拒否。大判ストールを常備し、男性は聖堂内で必ず脱帽しましょう。</p>
+        </div>
+        <div class="mime-tip-card">
+          <h4>2. セキュリティ検査と大型荷物制限</h4>
+          <p>バチカン、コロッセオ、ピサの斜塔などは空港並みの金属探知機検査があります。大きなリュックやスーツケースは持込不可。</p>
+        </div>
+        <div class="mime-tip-card">
+          <h4>3. 有名広場の詐欺・押し売り完全無視</h4>
+          <p>ドゥオーモ前やコロッセオ周辺のミサンガ売り・ハトの餌やりは「No, grazie!」と目も合わさず通過するのが唯一の正解！</p>
+        </div>
+        <div class="mime-tip-card">
+          <h4>4. 写真撮影禁止エリアの遵守</h4>
+          <p>システィーナ礼拝堂（最後の審判）は完全撮影禁止・私語厳禁。教会内のミサ進行中の観光徘徊も慎みましょう。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- City Filter Chips -->
+    <div style="display:flex; gap:6px; overflow-x:auto; padding-bottom:10px; margin-bottom:16px; scrollbar-width:none;">
+      <button class="day-chip filter-chip active" data-cat="all" style="min-width:65px;">全都市 (20)</button>
+      <button class="day-chip filter-chip" data-cat="milan" style="min-width:75px;">ミラノ (4)</button>
+      <button class="day-chip filter-chip" data-cat="verona" style="min-width:75px;">ベローナ (2)</button>
+      <button class="day-chip filter-chip" data-cat="venice" style="min-width:75px;">ベネチア (3)</button>
+      <button class="day-chip filter-chip" data-cat="florence" style="min-width:85px;">フィレンツェ (4)</button>
+      <button class="day-chip filter-chip" data-cat="pisa" style="min-width:65px;">ピサ (1)</button>
+      <button class="day-chip filter-chip" data-cat="sangimignano" style="min-width:95px;">サンジミニャーノ (1)</button>
+      <button class="day-chip filter-chip" data-cat="rome" style="min-width:85px;">ローマ/バチカン (5)</button>
+    </div>
+
+    <!-- Search Input -->
+    <div style="margin-bottom:18px;">
+      <input type="text" id="search-input" class="calc-input" placeholder="🔍 施設名・都市名・キーワードでリアルタイム検索...">
+    </div>
+
+    <!-- Sightseeing Spots Grid -->
+    <section class="section">
+      <div class="cards-grid">
+        
+      <div class="spot-card" data-city="milan">
+        <div class="spot-body">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:6px;">
+            <span class="spot-chip" style="background:#dbeafe; color:#1e40af; font-weight:800;">ミラノ • Day 2</span>
+            <span class="spot-reserve-overlay required" style="position:static;">要予約 (ツアー外入場時)</span>
+          </div>
+          <h3 class="spot-name-ja">ミラノ大聖堂 (ドゥオーモ)</h3>
+          <span class="spot-name-it">Duomo di Milano</span>
+          <p class="spot-desc">135本の尖塔と2245体の彫像がそびえる世界最大級のゴシック建築。ステンドグラスと壮大なパイプオルガンは圧巻。</p>
+          <div style="background:#f1f5f9; padding:6px 10px; border-radius:6px; font-size:0.78rem; color:#334155; margin-bottom:10px;">
+            👗 肩・膝の露出厳禁（大判ストール必携）。男性は脱帽。金属探知機検査あり。
+          </div>
+          <div class="spot-mime-tip">
+            <strong>💡 【みめTip】</strong> 広場でのハトの餌やりやミサンガ売りは完全無視！テラス屋根上へエレベーターで登るとアルプス山脈とミラノ市街が一望できます。
+          </div>
+          <div class="spot-actions">
+            <a href="https://maps.google.com/?q=Duomo+di+Milano" target="_blank" class="btn btn-maps">📍 Google Maps</a>
+            <a href="https://www.duomomilano.it/" target="_blank" class="btn btn-secondary">🌐 公式サイト</a>
+          </div>
+        </div>
+      </div>
+      <div class="spot-card" data-city="milan">
+        <div class="spot-body">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:6px;">
+            <span class="spot-chip" style="background:#dbeafe; color:#1e40af; font-weight:800;">ミラノ • Day 2</span>
+            <span class="spot-reserve-overlay free" style="position:static;">見学自由 (無料)</span>
+          </div>
+          <h3 class="spot-name-ja">ヴィットーリオ・エマヌエーレ2世のガッレリア</h3>
+          <span class="spot-name-it">Galleria Vittorio Emanuele II</span>
+          <p class="spot-desc">1867年完成のガラスドーム天井と美しいモザイク床が広がる「ミラノのサロン」。プラダ本店や老舗カフェが並ぶ。</p>
+          <div style="background:#f1f5f9; padding:6px 10px; border-radius:6px; font-size:0.78rem; color:#334155; margin-bottom:10px;">
+            🚶‍♂️ スリ多発地帯。歩行中や撮影時のスマホ・バッグの管理を徹底。
+          </div>
+          <div class="spot-mime-tip">
+            <strong>💡 【みめTip】</strong> 中央床にあるトリノの紋章（牡牛のモザイク）の窪みに右足の踵を乗せて時計回りに3回転！ハネムーンの愛と幸福を祈願しましょう。
+          </div>
+          <div class="spot-actions">
+            <a href="https://maps.google.com/?q=Galleria+Vittorio+Emanuele+II+Milano" target="_blank" class="btn btn-maps">📍 Google Maps</a>
+            <a href="https://www.comune.milano.it/" target="_blank" class="btn btn-secondary">🌐 公式サイト</a>
+          </div>
+        </div>
+      </div>
+      <div class="spot-card" data-city="milan">
+        <div class="spot-body">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:6px;">
+            <span class="spot-chip" style="background:#dbeafe; color:#1e40af; font-weight:800;">ミラノ • Day 2</span>
+            <span class="spot-reserve-overlay rec" style="position:static;">博物館見学可</span>
+          </div>
+          <h3 class="spot-name-ja">スカラ座 (歌劇場)</h3>
+          <span class="spot-name-it">Teatro alla Scala</span>
+          <p class="spot-desc">1778年開場。ヴェルディやプッチーニが初演を行ったオペラの聖地。赤と金の豪華なボックス席と驚異的な音響空間。</p>
+          <div style="background:#f1f5f9; padding:6px 10px; border-radius:6px; font-size:0.78rem; color:#334155; margin-bottom:10px;">
+            🎩 公演時はドレスコードあり（スマートカジュアル以上）。博物館は日中見学可能。
+          </div>
+          <div class="spot-mime-tip">
+            <strong>💡 【みめTip】</strong> 外観は控えめですが、スカラ座博物館に入ると豪華絢爛な客席を上層ボックスから見学できます。隣の広場にはダ・ヴィンチ像。
+          </div>
+          <div class="spot-actions">
+            <a href="https://maps.google.com/?q=Teatro+alla+Scala+Milano" target="_blank" class="btn btn-maps">📍 Google Maps</a>
+            <a href="https://www.teatroallascala.org/" target="_blank" class="btn btn-secondary">🌐 公式サイト</a>
+          </div>
+        </div>
+      </div>
+      <div class="spot-card" data-city="milan">
+        <div class="spot-body">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:6px;">
+            <span class="spot-chip" style="background:#dbeafe; color:#1e40af; font-weight:800;">ミラノ • Day 2</span>
+            <span class="spot-reserve-overlay free" style="position:static;">中庭見学無料</span>
+          </div>
+          <h3 class="spot-name-ja">スフォルツェスコ城</h3>
+          <span class="spot-name-it">Castello Sforzesco</span>
+          <p class="spot-desc">14世紀のスフォルツァ家の居城。ミケランジェロ最後の未完の彫刻『ロンダニーニのピエタ』が収蔵された古代美術館。</p>
+          <div style="background:#f1f5f9; padding:6px 10px; border-radius:6px; font-size:0.78rem; color:#334155; margin-bottom:10px;">
+            🛡️ 広大な敷地。正面の大噴水前は記念写真スポット。
+          </div>
+          <div class="spot-mime-tip">
+            <strong>💡 【みめTip】</strong> 中庭（Cortile delle Armi）は入場無料で散策に最適。大噴水をバックにお二人の記念ツーショットが綺麗に撮れます。
+          </div>
+          <div class="spot-actions">
+            <a href="https://maps.google.com/?q=Castello+Sforzesco+Milano" target="_blank" class="btn btn-maps">📍 Google Maps</a>
+            <a href="https://www.milanocastello.it/" target="_blank" class="btn btn-secondary">🌐 公式サイト</a>
+          </div>
+        </div>
+      </div>
+      <div class="spot-card" data-city="verona">
+        <div class="spot-body">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:6px;">
+            <span class="spot-chip" style="background:#dbeafe; color:#1e40af; font-weight:800;">ベローナ • Day 2</span>
+            <span class="spot-reserve-overlay free" style="position:static;">中庭無料 / 内部要予約</span>
+          </div>
+          <h3 class="spot-name-ja">ジュリエットの家</h3>
+          <span class="spot-name-it">Casa di Giulietta</span>
+          <p class="spot-desc">シェイクスピア『ロミオとジュリエット』の舞台。中庭にあるジュリエットのブロンズ像と有名なバルコニー。</p>
+          <div style="background:#f1f5f9; padding:6px 10px; border-radius:6px; font-size:0.78rem; color:#334155; margin-bottom:10px;">
+            ❤️ 世界中の恋人たちが訪れるハネムーン必訪スポット。
+          </div>
+          <div class="spot-mime-tip">
+            <strong>💡 【みめTip】</strong> ジュリエット像の右胸に触れて写真を撮ると「永遠の愛と幸運」がもたらされる定番の儀式！中庭の壁には愛のメッセージがびっしり。
+          </div>
+          <div class="spot-actions">
+            <a href="https://maps.google.com/?q=Casa+di+Giulietta+Verona" target="_blank" class="btn btn-maps">📍 Google Maps</a>
+            <a href="https://casadigiulietta.comune.verona.it/" target="_blank" class="btn btn-secondary">🌐 公式サイト</a>
+          </div>
+        </div>
+      </div>
+      <div class="spot-card" data-city="verona">
+        <div class="spot-body">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:6px;">
+            <span class="spot-chip" style="background:#dbeafe; color:#1e40af; font-weight:800;">ベローナ • Day 2</span>
+            <span class="spot-reserve-overlay free" style="position:static;">外観見学自由</span>
+          </div>
+          <h3 class="spot-name-ja">アレーナ・ディ・ヴェローナ (古代円形闘技場)</h3>
+          <span class="spot-name-it">Arena di Verona</span>
+          <p class="spot-desc">ローマのコロッセオより古く、現在も夏に世界最高峰の野外オペラ祭が開催される現役の円形闘技場。</p>
+          <div style="background:#f1f5f9; padding:6px 10px; border-radius:6px; font-size:0.78rem; color:#334155; margin-bottom:10px;">
+            🏛️ ブラ広場に面し、周囲には美しいテラスカフェが並ぶ。
+          </div>
+          <div class="spot-mime-tip">
+            <strong>💡 【みめTip】</strong> ピンク色の大理石で造られた外壁が美しく、夕暮れ時のブラ広場からの眺めは格別です。
+          </div>
+          <div class="spot-actions">
+            <a href="https://maps.google.com/?q=Arena+di+Verona" target="_blank" class="btn btn-maps">📍 Google Maps</a>
+            <a href="https://www.arena.it/" target="_blank" class="btn btn-secondary">🌐 公式サイト</a>
+          </div>
+        </div>
+      </div>
+      <div class="spot-card" data-city="venice">
+        <div class="spot-body">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:6px;">
+            <span class="spot-chip" style="background:#dbeafe; color:#1e40af; font-weight:800;">ベネチア • Day 3</span>
+            <span class="spot-reserve-overlay required" style="position:static;">大聖堂入場要予約推奨</span>
+          </div>
+          <h3 class="spot-name-ja">サン・マルコ大聖堂＆サン・マルコ広場</h3>
+          <span class="spot-name-it">Basilica e Piazza San Marco</span>
+          <p class="spot-desc">ナポレオンが「世界で最も美しい客間」と称賛した大広場と、黄金に輝くモザイク天井のビザンティン大聖堂。</p>
+          <div style="background:#f1f5f9; padding:6px 10px; border-radius:6px; font-size:0.78rem; color:#334155; margin-bottom:10px;">
+            ⚠️ 広場での座り込み・ハトへの餌やり禁止（高額罰金）。大聖堂はリュック持込禁止（手荷物預所利用）。
+          </div>
+          <div class="spot-mime-tip">
+            <strong>💡 【みめTip】</strong> 広場の有料トイレ（€1.5）は大行列！近くのバールでエスプレッソ（€1.3）を頼んでトイレを借りるのがローカル技。
+          </div>
+          <div class="spot-actions">
+            <a href="https://maps.google.com/?q=Piazza+San+Marco+Venezia" target="_blank" class="btn btn-maps">📍 Google Maps</a>
+            <a href="http://www.basilicasanmarco.it/" target="_blank" class="btn btn-secondary">🌐 公式サイト</a>
+          </div>
+        </div>
+      </div>
+      <div class="spot-card" data-city="venice">
+        <div class="spot-body">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:6px;">
+            <span class="spot-chip" style="background:#dbeafe; color:#1e40af; font-weight:800;">ベネチア • Day 3</span>
+            <span class="spot-reserve-overlay rec" style="position:static;">要予約推奨</span>
+          </div>
+          <h3 class="spot-name-ja">ドゥカーレ宮殿＆ため息橋</h3>
+          <span class="spot-name-it">Palazzo Ducale & Ponte dei Sospiri</span>
+          <p class="spot-desc">ベネチアゴシックの最高峰建築。カサノヴァが脱獄した牢獄と宮殿を結ぶ白い大理石の「ため息橋（Ponte dei Sospiri）」。</p>
+          <div style="background:#f1f5f9; padding:6px 10px; border-radius:6px; font-size:0.78rem; color:#334155; margin-bottom:10px;">
+            📷 外観はボート乗り場や小橋から絶好の撮影アングル。
+          </div>
+          <div class="spot-mime-tip">
+            <strong>💡 【みめTip】</strong> 「日没時にゴンドラに乗ってため息橋の下でキスをした恋人は永遠の愛が約束される」というロマンチックな伝説があります！
+          </div>
+          <div class="spot-actions">
+            <a href="https://maps.google.com/?q=Palazzo+Ducale+Venezia" target="_blank" class="btn btn-maps">📍 Google Maps</a>
+            <a href="https://palazzoducale.visitmuve.it/" target="_blank" class="btn btn-secondary">🌐 公式サイト</a>
+          </div>
+        </div>
+      </div>
+      <div class="spot-card" data-city="venice">
+        <div class="spot-body">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:6px;">
+            <span class="spot-chip" style="background:#dbeafe; color:#1e40af; font-weight:800;">ベネチア • Day 3</span>
+            <span class="spot-reserve-overlay free" style="position:static;">見学自由 (無料)</span>
+          </div>
+          <h3 class="spot-name-ja">リアルト橋 (カナル・グランデ)</h3>
+          <span class="spot-name-it">Ponte di Rialto</span>
+          <p class="spot-desc">大運河（カナル・グランデ）にかかる白いアーチ橋。橋の上からのゴンドラと運河のパノラマはベネチア随一の絶景。</p>
+          <div style="background:#f1f5f9; padding:6px 10px; border-radius:6px; font-size:0.78rem; color:#334155; margin-bottom:10px;">
+            🚨 観光客で常に大混雑。スリが最も多発するスポットのためバッグ前持ち必須。
+          </div>
+          <div class="spot-mime-tip">
+            <strong>💡 【みめTip】</strong> 橋のたもとには伝統的なバカロ（居酒屋）が多数。橋の上から夕暮れ時の運河を眺めるのがおすすめです。
+          </div>
+          <div class="spot-actions">
+            <a href="https://maps.google.com/?q=Ponte+di+Rialto+Venezia" target="_blank" class="btn btn-maps">📍 Google Maps</a>
+            <a href="https://www.comune.venezia.it/" target="_blank" class="btn btn-secondary">🌐 公式サイト</a>
+          </div>
+        </div>
+      </div>
+      <div class="spot-card" data-city="florence">
+        <div class="spot-body">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:6px;">
+            <span class="spot-chip" style="background:#dbeafe; color:#1e40af; font-weight:800;">フィレンツェ • Day 4</span>
+            <span class="spot-reserve-overlay required" style="position:static;">聖堂無料 / クーポラ要予約</span>
+          </div>
+          <h3 class="spot-name-ja">サンタ・マリア・デル・フィオーレ大聖堂 (ドゥオーモ)</h3>
+          <span class="spot-name-it">Cattedrale di Santa Maria del Fiore</span>
+          <p class="spot-desc">ブルネレスキ設計の赤褐色の巨大クーポラ（天蓋）と白・緑・ピンクの大理石ファサード。ジョットの鐘楼と洗礼堂。</p>
+          <div style="background:#f1f5f9; padding:6px 10px; border-radius:6px; font-size:0.78rem; color:#334155; margin-bottom:10px;">
+            👗 肩・膝出し厳禁。クーポラ登頂（414段階段）は事前日時指定予約必須。
+          </div>
+          <div class="spot-mime-tip">
+            <strong>💡 【みめTip】</strong> 外観を眺めるならシニョーリア広場側からのアングルが壮大。聖堂内は比較的涼しいので羽織りものを持参しましょう。
+          </div>
+          <div class="spot-actions">
+            <a href="https://maps.google.com/?q=Duomo+Firenze" target="_blank" class="btn btn-maps">📍 Google Maps</a>
+            <a href="https://duomo.firenze.it/" target="_blank" class="btn btn-secondary">🌐 公式サイト</a>
+          </div>
+        </div>
+      </div>
+      <div class="spot-card" data-city="florence">
+        <div class="spot-body">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:6px;">
+            <span class="spot-chip" style="background:#dbeafe; color:#1e40af; font-weight:800;">フィレンツェ • Day 4</span>
+            <span class="spot-reserve-overlay free" style="position:static;">見学自由 (無料)</span>
+          </div>
+          <h3 class="spot-name-ja">ミケランジェロ広場＆サン・サルヴァトーレ教会</h3>
+          <span class="spot-name-it">Piazzale Michelangelo</span>
+          <p class="spot-desc">アルノ川とドゥオーモ、ポンテ・ヴェッキオを一望するフィレンツェ随一の展望テラス。新婚旅行記念撮影のベストスポット。</p>
+          <div style="background:#f1f5f9; padding:6px 10px; border-radius:6px; font-size:0.78rem; color:#334155; margin-bottom:10px;">
+            🚌 ツアー専用バスで直行。広場にはダ・ヴィンチ・ミケランジェロのダビデ像レプリカ。
+          </div>
+          <div class="spot-mime-tip">
+            <strong>💡 【みめTip】</strong> 広場のすぐ上にある「サン・サルヴァトーレ・アル・モンテ教会」は観光客が少なく、荘厳で静かな祈りの空間を味わえます。
+          </div>
+          <div class="spot-actions">
+            <a href="https://maps.google.com/?q=Piazzale+Michelangelo+Firenze" target="_blank" class="btn btn-maps">📍 Google Maps</a>
+            <a href="https://www.feelflorence.it/" target="_blank" class="btn btn-secondary">🌐 公式サイト</a>
+          </div>
+        </div>
+      </div>
+      <div class="spot-card" data-city="florence">
+        <div class="spot-body">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:6px;">
+            <span class="spot-chip" style="background:#dbeafe; color:#1e40af; font-weight:800;">フィレンツェ • Day 4</span>
+            <span class="spot-reserve-overlay free" style="position:static;">見学自由 (無料)</span>
+          </div>
+          <h3 class="spot-name-ja">ポンテ・ヴェッキオ (ヴェッキオ橋)</h3>
+          <span class="spot-name-it">Ponte Vecchio</span>
+          <p class="spot-desc">アルノ川にかかる屋根付き橋。かつて貴金属細工師が集められ、現在も老舗の金銀ジュエリー・時計店がずらりと並ぶ。</p>
+          <div style="background:#f1f5f9; padding:6px 10px; border-radius:6px; font-size:0.78rem; color:#334155; margin-bottom:10px;">
+            🚨 橋の中央部での署名アンケート詐欺・スリに警戒。
+          </div>
+          <div class="spot-mime-tip">
+            <strong>💡 【みめTip】</strong> 橋の上からのアルノ川の眺めはもちろん、隣のサンタ・トリニタ橋から見るポンテ・ヴェッキオの全景が最高のフォトスポット！
+          </div>
+          <div class="spot-actions">
+            <a href="https://maps.google.com/?q=Ponte+Vecchio+Firenze" target="_blank" class="btn btn-maps">📍 Google Maps</a>
+            <a href="https://www.feelflorence.it/" target="_blank" class="btn btn-secondary">🌐 公式サイト</a>
+          </div>
+        </div>
+      </div>
+      <div class="spot-card" data-city="florence">
+        <div class="spot-body">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:6px;">
+            <span class="spot-chip" style="background:#dbeafe; color:#1e40af; font-weight:800;">フィレンツェ • Day 4</span>
+            <span class="spot-reserve-overlay required" style="position:static;">要事前日時予約</span>
+          </div>
+          <h3 class="spot-name-ja">ウフィツィ美術館</h3>
+          <span class="spot-name-it">Galleria degli Uffizi</span>
+          <p class="spot-desc">メディチ家の膨大なコレクション。ボッティチェッリ『ヴィーナスの誕生』『春（プリマヴェーラ）』、ダ・ヴィンチ『受胎告知』。</p>
+          <div style="background:#f1f5f9; padding:6px 10px; border-radius:6px; font-size:0.78rem; color:#334155; margin-bottom:10px;">
+            🎫 事前予約なしでは当日券売り場で2時間以上待ち。大きな荷物は持込不可。
+          </div>
+          <div class="spot-mime-tip">
+            <strong>💡 【みめTip】</strong> 展示室が広大なため、見たい名画（ボッティチェッリ室、ダ・ヴィンチ室、ラファエロ室）を事前に決めて効率的に回りましょう。
+          </div>
+          <div class="spot-actions">
+            <a href="https://maps.google.com/?q=Uffizi+Gallery+Firenze" target="_blank" class="btn btn-maps">📍 Google Maps</a>
+            <a href="https://www.uffizi.it/" target="_blank" class="btn btn-secondary">🌐 公式サイト</a>
+          </div>
+        </div>
+      </div>
+      <div class="spot-card" data-city="pisa">
+        <div class="spot-body">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:6px;">
+            <span class="spot-chip" style="background:#dbeafe; color:#1e40af; font-weight:800;">ピサ • Day 4</span>
+            <span class="spot-reserve-overlay required" style="position:static;">斜塔登頂は要日時予約</span>
+          </div>
+          <h3 class="spot-name-ja">世界遺産 ピサの斜塔＆奇跡の広場</h3>
+          <span class="spot-name-it">Torre di Pisa & Piazza dei Miracoli</span>
+          <p class="spot-desc">白大理石の美しい鐘楼が約3.99度傾いた世界最高峰の奇観。緑の芝生にドゥオーモ、洗礼堂、斜塔が並ぶ「奇跡の広場」。</p>
+          <div style="background:#f1f5f9; padding:6px 10px; border-radius:6px; font-size:0.78rem; color:#334155; margin-bottom:10px;">
+            🚊 【超重要】フィレンツェ〜ピサ間の普通列車（Regionale）や市バスは乗車前の「打刻（Timbrare）」絶対厳守！罰金€50〜95回避。
+          </div>
+          <div class="spot-mime-tip">
+            <strong>💡 【みめTip】</strong> 斜塔を手で支えたり、押したりする遠近法のトリック写真をお二人で撮り合いましょう！斜塔登頂時はカメラ・スマホ以外の手荷物は無料ロッカーへ。
+          </div>
+          <div class="spot-actions">
+            <a href="https://maps.google.com/?q=Tower+of+Pisa" target="_blank" class="btn btn-maps">📍 Google Maps</a>
+            <a href="https://www.opapisa.it/" target="_blank" class="btn btn-secondary">🌐 公式サイト</a>
+          </div>
+        </div>
+      </div>
+      <div class="spot-card" data-city="sangimignano">
+        <div class="spot-body">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:6px;">
+            <span class="spot-chip" style="background:#dbeafe; color:#1e40af; font-weight:800;">サンジミニャーノ • Day 5</span>
+            <span class="spot-reserve-overlay free" style="position:static;">広場見学自由</span>
+          </div>
+          <h3 class="spot-name-ja">チステルナ広場＆グロッサの塔</h3>
+          <span class="spot-name-it">Piazza della Cisterna & Torre Grossa</span>
+          <p class="spot-desc">13〜14世紀の貴族たちが権力を競って建てた14本の石塔が残る「中世のマンハッタン」。八角形の古井戸のある美しい広場。</p>
+          <div style="background:#f1f5f9; padding:6px 10px; border-radius:6px; font-size:0.78rem; color:#334155; margin-bottom:10px;">
+            🏰 石畳の坂道が多いので歩きやすいスニーカー必須。
+          </div>
+          <div class="spot-mime-tip">
+            <strong>💡 【みめTip】</strong> 広場にある世界ジェラート大会連覇「ドンドリ」でサフランジェラートを買って、井戸の階段に座って食べるのが最高の旅のワンシーン！
+          </div>
+          <div class="spot-actions">
+            <a href="https://maps.google.com/?q=Piazza+della+Cisterna+San+Gimignano" target="_blank" class="btn btn-maps">📍 Google Maps</a>
+            <a href="https://www.comune.sangimignano.si.it/" target="_blank" class="btn btn-secondary">🌐 公式サイト</a>
+          </div>
+        </div>
+      </div>
+      <div class="spot-card" data-city="rome">
+        <div class="spot-body">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:6px;">
+            <span class="spot-chip" style="background:#dbeafe; color:#1e40af; font-weight:800;">ローマ・バチカン • Day 6</span>
+            <span class="spot-reserve-overlay required" style="position:static;">要公式事前予約</span>
+          </div>
+          <h3 class="spot-name-ja">バチカン美術館＆システィーナ礼拝堂</h3>
+          <span class="spot-name-it">Musei Vaticani & Cappella Sistina</span>
+          <p class="spot-desc">歴代教皇の至宝。ラファエロの間『アテナイの学堂』、ミケランジェロの不朽の傑作フレスコ画『最後の審判』『天地創造』。</p>
+          <div style="background:#f1f5f9; padding:6px 10px; border-radius:6px; font-size:0.78rem; color:#334155; margin-bottom:10px;">
+            ⚠️ システィーナ礼拝堂内は【完全撮影禁止・私語厳禁】。肩・膝露出不可。自撮り棒持込禁止。
+          </div>
+          <div class="spot-mime-tip">
+            <strong>💡 【みめTip】</strong> 予約時間より30分前には到着してセキュリティ検査へ。最後の審判は天井画の中央部分と祭壇画のミケランジェロの自画像に注目。
+          </div>
+          <div class="spot-actions">
+            <a href="https://maps.google.com/?q=Vatican+Museums" target="_blank" class="btn btn-maps">📍 Google Maps</a>
+            <a href="https://www.museivaticani.va/" target="_blank" class="btn btn-secondary">🌐 公式サイト</a>
+          </div>
+        </div>
+      </div>
+      <div class="spot-card" data-city="rome">
+        <div class="spot-body">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:6px;">
+            <span class="spot-chip" style="background:#dbeafe; color:#1e40af; font-weight:800;">ローマ・バチカン • Day 6</span>
+            <span class="spot-reserve-overlay free" style="position:static;">入場無料 (手荷物検査あり)</span>
+          </div>
+          <h3 class="spot-name-ja">サン・ピエトロ大聖堂 (夕のミサ・聖歌隊合唱)</h3>
+          <span class="spot-name-it">Basilica di San Pietro in Vaticano</span>
+          <p class="spot-desc">ミケランジェロの傑作『ピエタ像』、ベルニーニの大天蓋（バルダッキーノ）。毎日17:00からは伝統あるジュリア聖歌隊の合唱ミサ。</p>
+          <div style="background:#f1f5f9; padding:6px 10px; border-radius:6px; font-size:0.78rem; color:#334155; margin-bottom:10px;">
+            👗 ドレスコード厳格（ノースリーブ・短パン不可）。男性脱帽。空港並みの金属探知機検査列あり。
+          </div>
+          <div class="spot-mime-tip">
+            <strong>💡 【みめTip】</strong> 合唱好きの健太さんに必見！毎日17:00の夕のミサは大聖堂最奥で誰でも参列可能。16:30頃に祭壇前着席エリアへ入るのがおすすめ。
+          </div>
+          <div class="spot-actions">
+            <a href="https://maps.google.com/?q=St+Peter+Basilica+Rome" target="_blank" class="btn btn-maps">📍 Google Maps</a>
+            <a href="https://www.vatican.va/" target="_blank" class="btn btn-secondary">🌐 公式サイト</a>
+          </div>
+        </div>
+      </div>
+      <div class="spot-card" data-city="rome">
+        <div class="spot-body">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:6px;">
+            <span class="spot-chip" style="background:#dbeafe; color:#1e40af; font-weight:800;">ローマ • Day 6</span>
+            <span class="spot-reserve-overlay required" style="position:static;">要日時指定予約</span>
+          </div>
+          <h3 class="spot-name-ja">コロッセオ＆フォロ・ロマーノ</h3>
+          <span class="spot-name-it">Colosseo & Foro Romano</span>
+          <p class="spot-desc">西暦80年完成、5万人を収容した古代円形闘技場。隣接する古代ローマの政治・経済の中心地フォロ・ロマーノ遺跡群。</p>
+          <div style="background:#f1f5f9; padding:6px 10px; border-radius:6px; font-size:0.78rem; color:#334155; margin-bottom:10px;">
+            🚨 周辺の「古代ローマ兵士コスプレ写真強要」や「ミサンガ売り」は完全無視！中型以上のリュック持込不可。
+          </div>
+          <div class="spot-mime-tip">
+            <strong>💡 【みめTip】</strong> 地下鉄B線Colosseo駅を出ると目の前に巨大なコロッセオが現れます。チケットはフォロ・ロマーノと共通なので午前〜昼の観光に最適。
+          </div>
+          <div class="spot-actions">
+            <a href="https://maps.google.com/?q=Colosseum+Rome" target="_blank" class="btn btn-maps">📍 Google Maps</a>
+            <a href="https://parcocolosseo.it/" target="_blank" class="btn btn-secondary">🌐 公式サイト</a>
+          </div>
+        </div>
+      </div>
+      <div class="spot-card" data-city="rome">
+        <div class="spot-body">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:6px;">
+            <span class="spot-chip" style="background:#dbeafe; color:#1e40af; font-weight:800;">ローマ • Day 5 & 6</span>
+            <span class="spot-reserve-overlay free" style="position:static;">見学自由 (無料)</span>
+          </div>
+          <h3 class="spot-name-ja">トレビの泉 (トレヴィの泉)</h3>
+          <span class="spot-name-it">Fontana di Trevi</span>
+          <p class="spot-desc">ポーリ宮殿の壁面を飾る海神ネプトゥヌスの巨大彫刻。夜間は美しくライトアップされ、ローマで最もロマンチックな泉。</p>
+          <div style="background:#f1f5f9; padding:6px 10px; border-radius:6px; font-size:0.78rem; color:#334155; margin-bottom:10px;">
+            🚨 スリ多発ワースト地帯。スマホはショルダーストラップで斜めがけし、ポケット入れ厳禁。
+          </div>
+          <div class="spot-mime-tip">
+            <strong>💡 【みめTip】</strong> 泉に背を向けて右手で左肩越しにコインを投げる！1枚は「ローマ再訪」、2枚は「愛する人と一生一緒にいられる」という愛の伝説。
+          </div>
+          <div class="spot-actions">
+            <a href="https://maps.google.com/?q=Trevi+Fountain+Rome" target="_blank" class="btn btn-maps">📍 Google Maps</a>
+            <a href="https://www.turismoroma.it/" target="_blank" class="btn btn-secondary">🌐 公式サイト</a>
+          </div>
+        </div>
+      </div>
+      <div class="spot-card" data-city="rome">
+        <div class="spot-body">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:6px;">
+            <span class="spot-chip" style="background:#dbeafe; color:#1e40af; font-weight:800;">ローマ • Day 6</span>
+            <span class="spot-reserve-overlay rec" style="position:static;">土日祝は有料予約推奨 (€5)</span>
+          </div>
+          <h3 class="spot-name-ja">パンテオン (万神殿)</h3>
+          <span class="spot-name-it">Pantheon</span>
+          <p class="spot-desc">2000年前のコンクリート製ドーム建築。直径43.3mの空間と天井の開口部（オクルス）。ラファエロの墓所収蔵。</p>
+          <div style="background:#f1f5f9; padding:6px 10px; border-radius:6px; font-size:0.78rem; color:#334155; margin-bottom:10px;">
+            ⛪ 現在は教会（聖マリア・アド・マルティレス聖堂）のため、脱帽と静粛が義務。
+          </div>
+          <div class="spot-mime-tip">
+            <strong>💡 【みめTip】</strong> 雨の日でも床の水抜き穴から水が抜ける設計。堂内の残響音響が素晴らしく、クラシック・音楽愛好家必見の聖域です。
+          </div>
+          <div class="spot-actions">
+            <a href="https://maps.google.com/?q=Pantheon+Rome" target="_blank" class="btn btn-maps">📍 Google Maps</a>
+            <a href="https://www.pantheonroma.com/" target="_blank" class="btn btn-secondary">🌐 公式サイト</a>
+          </div>
+        </div>
+      </div>
+      <div class="spot-card" data-city="rome">
+        <div class="spot-body">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:6px;">
+            <span class="spot-chip" style="background:#dbeafe; color:#1e40af; font-weight:800;">ローマ • Day 6</span>
+            <span class="spot-reserve-overlay free" style="position:static;">見学自由 (無料)</span>
+          </div>
+          <h3 class="spot-name-ja">スペイン広場＆トリニタ・デイ・モンティ階段</h3>
+          <span class="spot-name-it">Piazza di Spagna</span>
+          <p class="spot-desc">135段の大理石階段と舟の噴水（バルカッチャ）。階段の上からは高級ブティック街コンドッティ通りを一望。</p>
+          <div style="background:#f1f5f9; padding:6px 10px; border-radius:6px; font-size:0.78rem; color:#334155; margin-bottom:10px;">
+            ⚠️ 階段での飲食・座り込みは条例で禁止（罰金対象）。立ったまま景観を楽しみましょう。
+          </div>
+          <div class="spot-mime-tip">
+            <strong>💡 【みめTip】</strong> 近くの老舗ティラミス店「ポンピ」やカフェ・グレコで休憩するのが王道の散策ルートです。
+          </div>
+          <div class="spot-actions">
+            <a href="https://maps.google.com/?q=Piazza+di+Spagna+Rome" target="_blank" class="btn btn-maps">📍 Google Maps</a>
+            <a href="https://www.turismoroma.it/" target="_blank" class="btn btn-secondary">🌐 公式サイト</a>
+          </div>
+        </div>
+      </div>
+      <div class="spot-card" data-city="rome">
+        <div class="spot-body">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:6px;">
+            <span class="spot-chip" style="background:#dbeafe; color:#1e40af; font-weight:800;">ローマ • Day 6</span>
+            <span class="spot-reserve-overlay free" style="position:static;">入場無料</span>
+          </div>
+          <h3 class="spot-name-ja">サン・ルイジ・デイ・フランチェージ教会</h3>
+          <span class="spot-name-it">Chiesa di San Luigi dei Francesi</span>
+          <p class="spot-desc">ナヴォーナ広場近くのフランス人教会。バロックの巨匠カラヴァッジョの代表作『聖マタイの召命』『聖マタイの霊感』『聖マタイの殉教』。</p>
+          <div style="background:#f1f5f9; padding:6px 10px; border-radius:6px; font-size:0.78rem; color:#334155; margin-bottom:10px;">
+            ⛪ 祈りの場。フラッシュ撮影禁止。祭壇横の照明コイン機に€1〜2を入れると絵画がライトアップ！
+          </div>
+          <div class="spot-mime-tip">
+            <strong>💡 【みめTip】</strong> 美術館に行かなくてもカラヴァッジョの本物が無料で見られる至高の教会。コイン小銭を用意して訪れましょう。
+          </div>
+          <div class="spot-actions">
+            <a href="https://maps.google.com/?q=San+Luigi+dei+Francesi+Rome" target="_blank" class="btn btn-maps">📍 Google Maps</a>
+            <a href="https://saintlouis-rome.net/" target="_blank" class="btn btn-secondary">🌐 公式サイト</a>
+          </div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+  </main>
+  <!-- Bottom Tab Bar for iOS (No Header Needed) -->
+  <nav class="bottom-tab-bar">
+    <a href="index.html" class="tab-item">
+      <span class="tab-icon">🏠</span>
+      <span class="tab-label">ホーム</span>
+    </a>
+    <a href="beginner-guide.html" class="tab-item">
+      <span class="tab-icon">🔰</span>
+      <span class="tab-label">初心者</span>
+    </a>
+    <a href="tour-map.html" class="tab-item">
+      <span class="tab-icon">🗺️</span>
+      <span class="tab-label">MAP</span>
+    </a>
+    <a href="sightseeing-guide.html" class="tab-item active">
+      <span class="tab-icon">🏛️</span>
+      <span class="tab-label">観光</span>
+    </a>
+    <a href="phrasebook.html" class="tab-item">
+      <span class="tab-icon">🗣️</span>
+      <span class="tab-label">会話</span>
+    </a>
+    <a href="free-meal-guide.html" class="tab-item">
+      <span class="tab-icon">🍽️</span>
+      <span class="tab-label">グルメ</span>
+    </a>
+    <a href="souvenir-guide.html" class="tab-item">
+      <span class="tab-icon">🎁</span>
+      <span class="tab-label">お土産</span>
+    </a>
+    <a href="rome-free-day-guide.html" class="tab-item">
+      <span class="tab-icon">🎻</span>
+      <span class="tab-label">ローマ</span>
+    </a>
+  </nav>
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-credits">
+        <h4>🇮🇹 Kenta &amp; Megumi's Italian Honeymoon Portal</h4>
+        <p>HIS Tour OI-KMI2811 (2026/11/15 - 11/22) | 監修連携: YouTube「イタリアガイドみめ (@mimeitalygaido)」</p>
+      </div>
+      <div class="footer-nav">
+        <a href="index.html">🏠 ホーム</a>
+        <a href="beginner-guide.html">🔰 初心者安心ガイド</a>
+        <a href="tour-map.html">🗺️ 全体ルートMAP</a>
+        <a href="sightseeing-guide.html">🏛️ 観光施設案内</a>
+        <a href="phrasebook.html">🗣️ 指差しイタリア語</a>
+        <a href="free-meal-guide.html">🍽️ 自由食・グルメ</a>
+        <a href="souvenir-guide.html">🎁 お土産・買物</a>
+        <a href="rome-free-day-guide.html">🎻 ローマ自由行動</a>
+      </div>
+    </div>
+  </footer>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="app.js"></script>
+</body>
+</html>
