@@ -1,44 +1,43 @@
 /* ==========================================================================
-   イタリア新婚旅行ガイドポータル 共通JavaScript (app.js v2)
+   イタリア新婚旅行ガイドポータル 共通JavaScript (app.js v4)
    鈴木 健太・めぐみ 様 (HIS Tour OI-KMI2811: 2026年11月15日〜22日)
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
-  initCollapsibleHeader();
+  initDayPickerModal();
   initDualClock();
   initChecklist();
   initCalculator();
   initSpeech();
   initSearch();
-  initEmergencyModal();
 });
 
-/* 1. Collapsible Header (Hide on Scroll Down, Show on Scroll Up) */
-function initCollapsibleHeader() {
-  const header = document.getElementById('site-header');
-  if (!header) return;
+/* 1. Day Picker Action Sheet Modal */
+function initDayPickerModal() {
+  const modal = document.getElementById('day-picker-modal');
+  const openBtn = document.getElementById('btn-open-day-picker');
+  const closeBtn = document.getElementById('btn-close-day-picker');
 
-  let lastScrollY = window.scrollY;
-  let ticking = false;
+  if (!modal) return;
 
-  window.addEventListener('scroll', () => {
-    if (!ticking) {
-      window.requestAnimationFrame(() => {
-        const currentScrollY = window.scrollY;
-        
-        // Hide on scroll down after 60px, show on scroll up
-        if (currentScrollY > 60 && currentScrollY > lastScrollY) {
-          header.classList.add('header-hidden');
-        } else {
-          header.classList.remove('header-hidden');
-        }
+  if (openBtn) {
+    openBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      modal.style.display = 'flex';
+    });
+  }
 
-        lastScrollY = Math.max(0, currentScrollY);
-        ticking = false;
-      });
-      ticking = true;
+  if (closeBtn) {
+    closeBtn.addEventListener('click', () => {
+      modal.style.display = 'none';
+    });
+  }
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.style.display = 'none';
     }
-  }, { passive: true });
+  });
 }
 
 /* 2. Dual Timezone Clock (Rome / Milan vs Japan) */
@@ -192,8 +191,7 @@ function initCalculator() {
     if (resultBreakdown) {
       resultBreakdown.innerHTML = `
         <small style="color:var(--text-muted);">
-          料理代: €${baseEur.toFixed(2)} + 席料(2名分): €${copertoTotal.toFixed(2)} + チップ(${tipRate}%): €${tipEur.toFixed(2)}<br>
-          (為替レート目安: 1€ = ¥${rate})
+          料理代: €${baseEur.toFixed(2)} + 席料(2名): €${copertoTotal.toFixed(2)} + チップ(${tipRate}%): €${tipEur.toFixed(2)}
         </small>
       `;
     }
@@ -228,24 +226,21 @@ function initSpeech() {
         window.speechSynthesis.cancel();
         const utterance = new SpeechSynthesisUtterance(text);
         utterance.lang = 'it-IT';
-        utterance.rate = 0.85; // Slightly slower for clarity
+        utterance.rate = 0.85;
         window.speechSynthesis.speak(utterance);
         
-        // Button feedback
-        const origText = btn.innerHTML;
         btn.innerHTML = '🔊';
         btn.style.transform = 'scale(1.15)';
         setTimeout(() => {
-          btn.innerHTML = origText;
+          btn.innerHTML = '🔊';
           btn.style.transform = 'scale(1)';
-        }, 800);
+        }, 600);
       } else {
         alert(`イタリア語: ${text}`);
       }
     });
   });
 
-  // Copy phrase
   document.querySelectorAll('.copy-phrase-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       const text = btn.dataset.phrase;
@@ -300,41 +295,17 @@ function initSearch() {
   });
 }
 
-/* 7. Emergency Modal */
-function initEmergencyModal() {
-  const modal = document.getElementById('emergency-modal');
-  const openBtns = document.querySelectorAll('.btn-open-sos');
-  const closeBtns = document.querySelectorAll('.btn-close-sos');
-
-  if (!modal) return;
-
-  openBtns.forEach(b => b.addEventListener('click', (e) => {
-    e.preventDefault();
-    modal.style.display = 'flex';
-  }));
-
-  closeBtns.forEach(b => b.addEventListener('click', () => {
-    modal.style.display = 'none';
-  }));
-
-  window.addEventListener('click', (e) => {
-    if (e.target === modal) {
-      modal.style.display = 'none';
-    }
-  });
-}
-
 function showToast(msg) {
   let toast = document.getElementById('app-toast');
   if (!toast) {
     toast = document.createElement('div');
     toast.id = 'app-toast';
-    toast.style.cssText = 'position:fixed; bottom:75px; left:50%; transform:translateX(-50%); background:rgba(0,0,0,0.85); color:#fff; padding:10px 20px; border-radius:20px; font-size:0.85rem; font-weight:700; z-index:9999; transition:all 0.3s; pointer-events:none;';
+    toast.style.cssText = 'position:fixed; bottom:55px; left:50%; transform:translateX(-50%); background:rgba(0,0,0,0.85); color:#fff; padding:6px 14px; border-radius:16px; font-size:0.75rem; font-weight:700; z-index:9999; transition:all 0.3s; pointer-events:none;';
     document.body.appendChild(toast);
   }
   toast.textContent = msg;
   toast.style.opacity = '1';
   setTimeout(() => {
     toast.style.opacity = '0';
-  }, 2000);
+  }, 1800);
 }
