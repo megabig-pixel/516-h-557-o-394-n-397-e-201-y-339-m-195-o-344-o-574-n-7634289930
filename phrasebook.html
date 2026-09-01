@@ -988,7 +988,7 @@
       <span class="tab-label">ホーム</span>
     </a>
 
-    <!-- Native HTML5 Day Popover (Zero JS dependency) -->
+    <!-- Native HTML5 Day Popover (Rich Segmented Cards UI) -->
     <details class="day-popover-details" id="day-popover-details">
       <summary class="tab-item">
         <span class="tab-icon">📅</span>
@@ -1000,14 +1000,46 @@
           <button type="button" class="day-popover-close" onclick="this.closest('details').removeAttribute('open');">✕</button>
         </div>
         <div class="day-popover-grid">
-          <a href="day1.html" class="day-popover-item"><span class="dp-badge">Day 1</span> 11/15(日) 関空➔ミラノ</a>
-          <a href="day2.html" class="day-popover-item"><span class="dp-badge">Day 2</span> 11/16(月) ミラノ➔ベネチア</a>
-          <a href="day3.html" class="day-popover-item"><span class="dp-badge">Day 3</span> 11/17(火) ベネチア➔フィレンツェ</a>
-          <a href="day4.html" class="day-popover-item"><span class="dp-badge">Day 4</span> 11/18(水) フィレンツェ＆ピサ</a>
-          <a href="day5.html" class="day-popover-item"><span class="dp-badge">Day 5</span> 11/19(木) サンジミニャーノ➔ローマ</a>
-          <a href="day6.html" class="day-popover-item"><span class="dp-badge">Day 6</span> 11/20(金) ローマ＆バチカン自由</a>
-          <a href="day7.html" class="day-popover-item"><span class="dp-badge">Day 7</span> 11/21(土) ローマ➔FCO空港発</a>
-          <a href="day8.html" class="day-popover-item"><span class="dp-badge">Day 8</span> 11/22(日) 関空帰着・解散</a>
+          <a href="day1.html" class="day-popover-card">
+            <div class="dpc-top"><span class="dpc-badge">Day 1</span><span class="dpc-date">11/15 (日)</span></div>
+            <div class="dpc-route">✈️ 関空 ➔ ミラノ着</div>
+            <div class="dpc-tag">日本出発・機中泊</div>
+          </a>
+          <a href="day2.html" class="day-popover-card">
+            <div class="dpc-top"><span class="dpc-badge">Day 2</span><span class="dpc-date">11/16 (月)</span></div>
+            <div class="dpc-route">🏛️ ミラノ ➔ ベネチア</div>
+            <div class="dpc-tag">ドゥオーモ・ジュリエット</div>
+          </a>
+          <a href="day3.html" class="day-popover-card">
+            <div class="dpc-top"><span class="dpc-badge">Day 3</span><span class="dpc-date">11/17 (火)</span></div>
+            <div class="dpc-route">🛶 ベネチア ➔ トスカーナ</div>
+            <div class="dpc-tag">ゴンドラ・最古バカロ</div>
+          </a>
+          <a href="day4.html" class="day-popover-card">
+            <div class="dpc-top"><span class="dpc-badge">Day 4</span><span class="dpc-date">11/18 (水)</span></div>
+            <div class="dpc-route">🥩 フィレンツェ ＆ ピサ</div>
+            <div class="dpc-tag">ビステッカ・斜塔【OP】</div>
+          </a>
+          <a href="day5.html" class="day-popover-card">
+            <div class="dpc-top"><span class="dpc-badge">Day 5</span><span class="dpc-date">11/19 (木)</span></div>
+            <div class="dpc-route">🍕 サンジミニャーノ ➔ ローマ</div>
+            <div class="dpc-tag">世界一ジェラート・トレビ</div>
+          </a>
+          <a href="day6.html" class="day-popover-card">
+            <div class="dpc-top"><span class="dpc-badge">Day 6</span><span class="dpc-date">11/20 (金)</span></div>
+            <div class="dpc-route">⛪ ローマ ＆ バチカン自由</div>
+            <div class="dpc-tag">最後の審判・夕のミサ合唱</div>
+          </a>
+          <a href="day7.html" class="day-popover-card">
+            <div class="dpc-top"><span class="dpc-badge">Day 7</span><span class="dpc-date">11/21 (土)</span></div>
+            <div class="dpc-route">🛍️ ローマ ➔ FCO空港発</div>
+            <div class="dpc-tag">テルミニ買い出し・免税</div>
+          </a>
+          <a href="day8.html" class="day-popover-card">
+            <div class="dpc-top"><span class="dpc-badge">Day 8</span><span class="dpc-date">11/22 (日)</span></div>
+            <div class="dpc-route">🛬 関空帰着 ➔ 解散</div>
+            <div class="dpc-tag">税関申告・ご自宅へ</div>
+          </a>
         </div>
       </div>
     </details>
