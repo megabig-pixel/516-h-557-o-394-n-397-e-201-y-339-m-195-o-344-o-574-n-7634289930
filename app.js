@@ -1,11 +1,27 @@
 /* ==========================================================================
-   イタリア新婚旅行ガイドポータル 共通JavaScript (app.js v4)
+   イタリア新婚旅行ガイドポータル 共通JavaScript (app.js v5)
    鈴木 健太・めぐみ 様 (HIS Tour OI-KMI2811: 2026年11月15日〜22日)
    ========================================================================== */
 
+// Global fail-safe Modal functions
+window.openDayPicker = function() {
+  const modal = document.getElementById('day-picker-modal');
+  if (modal) {
+    modal.classList.add('open');
+    modal.style.display = 'flex';
+  }
+};
+
+window.closeDayPicker = function() {
+  const modal = document.getElementById('day-picker-modal');
+  if (modal) {
+    modal.classList.remove('open');
+    modal.style.display = 'none';
+  }
+};
+
 document.addEventListener('DOMContentLoaded', () => {
   initDayPickerModal();
-  initDualClock();
   initChecklist();
   initCalculator();
   initSpeech();
@@ -23,66 +39,25 @@ function initDayPickerModal() {
   if (openBtn) {
     openBtn.addEventListener('click', (e) => {
       e.preventDefault();
-      modal.style.display = 'flex';
+      window.openDayPicker();
     });
   }
 
   if (closeBtn) {
-    closeBtn.addEventListener('click', () => {
-      modal.style.display = 'none';
+    closeBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.closeDayPicker();
     });
   }
 
   modal.addEventListener('click', (e) => {
     if (e.target === modal) {
-      modal.style.display = 'none';
+      window.closeDayPicker();
     }
   });
 }
 
-/* 2. Dual Timezone Clock (Rome / Milan vs Japan) */
-function initDualClock() {
-  const romeEl = document.getElementById('clock-rome');
-  const japanEl = document.getElementById('clock-japan');
-  if (!romeEl && !japanEl) return;
-
-  function updateClocks() {
-    const now = new Date();
-    
-    // Rome time (Europe/Rome - UTC+1 winter / UTC+2 summer)
-    try {
-      const romeTimeStr = now.toLocaleTimeString('ja-JP', {
-        timeZone: 'Europe/Rome',
-        hour: '2-digit',
-        minute: '2-digit',
-        second: '2-digit',
-        hour12: false
-      });
-      if (romeEl) romeEl.textContent = romeTimeStr;
-    } catch (e) {
-      if (romeEl) romeEl.textContent = '--:--:--';
-    }
-
-    // Japan time (Asia/Tokyo - UTC+9)
-    try {
-      const japanTimeStr = now.toLocaleTimeString('ja-JP', {
-        timeZone: 'Asia/Tokyo',
-        hour: '2-digit',
-        minute: '2-digit',
-        second: '2-digit',
-        hour12: false
-      });
-      if (japanEl) japanEl.textContent = japanTimeStr;
-    } catch (e) {
-      if (japanEl) japanEl.textContent = '--:--:--';
-    }
-  }
-
-  updateClocks();
-  setInterval(updateClocks, 1000);
-}
-
-/* 3. Interactive Checklist with localStorage */
+/* 2. Interactive Checklist with localStorage */
 function initChecklist() {
   const checkItems = document.querySelectorAll('.check-item input[type="checkbox"]');
   const progressFill = document.querySelector('.checklist-progress-fill');
@@ -162,7 +137,7 @@ function initChecklist() {
   updateProgress();
 }
 
-/* 4. Real-time Currency & Tip Calculator */
+/* 3. Real-time Currency & Tip Calculator */
 function initCalculator() {
   const euroInput = document.getElementById('calc-euro-input');
   const rateInput = document.getElementById('calc-rate-input');
@@ -178,7 +153,7 @@ function initCalculator() {
     const rate = parseFloat(rateInput?.value || 165) || 165;
     const baseEur = parseFloat(euroInput.value) || 0;
     const copertoPerPerson = parseFloat(copertoSelect?.value || 0) || 0;
-    const copertoTotal = copertoPerPerson * 2; // 2 travelers (Kenta & Megumi)
+    const copertoTotal = copertoPerPerson * 2; // 2 travelers
     const tipRate = parseFloat(tipSelect?.value || 0) || 0;
     
     const tipEur = (baseEur * tipRate) / 100;
@@ -191,7 +166,7 @@ function initCalculator() {
     if (resultBreakdown) {
       resultBreakdown.innerHTML = `
         <small style="color:var(--text-muted);">
-          料理代: €${baseEur.toFixed(2)} + 席料(2名): €${copertoTotal.toFixed(2)} + チップ(${tipRate}%): €${tipEur.toFixed(2)}
+          料理: €${baseEur.toFixed(2)} + 席料(2名): €${copertoTotal.toFixed(2)} + チップ(${tipRate}%): €${tipEur.toFixed(2)}
         </small>
       `;
     }
@@ -202,7 +177,6 @@ function initCalculator() {
   if (copertoSelect) copertoSelect.addEventListener('change', calculate);
   if (tipSelect) tipSelect.addEventListener('change', calculate);
 
-  // Quick preset buttons
   document.querySelectorAll('.btn-preset-eur').forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
@@ -214,7 +188,7 @@ function initCalculator() {
   calculate();
 }
 
-/* 5. Italian Speech Synthesis (Web Speech API) & Copy */
+/* 4. Italian Speech Synthesis (Web Speech API) & Copy */
 function initSpeech() {
   document.querySelectorAll('.speak-btn').forEach(btn => {
     btn.addEventListener('click', (e) => {
@@ -253,7 +227,7 @@ function initSpeech() {
   });
 }
 
-/* 6. Live Filter and Search */
+/* 5. Live Filter and Search */
 function initSearch() {
   const searchInput = document.getElementById('search-input');
   const filterChips = document.querySelectorAll('.filter-chip');
@@ -300,7 +274,7 @@ function showToast(msg) {
   if (!toast) {
     toast = document.createElement('div');
     toast.id = 'app-toast';
-    toast.style.cssText = 'position:fixed; bottom:55px; left:50%; transform:translateX(-50%); background:rgba(0,0,0,0.85); color:#fff; padding:6px 14px; border-radius:16px; font-size:0.75rem; font-weight:700; z-index:9999; transition:all 0.3s; pointer-events:none;';
+    toast.style.cssText = 'position:fixed; bottom:52px; left:50%; transform:translateX(-50%); background:rgba(0,0,0,0.85); color:#fff; padding:5px 12px; border-radius:14px; font-size:0.72rem; font-weight:700; z-index:999999; transition:all 0.3s; pointer-events:none;';
     document.body.appendChild(toast);
   }
   toast.textContent = msg;
