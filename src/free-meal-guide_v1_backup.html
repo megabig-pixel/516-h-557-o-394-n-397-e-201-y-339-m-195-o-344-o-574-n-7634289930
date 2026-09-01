@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>自由食事ガイド｜ベネチア・フィレンツェ・ローマ</title>
+    <style>
+        :root {
+            --primary: #0071e3;
+            --primary-hover: #0077ed;
+            --accent: #ff9500;
+            --success: #34c759;
+            --danger: #ff3b30;
+            --bg: #f2f2f7;
+            --card-bg: #ffffff;
+            --text: #1c1c1e;
+            --text-secondary: #8e8e93;
+            --border: #e5e5ea;
+            --shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+            --radius: 16px;
+        }
+
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Hiragino Sans", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        .navbar {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+            padding: 12px 16px;
+            text-align: center;
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--text);
+        }
+
+        .container {
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 16px 16px 60px;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #0f172a 0%, #1d4ed8 100%);
+            color: #fff;
+            padding: 24px;
+            border-radius: var(--radius);
+            box-shadow: 0 8px 24px rgba(15, 23, 42, 0.18);
+            margin-bottom: 20px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.14);
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 6px 10px;
+            border-radius: 999px;
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .hero h1 {
+            margin: 0 0 10px;
+            font-size: 24px;
+            line-height: 1.35;
+        }
+
+        .hero p {
+            margin: 0;
+            font-size: 14px;
+            opacity: 0.96;
+        }
+
+        .cta-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 18px;
+        }
+
+        .primary-link, .secondary-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            text-decoration: none;
+            border-radius: 999px;
+            padding: 10px 16px;
+            font-weight: 700;
+            font-size: 13px;
+        }
+
+        .primary-link {
+            background: #fff;
+            color: var(--primary);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+        }
+
+        .secondary-link {
+            background: rgba(255,255,255,0.10);
+            color: #fff;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 19px;
+            font-weight: 800;
+            margin: 28px 0 12px;
+            padding-left: 4px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            padding: 20px;
+            margin-bottom: 18px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+        }
+
+        .summary-box {
+            background: #f5f9ff;
+            border-left: 5px solid var(--primary);
+            padding: 16px 18px;
+            border-radius: 12px;
+            margin-bottom: 16px;
+            font-size: 14px;
+        }
+
+        .summary-box strong {
+            color: var(--primary);
+        }
+
+        .meal-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+        }
+
+        @media (min-width: 700px) {
+            .meal-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .meal-block {
+            margin-bottom: 26px;
+        }
+
+        .meal-title {
+            font-size: 18px;
+            font-weight: 800;
+            margin: 0 0 14px;
+            color: var(--text);
+        }
+
+        .restaurant-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 16px;
+            box-shadow: var(--shadow);
+        }
+
+        .restaurant-name {
+            margin: 0 0 8px;
+            font-size: 17px;
+            font-weight: 800;
+            color: var(--text);
+        }
+
+        .meta-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 10px;
+        }
+
+        .tag {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 4px 8px;
+            border-radius: 8px;
+            white-space: nowrap;
+        }
+
+        .tag-budget { background: #eef8ff; color: var(--primary); }
+        .tag-hour { background: #f5f3ff; color: #6d28d9; }
+        .tag-rating { background: #fff8e1; color: #b45309; }
+        .tag-booking { background: #e8fdf0; color: var(--success); }
+        .tag-booking-no { background: #fff1f2; color: var(--danger); }
+        .tag-meal { background: #f2f4f8; color: #374151; }
+
+        .restaurant-card p {
+            margin: 0 0 10px;
+            font-size: 13.5px;
+            color: #3f3f46;
+        }
+
+        .restaurant-card .maps-link {
+            display: inline-block;
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 700;
+            word-break: break-all;
+        }
+
+        .footer {
+            text-align: center;
+            font-size: 12px;
+            color: var(--text-secondary);
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">🍽️ 自由食事ガイド｜ベネチア・フィレンツェ・ローマ</div>
+
+    <div class="container">
+        <div class="hero">
+            <span class="badge">ツアー内フリー食のおすすめ集</span>
+            <h1>食事が含まれていない自由時間を快適に過ごすレストランガイド</h1>
+            <p>
+                ベネチア・フィレンツェ・ローマでの自由時間に使える、昼食・ディナー・カフェ別のおすすめ店をまとめました。
+                Google Mapsの評価目安と予約のしやすさも加えて、移動中にすぐ判断できるようにしています。
+            </p>
+            <div class="cta-row">
+                <a class="primary-link" href="index.html">← 旅行レポートに戻る</a>
+                <a class="secondary-link" href="https://tour.his-j.com/sp/04A_30/OI-KMI2811/?lcid=kansa_search_item_imp" target="_blank" rel="noopener noreferrer">🔗 商品ページを見る</a>
+            </div>
+        </div>
+
+        <div class="summary-box">
+            <strong>ポイント</strong>：自由食は「立地・予算・予約のしやすさ」を重視すると、観光の合間に食事を挟みやすくなります。特にテルミニ駅周辺や主要観光地の近くは、短時間で食べて次の予定へ移れる店が多いです。
+        </div>
+
+        <div class="section-header">🍽️ 1. 昼食候補（ベネチア・フィレンツェ・ローマ）</div>
+
+        <div class="meal-block">
+            <h2 class="meal-title">ベネチア</h2>
+            <div class="meal-grid">
+                <div class="restaurant-card">
+                    <h3 class="restaurant-name">All'Arco</h3>
+                    <div class="meta-row">
+                        <span class="tag tag-meal">昼食</span>
+                        <span class="tag tag-budget">€5〜15</span>
+                        <span class="tag tag-rating">Google Maps★ 4.7</span>
+                        <span class="tag tag-booking-no">予約不要</span>
+                    </div>
+                    <p>リアルト橋近くの路地にある人気のバーカロ。出来立てのチケッティが絶品で、観光の途中で立ち食いしやすい。</p>
+                    <a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=All%27Arco+Venice" target="_blank" rel="noopener noreferrer">Google Maps: https://www.google.com/maps/search/?api=1&query=All%27Arco+Venice</a>
+                </div>
+
+                <div class="restaurant-card">
+                    <h3 class="restaurant-name">Trattoria Bar Pontini</h3>
+                    <div class="meta-row">
+                        <span class="tag tag-meal">昼食</span>
+                        <span class="tag tag-budget">€20〜40</span>
+                        <span class="tag tag-rating">Google Maps★ 4.6</span>
+                        <span class="tag tag-booking">予約推奨</span>
+                    </div>
+                    <p>魚介のスパゲッティやイカスミパスタが絶品。ベネチアでしっかり食事をしたいときに外せない一軒。</p>
+                    <a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=Trattoria+Bar+Pontini+Venice" target="_blank" rel="noopener noreferrer">Google Maps: https://www.google.com/maps/search/?api=1&query=Trattoria+Bar+Pontini+Venice</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="meal-block">
+            <h2 class="meal-title">フィレンツェ</h2>
+            <div class="meal-grid">
+                <div class="restaurant-card">
+                    <h3 class="restaurant-name">All'Antico Vinaio</h3>
+                    <div class="meta-row">
+                        <span class="tag tag-meal">昼食</span>
+                        <span class="tag tag-budget">€5〜15</span>
+                        <span class="tag tag-rating">Google Maps★ 4.8</span>
+                        <span class="tag tag-booking-no">予約不要</span>
+                    </div>
+                    <p>世界的に有名な巨大パニーノ店。トスカーナ産生ハムやトリュフクリームが豪華で、移動中の腹ごしらえにぴったり。</p>
+                    <a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=All%27Antico+Vinaio+Florence" target="_blank" rel="noopener noreferrer">Google Maps: https://www.google.com/maps/search/?api=1&query=All%27Antico+Vinaio+Florence</a>
+                </div>
+
+                <div class="restaurant-card">
+                    <h3 class="restaurant-name">Trattoria Mario</h3>
+                    <div class="meta-row">
+                        <span class="tag tag-meal">昼食</span>
+                        <span class="tag tag-budget">€30〜60</span>
+                        <span class="tag tag-rating">Google Maps★ 4.5</span>
+                        <span class="tag tag-booking">予約推奨</span>
+                    </div>
+                    <p>相席が基本の大衆トラットリア。Tボーンステーキやリボッリータで、フィレンツェの郷土料理を満足感高く楽しめる。</p>
+                    <a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=Trattoria+Mario+Florence" target="_blank" rel="noopener noreferrer">Google Maps: https://www.google.com/maps/search/?api=1&query=Trattoria+Mario+Florence</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="meal-block">
+            <h2 class="meal-title">ローマ</h2>
+            <div class="meal-grid">
+                <div class="restaurant-card">
+                    <h3 class="restaurant-name">Mercato Centrale Roma</h3>
+                    <div class="meta-row">
+                        <span class="tag tag-meal">昼食</span>
+                        <span class="tag tag-budget">€5〜15</span>
+                        <span class="tag tag-rating">Google Maps★ 4.6</span>
+                        <span class="tag tag-booking-no">予約不要</span>
+                    </div>
+                    <p>テルミニ駅直結のフードホール。ピッツァ・Trapizzino・生パスタを選べて、駅利用時の食事に最適。</p>
+                    <a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=Mercato+Centrale+Roma" target="_blank" rel="noopener noreferrer">Google Maps: https://www.google.com/maps/search/?api=1&query=Mercato+Centrale+Roma</a>
+                </div>
+
+                <div class="restaurant-card">
+                    <h3 class="restaurant-name">Armando al Pantheon</h3>
+                    <div class="meta-row">
+                        <span class="tag tag-meal">昼食</span>
+                        <span class="tag tag-budget">€20〜40</span>
+                        <span class="tag tag-rating">Google Maps★ 4.7</span>
+                        <span class="tag tag-booking">予約推奨</span>
+                    </div>
+                    <p>パンテオン近くの伝統トラットリア。カルボナーラやグリーチャの名店で、ローマの本格ランチに最適。</p>
+                    <a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=Armando+al+Pantheon+Rome" target="_blank" rel="noopener noreferrer">Google Maps: https://www.google.com/maps/search/?api=1&query=Armando+al+Pantheon+Rome</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-header">🌙 2. ディナー候補（ローマ・ベネチア・フィレンツェ）</div>
+
+        <div class="meal-block">
+            <h2 class="meal-title">ベネチア</h2>
+            <div class="meal-grid">
+                <div class="restaurant-card">
+                    <h3 class="restaurant-name">Osteria alle Testiere</h3>
+                    <div class="meta-row">
+                        <span class="tag tag-meal">ディナー</span>
+                        <span class="tag tag-budget">€20〜40</span>
+                        <span class="tag tag-rating">Google Maps★ 4.8</span>
+                        <span class="tag tag-booking">予約必須</span>
+                    </div>
+                    <p>席数が少ない地方色豊かなオステリア。毎日仕入れた魚介中心のディナーは絶対に外せない満足度。</p>
+                    <a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=Osteria+alle+Testiere+Venice" target="_blank" rel="noopener noreferrer">Google Maps: https://www.google.com/maps/search/?api=1&query=Osteria+alle+Testiere+Venice</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="meal-block">
+            <h2 class="meal-title">フィレンツェ</h2>
+            <div class="meal-grid">
+                <div class="restaurant-card">
+                    <h3 class="restaurant-name">Trattoria ZaZa</h3>
+                    <div class="meta-row">
+                        <span class="tag tag-meal">ディナー</span>
+                        <span class="tag tag-budget">€30〜60</span>
+                        <span class="tag tag-rating">Google Maps★ 4.5</span>
+                        <span class="tag tag-booking-no">予約不要</span>
+                    </div>
+                    <p>観光客に入りやすい定番店で、トリュフパスタや豊富なメニューが魅力。夜の食事に安定感がある。</p>
+                    <a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=Trattoria+ZaZa+Florence" target="_blank" rel="noopener noreferrer">Google Maps: https://www.google.com/maps/search/?api=1&query=Trattoria+ZaZa+Florence</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="meal-block">
+            <h2 class="meal-title">ローマ</h2>
+            <div class="meal-grid">
+                <div class="restaurant-card">
+                    <h3 class="restaurant-name">Trattoria Vecchia Roma</h3>
+                    <div class="meta-row">
+                        <span class="tag tag-meal">ディナー</span>
+                        <span class="tag tag-budget">€20〜35</span>
+                        <span class="tag tag-rating">Google Maps★ 4.6</span>
+                        <span class="tag tag-booking">予約推奨</span>
+                    </div>
+                    <p>ローマ伝統料理の名物「アマトリチャーナ・フルッベ」が真価を発揮する定番のディナー候補。</p>
+                    <a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=Trattoria+Vecchia+Roma" target="_blank" rel="noopener noreferrer">Google Maps: https://www.google.com/maps/search/?api=1&query=Trattoria+Vecchia+Roma</a>
+                </div>
+
+                <div class="restaurant-card">
+                    <h3 class="restaurant-name">Cantina e Cucina</h3>
+                    <div class="meta-row">
+                        <span class="tag tag-meal">ディナー</span>
+                        <span class="tag tag-budget">€20〜40</span>
+                        <span class="tag tag-rating">Google Maps★ 4.7</span>
+                        <span class="tag tag-booking-no">予約不要</span>
+                    </div>
+                    <p>ナヴォーナ広場近くで、並ぶ形式の人気店。自由行動の夜に使いやすく、満足感も安定している。</p>
+                    <a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=Cantina+e+Cucina+Rome" target="_blank" rel="noopener noreferrer">Google Maps: https://www.google.com/maps/search/?api=1&query=Cantina+e+Cucina+Rome</a>
+                </div>
+
+                <div class="restaurant-card">
+                    <h3 class="restaurant-name">Tonnarello</h3>
+                    <div class="meta-row">
+                        <span class="tag tag-meal">ディナー</span>
+                        <span class="tag tag-budget">€20〜35</span>
+                        <span class="tag tag-rating">Google Maps★ 4.5</span>
+                        <span class="tag tag-booking">予約推奨</span>
+                    </div>
+                    <p>トラステヴェレで最も行列ができる名店。太麺のトンナレッロは夜のディナーに最適なローマの定番。</p>
+                    <a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=Tonnarello+Rome" target="_blank" rel="noopener noreferrer">Google Maps: https://www.google.com/maps/search/?api=1&query=Tonnarello+Rome</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-header">☕ 3. カフェ・軽食・デザート候補</div>
+
+        <div class="meal-block">
+            <div class="meal-grid">
+                <div class="restaurant-card">
+                    <h3 class="restaurant-name">Osteria Al Squero</h3>
+                    <div class="meta-row">
+                        <span class="tag tag-meal">軽食</span>
+                        <span class="tag tag-budget">€5〜15</span>
+                        <span class="tag tag-rating">Google Maps★ 4.6</span>
+                        <span class="tag tag-booking-no">予約不要</span>
+                    </div>
+                    <p>運河沿いで立ち飲みしながら食べるビールとチケッティ。ベネチアで観光の合間に食べるのに向く。</p>
+                    <a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=Osteria+Al+Squero+Venice" target="_blank" rel="noopener noreferrer">Google Maps: https://www.google.com/maps/search/?api=1&query=Osteria+Al+Squero+Venice</a>
+                </div>
+
+                <div class="restaurant-card">
+                    <h3 class="restaurant-name">I Fratellini</h3>
+                    <div class="meta-row">
+                        <span class="tag tag-meal">軽食</span>
+                        <span class="tag tag-budget">€5〜15</span>
+                        <span class="tag tag-rating">Google Maps★ 4.7</span>
+                        <span class="tag tag-booking-no">予約不要</span>
+                    </div>
+                    <p>フィレンツェの象徴ともいえる小さなスタンド。パニーノとワインを、店先で立ち食いするローカル感が魅力。</p>
+                    <a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=I+Fratellini+Florence" target="_blank" rel="noopener noreferrer">Google Maps: https://www.google.com/maps/search/?api=1&query=I+Fratellini+Florence</a>
+                </div>
+
+                <div class="restaurant-card">
+                    <h3 class="restaurant-name">Roscioli Caffè Pasticceria</h3>
+                    <div class="meta-row">
+                        <span class="tag tag-meal">カフェ</span>
+                        <span class="tag tag-budget">軽食 / 朝食</span>
+                        <span class="tag tag-rating">Google Maps★ 4.8</span>
+                        <span class="tag tag-booking-no">予約不要</span>
+                    </div>
+                    <p>ローマ名物のマリトッツォや朝食向けの軽食が抜群。観光前の休憩や朝の一杯に最適。</p>
+                    <a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=Roscioli+Caff%C3%A8+Pasticceria+Rome" target="_blank" rel="noopener noreferrer">Google Maps: https://www.google.com/maps/search/?api=1&query=Roscioli+Caff%C3%A8+Pasticceria+Rome</a>
+                </div>
+
+                <div class="restaurant-card">
+                    <h3 class="restaurant-name">Giolitti</h3>
+                    <div class="meta-row">
+                        <span class="tag tag-meal">デザート</span>
+                        <span class="tag tag-budget">デザート</span>
+                        <span class="tag tag-rating">Google Maps★ 4.6</span>
+                        <span class="tag tag-booking-no">予約不要</span>
+                    </div>
+                    <p>1900年創業のローマ最古のジェラート店。パンテオン近くで、散策の合間に甘い休憩を取れる。</p>
+                    <a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=Giolitti+Rome" target="_blank" rel="noopener noreferrer">Google Maps: https://www.google.com/maps/search/?api=1&query=Giolitti+Rome</a>
+                </div>
+
+                <div class="restaurant-card">
+                    <h3 class="restaurant-name">Sant'Eustachio Il Caffè</h3>
+                    <div class="meta-row">
+                        <span class="tag tag-meal">カフェ</span>
+                        <span class="tag tag-budget">カフェ</span>
+                        <span class="tag tag-rating">Google Maps★ 4.7</span>
+                        <span class="tag tag-booking-no">予約不要</span>
+                    </div>
+                    <p>ローマの伝説的なバール。エスプレッソの質が高く、観光の合間に一杯立ち寄る価値あり。</p>
+                    <a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=Sant%27Eustachio+Il+Caff%C3%A8+Rome" target="_blank" rel="noopener noreferrer">Google Maps: https://www.google.com/maps/search/?api=1&query=Sant%27Eustachio+Il+Caff%C3%A8+Rome</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h3 style="margin: 0 0 8px; font-size: 18px;">調査まとめ</h3>
+            <p style="margin: 0; font-size: 14px; color: var(--text);">
+                自由食のおすすめは、観光地の近さと「1回で満足できるメニュー」を重視すると、旅全体の満足度が大きく変わります。昼食は立地重視、ディナーは食事の質重視、カフェは休憩と散策の合間に効率よく使うのが最もおすすめです。
+            </p>
+        </div>
+
+        <div class="cta-row" style="margin-top: 10px;">
+            <a class="primary-link" href="index.html">📊 旅行レポートへ戻る</a>
+            <a class="secondary-link" href="rome-free-day-guide.html">🎶 ローマフリー日程まとめを見る</a>
+        </div>
+
+        <div class="footer">© 2026 自由食事ガイド｜イタリア旅行計画</div>
+    </div>
+</body>
+</html>
