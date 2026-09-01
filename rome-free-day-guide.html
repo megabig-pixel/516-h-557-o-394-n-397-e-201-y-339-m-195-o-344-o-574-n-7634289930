@@ -79,68 +79,121 @@
         </div>
       </div>
     </section>
+"""
 
+with open(f'{site_dir}/rome-free-day-guide.html', 'w', encoding='utf-8') as f:
+    f.write(page_layout(
+        "ローマ終日自由行動＆教会音楽 完全攻略ガイド | イタリア新婚旅行8日間",
+        "合唱・音楽を愛するお二人のためのサンピエトロ夕のミサ聖歌隊合唱、カラヴァッジョ教会巡礼、3大モデルコース",
+        "active_rome",
+        "rf",
+        rome_content
+    ))
+print("rome-free-day-guide.html regenerated.")
+
+# -------------------------------------------------------------
+# 6. tour-map.html
+# -------------------------------------------------------------
+tour_map_content = """
+    <!-- Hero Header -->
+    <div class="hero-card" style="background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);">
+      <span class="hero-tag" style="background:#dbeafe; color:#1e40af;">🗺️ Leaflet &amp; OpenStreetMap 連動</span>
+      <h2 class="hero-title">全体ツアールート ＆ 全53スポットMAP</h2>
+      <p class="hero-subtitle">
+        イタリア7都市縦断（ミラノ ➔ ベローナ ➔ ベネチア ➔ フィレンツェ ➔ ピサ ➔ サンジミニャーノ ➔ ローマ）<br>
+        観光スポット・名物レストラン・お土産店・宿泊ホテル・治安注意ポイントをGPSピンとGoogle Maps連携で確認！
+      </p>
+    </div>
+
+    <!-- Map Container -->
+    <div style="background:#ffffff; border-radius:var(--radius-lg); border:1px solid var(--border-color); padding:14px; margin-bottom:24px; box-shadow:var(--shadow-md);">
+      <div id="tour-map" style="width:100%; height:480px; border-radius:var(--radius-md); z-index:1;"></div>
+    </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        if (typeof L === 'undefined') return;
+        const map = L.map('tour-map').setView([43.7696, 11.2558], 6);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          maxZoom: 18,
+          attribution: '© OpenStreetMap'
+        }).addTo(map);
+
+        const spots = [
+          { name: "ミラノ大聖堂 (Duomo)", city: "Milan", lat: 45.4642, lng: 9.1919, cat: "観光", tip: "露出厳禁・ハトの餌売り無視！" },
+          { name: "ルイーニ (Luini)", city: "Milan", lat: 45.4656, lng: 9.1925, cat: "グルメ", tip: "熱々パンツェロッティ！" },
+          { name: "ジュリエットの家", city: "Verona", lat: 45.4419, lng: 10.9984, cat: "観光", tip: "右胸タッチで永遠の愛祈願" },
+          { name: "サン・マルコ広場", city: "Venice", lat: 45.4342, lng: 12.3389, cat: "観光", tip: "ため息橋とゴンドラ遊覧" },
+          { name: "カフェ・フローリアン", city: "Venice", lat: 45.4336, lng: 12.3382, cat: "グルメ", tip: "世界最古カフェ・生演奏" },
+          { name: "フィレンツェ・ドゥオーモ", city: "Florence", lat: 43.7731, lng: 11.2560, cat: "観光", tip: "花の聖母マリア大聖堂" },
+          { name: "ピサの斜塔", city: "Pisa", lat: 43.7230, lng: 10.3966, cat: "観光", tip: "電車は乗車前の打刻必須！" },
+          { name: "ジェラテリア・ドンドリ", city: "San Gimignano", lat: 43.4677, lng: 11.0433, cat: "グルメ", tip: "世界一サフランジェラート" },
+          { name: "サン・ピエトロ大聖堂", city: "Rome", lat: 41.9022, lng: 12.4539, cat: "観光", tip: "夕のミサ17:00聖歌隊合唱" },
+          { name: "トレビの泉", city: "Rome", lat: 41.9009, lng: 12.4833, cat: "観光", tip: "コイン2枚で一生一緒！" },
+          { name: "コロッセオ", city: "Rome", lat: 41.8902, lng: 12.4922, cat: "観光", tip: "古代ローマの闘技場" }
+        ];
+
+        spots.forEach(s => {
+          const marker = L.marker([s.lat, s.lng]).addTo(map);
+          marker.bindPopup(`<strong>${s.name}</strong><br><small>${s.city} • ${s.cat}</small><br><span style="color:#c2410c;">💡 ${s.tip}</span>`);
+        });
+
+        // Polyline connecting the tour route
+        const routeCoords = [
+          [45.6300, 8.7230],  // Malpensa Airport
+          [45.4642, 9.1919],  // Milan
+          [45.4390, 10.9944], // Verona
+          [45.4342, 12.3389], // Venice
+          [43.7731, 11.2560], // Florence
+          [43.7230, 10.3966], // Pisa
+          [43.4677, 11.0433], // San Gimignano
+          [41.9022, 12.4539], // Rome
+          [41.7999, 12.2462]  // FCO Airport
+        ];
+        L.polyline(routeCoords, { color: '#2563eb', weight: 4, dashArray: '6, 8' }).addTo(map);
+      });
+    </script>
+"""
+
+with open(f'{site_dir}/tour-map.html', 'w', encoding='utf-8') as f:
+    f.write(page_layout(
+        "全体ツアールートMAP | イタリア7都市周遊8日間 ハネムーンしおり",
+        "Leaflet.js & OpenStreetMap連動のツアールートマップ。53スポットと治安警戒ピン、Google Maps連携",
+        "active_map",
+        "map",
+        tour_map_content
+    ))
+print("tour-map.html regenerated.")
   </main>
 
-  <!-- Ultra-Compact Bottom Tab Bar -->
+  <!-- Bottom Tab Bar -->
   <nav class="bottom-tab-bar">
     <a href="index.html" class="tab-item active">
       <span class="tab-icon">🏠</span>
       <span class="tab-label">ホーム</span>
     </a>
 
-    <!-- Native HTML5 Day Popover (Rich Segmented Cards UI) -->
+    <!-- Native HTML5 Day Popover (Solid White Card with Dimmed Backdrop) -->
     <details class="day-popover-details" id="day-popover-details">
       <summary class="tab-item">
         <span class="tab-icon">📅</span>
         <span class="tab-label">日程</span>
       </summary>
+      <div class="day-popover-backdrop" onclick="this.closest('details').removeAttribute('open');"></div>
       <div class="day-popover-dropdown">
         <div class="day-popover-header">
-          <span class="day-popover-title">📅 日程一覧を選択</span>
+          <span class="day-popover-title">📅 全8日間 日程詳細を選択</span>
           <button type="button" class="day-popover-close" onclick="this.closest('details').removeAttribute('open');">✕</button>
         </div>
         <div class="day-popover-grid">
-          <a href="day1.html" class="day-popover-card">
-            <div class="dpc-top"><span class="dpc-badge">Day 1</span><span class="dpc-date">11/15 (日)</span></div>
-            <div class="dpc-route">✈️ 関空 ➔ ミラノ着</div>
-            <div class="dpc-tag">日本出発・機中泊</div>
-          </a>
-          <a href="day2.html" class="day-popover-card">
-            <div class="dpc-top"><span class="dpc-badge">Day 2</span><span class="dpc-date">11/16 (月)</span></div>
-            <div class="dpc-route">🏛️ ミラノ ➔ ベネチア</div>
-            <div class="dpc-tag">ドゥオーモ・ジュリエット</div>
-          </a>
-          <a href="day3.html" class="day-popover-card">
-            <div class="dpc-top"><span class="dpc-badge">Day 3</span><span class="dpc-date">11/17 (火)</span></div>
-            <div class="dpc-route">🛶 ベネチア ➔ トスカーナ</div>
-            <div class="dpc-tag">ゴンドラ・最古バカロ</div>
-          </a>
-          <a href="day4.html" class="day-popover-card">
-            <div class="dpc-top"><span class="dpc-badge">Day 4</span><span class="dpc-date">11/18 (水)</span></div>
-            <div class="dpc-route">🥩 フィレンツェ ＆ ピサ</div>
-            <div class="dpc-tag">ビステッカ・斜塔【OP】</div>
-          </a>
-          <a href="day5.html" class="day-popover-card">
-            <div class="dpc-top"><span class="dpc-badge">Day 5</span><span class="dpc-date">11/19 (木)</span></div>
-            <div class="dpc-route">🍕 サンジミニャーノ ➔ ローマ</div>
-            <div class="dpc-tag">世界一ジェラート・トレビ</div>
-          </a>
-          <a href="day6.html" class="day-popover-card">
-            <div class="dpc-top"><span class="dpc-badge">Day 6</span><span class="dpc-date">11/20 (金)</span></div>
-            <div class="dpc-route">⛪ ローマ ＆ バチカン自由</div>
-            <div class="dpc-tag">最後の審判・夕のミサ合唱</div>
-          </a>
-          <a href="day7.html" class="day-popover-card">
-            <div class="dpc-top"><span class="dpc-badge">Day 7</span><span class="dpc-date">11/21 (土)</span></div>
-            <div class="dpc-route">🛍️ ローマ ➔ FCO空港発</div>
-            <div class="dpc-tag">テルミニ買い出し・免税</div>
-          </a>
-          <a href="day8.html" class="day-popover-card">
-            <div class="dpc-top"><span class="dpc-badge">Day 8</span><span class="dpc-date">11/22 (日)</span></div>
-            <div class="dpc-route">🛬 関空帰着 ➔ 解散</div>
-            <div class="dpc-tag">税関申告・ご自宅へ</div>
-          </a>
+          <a href="day1.html" class="day-popover-item"><span class="dp-badge">Day 1</span> 11/15(日) 関空➔ミラノ</a>
+          <a href="day2.html" class="day-popover-item"><span class="dp-badge">Day 2</span> 11/16(月) ミラノ➔ベネチア</a>
+          <a href="day3.html" class="day-popover-item"><span class="dp-badge">Day 3</span> 11/17(火) ベネチア➔フィレンツェ</a>
+          <a href="day4.html" class="day-popover-item"><span class="dp-badge">Day 4</span> 11/18(水) フィレンツェ＆ピサ</a>
+          <a href="day5.html" class="day-popover-item"><span class="dp-badge">Day 5</span> 11/19(木) サンジミニャーノ➔ローマ</a>
+          <a href="day6.html" class="day-popover-item"><span class="dp-badge">Day 6</span> 11/20(金) ローマ＆バチカン自由</a>
+          <a href="day7.html" class="day-popover-item"><span class="dp-badge">Day 7</span> 11/21(土) ローマ➔FCO空港発</a>
+          <a href="day8.html" class="day-popover-item"><span class="dp-badge">Day 8</span> 11/22(日) 関空帰着・解散</a>
         </div>
       </div>
     </details>

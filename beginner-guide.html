@@ -237,68 +237,544 @@
         </div>
       </div>
     </section>
+"""
 
+with open(f'{site_dir}/beginner-guide.html', 'w', encoding='utf-8') as f:
+    f.write(page_layout_v3(
+        "初めてのイタリア旅行 完全安心バイブル | YouTube「イタリアガイドみめ」直伝",
+        "三種の神器、罰金回避10選、イタリアの食文化・生活習慣、レストラン・教会エチケット、スリ完全防御マニュアル",
+        "active_beginner",
+        "bg",
+        beginner_content
+    ))
+print("beginner-guide.html updated with culture & etiquette.")
+
+# -------------------------------------------------------------
+# 2. index.html (Updated v3 with No Header and 8 section links)
+# -------------------------------------------------------------
+index_content_v3 = """
+    <!-- Hero Card -->
+    <div class="hero-card">
+      <span class="hero-tag">💍 HIS Honeymoon Special Tour</span>
+      <h2 class="hero-title">アンディアーモ！イタリア7都市周遊 8日間</h2>
+      <p class="hero-subtitle">
+        鈴木 健太 様 ❤️ めぐみ 様 ご夫妻 新婚旅行専用ガイドポータル<br>
+        2026年11月15日(日) 関西国際空港(KIX)発 〜 11月22日(日)帰国
+      </p>
+      <div class="hero-meta-grid">
+        <div class="hero-meta-item">✈️ 往復ペアシート確約</div>
+        <div class="hero-meta-item">🏨 全宿泊地 ダブルベッド確約</div>
+        <div class="hero-meta-item">🚌 全行程 専用バス移動</div>
+        <div class="hero-meta-item">📖 フォトプラスブック特典付</div>
+      </div>
+    </div>
+
+    <!-- YouTube Mime Guide Banner -->
+    <div class="mime-callout">
+      <div class="mime-header">
+        <div class="mime-title">
+          <span style="font-size: 1.6rem;">🎥</span>
+          <div>
+            <h3 style="margin:0;">YouTube「イタリアガイドみめ (@mimeitalygaido)」直伝！安心バイブル</h3>
+            <small style="color: #7c2d12;">現地在住28年の公認観光ガイド・片庭みめさん直伝のノウハウを完全収録</small>
+          </div>
+        </div>
+        <a href="beginner-guide.html" class="btn btn-orange">特設バイブルを開く ➔</a>
+      </div>
+      <div class="mime-tips-grid">
+        <div class="mime-tip-card">
+          <h4>🛡️ スリ対策「三種の神器」</h4>
+          <p>①薄型セキュリティポーチ（パスポート原本携帯は法律上の義務）、②自転車用ワイヤーロック（スーツケース2個連結）、③ダイヤル式南京錠（リュックファスナー固定）。</p>
+        </div>
+        <div class="mime-tip-card">
+          <h4>☕ バール（Bar）活用裏ワザ</h4>
+          <p>有料トイレに並ばず、バールでエスプレッソ（€1.3〜1.5）を頼み「Posso usare il bagno?」と清潔なトイレを借りるのがイタリア通の極意！</p>
+        </div>
+        <div class="mime-tip-card">
+          <h4>⚠️ 刻印（Timbrare）忘れ罰金回避</h4>
+          <p>電車やバスの紙切符は乗車前の打刻機必須！刻印なしは50〜95ユーロの高額即時罰金対象になります。</p>
+        </div>
+        <div class="mime-tip-card">
+          <h4>🍽️ レストラン＆お水事情</h4>
+          <p>水とおしぼりは有料（ガスなし水はAcqua Naturale）。席料（Coperto）は合法。魚料理の時価（S.Q.）は注文前確認！</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 7 Main Guide Navigation Cards -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">🧭 7大パーソナルガイド</h2>
+        <span class="section-subtitle">iPhoneでいつでもワンタップ確認</span>
+      </div>
+      <div class="cards-grid">
+        <div class="spot-card">
+          <div class="spot-body">
+            <h3 class="spot-name-ja">🔰 初心者安心バイブル</h3>
+            <span class="spot-name-it">Guida per Principianti &amp; Cultura</span>
+            <p class="spot-desc">三種の神器、トイレ事情、バール作法、イタリア食文化（カプチーノ・アペリティーボ）、教会マナー、免税手続き。</p>
+            <a href="beginner-guide.html" class="btn btn-primary" style="margin-top:auto;">バイブルを見る ➔</a>
+          </div>
+        </div>
+        <div class="spot-card">
+          <div class="spot-body">
+            <h3 class="spot-name-ja">🗺️ 全体ルートMAP</h3>
+            <span class="spot-name-it">Mappa dell'Itinerario &amp; Dintorni</span>
+            <p class="spot-desc">日別ステップナビ・周辺500m拡大・全体俯瞰切り替え対応！70+スポットをGPSピンとGoogle Maps連携で確認。</p>
+            <a href="tour-map.html" class="btn btn-primary" style="margin-top:auto;">地図アプリを開く ➔</a>
+          </div>
+        </div>
+        <div class="spot-card">
+          <div class="spot-body">
+            <h3 class="spot-name-ja">🏛️ 観光施設案内ガイド</h3>
+            <span class="spot-name-it">Guida Monumenti &amp; Musei</span>
+            <p class="spot-desc">ミラノ・ドゥオーモ、ベローナ、ベネチア、フィレンツェ、ピサの斜塔、バチカン美術館、コロッセオ等の見学・予約ガイド。</p>
+            <a href="sightseeing-guide.html" class="btn btn-primary" style="margin-top:auto;">観光施設を見る ➔</a>
+          </div>
+        </div>
+        <div class="spot-card">
+          <div class="spot-body">
+            <h3 class="spot-name-ja">🗣️ 指差しイタリア語</h3>
+            <span class="spot-name-it">Frasario Italiano Parlante (70 Frasi)</span>
+            <p class="spot-desc">厳選70フレーズ！レストラン、お土産屋、空港、駅、緊急時に使える音声発音＆ワンタップコピー機能付き。</p>
+            <a href="phrasebook.html" class="btn btn-primary" style="margin-top:auto;">会話帳を開く ➔</a>
+          </div>
+        </div>
+        <div class="spot-card">
+          <div class="spot-body">
+            <h3 class="spot-name-ja">🍽️ 自由食・グルメガイド</h3>
+            <span class="spot-name-it">Guida Gastronomica (35+ Ristoranti)</span>
+            <p class="spot-desc">ルイーニのパンツェロッティ、最古のカフェ・フローリアン、フィレンツェTボーン、世界一ジェラート、ローマカルボナーラ！</p>
+            <a href="free-meal-guide.html" class="btn btn-primary" style="margin-top:auto;">グルメガイドを見る ➔</a>
+          </div>
+        </div>
+        <div class="spot-card">
+          <div class="spot-body">
+            <h3 class="spot-name-ja">🎁 お土産・買物ガイド</h3>
+            <span class="spot-name-it">Guida allo Shopping e Souvenir</span>
+            <p class="spot-desc">サンタ・マリア・ノヴェッラ薬局、ベネチアングラス、高級オリーブオイル、スーパー調達品、最新免税手順。</p>
+            <a href="souvenir-guide.html" class="btn btn-primary" style="margin-top:auto;">お土産ガイドを見る ➔</a>
+          </div>
+        </div>
+        <div class="spot-card">
+          <div class="spot-body">
+            <h3 class="spot-name-ja">🎻 ローマ自由行動＆教会音楽</h3>
+            <span class="spot-name-it">Roma &amp; Musica Sacra</span>
+            <p class="spot-desc">合唱・音楽好きのお二人に贈る、サン・ピエトロ大聖堂「夕のミサ合唱」やカラヴァッジョ教会巡回3大モデルコース。</p>
+            <a href="rome-free-day-guide.html" class="btn btn-primary" style="margin-top:auto;">ローマ特集を見る ➔</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Packing Checklist Widget -->
+    <section class="section">
+      <div class="checklist-card">
+        <div class="checklist-header">
+          <h3 style="font-size:1.1rem; font-weight:800; color:var(--primary-color);">🧳 旅行準備・持ち物チェックリスト（LocalStorage連動）</h3>
+          <div>
+            <button id="btn-select-all" class="btn btn-secondary" style="padding:3px 8px; font-size:0.72rem;">全選択</button>
+            <button id="btn-reset-all" class="btn btn-secondary" style="padding:3px 8px; font-size:0.72rem;">リセット</button>
+          </div>
+        </div>
+        <div class="checklist-progress-bar">
+          <div class="checklist-progress-fill" style="width: 0%;"></div>
+        </div>
+        <div class="checklist-progress-text" style="font-size:0.78rem; font-weight:700; color:var(--text-muted); margin-bottom:10px;">準備完了: 0 / 12 項目 (0%)</div>
+        
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:5px;">
+          <label class="check-item"><input type="checkbox" data-id="chk_sec_pouch"> <span><strong>【三種の神器①】</strong> 薄型セキュリティポーチ（パスポート原本・予備クレカ）</span></label>
+          <label class="check-item"><input type="checkbox" data-id="chk_wire_lock"> <span><strong>【三種の神器②】</strong> 自転車用軽量ワイヤーロック（スーツケース2個連結）</span></label>
+          <label class="check-item"><input type="checkbox" data-id="chk_padlock"> <span><strong>【三種の神器③】</strong> ダイヤル式ミニ南京錠（リュックファスナー固定）</span></label>
+          <label class="check-item"><input type="checkbox" data-id="chk_stole"> <span><strong>【魔法の布】</strong> 大判ストール（11月寒暖差＆教会肩・膝隠し）</span></label>
+          <label class="check-item"><input type="checkbox" data-id="chk_shoes"> <span>履き慣れたスニーカー ＆ ホテル用携帯スリッパ（石畳用）</span></label>
+          <label class="check-item"><input type="checkbox" data-id="chk_battery"> <span>大容量モバイルバッテリー（機内持ち込み手荷物へ！）</span></label>
+          <label class="check-item"><input type="checkbox" data-id="chk_ecobag"> <span>丈夫な布製エコバッグ（破れやすい現地のプラ袋対策）</span></label>
+          <label class="check-item"><input type="checkbox" data-id="chk_tissue"> <span>水に流せるティッシュ ＆ 除菌ウェットティッシュ（多め）</span></label>
+          <label class="check-item"><input type="checkbox" data-id="chk_adapter"> <span>Cタイプ変換プラグ（2〜3個）＆ USBマルチ急速充電器</span></label>
+          <label class="check-item"><input type="checkbox" data-id="chk_meds"> <span>日本の常備薬（胃腸薬・頭痛薬）＆ 貼るホッカイロ</span></label>
+          <label class="check-item"><input type="checkbox" data-id="chk_cash"> <span>少額ユーロ紙幣（€5/€10/€20 合計€100程度）</span></label>
+          <label class="check-item"><input type="checkbox" data-id="chk_vjw"> <span>Visit Japan Web 登録 ＆ 海外旅行保険証書コピー</span></label>
+        </div>
+      </div>
+    </section>
+
+    <!-- Realtime Currency & Tip Calculator Widget -->
+    <section class="section">
+      <div class="calc-card">
+        <div class="section-header" style="margin-bottom:10px;">
+          <h3 class="section-title" style="font-size:1.1rem;">💶 ユーロ・円 ＆ 席料・チップ即時計算機</h3>
+          <span class="section-subtitle">お会計時にサッと確認！</span>
+        </div>
+        <div class="calc-grid">
+          <div class="calc-input-group">
+            <label>料理代金（ユーロ EUR €）</label>
+            <input type="number" id="calc-euro-input" class="calc-input" placeholder="例: 45.00" value="40" step="0.5">
+            <div style="display:flex; gap:4px; margin-top:5px; flex-wrap:wrap;">
+              <button class="btn btn-secondary btn-preset-eur" data-amount="1.5" style="padding:2px 6px; font-size:0.7rem;">€1.5 カフェ</button>
+              <button class="btn btn-secondary btn-preset-eur" data-amount="5.0" style="padding:2px 6px; font-size:0.7rem;">€5 ジェラート</button>
+              <button class="btn btn-secondary btn-preset-eur" data-amount="20" style="padding:2px 6px; font-size:0.7rem;">€20 ランチ</button>
+              <button class="btn btn-secondary btn-preset-eur" data-amount="60" style="padding:2px 6px; font-size:0.7rem;">€60 ディナー</button>
+              <button class="btn btn-secondary btn-preset-eur" data-amount="70.01" style="padding:2px 6px; font-size:0.7rem;">€70.01 免税ライン</button>
+            </div>
+          </div>
+          <div class="calc-input-group">
+            <label>席料・パン代（1人あたり Coperto）</label>
+            <select id="calc-coperto-select" class="calc-input">
+              <option value="0">€0 (バール立ち飲み / なし)</option>
+              <option value="2.0" selected>€2.0 (一般的なトラットリア)</option>
+              <option value="3.0">€3.0 (観光地・人気店)</option>
+              <option value="4.0">€4.0 (高級店・広場沿い)</option>
+            </select>
+            <label style="margin-top:5px;">チップ率（感謝の気持ち Mancia）</label>
+            <select id="calc-tip-select" class="calc-input">
+              <option value="0" selected>0% (基本不要・サービス料込)</option>
+              <option value="5">5% (親切なサービス)</option>
+              <option value="10">10% (極めて素晴らしいサービス)</option>
+            </select>
+          </div>
+        </div>
+        <div class="calc-result-box">
+          <div style="font-size:0.8rem; color:var(--text-muted); font-weight:700;">お二人分のお支払い総額 目安</div>
+          <div id="calc-result-eur" style="font-size:1.6rem; font-weight:900; color:var(--primary-color); margin:3px 0;">€44.00</div>
+          <div id="calc-result-jpy" style="font-size:1.1rem; font-weight:800; color:var(--secondary-color);">約 ¥7,260</div>
+          <div id="calc-result-breakdown" style="margin-top:4px;"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Daily Itinerary Cards (Day 1 - Day 8) -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">📅 デイリー詳細日程 (Day 1 〜 Day 8)</h2>
+        <span class="section-subtitle">各日の食事条件・見どころ・みめ直伝Tip</span>
+      </div>
+      
+      <div class="cards-grid">
+        <!-- Day 1 -->
+        <div class="spot-card">
+          <div class="spot-body">
+            <span class="hero-tag" style="background:#1e3a8a; color:#fff;">Day 1 • 11/15(日)</span>
+            <h3 class="spot-name-ja">関西国際空港 出発 ➔ 機中泊 ➔ ミラノへ</h3>
+            <div class="spot-meta-row">
+              <span class="spot-chip">朝：各自/機内</span>
+              <span class="spot-chip">昼：機内食</span>
+              <span class="spot-chip">夕：機内食/軽食</span>
+            </div>
+            <p class="spot-desc">関空より国際線ペアシートにて出発。手荷物と預け荷物をしっかり仕分けて機内へ。</p>
+            <div class="spot-mime-tip"><strong>【みめTip】</strong> 搭乗したら時計をイタリア時間（-8時間）に合わせ、機内乾燥対策（マスク・目薬）と到着日は即就寝で時差ボケ予防！</div>
+            <a href="day1.html" class="btn btn-primary" style="margin-top:auto;">Day 1 詳細ページ ➔</a>
+          </div>
+        </div>
+
+        <!-- Day 2 -->
+        <div class="spot-card">
+          <div class="spot-body">
+            <span class="hero-tag" style="background:#2563eb; color:#fff;">Day 2 • 11/16(月)</span>
+            <h3 class="spot-name-ja">ミラノ半日観光 ➔ ベローナ散策 ➔ ベネチア歓迎ディナー</h3>
+            <div class="spot-meta-row">
+              <span class="spot-chip" style="color:#166534; font-weight:800;">朝：ホテル込</span>
+              <span class="spot-chip" style="color:#c2410c; font-weight:800;">昼：各自自由食</span>
+              <span class="spot-chip" style="color:#166534; font-weight:800;">夕：ツアーディナー込</span>
+            </div>
+            <p class="spot-desc">ミラノ大聖堂、ガッレリアの牡牛モザイク回転、ルイーニのパンツェロッティ。ベローナでジュリエットの右胸タッチ！</p>
+            <div class="spot-mime-tip"><strong>【みめTip】</strong> ドゥオーモ前はスリ多発1位！ミサンガ売り・ハトの餌売りは完全無視。リュックは胸の前に抱えましょう。</div>
+            <a href="day2.html" class="btn btn-primary" style="margin-top:auto;">Day 2 詳細ページ ➔</a>
+          </div>
+        </div>
+
+        <!-- Day 3 -->
+        <div class="spot-card">
+          <div class="spot-body">
+            <span class="hero-tag" style="background:#0284c7; color:#fff;">Day 3 • 11/17(火)</span>
+            <h3 class="spot-name-ja">水の都ベネチア観光 ＆ ゴンドラ遊覧 ➔ フィレンツェへ</h3>
+            <div class="spot-meta-row">
+              <span class="spot-chip" style="color:#166534; font-weight:800;">朝：ホテル込</span>
+              <span class="spot-chip" style="color:#c2410c; font-weight:800;">昼：各自自由食</span>
+              <span class="spot-chip" style="color:#c2410c; font-weight:800;">夕：各自自由食</span>
+            </div>
+            <p class="spot-desc">サン・マルコ寺院、ドゥカーレ宮殿、ため息橋、伝統ゴンドラ遊覧。バカロでチケッティ巡り＆スーパー立ち寄り。</p>
+            <div class="spot-mime-tip"><strong>【みめTip】</strong> 有料トイレ（€1.5）に並ばず、バールでエスプレッソを頼んでトイレを借りるのがローカル技！布製エコバッグ必携。</div>
+            <a href="day3.html" class="btn btn-primary" style="margin-top:auto;">Day 3 詳細ページ ➔</a>
+          </div>
+        </div>
+
+        <!-- Day 4 -->
+        <div class="spot-card">
+          <div class="spot-body">
+            <span class="hero-tag" style="background:#7c3aed; color:#fff;">Day 4 • 11/18(水)</span>
+            <h3 class="spot-name-ja">フィレンツェ終日観光 ＆ 【OP】ピサの斜塔</h3>
+            <div class="spot-meta-row">
+              <span class="spot-chip" style="color:#166534; font-weight:800;">朝：ホテル込</span>
+              <span class="spot-chip" style="color:#c2410c; font-weight:800;">昼：各自自由食</span>
+              <span class="spot-chip" style="color:#c2410c; font-weight:800;">夕：各自自由食 (Tボーン)</span>
+            </div>
+            <p class="spot-desc">ミケランジェロ広場展望、ドゥオーモ、サンタ・マリア・ノヴェッラ世界最古薬局、ピサの斜塔、名物ビステッカ！</p>
+            <div class="spot-mime-tip"><strong>【みめ超警告】</strong> 電車や市バスは乗車前の「打刻（Timbrare）」絶対厳守！刻印忘れは€50〜95即時罰金です。</div>
+            <a href="day4.html" class="btn btn-primary" style="margin-top:auto;">Day 4 詳細ページ ➔</a>
+          </div>
+        </div>
+
+        <!-- Day 5 -->
+        <div class="spot-card">
+          <div class="spot-body">
+            <span class="hero-tag" style="background:#d97706; color:#fff;">Day 5 • 11/19(木)</span>
+            <h3 class="spot-name-ja">サンジミニャーノ ＆ ピッツァ昼食 ➔ 永遠の都ローマへ</h3>
+            <div class="spot-meta-row">
+              <span class="spot-chip" style="color:#166534; font-weight:800;">朝：ホテル込</span>
+              <span class="spot-chip" style="color:#166534; font-weight:800;">昼：本場ピッツァ込</span>
+              <span class="spot-chip" style="color:#c2410c; font-weight:800;">夕：各自自由食</span>
+            </div>
+            <p class="spot-desc">中世の塔の街散策＆世界一のドンドリジェラート。本場ピッツァ昼食後ローマへ南下。夜はトレビの泉コイン投げ！</p>
+            <div class="spot-mime-tip"><strong>【みめTip】</strong> サン・ピエトロ寺院は肩・膝出し厳禁（ストールで隠す）。夜のトレビの泉周辺はスリに警戒！</div>
+            <a href="day5.html" class="btn btn-primary" style="margin-top:auto;">Day 5 詳細ページ ➔</a>
+          </div>
+        </div>
+
+        <!-- Day 6 -->
+        <div class="spot-card">
+          <div class="spot-body">
+            <span class="hero-tag" style="background:#dc2626; color:#fff;">Day 6 • 11/20(金)</span>
+            <h3 class="spot-name-ja">ローマ ＆ バチカン市国 終日自由行動・音楽教会散策</h3>
+            <div class="spot-meta-row">
+              <span class="spot-chip" style="color:#166534; font-weight:800;">朝：ホテル込</span>
+              <span class="spot-chip" style="color:#c2410c; font-weight:800;">昼：各自自由食</span>
+              <span class="spot-chip" style="color:#c2410c; font-weight:800;">夕：各自自由食 (ラストディナー)</span>
+            </div>
+            <p class="spot-desc">バチカン美術館「最後の審判」、コロッセオ、サン・ピエトロ大聖堂夕のミサ聖歌隊合唱、カラヴァッジョ教会巡礼！</p>
+            <div class="spot-mime-tip"><strong>【みめTip】</strong> レストランのテーブル上にスマホを置かない！街角のナゾーネ（水飲み場）は下の穴を塞ぐと上から飲めます。</div>
+            <a href="day6.html" class="btn btn-primary" style="margin-top:auto;">Day 6 詳細ページ ➔</a>
+          </div>
+        </div>
+
+        <!-- Day 7 -->
+        <div class="spot-card">
+          <div class="spot-body">
+            <span class="hero-tag" style="background:#4b5563; color:#fff;">Day 7 • 11/21(土)</span>
+            <h3 class="spot-name-ja">ローマ自由行動 ➔ FCO空港発 ➔ 免税手続き ➔ 機中泊</h3>
+            <div class="spot-meta-row">
+              <span class="spot-chip" style="color:#166534; font-weight:800;">朝：ホテル込</span>
+              <span class="spot-chip">昼：各自/空港</span>
+              <span class="spot-chip">夕：機内食</span>
+            </div>
+            <p class="spot-desc">テルミニ駅地下Conadで最終買い出し。空港Otello端末でデジタル免税承認。液体物はスーツケース預け入れへ。</p>
+            <div class="spot-mime-tip"><strong>【みめ超警告】</strong> 生ハム・サラミ等の肉製品は日本持ち込み厳禁（高額罰金）。オリーブオイルは必ず預け荷物へ！</div>
+            <a href="day7.html" class="btn btn-primary" style="margin-top:auto;">Day 7 詳細ページ ➔</a>
+          </div>
+        </div>
+
+        <!-- Day 8 -->
+        <div class="spot-card">
+          <div class="spot-body">
+            <span class="hero-tag" style="background:#059669; color:#fff;">Day 8 • 11/22(日)</span>
+            <h3 class="spot-name-ja">関西国際空港 到着 ➔ 解散 ➔ ご自宅へ</h3>
+            <div class="spot-meta-row">
+              <span class="spot-chip">朝：機内食</span>
+              <span class="spot-chip">昼：機内食</span>
+              <span class="spot-chip">夕：ご自宅</span>
+            </div>
+            <p class="spot-desc">関空16:25着。税関電子申告を済ませて解散。HIS特典フォトプラスブックでお二人の宝物アルバム作成！</p>
+            <div class="spot-mime-tip"><strong>【みめTip】</strong> 帰国日は夜まで起きて太陽光を浴びると時差ボケが早く治ります。オリーブオイルは冷暗所保管！</div>
+            <a href="day8.html" class="btn btn-primary" style="margin-top:auto;">Day 8 詳細ページ ➔</a>
+          </div>
+        </div>
+      </div>
+    </section>
+"""
+
+with open(f'{site_dir}/index.html', 'w', encoding='utf-8') as f:
+    f.write(page_layout_v3(
+        "アンディアーモ！イタリア8日間 新婚旅行ガイドポータル | 鈴木 健太・めぐみ 様",
+        "HISイタリア周遊8日間新婚旅行専用ポータル。YouTubeイタリアガイドみめ直伝ノウハウ・動的ツール完備",
+        "active_home",
+        "home",
+        index_content_v3
+    ))
+print("index.html updated to v3.")
+
+# -------------------------------------------------------------
+# 3. phrasebook.html (Re-export v3)
+# -------------------------------------------------------------
+from gen_phrasebook import phrasebook_content
+with open(f'{site_dir}/phrasebook.html', 'w', encoding='utf-8') as f:
+    f.write(page_layout_v3(
+        "実践イタリア語 指差し会話帳＆音声バイブル | イタリア新婚旅行8日間",
+        "レストラン・お土産屋・空港・ホテル・緊急時に使える厳選70フレーズ。Web Speech APIによる音声発音＆ワンタップコピー機能付き",
+        "active_phrase",
+        "ph",
+        phrasebook_content
+    ))
+print("phrasebook.html updated to v3.")
+
+# -------------------------------------------------------------
+# 4. tour-map.html (Re-export v3)
+# -------------------------------------------------------------
+from gen_tour_map_v2 import tour_map_content
+with open(f'{site_dir}/tour-map.html', 'w', encoding='utf-8') as f:
+    f.write(page_layout_v3(
+        "全体ツアールートMAP | イタリア7都市周遊8日間 ハネムーンしおり",
+        "日別ルートナビゲーション、スポットタップでの半径500m周辺施設拡大、イタリア全域俯瞰ズームリセット機能を搭載したインタラクティブMAP",
+        "active_map",
+        "map",
+        tour_map_content
+    ))
+print("tour-map.html updated to v3.")
+
+# -------------------------------------------------------------
+# 5. free-meal-guide.html & dining-guide.html (Re-export v3)
+# -------------------------------------------------------------
+from gen_all_remaining_pages import dining_content, souvenir_content, rome_content
+
+for p in ['free-meal-guide.html', 'dining-guide.html']:
+    with open(f'{site_dir}/{p}', 'w', encoding='utf-8') as f:
+        f.write(page_layout_v3(
+            "イタリア自由食事＆レストラン完全ガイド｜HIS 8日間 7都市35選",
+            "YouTubeイタリアガイドみめ直伝のレストラン＆バール利用マナー、コペルト・チップ・お水ルールと7都市35店舗の名物グルメガイド",
+            "active_food",
+            "food",
+            dining_content
+        ))
+print("free-meal-guide.html & dining-guide.html updated to v3.")
+
+# -------------------------------------------------------------
+# 6. souvenir-guide.html (Re-export v3)
+# -------------------------------------------------------------
+with open(f'{site_dir}/souvenir-guide.html', 'w', encoding='utf-8') as f:
+    f.write(page_layout_v3(
+        "イタリアお土産＆ショッピング完全ガイド｜HIS 8日間 25選",
+        "YouTubeイタリアガイドみめ直伝の免税手続き（€70.01〜）、液体物パッキング、肉製品持ち込み禁止警告と都市別おすすめお土産",
+        "active_gift",
+        "gift",
+        souvenir_content
+    ))
+print("souvenir-guide.html updated to v3.")
+
+# -------------------------------------------------------------
+# 7. rome-free-day-guide.html (Re-export v3)
+# -------------------------------------------------------------
+with open(f'{site_dir}/rome-free-day-guide.html', 'w', encoding='utf-8') as f:
+    f.write(page_layout_v3(
+        "ローマ終日自由行動＆教会音楽 完全攻略ガイド | イタリア新婚旅行8日間",
+        "合唱・音楽を愛するお二人のためのサンピエトロ夕のミサ聖歌隊合唱、カラヴァッジョ教会巡礼、3大モデルコース",
+        "active_rome",
+        "rf",
+        rome_content
+    ))
+print("rome-free-day-guide.html updated to v3.")
+
+# -------------------------------------------------------------
+# 8. day1 to day8 (Re-export v3)
+# -------------------------------------------------------------
+from gen_days import days_data
+for d in days_data:
+    b_stat, l_stat, d_stat = d["meals"]
+    mime_cards_html = "".join([f"""
+        <div class="mime-tip-card">
+          <h4>💡 {t[0]}</h4>
+          <p>{t[1]}</p>
+        </div>""" for t in d["mime_tips"]])
+    
+    timeline_html = "".join([f"""
+        <li class="timeline-item">
+          <div class="timeline-time">{t[0]}</div>
+          <div class="timeline-desc">{t[1]}</div>
+        </li>""" for t in d["timeline"]])
+
+    content = f"""
+    <!-- Hero Header -->
+    <div class="hero-card hero-day">
+      <span class="hero-tag">💍 HIS Honeymoon Tour</span>
+      <h2 class="hero-title">{d["hero_title"]}</h2>
+      <p class="hero-subtitle">{d["hero_sub"]}</p>
+    </div>
+
+    <!-- Meal Status Box -->
+    <div class="meal-status-box">
+      <div class="meal-status-header">
+        <h3>🍽️ 本日の食事条件</h3>
+      </div>
+      <div class="meal-grid-3">
+        <div class="meal-col">
+          <div class="meal-col-title">朝食</div>
+          <span class="meal-badge {'included' if '込' in b_stat else 'free'}">{b_stat}</span>
+        </div>
+        <div class="meal-col">
+          <div class="meal-col-title">昼食</div>
+          <span class="meal-badge {'included' if '込' in b_stat else 'free'}">{l_stat}</span>
+        </div>
+        <div class="meal-col">
+          <div class="meal-col-title">夕食</div>
+          <span class="meal-badge {'included' if '込' in d_stat else 'free'}">{d_stat}</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mime Special Advice Box -->
+    <div class="mime-callout">
+      <div class="mime-header">
+        <div class="mime-title">
+          <span style="font-size: 1.5rem;">🎥</span>
+          <h3 style="margin:0;">【Mime直伝】本日の実践アドバイス ＆ 注意点</h3>
+        </div>
+        <span class="mime-badge">公認ガイド直伝</span>
+      </div>
+      <div class="mime-tips-grid">
+        {mime_cards_html}
+      </div>
+    </div>
+
+    <!-- Timeline Section -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">⏱️ 本日のタイムライン・行動スケジュール</h2>
+      </div>
+      <ul class="timeline-list">
+        {timeline_html}
+      </ul>
+    </section>
+    """
+
+    with open(f'{site_dir}/{d["file"]}', 'w', encoding='utf-8') as f:
+        f.write(page_layout_v3(
+            d["title"],
+            f"{d['hero_title']}。食事条件、タイムライン、YouTubeイタリアガイドみめ直伝ノウハウ",
+            "active_home",
+            d["key"],
+            content
+        ))
+    print(f"{d['file']} updated to v3.")
+
+print("\n🎉 ALL 17 HTML PAGES UPDATED TO V3 (NO HEADER, DUAL CLOCK, 8 BOTTOM TABS)!")
   </main>
 
-  <!-- Ultra-Compact Bottom Tab Bar -->
+  <!-- Bottom Tab Bar -->
   <nav class="bottom-tab-bar">
     <a href="index.html" class="tab-item">
       <span class="tab-icon">🏠</span>
       <span class="tab-label">ホーム</span>
     </a>
 
-    <!-- Native HTML5 Day Popover (Rich Segmented Cards UI) -->
+    <!-- Native HTML5 Day Popover (Solid White Card with Dimmed Backdrop) -->
     <details class="day-popover-details" id="day-popover-details">
       <summary class="tab-item">
         <span class="tab-icon">📅</span>
         <span class="tab-label">日程</span>
       </summary>
+      <div class="day-popover-backdrop" onclick="this.closest('details').removeAttribute('open');"></div>
       <div class="day-popover-dropdown">
         <div class="day-popover-header">
-          <span class="day-popover-title">📅 日程一覧を選択</span>
+          <span class="day-popover-title">📅 全8日間 日程詳細を選択</span>
           <button type="button" class="day-popover-close" onclick="this.closest('details').removeAttribute('open');">✕</button>
         </div>
         <div class="day-popover-grid">
-          <a href="day1.html" class="day-popover-card">
-            <div class="dpc-top"><span class="dpc-badge">Day 1</span><span class="dpc-date">11/15 (日)</span></div>
-            <div class="dpc-route">✈️ 関空 ➔ ミラノ着</div>
-            <div class="dpc-tag">日本出発・機中泊</div>
-          </a>
-          <a href="day2.html" class="day-popover-card">
-            <div class="dpc-top"><span class="dpc-badge">Day 2</span><span class="dpc-date">11/16 (月)</span></div>
-            <div class="dpc-route">🏛️ ミラノ ➔ ベネチア</div>
-            <div class="dpc-tag">ドゥオーモ・ジュリエット</div>
-          </a>
-          <a href="day3.html" class="day-popover-card">
-            <div class="dpc-top"><span class="dpc-badge">Day 3</span><span class="dpc-date">11/17 (火)</span></div>
-            <div class="dpc-route">🛶 ベネチア ➔ トスカーナ</div>
-            <div class="dpc-tag">ゴンドラ・最古バカロ</div>
-          </a>
-          <a href="day4.html" class="day-popover-card">
-            <div class="dpc-top"><span class="dpc-badge">Day 4</span><span class="dpc-date">11/18 (水)</span></div>
-            <div class="dpc-route">🥩 フィレンツェ ＆ ピサ</div>
-            <div class="dpc-tag">ビステッカ・斜塔【OP】</div>
-          </a>
-          <a href="day5.html" class="day-popover-card">
-            <div class="dpc-top"><span class="dpc-badge">Day 5</span><span class="dpc-date">11/19 (木)</span></div>
-            <div class="dpc-route">🍕 サンジミニャーノ ➔ ローマ</div>
-            <div class="dpc-tag">世界一ジェラート・トレビ</div>
-          </a>
-          <a href="day6.html" class="day-popover-card">
-            <div class="dpc-top"><span class="dpc-badge">Day 6</span><span class="dpc-date">11/20 (金)</span></div>
-            <div class="dpc-route">⛪ ローマ ＆ バチカン自由</div>
-            <div class="dpc-tag">最後の審判・夕のミサ合唱</div>
-          </a>
-          <a href="day7.html" class="day-popover-card">
-            <div class="dpc-top"><span class="dpc-badge">Day 7</span><span class="dpc-date">11/21 (土)</span></div>
-            <div class="dpc-route">🛍️ ローマ ➔ FCO空港発</div>
-            <div class="dpc-tag">テルミニ買い出し・免税</div>
-          </a>
-          <a href="day8.html" class="day-popover-card">
-            <div class="dpc-top"><span class="dpc-badge">Day 8</span><span class="dpc-date">11/22 (日)</span></div>
-            <div class="dpc-route">🛬 関空帰着 ➔ 解散</div>
-            <div class="dpc-tag">税関申告・ご自宅へ</div>
-          </a>
+          <a href="day1.html" class="day-popover-item"><span class="dp-badge">Day 1</span> 11/15(日) 関空➔ミラノ</a>
+          <a href="day2.html" class="day-popover-item"><span class="dp-badge">Day 2</span> 11/16(月) ミラノ➔ベネチア</a>
+          <a href="day3.html" class="day-popover-item"><span class="dp-badge">Day 3</span> 11/17(火) ベネチア➔フィレンツェ</a>
+          <a href="day4.html" class="day-popover-item"><span class="dp-badge">Day 4</span> 11/18(水) フィレンツェ＆ピサ</a>
+          <a href="day5.html" class="day-popover-item"><span class="dp-badge">Day 5</span> 11/19(木) サンジミニャーノ➔ローマ</a>
+          <a href="day6.html" class="day-popover-item"><span class="dp-badge">Day 6</span> 11/20(金) ローマ＆バチカン自由</a>
+          <a href="day7.html" class="day-popover-item"><span class="dp-badge">Day 7</span> 11/21(土) ローマ➔FCO空港発</a>
+          <a href="day8.html" class="day-popover-item"><span class="dp-badge">Day 8</span> 11/22(日) 関空帰着・解散</a>
         </div>
       </div>
     </details>
