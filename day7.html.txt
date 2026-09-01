@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Day 7 ローマ自由行動〜帰国の途へ | イタリア新婚旅行8日間 しおり</title>
+  <meta name="description" content="鈴木健太・めぐみ様 イタリア新婚旅行 Day 7。午前ローマ自由行動、テルミニ駅地下Conad買い出し、ローマ・フィウミチーノ空港(FCO)移動、2024年改正タックスフリー免税手続き(Otello)、液体物＆肉製品持込厳禁注意。イタリアガイドみめ直伝ノウハウ。">
+  <link rel="stylesheet" href="style.css">
+  <meta name="theme-color" content="#1a365d">
+</head>
+<body>
+
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand-title">
+        <span style="font-size: 1.5rem;">🇮🇹</span>
+        <div>
+          <h1>イタリア7都市周遊 8日間</h1>
+          <span class="brand-subtitle">HIS Tour OI-KMI2811 | Kenta & Megumi Honeymoon</span>
+        </div>
+      </div>
+      <nav class="main-nav">
+        <a href="index.html" class="nav-link">🏠 ホーム</a>
+        <a href="tour-map.html" class="nav-link">🗺️ 全体ルートMAP</a>
+        <a href="free-meal-guide.html" class="nav-link">🍽️ 自由食・グルメ</a>
+        <a href="souvenir-guide.html" class="nav-link">🎁 お土産ガイド</a>
+        <a href="rome-free-day-guide.html" class="nav-link">🎻 ローマ自由行動</a>
+      </nav>
+    </div>
+  </header>
+
+
+  <main class="container" style="margin-top: 20px;">
+
+
+    <!-- Day Navigation Bar -->
+    <div style="display:flex; gap:6px; overflow-x:auto; padding-bottom:12px; margin-bottom:16px;">
+      <a href="day1.html" class="btn btn-secondary btn-sm">Day 1 (11/15)</a>
+      <a href="day2.html" class="btn btn-secondary btn-sm">Day 2 (11/16)</a>
+      <a href="day3.html" class="btn btn-secondary btn-sm">Day 3 (11/17)</a>
+      <a href="day4.html" class="btn btn-secondary btn-sm">Day 4 (11/18)</a>
+      <a href="day5.html" class="btn btn-secondary btn-sm">Day 5 (11/19)</a>
+      <a href="day6.html" class="btn btn-secondary btn-sm">Day 6 (11/20)</a>
+      <a href="day7.html" class="btn btn-primary btn-sm">Day 7 (11/21) ★</a>
+      <a href="day8.html" class="btn btn-secondary btn-sm">Day 8 (11/22)</a>
+    </div>
+
+
+    <!-- Hero Header -->
+    <div style="background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); color:#fff; padding:24px 18px; border-radius:var(--radius-lg); margin-bottom:20px; box-shadow:var(--shadow-md);">
+      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
+        <span class="hero-tag">Day 7: 2026年11月21日 (土)</span>
+        <span class="mime-badge">🎥 イタリアガイドみめ 監修</span>
+      </div>
+      <h2 style="font-size: 1.6rem; font-weight: 800; margin: 8px 0;">ローマ出発 ➔ FCO空港免税手続き ➔ 帰国の途へ</h2>
+      <p style="font-size: 0.9rem; opacity: 0.95;">
+        午前中はローマ最後のショッピングとお土産調達！専用バスでフィウミチーノ空港へ移動し、2024年最新Otelloシステムでの免税手続き（Tax Refund）を済ませて国際線ペアシートで空路日本へ。
+      </p>
+    </div>
+
+
+    <!-- Meal Status Box -->
+    <div style="background:#ffffff; border:1px solid var(--border-color); border-radius:var(--radius-md); padding:16px; margin-bottom:24px; box-shadow:var(--shadow-sm);">
+      <h4 style="font-size:0.95rem; font-weight:800; color:var(--primary-color); margin-bottom:10px;">🍽️ 本日の食事条件</h4>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:10px;">
+        <div style="background:#f0fdf4; border:1px solid #bbf7d0; padding:10px; border-radius:var(--radius-sm);">
+          <span style="font-size:0.75rem; font-weight:800; color:#166534; background:#dcfce7; padding:2px 6px; border-radius:4px;">朝食：ホテル (BOXまたはビュッフェ)</span>
+          <p style="font-size:0.85rem; margin-top:4px; color:#14532d;">ホテルチェックアウト前に朝食</p>
+        </div>
+        <div style="background:#fff7ed; border:1px solid #fed7aa; padding:10px; border-radius:var(--radius-sm);">
+          <span style="font-size:0.75rem; font-weight:800; color:#9a3412; background:#ffedd5; padding:2px 6px; border-radius:4px;">昼食：各自（空港または機内）</span>
+          <p style="font-size:0.85rem; margin-top:4px; color:#7c2d12;">空港内パニーノや免税エリアカフェにて</p>
+        </div>
+        <div style="background:#f0fdf4; border:1px solid #bbf7d0; padding:10px; border-radius:var(--radius-sm);">
+          <span style="font-size:0.75rem; font-weight:800; color:#166534; background:#dcfce7; padding:2px 6px; border-radius:4px;">夕食：国際線 機内食</span>
+          <p style="font-size:0.85rem; margin-top:4px; color:#14532d;">カタール航空便にてディナー＆ドリンクサービス</p>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Mime-san Tax Refund & Packing Guide -->
+    <div class="mime-callout">
+      <h4><span>🎥</span> イタリアガイドみめ直伝！空港免税（Tax Free）＆ パッキング完全攻略</h4>
+      <ul>
+        <li><strong>【2024年法改正】免税基準額が €70.01 に大幅引き下げ！</strong>以前の€154.94から一気に下がり、お土産や革小物をまとめ買いすれば簡単に還付を受けられます（同一店舗・同日購入が条件）。購入時にパスポートを提示して「Tax Free Form」を発行してもらってください。</li>
+        <li><strong>フィウミチーノ空港（FCO）Otelloデジタル税関の手順：</strong>
+          <br>① <strong>スーツケースに免税品を入れる場合（預け荷物）：</strong>航空会社チェックイン前に、ターミナル3の税関（Dogana / Otelloキオスク）へ行きパスポートと免税書類をスキャン。緑ランプ点灯で税関スタンプ承認完了 ➔ 荷物を預けて保安検査へ。
+          <br>② <strong>手荷物（時計・高額ブランド品）の場合：</strong>保安検査を通過後、出国エリア（ゲートE側）の税関窓口で承認を受けます。
+          <br>③ 承認後、隣接するGlobal Blue / Planet窓口でクレジットカードまたは現金（ユーロ）で還付金を受け取ります。
+        </li>
+        <li><strong>【重要警告】生ハム・サラミ・肉製品の日本持ち込みは全面禁止！</strong>イタリアで買ったプロシュットやサラミ、肉入りパスタソース等は日本の家畜伝染病予防法により日本持ち込みが固く禁じられています（最高300万円の罰金または懲役）。真空パックであっても持ち込めませんので、必ず現地で美味しく召し上がってください！</li>
+        <li><strong>液体物（オリーブオイル・ワイン・リモンチェッロ）のパッキング：</strong>100mlを超える液体物は機内持ち込み不可です。必ずスーツケース（預け荷物）に入れ、万が一の割れ・漏れ防止のため「ビニール袋で二重密封＋タオルや衣類で厳重に包んでスーツケース中央部」に配置しましょう。</li>
+      </ul>
+    </div>
+
+
+    <!-- Morning in Rome Tips -->
+    <section class="section">
+      <div class="section-header">
+        <h3 class="section-title">🛒 出発前の午前中（テルミニ駅周辺）の過ごし方</h3>
+      </div>
+      <div style="background:#ffffff; border:1px solid var(--border-color); border-radius:var(--radius-lg); padding:20px; box-shadow:var(--shadow-sm);">
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:16px;">
+          <div>
+            <h4 style="font-size:1.05rem; font-weight:800; color:var(--primary-color); margin-bottom:6px;">🏪 テルミニ駅地下スーパー「Conad (Sapori & Dintorni)」</h4>
+            <p style="font-size:0.85rem; color:var(--text-main); line-height:1.5;">
+              朝7:00から営業。イタリア全土の高品質食材が集まる特化型スーパー。Baciチョコレート、乾燥ポルチーニ茸、Barillaパスタ、パルミジャーノ・レッジャーノ（真空パック）のラストまとめ買いに最適！
+            </p>
+            <a href="https://maps.google.com/?q=Conad+Roma+Termini" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" style="margin-top:8px;">📍 Google Mapsで場所を確認</a>
+          </div>
+          <div>
+            <h4 style="font-size:1.05rem; font-weight:800; color:var(--primary-color); margin-bottom:6px;">⛪ サンタ・マリア・マッジョーレ大聖堂</h4>
+            <p style="font-size:0.85rem; color:var(--text-main); line-height:1.5;">
+              テルミニ駅から徒歩5分。ローマ4大バシリカの一つで、5世紀の美しい黄金モザイクと豪華な格間天井が圧巻。朝の澄んだ空気の中での参拝がおすすめ（入場無料）。
+            </p>
+            <a href="https://maps.google.com/?q=Basilica+Papale+di+Santa+Maria+Maggiore+Rome" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" style="margin-top:8px;">📍 Google Mapsで場所を確認</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Departure Timeline -->
+    <section class="section">
+      <div class="section-header">
+        <h3 class="section-title">✈️ 帰国便スケジュール ＆ 免税フロー</h3>
+      </div>
+      <div style="background:#ffffff; border:1px solid var(--border-color); border-radius:var(--radius-lg); padding:20px; box-shadow:var(--shadow-sm);">
+        <ul style="list-style:none; padding:0; margin:0; border-left:3px solid var(--primary-light); padding-left:16px;">
+          <li style="margin-bottom:16px;">
+            <strong style="color:var(--primary-color);">11:30頃</strong> ホテルロビー集合 ➔ 専用バスにてローマ・フィウミチーノ空港（FCO）へ移動（約35km / 約45分）
+          </li>
+          <li style="margin-bottom:16px;">
+            <strong style="color:var(--primary-color);">12:30〜13:45</strong> 空港到着 ➔ 免税手続き（Otello端末スキャン）➔ チェックイン ➔ 保安検査・出国審査
+          </li>
+          <li style="margin-bottom:16px;">
+            <strong style="color:var(--primary-color);">14:30頃</strong> 搭乗ゲート（サテライト棟）へシャトル移動 ➔ 搭乗開始
+          </li>
+          <li>
+            <strong style="color:var(--primary-color);">15:10</strong> ローマ・フィウミチーノ空港発 ✈️（カタール航空 / ペアシート確約）空路ドーハ乗継へ
+          </li>
+        </ul>
+      </div>
+    </section>
+
+
+    <!-- Pre-Departure Packing Checklist -->
+    <section class="section">
+      <div class="checklist-container">
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <h3 style="font-size:1.1rem; font-weight:800; color:var(--primary-color);">🧳 最終パッキング・チェックリスト</h3>
+          <span id="checklist-progress-text" style="font-size:0.8rem; font-weight:700; color:var(--secondary-color);">0 / 6 完了 (0%)</span>
+        </div>
+        <div class="checklist-progress-wrap">
+          <div id="checklist-progress-bar" class="checklist-progress-bar"></div>
+        </div>
+        <div class="checklist-item">
+          <input type="checkbox" id="chk_d7_1">
+          <label for="chk_d7_1"><span>パスポート原本・航空券Eチケット控えを手元（貴重品ポーチ）に入れた</span></label>
+        </div>
+        <div class="checklist-item">
+          <input type="checkbox" id="chk_d7_2">
+          <label for="chk_d7_2"><span>ワイン・オリーブオイル・液体物をすべてスーツケース（預け荷物）に入れ、二重ビニールで包んだ</span></label>
+        </div>
+        <div class="checklist-item">
+          <input type="checkbox" id="chk_d7_3">
+          <label for="chk_d7_3"><span>生ハム・サラミなどの肉製品が荷物に入っていないことを確認した（日本持込厳禁）</span></label>
+        </div>
+        <div class="checklist-item">
+          <input type="checkbox" id="chk_d7_4">
+          <label for="chk_d7_4"><span>免税書類（Tax Free Form）とレシートをすぐに取り出せる場所にまとめた</span></label>
+        </div>
+        <div class="checklist-item">
+          <input type="checkbox" id="chk_d7_5">
+          <label for="chk_d7_5"><span>ホテルの部屋のセーフティボックスや充電器の置き忘れがないか最終確認した</span></label>
+        </div>
+        <div class="checklist-item">
+          <input type="checkbox" id="chk_d7_6">
+          <label for="chk_d7_6"><span>スーツケースの重量が規定（エコノミークラス1個あたり23kg以内）に収まっている</span></label>
+        </div>
+      </div>
+    </section>
+
+
+  </main>
+
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-credits">
+        <h4>🇮🇹 Kenta & Megumi's Italian Honeymoon Portal</h4>
+        <p>HIS Tour OI-KMI2811 (2026/11/15 - 11/22) | Produced with ❤️ for Suzuki Family</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">トップポータル</a>
+        <a href="tour-map.html">ルートMAP</a>
+        <a href="free-meal-guide.html">グルメガイド</a>
+        <a href="souvenir-guide.html">お土産ガイド</a>
+        <a href="rome-free-day-guide.html">音楽教会ガイド</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <script src="app.js" defer></script>
+</body>
+</html>

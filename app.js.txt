@@ -1,0 +1,389 @@
+/**
+ * イタリア新婚旅行（HIS 8日間ツアー）ポータル - インタラクティブ機能スクリプト
+ * 鈴木 健太 様 ❤️ めぐみ 様 ご夫妻
+ * 監修協力：イタリアガイドみめ (@mimeitalygaido)
+ */
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  initCurrencyConverter();
+  initFavoritesSystem();
+  initChecklistSystem();
+  initFilterAndSearch();
+  initPhraseClipboard();
+  initScrollEffects();
+  initMimeModals();
+});
+
+
+/* ==========================================================================
+   1. ユーロ/日本円 リアルタイム為替計算機能
+   ========================================================================== */
+function initCurrencyConverter() {
+  const DEFAULT_RATE = 165.0; // 1 EUR = 165 JPY
+  
+  // Create floating converter trigger if not present
+  if (!document.getElementById('currency-fab')) {
+    const fab = document.createElement('button');
+    fab.id = 'currency-fab';
+    fab.className = 'floating-tool-btn';
+    fab.innerHTML = '💶 為替計算';
+    fab.setAttribute('aria-label', 'ユーロ為替計算機を開く');
+    document.body.appendChild(fab);
+
+
+    const modal = document.createElement('div');
+    modal.id = 'currency-modal';
+    modal.className = 'app-modal-overlay';
+    modal.innerHTML = `
+      <div class="app-modal-content">
+        <div class="modal-header">
+          <h3>💶 ユーロ ⇄ 日本円 かんたん為替計算</h3>
+          <button class="modal-close-btn" id="close-currency-modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <div class="rate-setting-row">
+            <label>為替レート設定: 1 € = </label>
+            <input type="number" id="custom-rate-input" value="${DEFAULT_RATE}" step="0.5" style="width:80px; padding:4px 8px; border-radius:6px; border:1px solid #ccc;"> 円
+          </div>
+          <div class="converter-inputs">
+            <div class="calc-group">
+              <label>ユーロ (€)</label>
+              <div class="input-with-symbol">
+                <span>€</span>
+                <input type="number" id="eur-input" placeholder="例: 25.00" step="0.5" inputmode="decimal">
+              </div>
+            </div>
+            <div class="calc-equals">⇄</div>
+            <div class="calc-group">
+              <label>日本円 (¥)</label>
+              <div class="input-with-symbol">
+                <span>¥</span>
+                <input type="number" id="jpy-input" placeholder="例: 4125" step="100" inputmode="numeric">
+              </div>
+            </div>
+          </div>
+          <div class="quick-chips-row">
+            <span class="quick-chip-label">よく使う金額:</span>
+            <button class="calc-quick-chip" data-eur="1.5">カフェ €1.5</button>
+            <button class="calc-quick-chip" data-eur="3.5">ジェラート €3.5</button>
+            <button class="calc-quick-chip" data-eur="15">ランチ €15</button>
+            <button class="calc-quick-chip" data-eur="45">ディナー €45</button>
+            <button class="calc-quick-chip" data-eur="70.01">免税下限 €70.01</button>
+          </div>
+          <div class="calc-tip-box">
+            💡 <strong>みめ直伝アドバイス:</strong> イタリアの店頭価格はすべて税込（内税）です。2024年の免税制度改正で、<strong>€70.01以上</strong>の購入からタックスフリー還付が受けられます！
+          </div>
+        </div>
+      </div>
+    `;
+    document.body.appendChild(modal);
+
+
+    const eurInput = document.getElementById('eur-input');
+    const jpyInput = document.getElementById('jpy-input');
+    const rateInput = document.getElementById('custom-rate-input');
+
+
+    function eurToJpy() {
+      const rate = parseFloat(rateInput.value) || DEFAULT_RATE;
+      const eur = parseFloat(eurInput.value);
+      if (!isNaN(eur)) {
+        jpyInput.value = Math.round(eur * rate);
+      } else {
+        jpyInput.value = '';
+      }
+    }
+
+
+    function jpyToEur() {
+      const rate = parseFloat(rateInput.value) || DEFAULT_RATE;
+      const jpy = parseFloat(jpyInput.value);
+      if (!isNaN(jpy)) {
+        eurInput.value = (jpy / rate).toFixed(2);
+      } else {
+        eurInput.value = '';
+      }
+    }
+
+
+    eurInput.addEventListener('input', eurToJpy);
+    jpyInput.addEventListener('input', jpyToEur);
+    rateInput.addEventListener('input', eurToJpy);
+
+
+    modal.querySelectorAll('.calc-quick-chip').forEach(chip => {
+      chip.addEventListener('click', () => {
+        eurInput.value = chip.getAttribute('data-eur');
+        eurToJpy();
+      });
+    });
+
+
+    fab.addEventListener('click', () => {
+      modal.classList.add('open');
+      eurInput.focus();
+    });
+
+
+    document.getElementById('close-currency-modal').addEventListener('click', () => {
+      modal.classList.remove('open');
+    });
+
+
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) modal.classList.remove('open');
+    });
+  }
+}
+
+
+/* ==========================================================================
+   2. お気に入り（ブックマーク）登録システム
+   ========================================================================== */
+function initFavoritesSystem() {
+  const FAVORITES_KEY = 'italy_honeymoon_favorites_v1';
+  let favorites = JSON.parse(localStorage.getItem(FAVORITES_KEY) || '[]');
+
+
+  // Attach favorite button to every spot card and restaurant card
+  document.querySelectorAll('.spot-card, .restaurant-card').forEach(card => {
+    const titleEl = card.querySelector('.spot-name-jp, .spot-title-ja, h3, .restaurant-name');
+    if (!titleEl) return;
+
+
+    const titleText = titleEl.textContent.trim();
+    const isFav = favorites.includes(titleText);
+
+
+    let favBtn = card.querySelector('.fav-toggle-btn');
+    if (!favBtn) {
+      favBtn = document.createElement('button');
+      favBtn.className = `fav-toggle-btn ${isFav ? 'active' : ''}`;
+      favBtn.setAttribute('title', isFav ? 'お気に入り解除' : 'お気に入りに保存');
+      favBtn.innerHTML = isFav ? '❤️ 保存済' : '🤍 行きたい';
+      
+      const actions = card.querySelector('.spot-actions, .spot-body, .restaurant-card');
+      if (actions) {
+        favBtn.style.marginLeft = 'auto';
+        actions.appendChild(favBtn);
+      } else {
+        card.appendChild(favBtn);
+      }
+    }
+
+
+    favBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      if (favorites.includes(titleText)) {
+        favorites = favorites.filter(f => f !== titleText);
+        favBtn.classList.remove('active');
+        favBtn.innerHTML = '🤍 行きたい';
+        showToast(`「${titleText}」をお気に入りから削除しました`);
+      } else {
+        favorites.push(titleText);
+        favBtn.classList.add('active');
+        favBtn.innerHTML = '❤️ 保存済';
+        showToast(`「${titleText}」をお気に入りに保存しました！`);
+      }
+      localStorage.setItem(FAVORITES_KEY, JSON.stringify(favorites));
+    });
+  });
+}
+
+
+/* ==========================================================================
+   3. チェックリスト保存システム (買い物・準備・ToDo)
+   ========================================================================== */
+function initChecklistSystem() {
+  const CHECKLIST_KEY = 'italy_honeymoon_checklist_state_v1';
+  let state = JSON.parse(localStorage.getItem(CHECKLIST_KEY) || '{}');
+
+
+  document.querySelectorAll('.checklist-item input[type="checkbox"], .task-item input[type="checkbox"]').forEach((chk, idx) => {
+    const id = chk.id || `chk_${window.location.pathname}_${idx}`;
+    chk.id = id;
+
+
+    if (state[id]) {
+      chk.checked = true;
+      if (chk.closest('.checklist-item')) chk.closest('.checklist-item').classList.add('completed');
+    }
+
+
+    chk.addEventListener('change', () => {
+      state[id] = chk.checked;
+      if (chk.closest('.checklist-item')) {
+        chk.closest('.checklist-item').classList.toggle('completed', chk.checked);
+      }
+      localStorage.setItem(CHECKLIST_KEY, JSON.stringify(state));
+      updateChecklistProgress();
+    });
+  });
+
+
+  updateChecklistProgress();
+}
+
+
+function updateChecklistProgress() {
+  const allChecks = document.querySelectorAll('.checklist-item input[type="checkbox"]');
+  if (allChecks.length === 0) return;
+  const checked = Array.from(allChecks).filter(c => c.checked).length;
+  const percent = Math.round((checked / allChecks.length) * 100);
+
+
+  const progBar = document.getElementById('checklist-progress-bar');
+  const progText = document.getElementById('checklist-progress-text');
+  if (progBar) progBar.style.width = `${percent}%`;
+  if (progText) progText.textContent = `${checked} / ${allChecks.length} 完了 (${percent}%)`;
+}
+
+
+/* ==========================================================================
+   4. リアルタイム検索 ＆ 都市別フィルター連携
+   ========================================================================== */
+function initFilterAndSearch() {
+  const filterBtns = document.querySelectorAll('.filter-chip, .filter-chips button');
+  const searchInput = document.getElementById('spot-search-input') || document.getElementById('guide-search-input');
+  const cards = document.querySelectorAll('.spot-card, .restaurant-card, .souvenir-card, .city-section');
+
+
+  function applyFilters() {
+    const activeChip = document.querySelector('.filter-chip.active, .filter-chips button.active');
+    const selectedCity = activeChip ? (activeChip.getAttribute('data-city') || activeChip.getAttribute('data-category') || 'all') : 'all';
+    const query = searchInput ? searchInput.value.toLowerCase().trim() : '';
+
+
+    let visibleCount = 0;
+
+
+    cards.forEach(card => {
+      const cardCity = card.getAttribute('data-city') || card.getAttribute('data-category') || '';
+      const text = card.textContent.toLowerCase();
+
+
+      const cityMatch = (selectedCity === 'all' || cardCity === selectedCity || card.classList.contains(`sec-${selectedCity}`));
+      const textMatch = !query || text.includes(query);
+
+
+      if (cityMatch && textMatch) {
+        card.style.display = '';
+        visibleCount++;
+      } else {
+        card.style.display = 'none';
+      }
+    });
+
+
+    const countEl = document.getElementById('visible-spots-count') || document.getElementById('visible-count');
+    if (countEl) countEl.textContent = visibleCount;
+  }
+
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      btn.parentElement.querySelectorAll('button').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      applyFilters();
+    });
+  });
+
+
+  if (searchInput) {
+    searchInput.addEventListener('input', applyFilters);
+  }
+
+
+  const resetBtn = document.getElementById('reset-filter-btn');
+  if (resetBtn) {
+    resetBtn.addEventListener('click', () => {
+      if (searchInput) searchInput.value = '';
+      filterBtns.forEach(b => b.classList.remove('active'));
+      const defaultBtn = document.querySelector('[data-city="all"], [data-category="all"]');
+      if (defaultBtn) defaultBtn.classList.add('active');
+      applyFilters();
+    });
+  }
+}
+
+
+/* ==========================================================================
+   5. イタリア語フレーズ ワンタップコピー機能
+   ========================================================================== */
+function initPhraseClipboard() {
+  document.querySelectorAll('.phrase-card, .copyable-phrase').forEach(el => {
+    el.style.cursor = 'pointer';
+    el.setAttribute('title', 'タップしてフレーズをコピー');
+    
+    el.addEventListener('click', () => {
+      const phraseText = el.getAttribute('data-phrase') || el.querySelector('.phrase-it, .italian-text, strong')?.textContent || el.textContent;
+      navigator.clipboard.writeText(phraseText.trim()).then(() => {
+        showToast(`📋 コピーしました: "${phraseText.trim()}"`);
+      }).catch(() => {
+        showToast(`コピー: ${phraseText.trim()}`);
+      });
+    });
+  });
+}
+
+
+/* ==========================================================================
+   6. トースト通知 UI
+   ========================================================================== */
+function showToast(message) {
+  let toast = document.getElementById('app-toast');
+  if (!toast) {
+    toast = document.createElement('div');
+    toast.id = 'app-toast';
+    toast.className = 'app-toast';
+    document.body.appendChild(toast);
+  }
+  toast.textContent = message;
+  toast.classList.add('show');
+  clearTimeout(toast._timeout);
+  toast._timeout = setTimeout(() => {
+    toast.classList.remove('show');
+  }, 2800);
+}
+
+
+/* ==========================================================================
+   7. スムーススクロール ＆ トップへ戻るボタン
+   ========================================================================== */
+function initScrollEffects() {
+  let topBtn = document.getElementById('back-to-top');
+  if (!topBtn) {
+    topBtn = document.createElement('button');
+    topBtn.id = 'back-to-top';
+    topBtn.className = 'back-to-top-btn';
+    topBtn.innerHTML = '▲ TOP';
+    topBtn.setAttribute('aria-label', 'ページトップへ戻る');
+    document.body.appendChild(topBtn);
+
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 400) {
+        topBtn.classList.add('visible');
+      } else {
+        topBtn.classList.remove('visible');
+      }
+    });
+
+
+    topBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+}
+
+
+/* ==========================================================================
+   8. みめ直伝ワンポイント解説ポップオーバー
+   ========================================================================== */
+function initMimeModals() {
+  document.querySelectorAll('.mime-tip-card, .callout-mime').forEach(box => {
+    box.style.position = 'relative';
+  });
+}
