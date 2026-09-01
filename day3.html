@@ -2,694 +2,178 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Day 3 ベネチア散策＆フィレンツェへ | イタリア新婚旅行8日間 しおり</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=no">
+  <title>Day 3 (11/17 火) 水の都ベネチア観光 ＆ ゴンドラ遊覧 ➔ フィレンツェへ | イタリア新婚旅行8日間</title>
+  <meta name="description" content="Day 3: 水の都ベネチア観光 ＆ ロマンチック・ゴンドラ遊覧 ➔ トスカーナへ。食事条件、タイムライン、YouTubeイタリアガイドみめ直伝ノウハウ">
   <link rel="stylesheet" href="style.css">
-  <meta name="theme-color" content="#0071e3">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
 </head>
 <body>
-  <!-- Sticky Top Navbar -->
-  <header class="navbar">
-    <div class="navbar-brand">
-      <span>🇮🇹</span>
-      <span>Andiamo! イタリア8日間</span>
-      <span class="tag-tour">HIS OI-KMI2811</span>
-    </div>
-    <div class="navbar-actions">
-      <span class="badge" style="background: var(--pink-light); color: var(--pink);">💍 Kenta & Megumi</span>
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-title">
+        <span style="font-size: 1.5rem;">🇮🇹</span>
+        <div>
+          <h1>イタリア7都市周遊 8日間</h1>
+          <span class="brand-subtitle">HIS Tour OI-KMI2811 | Kenta &amp; Megumi Honeymoon</span>
+        </div>
+      </a>
+      <nav class="main-nav">
+        <a href="index.html" class="nav-link active">🏠 ホーム</a> <a href="beginner-guide.html" class="nav-link">🔰 初心者安心ガイド</a> <a href="tour-map.html" class="nav-link">🗺️ 全体ルートMAP</a> <a href="free-meal-guide.html" class="nav-link">🍽️ 自由食・グルメ</a> <a href="souvenir-guide.html" class="nav-link">🎁 お土産・買物</a> <a href="rome-free-day-guide.html" class="nav-link">🎻 ローマ自由行動</a>
+      </nav>
     </div>
   </header>
-
+  <!-- Day Switcher Bar -->
+  <div class="day-switcher-bar">
+    <div class="day-switcher-scroll">
+      <a href="day1.html" class="day-chip"><span>Day 1</span><small>11/15 (日)</small></a> <a href="day2.html" class="day-chip"><span>Day 2</span><small>11/16 (月)</small></a> <a href="day3.html" class="day-chip active"><span>Day 3</span><small>11/17 (火)</small></a> <a href="day4.html" class="day-chip"><span>Day 4</span><small>11/18 (水)</small></a> <a href="day5.html" class="day-chip"><span>Day 5</span><small>11/19 (木)</small></a> <a href="day6.html" class="day-chip"><span>Day 6</span><small>11/20 (金)</small></a> <a href="day7.html" class="day-chip"><span>Day 7</span><small>11/21 (土)</small></a> <a href="day8.html" class="day-chip"><span>Day 8</span><small>11/22 (日)</small></a> <a href="beginner-guide.html" class="day-chip"><span>🔰 初心者</span><small>安心バイブル</small></a> <a href="rome-free-day-guide.html" class="day-chip"><span>🎻 ローマ</span><small>教会音楽特集</small></a>
+    </div>
+  </div>
   <main class="container">
-    <div class="day-switcher">
-  <a href="day1.html" class="day-pill"><span>Day 1</span><small>11/15(日)</small></a>
-  <a href="day2.html" class="day-pill"><span>Day 2</span><small>11/16(月)</small></a>
-  <a href="day3.html" class="day-pill active"><span>Day 3</span><small>11/17(火)</small></a>
-  <a href="day4.html" class="day-pill"><span>Day 4</span><small>11/18(水)</small></a>
-</div>
 
-    <!-- Hero Section -->
-    <div class="hero">
-      <div class="hero-honeymoon-badge">💍 新婚旅行 ハネムーン特製しおり</div>
-      <div class="hero-day-number">DAY 3 &bull; 2026.11.17 (TUE)</div>
-      <h1 class="hero-title">水の都ベネチア！ゴンドラ遊覧とバーカロ巡り＆トスカーナへ</h1>
-      <p class="hero-subtitle">水上に浮かぶ世界遺産ベネチア本島を散策。名物ゴンドラ、黄金のサン・マルコ寺院からフィレンツェ近郊へ</p>
-      <div class="hero-tags">
-        <span class="hero-tag">🚤 専用ボートでベネチア本島へ</span>
-        <span class="hero-tag">🚣 ベネチア自由行動 (約4h)</span>
-        <span class="hero-tag">🛒 地元大型スーパー立ち寄り</span>
-        <span class="hero-tag">🏨 フィレンツェ周辺泊</span>
-      </div>
+    <!-- Hero Header -->
+    <div class="hero-card hero-day">
+      <span class="hero-tag">💍 HIS Honeymoon Tour</span>
+      <h2 class="hero-title">Day 3: 水の都ベネチア観光 ＆ ロマンチック・ゴンドラ遊覧 ➔ トスカーナへ</h2>
+      <p class="hero-subtitle">2026年11月17日(火) • サン・マルコ寺院 ➔ ため息橋 ➔ カフェ・フローリアン ➔ フィレンツェ泊</p>
     </div>
 
     <!-- Meal Status Box -->
     <div class="meal-status-box">
       <div class="meal-status-header">
-        <span>🍽️</span>
-        <span>本日の食事条件</span>
+        <h3>🍽️ 本日の食事条件</h3>
       </div>
-      <div class="meal-status-grid">
-        <div class="meal-item">
-          <div class="meal-type">朝食</div>
-          <span class="meal-status meal-included">○ ホテル朝食</span>
-          <div class="meal-desc">ビュッフェスタイル</div>
+      <div class="meal-grid-3">
+        <div class="meal-col">
+          <div class="meal-col-title">朝食</div>
+          <span class="meal-badge included">🏨 ホテル朝食 (ツアー込 2/5)</span>
         </div>
-        <div class="meal-item">
-          <div class="meal-type">昼食</div>
-          <span class="meal-status meal-free">× 各自自由食</span>
-          <div class="meal-desc">ベネチア本島バーカロ等</div>
+        <div class="meal-col">
+          <div class="meal-col-title">昼食</div>
+          <span class="meal-badge included">🍽️ 各自自由食 (バカロ/カフェ)</span>
         </div>
-        <div class="meal-item">
-          <div class="meal-type">夕食</div>
-          <span class="meal-status meal-free">× 各自自由食</span>
-          <div class="meal-desc">スーパー調達・ホテル等</div>
+        <div class="meal-col">
+          <div class="meal-col-title">夕食</div>
+          <span class="meal-badge free">🍽️ 各自自由食 (SA/フィレンツェ)</span>
         </div>
       </div>
     </div>
 
-    <!-- Honeymoon Callout -->
-    <div class="callout honeymoon">
-      <div class="callout-header">
-        <span>💍</span>
-        <span>新婚旅行 ロマンチック・ベネチア伝説！</span>
+    <!-- Mime Special Advice Box -->
+    <div class="mime-callout">
+      <div class="mime-header">
+        <div class="mime-title">
+          <span style="font-size: 1.5rem;">🎥</span>
+          <h3 style="margin:0;">【Mime直伝】本日の実践アドバイス ＆ 注意点</h3>
+        </div>
+        <span class="mime-badge">公認ガイド直伝</span>
       </div>
-      <div class="callout-body">
-        <ul>
-          <li><strong>ため息橋とゴンドラのキス伝説:</strong> 日没時やゴンドラ遊覧中に「ため息橋」の下を通り抜ける瞬間にキスを交わしたカップルは「永遠の愛」で結ばれるというロマンチックな伝説があります。新婚旅行の最高の思い出にぜひ！</li>
-          <li><strong>ムラーノガラスのペアグラス:</strong> ベネチアンガラスの伝統工房で、2人の新生活を彩る美しいペアワイングラスやアクセサリーを選ぶのも素敵です✨</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Schedule Timeline -->
-    <section class="section">
-      <div class="section-header">
-        <h2 class="section-title">
-          <span>🕒</span>
-          <span>本日のタイムライン</span>
-        </h2>
-        <span class="section-subtitle">移動距離: 約246km</span>
-      </div>
-
-      <div class="timeline">
-        <div class="timeline-item">
-          <div class="timeline-dot success">🥐</div>
-          <div class="timeline-card">
-            <span class="timeline-time">07:30〜08:30</span>
-            <h3 class="timeline-title">ホテルにて朝食ビュッフェ ＆ 出発準備</h3>
-            <p class="timeline-desc">
-              クロワッサンやカプチーノ、フルーツなどの朝食。ベネチア本島は石畳と橋の階段が多いため、歩きやすいスニーカーで出発しましょう。
-            </p>
-          </div>
+      <div class="mime-tips-grid">
+        
+        <div class="mime-tip-card">
+          <h4>💡 ベネチアの有料トイレ回避裏ワザ</h4>
+          <p>有料公衆トイレ（€1.5）に大行列するより、近くのバールで€1.5のエスプレッソを頼んで「Posso usare il bagno?」と綺麗なトイレを借りるのがプロの技！</p>
         </div>
-
-        <div class="timeline-item">
-          <div class="timeline-dot highlight">🚤</div>
-          <div class="timeline-card">
-            <span class="timeline-time">09:00〜09:40</span>
-            <h3 class="timeline-title">専用ボートにてベネチア本島（サン・マルコ広場付近）へ移動</h3>
-            <p class="timeline-desc">
-              ラグーナ（潟）を渡る爽快なクルーズ！海側から望むドゥカーレ宮殿や鐘楼のパノラマビューは感動的です。
-            </p>
-          </div>
+        <div class="mime-tip-card">
+          <h4>💡 伝統ゴンドラ遊覧での記念撮影</h4>
+          <p>ため息橋の下をくぐる時にキスをすると永遠の愛が続く伝説。船頭（ゴンドリエーレ）にスマホを渡して二人並んだ写真を撮ってもらいましょう。</p>
         </div>
-
-        <div class="timeline-item">
-          <div class="timeline-dot highlight">🏛️</div>
-          <div class="timeline-card">
-            <span class="timeline-time">09:45〜13:45頃</span>
-            <h3 class="timeline-title">ベネチア市内自由行動（約4時間・昼食含む）</h3>
-            <p class="timeline-desc">
-              サン・マルコ寺院、ドゥカーレ宮殿、リアルト橋散策、名物ゴンドラ遊覧、老舗バーカロでのチケッティ（小皿料理）＆ワインランチを満喫！
-            </p>
-          </div>
+        <div class="mime-tip-card">
+          <h4>💡 バカロ（居酒屋）でのチケッティ注文</h4>
+          <p>カンティーナ・ド・モーリなどの老舗バカロで小皿料理（チケッティ）と白ワイン（オンブラ）を立ち飲み！指差し注文で手軽に絶品。</p>
         </div>
-
-        <div class="timeline-item">
-          <div class="timeline-dot">🚤</div>
-          <div class="timeline-card">
-            <span class="timeline-time">14:00〜14:30</span>
-            <h3 class="timeline-title">専用ボートにて本島出発・バス乗車場所へ</h3>
-            <p class="timeline-desc">
-              本島に別れを告げ、専用ボートで対岸のバス乗降場へ戻ります。
-            </p>
-          </div>
+        <div class="mime-tip-card">
+          <h4>💡 スーパー（Coop/Conad）買い出しの注意</h4>
+          <p>現地のレジ袋は破れやすい生分解性プラ袋。Baciチョコやオリーブオイルを入れると破れるので丈夫な布製エコバッグを持参！</p>
         </div>
-
-        <div class="timeline-item">
-          <div class="timeline-dot accent">🚌</div>
-          <div class="timeline-card">
-            <span class="timeline-time">14:45〜17:00</span>
-            <h3 class="timeline-title">専用バスにてトスカーナ方面へ移動</h3>
-            <p class="timeline-desc">
-              アペニン山脈を越えてトスカーナ州へ向けてドライブ（車窓に広がる美しい丘陵地帯）。
-            </p>
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-dot success">🛒</div>
-          <div class="timeline-card">
-            <span class="timeline-time">17:00〜17:50頃</span>
-            <h3 class="timeline-title">地元大型スーパーマーケット（Coop / Conad等）立ち寄り</h3>
-            <p class="timeline-desc">
-              イタリアの日常を体験！本場のパスタ、オリーブオイル、Baciチョコ、乾燥ポルチーニ茸などのお土産＆今夜の夕食（ワイン、生ハム、チーズ等）をお買い物。
-            </p>
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-dot">🏨</div>
-          <div class="timeline-card">
-            <span class="timeline-time">18:30頃</span>
-            <h3 class="timeline-title">フィレンツェ周辺ホテル到着 ＆ 宿泊</h3>
-            <p class="timeline-desc">
-              ホテルにチェックイン。スーパーで買ったワインや惣菜を楽しんだり、ホテル内レストランで夕食。明日のフィレンツェ終日観光に備えます。
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Sightseeing Spots Section -->
-    <section class="section">
-      <div class="section-header">
-        <h2 class="section-title">
-          <span>🏛️</span>
-          <span>ベネチア観光スポット案内</span>
-        </h2>
-        <span class="section-subtitle">世界遺産の水上都市の見どころ</span>
-      </div>
-
-      <div class="grid-2">
-        <!-- Spot 1: Basilica di San Marco -->
-        <div class="spot-card">
-          <div class="card-img-wrap">
-            <img src="https://images.unsplash.com/photo-1514890547357-a9ee288728e0?w=800&auto=format&fit=crop&q=80" alt="サン・マルコ寺院の荘厳なモザイクとファサード" loading="lazy">
-            <span class="card-badge-top"><span class="badge" style="background: #ffffff; color: var(--accent);">黄金の大寺院</span></span>
-            <span class="card-tag-top-right">要予約 / 有料</span>
-          </div>
-          <div class="card-body">
-            <div class="card-meta-tags">
-              <span class="tag tag-booking-req">入場要予約（有料）</span>
-              <span class="tag tag-included">世界遺産</span>
-            </div>
-            <h3 class="card-title">サン・マルコ寺院</h3>
-            <p class="card-subtitle">Basilica di San Marco</p>
-            <p class="card-desc">
-              東洋と西洋の美が融合したビザンチン建築の至宝。天井一面を埋め尽くす金箔のモザイク画（黄金の教会）と、宝石を散りばめた祭壇画「パラ・ドーロ」は必見です。
-            </p>
-            <div class="card-highlight-info">
-              <div class="card-highlight-row">
-                <span class="card-highlight-label">入場料:</span>
-                <span class="card-highlight-val">基本入場 €3〜 / パラ・ドーロ・博物館別途</span>
-              </div>
-              <div class="card-highlight-row">
-                <span class="card-highlight-label">注意:</span>
-                <span class="card-highlight-val">大きなリュックサックの持ち込み禁止・服装規定あり</span>
-              </div>
-            </div>
-            <div class="card-actions">
-              <a href="https://maps.google.com/?q=Basilica+di+San+Marco+Venezia" target="_blank" rel="noopener" class="btn btn-maps">🗺️ Google Maps</a>
-              <a href="http://www.basilicasanmarco.it/" target="_blank" rel="noopener" class="btn btn-web">🌐 公式サイト</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Spot 2: Piazza San Marco & Campanile -->
-        <div class="spot-card">
-          <div class="card-img-wrap">
-            <img src="https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?w=800&auto=format&fit=crop&q=80" alt="サン・マルコ広場とそびえ立つ大鐘楼" loading="lazy">
-            <span class="card-badge-top"><span class="badge" style="background: #ffffff; color: var(--primary);">世界一美しい広場</span></span>
-            <span class="card-tag-top-right">広場自由 / 鐘楼要予約</span>
-          </div>
-          <div class="card-body">
-            <div class="card-meta-tags">
-              <span class="tag tag-booking-no">広場散策は無料</span>
-              <span class="tag tag-booking-req">鐘楼登頂は要予約</span>
-            </div>
-            <h3 class="card-title">サン・マルコ広場 ＆ 大鐘楼</h3>
-            <p class="card-subtitle">Piazza San Marco & Campanile</p>
-            <p class="card-desc">
-              ナポレオンが「世界で最も美しい客間」と称賛した大広場。高さ約99mの大鐘楼からは、アドリア海と赤茶色の屋根が織りなすベネチアの360度絶景パノラマが一望できます。
-            </p>
-            <div class="card-highlight-info">
-              <div class="card-highlight-row">
-                <span class="card-highlight-label">鐘楼:</span>
-                <span class="card-highlight-val">エレベーターで最上階へ（事前予約推奨）</span>
-              </div>
-              <div class="card-highlight-row">
-                <span class="card-highlight-label">雰囲気:</span>
-                <span class="card-highlight-val">老舗カフェのテラスから流れる生演奏オーケストラ</span>
-              </div>
-            </div>
-            <div class="card-actions">
-              <a href="https://maps.google.com/?q=Piazza+San+Marco+Venezia" target="_blank" rel="noopener" class="btn btn-maps">🗺️ Google Maps</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Spot 3: Palazzo Ducale -->
-        <div class="spot-card">
-          <div class="card-img-wrap">
-            <img src="https://images.unsplash.com/photo-1534113414509-0eec2bfb493f?w=800&auto=format&fit=crop&q=80" alt="ドゥカーレ宮殿の美しいゴシック様式のアーケード" loading="lazy">
-            <span class="card-badge-top"><span class="badge" style="background: #ffffff; color: #af52de;">共和国総督の居城</span></span>
-            <span class="card-tag-top-right">要予約推奨</span>
-          </div>
-          <div class="card-body">
-            <div class="card-meta-tags">
-              <span class="tag tag-booking-rec">事前予約推奨（有料）</span>
-              <span class="tag tag-included">豪華宮殿</span>
-            </div>
-            <h3 class="card-title">ドゥカーレ宮殿</h3>
-            <p class="card-subtitle">Palazzo Ducale (Doge's Palace)</p>
-            <p class="card-desc">
-              千年間続いた海洋大国ヴェネツィア共和国の政治中枢。ピンクと白の大理石による優美な外観と、ティントレット作の世界最大級の油彩画『天国』が飾られた「大評議会の間」は圧巻。
-            </p>
-            <div class="card-highlight-info">
-              <div class="card-highlight-row">
-                <span class="card-highlight-label">見どころ:</span>
-                <span class="card-highlight-val">黄金の階段、大評議会の間、牢獄へ続く通路</span>
-              </div>
-              <div class="card-highlight-row">
-                <span class="card-highlight-label">立地:</span>
-                <span class="card-highlight-val">サン・マルコ寺院に隣接</span>
-              </div>
-            </div>
-            <div class="card-actions">
-              <a href="https://maps.google.com/?q=Palazzo+Ducale+Venezia" target="_blank" rel="noopener" class="btn btn-maps">🗺️ Google Maps</a>
-              <a href="https://palazzoducale.visitmuve.it/" target="_blank" rel="noopener" class="btn btn-web">🌐 公式サイト</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Spot 4: Rialto Bridge -->
-        <div class="spot-card">
-          <div class="card-img-wrap">
-            <img src="https://images.unsplash.com/photo-1520175480921-4edfa2983e0f?w=800&auto=format&fit=crop&q=80" alt="大運河カナル・グランデに架かる白亜のリアルト橋" loading="lazy">
-            <span class="card-badge-top"><span class="badge" style="background: #ffffff; color: var(--success);">絶景フォトスポット</span></span>
-            <span class="card-tag-top-right">予約不要</span>
-          </div>
-          <div class="card-body">
-            <div class="card-meta-tags">
-              <span class="tag tag-booking-no">予約不要・無料</span>
-              <span class="tag tag-included">記念撮影スポット</span>
-            </div>
-            <h3 class="card-title">リアルト橋</h3>
-            <p class="card-subtitle">Ponte di Rialto</p>
-            <p class="card-desc">
-              大運河カナル・グランデに架かる「白い巨象」と呼ばれる美しい大理石のアーチ橋。橋の上からの大運河とゴンドラの眺めは、ベネチアで最も絵になる新婚旅行フォトスポットです。
-            </p>
-            <div class="card-highlight-info">
-              <div class="card-highlight-row">
-                <span class="card-highlight-label">散策:</span>
-                <span class="card-highlight-val">橋の上には革製品やガラス細工のショップが並ぶ</span>
-              </div>
-              <div class="card-highlight-row">
-                <span class="card-highlight-label">周辺:</span>
-                <span class="card-highlight-val">周辺のリアルト市場付近は名物バーカロの宝庫</span>
-              </div>
-            </div>
-            <div class="card-actions">
-              <a href="https://maps.google.com/?q=Ponte+di+Rialto+Venezia" target="_blank" rel="noopener" class="btn btn-maps">🗺️ Google Maps</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Spot 5: Bridge of Sighs -->
-        <div class="spot-card">
-          <div class="card-img-wrap">
-            <img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?w=800&auto=format&fit=crop&q=80" alt="小運河にかかる優美なため息橋" loading="lazy">
-            <span class="card-badge-top"><span class="badge" style="background: #ffffff; color: var(--pink);">永遠の愛の伝説</span></span>
-            <span class="card-tag-top-right">外観自由</span>
-          </div>
-          <div class="card-body">
-            <div class="card-meta-tags">
-              <span class="tag tag-booking-no">外観見学は自由</span>
-              <span class="tag tag-included">新婚旅行必訪</span>
-            </div>
-            <h3 class="card-title">ため息橋</h3>
-            <p class="card-subtitle">Ponte dei Sospiri</p>
-            <p class="card-desc">
-              ドゥカーレ宮殿と牢獄を結ぶ白大理石の覆い橋。かつて囚人がこの小窓からベネチアの美しい景色を見納めしてため息をついた由来ですが、現代では恋人たちの永遠の愛の聖地として大人気です。
-            </p>
-            <div class="card-highlight-info">
-              <div class="card-highlight-row">
-                <span class="card-highlight-label">撮影スポット:</span>
-                <span class="card-highlight-val">宮殿横のパリア橋（Ponte della Paglia）からがベスト</span>
-              </div>
-            </div>
-            <div class="card-actions">
-              <a href="https://maps.google.com/?q=Ponte+dei+Sospiri+Venezia" target="_blank" rel="noopener" class="btn btn-maps">🗺️ Google Maps</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Spot 6: Gondola Ride -->
-        <div class="spot-card">
-          <div class="card-img-wrap">
-            <img src="https://images.unsplash.com/photo-1498307833015-e7b400441eb8?w=800&auto=format&fit=crop&q=80" alt="ベネチアの細い運河を進むゴンドラ" loading="lazy">
-            <span class="card-badge-top"><span class="badge" style="background: #ffffff; color: var(--primary);">🚣 ベネチア名物</span></span>
-            <span class="card-tag-top-right">HIS OP / 現地乗船</span>
-          </div>
-          <div class="card-body">
-            <div class="card-meta-tags">
-              <span class="tag tag-optional">オプショナルツアー / 現地乗船</span>
-              <span class="tag tag-included">ハネムーンハイライト</span>
-            </div>
-            <h3 class="card-title">ベネチア名物ゴンドラ遊覧</h3>
-            <p class="card-subtitle">Gondola Ride</p>
-            <p class="card-desc">
-              細い運河（リオ）をゴンドリエーレの巧みな櫂さばきで巡る、ベネチアならではの優雅な体験。水面から見上げる歴史的なパラッツォや小橋の風景は一生の宝物になります。
-            </p>
-            <div class="card-highlight-info">
-              <div class="card-highlight-row">
-                <span class="card-highlight-label">乗船時間:</span>
-                <span class="card-highlight-val">約30分間の水上クルーズ</span>
-              </div>
-              <div class="card-highlight-row">
-                <span class="card-highlight-label">ツアー:</span>
-                <span class="card-highlight-val">HISオプショナルツアーまたは現地ゴンドラ乗り場にて</span>
-              </div>
-            </div>
-            <div class="card-actions">
-              <span class="tag tag-included" style="display: flex; align-items: center; justify-content: center; width: 100%; padding: 8px;">🚣 新婚旅行一番人気の体験！</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Venice Lunch & Bacaro Recommendations -->
-    <section class="section">
-      <div class="section-header">
-        <h2 class="section-title">
-          <span>🍷</span>
-          <span>ベネチア昼食・バーカロおすすめ店</span>
-        </h2>
-        <span class="section-subtitle">名物チケッティ・イカスミパスタ・最古カフェ</span>
-      </div>
-
-      <div class="grid-2">
-        <!-- Bacaro 1: Cantina Do Mori -->
-        <div class="restaurant-card">
-          <div class="card-img-wrap">
-            <img src="https://images.unsplash.com/photo-1541544741938-0af808871cc0?w=800&auto=format&fit=crop&q=80" alt="ベネチア最古のバーカロのチケッティとワイン" loading="lazy">
-            <span class="card-badge-top"><span class="badge" style="background: #ffffff; color: var(--danger);">🍷 1462年創業 ベネチア最古</span></span>
-          </div>
-          <div class="card-body">
-            <div class="card-meta-tags">
-              <span class="tag tag-included">伝統バーカロ</span>
-              <span class="tag tag-booking-no">立ち飲みスタイル</span>
-            </div>
-            <h3 class="card-title">Cantina Do Mori (カンティーナ・ド・モーリ)</h3>
-            <p class="card-subtitle">リアルト橋近くの歴史的バーカロ</p>
-            <p class="card-desc">
-              あのカサノヴァも通ったと言われるベネチア最古の居酒屋。天井から無数の銅鍋が吊るされた店内カウンターで、グラスワイン（オンブラ）とタコや生ハムのチケッティ（一口おつまみ）を気軽に楽しめます。
-            </p>
-            <div class="card-highlight-info">
-              <div class="card-highlight-row">
-                <span class="card-highlight-label">名物:</span>
-                <span class="card-highlight-val">Francobollo（ミニサンド）、タコのマリネ</span>
-              </div>
-              <div class="card-highlight-row">
-                <span class="card-highlight-label">予算:</span>
-                <span class="card-highlight-val font-bold">€5〜€15 / 人</span>
-              </div>
-              <div class="card-highlight-row">
-                <span class="card-highlight-label">立地:</span>
-                <span class="card-highlight-val">リアルト橋から徒歩3分 (Calle Do Mori)</span>
-              </div>
-            </div>
-            <div class="card-actions">
-              <a href="https://maps.google.com/?q=Cantina+Do+Mori+Venezia" target="_blank" rel="noopener" class="btn btn-maps">🗺️ Google Maps</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Bacaro 2: Osteria Al Squero -->
-        <div class="restaurant-card">
-          <div class="card-img-wrap">
-            <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800&auto=format&fit=crop&q=80" alt="ゴンドラ造船所前のバーカロの彩り豊かなチケッティ" loading="lazy">
-            <span class="card-badge-top"><span class="badge" style="background: #ffffff; color: var(--primary);">🚣 造船所を望む絶景</span></span>
-          </div>
-          <div class="card-body">
-            <div class="card-meta-tags">
-              <span class="tag tag-included">絶景バーカロ</span>
-              <span class="tag tag-booking-no">運河沿い</span>
-            </div>
-            <h3 class="card-title">Osteria Al Squero (オステリア・アル・スクエーロ)</h3>
-            <p class="card-subtitle">現役ゴンドラ修理工場の目の前</p>
-            <p class="card-desc">
-              17世紀から続くゴンドラ造船所（スクエーロ）の運河向かいにある超人気バーカロ。ショーケースにずらりと並ぶ彩り豊かな創作チケッティ（バッカラ・マンテカート等）とプロセッコ（スパークリング）を運河沿いで味わう至福のひととき。
-            </p>
-            <div class="card-highlight-info">
-              <div class="card-highlight-row">
-                <span class="card-highlight-label">名物:</span>
-                <span class="card-highlight-val">干し鱈のペースト（Baccalà mantecato）</span>
-              </div>
-              <div class="card-highlight-row">
-                <span class="card-highlight-label">予算:</span>
-                <span class="card-highlight-val font-bold">€5〜€12 / 人</span>
-              </div>
-              <div class="card-highlight-row">
-                <span class="card-highlight-label">立地:</span>
-                <span class="card-highlight-val">ドルソドゥーロ地区（アカデミア橋徒歩6分）</span>
-              </div>
-            </div>
-            <div class="card-actions">
-              <a href="https://maps.google.com/?q=Osteria+Al+Squero+Venezia" target="_blank" rel="noopener" class="btn btn-maps">🗺️ Google Maps</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Food 3: Trattoria Al Gazzettino -->
-        <div class="restaurant-card">
-          <div class="card-img-wrap">
-            <img src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=800&auto=format&fit=crop&q=80" alt="濃厚なベネチア名物イカスミパスタとシーフード" loading="lazy">
-            <span class="card-badge-top"><span class="badge" style="background: #ffffff; color: var(--accent);">🦑 名物イカスミパスタ</span></span>
-          </div>
-          <div class="card-body">
-            <div class="card-meta-tags">
-              <span class="tag tag-included">シーフードトラットリア</span>
-              <span class="tag tag-booking-rec">テーブル席</span>
-            </div>
-            <h3 class="card-title">Trattoria Al Gazzettino (アル・ガッゼッティーノ)</h3>
-            <p class="card-subtitle">本場の魚介料理＆イカスミパスタ</p>
-            <p class="card-desc">
-              サン・マルコ広場とリアルト橋の中間に位置する大人気トラットリア。イカの旨味が凝縮された真っ黒な「イカスミスパゲッティ」や魚介のフリットミスト（揚げ物盛り合わせ）が絶品です。
-            </p>
-            <div class="card-highlight-info">
-              <div class="card-highlight-row">
-                <span class="card-highlight-label">名物料理:</span>
-                <span class="card-highlight-val">Spaghetti al nero di seppia（イカスミパスタ）</span>
-              </div>
-              <div class="card-highlight-row">
-                <span class="card-highlight-label">予算:</span>
-                <span class="card-highlight-val font-bold">€25〜€45 / 人</span>
-              </div>
-              <div class="card-highlight-row">
-                <span class="card-highlight-label">サービス:</span>
-                <span class="card-highlight-val">食後にリモンチェッロやビスケットのサービスも好評</span>
-              </div>
-            </div>
-            <div class="card-actions">
-              <a href="https://maps.google.com/?q=Trattoria+Al+Gazzettino+Venezia" target="_blank" rel="noopener" class="btn btn-maps">🗺️ Google Maps</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Food 4: Caffè Florian -->
-        <div class="restaurant-card">
-          <div class="card-img-wrap">
-            <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=800&auto=format&fit=crop&q=80" alt="カフェ・フローリアンの優雅な内装とホットチョコレート" loading="lazy">
-            <span class="card-badge-top"><span class="badge" style="background: #ffffff; color: #af52de;">👑 1720年創業 世界最古カフェ</span></span>
-          </div>
-          <div class="card-body">
-            <div class="card-meta-tags">
-              <span class="tag tag-included">世界最古のカフェ</span>
-              <span class="tag tag-booking-no">優雅なティータイム</span>
-            </div>
-            <h3 class="card-title">Caffè Florian (カフェ・フローリアン)</h3>
-            <p class="card-subtitle">サン・マルコ広場に面した貴族のサロン</p>
-            <p class="card-desc">
-              ゲーテ、バイロン、カサノヴァが愛した現存する世界最古のカフェ。銀のトレイで運ばれる濃厚ホットチョコレート「チョコラータ・カルダ」やカフェラテを、広場の美しい生演奏とともに堪能できます。
-            </p>
-            <div class="card-highlight-info">
-              <div class="card-highlight-row">
-                <span class="card-highlight-label">名物:</span>
-                <span class="card-highlight-val">Cioccolata Calda（濃厚ホットチョコ）</span>
-              </div>
-              <div class="card-highlight-row">
-                <span class="card-highlight-label">予算:</span>
-                <span class="card-highlight-val font-bold">€15〜€30 / 人（屋外演奏チャージあり）</span>
-              </div>
-            </div>
-            <div class="card-actions">
-              <a href="https://maps.google.com/?q=Caffe+Florian+Venezia" target="_blank" rel="noopener" class="btn btn-maps">🗺️ Google Maps</a>
-              <a href="https://www.caffeflorian.com/" target="_blank" rel="noopener" class="btn btn-web">🌐 公式サイト</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Souvenirs & Local Supermarket Section -->
-    <section class="section">
-      <div class="section-header">
-        <h2 class="section-title">
-          <span>🎁</span>
-          <span>お土産 ＆ 地元スーパー立ち寄りガイド</span>
-        </h2>
-        <span class="section-subtitle">伝統工芸品・新婚記念ギフト・今夜の夕食調達</span>
-      </div>
-
-      <div class="grid-3">
-        <!-- Souvenir 1: Venetian Glass -->
-        <div class="souvenir-card">
-          <div class="card-img-wrap">
-            <img src="https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?w=800&auto=format&fit=crop&q=80" alt="ベネチアンガラスの華やかなグラスとミルフィオリ" loading="lazy">
-            <span class="card-badge-top"><span class="badge" style="background: #ffffff; color: var(--primary);">伝統工芸品</span></span>
-          </div>
-          <div class="card-body">
-            <div class="card-meta-tags">
-              <span class="tag tag-included">新婚ペアグラス</span>
-              <span class="tag tag-booking-no">ムラーノ島伝統</span>
-            </div>
-            <h3 class="card-title">ベネチアンガラス専門店 (Murano Glass)</h3>
-            <p class="card-subtitle">千年の伝統が息づく色彩の芸術</p>
-            <p class="card-desc">
-              金箔を練り込んだ華やかなワイングラスや「ミルフィオリ（千の花）」と呼ばれる美しいペンダントトップ、箸置きなど。新婚夫婦の記念品やお揃いのペアグッズに最適です。
-            </p>
-            <div class="card-highlight-info">
-              <div class="card-highlight-row">
-                <span class="card-highlight-label">見分け方:</span>
-                <span class="card-highlight-val">「Vetro Artistico Murano」保証シールを確認</span>
-              </div>
-            </div>
-            <div class="card-actions">
-              <a href="https://maps.google.com/?q=Murano+Glass+Store+San+Marco+Venezia" target="_blank" rel="noopener" class="btn btn-maps">🗺️ Google Maps</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Souvenir 2: Venetian Mask -->
-        <div class="souvenir-card">
-          <div class="card-img-wrap">
-            <img src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?w=800&auto=format&fit=crop&q=80" alt="金彩と羽で装飾された伝統のベネチアンマスク" loading="lazy">
-            <span class="card-badge-top"><span class="badge" style="background: #ffffff; color: var(--pink);">🎭 カーニバル仮面</span></span>
-          </div>
-          <div class="card-body">
-            <div class="card-meta-tags">
-              <span class="tag tag-included">伝統仮面工房</span>
-              <span class="tag tag-free">ハンドメイド</span>
-            </div>
-            <h3 class="card-title">ベネチアンマスク工房 (Maschere)</h3>
-            <p class="card-subtitle">職人手作りの仮面・インテリア</p>
-            <p class="card-desc">
-              ベネチアのカーニバルで使われる伝統的な紙張り（パピエマシェ）仮面。繊細な金箔細工やペイントが施されたミニチュア仮面や壁掛けオーナメントは、お洒落な部屋のインテリアにぴったり。
-            </p>
-            <div class="card-highlight-info">
-              <div class="card-highlight-row">
-                <span class="card-highlight-label">おすすめ:</span>
-                <span class="card-highlight-val">ミニマスクマグネット・ペア仮面オーナメント</span>
-              </div>
-            </div>
-            <div class="card-actions">
-              <a href="https://maps.google.com/?q=Venetian+Mask+Workshop+Venezia" target="_blank" rel="noopener" class="btn btn-maps">🗺️ Google Maps</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Souvenir 3: Local Supermarket -->
-        <div class="souvenir-card">
-          <div class="card-img-wrap">
-            <img src="https://images.unsplash.com/photo-1583258292688-d0213dc5a3a8?w=800&auto=format&fit=crop&q=80" alt="イタリアの地元大型スーパーのパスタやオリーブオイル棚" loading="lazy">
-            <span class="card-badge-top"><span class="badge" style="background: #ffffff; color: var(--success);">🛒 バラマキ土産＆夕食</span></span>
-          </div>
-          <div class="card-body">
-            <div class="card-meta-tags">
-              <span class="tag tag-included">地元スーパー立ち寄り</span>
-              <span class="tag tag-booking-no">本日夕刻</span>
-            </div>
-            <h3 class="card-title">地元大型スーパー (Coop / Conad)</h3>
-            <p class="card-subtitle">本場のパスタ・お菓子・ワイン調達</p>
-            <p class="card-desc">
-              フィレンツェへの移動途中に大型スーパーへ立ち寄ります！今夜の夕食用の惣菜やワイン、職場や友人へのバラマキ土産がお手頃価格で購入できます。
-            </p>
-            <div class="card-highlight-info">
-              <div class="card-highlight-row">
-                <span class="card-highlight-label">必買い品:</span>
-                <span class="card-highlight-val">Baciチョコ、乾燥ポルチーニ、Knorrリゾットの素</span>
-              </div>
-              <div class="card-highlight-row">
-                <span class="card-highlight-label">今夜の夕食:</span>
-                <span class="card-highlight-val">切り立て生ハム・チーズ・フォカッチャ・ワイン</span>
-              </div>
-            </div>
-            <div class="card-actions">
-              <span class="tag tag-included" style="display: flex; align-items: center; justify-content: center; width: 100%; padding: 8px;">🛒 エコバッグ持参がおすすめ！</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Travel Tips Box -->
-    <div class="tips-box info">
-      <div class="callout-header">
-        <span>💡</span>
-        <span>Day 3 ベネチア散策のコツ</span>
-      </div>
-      <div class="callout-body">
-        <ul>
-          <li><strong>迷路のような路地:</strong> ベネチアは細い路地（カッレ）が入り組んでおり、GPSが少しズレることがあります。「Per San Marco（サン・マルコ方面へ）」「Per Rialto（リアルト方面へ）」という建物の角にある黄色い案内標識を目印にすると安心です。</li>
-          <li><strong>集合時間厳守:</strong> 専用ボートの出発時間は厳密です。サン・マルコ広場の集合場所には15分前には戻れるよう、余裕を持って散策を楽しみましょう。</li>
-          <li><strong>スーパーでの買い出し:</strong> 夕食は各自自由食となるため、スーパーで地元ワイン（キャンティ等）や生ハム、モッツァレラチーズ、パンを買ってホテルの部屋でゆっくり乾杯ディナーをするのも新婚旅行の楽しい思い出になります🍷</li>
-        </ul>
       </div>
     </div>
 
-    <!-- Next Day Link Banner -->
-    <div class="callout info" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;">
-      <div>
-        <div class="callout-header" style="margin-bottom: 2px;">
-          <span>👉</span>
-          <span>明日の予定：Day 4 花の都フィレンツェ終日自由行動＆ピサへ</span>
-        </div>
-        <p style="font-size: 0.85rem; color: var(--text-muted);">
-          ミケランジェロ広場の絶景、ドゥオモ、ウフィッツィ美術館、ピサの斜塔OP、名物Tボーンステーキ！
-        </p>
+    <!-- Timeline Section -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">⏱️ 本日のタイムライン・行動スケジュール</h2>
       </div>
-      <a href="day4.html" class="btn btn-primary" style="flex: 0 0 auto; min-width: 140px;">Day 4 を見る ➔</a>
-    </div>
-
-    <!-- Bottom Fixed Nav for iOS -->
-    <nav class="bottom-nav">
-      <a href="day1.html" class="bottom-nav-item">
-        <span class="bottom-nav-icon">🛫</span>
-        <span>Day 1</span>
-      </a>
-      <a href="day2.html" class="bottom-nav-item">
-        <span class="bottom-nav-icon">🏛️</span>
-        <span>Day 2</span>
-      </a>
-      <a href="day3.html" class="bottom-nav-item active">
-        <span class="bottom-nav-icon">🚣</span>
-        <span>Day 3</span>
-      </a>
-      <a href="day4.html" class="bottom-nav-item">
-        <span class="bottom-nav-icon">🎨</span>
-        <span>Day 4</span>
-      </a>
-    </nav>
-
-    <footer class="page-footer">
-      <p>💍 <strong>Kenta & Megumi イタリア新婚旅行 2026</strong></p>
-      <p style="margin-top: 4px; font-size: 0.75rem;">HIS ツアー OI-KMI2811 | 添乗員同行 7都市縦断 アンディアーモ！イタリア8日間</p>
-      <p style="margin-top: 4px; font-size: 0.72rem; color: var(--text-secondary);">Buon Viaggio! 素敵な思い出になりますように 🇮🇹✨</p>
-    </footer>
+      <ul class="timeline-list">
+        
+        <li class="timeline-item">
+          <div class="timeline-time">08:30</div>
+          <div class="timeline-desc">専用ボートにてベネチア本島・サン・マルコ広場へ移動</div>
+        </li>
+        <li class="timeline-item">
+          <div class="timeline-time">09:00</div>
+          <div class="timeline-desc">ベネチア市内観光（サン・マルコ寺院、ドゥカーレ宮殿、ため息橋、鐘楼）</div>
+        </li>
+        <li class="timeline-item">
+          <div class="timeline-time">10:30</div>
+          <div class="timeline-desc">【ツアー組込/OP】伝統ゴンドラ遊覧（水の都の運河めぐり）</div>
+        </li>
+        <li class="timeline-item">
+          <div class="timeline-time">11:30</div>
+          <div class="timeline-desc">ベネチア本島自由行動（カフェ・フローリアン、バカロ巡り、ベネチアングラス探し）</div>
+        </li>
+        <li class="timeline-item">
+          <div class="timeline-time">14:30</div>
+          <div class="timeline-desc">専用ボートでトロンケットへ戻り、専用バスでフィレンツェへ移動（約260km / 約3.5時間）</div>
+        </li>
+        <li class="timeline-item">
+          <div class="timeline-time">18:30</div>
+          <div class="timeline-desc">フィレンツェ市内または近郊スーペリアホテル チェックイン（連泊・ダブルベッド確約）</div>
+        </li>
+        <li class="timeline-item">
+          <div class="timeline-time">19:30</div>
+          <div class="timeline-desc">ホテル周辺またはフィレンツェ市内にて各自自由夕食</div>
+        </li>
+      </ul>
+    </section>
+    
   </main>
-  <script src="app.js" defer></script>
+  <!-- Bottom Tab Bar for iOS -->
+  <nav class="bottom-tab-bar">
+    <a href="index.html" class="tab-item active">
+      <span class="tab-icon">🏠</span>
+      <span class="tab-label">ホーム</span>
+    </a>
+    <a href="beginner-guide.html" class="tab-item">
+      <span class="tab-icon">🔰</span>
+      <span class="tab-label">初心者</span>
+    </a>
+    <a href="tour-map.html" class="tab-item">
+      <span class="tab-icon">🗺️</span>
+      <span class="tab-label">ルートMAP</span>
+    </a>
+    <a href="free-meal-guide.html" class="tab-item">
+      <span class="tab-icon">🍽️</span>
+      <span class="tab-label">グルメ</span>
+    </a>
+    <a href="souvenir-guide.html" class="tab-item">
+      <span class="tab-icon">🎁</span>
+      <span class="tab-label">お土産</span>
+    </a>
+    <a href="rome-free-day-guide.html" class="tab-item">
+      <span class="tab-icon">🎻</span>
+      <span class="tab-label">ローマ</span>
+    </a>
+  </nav>
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-credits">
+        <h4>🇮🇹 Kenta &amp; Megumi's Italian Honeymoon Portal</h4>
+        <p>HIS Tour OI-KMI2811 (2026/11/15 - 11/22) | Knowledge Partner: YouTube「イタリアガイドみめ (@mimeitalygaido)」</p>
+      </div>
+      <div class="footer-nav">
+        <a href="index.html">🏠 ホーム</a>
+        <a href="beginner-guide.html">🔰 初心者安心ガイド</a>
+        <a href="tour-map.html">🗺️ 全体ルートMAP</a>
+        <a href="free-meal-guide.html">🍽️ 自由食・グルメ</a>
+        <a href="souvenir-guide.html">🎁 お土産・買物</a>
+        <a href="rome-free-day-guide.html">🎻 ローマ自由行動</a>
+      </div>
+    </div>
+  </footer>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="app.js"></script>
 </body>
 </html>

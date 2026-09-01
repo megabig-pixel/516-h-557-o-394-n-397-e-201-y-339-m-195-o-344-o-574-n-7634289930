@@ -2,716 +2,174 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Day 4 フィレンツェ終日自由行動＆ピサ | イタリア新婚旅行8日間 しおり</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=no">
+  <title>Day 4 (11/18 水) フィレンツェ終日自由行動 ＆ 【OP】ピサの斜塔 | イタリア新婚旅行8日間</title>
+  <meta name="description" content="Day 4: 花の都フィレンツェ終日観光 ＆ 【OP】世界遺産ピサの斜塔。食事条件、タイムライン、YouTubeイタリアガイドみめ直伝ノウハウ">
   <link rel="stylesheet" href="style.css">
-  <meta name="theme-color" content="#0071e3">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
 </head>
 <body>
-  <!-- Sticky Top Navbar -->
-  <header class="navbar">
-    <div class="navbar-brand">
-      <span>🇮🇹</span>
-      <span>Andiamo! イタリア8日間</span>
-      <span class="tag-tour">HIS OI-KMI2811</span>
-    </div>
-    <div class="navbar-actions">
-      <span class="badge" style="background: var(--pink-light); color: var(--pink);">💍 Kenta & Megumi</span>
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-title">
+        <span style="font-size: 1.5rem;">🇮🇹</span>
+        <div>
+          <h1>イタリア7都市周遊 8日間</h1>
+          <span class="brand-subtitle">HIS Tour OI-KMI2811 | Kenta &amp; Megumi Honeymoon</span>
+        </div>
+      </a>
+      <nav class="main-nav">
+        <a href="index.html" class="nav-link active">🏠 ホーム</a> <a href="beginner-guide.html" class="nav-link">🔰 初心者安心ガイド</a> <a href="tour-map.html" class="nav-link">🗺️ 全体ルートMAP</a> <a href="free-meal-guide.html" class="nav-link">🍽️ 自由食・グルメ</a> <a href="souvenir-guide.html" class="nav-link">🎁 お土産・買物</a> <a href="rome-free-day-guide.html" class="nav-link">🎻 ローマ自由行動</a>
+      </nav>
     </div>
   </header>
-
+  <!-- Day Switcher Bar -->
+  <div class="day-switcher-bar">
+    <div class="day-switcher-scroll">
+      <a href="day1.html" class="day-chip"><span>Day 1</span><small>11/15 (日)</small></a> <a href="day2.html" class="day-chip"><span>Day 2</span><small>11/16 (月)</small></a> <a href="day3.html" class="day-chip"><span>Day 3</span><small>11/17 (火)</small></a> <a href="day4.html" class="day-chip active"><span>Day 4</span><small>11/18 (水)</small></a> <a href="day5.html" class="day-chip"><span>Day 5</span><small>11/19 (木)</small></a> <a href="day6.html" class="day-chip"><span>Day 6</span><small>11/20 (金)</small></a> <a href="day7.html" class="day-chip"><span>Day 7</span><small>11/21 (土)</small></a> <a href="day8.html" class="day-chip"><span>Day 8</span><small>11/22 (日)</small></a> <a href="beginner-guide.html" class="day-chip"><span>🔰 初心者</span><small>安心バイブル</small></a> <a href="rome-free-day-guide.html" class="day-chip"><span>🎻 ローマ</span><small>教会音楽特集</small></a>
+    </div>
+  </div>
   <main class="container">
-    <div class="day-switcher">
-  <a href="day1.html" class="day-pill"><span>Day 1</span><small>11/15(日)</small></a>
-  <a href="day2.html" class="day-pill"><span>Day 2</span><small>11/16(月)</small></a>
-  <a href="day3.html" class="day-pill"><span>Day 3</span><small>11/17(火)</small></a>
-  <a href="day4.html" class="day-pill active"><span>Day 4</span><small>11/18(水)</small></a>
-</div>
 
-    <!-- Hero Section -->
-    <div class="hero">
-      <div class="hero-honeymoon-badge">💍 新婚旅行 ハネムーン特製しおり</div>
-      <div class="hero-day-number">DAY 4 &bull; 2026.11.18 (WED)</div>
-      <h1 class="hero-title">花の都フィレンツェ！絶景パノラマとルネサンス芸術＆ピサの斜塔</h1>
-      <p class="hero-subtitle">ミケランジェロ広場からの大パノラマ、終日自由行動でウフィッツィ美術館や名物Tボーンステーキを満喫</p>
-      <div class="hero-tags">
-        <span class="hero-tag">📸 ミケランジェロ広場フォトストップ</span>
-        <span class="hero-tag">⚜️ フィレンツェ終日自由行動 (約10h)</span>
-        <span class="hero-tag">🏛️ 【OP】ピサの斜塔 / ウフィッツィ</span>
-        <span class="hero-tag">🥩 名物ビステッカディナー</span>
-      </div>
+    <!-- Hero Header -->
+    <div class="hero-card hero-day">
+      <span class="hero-tag">💍 HIS Honeymoon Tour</span>
+      <h2 class="hero-title">Day 4: 花の都フィレンツェ終日観光 ＆ 【OP】世界遺産ピサの斜塔</h2>
+      <p class="hero-subtitle">2026年11月18日(水) • ミケランジェロ広場 ➔ ドゥオーモ ➔ サンタマリアノヴェッラ薬局 ➔ Tボーンステーキ</p>
     </div>
 
     <!-- Meal Status Box -->
     <div class="meal-status-box">
       <div class="meal-status-header">
-        <span>🍽️</span>
-        <span>本日の食事条件</span>
+        <h3>🍽️ 本日の食事条件</h3>
       </div>
-      <div class="meal-status-grid">
-        <div class="meal-item">
-          <div class="meal-type">朝食</div>
-          <span class="meal-status meal-included">○ ホテル朝食</span>
-          <div class="meal-desc">ビュッフェスタイル</div>
+      <div class="meal-grid-3">
+        <div class="meal-col">
+          <div class="meal-col-title">朝食</div>
+          <span class="meal-badge included">🏨 ホテル朝食 (ツアー込 3/5)</span>
         </div>
-        <div class="meal-item">
-          <div class="meal-type">昼食</div>
-          <span class="meal-status meal-free">× 各自自由食</span>
-          <div class="meal-desc">パニーノ・パスタ等</div>
+        <div class="meal-col">
+          <div class="meal-col-title">昼食</div>
+          <span class="meal-badge included">🍽️ 各自自由食 (パニーノ/市場)</span>
         </div>
-        <div class="meal-item">
-          <div class="meal-type">夕食</div>
-          <span class="meal-status meal-free">× 各自自由食</span>
-          <div class="meal-desc">名物Tボーンステーキ等</div>
+        <div class="meal-col">
+          <div class="meal-col-title">夕食</div>
+          <span class="meal-badge free">🥩 各自自由食 (Tボーンステーキ)</span>
         </div>
       </div>
     </div>
 
-    <!-- Honeymoon Callout -->
-    <div class="callout honeymoon">
-      <div class="callout-header">
-        <span>💍</span>
-        <span>新婚旅行 フィレンツェ満喫ハイライト！</span>
+    <!-- Mime Special Advice Box -->
+    <div class="mime-callout">
+      <div class="mime-header">
+        <div class="mime-title">
+          <span style="font-size: 1.5rem;">🎥</span>
+          <h3 style="margin:0;">【Mime直伝】本日の実践アドバイス ＆ 注意点</h3>
+        </div>
+        <span class="mime-badge">公認ガイド直伝</span>
       </div>
-      <div class="callout-body">
-        <ul>
-          <li><strong>ミケランジェロ広場での記念撮影:</strong> 赤い屋根の街並みとドゥオモ、アルノ川を一望できる特等席！朝の澄んだ光の中で2人のベストショットを撮影しましょう📸</li>
-          <li><strong>名物ビステッカ（Tボーンステーキ）を2人でシェア:</strong> 1kg超の炭火焼きステーキは迫力満点！トスカーナの赤ワイン（キャンティ・クラシコ）とともに特別な新婚ディナーを🍷</li>
-          <li><strong>世界最古の薬局で香りの記念品:</strong> サンタ・マリア・ノヴェッラ薬局で、2人の新生活の香り（ポプリやオーデコロン）を選ぶのが大人気です✨</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Schedule Timeline -->
-    <section class="section">
-      <div class="section-header">
-        <h2 class="section-title">
-          <span>🕒</span>
-          <span>本日のタイムライン</span>
-        </h2>
-        <span class="section-subtitle">終日フィレンツェ滞在</span>
-      </div>
-
-      <div class="timeline">
-        <div class="timeline-item">
-          <div class="timeline-dot success">🥐</div>
-          <div class="timeline-card">
-            <span class="timeline-time">07:30〜08:30</span>
-            <h3 class="timeline-title">ホテルにて朝食ビュッフェ</h3>
-            <p class="timeline-desc">
-              しっかりエネルギーチャージをして、終日歩き回れる準備を整えます。
-            </p>
-          </div>
+      <div class="mime-tips-grid">
+        
+        <div class="mime-tip-card">
+          <h4>💡 【超重要警告】電車の刻印（Timbrare）絶対遵守</h4>
+          <p>ピサへ普通列車（Regionale）や市バスで行く際は、必ず乗車前に駅や車内の黄色い打刻機で切符に日時を刻印！刻印なしは€50〜95即時罰金です！</p>
         </div>
-
-        <div class="timeline-item">
-          <div class="timeline-dot highlight">📸</div>
-          <div class="timeline-card">
-            <span class="timeline-time">09:00〜09:40</span>
-            <h3 class="timeline-title">ミケランジェロ広場（下車フォトストップ）</h3>
-            <p class="timeline-desc">
-              フィレンツェの街を一望する丘の上の絶景広場へ専用バスで直行。ドゥオモと赤い屋根、ポンテ・ヴェッキオを背景に記念撮影タイム！
-            </p>
-          </div>
+        <div class="mime-tip-card">
+          <h4>💡 フィレンツェ名物ビステッカの注文法</h4>
+          <p>Tボーンステーキ（Bistecca alla Fiorentina）は最小1kg〜！2人で1つをシェア「Possiamo dividerlo in due?」＋前菜サラダで完食するのが黄金比。</p>
         </div>
-
-        <div class="timeline-item">
-          <div class="timeline-dot highlight">⚜️</div>
-          <div class="timeline-card">
-            <span class="timeline-time">10:00〜20:00頃</span>
-            <h3 class="timeline-title">フィレンツェ市内 終日自由行動（約10時間・昼夕食含む）</h3>
-            <p class="timeline-desc">
-              ドゥオモ、ウフィッツィ美術館、ヴェッキオ橋、革製品ショッピング、カフェ巡りなど、好みのプランで自由にフィレンツェの街を満喫できます。<br>
-              <strong>※オプショナルツアー（OP）：</strong> 午後に「ピサ散策ツアー（ピサの斜塔）」に参加される方は指定の集合場所へ。
-            </p>
-          </div>
+        <div class="mime-tip-card">
+          <h4>💡 サンタ・マリア・ノヴェッラ世界最古薬局</h4>
+          <p>1221年創業の宮殿のような薬局。香水『王妃の水』やザクロ石鹸。€70.01以上購入時はレジで「Tax Free, please」とパスポート提示！</p>
         </div>
-
-        <div class="timeline-item">
-          <div class="timeline-dot accent">🥩</div>
-          <div class="timeline-card">
-            <span class="timeline-time">18:30〜20:30頃</span>
-            <h3 class="timeline-title">夕食：各自自由食（名物トラットリアにてディナー）</h3>
-            <p class="timeline-desc">
-              名店「Trattoria ZaZa」や「Trattoria Mario」などで名物ビステッカ・アッラ・フィオレンティーナやトリュフパスタを堪能。
-            </p>
-          </div>
+        <div class="mime-tip-card">
+          <h4>💡 ミケランジェロ広場展望と静寂教会</h4>
+          <p>フィレンツェ全景を見渡す絶景スポット。すぐ上にあるサン・サルヴァトーレ・アル・モンテ教会は観光客が少なく静かな祈りの空間。</p>
         </div>
-
-        <div class="timeline-item">
-          <div class="timeline-dot">🏨</div>
-          <div class="timeline-card">
-            <span class="timeline-time">21:00頃</span>
-            <h3 class="timeline-title">集合・専用バスにてホテルへ戻り宿泊</h3>
-            <p class="timeline-desc">
-              指定の集合場所より専用バスでホテルへ戻ります。（フィレンツェ周辺ホテル連泊）
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Sightseeing Spots Section -->
-    <section class="section">
-      <div class="section-header">
-        <h2 class="section-title">
-          <span>🏛️</span>
-          <span>フィレンツェ＆ピサ 観光スポット案内</span>
-        </h2>
-        <span class="section-subtitle">ルネサンスの傑作建築と美術館</span>
-      </div>
-
-      <div class="grid-2">
-        <!-- Spot 1: Piazzale Michelangelo -->
-        <div class="spot-card">
-          <div class="card-img-wrap">
-            <img src="https://images.unsplash.com/photo-1543429776-2782fc8e1acd?w=800&auto=format&fit=crop&q=80" alt="ミケランジェロ広場から眺めるフィレンツェのパノラマ絶景" loading="lazy">
-            <span class="card-badge-top"><span class="badge" style="background: #ffffff; color: var(--primary);">📸 絶景パノラマ</span></span>
-            <span class="card-tag-top-right">下車観光 / 無料</span>
-          </div>
-          <div class="card-body">
-            <div class="card-meta-tags">
-              <span class="tag tag-booking-no">予約不要・無料</span>
-              <span class="tag tag-included">ツアー行程内</span>
-            </div>
-            <h3 class="card-title">ミケランジェロ広場</h3>
-            <p class="card-subtitle">Piazzale Michelangelo</p>
-            <p class="card-desc">
-              アルノ川南岸の高台に位置し、フィレンツェ市街を一望できる名所。巨大なクーポラを抱くドゥオモ、ヴェッキオ宮殿、アルノ川に架かる橋々が織りなす中世の街並みは息をのむ美しさです。
-            </p>
-            <div class="card-highlight-info">
-              <div class="card-highlight-row">
-                <span class="card-highlight-label">見どころ:</span>
-                <span class="card-highlight-val">広場中央のブロンズ製『ダビデ像』レプリカ</span>
-              </div>
-              <div class="card-highlight-row">
-                <span class="card-highlight-label">撮影:</span>
-                <span class="card-highlight-val">街全体を背景にした新婚ツーショットに最適</span>
-              </div>
-            </div>
-            <div class="card-actions">
-              <a href="https://maps.google.com/?q=Piazzale+Michelangelo+Firenze" target="_blank" rel="noopener" class="btn btn-maps">🗺️ Google Maps</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Spot 2: Duomo & Cupola -->
-        <div class="spot-card">
-          <div class="card-img-wrap">
-            <img src="https://images.unsplash.com/photo-1534445867742-43195f401b6c?w=800&auto=format&fit=crop&q=80" alt="サンタ・マリア・デル・フィオーレ大聖堂（ドゥオモ）と大クーポラ" loading="lazy">
-            <span class="card-badge-top"><span class="badge" style="background: #ffffff; color: var(--accent);">花の聖母マリア</span></span>
-            <span class="card-tag-top-right">大聖堂無料 / クーポラ要予約</span>
-          </div>
-          <div class="card-body">
-            <div class="card-meta-tags">
-              <span class="tag tag-booking-req">クーポラ登頂は事前日時指定必須</span>
-              <span class="tag tag-included">世界遺産</span>
-            </div>
-            <h3 class="card-title">サンタ・マリア・デル・フィオーレ大聖堂 (ドゥオモ)</h3>
-            <p class="card-subtitle">Cattedrale di Santa Maria del Fiore</p>
-            <p class="card-desc">
-              白・緑・ピンクの三色大理石で彩られたフィレンツェのシンボル。天才ブルネレスキが設計した巨大クーポラ（円蓋）と、内部のヴァザーリ作『最後の審判』の天井フレスコ画は圧巻。
-            </p>
-            <div class="card-highlight-info">
-              <div class="card-highlight-row">
-                <span class="card-highlight-label">クーポラ:</span>
-                <span class="card-highlight-val">463段の階段を登ると頂上から絶景（要予約）</span>
-              </div>
-              <div class="card-highlight-row">
-                <span class="card-highlight-label">大聖堂内部:</span>
-                <span class="card-highlight-val">聖堂内部自体は入場無料（行列あり）</span>
-              </div>
-            </div>
-            <div class="card-actions">
-              <a href="https://maps.google.com/?q=Duomo+Firenze" target="_blank" rel="noopener" class="btn btn-maps">🗺️ Google Maps</a>
-              <a href="https://duomo.firenze.it/" target="_blank" rel="noopener" class="btn btn-web">🌐 公式サイト</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Spot 3: Giotto's Campanile & Baptistery -->
-        <div class="spot-card">
-          <div class="card-img-wrap">
-            <img src="https://images.unsplash.com/photo-1541370976299-4d24ebbc9077?w=800&auto=format&fit=crop&q=80" alt="ジョットの鐘楼とサン・ジョヴァンニ洗礼堂の天国の扉" loading="lazy">
-            <span class="card-badge-top"><span class="badge" style="background: #ffffff; color: #af52de;">天国の扉</span></span>
-            <span class="card-tag-top-right">要予約</span>
-          </div>
-          <div class="card-body">
-            <div class="card-meta-tags">
-              <span class="tag tag-booking-req">共通パス要予約（有料）</span>
-              <span class="tag tag-included">ゴシック建築</span>
-            </div>
-            <h3 class="card-title">ジョットの鐘楼 ＆ サン・ジョヴァンニ洗礼堂</h3>
-            <p class="card-subtitle">Campanile di Giotto & Battistero di San Giovanni</p>
-            <p class="card-desc">
-              大聖堂の隣にそびえる高さ84mの優美な鐘楼（414段の階段）。洗礼堂の東門にあるギベルティ作の黄金レリーフ『天国の扉（ミケランジェロ命名）』は必見の傑作です。
-            </p>
-            <div class="card-highlight-info">
-              <div class="card-highlight-row">
-                <span class="card-highlight-label">鐘楼からの眺め:</span>
-                <span class="card-highlight-val">ドゥオモのクーポラを真横から撮影できるベストポイント</span>
-              </div>
-            </div>
-            <div class="card-actions">
-              <a href="https://maps.google.com/?q=Campanile+di+Giotto+Firenze" target="_blank" rel="noopener" class="btn btn-maps">🗺️ Google Maps</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Spot 4: Galleria degli Uffizi -->
-        <div class="spot-card">
-          <div class="card-img-wrap">
-            <img src="https://images.unsplash.com/photo-1597984816740-dec303be368c?w=800&auto=format&fit=crop&q=80" alt="ウフィッツィ美術館の外観アーケードと回廊" loading="lazy">
-            <span class="card-badge-top"><span class="badge" style="background: #ffffff; color: var(--danger);">🎨 世界屈指の美の殿堂</span></span>
-            <span class="card-tag-top-right">要事前予約必須</span>
-          </div>
-          <div class="card-body">
-            <div class="card-meta-tags">
-              <span class="tag tag-booking-req">事前日時指定予約必須</span>
-              <span class="tag tag-optional">HIS OPあり</span>
-            </div>
-            <h3 class="card-title">ウフィッツィ美術館</h3>
-            <p class="card-subtitle">Galleria degli Uffizi</p>
-            <p class="card-desc">
-              メディチ家の膨大なコレクションを収蔵するルネサンス美術の最高峰。ボッティチェリ『ヴィーナスの誕生』『プリマヴェーラ（春）』、レオナルド・ダ・ヴィンチ『受胎告知』、ラファエロ『ヒワの聖母』など教科書の傑作が勢揃い。
-            </p>
-            <div class="card-highlight-info">
-              <div class="card-highlight-row">
-                <span class="card-highlight-label">所要時間:</span>
-                <span class="card-highlight-val">ハイライト鑑賞で約2〜2.5時間</span>
-              </div>
-              <div class="card-highlight-row">
-                <span class="card-highlight-label">予約:</span>
-                <span class="card-highlight-val">世界的人気のため事前予約（またはOP）が必須</span>
-              </div>
-            </div>
-            <div class="card-actions">
-              <a href="https://maps.google.com/?q=Galleria+degli+Uffizi+Firenze" target="_blank" rel="noopener" class="btn btn-maps">🗺️ Google Maps</a>
-              <a href="https://www.uffizi.it/" target="_blank" rel="noopener" class="btn btn-web">🌐 公式サイト</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Spot 5: Piazza della Signoria & Palazzo Vecchio -->
-        <div class="spot-card">
-          <div class="card-img-wrap">
-            <img src="https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=800&auto=format&fit=crop&q=80" alt="シニョーリア広場のヴェッキオ宮殿とダビデ像" loading="lazy">
-            <span class="card-badge-top"><span class="badge" style="background: #ffffff; color: var(--success);">野外彫刻美術館</span></span>
-            <span class="card-tag-top-right">広場自由 / 宮殿要予約</span>
-          </div>
-          <div class="card-body">
-            <div class="card-meta-tags">
-              <span class="tag tag-booking-no">広場無料</span>
-              <span class="tag tag-booking-rec">宮殿内部有料</span>
-            </div>
-            <h3 class="card-title">シニョーリア広場 ＆ ヴェッキオ宮殿</h3>
-            <p class="card-subtitle">Piazza della Signoria & Palazzo Vecchio</p>
-            <p class="card-desc">
-              中世からフィレンツェの政治の中心地。広場にはミケランジェロの『ダビデ像（レプリカ）』やネプチューンの噴水、ロッジア・デイ・ランツィの彫刻群が並び、無料の野外美術館のようです。
-            </p>
-            <div class="card-highlight-info">
-              <div class="card-highlight-row">
-                <span class="card-highlight-label">ヴェッキオ宮:</span>
-                <span class="card-highlight-val">現在もフィレンツェ市庁舎。豪華な「五百人広間」が見どころ</span>
-              </div>
-            </div>
-            <div class="card-actions">
-              <a href="https://maps.google.com/?q=Piazza+della+Signoria+Firenze" target="_blank" rel="noopener" class="btn btn-maps">🗺️ Google Maps</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Spot 6: Ponte Vecchio -->
-        <div class="spot-card">
-          <div class="card-img-wrap">
-            <img src="https://images.unsplash.com/photo-1509356843151-3e7d96241e11?w=800&auto=format&fit=crop&q=80" alt="アルノ川に架かる夕暮れのヴェッキオ橋" loading="lazy">
-            <span class="card-badge-top"><span class="badge" style="background: #ffffff; color: var(--pink);">💍 伝統の貴金属街</span></span>
-            <span class="card-tag-top-right">予約不要</span>
-          </div>
-          <div class="card-body">
-            <div class="card-meta-tags">
-              <span class="tag tag-booking-no">通行無料</span>
-              <span class="tag tag-included">新婚ジュエリー</span>
-            </div>
-            <h3 class="card-title">ヴェッキオ橋 (ポンテ・ヴェッキオ)</h3>
-            <p class="card-subtitle">Ponte Vecchio</p>
-            <p class="card-desc">
-              1345年建設のフィレンツェ最古の橋。第二次世界大戦の破壊を逃れた唯一の橋で、橋の上には金銀細工店・宝石店がずらりと並びます。橋の中央からのアルノ川の眺めは絶好の撮影スポット。
-            </p>
-            <div class="card-highlight-info">
-              <div class="card-highlight-row">
-                <span class="card-highlight-label">上層部:</span>
-                <span class="card-highlight-val">メディチ家専用の空中通路「ヴァザーリの回廊」が通る</span>
-              </div>
-              <div class="card-highlight-row">
-                <span class="card-highlight-label">新婚旅行:</span>
-                <span class="card-highlight-val">ゴールドの記念ジュエリーやチャーム選びにおすすめ</span>
-              </div>
-            </div>
-            <div class="card-actions">
-              <a href="https://maps.google.com/?q=Ponte+Vecchio+Firenze" target="_blank" rel="noopener" class="btn btn-maps">🗺️ Google Maps</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Spot 7: Leaning Tower of Pisa (Optional Tour) -->
-        <div class="spot-card">
-          <div class="card-img-wrap">
-            <img src="https://images.unsplash.com/photo-1543429776-2782fc8e1acd?w=800&auto=format&fit=crop&q=80" alt="ピサの斜塔と奇跡の広場の大聖堂" loading="lazy">
-            <span class="card-badge-top"><span class="badge" style="background: #ffffff; color: #7b2cbf;">⭐ オプショナルツアー</span></span>
-            <span class="card-tag-top-right">OP散策 / 登頂要予約</span>
-          </div>
-          <div class="card-body">
-            <div class="card-meta-tags">
-              <span class="tag tag-optional">HISオプショナルツアー</span>
-              <span class="tag tag-booking-req">斜塔登頂は要予約</span>
-            </div>
-            <h3 class="card-title">【OP】ピサの斜塔 ＆ ドゥオモ広場（奇跡の広場）</h3>
-            <p class="card-subtitle">Torre di Pisa & Piazza dei Miracoli</p>
-            <p class="card-desc">
-              世界遺産「奇跡の広場」に立つ世界一有名な傾いた白大理石の塔。ガリレオが落下の実験を行ったとされる伝説の塔です。手で支える定番おもしろポーズの新婚ツーショットは一生の記念！
-            </p>
-            <div class="card-highlight-info">
-              <div class="card-highlight-row">
-                <span class="card-highlight-label">アクセス:</span>
-                <span class="card-highlight-val">HISオプショナルツアーバスで午後ピサへ（約1時間）</span>
-              </div>
-              <div class="card-highlight-row">
-                <span class="card-highlight-label">登頂:</span>
-                <span class="card-highlight-val">296段の螺旋階段（傾きを体感しながら登るスリル）</span>
-              </div>
-            </div>
-            <div class="card-actions">
-              <a href="https://maps.google.com/?q=Leaning+Tower+of+Pisa" target="_blank" rel="noopener" class="btn btn-maps">🗺️ Google Maps</a>
-              <a href="https://www.opapisa.it/" target="_blank" rel="noopener" class="btn btn-web">🌐 公式サイト</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Florence Lunch & Dinner Recommendations -->
-    <section class="section">
-      <div class="section-header">
-        <h2 class="section-title">
-          <span>🥩</span>
-          <span>フィレンツェ グルメおすすめ店（昼食・夕食）</span>
-        </h2>
-        <span class="section-subtitle">名物Tボーンステーキ・人気パニーノ・トリュフパスタ</span>
-      </div>
-
-      <div class="grid-2">
-        <!-- Food 1: Bistecca alla Fiorentina -->
-        <div class="restaurant-card">
-          <div class="card-img-wrap">
-            <img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=800&auto=format&fit=crop&q=80" alt="炭火で香ばしく焼き上げられたフィレンツェ風Tボーンステーキ" loading="lazy">
-            <span class="card-badge-top"><span class="badge" style="background: #ffffff; color: var(--danger);">🔥 必食！名物Tボーンステーキ</span></span>
-          </div>
-          <div class="card-body">
-            <div class="card-meta-tags">
-              <span class="tag tag-included">伝統トラットリア</span>
-              <span class="tag tag-booking-rec">夕食推奨 / 予約推奨</span>
-            </div>
-            <h3 class="card-title">Trattoria Mario / Trattoria ZaZa</h3>
-            <p class="card-subtitle">名物ビステッカ・アッラ・フィオレンティーナ</p>
-            <p class="card-desc">
-              トスカーナ名産キアニーナ牛などの骨付きTボーンを炭火で香ばしくレア（al sangue）に焼き上げるフィレンツェの代名詞。外はカリッと香ばしく中はジューシー！2人で1kg〜1.2kgをシェアするのが地元流です。
-            </p>
-            <div class="card-highlight-info">
-              <div class="card-highlight-row">
-                <span class="card-highlight-label">名物:</span>
-                <span class="card-highlight-val">Bistecca alla Fiorentina (1kg〜)</span>
-              </div>
-              <div class="card-highlight-row">
-                <span class="card-highlight-label">予算:</span>
-                <span class="card-highlight-val font-bold">€35〜€60 / 人（ワイン込み）</span>
-              </div>
-              <div class="card-highlight-row">
-                <span class="card-highlight-label">立地:</span>
-                <span class="card-highlight-val">サン・ロレンツォ市場広場周辺</span>
-              </div>
-            </div>
-            <div class="card-actions">
-              <a href="https://maps.google.com/?q=Trattoria+ZaZa+Firenze" target="_blank" rel="noopener" class="btn btn-maps">🗺️ ZaZa Map</a>
-              <a href="https://maps.google.com/?q=Trattoria+Mario+Firenze" target="_blank" rel="noopener" class="btn btn-maps">🗺️ Mario Map</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Food 2: All'Antico Vinaio -->
-        <div class="restaurant-card">
-          <div class="card-img-wrap">
-            <img src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af?w=800&auto=format&fit=crop&q=80" alt="スキアッチャータに生ハムとチーズを挟んだ極上パニーノ" loading="lazy">
-            <span class="card-badge-top"><span class="badge" style="background: #ffffff; color: var(--accent);">🥪 世界的人気パニーノ</span></span>
-          </div>
-          <div class="card-body">
-            <div class="card-meta-tags">
-              <span class="tag tag-free">気軽なランチ</span>
-              <span class="tag tag-booking-no">テイクアウト</span>
-            </div>
-            <h3 class="card-title">All'Antico Vinaio (オール・アンティコ・ヴィナイオ)</h3>
-            <p class="card-subtitle">世界一の呼び声高いパニーノ専門店</p>
-            <p class="card-desc">
-              トスカーナ伝統の塩フォカッチャ「スキアッチャータ」に、注文後にスライスする極上生ハム（プロシュット・トスカーノ）、トリュフクリーム、ピスタチオペースト、ペコリーノチーズを豪快にサンド！
-            </p>
-            <div class="card-highlight-info">
-              <div class="card-highlight-row">
-                <span class="card-highlight-label">人気No.1:</span>
-                <span class="card-highlight-val">La Favolosa（サラミ・アーティチョーク・ナス）</span>
-              </div>
-              <div class="card-highlight-row">
-                <span class="card-highlight-label">予算:</span>
-                <span class="card-highlight-val font-bold">€7〜€12 / 個（ボリューム満点）</span>
-              </div>
-              <div class="card-highlight-row">
-                <span class="card-highlight-label">立地:</span>
-                <span class="card-highlight-val">ウフィッツィ美術館から徒歩3分 (Via dei Neri)</span>
-              </div>
-            </div>
-            <div class="card-actions">
-              <a href="https://maps.google.com/?q=All+Antico+Vinaio+Firenze" target="_blank" rel="noopener" class="btn btn-maps">🗺️ Google Maps</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Food 3: Osteria Pastella -->
-        <div class="restaurant-card">
-          <div class="card-img-wrap">
-            <img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=800&auto=format&fit=crop&q=80" alt="巨大パルミジャーノチーズの中で仕上げるトリュフパスタ" loading="lazy">
-            <span class="card-badge-top"><span class="badge" style="background: #ffffff; color: #af52de;">🧀 目の前でチーズ絡め</span></span>
-          </div>
-          <div class="card-body">
-            <div class="card-meta-tags">
-              <span class="tag tag-included">極上手打ちパスタ</span>
-              <span class="tag tag-booking-rec">予約推奨</span>
-            </div>
-            <h3 class="card-title">Osteria Pastella (オステリア・パステッラ)</h3>
-            <p class="card-subtitle">感動のトリュフ＆フランベパスタ</p>
-            <p class="card-desc">
-              客席の目の前で巨大なパルミジャーノ・レッジャーノチーズの塊をフランベし、濃厚に溶けたチーズと削りたてフレッシュトリュフを手打ちタリオリーニに絡めて仕上げるエンターテインメント抜群の超人気店。
-            </p>
-            <div class="card-highlight-info">
-              <div class="card-highlight-row">
-                <span class="card-highlight-label">看板料理:</span>
-                <span class="card-highlight-val">Tagliolini al Tartufo（トリュフパスタ）</span>
-              </div>
-              <div class="card-highlight-row">
-                <span class="card-highlight-label">予算:</span>
-                <span class="card-highlight-val font-bold">€25〜€45 / 人</span>
-              </div>
-              <div class="card-highlight-row">
-                <span class="card-highlight-label">立地:</span>
-                <span class="card-highlight-val">サンタ・マリア・ノヴェッラ教会近く</span>
-              </div>
-            </div>
-            <div class="card-actions">
-              <a href="https://maps.google.com/?q=Osteria+Pastella+Firenze" target="_blank" rel="noopener" class="btn btn-maps">🗺️ Google Maps</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Food 4: Gelateria dei Neri / Vivoli -->
-        <div class="restaurant-card">
-          <div class="card-img-wrap">
-            <img src="https://images.unsplash.com/photo-1501443762994-82bd5dace89a?w=800&auto=format&fit=crop&q=80" alt="フィレンツェの職人が作る濃厚ジェラート" loading="lazy">
-            <span class="card-badge-top"><span class="badge" style="background: #ffffff; color: var(--primary);">🍨 フィレンツェ発祥スイーツ</span></span>
-          </div>
-          <div class="card-body">
-            <div class="card-meta-tags">
-              <span class="tag tag-free">スイーツ・ジェラート</span>
-              <span class="tag tag-booking-no">食べ歩き</span>
-            </div>
-            <h3 class="card-title">Gelateria dei Neri / Vivoli</h3>
-            <p class="card-subtitle">フィレンツェ屈指の最高峰ジェラテリア</p>
-            <p class="card-desc">
-              ジェラート発祥の地フィレンツェで最も愛される名店。自然素材にこだわった濃厚なピスタチオ、リコッタチーズ＆イチジク、ビターチョコなど、舌の上でとろける感動の味わい。
-            </p>
-            <div class="card-highlight-info">
-              <div class="card-highlight-row">
-                <span class="card-highlight-label">おすすめフレーバー:</span>
-                <span class="card-highlight-val">Pistacchio Puro, Ricotta e Fichi</span>
-              </div>
-              <div class="card-highlight-row">
-                <span class="card-highlight-label">予算:</span>
-                <span class="card-highlight-val font-bold">€3〜€8 / 個</span>
-              </div>
-            </div>
-            <div class="card-actions">
-              <a href="https://maps.google.com/?q=Gelateria+dei+Neri+Firenze" target="_blank" rel="noopener" class="btn btn-maps">🗺️ Dei Neri Map</a>
-              <a href="https://maps.google.com/?q=Vivoli+Firenze" target="_blank" rel="noopener" class="btn btn-maps">🗺️ Vivoli Map</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Souvenirs Section -->
-    <section class="section">
-      <div class="section-header">
-        <h2 class="section-title">
-          <span>🎁</span>
-          <span>お土産・ショッピングスポット</span>
-        </h2>
-        <span class="section-subtitle">世界最古の薬局・極上レザー・伝統マーブル紙</span>
-      </div>
-
-      <div class="grid-3">
-        <!-- Shop 1: Santa Maria Novella -->
-        <div class="souvenir-card">
-          <div class="card-img-wrap">
-            <img src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=800&auto=format&fit=crop&q=80" alt="サンタ・マリア・ノヴェッラ薬局の香水とポプリ" loading="lazy">
-            <span class="card-badge-top"><span class="badge" style="background: #ffffff; color: var(--pink);">🌹 1221年創業 世界最古の薬局</span></span>
-          </div>
-          <div class="card-body">
-            <div class="card-meta-tags">
-              <span class="tag tag-included">新婚ハネムーンギフト</span>
-              <span class="tag tag-booking-no">宮殿のような店舗</span>
-            </div>
-            <h3 class="card-title">サンタ・マリア・ノヴェッラ薬局</h3>
-            <p class="card-subtitle">Officina Profumo-Farmaceutica di Santa Maria Novella</p>
-            <p class="card-desc">
-              800年以上の歴史を持つ世界最古の薬局本店。フレスコ画やシャンデリアに彩られた店内はまるで美術館。カテリーナ・ディ・メディチに捧げられた香水「王妃の水（アックア・デッラ・レジーナ）」や伝統のテラコッタポプリは新婚旅行の最高の記念品です。
-            </p>
-            <div class="card-highlight-info">
-              <div class="card-highlight-row">
-                <span class="card-highlight-label">人気商品:</span>
-                <span class="card-highlight-val">ポプリシルクポーチ、香水、ローズウォーター</span>
-              </div>
-              <div class="card-highlight-row">
-                <span class="card-highlight-label">立地:</span>
-                <span class="card-highlight-val">Via della Scala 16 (SMN駅近く)</span>
-              </div>
-            </div>
-            <div class="card-actions">
-              <a href="https://maps.google.com/?q=Officina+Profumo+Farmaceutica+di+Santa+Maria+Novella" target="_blank" rel="noopener" class="btn btn-maps">🗺️ Google Maps</a>
-              <a href="https://buy.smnovella.com/" target="_blank" rel="noopener" class="btn btn-web">🌐 公式サイト</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Shop 2: Leather Goods -->
-        <div class="souvenir-card">
-          <div class="card-img-wrap">
-            <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=800&auto=format&fit=crop&q=80" alt="フィレンツェ伝統の上質なレザーバッグと革小物" loading="lazy">
-            <span class="card-badge-top"><span class="badge" style="background: #ffffff; color: var(--accent);">👜 トスカーナレザー</span></span>
-          </div>
-          <div class="card-body">
-            <div class="card-meta-tags">
-              <span class="tag tag-included">革製品専門店</span>
-              <span class="tag tag-booking-no">イニシャル刻印</span>
-            </div>
-            <h3 class="card-title">フィレンツェ革製品店 (Il Bisonte / 革市場)</h3>
-            <p class="card-subtitle">職人技が光る一生モノのレザー</p>
-            <p class="card-desc">
-              フィレンツェ発祥の世界的人気レザーブランド「Il Bisonte（イル・ビゾンテ）本店」や、活気ある「サン・ロレンツォ革市場」。財布やキーケース、名刺入れ、バッグなど、使い込むほど味が出るレザーアイテムはお揃いの新婚記念品にぴったり。
-            </p>
-            <div class="card-highlight-info">
-              <div class="card-highlight-row">
-                <span class="card-highlight-label">おすすめ:</span>
-                <span class="card-highlight-val">ペアの革財布・キーホルダー（刻印サービスあり）</span>
-              </div>
-            </div>
-            <div class="card-actions">
-              <a href="https://maps.google.com/?q=Il+Bisonte+Firenze+Palazzo+Corsini" target="_blank" rel="noopener" class="btn btn-maps">🗺️ Il Bisonte Map</a>
-              <a href="https://maps.google.com/?q=Mercato+di+San+Lorenzo+Firenze" target="_blank" rel="noopener" class="btn btn-maps">🗺️ 革市場 Map</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Shop 3: Il Papiro -->
-        <div class="souvenir-card">
-          <div class="card-img-wrap">
-            <img src="https://images.unsplash.com/photo-1586075010923-2dd4570fb338?w=800&auto=format&fit=crop&q=80" alt="伝統的なフィレンツェのマーブル紙と文房具" loading="lazy">
-            <span class="card-badge-top"><span class="badge" style="background: #ffffff; color: var(--primary);">📜 伝統マーブル紙</span></span>
-          </div>
-          <div class="card-body">
-            <div class="card-meta-tags">
-              <span class="tag tag-included">伝統工房</span>
-              <span class="tag tag-booking-no">文房具・雑貨</span>
-            </div>
-            <h3 class="card-title">マーブル紙工房 (Il Papiro / イル・パピロ)</h3>
-            <p class="card-subtitle">職人が一枚ずつ染め上げる孔雀模様の紙</p>
-            <p class="card-desc">
-              17世紀から伝わるフィレンツェ伝統の水油マーブル染め紙専門店。職人の手仕事によるノート、レターセット、フォトアルバム、ブックマーク、小物入れなど、温もりある上品なギフトが手に入ります。
-            </p>
-            <div class="card-highlight-info">
-              <div class="card-highlight-row">
-                <span class="card-highlight-label">新婚旅行記念:</span>
-                <span class="card-highlight-val">結婚写真用の手作りマーブル紙フォトアルバム</span>
-              </div>
-              <div class="card-highlight-row">
-                <span class="card-highlight-label">立地:</span>
-                <span class="card-highlight-val">ドゥオモ広場・シニョーリア広場周辺に複数店舗</span>
-              </div>
-            </div>
-            <div class="card-actions">
-              <a href="https://maps.google.com/?q=Il+Papiro+Firenze+Duomo" target="_blank" rel="noopener" class="btn btn-maps">🗺️ Google Maps</a>
-              <a href="https://ilpapirofirenze.it/" target="_blank" rel="noopener" class="btn btn-web">🌐 公式サイト</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Travel Tips Box -->
-    <div class="tips-box info">
-      <div class="callout-header">
-        <span>💡</span>
-        <span>Day 4 フィレンツェ自由行動の満喫ガイド</span>
-      </div>
-      <div class="callout-body">
-        <ul>
-          <li><strong>モデルルート例（芸術＆街歩き派）:</strong> 午前：ミケランジェロ広場 ➔ ドゥオモ外観＆洗礼堂 ➔ All'Antico Vinaioでパニーノランチ ➔ 午後：ウフィッツィ美術館（予約制） ➔ ヴェッキオ橋散策 ➔ サンタ・マリア・ノヴェッラ薬局 ➔ 夕食：ZaZaでビステッカディナー！</li>
-          <li><strong>ピサOP参加派:</strong> 午後のオプショナルツアーに参加される場合は、指定の集合時間（例：13:30頃）に遅れないようランチを早めに済ませておきましょう。</li>
-          <li><strong>免税手続き（Tax Free）:</strong> サンタ・マリア・ノヴェッラ薬局やレザー店で1店舗あたり€70.01以上お買い物した場合は、パスポートを提示して「Tax Free please」と伝え、免税書類を作ってもらいましょう。</li>
-        </ul>
       </div>
     </div>
 
-    <!-- Quick Navigation Pills to Other Days -->
-    <div class="callout info" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;">
-      <div>
-        <div class="callout-header" style="margin-bottom: 2px;">
-          <span>🇮🇹</span>
-          <span>アンディアーモ！イタリア8日間の旅</span>
-        </div>
-        <p style="font-size: 0.85rem; color: var(--text-muted);">
-          Day 1〜Day 4のしおりをいつでも上部・下部のナビゲーションから確認できます。
-        </p>
+    <!-- Timeline Section -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">⏱️ 本日のタイムライン・行動スケジュール</h2>
       </div>
-      <div style="display: flex; gap: 8px;">
-        <a href="day1.html" class="btn btn-outline" style="flex: 0 0 auto; min-width: 80px;">Day 1</a>
-        <a href="day2.html" class="btn btn-outline" style="flex: 0 0 auto; min-width: 80px;">Day 2</a>
-        <a href="day3.html" class="btn btn-outline" style="flex: 0 0 auto; min-width: 80px;">Day 3</a>
-      </div>
-    </div>
-
-    <!-- Bottom Fixed Nav for iOS -->
-    <nav class="bottom-nav">
-      <a href="day1.html" class="bottom-nav-item">
-        <span class="bottom-nav-icon">🛫</span>
-        <span>Day 1</span>
-      </a>
-      <a href="day2.html" class="bottom-nav-item">
-        <span class="bottom-nav-icon">🏛️</span>
-        <span>Day 2</span>
-      </a>
-      <a href="day3.html" class="bottom-nav-item">
-        <span class="bottom-nav-icon">🚣</span>
-        <span>Day 3</span>
-      </a>
-      <a href="day4.html" class="bottom-nav-item active">
-        <span class="bottom-nav-icon">🎨</span>
-        <span>Day 4</span>
-      </a>
-    </nav>
-
-    <footer class="page-footer">
-      <p>💍 <strong>Kenta & Megumi イタリア新婚旅行 2026</strong></p>
-      <p style="margin-top: 4px; font-size: 0.75rem;">HIS ツアー OI-KMI2811 | 添乗員同行 7都市縦断 アンディアーモ！イタリア8日間</p>
-      <p style="margin-top: 4px; font-size: 0.72rem; color: var(--text-secondary);">Buon Viaggio! 素敵な思い出になりますように 🇮🇹✨</p>
-    </footer>
+      <ul class="timeline-list">
+        
+        <li class="timeline-item">
+          <div class="timeline-time">08:30</div>
+          <div class="timeline-desc">ミケランジェロ広場へ専用バスで移動・フィレンツェ全景パノラマ記念撮影</div>
+        </li>
+        <li class="timeline-item">
+          <div class="timeline-time">09:30</div>
+          <div class="timeline-desc">フィレンツェ市内徒歩観光（ドゥオーモ、ジョットの鐘楼、シニョーリア広場、ヴェッキオ橋）</div>
+        </li>
+        <li class="timeline-item">
+          <div class="timeline-time">12:00</div>
+          <div class="timeline-desc">市内自由行動（オール・アンティコ・ヴィナイオの絶品パニーノまたは中央市場ランチ）</div>
+        </li>
+        <li class="timeline-item">
+          <div class="timeline-time">13:30</div>
+          <div class="timeline-desc">【選択1】フィレンツェ市内自由散策（ウフィツィ美術館、サンタマリアノヴェッラ薬局、革製品）\n【選択2】オプショナルツアー：世界遺産ピサの斜塔＆奇跡の広場半日観光</div>
+        </li>
+        <li class="timeline-item">
+          <div class="timeline-time">19:00</div>
+          <div class="timeline-desc">フィレンツェ名物Tボーンステーキのディナー（トラットリア・ザザ等）</div>
+        </li>
+        <li class="timeline-item">
+          <div class="timeline-time">21:30</div>
+          <div class="timeline-desc">フィレンツェのホテルへ戻り連泊休養</div>
+        </li>
+      </ul>
+    </section>
+    
   </main>
-  <script src="app.js" defer></script>
+  <!-- Bottom Tab Bar for iOS -->
+  <nav class="bottom-tab-bar">
+    <a href="index.html" class="tab-item active">
+      <span class="tab-icon">🏠</span>
+      <span class="tab-label">ホーム</span>
+    </a>
+    <a href="beginner-guide.html" class="tab-item">
+      <span class="tab-icon">🔰</span>
+      <span class="tab-label">初心者</span>
+    </a>
+    <a href="tour-map.html" class="tab-item">
+      <span class="tab-icon">🗺️</span>
+      <span class="tab-label">ルートMAP</span>
+    </a>
+    <a href="free-meal-guide.html" class="tab-item">
+      <span class="tab-icon">🍽️</span>
+      <span class="tab-label">グルメ</span>
+    </a>
+    <a href="souvenir-guide.html" class="tab-item">
+      <span class="tab-icon">🎁</span>
+      <span class="tab-label">お土産</span>
+    </a>
+    <a href="rome-free-day-guide.html" class="tab-item">
+      <span class="tab-icon">🎻</span>
+      <span class="tab-label">ローマ</span>
+    </a>
+  </nav>
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-credits">
+        <h4>🇮🇹 Kenta &amp; Megumi's Italian Honeymoon Portal</h4>
+        <p>HIS Tour OI-KMI2811 (2026/11/15 - 11/22) | Knowledge Partner: YouTube「イタリアガイドみめ (@mimeitalygaido)」</p>
+      </div>
+      <div class="footer-nav">
+        <a href="index.html">🏠 ホーム</a>
+        <a href="beginner-guide.html">🔰 初心者安心ガイド</a>
+        <a href="tour-map.html">🗺️ 全体ルートMAP</a>
+        <a href="free-meal-guide.html">🍽️ 自由食・グルメ</a>
+        <a href="souvenir-guide.html">🎁 お土産・買物</a>
+        <a href="rome-free-day-guide.html">🎻 ローマ自由行動</a>
+      </div>
+    </div>
+  </footer>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="app.js"></script>
 </body>
 </html>

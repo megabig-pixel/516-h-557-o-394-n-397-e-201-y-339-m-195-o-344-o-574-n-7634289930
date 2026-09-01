@@ -2,874 +2,151 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>ローマ終日自由行動＆教会音楽 完全攻略ガイド | イタリア新婚旅行8日間 しおり</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=no">
+  <title>ローマ終日自由行動＆教会音楽 完全攻略ガイド | イタリア新婚旅行8日間</title>
+  <meta name="description" content="合唱・音楽を愛するお二人のためのサンピエトロ夕のミサ聖歌隊合唱、カラヴァッジョ教会巡礼、3大モデルコース">
   <link rel="stylesheet" href="style.css">
-  <meta name="theme-color" content="#0071e3">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
 </head>
 <body>
-  <!-- Sticky Top Navbar -->
-  <header class="navbar">
-    <div class="navbar-brand">
-      <span>🇮🇹</span>
-      <span>Andiamo! イタリア8日間</span>
-      <span class="tag-tour">HIS OI-KMI2811</span>
-    </div>
-    <div class="navbar-actions">
-      <span class="badge" style="background: var(--pink-light); color: var(--pink);">💍 Kenta & Megumi</span>
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-title">
+        <span style="font-size: 1.5rem;">🇮🇹</span>
+        <div>
+          <h1>イタリア7都市周遊 8日間</h1>
+          <span class="brand-subtitle">HIS Tour OI-KMI2811 | Kenta &amp; Megumi Honeymoon</span>
+        </div>
+      </a>
+      <nav class="main-nav">
+        <a href="index.html" class="nav-link">🏠 ホーム</a> <a href="beginner-guide.html" class="nav-link">🔰 初心者安心ガイド</a> <a href="tour-map.html" class="nav-link">🗺️ 全体ルートMAP</a> <a href="free-meal-guide.html" class="nav-link">🍽️ 自由食・グルメ</a> <a href="souvenir-guide.html" class="nav-link">🎁 お土産・買物</a> <a href="rome-free-day-guide.html" class="nav-link active">🎻 ローマ自由行動</a>
+      </nav>
     </div>
   </header>
-
+  <!-- Day Switcher Bar -->
+  <div class="day-switcher-bar">
+    <div class="day-switcher-scroll">
+      <a href="day1.html" class="day-chip"><span>Day 1</span><small>11/15 (日)</small></a> <a href="day2.html" class="day-chip"><span>Day 2</span><small>11/16 (月)</small></a> <a href="day3.html" class="day-chip"><span>Day 3</span><small>11/17 (火)</small></a> <a href="day4.html" class="day-chip"><span>Day 4</span><small>11/18 (水)</small></a> <a href="day5.html" class="day-chip"><span>Day 5</span><small>11/19 (木)</small></a> <a href="day6.html" class="day-chip"><span>Day 6</span><small>11/20 (金)</small></a> <a href="day7.html" class="day-chip"><span>Day 7</span><small>11/21 (土)</small></a> <a href="day8.html" class="day-chip"><span>Day 8</span><small>11/22 (日)</small></a> <a href="beginner-guide.html" class="day-chip"><span>🔰 初心者</span><small>安心バイブル</small></a> <a href="rome-free-day-guide.html" class="day-chip active"><span>🎻 ローマ</span><small>教会音楽特集</small></a>
+    </div>
+  </div>
   <main class="container">
-    <div class="day-switcher">
-  <a href="day1.html" class="day-pill"><span>Day 1</span><small>11/15(日)</small></a>
-  <a href="day2.html" class="day-pill"><span>Day 2</span><small>11/16(月)</small></a>
-  <a href="day3.html" class="day-pill"><span>Day 3</span><small>11/17(火)</small></a>
-  <a href="day4.html" class="day-pill"><span>Day 4</span><small>11/18(水)</small></a>
-  <a href="day5.html" class="day-pill"><span>Day 5</span><small>11/19(木)</small></a>
-  <a href="day6.html" class="day-pill"><span>Day 6</span><small>11/20(金)</small></a>
-  <a href="day7.html" class="day-pill"><span>Day 7</span><small>11/21(土)</small></a>
-  <a href="day8.html" class="day-pill"><span>Day 8</span><small>11/22(日)</small></a>
-  <a href="rome-free-day-guide.html" class="day-pill active" style="min-width: 110px;"><span>🏛️ ローマ自由</span><small>特集ガイド</small></a>
-</div>
 
-    <!-- Hero Section -->
-    <div class="hero">
-      <div class="hero-honeymoon-badge">💍 新婚旅行 特別企画</div>
-      <div class="hero-day-number">ROMA FREE DAY & SACRED MUSIC GUIDE</div>
-      <h1 class="hero-title">ローマ終日自由行動＆教会音楽 完全攻略ガイド</h1>
-      <p class="hero-subtitle">バチカン美術館から古代遺跡、聖堂に響く聖歌隊のハーモニー、最高峰のカルボナーラまで！お二人の好みに合わせた3つのモデルコースと完全情報</p>
-      <div class="hero-tags">
-        <span class="hero-tag">🗺️ 3つのモデルコース</span>
-        <span class="hero-tag">🎨 美術館・遺跡 予約攻略</span>
-        <span class="hero-tag">🎼 教会音楽・合唱コンサート</span>
-        <span class="hero-tag">🍝 厳選グルメ＆ジェラート</span>
-        <span class="hero-tag">🛍️ 名品お土産スポット</span>
-        <span class="hero-tag">🚇 市内交通 Tap&Go</span>
+    <!-- Hero Header -->
+    <div class="hero-card" style="background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);">
+      <span class="hero-tag" style="background:#dbeafe; color:#1e40af;">🎻 音楽・合唱・美術 完全攻略</span>
+      <h2 class="hero-title">永遠の都ローマ 自由行動 ＆ 教会音楽ガイド</h2>
+      <p class="hero-subtitle">
+        合唱やクラシック音楽を愛する健太様・めぐみ様に贈る、<br>
+        パイプオルガンと聖歌隊合唱が響き渡る歴史的教会、カラヴァッジョの名画、美味しい下町グルメの3大モデルコース
+      </p>
+    </div>
+
+    <!-- Mime Rome Church & Safety Callout -->
+    <div class="mime-callout">
+      <div class="mime-header">
+        <div class="mime-title">
+          <span style="font-size: 1.5rem;">⛪</span>
+          <h3 style="margin:0;">【Mime直伝】ローマ教会巡り・音楽鑑賞 ＆ 安全ガイド</h3>
+        </div>
+        <span class="mime-badge">合唱愛好家必読</span>
+      </div>
+      <div class="mime-tips-grid">
+        <div class="mime-tip-card">
+          <h4>1. サン・ピエトロ大聖堂「夕のミサ（17:00）」</h4>
+          <p>毎日17:00から大聖堂最奥「司教座の祭壇」で行われるミサでは、伝統あるジュリア聖歌隊（Cappella Giulia）の美しいポリフォニー合唱と荘厳なオルガンが響き渡ります（誰でも参列無料）。</p>
+        </div>
+        <div class="mime-tip-card">
+          <h4>2. 教会入場時の服装ルール＆脱帽</h4>
+          <p>カトリックの神聖な祈りの場のため、肩や膝が出る服装は厳禁。入口で警備員に止められます。男性は帽子を脱ぐのが鉄則！</p>
+        </div>
+        <div class="mime-tip-card">
+          <h4>3. カラヴァッジョ名画の無料巡礼ルート</h4>
+          <p>サン・ルイジ・デイ・フランチェージ教会（『聖マタイの召命』三部作）など3箇所の教会で無料鑑賞可能（照明コイン機に€1〜2投入）。</p>
+        </div>
+        <div class="mime-tip-card">
+          <h4>4. 市内交通「Tap & Go（タッチ決済）」</h4>
+          <p>地下鉄やバスは改札機にVisa/Mastercardをタッチするだけで乗車可能（1回€1.50）。1人1枚の別々のカードが必要です。</p>
+        </div>
       </div>
     </div>
 
-    <!-- Quick Navigation Anchor Pills -->
-    <div style="display: flex; gap: 8px; overflow-x: auto; padding-bottom: 8px; margin-bottom: 20px; scrollbar-width: none;">
-      <a href="#model-courses" class="nav-chip" style="background: var(--card-bg); padding: 8px 14px; border-radius: 20px; font-size: 0.82rem; font-weight: 700; border: 1px solid var(--border); box-shadow: var(--shadow-sm); white-space: nowrap;">🗺️ 3大モデルコース</a>
-      <a href="#art-museums" class="nav-chip" style="background: var(--card-bg); padding: 8px 14px; border-radius: 20px; font-size: 0.82rem; font-weight: 700; border: 1px solid var(--border); box-shadow: var(--shadow-sm); white-space: nowrap;">🎨 美術館・遺跡</a>
-      <a href="#sacred-music" class="nav-chip" style="background: var(--card-bg); padding: 8px 14px; border-radius: 20px; font-size: 0.82rem; font-weight: 700; border: 1px solid var(--border); box-shadow: var(--shadow-sm); white-space: nowrap;">🎼 教会音楽・合唱</a>
-      <a href="#rome-dining" class="nav-chip" style="background: var(--card-bg); padding: 8px 14px; border-radius: 20px; font-size: 0.82rem; font-weight: 700; border: 1px solid var(--border); box-shadow: var(--shadow-sm); white-space: nowrap;">🍝 グルメ＆カフェ</a>
-      <a href="#rome-shopping" class="nav-chip" style="background: var(--card-bg); padding: 8px 14px; border-radius: 20px; font-size: 0.82rem; font-weight: 700; border: 1px solid var(--border); box-shadow: var(--shadow-sm); white-space: nowrap;">🛍️ お土産ショップ</a>
-      <a href="#transit-tips" class="nav-chip" style="background: var(--card-bg); padding: 8px 14px; border-radius: 20px; font-size: 0.82rem; font-weight: 700; border: 1px solid var(--border); box-shadow: var(--shadow-sm); white-space: nowrap;">🚇 交通・安全ガイド</a>
-    </div>
-
-    <!-- Honeymoon Feature Message -->
-    <div class="callout honeymoon">
-      <div class="callout-header">
-        <span>💍</span>
-        <span>合唱と音楽を愛するお二人のためのローマ自由時間</span>
-      </div>
-      <div class="callout-body">
-        ローマは世界最高峰のキリスト教典礼音楽とバロック芸術の聖地です。大聖堂や歴史的教会では、日常的に無料または手頃な価格で質の高い聖歌隊の合唱やパイプオルガンの響きを堪能できます。<br>
-        宿泊ホテルがテルミニ駅周辺であるため、地下鉄A線・B線を活用して効率よく移動できます。無理のないスケジュールで、お二人だけの特別なローマ時間をお過ごしください✨
-      </div>
-    </div>
-
-    <!-- SECTION 1: 3 Model Courses -->
-    <section id="model-courses" class="section">
+    <!-- 3 Model Courses -->
+    <section class="section">
       <div class="section-header">
-        <h2 class="section-title">
-          <span>🗺️</span>
-          <span>目的別！3つのローマ自由行動モデルコース</span>
-        </h2>
-        <span class="section-subtitle">お好みに合わせて選べる1日プラン</span>
+        <h2 class="section-title">🗺️ ローマ終日自由行動 3大モデルコース</h2>
       </div>
-
-      <!-- Course 1: Classic Highlights -->
-      <div class="card" style="border-left: 5px solid var(--primary); margin-bottom: 24px;">
-        <div class="card-body">
-          <div class="card-meta-tags">
-            <span class="tag tag-included">コース A</span>
-            <span class="tag tag-booking-req">OPツアー / 個人予約</span>
-          </div>
-          <h3 class="card-title" style="font-size: 1.25rem;">【王道ハイライト】古代ローマ＆バチカン満喫コース</h3>
-          <p class="card-desc">
-            初めてのローマで絶対に外せない世界遺産と名所を網羅した王道プラン。バチカンの至宝、パンテオン、トレビの泉、コロッセオ夜景を効率よく巡ります。
-          </p>
-
-          <div class="timeline" style="margin-top: 16px; margin-bottom: 8px;">
-            <div class="timeline-item">
-              <div class="timeline-dot highlight">08:30</div>
-              <div class="timeline-card">
-                <h4 class="timeline-title">サン・ピエトロ大聖堂（朝の静寂）</h4>
-                <p class="timeline-desc">朝早い時間帯は手荷物検査列が短く快適。ミケランジェロの『ピエタ像』をじっくり鑑賞。</p>
-              </div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-dot accent">09:30</div>
-              <div class="timeline-card">
-                <h4 class="timeline-title">バチカン美術館＆システィーナ礼拝堂（要予約/OP）</h4>
-                <p class="timeline-desc">ラファエロの間『アテネの学堂』、システィーナ礼拝堂『最後の審判』をじっくり見学（所要約3時間）。</p>
-              </div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-dot">13:00</div>
-              <div class="timeline-card">
-                <h4 class="timeline-title">ナヴォーナ広場周辺でランチ ＆ カフェ</h4>
-                <p class="timeline-desc">『オステリア・ダ・フォルトゥナータ』で手打ち生パスタランチ。食後は広場散策。</p>
-              </div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-dot">14:30</div>
-              <div class="timeline-card">
-                <h4 class="timeline-title">パンテオン（要予約） ➔ トレビの泉</h4>
-                <p class="timeline-desc">古代建築の奇跡パンテオンを見学後、徒歩でトレビの泉へ。愛のコイン投げ＆ジョリッティでジェラート。</p>
-              </div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-dot">17:00</div>
-              <div class="timeline-card">
-                <h4 class="timeline-title">スペイン広場 ＆ コンドッティ通りショッピング</h4>
-                <p class="timeline-desc">『ローマの休日』の階段前で記念撮影。周辺のブティックでお買い物。</p>
-              </div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-dot highlight">19:30</div>
-              <div class="timeline-card">
-                <h4 class="timeline-title">コロッセオ夜景ライトアップ ➔ トラステヴェレでディナー</h4>
-                <p class="timeline-desc">黄金色にライトアップされたコロッセオを眺め、下町トラステヴェレの『Da Enzo al 29』で絶品カルボナーラ！</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Course 2: Art & Sacred Music -->
-      <div class="card" style="border-left: 5px solid #af52de; margin-bottom: 24px;">
-        <div class="card-body">
-          <div class="card-meta-tags">
-            <span class="tag tag-optional">コース B</span>
-            <span class="tag tag-included">新婚旅行＆音楽好きおすすめ</span>
-          </div>
-          <h3 class="card-title" style="font-size: 1.25rem;">【アート＆教会音楽】ルネサンス・バロック至高のハネムーンコース</h3>
-          <p class="card-desc">
-            彫刻の至宝ボルゲーゼ美術館、無料で見られるカラヴァッジョの名画、そしてサン・ピエトロ大聖堂の夕のミサ聖歌隊合唱や夜の教会コンサートに浸る優雅なプラン。
-          </p>
-
-          <div class="timeline" style="margin-top: 16px; margin-bottom: 8px;">
-            <div class="timeline-item">
-              <div class="timeline-dot highlight">09:00</div>
-              <div class="timeline-card">
-                <h4 class="timeline-title">ボルゲーゼ美術館（完全事前予約制）</h4>
-                <p class="timeline-desc">ベルニーニの彫刻『アポロンとダフネ』『プロセルピナの略奪』を落ち着いた空間で鑑賞。</p>
-              </div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-dot">11:30</div>
-              <div class="timeline-card">
-                <h4 class="timeline-title">ピンチョの丘の展望テラス ➔ スペイン階段へ下る</h4>
-                <p class="timeline-desc">緑豊かなボルゲーゼ公園を散策し、ローマ旧市街を一望できるピンチョの丘からスペイン広場へ。</p>
-              </div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-dot">13:00</div>
-              <div class="timeline-card">
-                <h4 class="timeline-title">『Armando al Pantheon』で優雅なランチ（要予約）</h4>
-                <p class="timeline-desc">ミシュラン掲載の名店で洗練されたアマトリチャーナとトスカーナワイン。</p>
-              </div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-dot accent">14:30</div>
-              <div class="timeline-card">
-                <h4 class="timeline-title">サン・ルイジ教会 ➔ サンティニャツィオ教会（だまし絵天井画）</h4>
-                <p class="timeline-desc">カラヴァッジョの聖マタイ三部作を無料鑑賞後、だまし絵天井画が有名なサンティニャツィオ教会へ。</p>
-              </div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-dot highlight">17:00</div>
-              <div class="timeline-card">
-                <h4 class="timeline-title">サン・ピエトロ大聖堂「夕のミサ」（カペラ・ジュリア合唱団）</h4>
-                <p class="timeline-desc">世界最高峰の音響空間に響き渡る聖歌隊の典礼音楽を無料鑑賞。合唱愛好家に感動のひととき。</p>
-              </div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-dot accent">20:00</div>
-              <div class="timeline-card">
-                <h4 class="timeline-title">ローマ歌劇場 または セント・ポールズ教会コンサート</h4>
-                <p class="timeline-desc">オペラやヴィヴァルディ『四季』などの室内楽コンサートを鑑賞。テルミニ駅周辺でロマンチックな夜を締めくくり。</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Course 3: Relaxed Walk & Gourmet -->
-      <div class="card" style="border-left: 5px solid var(--accent); margin-bottom: 24px;">
-        <div class="card-body">
-          <div class="card-meta-tags">
-            <span class="tag tag-free">コース C</span>
-            <span class="tag tag-included">ゆったり美食・お土産</span>
-          </div>
-          <h3 class="card-title" style="font-size: 1.25rem;">【ゆったり散策＆グルメ・ショッピング】下町情緒と美食探訪コース</h3>
-          <p class="card-desc">
-            朝市から始まり、映画のロケ地、手打ちパスタ、老舗カフェ、デパートの屋上テラスを巡る、時間に縛られないリラックスした大人のローマ散策プラン。
-          </p>
-
-          <div class="timeline" style="margin-top: 16px; margin-bottom: 8px;">
-            <div class="timeline-item">
-              <div class="timeline-dot">09:00</div>
-              <div class="timeline-card">
-                <h4 class="timeline-title">カンポ・デ・フィオーリの青空朝市</h4>
-                <p class="timeline-desc">色とりどりの野菜、フルーツ、スパイス、オリーブオイルが並ぶ下町の活気ある市場を散策。</p>
-              </div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-dot">10:30</div>
-              <div class="timeline-card">
-                <h4 class="timeline-title">真実の口（サンタ・マリア・イン・コスメディン教会）</h4>
-                <p class="timeline-desc">『ローマの休日』でおなじみのレリーフに手を入れてツーショット撮影。愛の守護聖人バレンタインの祭壇へ。</p>
-              </div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-dot highlight">12:15</div>
-              <div class="timeline-card">
-                <h4 class="timeline-title">『Roscioli』で最高峰のカルボナーラランチ（要予約）</h4>
-                <p class="timeline-desc">厳選生ハム、ブッラータチーズ、ローマ一と評される濃厚カルボナーラに舌鼓。</p>
-              </div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-dot">14:00</div>
-              <div class="timeline-card">
-                <h4 class="timeline-title">サンタンジェロ城の展望テラス</h4>
-                <p class="timeline-desc">聖天使橋を渡り、城上の屋上テラスからローマ市街とバチカンのパノラマを展望。</p>
-              </div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-dot">15:30</div>
-              <div class="timeline-card">
-                <h4 class="timeline-title">サンテウスタキオでグラン・カフェ ＆ ポンピでティラミス</h4>
-                <p class="timeline-desc">薪焙煎の泡立ちエスプレッソと、スペイン広場近くのポンピで名物ティラミスをテイクアウト。</p>
-              </div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-dot accent">17:00</div>
-              <div class="timeline-card">
-                <h4 class="timeline-title">リナシェンテ（屋上テラス＆古代遺跡）＆ カストローニでお買い物</h4>
-                <p class="timeline-desc">地下の古代水道遺跡を見学し、最上階のテラスでアペリティーボ。カストローニでコーヒー豆とお土産を購入。</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Mime-san Rome Church & Safety Handbook -->
-    <section class="section" style="margin-bottom: 28px;">
-      <div class="mime-callout" style="background:#fffaf0; border:2px solid #fdba74; border-left:8px solid #ea580c; border-radius:var(--radius-lg); padding:22px;">
-        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; margin-bottom:12px;">
-          <h3 style="font-size:1.25rem; font-weight:800; color:#c2410c; margin:0; display:flex; align-items:center; gap:8px;">
-            <span>🎥</span> イタリアガイドみめ直伝！ローマ教会巡り・音楽鑑賞 ＆ 安全ガイド
-          </h3>
-          <span class="mime-badge">音楽・合唱愛好家必読</span>
-        </div>
-
-        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:14px; margin-top:14px;">
-          
-          <div style="background:#ffffff; padding:14px; border-radius:var(--radius-md); border:1px solid #fed7aa;">
-            <strong style="color:#c2410c; font-size:0.95rem;">1. サン・ピエトロ大聖堂「夕のミサ（17:00）」</strong>
-            <p style="font-size:0.83rem; color:#431407; margin-top:4px; line-height:1.5;">
-              毎日17:00（日祝は10:30等）から大聖堂最奥の「司教座の祭壇（Cattedra di San Pietro）」で行われるミサでは、伝統あるジュリア聖歌隊（Cappella Giulia）の美しいポリフォニー合唱と荘厳なパイプオルガンが響き渡ります。信者でなくても誰でも無料で参列・拝聴できます（16:30頃に祭壇前の着席エリアへ）。
-            </p>
-          </div>
-
-          <div style="background:#ffffff; padding:14px; border-radius:var(--radius-md); border:1px solid #fed7aa;">
-            <strong style="color:#c2410c; font-size:0.95rem;">2. 教会入場時の服装ルール＆マナー</strong>
-            <p style="font-size:0.83rem; color:#431407; margin-top:4px; line-height:1.5;">
-              カトリックの神聖な祈りの場のため、肩が出るノースリーブや膝上ショートパンツ・ミニスカートは厳禁です。入口で警備員に止められます。男性は帽子を脱ぐのが鉄則。また、教会内でのフラッシュ撮影や通話、ミサ中の観光徘徊は慎みましょう。
-            </p>
-          </div>
-
-          <div style="background:#ffffff; padding:14px; border-radius:var(--radius-md); border:1px solid #fed7aa;">
-            <strong style="color:#c2410c; font-size:0.95rem;">3. カラヴァッジョ名画の無料巡礼ルート</strong>
-            <p style="font-size:0.83rem; color:#431407; margin-top:4px; line-height:1.5;">
-              ローマの教会には美術館級のカラヴァッジョ原画が無料で鑑賞できるスポットが3箇所あります：
-              <br>① <strong>サン・ルイジ・デイ・フランチェージ教会</strong>：『聖マタイの召命』三部作
-              <br>② <strong>サンタゴスティーノ教会</strong>：『ロレートの聖母』
-              <br>③ <strong>サンタ・マリア・デル・ポポロ教会</strong>：『聖ペテロの磔刑』『聖パウロの回心』
-              <br>※祭壇横の照明コイン機に€1〜2を入れると絵画が明るくライトアップされます！
-            </p>
-          </div>
-
-          <div style="background:#ffffff; padding:14px; border-radius:var(--radius-md); border:1px solid #fed7aa;">
-            <strong style="color:#c2410c; font-size:0.95rem;">4. 市内交通「Tap & Go（タッチ決済）」の乗り方</strong>
-            <p style="font-size:0.83rem; color:#431407; margin-top:4px; line-height:1.5;">
-              地下鉄（Metro）やバスは、改札や車内の黄色いリーダーにVisa/Mastercardのタッチ決済（Apple Pay対応）をピッとタッチするだけで乗車可能（1回€1.50 / 100分間有効）。切符売り場に並ぶ必要がありません。※バス車内では乗車直後に必ずタッチしましょう。
-            </p>
-          </div>
-
-          <div style="background:#ffffff; padding:14px; border-radius:var(--radius-md); border:1px solid #fed7aa; border-left:4px solid #dc2626;">
-            <strong style="color:#dc2626; font-size:0.95rem;">5. ローマの要注意エリア＆スリ撃退法</strong>
-            <p style="font-size:0.83rem; color:#7f1d1d; margin-top:4px; line-height:1.5;">
-              テルミニ駅構内、地下鉄車内、バチカン行き「64番バス」、コロッセオ・トレビの泉周辺はスリ集団の巣窟。乗降時の押し合い、赤ちゃんを抱いた女性グループ、ミサンガ売りには目を合わせず「No, grazie!」と毅然と断り、リュックは必ず体の前で抱えてください。
-            </p>
-          </div>
-
-          <div style="background:#ffffff; padding:14px; border-radius:var(--radius-md); border:1px solid #fed7aa;">
-            <strong style="color:#c2410c; font-size:0.95rem;">6. 水飲み場「ナゾーネ」＆トイレ対策</strong>
-            <p style="font-size:0.83rem; color:#431407; margin-top:4px; line-height:1.5;">
-              ローマ市内には約2,500箇所の「ナゾーネ（Nasone）」があり、水筒持参で冷たい天然水を無料で補給できます。公衆トイレは少ないため、バールでエスプレッソ（€1.2〜1.5）を飲んだ際に「Posso usare il bagno?（トイレをお借りできますか？）」とレシートを提示して利用するのがイタリア流のスマートな方法です。
-            </p>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-
-    <!-- SECTION 2: Art & Museum Guide -->
-    <section id="art-museums" class="section">
-      <div class="section-header">
-        <h2 class="section-title">
-          <span>🎨</span>
-          <span>主要美術館・古代遺跡の予約＆見どころ完全攻略</span>
-        </h2>
-        <span class="section-subtitle">予約必須スポット・入場料・回り方のコツ</span>
-      </div>
-
-      <div class="grid-2">
-        <!-- Spot 1: Vatican Museums -->
+      <div class="cards-grid">
         <div class="spot-card">
-          <div class="card-img-wrap">
-            <img src="https://images.unsplash.com/photo-1568667256549-094345857637?w=800&auto=format&fit=crop&q=80" alt="バチカン美術館システィーナ礼拝堂" loading="lazy">
-            <span class="card-badge-top"><span class="badge" style="background: #ffffff; color: var(--primary);">🇻🇦 世界遺産</span></span>
-            <span class="card-tag-top-right">要事前予約</span>
-          </div>
-          <div class="card-body">
-            <h3 class="card-title">バチカン美術館 ＆ システィーナ礼拝堂</h3>
-            <p class="card-subtitle">Musei Vaticani & Cappella Sistina</p>
-            <p class="card-desc">
-              全長7kmに及ぶ展示室。ラファエロの間『アテネの学堂』、システィーナ礼拝堂のミケランジェロ天井画『天地創造』『最後の審判』、地図のギャラリーなど必見。
-            </p>
-            <div class="card-highlight-info">
-              <div class="card-highlight-row">
-                <span class="card-highlight-label">入場料:</span>
-                <span class="card-highlight-val">€20 + 予約手数料€5（公式サイトにて要予約）</span>
-              </div>
-              <div class="card-highlight-row">
-                <span class="card-highlight-label">最寄駅:</span>
-                <span class="card-highlight-val">地下鉄A線「Ottaviano駅」徒歩約8分</span>
-              </div>
-            </div>
-            <div class="card-actions">
-              <a href="https://maps.google.com/?q=Vatican+Museums+Rome" target="_blank" rel="noopener" class="btn btn-maps">🗺️ Google Maps</a>
-              <a href="https://www.museivaticani.va/" target="_blank" rel="noopener" class="btn btn-web">🌐 公式予約サイト</a>
-            </div>
+          <div class="spot-body">
+            <span class="hero-tag" style="background:#3b82f6; color:#fff;">コース A</span>
+            <h3 class="spot-name-ja">王道ローマ ハイライト満喫コース</h3>
+            <p class="spot-desc">テルミニ駅 ➔ コロッセオ ➔ フォロ・ロマーノ ➔ 真実の口 ➔ パンテオン ➔ トレビの泉 ➔ スペイン広場 ➔ ポンピのティラミス</p>
           </div>
         </div>
-
-        <!-- Spot 2: Borghese Gallery -->
         <div class="spot-card">
-          <div class="card-img-wrap">
-            <img src="https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?w=800&auto=format&fit=crop&q=80" alt="ボルゲーゼ美術館の大理石彫刻" loading="lazy">
-            <span class="card-badge-top"><span class="badge" style="background: #ffffff; color: #af52de;">💎 彫刻の至宝</span></span>
-            <span class="card-tag-top-right">2時間入替制</span>
-          </div>
-          <div class="card-body">
-            <h3 class="card-title">ボルゲーゼ美術館 (Galleria Borghese)</h3>
-            <p class="card-subtitle">バロック彫刻と絵画の最高峰コレクション</p>
-            <p class="card-desc">
-              ベルニーニの代表作『アポロンとダフネ』『プロセルピナの略奪』『ダヴィデ』、カラヴァッジョの名画群が収蔵。完全日時指定予約制のため混雑がなく静かに鑑賞できます。
-            </p>
-            <div class="card-highlight-info">
-              <div class="card-highlight-row">
-                <span class="card-highlight-label">入場料:</span>
-                <span class="card-highlight-val">€13 + 予約手数料€2</span>
-              </div>
-              <div class="card-highlight-row">
-                <span class="card-highlight-label">注意点:</span>
-                <span class="card-highlight-val">予約時間の30分前までにチケット引換・手荷物預けが必要</span>
-              </div>
-            </div>
-            <div class="card-actions">
-              <a href="https://maps.google.com/?q=Galleria+Borghese+Rome" target="_blank" rel="noopener" class="btn btn-maps">🗺️ Google Maps</a>
-              <a href="https://galleriaborghese.beniculturali.it/" target="_blank" rel="noopener" class="btn btn-web">🌐 公式予約サイト</a>
-            </div>
+          <div class="spot-body">
+            <span class="hero-tag" style="background:#9333ea; color:#fff;">コース B</span>
+            <h3 class="spot-name-ja">教会音楽 ＆ カラヴァッジョ芸術コース</h3>
+            <p class="spot-desc">バチカン美術館 ➔ サン・ピエトロ大聖堂（夕のミサ合唱拝聴） ➔ サン・ルイジ教会（カラヴァッジョ） ➔ サンティニャツィオ教会（だまし絵天井画）</p>
           </div>
         </div>
-
-        <!-- Spot 3: Colosseum & Roman Forum -->
         <div class="spot-card">
-          <div class="card-img-wrap">
-            <img src="https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=800&auto=format&fit=crop&q=80" alt="古代ローマのコロッセオとフォロ・ロマーノ" loading="lazy">
-            <span class="card-badge-top"><span class="badge" style="background: #ffffff; color: var(--danger);">🏛️ 古代帝国</span></span>
-            <span class="card-tag-top-right">要予約</span>
-          </div>
-          <div class="card-body">
-            <h3 class="card-title">コロッセオ ＆ フォロ・ロマーノ ＆ パラティーノの丘</h3>
-            <p class="card-subtitle">Colosseo, Foro Romano e Palatino</p>
-            <p class="card-desc">
-              2000年の歴史が刻まれた円形闘技場コロッセオと、古代ローマ帝国の政治・経済・宗教の中心地フォロ・ロマーノ。共通チケットで古代の壮大なロマンを満喫できます。
-            </p>
-            <div class="card-highlight-info">
-              <div class="card-highlight-row">
-                <span class="card-highlight-label">予約方法:</span>
-                <span class="card-highlight-val">公式チケットサイト「Colosseo.it」にて日時指定予約（€18〜）</span>
-              </div>
-              <div class="card-highlight-row">
-                <span class="card-highlight-label">アクセス:</span>
-                <span class="card-highlight-val">地下鉄B線「Colosseo駅」直結</span>
-              </div>
-            </div>
-            <div class="card-actions">
-              <a href="https://maps.google.com/?q=Colosseum+Rome" target="_blank" rel="noopener" class="btn btn-maps">🗺️ Google Maps</a>
-              <a href="https://colosseo.it/" target="_blank" rel="noopener" class="btn btn-web">🌐 公式予約サイト</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Spot 4: Pantheon -->
-        <div class="spot-card">
-          <div class="card-img-wrap">
-            <img src="https://images.unsplash.com/photo-1588614959060-4d144f28b207?w=800&auto=format&fit=crop&q=80" alt="ローマ パンテオンの神殿外観と円形天窓" loading="lazy">
-            <span class="card-badge-top"><span class="badge" style="background: #ffffff; color: var(--accent);">☀️ 神秘の光</span></span>
-            <span class="card-tag-top-right">要予約 (€5)</span>
-          </div>
-          <div class="card-body">
-            <h3 class="card-title">パンテオン (万神殿)</h3>
-            <p class="card-subtitle">Pantheon (Basilica di Santa Maria ad Martyres)</p>
-            <p class="card-desc">
-              古代コンクリート建築の最高峰。天井中央の天窓（オクルス）から差し込む光の筋、巨匠ラファエロの墓所。
-            </p>
-            <div class="card-highlight-info">
-              <div class="card-highlight-row">
-                <span class="card-highlight-label">入場料:</span>
-                <span class="card-highlight-val">€5.00（公式ポータルよりオンライン事前予約がスムーズ）</span>
-              </div>
-              <div class="card-highlight-row">
-                <span class="card-highlight-label">開館時間:</span>
-                <span class="card-highlight-val">09:00〜19:00</span>
-              </div>
-            </div>
-            <div class="card-actions">
-              <a href="https://maps.google.com/?q=Pantheon+Rome" target="_blank" rel="noopener" class="btn btn-maps">🗺️ Google Maps</a>
-              <a href="https://pantheonroma.com/" target="_blank" rel="noopener" class="btn btn-outline">🌐 公式サイト</a>
-            </div>
+          <div class="spot-body">
+            <span class="hero-tag" style="background:#ea580c; color:#fff;">コース C</span>
+            <h3 class="spot-name-ja">下町トラステヴェレ 美食＆散策コース</h3>
+            <p class="spot-desc">ナヴォーナ広場 ➔ カンポ・デ・フィオーリ朝市 ➔ トラステヴェレ散策 ➔ ダ・エンツォで本場カルボナーラディナー ➔ ジャニコロの丘夜景</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SECTION 3: Sacred Music & Choral Concerts -->
-    <section id="sacred-music" class="section">
-      <div class="section-header">
-        <h2 class="section-title">
-          <span>🎼</span>
-          <span>教会音楽・合唱コンサート＆聖堂音響ガイド</span>
-        </h2>
-        <span class="section-subtitle">ローマで体感する聖なる歌声と響き</span>
-      </div>
-
-      <div class="grid-2">
-        <!-- Music Spot 1: St. Peter's Evening Mass -->
-        <div class="card">
-          <div class="card-img-wrap">
-            <img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?w=800&auto=format&fit=crop&q=80" alt="サン・ピエトロ大聖堂の荘厳な祭壇" loading="lazy">
-            <span class="card-badge-top"><span class="badge" style="background: #ffffff; color: var(--primary);">✨ 毎日17:00</span></span>
-            <span class="card-tag-top-right">入場無料</span>
-          </div>
-          <div class="card-body">
-            <div class="card-meta-tags">
-              <span class="tag tag-included">毎日開催・入場無料</span>
-              <span class="tag tag-optional">カペラ・ジュリア聖歌隊</span>
-            </div>
-            <h3 class="card-title">サン・ピエトロ大聖堂「夕のミサ」</h3>
-            <p class="card-subtitle">カテドラの祭壇にて毎日 17:00〜</p>
-            <p class="card-desc">
-              コンサート形式ではありませんが、世界最高峰の教会音響と伝統ある専属聖歌隊「カペラ・ジュリア」の荘厳なラテン語典礼合唱を無料で体感できます。巨大クーポラの下に響く歌声は鳥肌が立つ美しさです。
-            </p>
-            <div class="card-highlight-info">
-              <div class="card-highlight-row">
-                <span class="card-highlight-label">時間:</span>
-                <span class="card-highlight-val">毎日 17:00〜（16:45頃から着席推奨）</span>
-              </div>
-              <div class="card-highlight-row">
-                <span class="card-highlight-label">場所:</span>
-                <span class="card-highlight-val">サン・ピエトロ大聖堂 奥・カテドラの祭壇（主祭壇奥）</span>
-              </div>
-            </div>
-            <div class="card-actions">
-              <a href="https://maps.google.com/?q=St.+Peter%27s+Basilica+Rome" target="_blank" rel="noopener" class="btn btn-maps">🗺️ Google Maps</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Music Spot 2: Sant'Ignazio Church -->
-        <div class="card">
-          <div class="card-img-wrap">
-            <img src="https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?w=800&auto=format&fit=crop&q=80" alt="サンティニャツィオ教会のだまし絵天井画" loading="lazy">
-            <span class="card-badge-top"><span class="badge" style="background: #ffffff; color: #af52de;">🎨 だまし絵天井画</span></span>
-            <span class="card-tag-top-right">無料コンサート頻発</span>
-          </div>
-          <div class="card-body">
-            <div class="card-meta-tags">
-              <span class="tag tag-free">無料コンサート頻発</span>
-              <span class="tag tag-included">だまし絵天井画</span>
-            </div>
-            <h3 class="card-title">サンティニャツィオ教会 (だまし絵天井画)</h3>
-            <p class="card-subtitle">海外合唱団・学生オーケストラの定番聖堂</p>
-            <p class="card-desc">
-              パンテオン近くにあり、アンドレア・ポッツォによる遠視画法のだまし絵天井画で有名。アメリカやヨーロッパ各国の大学合唱団や聖歌隊による無料の夜間コンサート（20:30頃〜）が頻繁に開催されます。
-            </p>
-            <div class="card-highlight-info">
-              <div class="card-highlight-row">
-                <span class="card-highlight-label">確認方法:</span>
-                <span class="card-highlight-val">昼間に教会入口前の案内ポスターや掲示板をチェック</span>
-              </div>
-              <div class="card-highlight-row">
-                <span class="card-highlight-label">音響:</span>
-                <span class="card-highlight-val">残響約4〜5秒の豊かなリバーブが広がる空間</span>
-              </div>
-            </div>
-            <div class="card-actions">
-              <a href="https://maps.google.com/?q=Chiesa+di+Sant%27Ignazio+di+Loyola+Rome" target="_blank" rel="noopener" class="btn btn-maps">🗺️ Google Maps</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Music Spot 3: Teatro dell'Opera di Roma -->
-        <div class="card">
-          <div class="card-img-wrap">
-            <img src="https://images.unsplash.com/photo-1505761671935-60e5b5d249b5?w=800&auto=format&fit=crop&q=80" alt="ローマ歌劇場の重厚な外観と客席" loading="lazy">
-            <span class="card-badge-top"><span class="badge" style="background: #ffffff; color: var(--danger);">🎭 オペラの殿堂</span></span>
-            <span class="card-tag-top-right">テルミニ駅徒歩8分</span>
-          </div>
-          <div class="card-body">
-            <div class="card-meta-tags">
-              <span class="tag tag-booking-req">テルミニ駅徒歩8分</span>
-              <span class="tag tag-included">名門オペラ座</span>
-            </div>
-            <h3 class="card-title">ローマ歌劇場 (Teatro dell'Opera di Roma)</h3>
-            <p class="card-subtitle">名門歌劇場で本場オペラ＆クラシック鑑賞</p>
-            <p class="card-desc">
-              1880年開場の伝統ある歌劇場。11月は新シーズン開幕の時期で、オペラやバレエ公演が上演されます。少しドレスアップして新婚旅行の特別な夜を過ごすのに最高の舞台です。
-            </p>
-            <div class="card-highlight-info">
-              <div class="card-highlight-row">
-                <span class="card-highlight-label">アクセス:</span>
-                <span class="card-highlight-val">Piazza Beniamino Gigli 7（テルミニ駅南西徒歩8分）</span>
-              </div>
-              <div class="card-highlight-row">
-                <span class="card-highlight-label">チケット:</span>
-                <span class="card-highlight-val">公式サイトよりオンライン購入可能（€30〜）</span>
-              </div>
-            </div>
-            <div class="card-actions">
-              <a href="https://maps.google.com/?q=Teatro+dell%27Opera+di+Roma" target="_blank" rel="noopener" class="btn btn-maps">🗺️ Google Maps</a>
-              <a href="https://www.operaroma.it/" target="_blank" rel="noopener" class="btn btn-outline">🌐 歌劇場公式サイト</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Music Spot 4: St. Paul's Within the Walls -->
-        <div class="card">
-          <div class="card-img-wrap">
-            <img src="https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?w=800&auto=format&fit=crop&q=80" alt="セント・ポールズ・ウィズイン・ザ・ウォールズ教会" loading="lazy">
-            <span class="card-badge-top"><span class="badge" style="background: #ffffff; color: var(--success);">🎻 室内楽コンサート</span></span>
-            <span class="card-tag-top-right">当日券あり</span>
-          </div>
-          <div class="card-body">
-            <div class="card-meta-tags">
-              <span class="tag tag-free">ナツィオナーレ通り沿い</span>
-              <span class="tag tag-included">気軽な教会コンサート</span>
-            </div>
-            <h3 class="card-title">セント・ポールズ・ウィズイン・ザ・ウォールズ教会</h3>
-            <p class="card-subtitle">ヴィヴァルディ『四季』や三大テノールの夕べ</p>
-            <p class="card-desc">
-              テルミニ駅から徒歩10分。ネオゴシック様式の美しい教会内で、プロの室内アンサンブルによるヴィヴァルディ『四季』やオペラアリアのコンサートがほぼ毎晩開催。ドレスコードもカジュアルで当日券も手に入りやすいです。
-            </p>
-            <div class="card-highlight-info">
-              <div class="card-highlight-row">
-                <span class="card-highlight-label">開演時間:</span>
-                <span class="card-highlight-val">20:30〜（所要約75〜90分）</span>
-              </div>
-              <div class="card-highlight-row">
-                <span class="card-highlight-label">料金目安:</span>
-                <span class="card-highlight-val">€25〜€45（教会入口またはWebで購入可）</span>
-              </div>
-            </div>
-            <div class="card-actions">
-              <a href="https://maps.google.com/?q=St.+Paul%27s+Within+the+Walls+Rome" target="_blank" rel="noopener" class="btn btn-maps">🗺️ Google Maps</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 4: Rome Dining & Cafes -->
-    <section id="rome-dining" class="section">
-      <div class="section-header">
-        <h2 class="section-title">
-          <span>🍝</span>
-          <span>ローマ厳選レストラン＆カフェ・ジェラート</span>
-        </h2>
-        <span class="section-subtitle">自由行動で立ち寄りたい名店リスト</span>
-      </div>
-
-      <div class="grid-3">
-        <!-- Dining 1: Roscioli -->
-        <div class="restaurant-card">
-          <div class="card-img-wrap">
-            <img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=800&auto=format&fit=crop&q=80" alt="ロッショーリの生ハムとカルボナーラ" loading="lazy">
-            <span class="card-badge-top"><span class="badge" style="background: #ffffff; color: var(--danger);">🏆 ローマ最高峰</span></span>
-          </div>
-          <div class="card-body">
-            <span class="tag tag-booking-req">要予約</span>
-            <h3 class="card-title">Roscioli Salumeria</h3>
-            <p class="card-desc">最高峰カルボナーラとブッラータチーズ、切り立て生ハムの殿堂。</p>
-            <p style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 8px;">予算: €40〜€70 / カンポ・デ・フィオーリ近く</p>
-            <a href="https://maps.google.com/?q=Roscioli+Salumeria+con+Cucina+Rome" target="_blank" rel="noopener" class="btn btn-sm btn-maps">🗺️ Maps</a>
-          </div>
-        </div>
-
-        <!-- Dining 2: Armando -->
-        <div class="restaurant-card">
-          <div class="card-img-wrap">
-            <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800&auto=format&fit=crop&q=80" alt="アルマンド・アル・パンテオンの料理" loading="lazy">
-            <span class="card-badge-top"><span class="badge" style="background: #ffffff; color: var(--primary);">⭐ ミシュラン掲載</span></span>
-          </div>
-          <div class="card-body">
-            <span class="tag tag-booking-req">要予約</span>
-            <h3 class="card-title">Armando al Pantheon</h3>
-            <p class="card-desc">1961年創業。パンテオン至近の伝統ローマ料理ミシュラン掲載店。</p>
-            <p style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 8px;">予算: €35〜€55 / パンテオン徒歩1分</p>
-            <a href="https://maps.google.com/?q=Armando+al+Pantheon+Rome" target="_blank" rel="noopener" class="btn btn-sm btn-maps">🗺️ Maps</a>
-          </div>
-        </div>
-
-        <!-- Dining 3: Fortunata -->
-        <div class="restaurant-card">
-          <div class="card-img-wrap">
-            <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&auto=format&fit=crop&q=80" alt="オステリア・ダ・フォルトゥナータの手打ちパスタ" loading="lazy">
-            <span class="card-badge-top"><span class="badge" style="background: #ffffff; color: var(--success);">🍝 手打ちパスタ</span></span>
-          </div>
-          <div class="card-body">
-            <span class="tag tag-booking-no">予約不可・並び</span>
-            <h3 class="card-title">Osteria da Fortunata</h3>
-            <p class="card-desc">店先でマンマが手打ちするモチモチ生パスタの超人気店。</p>
-            <p style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 8px;">予算: €20〜€35 / カンポ・デ・フィオーリ</p>
-            <a href="https://maps.google.com/?q=Osteria+da+Fortunata+Rome" target="_blank" rel="noopener" class="btn btn-sm btn-maps">🗺️ Maps</a>
-          </div>
-        </div>
-
-        <!-- Dining 4: Da Enzo -->
-        <div class="restaurant-card">
-          <div class="card-img-wrap">
-            <img src="https://images.unsplash.com/photo-1612874742237-6526221588e3?w=800&auto=format&fit=crop&q=80" alt="ダ・エンツォの絶品カルボナーラ" loading="lazy">
-            <span class="card-badge-top"><span class="badge" style="background: #ffffff; color: var(--danger);">🔥 トラステヴェレ</span></span>
-          </div>
-          <div class="card-body">
-            <span class="tag tag-booking-no">予約不可</span>
-            <h3 class="card-title">Trattoria Da Enzo al 29</h3>
-            <p class="card-desc">トラステヴェレの路地に佇むローマ屈指のカルボナーラ・カチョエペペ。</p>
-            <p style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 8px;">予算: €25〜€40 / トラステヴェレ</p>
-            <a href="https://maps.google.com/?q=Trattoria+Da+Enzo+al+29+Rome" target="_blank" rel="noopener" class="btn btn-sm btn-maps">🗺️ Maps</a>
-          </div>
-        </div>
-
-        <!-- Dining 5: Pinsere -->
-        <div class="restaurant-card">
-          <div class="card-img-wrap">
-            <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=800&auto=format&fit=crop&q=80" alt="ピンセーレの古代ローマ風ピンサ" loading="lazy">
-            <span class="card-badge-top"><span class="badge" style="background: #ffffff; color: var(--success);">🍕 ピンサ</span></span>
-          </div>
-          <div class="card-body">
-            <span class="tag tag-booking-no">テイクアウト可</span>
-            <h3 class="card-title">Pinsere (ピンサ専門店)</h3>
-            <p class="card-desc">サクふわ古代ローマ風ピザ。ホテル持ち帰りにも最適。</p>
-            <p style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 8px;">予算: €6〜€12 / テルミニ駅周辺</p>
-            <a href="https://maps.google.com/?q=Pinsere+Roma" target="_blank" rel="noopener" class="btn btn-sm btn-maps">🗺️ Maps</a>
-          </div>
-        </div>
-
-        <!-- Dining 6: Giolitti -->
-        <div class="restaurant-card">
-          <div class="card-img-wrap">
-            <img src="https://images.unsplash.com/photo-1501443762994-82bd5dace89a?w=800&auto=format&fit=crop&q=80" alt="ジョリッティのジェラート" loading="lazy">
-            <span class="card-badge-top"><span class="badge" style="background: #ffffff; color: var(--accent);">🍨 王室御用達</span></span>
-          </div>
-          <div class="card-body">
-            <span class="tag tag-free">スイーツ</span>
-            <h3 class="card-title">Giolitti & Frigidarium</h3>
-            <p class="card-desc">王室御用達老舗ジョリッティ＆チョコがけフリジダリウム。</p>
-            <p style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 8px;">予算: €3〜€6 / パンテオン・ナヴォーナ周辺</p>
-            <a href="https://maps.google.com/?q=Giolitti+Rome" target="_blank" rel="noopener" class="btn btn-sm btn-maps">🗺️ Maps</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 5: Shopping & Souvenirs -->
-    <section id="rome-shopping" class="section">
-      <div class="section-header">
-        <h2 class="section-title">
-          <span>🛍️</span>
-          <span>ローマお土産ショッピングスポット</span>
-        </h2>
-        <span class="section-subtitle">大型食材店・王室御用達チョコ・老舗食料品店</span>
-      </div>
-
-      <div class="grid-2">
-        <div class="souvenir-card">
-          <div class="card-img-wrap">
-            <img src="https://images.unsplash.com/photo-1578916171728-46686eac8d58?w=800&auto=format&fit=crop&q=80" alt="カストローニの輸入食材とコーヒー豆" loading="lazy">
-            <span class="card-badge-top"><span class="badge" style="background: #ffffff; color: var(--primary);">☕ 老舗食料品</span></span>
-          </div>
-          <div class="card-body">
-            <h3 class="card-title">Castroni (カストローニ ナツィオナーレ店)</h3>
-            <p class="card-desc">自社焙煎エスプレッソ豆、トリュフペースト、高級オリーブオイル、リモンチェッロ。</p>
-            <div class="card-actions">
-              <a href="https://maps.google.com/?q=Castroni+Via+Nazionale+Rome" target="_blank" rel="noopener" class="btn btn-maps">🗺️ Google Maps</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="souvenir-card">
-          <div class="card-img-wrap">
-            <img src="https://images.unsplash.com/photo-1534723452862-4c874018d66d?w=800&auto=format&fit=crop&q=80" alt="イータリー ローマの食材モール" loading="lazy">
-            <span class="card-badge-top"><span class="badge" style="background: #ffffff; color: var(--primary);">🛒 4階建モール</span></span>
-          </div>
-          <div class="card-body">
-            <h3 class="card-title">Eataly Roma (イータリー ローマ旗艦店)</h3>
-            <p class="card-desc">イタリア全土の厳選チーズ、ワイン、パスタが揃う巨大フードデパート。</p>
-            <div class="card-actions">
-              <a href="https://maps.google.com/?q=Eataly+Roma+Ostiense" target="_blank" rel="noopener" class="btn btn-maps">🗺️ Google Maps</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="souvenir-card">
-          <div class="card-img-wrap">
-            <img src="https://images.unsplash.com/photo-1549007994-cb92caebd54b?w=800&auto=format&fit=crop&q=80" alt="ヴェンキの高級チョコレート" loading="lazy">
-            <span class="card-badge-top"><span class="badge" style="background: #ffffff; color: var(--accent);">🍫 高級ショコラ</span></span>
-          </div>
-          <div class="card-body">
-            <h3 class="card-title">Venchi & Moriondo e Gariglio</h3>
-            <p class="card-desc">ヴェンキの量り売りチョコビア＆1850年創業モリオンドの王室御用達マロングラッセ。</p>
-            <div class="card-actions">
-              <a href="https://maps.google.com/?q=Venchi+Cioccolato+e+Gelato+Via+del+Corso+Rome" target="_blank" rel="noopener" class="btn btn-maps">🗺️ Venchi Maps</a>
-              <a href="https://maps.google.com/?q=Moriondo+e+Gariglio+Roma" target="_blank" rel="noopener" class="btn btn-outline">🗺️ Moriondo Maps</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="souvenir-card">
-          <div class="card-img-wrap">
-            <img src="https://images.unsplash.com/photo-1567449303078-57ad995bd302?w=800&auto=format&fit=crop&q=80" alt="リナシェンテ ローマのデパート" loading="lazy">
-            <span class="card-badge-top"><span class="badge" style="background: #ffffff; color: var(--pink);">🏛️ 高級デパート</span></span>
-          </div>
-          <div class="card-body">
-            <h3 class="card-title">Rinascente Roma (トリトーネ通り店)</h3>
-            <p class="card-desc">地下に古代ローマ水道遺跡、屋上に展望レストラン＆高級フードホール。</p>
-            <div class="card-actions">
-              <a href="https://maps.google.com/?q=Rinascente+Roma+Via+del+Tritone" target="_blank" rel="noopener" class="btn btn-maps">🗺️ Google Maps</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 6: Transit & Safety Guide -->
-    <section id="transit-tips" class="section">
-      <div class="section-header">
-        <h2 class="section-title">
-          <span>🚇</span>
-          <span>ローマ市内交通 ＆ 安全マニュアル</span>
-        </h2>
-        <span class="section-subtitle">地下鉄Tap & Go・スリ対策</span>
-      </div>
-
-      <div class="guide-card">
-        <div class="callout-header" style="color: var(--primary); margin-bottom: 12px;">
-          <span>📱</span>
-          <span>地下鉄・バスの乗車：「Tap & Go」で切符購入不要！</span>
-        </div>
-        <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 16px;">
-          ローマの地下鉄（Metro A線/B線）や市バスは、<strong>クレジットカードのタッチ決済（Visa / Mastercard / Apple Pay等）</strong>に対応しています。自動改札機にスマホやカードをタッチするだけで乗車可能（1回 €1.50 / 100分間有効）。
-        </p>
-
-        <div class="guide-step">
-          <div class="guide-num">A</div>
-          <div class="guide-content">
-            <h4 class="guide-title">地下鉄A線（オレンジ）</h4>
-            <p class="guide-text">テルミニ駅 ➔ バチカン（Ottaviano駅）、スペイン広場（Spagna駅）、ポポロ広場（Flaminio駅）</p>
-          </div>
-        </div>
-
-        <div class="guide-step">
-          <div class="guide-num">B</div>
-          <div class="guide-content">
-            <h4 class="guide-title">地下鉄B線（ブルー）</h4>
-            <p class="guide-text">テルミニ駅 ➔ コロッセオ（Colosseo駅）、チルコ・マッシモ（Circo Massimo駅 / 真実の口方面）</p>
-          </div>
-        </div>
-
-        <div class="guide-step">
-          <div class="guide-num">⚠️</div>
-          <div class="guide-content">
-            <h4 class="guide-title">防犯・スリ対策の3大原則</h4>
-            <p class="guide-text">
-              1. 貴重品（パスポート・高額現金）は首下げセキュリティポーチ等で服の下に収納。<br>
-              2. 地下鉄のドア付近やトレビの泉などの人混みではバッグを必ず身体の前に抱える。<br>
-              3. 「ミサンガ売り」や「署名活動」を装った声かけには一切応じず無視して歩く。
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Return to Days Banner -->
-    <div class="callout info" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;">
-      <div>
-        <div class="callout-header" style="margin-bottom: 2px;">
-          <span>👉</span>
-          <span>各日程のしおりに戻る</span>
-        </div>
-        <p style="font-size: 0.85rem; color: var(--text-muted);">
-          Day 5（サンジミニャーノ〜ローマ着）やDay 6（ローマ自由行動）の詳細タイムラインをチェック！
-        </p>
-      </div>
-      <div style="display: flex; gap: 8px; flex-wrap: wrap;">
-        <a href="day5.html" class="btn btn-outline">Day 5 を見る</a>
-        <a href="day6.html" class="btn btn-primary">Day 6 を見る</a>
-      </div>
-    </div>
-
-    <!-- Bottom Fixed Nav for iOS -->
-    <nav class="bottom-nav">
-      <a href="day5.html" class="bottom-nav-item">
-        <span class="bottom-nav-icon">🚌</span>
-        <span>Day 5</span>
-      </a>
-      <a href="day6.html" class="bottom-nav-item">
-        <span class="bottom-nav-icon">🏛️</span>
-        <span>Day 6</span>
-      </a>
-      <a href="rome-free-day-guide.html" class="bottom-nav-item active">
-        <span class="bottom-nav-icon">🎼</span>
-        <span>ローマ特集</span>
-      </a>
-      <a href="day7.html" class="bottom-nav-item">
-        <span class="bottom-nav-icon">✈️</span>
-        <span>Day 7</span>
-      </a>
-      <a href="day8.html" class="bottom-nav-item">
-        <span class="bottom-nav-icon">🇯🇵</span>
-        <span>Day 8</span>
-      </a>
-    </nav>
-
-    <footer class="page-footer">
-      <p>💍 <strong>Kenta & Megumi イタリア新婚旅行 2026</strong></p>
-      <p style="margin-top: 4px; font-size: 0.75rem;">HIS ツアー OI-KMI2811 | 添乗員同行 7都市縦断 アンディアーモ！イタリア8日間</p>
-      <p style="margin-top: 4px; font-size: 0.72rem; color: var(--text-secondary);">Buon Viaggio! 素敵な思い出になりますように 🇮🇹✨</p>
-    </footer>
   </main>
-  <script src="app.js" defer></script>
+  <!-- Bottom Tab Bar for iOS -->
+  <nav class="bottom-tab-bar">
+    <a href="index.html" class="tab-item">
+      <span class="tab-icon">🏠</span>
+      <span class="tab-label">ホーム</span>
+    </a>
+    <a href="beginner-guide.html" class="tab-item">
+      <span class="tab-icon">🔰</span>
+      <span class="tab-label">初心者</span>
+    </a>
+    <a href="tour-map.html" class="tab-item">
+      <span class="tab-icon">🗺️</span>
+      <span class="tab-label">ルートMAP</span>
+    </a>
+    <a href="free-meal-guide.html" class="tab-item">
+      <span class="tab-icon">🍽️</span>
+      <span class="tab-label">グルメ</span>
+    </a>
+    <a href="souvenir-guide.html" class="tab-item">
+      <span class="tab-icon">🎁</span>
+      <span class="tab-label">お土産</span>
+    </a>
+    <a href="rome-free-day-guide.html" class="tab-item active">
+      <span class="tab-icon">🎻</span>
+      <span class="tab-label">ローマ</span>
+    </a>
+  </nav>
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-credits">
+        <h4>🇮🇹 Kenta &amp; Megumi's Italian Honeymoon Portal</h4>
+        <p>HIS Tour OI-KMI2811 (2026/11/15 - 11/22) | Knowledge Partner: YouTube「イタリアガイドみめ (@mimeitalygaido)」</p>
+      </div>
+      <div class="footer-nav">
+        <a href="index.html">🏠 ホーム</a>
+        <a href="beginner-guide.html">🔰 初心者安心ガイド</a>
+        <a href="tour-map.html">🗺️ 全体ルートMAP</a>
+        <a href="free-meal-guide.html">🍽️ 自由食・グルメ</a>
+        <a href="souvenir-guide.html">🎁 お土産・買物</a>
+        <a href="rome-free-day-guide.html">🎻 ローマ自由行動</a>
+      </div>
+    </div>
+  </footer>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="app.js"></script>
 </body>
 </html>

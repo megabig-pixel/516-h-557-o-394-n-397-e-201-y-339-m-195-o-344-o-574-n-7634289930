@@ -2,647 +2,178 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Day 5 サンジミニャーノ散策＆永遠の都ローマへ | イタリア新婚旅行8日間 しおり</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=no">
+  <title>Day 5 (11/19 木) サンジミニャーノ ＆ ピッツァ昼食 ➔ 永遠の都ローマへ | イタリア新婚旅行8日間</title>
+  <meta name="description" content="Day 5: 中世の塔の街サンジミニャーノ ＆ 本場ピッツァ ➔ 永遠の都ローマへ。食事条件、タイムライン、YouTubeイタリアガイドみめ直伝ノウハウ">
   <link rel="stylesheet" href="style.css">
-  <meta name="theme-color" content="#0071e3">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
 </head>
 <body>
-  <!-- Sticky Top Navbar -->
-  <header class="navbar">
-    <div class="navbar-brand">
-      <span>🇮🇹</span>
-      <span>Andiamo! イタリア8日間</span>
-      <span class="tag-tour">HIS OI-KMI2811</span>
-    </div>
-    <div class="navbar-actions">
-      <span class="badge" style="background: var(--pink-light); color: var(--pink);">💍 Kenta & Megumi</span>
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-title">
+        <span style="font-size: 1.5rem;">🇮🇹</span>
+        <div>
+          <h1>イタリア7都市周遊 8日間</h1>
+          <span class="brand-subtitle">HIS Tour OI-KMI2811 | Kenta &amp; Megumi Honeymoon</span>
+        </div>
+      </a>
+      <nav class="main-nav">
+        <a href="index.html" class="nav-link active">🏠 ホーム</a> <a href="beginner-guide.html" class="nav-link">🔰 初心者安心ガイド</a> <a href="tour-map.html" class="nav-link">🗺️ 全体ルートMAP</a> <a href="free-meal-guide.html" class="nav-link">🍽️ 自由食・グルメ</a> <a href="souvenir-guide.html" class="nav-link">🎁 お土産・買物</a> <a href="rome-free-day-guide.html" class="nav-link">🎻 ローマ自由行動</a>
+      </nav>
     </div>
   </header>
-
+  <!-- Day Switcher Bar -->
+  <div class="day-switcher-bar">
+    <div class="day-switcher-scroll">
+      <a href="day1.html" class="day-chip"><span>Day 1</span><small>11/15 (日)</small></a> <a href="day2.html" class="day-chip"><span>Day 2</span><small>11/16 (月)</small></a> <a href="day3.html" class="day-chip"><span>Day 3</span><small>11/17 (火)</small></a> <a href="day4.html" class="day-chip"><span>Day 4</span><small>11/18 (水)</small></a> <a href="day5.html" class="day-chip active"><span>Day 5</span><small>11/19 (木)</small></a> <a href="day6.html" class="day-chip"><span>Day 6</span><small>11/20 (金)</small></a> <a href="day7.html" class="day-chip"><span>Day 7</span><small>11/21 (土)</small></a> <a href="day8.html" class="day-chip"><span>Day 8</span><small>11/22 (日)</small></a> <a href="beginner-guide.html" class="day-chip"><span>🔰 初心者</span><small>安心バイブル</small></a> <a href="rome-free-day-guide.html" class="day-chip"><span>🎻 ローマ</span><small>教会音楽特集</small></a>
+    </div>
+  </div>
   <main class="container">
-    <div class="day-switcher">
-  <a href="day1.html" class="day-pill"><span>Day 1</span><small>11/15(日)</small></a>
-  <a href="day2.html" class="day-pill"><span>Day 2</span><small>11/16(月)</small></a>
-  <a href="day3.html" class="day-pill"><span>Day 3</span><small>11/17(火)</small></a>
-  <a href="day4.html" class="day-pill"><span>Day 4</span><small>11/18(水)</small></a>
-  <a href="day5.html" class="day-pill active"><span>Day 5</span><small>11/19(木)</small></a>
-  <a href="day6.html" class="day-pill"><span>Day 6</span><small>11/20(金)</small></a>
-  <a href="day7.html" class="day-pill"><span>Day 7</span><small>11/21(土)</small></a>
-  <a href="day8.html" class="day-pill"><span>Day 8</span><small>11/22(日)</small></a>
-  <a href="beginner-guide.html" class="nav-link">🔰 初心者安心</a>
-        <a href="rome-free-day-guide.html" class="day-pill" style="min-width: 110px;"><span>🏛️ ローマ自由</span><small>特集ガイド</small></a>
-</div>
 
-    <!-- Hero Section -->
-    <div class="hero">
-      <div class="hero-honeymoon-badge">💍 新婚旅行 ハネムーン特製しおり</div>
-      <div class="hero-day-number">DAY 5 &bull; 2026.11.19 (THU)</div>
-      <h1 class="hero-title">中世の塔の街サンジミニャーノ散策＆永遠の都ローマ・バチカンへ</h1>
-      <p class="hero-subtitle">トスカーナの美しい丘陵を抜け、世界遺産の塔の街と本場ピッツァランチ、そして壮大なローマ・バチカン観光へ！</p>
-      <div class="hero-tags">
-        <span class="hero-tag">🚌 フィレンツェ発 (約70km/1h)</span>
-        <span class="hero-tag">🏰 サンジミニャーノ散策 (約1h)</span>
-        <span class="hero-tag">🍕 名物ピッツァランチ (ツアー込)</span>
-        <span class="hero-tag">🏛️ ローマ・バチカン観光 (約4h)</span>
-        <span class="hero-tag">🏨 ローマ2連泊 (1泊目)</span>
-      </div>
+    <!-- Hero Header -->
+    <div class="hero-card hero-day">
+      <span class="hero-tag">💍 HIS Honeymoon Tour</span>
+      <h2 class="hero-title">Day 5: 中世の塔の街サンジミニャーノ ＆ 本場ピッツァ ➔ 永遠の都ローマへ</h2>
+      <p class="hero-subtitle">2026年11月19日(木) • チステルナ広場 ➔ ドンドリジェラート ➔ ローマ到着 ➔ トレビの泉夜景</p>
     </div>
 
     <!-- Meal Status Box -->
     <div class="meal-status-box">
       <div class="meal-status-header">
-        <span>🍽️</span>
-        <span>本日の食事条件</span>
+        <h3>🍽️ 本日の食事条件</h3>
       </div>
-      <div class="meal-status-grid">
-        <div class="meal-item">
-          <div class="meal-type">朝食</div>
-          <span class="meal-status meal-included">○ ホテル</span>
-          <div class="meal-desc">フィレンツェのホテル朝食ビュッフェ</div>
+      <div class="meal-grid-3">
+        <div class="meal-col">
+          <div class="meal-col-title">朝食</div>
+          <span class="meal-badge included">🏨 ホテル朝食 (ツアー込 4/5)</span>
         </div>
-        <div class="meal-item">
-          <div class="meal-type">昼食</div>
-          <span class="meal-status meal-included">○ ツアー設定済</span>
-          <div class="meal-desc">名物ピザ（マルゲリータ＆カプリチョーザ ハーフ＆ハーフ）</div>
+        <div class="meal-col">
+          <div class="meal-col-title">昼食</div>
+          <span class="meal-badge included">🍕 本場ピッツァ (ツアー込 1/1)</span>
         </div>
-        <div class="meal-item">
-          <div class="meal-type">夕食</div>
-          <span class="meal-status meal-free">× 各自自由食</span>
-          <div class="meal-desc">ローマ市内トラットリア・ピッツェリア等</div>
+        <div class="meal-col">
+          <div class="meal-col-title">夕食</div>
+          <span class="meal-badge free">🍽️ 各自自由食 (ローマ市内)</span>
         </div>
       </div>
     </div>
 
-    <!-- Honeymoon Callout -->
-    <div class="callout honeymoon">
-      <div class="callout-header">
-        <span>💍</span>
-        <span>ハネムーンハイライト：トレビの泉のコイン投げ＆世界一のジェラート</span>
+    <!-- Mime Special Advice Box -->
+    <div class="mime-callout">
+      <div class="mime-header">
+        <div class="mime-title">
+          <span style="font-size: 1.5rem;">🎥</span>
+          <h3 style="margin:0;">【Mime直伝】本日の実践アドバイス ＆ 注意点</h3>
+        </div>
+        <span class="mime-badge">公認ガイド直伝</span>
       </div>
-      <div class="callout-body">
-        <ul>
-          <li><strong>トレビの泉のコイン伝説:</strong> 右手にコインを持ち、左肩越しに泉へ投げ入れます。「1枚投げると再びローマに戻れる」「2枚投げると大切な人と一生一緒にいられる」という言い伝えがあります。新婚旅行のお二人はぜひ2枚投げて、永遠の絆をお祈りしましょう✨</li>
-          <li><strong>世界チャンピオンのジェラート:</strong> サンジミニャーノのチステルナ広場にある「ドンドリ（Dondoli）」は世界大会連覇の名店！サフランと松の実のジェラートをお二人でシェアするのが最高の思い出になります🍨</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Schedule Timeline -->
-    <section class="section">
-      <div class="section-header">
-        <h2 class="section-title">
-          <span>🕒</span>
-          <span>本日のタイムライン</span>
-        </h2>
-        <span class="section-subtitle">フィレンツェ ➔ サンジミニャーノ ➔ ローマ</span>
-      </div>
-
-      <div class="timeline">
-        <div class="timeline-item">
-          <div class="timeline-dot highlight">🏨</div>
-          <div class="timeline-card">
-            <span class="timeline-time">08:00頃</span>
-            <h3 class="timeline-title">フィレンツェのホテル出発（専用観光バス）</h3>
-            <p class="timeline-desc">
-              ホテルで朝食後、スーツケースをバスに積み込んでトスカーナの美しい田園地帯を南西へ（約70km / 所要約1時間）。車窓に広がる糸杉やぶどう畑をお楽しみください。
-            </p>
-          </div>
+      <div class="mime-tips-grid">
+        
+        <div class="mime-tip-card">
+          <h4>💡 サンジミニャーノ世界一のドンドリジェラート</h4>
+          <p>世界大会連覇の「Gelateria Dondoli」！名物サフラン＆松の実の「Crema di Santa Fina」とトスカーナ白ワイン風味のダブルは必食。</p>
         </div>
-
-        <div class="timeline-item">
-          <div class="timeline-dot accent">🏰</div>
-          <div class="timeline-card">
-            <span class="timeline-time">09:15〜10:15</span>
-            <h3 class="timeline-title">世界遺産 サンジミニャーノ 各自散策（約1時間）</h3>
-            <p class="timeline-desc">
-              中世の面影を色濃く残す「美しき塔の街」に到着。チステルナ広場、ドゥオモ広場を散策し、世界一のジェラテリア「ドンドリ」やトスカーナ特産品（サフラン・白ワイン）のショッピングを満喫します。
-            </p>
-          </div>
+        <div class="mime-tip-card">
+          <h4>💡 サン・ピエトロ寺院入場時の服装規定</h4>
+          <p>神聖なカトリック総本山のため、肩（ノースリーブ）や膝（短パン・ミニスカ）が出ていると即入場拒否。大判ストールを必ずバッグへ！</p>
         </div>
-
-        <div class="timeline-item">
-          <div class="timeline-dot">🚌</div>
-          <div class="timeline-card">
-            <span class="timeline-time">10:30頃</span>
-            <h3 class="timeline-title">サンジミニャーノ発 ➔ 永遠の都ローマへ移動（約279km / 約4時間）</h3>
-            <p class="timeline-desc">
-              トスカーナからウンブリア、ラツィオ州へと高速道路（アウトストラーダA1号線）を南下。途中サービスエリア（Autogrill）にてトイレ休憩を挟みます。
-            </p>
-          </div>
+        <div class="mime-tip-card">
+          <h4>💡 トレビの泉コイン投げ伝説</h4>
+          <p>右手で左肩越しに投げる。1枚は「ローマ再訪」、2枚は「大切な人と一生一緒にいられる」という愛の伝説！</p>
         </div>
-
-        <div class="timeline-item">
-          <div class="timeline-dot highlight">🍕</div>
-          <div class="timeline-card">
-            <span class="timeline-time">13:30〜14:30</span>
-            <h3 class="timeline-title">【ツアー設定昼食】名物ピッツァランチ（ローマ市内）</h3>
-            <p class="timeline-desc">
-              ローマ到着後、ツアー設定のレストランにて焼き立てピッツァランチ！王道「マルゲリータ」と贅沢な「カプリチョーザ」を一度に味わえるハーフ＆ハーフをご堪能いただきます。
-            </p>
-          </div>
+        <div class="mime-tip-card">
+          <h4>💡 ローマ夜間散策のスリ対策</h4>
+          <p>トレビの泉やスペイン広場の混雑時はスリ急増！スマホはストラップで斜めがけし、ポケットに手を入れながら鑑賞しましょう。</p>
         </div>
-
-        <div class="timeline-item">
-          <div class="timeline-dot accent">🏛️</div>
-          <div class="timeline-card">
-            <span class="timeline-time">14:45〜18:45</span>
-            <h3 class="timeline-title">世界遺産 バチカンとローマ半日市内観光（約4時間）</h3>
-            <p class="timeline-desc">
-              日本語現地ガイドの案内でローマの主要名所を効率よく巡ります。<br>
-              ・<strong>サン・ピエトロ寺院（下車観光）:</strong> カトリック総本山の壮大さとミケランジェロのピエタ像を鑑賞。<br>
-              ・<strong>トレビの泉（下車観光）:</strong> バロック芸術の最高峰噴水で愛のコイン投げ。<br>
-              ・<strong>スペイン広場（下車観光）:</strong> 『ローマの休日』の舞台となった大階段と舟の噴水。<br>
-              ・<strong>コロッセオ（車窓観光）:</strong> 古代ローマ帝国の威容を誇る巨大円形闘技場を車窓から一望。
-            </p>
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-dot highlight">🏨</div>
-          <div class="timeline-card">
-            <span class="timeline-time">19:00頃</span>
-            <h3 class="timeline-title">ローマのホテル到着・チェックイン（テルミニ駅周辺スーペリアホテル）</h3>
-            <p class="timeline-desc">
-              ローマ2連泊の拠点となるホテルへチェックイン。ハネムーン仕様のダブルベッド確約のお部屋で一息。夕食は自由食となりますので、おすすめトラットリアへ繰り出しましょう！
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Sightseeing Spots Grid -->
-    <section class="section">
-      <div class="section-header">
-        <h2 class="section-title">
-          <span>🏛️</span>
-          <span>本日の観光施設案内</span>
-        </h2>
-        <span class="section-subtitle">サンジミニャーノ ＆ ローマ・バチカン</span>
-      </div>
-
-      <div class="grid-2">
-        <!-- Spot 1: San Gimignano & Torre Grossa -->
-        <div class="spot-card">
-          <div class="card-img-wrap">
-            <img src="https://images.unsplash.com/photo-1543429776-2782fc8e1acd?w=800&auto=format&fit=crop&q=80" alt="サンジミニャーノの中世の塔とチステルナ広場" loading="lazy">
-            <span class="card-badge-top"><span class="badge" style="background: #ffffff; color: var(--primary);">🏰 世界遺産</span></span>
-            <span class="card-tag-top-right">散策無料 / 塔有料</span>
-          </div>
-          <div class="card-body">
-            <div class="card-meta-tags">
-              <span class="tag tag-included">下車観光</span>
-              <span class="tag tag-booking-no">街散策予約不要</span>
-            </div>
-            <h3 class="card-title">サンジミニャーノ歴史地区・チステルナ広場・グロッサの塔</h3>
-            <p class="card-subtitle">Centro Storico di San Gimignano & Piazza della Cisterna</p>
-            <p class="card-desc">
-              14本の中世貴族の塔が聳え立つ「塔の街」。八角形の古井戸があるチステルナ広場や、高さ54mを誇る町最高の「グロッサの塔（Torre Grossa）」から見下ろすトスカーナ丘陵のパノラマは息をのむ美しさです。
-            </p>
-            <div class="card-highlight-info">
-              <div class="card-highlight-row">
-                <span class="card-highlight-label">見学形式:</span>
-                <span class="card-highlight-val">ツアー下車・各自自由散策（約1時間）</span>
-              </div>
-              <div class="card-highlight-row">
-                <span class="card-highlight-label">入場料金:</span>
-                <span class="card-highlight-val">街・広場散策は無料（グロッサの塔登頂は€9）</span>
-              </div>
-              <div class="card-highlight-row">
-                <span class="card-highlight-label">おすすめ:</span>
-                <span class="card-highlight-val">古井戸前での記念撮影、塔と石畳の路地散策</span>
-              </div>
-            </div>
-            <div class="card-actions">
-              <a href="https://maps.google.com/?q=Piazza+della+Cisterna+San+Gimignano" target="_blank" rel="noopener" class="btn btn-maps">🗺️ Google Maps</a>
-              <a href="https://www.sangimignanomusei.it/" target="_blank" rel="noopener" class="btn btn-outline">🌐 公式サイト</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Spot 2: Gelateria Dondoli -->
-        <div class="spot-card">
-          <div class="card-img-wrap">
-            <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=800&auto=format&fit=crop&q=80" alt="ジェラテリア・ドンドリの絶品ジェラート" loading="lazy">
-            <span class="card-badge-top"><span class="badge" style="background: #ffffff; color: var(--accent);">🍨 世界No.1</span></span>
-            <span class="card-tag-top-right">名物グルメ</span>
-          </div>
-          <div class="card-body">
-            <div class="card-meta-tags">
-              <span class="tag tag-free">各自散策時</span>
-              <span class="tag tag-booking-no">予約不要（行列あり）</span>
-            </div>
-            <h3 class="card-title">ジェラテリア・ドンドリ (Gelateria Dondoli)</h3>
-            <p class="card-subtitle">Gelateria Dondoli (Campione del Mondo)</p>
-            <p class="card-desc">
-              世界ジェラート大会（Coppa del Mondo della Gelateria）で2度世界チャンピオンに輝いたセルジョ・ドンドリ氏の超名店！トスカーナ産サフランと松の実を贅沢に使った「Crema di Santa Fina」やヴェルナッチャワイン風味は必食です。
-            </p>
-            <div class="card-highlight-info">
-              <div class="card-highlight-row">
-                <span class="card-highlight-label">場所:</span>
-                <span class="card-highlight-val">チステルナ広場4番地（八角形古井戸のすぐ脇）</span>
-              </div>
-              <div class="card-highlight-row">
-                <span class="card-highlight-label">人気フレーバー:</span>
-                <span class="card-highlight-val">サンタ・フィーナ（サフラン＆松の実）、チャンペルモ（ピンクグレープフルーツ＆スパークリング）</span>
-              </div>
-              <div class="card-highlight-row">
-                <span class="card-highlight-label">予算目安:</span>
-                <span class="card-highlight-val">ピッコロ（小サイズ・2種盛り） €3.00〜</span>
-              </div>
-            </div>
-            <div class="card-actions">
-              <a href="https://maps.google.com/?q=Gelateria+Dondoli+San+Gimignano" target="_blank" rel="noopener" class="btn btn-maps">🗺️ Google Maps</a>
-              <a href="https://www.gelateriadondoli.com/" target="_blank" rel="noopener" class="btn btn-outline">🌐 公式サイト</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Spot 3: St. Peter's Basilica -->
-        <div class="spot-card">
-          <div class="card-img-wrap">
-            <img src="https://images.unsplash.com/photo-1531572753322-ad063cecc140?w=800&auto=format&fit=crop&q=80" alt="バチカン市国 サン・ピエトロ寺院の大聖堂と広場" loading="lazy">
-            <span class="card-badge-top"><span class="badge" style="background: #ffffff; color: var(--primary);">🇻🇦 世界遺産</span></span>
-            <span class="card-tag-top-right">入場無料</span>
-          </div>
-          <div class="card-body">
-            <div class="card-meta-tags">
-              <span class="tag tag-included">下車観光</span>
-              <span class="tag tag-booking-no">手荷物検査あり</span>
-            </div>
-            <h3 class="card-title">サン・ピエトロ寺院 (バチカン市国)</h3>
-            <p class="card-subtitle">Basilica di San Pietro in Vaticano</p>
-            <p class="card-desc">
-              カトリック総本山であり、キリスト教建築の最高峰。若きミケランジェロが24歳で完成させた至高の彫刻『ピエタ像』や、ベルニーニ設計の巨大なブロンズ天蓋（バルダッキーノ）、大聖堂内に響く荘厳な音響空間は圧倒的です。
-            </p>
-            <div class="card-highlight-info">
-              <div class="card-highlight-row">
-                <span class="card-highlight-label">入場条件:</span>
-                <span class="card-highlight-val">入場無料（セキュリティチェック列あり）</span>
-              </div>
-              <div class="card-highlight-row">
-                <span class="card-highlight-label">ドレスコード:</span>
-                <span class="card-highlight-val">厳格（肩出し・ノースリーブ・膝上ショートパンツ禁止）</span>
-              </div>
-              <div class="card-highlight-row">
-                <span class="card-highlight-label">必見名作:</span>
-                <span class="card-highlight-val">ミケランジェロ『ピエタ』、聖ペテロのブロンズ像</span>
-              </div>
-            </div>
-            <div class="card-actions">
-              <a href="https://maps.google.com/?q=St.+Peter%27s+Basilica+Vatican" target="_blank" rel="noopener" class="btn btn-maps">🗺️ Google Maps</a>
-              <a href="https://www.vatican.va/" target="_blank" rel="noopener" class="btn btn-outline">🌐 公式サイト</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Spot 4: Trevi Fountain -->
-        <div class="spot-card">
-          <div class="card-img-wrap">
-            <img src="https://images.unsplash.com/photo-1525874684015-58379d421a52?w=800&auto=format&fit=crop&q=80" alt="ローマ トレビの泉の壮麗な彫刻と青い水面" loading="lazy">
-            <span class="card-badge-top"><span class="badge" style="background: #ffffff; color: var(--accent);">🌊 バロック傑作</span></span>
-            <span class="card-tag-top-right">予約不要</span>
-          </div>
-          <div class="card-body">
-            <div class="card-meta-tags">
-              <span class="tag tag-included">下車観光</span>
-              <span class="tag tag-booking-no">見学自由</span>
-            </div>
-            <h3 class="card-title">トレビの泉 (Fontana di Trevi)</h3>
-            <p class="card-subtitle">Fontana di Trevi, Roma</p>
-            <p class="card-desc">
-              ポーリ宮殿の壁面を飾るローマ最大のバロック様式噴水。海神ネプトゥーヌスがトリトンを従える大迫力の彫刻美。「後ろ向きにコインを投げる」世界的に有名な愛のジンクスをお二人で体験しましょう！
-            </p>
-            <div class="card-highlight-info">
-              <div class="card-highlight-row">
-                <span class="card-highlight-label">コイン投げ:</span>
-                <span class="card-highlight-val">1枚＝ローマ再訪、2枚＝愛する人と結ばれる</span>
-              </div>
-              <div class="card-highlight-row">
-                <span class="card-highlight-label">おすすめ時間:</span>
-                <span class="card-highlight-val">昼のきらめく水面＆夜のライトアップ</span>
-              </div>
-              <div class="card-highlight-row">
-                <span class="card-highlight-label">注意点:</span>
-                <span class="card-highlight-val">観光客で賑わうためスリに十分注意</span>
-              </div>
-            </div>
-            <div class="card-actions">
-              <a href="https://maps.google.com/?q=Trevi+Fountain+Rome" target="_blank" rel="noopener" class="btn btn-maps">🗺️ Google Maps</a>
-              <a href="https://www.turismoroma.it/" target="_blank" rel="noopener" class="btn btn-outline">🌐 観光案内</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Spot 5: Spanish Steps -->
-        <div class="spot-card">
-          <div class="card-img-wrap">
-            <img src="https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=800&auto=format&fit=crop&q=80" alt="スペイン広場とトリニタ・デイ・モンティ階段" loading="lazy">
-            <span class="card-badge-top"><span class="badge" style="background: #ffffff; color: var(--pink);">🌹 ローマの休日</span></span>
-            <span class="card-tag-top-right">予約不要</span>
-          </div>
-          <div class="card-body">
-            <div class="card-meta-tags">
-              <span class="tag tag-included">下車観光</span>
-              <span class="tag tag-booking-no">見学自由</span>
-            </div>
-            <h3 class="card-title">スペイン広場 ＆ 階段 (Piazza di Spagna)</h3>
-            <p class="card-subtitle">Piazza di Spagna & Scalinata di Trinità dei Monti</p>
-            <p class="card-desc">
-              映画『ローマの休日』でオードリー・ヘプバーンがジェラートを食べた名場面で世界的に有名な135段の大階段。広場中央にはベルニーニ父子作「舟の噴水（バルカッチャ）」が佇み、正面には高級ブランドが並ぶコンドッティ通りが広がります。
-            </p>
-            <div class="card-highlight-info">
-              <div class="card-highlight-row">
-                <span class="card-highlight-label">観光ルール:</span>
-                <span class="card-highlight-val">階段への座り込み・飲食は条例で禁止（立ったまま撮影可）</span>
-              </div>
-              <div class="card-highlight-row">
-                <span class="card-highlight-label">周辺スポット:</span>
-                <span class="card-highlight-val">コンドッティ通り（グッチ、プラダ等）、老舗カフェ・グレコ</span>
-              </div>
-            </div>
-            <div class="card-actions">
-              <a href="https://maps.google.com/?q=Piazza+di+Spagna+Rome" target="_blank" rel="noopener" class="btn btn-maps">🗺️ Google Maps</a>
-              <a href="https://www.turismoroma.it/" target="_blank" rel="noopener" class="btn btn-outline">🌐 観光案内</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Spot 6: Colosseum -->
-        <div class="spot-card">
-          <div class="card-img-wrap">
-            <img src="https://images.unsplash.com/photo-1515542622106-78bda8ba0e5b?w=800&auto=format&fit=crop&q=80" alt="古代ローマの象徴 コロッセオ" loading="lazy">
-            <span class="card-badge-top"><span class="badge" style="background: #ffffff; color: #7b2cbf;">🏛️ 古代ローマ</span></span>
-            <span class="card-tag-top-right">車窓観光</span>
-          </div>
-          <div class="card-body">
-            <div class="card-meta-tags">
-              <span class="tag tag-included">ツアー車窓</span>
-              <span class="tag tag-optional">翌日自由行動で入場可</span>
-            </div>
-            <h3 class="card-title">コロッセオ (古代円形闘技場)</h3>
-            <p class="card-subtitle">Colosseo (Anfiteatro Flavio)</p>
-            <p class="card-desc">
-              紀元80年に建造された約5万人収容の古代ローマ最大の闘技場。本日のツアーではバスの車窓からその壮大な威容を眺望します。翌日（Day 6）の終日自由行動で内部入場やフォロ・ロマーノ散策をじっくりお楽しみいただけます！
-            </p>
-            <div class="card-highlight-info">
-              <div class="card-highlight-row">
-                <span class="card-highlight-label">本日:</span>
-                <span class="card-highlight-val">専用バス車窓より全景を鑑賞・撮影</span>
-              </div>
-              <div class="card-highlight-row">
-                <span class="card-highlight-label">内部入場:</span>
-                <span class="card-highlight-val">Day 6自由行動時に可能（公式サイトにて要日時指定予約）</span>
-              </div>
-            </div>
-            <div class="card-actions">
-              <a href="https://maps.google.com/?q=Colosseum+Rome" target="_blank" rel="noopener" class="btn btn-maps">🗺️ Google Maps</a>
-              <a href="https://colosseo.it/" target="_blank" rel="noopener" class="btn btn-outline">🌐 公式チケットサイト</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Rome Dinner Recommendations -->
-    <section class="section">
-      <div class="section-header">
-        <h2 class="section-title">
-          <span>🍝</span>
-          <span>ローマ夕食おすすめ店（各自自由食）</span>
-        </h2>
-        <span class="section-subtitle">名物パスタ・伝統料理・絶品ピンサ</span>
-      </div>
-
-      <div class="grid-3">
-        <!-- Restaurant 1: Trattoria Da Enzo al 29 -->
-        <div class="restaurant-card">
-          <div class="card-img-wrap">
-            <img src="https://images.unsplash.com/photo-1612874742237-6526221588e3?w=800&auto=format&fit=crop&q=80" alt="絶品カルボナーラとカチョエペペ" loading="lazy">
-            <span class="card-badge-top"><span class="badge" style="background: #ffffff; color: var(--danger);">⭐ 行列必至の名店</span></span>
-          </div>
-          <div class="card-body">
-            <div class="card-meta-tags">
-              <span class="tag tag-free">トラステヴェレ地区</span>
-              <span class="tag tag-booking-no">予約不可・並び推奨</span>
-            </div>
-            <h3 class="card-title">Trattoria Da Enzo al 29</h3>
-            <p class="card-subtitle">下町トラステヴェレの超人気トラットリア</p>
-            <p class="card-desc">
-              ローマで最も美味しいと称されるカルボナーラとカチョ・エ・ペペの名店！厳選グアンチャーレ（豚頬肉塩漬け）とペコリーノチーズ、濃厚卵が絡み合う本物の味。アーティチョークのユダヤ風揚げやティラミスも絶品です。
-            </p>
-            <div class="card-highlight-info">
-              <div class="card-highlight-row">
-                <span class="card-highlight-label">予算目安:</span>
-                <span class="card-highlight-val">€25〜€40 / 人</span>
-              </div>
-              <div class="card-highlight-row">
-                <span class="card-highlight-label">営業時間:</span>
-                <span class="card-highlight-val">12:15〜15:00 / 19:30〜23:00（日曜定休）</span>
-              </div>
-              <div class="card-highlight-row">
-                <span class="card-highlight-label">おすすめ:</span>
-                <span class="card-highlight-val">夜営業の30分前（19:00頃）に並ぶと1巡目で入店しやすい</span>
-              </div>
-            </div>
-            <div class="card-actions">
-              <a href="https://maps.google.com/?q=Trattoria+Da+Enzo+al+29+Rome" target="_blank" rel="noopener" class="btn btn-maps">🗺️ Google Maps</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Restaurant 2: Ristorante Alessio -->
-        <div class="restaurant-card">
-          <div class="card-img-wrap">
-            <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800&auto=format&fit=crop&q=80" alt="落ち着いたトラットリアのイタリア料理" loading="lazy">
-            <span class="card-badge-top"><span class="badge" style="background: #ffffff; color: var(--primary);">🍷 ホテル至近</span></span>
-          </div>
-          <div class="card-body">
-            <div class="card-meta-tags">
-              <span class="tag tag-included">テルミニ駅徒歩5分</span>
-              <span class="tag tag-booking-rec">予約推奨</span>
-            </div>
-            <h3 class="card-title">Ristorante Alessio</h3>
-            <p class="card-subtitle">落ち着いたトスカーナ・ローマ伝統料理</p>
-            <p class="card-desc">
-              テルミニ駅近くにありながら、地下のアーチ天井が美しい隠れ家的な高級感あるリストランテ。手打ちパスタ、子牛のサルティンボッカ、ポルチーニ茸料理など、長旅の初夜にゆったりとお二人で乾杯するのに最適な空間です。
-            </p>
-            <div class="card-highlight-info">
-              <div class="card-highlight-row">
-                <span class="card-highlight-label">予算目安:</span>
-                <span class="card-highlight-val">€30〜€50 / 人</span>
-              </div>
-              <div class="card-highlight-row">
-                <span class="card-highlight-label">特徴:</span>
-                <span class="card-highlight-val">親切な接客、日本語メニューあり、ワインリスト充実</span>
-              </div>
-              <div class="card-highlight-row">
-                <span class="card-highlight-label">名物料理:</span>
-                <span class="card-highlight-val">サルティンボッカ・アッラ・ロマーナ、自家製ティラミス</span>
-              </div>
-            </div>
-            <div class="card-actions">
-              <a href="https://maps.google.com/?q=Ristorante+Alessio+Rome" target="_blank" rel="noopener" class="btn btn-maps">🗺️ Google Maps</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Restaurant 3: Pinsere -->
-        <div class="restaurant-card">
-          <div class="card-img-wrap">
-            <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=800&auto=format&fit=crop&q=80" alt="ローマ名物ピンサ（サクサクの古代ローマ風ピザ）" loading="lazy">
-            <span class="card-badge-top"><span class="badge" style="background: #ffffff; color: var(--success);">🍕 サクふわ食感</span></span>
-          </div>
-          <div class="card-body">
-            <div class="card-meta-tags">
-              <span class="tag tag-free">テルミニ駅周辺</span>
-              <span class="tag tag-booking-no">予約不要・テイクアウトOK</span>
-            </div>
-            <h3 class="card-title">Pinsere (ピンセーレ)</h3>
-            <p class="card-subtitle">ローマ発祥の古代ピザ「ピンサ」の超有名店</p>
-            <p class="card-desc">
-              小麦粉・大豆粉・米粉をブレンドし、長時間発酵させた楕円形の「ピンサ・ロマーナ」。外側は驚くほどカリッと軽く、中はもっちりヘルシー！生ハム＆ブッラータやトリュフペーストなど豊富なトッピングが魅力です。
-            </p>
-            <div class="card-highlight-info">
-              <div class="card-highlight-row">
-                <span class="card-highlight-label">予算目安:</span>
-                <span class="card-highlight-val">€6〜€12 / 人</span>
-              </div>
-              <div class="card-highlight-row">
-                <span class="card-highlight-label">スタイル:</span>
-                <span class="card-highlight-val">カウンター注文・立ち食いまたはテイクアウト</span>
-              </div>
-              <div class="card-highlight-row">
-                <span class="card-highlight-label">おすすめ:</span>
-                <span class="card-highlight-val">ホテルのお部屋でワインと一緒に楽しむのも◎</span>
-              </div>
-            </div>
-            <div class="card-actions">
-              <a href="https://maps.google.com/?q=Pinsere+Roma" target="_blank" rel="noopener" class="btn btn-maps">🗺️ Google Maps</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Souvenir Shops Grid -->
-    <section class="section">
-      <div class="section-header">
-        <h2 class="section-title">
-          <span>🛍️</span>
-          <span>本日のお土産スポット</span>
-        </h2>
-        <span class="section-subtitle">サンジミニャーノ特産品 ＆ ローマ老舗食料品</span>
-      </div>
-
-      <div class="grid-2">
-        <!-- Souvenir 1: San Gimignano Special Products -->
-        <div class="souvenir-card">
-          <div class="card-img-wrap">
-            <img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=800&auto=format&fit=crop&q=80" alt="トスカーナの白ワインとサフラン、サラミ" loading="lazy">
-            <span class="card-badge-top"><span class="badge" style="background: #ffffff; color: var(--accent);">🍷 トスカーナ名産</span></span>
-          </div>
-          <div class="card-body">
-            <h3 class="card-title">サンジミニャーノ特産品ショップ</h3>
-            <p class="card-subtitle">Prodotti Tipici Toscani a San Gimignano</p>
-            <p class="card-desc">
-              中世から金と同等の価値で取引された最高級の「サンジミニャーノ産サフラン（DOP）」や、イタリア初のDOCG白ワイン「ヴェルナッチャ・ディ・サンジミニャーノ」、風味豊かな「イノシシのサラミ（Salame di Cinghiale）」はお土産に最適です。
-            </p>
-            <div class="card-highlight-info">
-              <div class="card-highlight-row">
-                <span class="card-highlight-label">名産品:</span>
-                <span class="card-highlight-val">サフラン（粉末・ホール）、ヴェルナッチャ白ワイン、イノシシサラミ、トリュフ塩</span>
-              </div>
-              <div class="card-highlight-row">
-                <span class="card-highlight-label">場所:</span>
-                <span class="card-highlight-val">サン・ジョヴァンニ通り（Via San Giovanni）沿いの各商店</span>
-              </div>
-            </div>
-            <div class="card-actions">
-              <a href="https://maps.google.com/?q=Via+San+Giovanni+San+Gimignano" target="_blank" rel="noopener" class="btn btn-maps">🗺️ Google Maps</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Souvenir 2: Castroni Rome -->
-        <div class="souvenir-card">
-          <div class="card-img-wrap">
-            <img src="https://images.unsplash.com/photo-1578916171728-46686eac8d58?w=800&auto=format&fit=crop&q=80" alt="ローマ老舗食料品店カストローニのコーヒー豆と食材" loading="lazy">
-            <span class="card-badge-top"><span class="badge" style="background: #ffffff; color: var(--primary);">☕ 1932年創業</span></span>
-          </div>
-          <div class="card-body">
-            <h3 class="card-title">Castroni (カストローニ ナツィオナーレ店)</h3>
-            <p class="card-subtitle">Castroni Bottega del Gusto</p>
-            <p class="card-desc">
-              ローマ市民に愛される老舗高級食材店。自社焙煎のエスプレッソ豆、上質なエキストラバージンオリーブオイル、トリュフオイル、限定チョコレート菓子やパスタなど、イタリア全土の美食が壁一面に並ぶお土産の宝庫です。
-            </p>
-            <div class="card-highlight-info">
-              <div class="card-highlight-row">
-                <span class="card-highlight-label">人気商品:</span>
-                <span class="card-highlight-val">カストローニ特製コーヒー豆（挽き売り可）、トリュフペースト、Baciチョコ缶</span>
-              </div>
-              <div class="card-highlight-row">
-                <span class="card-highlight-label">アクセス:</span>
-                <span class="card-highlight-val">テルミニ駅から徒歩約8分（Via Nazionale 197）</span>
-              </div>
-            </div>
-            <div class="card-actions">
-              <a href="https://maps.google.com/?q=Castroni+Via+Nazionale+Rome" target="_blank" rel="noopener" class="btn btn-maps">🗺️ Google Maps</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Next Day Link Banner -->
-    <div class="callout info" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;">
-      <div>
-        <div class="callout-header" style="margin-bottom: 2px;">
-          <span>👉</span>
-          <span>明日の予定：Day 6 永遠の都ローマ 終日自由行動！</span>
-        </div>
-        <p style="font-size: 0.85rem; color: var(--text-muted);">
-          バチカン美術館やコロッセオ、教会音楽、名物カルボナーラ巡りなど、新婚旅行最大の自由行動日を満喫しましょう！
-        </p>
-      </div>
-      <div style="display: flex; gap: 8px; flex-wrap: wrap;">
-        <a href="beginner-guide.html" class="nav-link">🔰 初心者安心</a>
-        <a href="rome-free-day-guide.html" class="btn btn-outline" style="flex: 0 0 auto;">🏛️ 自由行動ガイド</a>
-        <a href="day6.html" class="btn btn-primary" style="flex: 0 0 auto; min-width: 130px;">Day 6 を見る ➔</a>
       </div>
     </div>
 
-    <!-- Bottom Fixed Nav for iOS -->
-    <nav class="bottom-nav">
-      <a href="day5.html" class="bottom-nav-item active">
-        <span class="bottom-nav-icon">🚌</span>
-        <span>Day 5</span>
-      </a>
-      <a href="day6.html" class="bottom-nav-item">
-        <span class="bottom-nav-icon">🏛️</span>
-        <span>Day 6</span>
-      </a>
-      <a href="beginner-guide.html" class="nav-link">🔰 初心者安心</a>
-        <a href="rome-free-day-guide.html" class="bottom-nav-item">
-        <span class="bottom-nav-icon">🎼</span>
-        <span>ローマ特集</span>
-      </a>
-      <a href="day7.html" class="bottom-nav-item">
-        <span class="bottom-nav-icon">✈️</span>
-        <span>Day 7</span>
-      </a>
-      <a href="day8.html" class="bottom-nav-item">
-        <span class="bottom-nav-icon">🇯🇵</span>
-        <span>Day 8</span>
-      </a>
-    </nav>
-
-    <footer class="page-footer">
-      <p>💍 <strong>Kenta & Megumi イタリア新婚旅行 2026</strong></p>
-      <p style="margin-top: 4px; font-size: 0.75rem;">HIS ツアー OI-KMI2811 | 添乗員同行 7都市縦断 アンディアーモ！イタリア8日間</p>
-      <p style="margin-top: 4px; font-size: 0.72rem; color: var(--text-secondary);">Buon Viaggio! 素敵な思い出になりますように 🇮🇹✨</p>
-    </footer>
+    <!-- Timeline Section -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">⏱️ 本日のタイムライン・行動スケジュール</h2>
+      </div>
+      <ul class="timeline-list">
+        
+        <li class="timeline-item">
+          <div class="timeline-time">08:00</div>
+          <div class="timeline-desc">専用バスにてトスカーナの丘陵地帯・サンジミニャーノへ移動（約60km / 約1時間）</div>
+        </li>
+        <li class="timeline-item">
+          <div class="timeline-time">09:00</div>
+          <div class="timeline-desc">サンジミニャーノ散策（チステルナ広場、グロッサの塔、世界一のドンドリジェラート）</div>
+        </li>
+        <li class="timeline-item">
+          <div class="timeline-time">11:30</div>
+          <div class="timeline-desc">【ツアー設定・本場ピッツァランチ】トスカーナのピッツェリアで焼きたてピッツァ！</div>
+        </li>
+        <li class="timeline-item">
+          <div class="timeline-time">13:00</div>
+          <div class="timeline-desc">専用バスにて永遠の都ローマへ南下（約280km / 約3.5時間）</div>
+        </li>
+        <li class="timeline-item">
+          <div class="timeline-time">17:00</div>
+          <div class="timeline-desc">ローマ到着・市内車窓観光（コロッセオ外観）➔ ホテルチェックイン（テルミニ駅周辺連泊）</div>
+        </li>
+        <li class="timeline-item">
+          <div class="timeline-time">18:30</div>
+          <div class="timeline-desc">ローマ夜景散策（ライトアップされたトレビの泉でコイン投げ、スペイン広場）</div>
+        </li>
+        <li class="timeline-item">
+          <div class="timeline-time">20:00</div>
+          <div class="timeline-desc">ローマ名物パスタディナー（トラステヴェレのダ・エンツォまたはピンセレ）</div>
+        </li>
+      </ul>
+    </section>
+    
   </main>
+  <!-- Bottom Tab Bar for iOS -->
+  <nav class="bottom-tab-bar">
+    <a href="index.html" class="tab-item active">
+      <span class="tab-icon">🏠</span>
+      <span class="tab-label">ホーム</span>
+    </a>
+    <a href="beginner-guide.html" class="tab-item">
+      <span class="tab-icon">🔰</span>
+      <span class="tab-label">初心者</span>
+    </a>
+    <a href="tour-map.html" class="tab-item">
+      <span class="tab-icon">🗺️</span>
+      <span class="tab-label">ルートMAP</span>
+    </a>
+    <a href="free-meal-guide.html" class="tab-item">
+      <span class="tab-icon">🍽️</span>
+      <span class="tab-label">グルメ</span>
+    </a>
+    <a href="souvenir-guide.html" class="tab-item">
+      <span class="tab-icon">🎁</span>
+      <span class="tab-label">お土産</span>
+    </a>
+    <a href="rome-free-day-guide.html" class="tab-item">
+      <span class="tab-icon">🎻</span>
+      <span class="tab-label">ローマ</span>
+    </a>
+  </nav>
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-credits">
+        <h4>🇮🇹 Kenta &amp; Megumi's Italian Honeymoon Portal</h4>
+        <p>HIS Tour OI-KMI2811 (2026/11/15 - 11/22) | Knowledge Partner: YouTube「イタリアガイドみめ (@mimeitalygaido)」</p>
+      </div>
+      <div class="footer-nav">
+        <a href="index.html">🏠 ホーム</a>
+        <a href="beginner-guide.html">🔰 初心者安心ガイド</a>
+        <a href="tour-map.html">🗺️ 全体ルートMAP</a>
+        <a href="free-meal-guide.html">🍽️ 自由食・グルメ</a>
+        <a href="souvenir-guide.html">🎁 お土産・買物</a>
+        <a href="rome-free-day-guide.html">🎻 ローマ自由行動</a>
+      </div>
+    </div>
+  </footer>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
   <script src="app.js"></script>
 </body>
 </html>
