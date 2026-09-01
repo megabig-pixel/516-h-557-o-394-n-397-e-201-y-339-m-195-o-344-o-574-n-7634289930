@@ -11,12 +11,22 @@
 <body>
   <main class="container" style="padding-top: 6px;">
 
-    <!-- Top Prev/Next Navigation Strip -->
-    
+    <!-- Top Horizontal Quick Day Pills & Navigation Strip -->
+    <div class="day-quick-pills">
+      <a href="day1.html" class="day-pill">Day 1<small>11/15</small></a>
+      <a href="day2.html" class="day-pill">Day 2<small>11/16</small></a>
+      <a href="day3.html" class="day-pill active">Day 3<small>11/17</small></a>
+      <a href="day4.html" class="day-pill">Day 4<small>11/18</small></a>
+      <a href="day5.html" class="day-pill">Day 5<small>11/19</small></a>
+      <a href="day6.html" class="day-pill">Day 6<small>11/20</small></a>
+      <a href="day7.html" class="day-pill">Day 7<small>11/21</small></a>
+      <a href="day8.html" class="day-pill">Day 8<small>11/22</small></a>
+    </div>
+
     <div class="day-nav-strip">
-      <a href="day2.html" class="btn btn-secondary" style="font-size:0.7rem; padding:4px 6px;">◀ Day 2</a>
+      <a href="day2.html" class="btn btn-secondary">◀ Day 2</a>
       <details class="day-nav-details">
-        <summary class="btn btn-primary" style="font-size:0.7rem; padding:4px 8px;">📅 日程選択 ▾</summary>
+        <summary class="btn btn-primary">📅 日程選択 ▾</summary>
         <div class="day-nav-dropdown">
           <a href="day1.html" class="dp-nav-link">Day 1: 11/15(日) 関空➔ミラノ</a>
           <a href="day2.html" class="dp-nav-link">Day 2: 11/16(月) ミラノ➔ベネチア</a>
@@ -28,10 +38,9 @@
           <a href="day8.html" class="dp-nav-link">Day 8: 11/22(日) 関空帰着・解散</a>
         </div>
       </details>
-      <a href="day4.html" class="btn btn-secondary" style="font-size:0.7rem; padding:4px 6px;">Day 4 ▶</a>
+      <a href="day4.html" class="btn btn-secondary">Day 4 ▶</a>
     </div>
 
-    <!-- Hero Header -->
     <div class="hero-card hero-day">
       <span class="hero-tag">💍 HIS Honeymoon Tour</span>
       <h2 class="hero-title">Day 3: 水の都ベネチア観光 ＆ ロマンチック・ゴンドラ遊覧 ➔ トスカーナへ</h2>
@@ -221,18 +230,54 @@
       </details>
       <a href="day4.html" class="btn btn-secondary" style="font-size:0.7rem; padding:4px 6px;">Day 4 ▶</a>
     </div>
-    
+
+    <!-- Day 3 Accommodation Hotel Candidates Section -->
+    <section class="section" style="margin-top:16px;">
+      <div class="section-header">
+        <h3 class="section-title">🏨 本日からの宿泊ホテル候補一覧（フィレンツェ・近郊 2連泊）</h3>
+        <span class="section-subtitle">HIS Impresso スーペリア／スタンダード</span>
+      </div>
+      <div class="cards-grid">
+        <div class="spot-card">
+          <div class="spot-body">
+            <h4 class="spot-name-ja">B&amp;B ホテル カレンツァーノ ファースト</h4>
+            <span class="spot-name-it">Via Dino Ciolli, 5, Calenzano</span>
+            <p class="spot-desc">高速道路IC近く。ツアー専用バスでのアクセスがスムーズな機能的ホテル。</p>
+            <div class="spot-mime-tip"><strong>【みめTip】</strong> 連泊ですのでスーツケースを広げてゆっくり荷物整理を。</div>
+            <a href="https://maps.google.com/?q=BB+Hotel+Firenze+Calenzano+First" target="_blank" class="btn btn-maps" style="margin-top:auto;">📍 Google Maps ➔</a>
+          </div>
+        </div>
+        <div class="spot-card">
+          <div class="spot-body">
+            <h4 class="spot-name-ja">ホテル デルタ フィレンツェ (Hotel Delta)</h4>
+            <span class="spot-name-it">Via Vittorio Emanuele, 3, Calenzano</span>
+            <p class="spot-desc">カレンツァーノの大型4つ星ホテル。広々としたロビーと快適なベッド。</p>
+            <div class="spot-mime-tip"><strong>【みめTip】</strong> バスタブ付き客室が多く、歩き疲れた足を癒せます。</div>
+            <a href="https://maps.google.com/?q=Hotel+Delta+Florence+Calenzano" target="_blank" class="btn btn-maps" style="margin-top:auto;">📍 Google Maps ➔</a>
+          </div>
+        </div>
+        <div class="spot-card">
+          <div class="spot-body">
+            <h4 class="spot-name-ja">アート ホテル ミロ (Art Hotel Miro)</h4>
+            <span class="spot-name-it">Via Dino Ciolli, 18, Calenzano</span>
+            <p class="spot-desc">ミロのアート作品で彩られたスタイリッシュな4つ星。静かな環境。</p>
+            <div class="spot-mime-tip"><strong>【みめTip】</strong> 明日のピサ観光・フィレンツェ散策に向けて靴のケアを！</div>
+            <a href="https://maps.google.com/?q=Art+Hotel+Miro+Calenzano" target="_blank" class="btn btn-maps" style="margin-top:auto;">📍 Google Maps ➔</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
 
-  <!-- Bottom Tab Bar -->
-    <!-- Bottom Tab Bar (iOS Safe Area Ready) -->
+  <!-- Bottom Tab Bar (iOS Safe Area Ready) -->
   <nav class="bottom-tab-bar">
     <a href="index.html" class="tab-item ">
       <span class="tab-icon">🏠</span>
       <span class="tab-label">ホーム</span>
     </a>
 
-    <!-- Day Selection Bottom Sheet Drawer -->
+    <!-- Day Selection Bottom Sheet Drawer (Expands UPWARD from Footer) -->
     <details class="day-popover-details" id="day-popover-details">
       <summary class="tab-item active">
         <span class="tab-icon">📅</span>
@@ -284,7 +329,6 @@
   </nav>
 
   <!-- Site Footer -->
-    <!-- Site Footer -->
   <footer class="site-footer">
     <div class="container footer-inner">
       <div>
@@ -305,14 +349,5 @@
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
   <script src="app.js"></script>
-  <script>
-    document.addEventListener('click', function(e) {
-      document.querySelectorAll('details.day-popover-details, details.day-nav-details').forEach(function(d) {
-        if (!d.contains(e.target) && d.hasAttribute('open')) {
-          d.removeAttribute('open');
-        }
-      });
-    });
-  </script>
 </body>
 </html>

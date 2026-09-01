@@ -11,12 +11,22 @@
 <body>
   <main class="container" style="padding-top: 6px;">
 
-    <!-- Top Prev/Next Navigation Strip -->
-    
+    <!-- Top Horizontal Quick Day Pills & Navigation Strip -->
+    <div class="day-quick-pills">
+      <a href="day1.html" class="day-pill">Day 1<small>11/15</small></a>
+      <a href="day2.html" class="day-pill">Day 2<small>11/16</small></a>
+      <a href="day3.html" class="day-pill">Day 3<small>11/17</small></a>
+      <a href="day4.html" class="day-pill">Day 4<small>11/18</small></a>
+      <a href="day5.html" class="day-pill active">Day 5<small>11/19</small></a>
+      <a href="day6.html" class="day-pill">Day 6<small>11/20</small></a>
+      <a href="day7.html" class="day-pill">Day 7<small>11/21</small></a>
+      <a href="day8.html" class="day-pill">Day 8<small>11/22</small></a>
+    </div>
+
     <div class="day-nav-strip">
-      <a href="day4.html" class="btn btn-secondary" style="font-size:0.7rem; padding:4px 6px;">◀ Day 4</a>
+      <a href="day4.html" class="btn btn-secondary">◀ Day 4</a>
       <details class="day-nav-details">
-        <summary class="btn btn-primary" style="font-size:0.7rem; padding:4px 8px;">📅 日程選択 ▾</summary>
+        <summary class="btn btn-primary">📅 日程選択 ▾</summary>
         <div class="day-nav-dropdown">
           <a href="day1.html" class="dp-nav-link">Day 1: 11/15(日) 関空➔ミラノ</a>
           <a href="day2.html" class="dp-nav-link">Day 2: 11/16(月) ミラノ➔ベネチア</a>
@@ -28,10 +38,9 @@
           <a href="day8.html" class="dp-nav-link">Day 8: 11/22(日) 関空帰着・解散</a>
         </div>
       </details>
-      <a href="day6.html" class="btn btn-secondary" style="font-size:0.7rem; padding:4px 6px;">Day 6 ▶</a>
+      <a href="day6.html" class="btn btn-secondary">Day 6 ▶</a>
     </div>
 
-    <!-- Hero Header -->
     <div class="hero-card hero-day">
       <span class="hero-tag">💍 HIS Honeymoon Tour</span>
       <h2 class="hero-title">Day 5: 中世の塔の街サンジミニャーノ ＆ 本場ピッツァ ➔ 永遠の都ローマへ</h2>
@@ -238,18 +247,54 @@
       </details>
       <a href="day6.html" class="btn btn-secondary" style="font-size:0.7rem; padding:4px 6px;">Day 6 ▶</a>
     </div>
-    
+
+    <!-- Day 5 Accommodation Hotel Candidates Section -->
+    <section class="section" style="margin-top:16px;">
+      <div class="section-header">
+        <h3 class="section-title">🏨 本日からの宿泊ホテル候補一覧（ローマ・テルミニ駅周辺 2連泊）</h3>
+        <span class="section-subtitle">HIS Impresso スーペリアクラス（テルミニ駅から半径2km以内）</span>
+      </div>
+      <div class="cards-grid">
+        <div class="spot-card">
+          <div class="spot-body">
+            <h4 class="spot-name-ja">ホテル アルキメーデ (Hotel Archimede)</h4>
+            <span class="spot-name-it">Via dei Mille, 41, Roma</span>
+            <p class="spot-desc">テルミニ駅北側徒歩3分！地下鉄A線・B線でのローマ自由行動に最高の立地。</p>
+            <div class="spot-mime-tip"><strong>【みめTip】</strong> 駅近なので夜のトレビの泉観光やスーパーConadへの買い出しもラクラク。</div>
+            <a href="https://maps.google.com/?q=Hotel+Archimede+Roma" target="_blank" class="btn btn-maps" style="margin-top:auto;">📍 Google Maps ➔</a>
+          </div>
+        </div>
+        <div class="spot-card">
+          <div class="spot-body">
+            <h4 class="spot-name-ja">スターホテルズ メトロポール (Starhotels Metropole)</h4>
+            <span class="spot-name-it">Via Principe Amedeo, 3, Roma</span>
+            <p class="spot-desc">オペラ座近くの洗練された4つ星スーペリア。治安も良く上質なハネムーン滞在。</p>
+            <div class="spot-mime-tip"><strong>【みめTip】</strong> 高級感あるロビーと防音客室で贅沢なローマの夜を満喫できます。</div>
+            <a href="https://maps.google.com/?q=Starhotels+Metropole+Roma" target="_blank" class="btn btn-maps" style="margin-top:auto;">📍 Google Maps ➔</a>
+          </div>
+        </div>
+        <div class="spot-card">
+          <div class="spot-body">
+            <h4 class="spot-name-ja">BW プレミア ホテル ロイヤル サンティーナ</h4>
+            <span class="spot-name-it">Via Marsala, 22, Roma</span>
+            <p class="spot-desc">テルミニ駅マルサラ口すぐ。LED照明と最新モダン設備が評判の4つ星。</p>
+            <div class="spot-mime-tip"><strong>【みめTip】</strong> 駅構内へのアクセスが最もスムーズな人気ホテルです。</div>
+            <a href="https://maps.google.com/?q=Hotel+Royal+Santina+Roma" target="_blank" class="btn btn-maps" style="margin-top:auto;">📍 Google Maps ➔</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
 
-  <!-- Bottom Tab Bar -->
-    <!-- Bottom Tab Bar (iOS Safe Area Ready) -->
+  <!-- Bottom Tab Bar (iOS Safe Area Ready) -->
   <nav class="bottom-tab-bar">
     <a href="index.html" class="tab-item ">
       <span class="tab-icon">🏠</span>
       <span class="tab-label">ホーム</span>
     </a>
 
-    <!-- Day Selection Bottom Sheet Drawer -->
+    <!-- Day Selection Bottom Sheet Drawer (Expands UPWARD from Footer) -->
     <details class="day-popover-details" id="day-popover-details">
       <summary class="tab-item active">
         <span class="tab-icon">📅</span>
@@ -301,7 +346,6 @@
   </nav>
 
   <!-- Site Footer -->
-    <!-- Site Footer -->
   <footer class="site-footer">
     <div class="container footer-inner">
       <div>
@@ -322,14 +366,5 @@
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
   <script src="app.js"></script>
-  <script>
-    document.addEventListener('click', function(e) {
-      document.querySelectorAll('details.day-popover-details, details.day-nav-details').forEach(function(d) {
-        if (!d.contains(e.target) && d.hasAttribute('open')) {
-          d.removeAttribute('open');
-        }
-      });
-    });
-  </script>
 </body>
 </html>

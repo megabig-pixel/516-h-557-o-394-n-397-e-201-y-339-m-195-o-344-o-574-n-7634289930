@@ -11,12 +11,22 @@
 <body>
   <main class="container" style="padding-top: 6px;">
 
-    <!-- Top Prev/Next Navigation Strip -->
-    
+    <!-- Top Horizontal Quick Day Pills & Navigation Strip -->
+    <div class="day-quick-pills">
+      <a href="day1.html" class="day-pill">Day 1<small>11/15</small></a>
+      <a href="day2.html" class="day-pill active">Day 2<small>11/16</small></a>
+      <a href="day3.html" class="day-pill">Day 3<small>11/17</small></a>
+      <a href="day4.html" class="day-pill">Day 4<small>11/18</small></a>
+      <a href="day5.html" class="day-pill">Day 5<small>11/19</small></a>
+      <a href="day6.html" class="day-pill">Day 6<small>11/20</small></a>
+      <a href="day7.html" class="day-pill">Day 7<small>11/21</small></a>
+      <a href="day8.html" class="day-pill">Day 8<small>11/22</small></a>
+    </div>
+
     <div class="day-nav-strip">
-      <a href="day1.html" class="btn btn-secondary" style="font-size:0.7rem; padding:4px 6px;">◀ Day 1</a>
+      <a href="day1.html" class="btn btn-secondary">◀ Day 1</a>
       <details class="day-nav-details">
-        <summary class="btn btn-primary" style="font-size:0.7rem; padding:4px 8px;">📅 日程選択 ▾</summary>
+        <summary class="btn btn-primary">📅 日程選択 ▾</summary>
         <div class="day-nav-dropdown">
           <a href="day1.html" class="dp-nav-link">Day 1: 11/15(日) 関空➔ミラノ</a>
           <a href="day2.html" class="dp-nav-link">Day 2: 11/16(月) ミラノ➔ベネチア</a>
@@ -28,10 +38,9 @@
           <a href="day8.html" class="dp-nav-link">Day 8: 11/22(日) 関空帰着・解散</a>
         </div>
       </details>
-      <a href="day3.html" class="btn btn-secondary" style="font-size:0.7rem; padding:4px 6px;">Day 3 ▶</a>
+      <a href="day3.html" class="btn btn-secondary">Day 3 ▶</a>
     </div>
 
-    <!-- Hero Header -->
     <div class="hero-card hero-day">
       <span class="hero-tag">💍 HIS Honeymoon Tour</span>
       <h2 class="hero-title">Day 2: ファッションの都ミラノ ➔ 愛の街ベローナ ➔ ベネチア歓迎ディナー</h2>
@@ -238,18 +247,54 @@
       </details>
       <a href="day3.html" class="btn btn-secondary" style="font-size:0.7rem; padding:4px 6px;">Day 3 ▶</a>
     </div>
-    
+
+    <!-- Day 2 Accommodation Hotel Candidates Section -->
+    <section class="section" style="margin-top:16px;">
+      <div class="section-header">
+        <h3 class="section-title">🏨 本日の宿泊ホテル候補一覧（ベネチア・メストレ地区）</h3>
+        <span class="section-subtitle">HIS Impresso スーペリア／スタンダード</span>
+      </div>
+      <div class="cards-grid">
+        <div class="spot-card">
+          <div class="spot-body">
+            <h4 class="spot-name-ja">ホテル プラザ (Hotel Plaza Mestre)</h4>
+            <span class="spot-name-it">Viale Stazione, 36, Mestre</span>
+            <p class="spot-desc">メストレ駅前すぐ！本島行きバス停・駅直結の大型ホテル。清潔で快適な客室。</p>
+            <div class="spot-mime-tip"><strong>【みめTip】</strong> 駅前なので軽食や飲み物の調達が非常に便利。</div>
+            <a href="https://maps.google.com/?q=Hotel+Plaza+Mestre" target="_blank" class="btn btn-maps" style="margin-top:auto;">📍 Google Maps ➔</a>
+          </div>
+        </div>
+        <div class="spot-card">
+          <div class="spot-body">
+            <h4 class="spot-name-ja">レオナルド ロイヤル ホテル ベネチア メストレ</h4>
+            <span class="spot-name-it">Via Ca' Marcello, 8L, Mestre</span>
+            <p class="spot-desc">モダンでスタイリッシュな4つ星スーペリア。洗練されたインテリアがハネムーンに人気。</p>
+            <div class="spot-mime-tip"><strong>【みめTip】</strong> 新築系で防音性・水回りの設備が非常に優れています。</div>
+            <a href="https://maps.google.com/?q=Leonardo+Royal+Hotel+Venice+Mestre" target="_blank" class="btn btn-maps" style="margin-top:auto;">📍 Google Maps ➔</a>
+          </div>
+        </div>
+        <div class="spot-card">
+          <div class="spot-body">
+            <h4 class="spot-name-ja">ベストウェスタン プラス ホテル ボローニャ</h4>
+            <span class="spot-name-it">Via Piave, 214, Mestre</span>
+            <p class="spot-desc">メストレ駅正面。落ち着いたクラシカルな客室と充実した朝食が評判。</p>
+            <div class="spot-mime-tip"><strong>【みめTip】</strong> 駅近で夜間の到着でも安心です。</div>
+            <a href="https://maps.google.com/?q=Best+Western+Plus+Hotel+Bologna+Mestre" target="_blank" class="btn btn-maps" style="margin-top:auto;">📍 Google Maps ➔</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
 
-  <!-- Bottom Tab Bar -->
-    <!-- Bottom Tab Bar (iOS Safe Area Ready) -->
+  <!-- Bottom Tab Bar (iOS Safe Area Ready) -->
   <nav class="bottom-tab-bar">
     <a href="index.html" class="tab-item ">
       <span class="tab-icon">🏠</span>
       <span class="tab-label">ホーム</span>
     </a>
 
-    <!-- Day Selection Bottom Sheet Drawer -->
+    <!-- Day Selection Bottom Sheet Drawer (Expands UPWARD from Footer) -->
     <details class="day-popover-details" id="day-popover-details">
       <summary class="tab-item active">
         <span class="tab-icon">📅</span>
@@ -301,7 +346,6 @@
   </nav>
 
   <!-- Site Footer -->
-    <!-- Site Footer -->
   <footer class="site-footer">
     <div class="container footer-inner">
       <div>
@@ -322,14 +366,5 @@
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
   <script src="app.js"></script>
-  <script>
-    document.addEventListener('click', function(e) {
-      document.querySelectorAll('details.day-popover-details, details.day-nav-details').forEach(function(d) {
-        if (!d.contains(e.target) && d.hasAttribute('open')) {
-          d.removeAttribute('open');
-        }
-      });
-    });
-  </script>
 </body>
 </html>
