@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=no">
   <title>イタリアお土産＆ショッピング完全ガイド｜HIS 8日間 25選</title>
-  <meta name="description" content="YouTubeイタリアガイドみめ直伝の免税手続き（€70.01〜）、液体物パッキング、肉製品持ち込み禁止警告と都市別おすすめお土産">
+  <meta name="description" content="YouTubeイタリアガイドみめ直伝の免税手続き（€70.01〜）、液体物パッキング、肉製品持ち込み禁止警告と写真付きおすすめお土産">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
 </head>
@@ -45,6 +45,30 @@
       </div>
     </div>
 
+    <!-- Tax Refund Real-time Calculator -->
+    <section class="section">
+      <div class="calc-card">
+        <div class="section-header" style="margin-bottom:6px;">
+          <h3 class="section-title">💶 免税（Tax Refund）還付額シミュレーター</h3>
+          <span class="section-subtitle">2024年法改正 €70.01〜対応</span>
+        </div>
+        <div class="calc-grid">
+          <div>
+            <label style="font-size:0.7rem; color:var(--text-muted); font-weight:700;">購入金額 (€)</label>
+            <input type="number" id="tax-eur-input" class="calc-input" value="120" min="0" step="5">
+          </div>
+          <div>
+            <label style="font-size:0.7rem; color:var(--text-muted); font-weight:700;">予想還付金 (約12.5% 還元)</label>
+            <div class="calc-result-box">
+              <strong id="tax-refund-eur" style="font-size:1.1rem; color:#16a34a;">約 €15.00</strong>
+              <div id="tax-refund-jpy" style="font-size:0.75rem; color:var(--text-muted);">約 ¥2,475</div>
+            </div>
+          </div>
+        </div>
+        <div id="tax-status-msg" style="font-size:0.7rem; margin-top:2px;"></div>
+      </div>
+    </section>
+
     <!-- Category Filter Chips -->
     <div style="display:flex; gap:4px; overflow-x:auto; padding-bottom:6px; margin-bottom:10px; scrollbar-width:none;">
       <button class="day-chip filter-chip active" data-cat="all" style="min-width:60px;">全品目</button>
@@ -62,6 +86,10 @@
       <div class="cards-grid">
         
       <div class="spot-card" data-cat="supermarket">
+        <div class="spot-img-wrap">
+          <img src="https://images.unsplash.com/photo-1549007994-cb92caebd54b?auto=format&fit=crop&w=600&q=80" alt="Baci (バッチ) チョコレート" loading="lazy">
+          <span class="spot-img-badge">スーパー・ばらまき</span>
+        </div>
         <div class="spot-body">
           <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:3px;">
             <span class="spot-chip" style="background:#faf5ff; color:#9333ea; font-weight:800;">スーパー・ばらまき</span>
@@ -76,6 +104,10 @@
         </div>
       </div>
       <div class="spot-card" data-cat="supermarket">
+        <div class="spot-img-wrap">
+          <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=600&q=80" alt="ポケットコーヒー (Pocket Coffee)" loading="lazy">
+          <span class="spot-img-badge">スーパー・ばらまき</span>
+        </div>
         <div class="spot-body">
           <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:3px;">
             <span class="spot-chip" style="background:#faf5ff; color:#9333ea; font-weight:800;">スーパー・ばらまき</span>
@@ -90,6 +122,10 @@
         </div>
       </div>
       <div class="spot-card" data-cat="supermarket">
+        <div class="spot-img-wrap">
+          <img src="https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?auto=format&fit=crop&w=600&q=80" alt="白トリュフ塩 (Sale al Tartufo Bianco)" loading="lazy">
+          <span class="spot-img-badge">スーパー・ばらまき</span>
+        </div>
         <div class="spot-body">
           <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:3px;">
             <span class="spot-chip" style="background:#faf5ff; color:#9333ea; font-weight:800;">スーパー・ばらまき</span>
@@ -103,49 +139,11 @@
           </div>
         </div>
       </div>
-      <div class="spot-card" data-cat="supermarket">
-        <div class="spot-body">
-          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:3px;">
-            <span class="spot-chip" style="background:#faf5ff; color:#9333ea; font-weight:800;">スーパー・ばらまき</span>
-            <span class="spot-chip" style="background:#f1f5f9; color:#475569;">目安: €4〜10</span>
-          </div>
-          <h3 class="spot-name-ja">乾燥ポルチーニ茸 (Funghi Porcini)</h3>
-          <span class="spot-name-it">ブランド/産地: Local Brand (全都市)</span>
-          <p class="spot-desc">ぬるま湯で戻してリゾットやクリームパスタに。凝縮された芳醇な香りが絶品。</p>
-          <div class="spot-mime-tip">
-            <strong>💡 【みめTip】</strong> 軽くて割れないのでスーツケースの隙間埋めに最高のばらまき土産！
-          </div>
-        </div>
-      </div>
-      <div class="spot-card" data-cat="supermarket">
-        <div class="spot-body">
-          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:3px;">
-            <span class="spot-chip" style="background:#faf5ff; color:#9333ea; font-weight:800;">スーパー・ばらまき</span>
-            <span class="spot-chip" style="background:#f1f5f9; color:#475569;">目安: €4〜7</span>
-          </div>
-          <h3 class="spot-name-ja">マルビス (MARVIS) 高級歯磨き粉</h3>
-          <span class="spot-name-it">ブランド/産地: MARVIS Firenze (全都市/薬局)</span>
-          <p class="spot-desc">イタリア・フィレンツェ発祥のスタイリッシュな歯磨き粉。クラシックミント、シナモン、ジャスミン。</p>
-          <div class="spot-mime-tip">
-            <strong>💡 【みめTip】</strong> 日本のセレクトショップでは2,000円以上するものが現地の薬局やスーパーで€4前後！
-          </div>
-        </div>
-      </div>
-      <div class="spot-card" data-cat="supermarket">
-        <div class="spot-body">
-          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:3px;">
-            <span class="spot-chip" style="background:#faf5ff; color:#9333ea; font-weight:800;">スーパー・ばらまき</span>
-            <span class="spot-chip" style="background:#f1f5f9; color:#475569;">目安: €3〜8</span>
-          </div>
-          <h3 class="spot-name-ja">カントゥッチ (Cantucci) ＆ ヴィンサント</h3>
-          <span class="spot-name-it">ブランド/産地: Sapori / Gelli (トスカーナ全域)</span>
-          <p class="spot-desc">アーモンドの固焼きビスケット。甘口デザートワイン（Vin Santo）に浸して食べる伝統菓子。</p>
-          <div class="spot-mime-tip">
-            <strong>💡 【みめTip】</strong> コーヒーや紅茶に浸して食べても絶品。日持ちが長くお土産に安心。
-          </div>
-        </div>
-      </div>
       <div class="spot-card" data-cat="artisan">
+        <div class="spot-img-wrap">
+          <img src="https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=600&q=80" alt="香水『王妃の水』＆ ザクロ石鹸" loading="lazy">
+          <span class="spot-img-badge">伝統工芸・名品</span>
+        </div>
         <div class="spot-body">
           <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:3px;">
             <span class="spot-chip" style="background:#faf5ff; color:#9333ea; font-weight:800;">伝統工芸・名品</span>
@@ -160,6 +158,10 @@
         </div>
       </div>
       <div class="spot-card" data-cat="artisan">
+        <div class="spot-img-wrap">
+          <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=600&q=80" alt="フィレンツェ伝統革製品 (財布・手袋)" loading="lazy">
+          <span class="spot-img-badge">伝統工芸・名品</span>
+        </div>
         <div class="spot-body">
           <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:3px;">
             <span class="spot-chip" style="background:#faf5ff; color:#9333ea; font-weight:800;">伝統工芸・名品</span>
@@ -174,6 +176,10 @@
         </div>
       </div>
       <div class="spot-card" data-cat="artisan">
+        <div class="spot-img-wrap">
+          <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=600&q=80" alt="ベネチアンガラス (Murano Glass)" loading="lazy">
+          <span class="spot-img-badge">伝統工芸・名品</span>
+        </div>
         <div class="spot-body">
           <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:3px;">
             <span class="spot-chip" style="background:#faf5ff; color:#9333ea; font-weight:800;">伝統工芸・名品</span>
@@ -188,6 +194,10 @@
         </div>
       </div>
       <div class="spot-card" data-cat="artisan">
+        <div class="spot-img-wrap">
+          <img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=600&q=80" alt="伝統的モデナ産バルサミコ酢" loading="lazy">
+          <span class="spot-img-badge">伝統工芸・名品</span>
+        </div>
         <div class="spot-body">
           <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:3px;">
             <span class="spot-chip" style="background:#faf5ff; color:#9333ea; font-weight:800;">伝統工芸・名品</span>
@@ -202,6 +212,10 @@
         </div>
       </div>
       <div class="spot-card" data-cat="artisan">
+        <div class="spot-img-wrap">
+          <img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=600&q=80" alt="リモンチェッロ (Limoncello)" loading="lazy">
+          <span class="spot-img-badge">伝統工芸・名品</span>
+        </div>
         <div class="spot-body">
           <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:3px;">
             <span class="spot-chip" style="background:#faf5ff; color:#9333ea; font-weight:800;">伝統工芸・名品</span>
@@ -215,34 +229,20 @@
           </div>
         </div>
       </div>
-      <div class="spot-card" data-cat="artisan">
-        <div class="spot-body">
-          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:3px;">
-            <span class="spot-chip" style="background:#faf5ff; color:#9333ea; font-weight:800;">伝統工芸・名品</span>
-            <span class="spot-chip" style="background:#f1f5f9; color:#475569;">目安: €6〜15</span>
-          </div>
-          <h3 class="spot-name-ja">パルミジャーノ・レッジャーノ 24ヶ月熟成</h3>
-          <span class="spot-name-it">ブランド/産地: D.O.P. Parmigiano (スーパー/市場)</span>
-          <p class="spot-desc">アミノ酸の結晶がジャリッと旨いイタリアチーズの王様。真空パックで常温持ち帰り可能。</p>
-          <div class="spot-mime-tip">
-            <strong>💡 【みめTip】</strong> チーズ（乳製品）は日本持ち込みOK！肉製品と違って税関検査で問題ありません。
-          </div>
-        </div>
-      </div>
       </div>
     </section>
 
   </main>
-  <!-- Ultra-Compact Bottom Tab Bar (Direct 100% Reliable Link) -->
+  <!-- Bottom Tab Bar -->
   <nav class="bottom-tab-bar">
     <a href="index.html" class="tab-item">
       <span class="tab-icon">🏠</span>
       <span class="tab-label">ホーム</span>
     </a>
-    <a href="itinerary.html" class="tab-item">
+    <button type="button" class="tab-item" id="btn-day-popover" onclick="window.toggleDayPopover && window.toggleDayPopover(true);">
       <span class="tab-icon">📅</span>
       <span class="tab-label">日程</span>
-    </a>
+    </button>
     <a href="beginner-guide.html" class="tab-item">
       <span class="tab-icon">🔰</span>
       <span class="tab-label">初心者</span>
@@ -268,6 +268,25 @@
       <span class="tab-label">お土産</span>
     </a>
   </nav>
+
+  <!-- Day Selection Popover Menu (Appears Directly Above the '日程' Label) -->
+  <div id="day-popover-overlay" class="day-popover-overlay" onclick="window.toggleDayPopover && window.toggleDayPopover(false);"></div>
+  <div id="day-popover-menu" class="day-popover-menu">
+    <div class="day-popover-header">
+      <span class="day-popover-title">📅 日程詳細を選択</span>
+      <button type="button" class="day-popover-close" onclick="window.toggleDayPopover && window.toggleDayPopover(false);">✕</button>
+    </div>
+    <div class="day-popover-grid">
+      <a href="day1.html" class="day-popover-item"><span class="dp-badge">Day 1</span> 11/15(日) 関空➔ミラノ</a>
+      <a href="day2.html" class="day-popover-item"><span class="dp-badge">Day 2</span> 11/16(月) ミラノ➔ベネチア</a>
+      <a href="day3.html" class="day-popover-item"><span class="dp-badge">Day 3</span> 11/17(火) ベネチア➔フィレンツェ</a>
+      <a href="day4.html" class="day-popover-item"><span class="dp-badge">Day 4</span> 11/18(水) フィレンツェ＆ピサ</a>
+      <a href="day5.html" class="day-popover-item"><span class="dp-badge">Day 5</span> 11/19(木) サンジミニャーノ➔ローマ</a>
+      <a href="day6.html" class="day-popover-item"><span class="dp-badge">Day 6</span> 11/20(金) ローマ＆バチカン自由</a>
+      <a href="day7.html" class="day-popover-item"><span class="dp-badge">Day 7</span> 11/21(土) ローマ➔FCO空港発</a>
+      <a href="day8.html" class="day-popover-item"><span class="dp-badge">Day 8</span> 11/22(日) 関空帰着・解散</a>
+    </div>
+  </div>
   <!-- Site Footer -->
   <footer class="site-footer">
     <div class="container footer-inner">
@@ -277,7 +296,6 @@
       </div>
       <div style="display:flex; gap:6px; flex-wrap:wrap;">
         <a href="index.html">ホーム</a>
-        <a href="itinerary.html">全8日間日程</a>
         <a href="beginner-guide.html">初心者安心</a>
         <a href="tour-map.html">MAP</a>
         <a href="sightseeing-guide.html">観光</a>

@@ -1,60 +1,52 @@
 /* ==========================================================================
-   イタリア新婚旅行ガイドポータル 共通JavaScript (app.js v5)
+   イタリア新婚旅行ガイドポータル 共通JavaScript (app.js v7)
    鈴木 健太・めぐみ 様 (HIS Tour OI-KMI2811: 2026年11月15日〜22日)
    ========================================================================== */
 
-// Global fail-safe Modal functions
-window.openDayPicker = function() {
-  const modal = document.getElementById('day-picker-modal');
-  if (modal) {
-    modal.classList.add('open');
-    modal.style.display = 'flex';
-  }
-};
+// Global Day Selection Popover Handler (Appears directly above the '日程' label)
+window.toggleDayPopover = function(show) {
+  const menu = document.getElementById('day-popover-menu');
+  const overlay = document.getElementById('day-popover-overlay');
+  if (!menu || !overlay) return;
 
-window.closeDayPicker = function() {
-  const modal = document.getElementById('day-picker-modal');
-  if (modal) {
-    modal.classList.remove('open');
-    modal.style.display = 'none';
+  const isVisible = menu.classList.contains('show');
+  const targetState = (typeof show === 'boolean') ? show : !isVisible;
+
+  if (targetState) {
+    overlay.classList.add('show');
+    menu.classList.add('show');
+  } else {
+    overlay.classList.remove('show');
+    menu.classList.remove('show');
   }
 };
 
 document.addEventListener('DOMContentLoaded', () => {
-  initDayPickerModal();
+  initDayPopover();
   initChecklist();
   initCalculator();
+  initTaxRefundCalculator();
   initSpeech();
   initSearch();
 });
 
-/* 1. Day Picker Action Sheet Modal */
-function initDayPickerModal() {
-  const modal = document.getElementById('day-picker-modal');
-  const openBtn = document.getElementById('btn-open-day-picker');
-  const closeBtn = document.getElementById('btn-close-day-picker');
-
-  if (!modal) return;
-
-  if (openBtn) {
-    openBtn.addEventListener('click', (e) => {
+/* 1. Day Popover Initializer */
+function initDayPopover() {
+  const btn = document.getElementById('btn-day-popover');
+  const overlay = document.getElementById('day-popover-overlay');
+  
+  if (btn) {
+    btn.addEventListener('click', (e) => {
       e.preventDefault();
-      window.openDayPicker();
+      window.toggleDayPopover();
     });
   }
 
-  if (closeBtn) {
-    closeBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      window.closeDayPicker();
+  if (overlay) {
+    overlay.addEventListener('click', () => {
+      window.toggleDayPopover(false);
     });
   }
-
-  modal.addEventListener('click', (e) => {
-    if (e.target === modal) {
-      window.closeDayPicker();
-    }
-  });
 }
 
 /* 2. Interactive Checklist with localStorage */
@@ -62,7 +54,7 @@ function initChecklist() {
   const checkItems = document.querySelectorAll('.check-item input[type="checkbox"]');
   const progressFill = document.querySelector('.checklist-progress-fill');
   const progressText = document.querySelector('.checklist-progress-text');
-  const storageKey = 'italy_honeymoon_checklist_v2';
+  const storageKey = 'italy_honeymoon_checklist_v3';
   
   if (checkItems.length === 0) return;
 
@@ -188,7 +180,38 @@ function initCalculator() {
   calculate();
 }
 
-/* 4. Italian Speech Synthesis (Web Speech API) & Copy */
+/* 4. Real-time Tax Refund (免税) Calculator */
+function initTaxRefundCalculator() {
+  const taxEurInput = document.getElementById('tax-eur-input');
+  const taxRefundEur = document.getElementById('tax-refund-eur');
+  const taxRefundJpy = document.getElementById('tax-refund-jpy');
+  const taxStatus = document.getElementById('tax-status-msg');
+
+  if (!taxEurInput || !taxRefundEur) return;
+
+  function calcRefund() {
+    const total = parseFloat(taxEurInput.value) || 0;
+    const rate = 165;
+    
+    if (total < 70.01) {
+      taxRefundEur.textContent = '€0.00';
+      taxRefundJpy.textContent = '¥0';
+      if (taxStatus) taxStatus.innerHTML = '<span style="color:#dc2626;">※ 最低購入額 €70.01 未満のため免税対象外です</span>';
+    } else {
+      // Standard Italian standard VAT refund ~12.5% net
+      const refund = total * 0.125;
+      const jpy = Math.round(refund * rate);
+      taxRefundEur.textContent = `約 €${refund.toFixed(2)}`;
+      taxRefundJpy.textContent = `約 ¥${jpy.toLocaleString()}`;
+      if (taxStatus) taxStatus.innerHTML = '<span style="color:#16a34a; font-weight:700;">✅ 免税対象（空港Otello端末でパスポートスキャン）</span>';
+    }
+  }
+
+  taxEurInput.addEventListener('input', calcRefund);
+  calcRefund();
+}
+
+/* 5. Italian Speech Synthesis (Web Speech API) & Copy */
 function initSpeech() {
   document.querySelectorAll('.speak-btn').forEach(btn => {
     btn.addEventListener('click', (e) => {
@@ -227,11 +250,11 @@ function initSpeech() {
   });
 }
 
-/* 5. Live Filter and Search */
+/* 6. Live Filter and Search */
 function initSearch() {
   const searchInput = document.getElementById('search-input');
   const filterChips = document.querySelectorAll('.filter-chip');
-  const phraseCards = document.querySelectorAll('.phrase-card, .spot-card, .restaurant-card, .souvenir-card');
+  const cards = document.querySelectorAll('.phrase-card, .spot-card, .restaurant-card, .souvenir-card');
 
   if (!searchInput && filterChips.length === 0) return;
 
@@ -240,7 +263,7 @@ function initSearch() {
     const activeChip = document.querySelector('.filter-chip.active');
     const selectedCategory = activeChip ? activeChip.dataset.cat : 'all';
 
-    phraseCards.forEach(card => {
+    cards.forEach(card => {
       const cardCategory = card.dataset.cat || card.dataset.city || '';
       const text = card.textContent.toLowerCase();
       

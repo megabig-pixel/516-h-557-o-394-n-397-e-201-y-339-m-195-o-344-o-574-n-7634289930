@@ -11,6 +11,14 @@
 <body>
   <main class="container" style="padding-top: 6px;">
 
+    <!-- Top Prev/Next Navigation Strip -->
+    
+    <div class="day-nav-strip">
+      <a href="day2.html" class="btn btn-secondary" style="font-size:0.68rem; padding:2px 6px;">◀ Day 2</a>
+      <button type="button" class="btn btn-primary" style="font-size:0.7rem; padding:2px 8px;" onclick="window.toggleDayPopover && window.toggleDayPopover(true);">📅 日程一覧を選択</button>
+      <a href="day4.html" class="btn btn-secondary" style="font-size:0.68rem; padding:2px 6px;">Day 4 ▶</a>
+    </div>
+
     <!-- Hero Header -->
     <div class="hero-card hero-day">
       <span class="hero-tag">💍 HIS Honeymoon Tour</span>
@@ -106,18 +114,26 @@
         </li>
       </ul>
     </section>
+
+    <!-- Bottom Prev/Next Navigation Strip -->
+    
+    <div class="day-nav-strip">
+      <a href="day2.html" class="btn btn-secondary" style="font-size:0.68rem; padding:2px 6px;">◀ Day 2</a>
+      <button type="button" class="btn btn-primary" style="font-size:0.7rem; padding:2px 8px;" onclick="window.toggleDayPopover && window.toggleDayPopover(true);">📅 日程一覧を選択</button>
+      <a href="day4.html" class="btn btn-secondary" style="font-size:0.68rem; padding:2px 6px;">Day 4 ▶</a>
+    </div>
     
   </main>
-  <!-- Ultra-Compact Bottom Tab Bar (Direct 100% Reliable Link) -->
+  <!-- Bottom Tab Bar -->
   <nav class="bottom-tab-bar">
     <a href="index.html" class="tab-item active">
       <span class="tab-icon">🏠</span>
       <span class="tab-label">ホーム</span>
     </a>
-    <a href="itinerary.html" class="tab-item">
+    <button type="button" class="tab-item" id="btn-day-popover" onclick="window.toggleDayPopover && window.toggleDayPopover(true);">
       <span class="tab-icon">📅</span>
       <span class="tab-label">日程</span>
-    </a>
+    </button>
     <a href="beginner-guide.html" class="tab-item">
       <span class="tab-icon">🔰</span>
       <span class="tab-label">初心者</span>
@@ -143,6 +159,25 @@
       <span class="tab-label">お土産</span>
     </a>
   </nav>
+
+  <!-- Day Selection Popover Menu (Appears Directly Above the '日程' Label) -->
+  <div id="day-popover-overlay" class="day-popover-overlay" onclick="window.toggleDayPopover && window.toggleDayPopover(false);"></div>
+  <div id="day-popover-menu" class="day-popover-menu">
+    <div class="day-popover-header">
+      <span class="day-popover-title">📅 日程詳細を選択</span>
+      <button type="button" class="day-popover-close" onclick="window.toggleDayPopover && window.toggleDayPopover(false);">✕</button>
+    </div>
+    <div class="day-popover-grid">
+      <a href="day1.html" class="day-popover-item"><span class="dp-badge">Day 1</span> 11/15(日) 関空➔ミラノ</a>
+      <a href="day2.html" class="day-popover-item"><span class="dp-badge">Day 2</span> 11/16(月) ミラノ➔ベネチア</a>
+      <a href="day3.html" class="day-popover-item"><span class="dp-badge">Day 3</span> 11/17(火) ベネチア➔フィレンツェ</a>
+      <a href="day4.html" class="day-popover-item"><span class="dp-badge">Day 4</span> 11/18(水) フィレンツェ＆ピサ</a>
+      <a href="day5.html" class="day-popover-item"><span class="dp-badge">Day 5</span> 11/19(木) サンジミニャーノ➔ローマ</a>
+      <a href="day6.html" class="day-popover-item"><span class="dp-badge">Day 6</span> 11/20(金) ローマ＆バチカン自由</a>
+      <a href="day7.html" class="day-popover-item"><span class="dp-badge">Day 7</span> 11/21(土) ローマ➔FCO空港発</a>
+      <a href="day8.html" class="day-popover-item"><span class="dp-badge">Day 8</span> 11/22(日) 関空帰着・解散</a>
+    </div>
+  </div>
   <!-- Site Footer -->
   <footer class="site-footer">
     <div class="container footer-inner">
@@ -152,7 +187,6 @@
       </div>
       <div style="display:flex; gap:6px; flex-wrap:wrap;">
         <a href="index.html">ホーム</a>
-        <a href="itinerary.html">全8日間日程</a>
         <a href="beginner-guide.html">初心者安心</a>
         <a href="tour-map.html">MAP</a>
         <a href="sightseeing-guide.html">観光</a>
