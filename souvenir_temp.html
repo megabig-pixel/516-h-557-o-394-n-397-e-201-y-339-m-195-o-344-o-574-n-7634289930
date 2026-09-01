@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=no">
+  <title>イタリアお土産＆ショッピング完全ガイド 45選｜HIS 8日間周遊</title>
+  <meta name="description" content="7都市名物、スーパーばらまき菓子、SMN世界最古薬局、本革製品、免税手続き（€70.01〜）、肉製品持ち込み禁止警告と液体物パッキング完全攻略">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+</head>
+<body>
+  <main class="container" style="padding-top: 6px;">
+
+    <!-- Top Horizontal Quick Day Pills & Nav -->
+    <div class="day-quick-pills">
+      <a href="index.html" class="day-pill" style="min-width:45px;">🏠<small>Top</small></a>
+      <a href="beginner-guide.html" class="day-pill">🔰<small>初心者</small></a>
+      <a href="culture-trends.html" class="day-pill">💡<small>あるある</small></a>
+      <a href="tips-survival.html" class="day-pill">🚆<small>サバイバル</small></a>
+      <a href="souvenir-guide.html" class="day-pill active">🎁<small>お土産</small></a>
+      <a href="free-meal-guide.html" class="day-pill">🍽️<small>グルメ</small></a>
+      <a href="tour-map.html" class="day-pill">🗺️<small>MAP</small></a>
+    </div>
+
+    <!-- Hero Header -->
+    <div class="hero-card" style="background: linear-gradient(135deg, #6b21a8 0%, #9333ea 100%);">
+      <span class="hero-tag" style="background:#f3e8ff; color:#6b21a8;">🎁 厳選45選 ＆ 免税・税関ルール</span>
+      <h2 class="hero-title">イタリアお土産＆ショッピング完全ガイド</h2>
+      <p class="hero-subtitle">
+        スーパーばらまき菓子・7都市名物・SMN世界最古薬局・本革工芸・免税（€70.01〜）＆液体パッキング完全網羅
+      </p>
+    </div>
+
+    <!-- Mime Shopping & Customs Rules Callout -->
+    <div class="mime-callout">
+      <div class="mime-header">
+        <div class="mime-title">
+          <span style="font-size: 1.3rem;">🛍️</span>
+          <h3 style="margin:0;">【Mime直伝】お買い物・免税・税関の5大極意</h3>
+        </div>
+        <span class="mime-badge">必読ルール</span>
+      </div>
+      <div class="mime-tips-grid">
+        <div class="mime-tip-card" style="border-color:#f87171;">
+          <h4 style="color:#b91c1c;">1. 【絶対警告】肉製品は日本持ち込み厳禁！</h4>
+          <p>生ハム・サラミ・ソーセージ・肉エキス入り食品は日本の家畜伝染病予防法により日本への持ち込み一切不可（最高300万円罰金または3年以下の懲役）。現地で美味しく完食しましょう！</p>
+        </div>
+        <div class="mime-tip-card">
+          <h4>2. 免税（Tax Refund）新基準は€70.01以上！</h4>
+          <p>2024年法改正で€154.94から<b>€70.01</b>に大幅引き下げ！同一店舗1日合計€70.01以上で免税書類発行。空港Otello端末でパスポートスキャンするだけで簡単電子承認。</p>
+        </div>
+        <div class="mime-tip-card">
+          <h4>3. 液体物（オイル・ワイン・香水）はスーツケース預け</h4>
+          <p>100mlを超える液体物は機内持ち込み手荷物にすると保安検査で即没収！二重ジップロック＋衣類で巻いて必ずスーツケース（預け荷物）へ。</p>
+        </div>
+        <div class="mime-tip-card">
+          <h4>4. チーズ（ハード系）は日本持ち込みOK！</h4>
+          <p>パルミジャーノ・レッジャーノやグラナ・パダーノなど真空パックのハード系熟成チーズは検査証明書不要で日本に持ち帰り可能！</p>
+        </div>
+        <div class="mime-tip-card">
+          <h4>5. スーパー（Conad/Coop）のエコバッグが最高！</h4>
+          <p>各スーパーのレジ横で売られている布製・ジュート製オリジナルエコバッグ（€1〜3）は丈夫で可愛く、お土産を配る袋としても大好評！</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tax Refund Calculator -->
+    <section class="section">
+      <div class="calc-card">
+        <div class="section-header" style="margin-bottom:6px;">
+          <h3 class="section-title">💶 免税（Tax Refund）還付額シミュレーター</h3>
+          <span class="section-subtitle">2024年新基準 €70.01〜対応</span>
+        </div>
+        <div class="calc-grid">
+          <div>
+            <label style="font-size:0.7rem; color:var(--text-muted); font-weight:700;">購入合計金額 (€)</label>
+            <input type="number" id="tax-eur-input" class="calc-input" value="120" min="0" step="5">
+            <div style="display:flex; gap:3px; margin-top:4px; flex-wrap:wrap;">
+              <button type="button" class="btn btn-secondary btn-preset-tax" data-amount="75" style="padding:2px 5px; font-size:0.62rem;">€75</button>
+              <button type="button" class="btn btn-secondary btn-preset-tax" data-amount="120" style="padding:2px 5px; font-size:0.62rem;">€120</button>
+              <button type="button" class="btn btn-secondary btn-preset-tax" data-amount="200" style="padding:2px 5px; font-size:0.62rem;">€200</button>
+              <button type="button" class="btn btn-secondary btn-preset-tax" data-amount="350" style="padding:2px 5px; font-size:0.62rem;">€350</button>
+              <button type="button" class="btn btn-secondary btn-preset-tax" data-amount="600" style="padding:2px 5px; font-size:0.62rem;">€600</button>
+            </div>
+          </div>
+          <div>
+            <label style="font-size:0.7rem; color:var(--text-muted); font-weight:700;">予想還付金 (約12.5% 還元)</label>
+            <div class="calc-result-box">
+              <strong id="tax-refund-eur" style="font-size:1.15rem; color:#16a34a;">約 €15.00</strong>
+              <div id="tax-refund-jpy" style="font-size:0.75rem; color:var(--text-muted);">約 ¥2,475</div>
+            </div>
+          </div>
+        </div>
+        <div id="tax-status-msg" style="font-size:0.7rem; margin-top:3px;"></div>
+      </div>
+    </section>
+
+    <!-- Supermarket & Shopping Spots Guide -->
+    <details class="details-box">
+      <summary>🛒 立ち寄りやすいイタリア5大スーパー＆デパートの特徴 ▾</summary>
+      <div class="details-content">
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:6px;">
+          <div style="background:#f8fafc; padding:6px; border-radius:4px; border:1px solid #e2e8f0;">
+            <strong style="color:var(--primary-color);">🛒 Conad (コナッド) / Conad City</strong>
+            <p style="font-size:0.68rem; margin:2px 0 0;">イタリア全土の街中に最も多いスーパー。PB商品「Sapori & Dintorni」は各地のDOP特産品が高品質でお土産に最適！</p>
+          </div>
+          <div style="background:#f8fafc; padding:6px; border-radius:4px; border:1px solid #e2e8f0;">
+            <strong style="color:var(--primary-color);">🛒 Coop (コープ) / Pam Local</strong>
+            <p style="font-size:0.68rem; margin:2px 0 0;">フィレンツェやベネチアで便利。オーガニック商品「Vivi Verde」やパスタ、チョコの品揃えが豊富。</p>
+          </div>
+          <div style="background:#f8fafc; padding:6px; border-radius:4px; border:1px solid #e2e8f0;">
+            <strong style="color:var(--primary-color);">🛒 Eataly (イータリー)</strong>
+            <p style="font-size:0.68rem; margin:2px 0 0;">高品質食材のテーマパーク。パッケージが洗練されており、本命ギフト用のオリーブオイルやバルサミコ酢に最適。</p>
+          </div>
+          <div style="background:#f8fafc; padding:6px; border-radius:4px; border:1px solid #e2e8f0;">
+            <strong style="color:var(--primary-color);">🏛️ Rinascente (リナシェンテ)</strong>
+            <p style="font-size:0.68rem; margin:2px 0 0;">ミラノ・ローマの高級百貨店。最上階フードホールには厳選された高級スイーツや限定ワインが並びます。</p>
+          </div>
+        </div>
+      </div>
+    </details>
+
+    <!-- Search & Filters -->
+    <div style="margin: 8px 0 6px;">
+      <input type="text" id="search-input" class="calc-input" placeholder="🔍 お土産名・都市・カテゴリで検索 (例: チョコ, SMN, ワイン, ローマ)..." style="width:100%; padding:7px 10px; font-size:0.78rem;">
+    </div>
+
+    <!-- Category Filter Chips -->
+    <div class="city-filter-chips">
+      <button class="day-chip filter-chip active" data-cat="all">全45品目</button>
+      <button class="day-chip filter-chip" data-cat="sweets">🍫 チョコ・お菓子</button>
+      <button class="day-chip filter-chip" data-cat="food">🍝 パスタ・食材・調味料</button>
+      <button class="day-chip filter-chip" data-cat="alcohol">🍷 ワイン・お酒</button>
+      <button class="day-chip filter-chip" data-cat="cosmetics">💄 コスメ・薬局</button>
+      <button class="day-chip filter-chip" data-cat="artisan">👜 革製品・伝統工芸</button>
+      <button class="day-chip filter-chip" data-cat="supermarket">🛒 スーパー調達</button>
+      <button class="day-chip filter-chip" data-cat="milan">🏛️ ミラノ</button>
+      <button class="day-chip filter-chip" data-cat="verona">🌹 ベローナ</button>
+      <button class="day-chip filter-chip" data-cat="venice">🎭 ベネチア</button>
+      <button class="day-chip filter-chip" data-cat="florence">⚜️ フィレンツェ</button>
+      <button class="day-chip filter-chip" data-cat="pisa">🗼 ピサ</button>
+      <button class="day-chip filter-chip" data-cat="sangimignano">🏰 サンジミニャーノ</button>
+      <button class="day-chip filter-chip" data-cat="rome">🏛️ ローマ</button>
+      <button class="day-chip filter-chip" data-cat="vatican">🇻🇦 バチカン</button>
+    </div>
+
+    <!-- Souvenirs Grid (45 items) -->
+    <section class="section">
+      <div class="cards-grid">
+
+        <!-- 1. Baci -->
+        <div class="spot-card souvenir-card" data-cat="sweets supermarket" data-city="all">
+          <div class="card-thumb-wrap">
+            <img src="https://images.unsplash.com/photo-1549007994-cb92caebd54b?auto=format&fit=crop&w=350&q=80" alt="Baci チョコレート" loading="lazy">
+            <span class="card-thumb-badge" style="background:#9333ea;">お菓子</span>
+          </div>
+          <div class="spot-body">
+            <div class="spot-header-row">
+              <h3 class="spot-name-ja">Baci (バッチ) チョコレート</h3>
+              <span class="spot-chip" style="color:#9333ea; font-weight:800;">€3〜8 (¥495〜1,320)</span>
+            </div>
+            <span class="spot-name-it">Perugina (全都市 / スーパー)</span>
+            <div class="souvenir-badges-row">
+              <span class="sn-badge baramaki">ばらまき</span>
+              <span class="sn-badge super">スーパー</span>
+              <span class="sn-badge ok-customs">持ち込みOK</span>
+            </div>
+            <p class="spot-desc">銀紙の中にイタリア語や英語の「愛の格言メッセージ」が入ったヘーゼルナッツチョコ。新婚旅行のばらまき土産に圧倒的一番人気！</p>
+            <div class="spot-mime-tip">
+              <strong>💡 【みめTip】</strong> スーパー（Conad/Coop）でファミリーパック大袋を買うと空港の半額以下！クラシック（青）とピスタチオ（緑）の詰め合わせがおすすめ。
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Pocket Coffee -->
+        <div class="spot-card souvenir-card" data-cat="sweets supermarket" data-city="all">
+          <div class="card-thumb-wrap">
+            <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=350&q=80" alt="ポケットコーヒー" loading="lazy">
+            <span class="card-thumb-badge" style="background:#9333ea;">冬季限定</span>
+          </div>
+          <div class="spot-body">
+            <div class="spot-header-row">
+              <h3 class="spot-name-ja">ポケットコーヒー (Pocket Coffee)</h3>
+              <span class="spot-chip" style="color:#9333ea; font-weight:800;">€2.5〜5 (¥410〜825)</span>
+            </div>
+            <span class="spot-name-it">Ferrero (全都市 / スーパー)</span>
+            <div class="souvenir-badges-row">
+              <span class="sn-badge baramaki">ばらまき</span>
+              <span class="sn-badge super">スーパー</span>
+              <span class="sn-badge ok-customs">持ち込みOK</span>
+            </div>
+            <p class="spot-desc">ダークチョコの中に本物の液状エスプレッソが入った10月〜4月冬季限定の国民的チョコ。一口で噛むと口いっぱいに香り高いエスプレッソが溢れます！</p>
+            <div class="spot-mime-tip">
+              <strong>💡 【みめTip】</strong> 11月中旬は絶賛販売シーズン！5個入り・18個入り・32個入りがあり、職場へのばらまきに大絶賛されます。一口で丸ごと口に入れるのが鉄則。
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. SMN Acqua della Regina -->
+        <div class="spot-card souvenir-card" data-cat="cosmetics artisan florence" data-city="florence">
+          <div class="card-thumb-wrap">
+            <img src="https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=350&q=80" alt="王妃の水 香水" loading="lazy">
+            <span class="card-thumb-badge" style="background:#c05621;">世界最古薬局</span>
+          </div>
+          <div class="spot-body">
+            <div class="spot-header-row">
+              <h3 class="spot-name-ja">香水『王妃の水』(Acqua della Regina)</h3>
+              <span class="spot-chip" style="color:#9333ea; font-weight:800;">€110〜130 (¥18,150〜)</span>
+            </div>
+            <span class="spot-name-it">Officina Profumo-Farmaceutica di Santa Maria Novella (フィレンツェ)</span>
+            <div class="souvenir-badges-row">
+              <span class="sn-badge honmei">本命ギフト</span>
+              <span class="sn-badge kinen">新婚記念品</span>
+              <span class="sn-badge ok-customs">持ち込みOK (預け荷物)</span>
+            </div>
+            <p class="spot-desc">1533年カテリーナ・ディ・メディチがフランス王家に嫁ぐ際に作られた高貴なシトラス＆ベルガモットのオーデコロン。ハネムーンの思い出に一生残る香り。</p>
+            <div class="spot-mime-tip">
+              <strong>💡 【みめTip】</strong> フィレンツェ本店で購入すると免税（€70.01〜）対象！100ml瓶は機内持ち込み不可のため、必ずスーツケースの衣類の間に入れて預け入れを。
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. SMN Soap & Rose Water -->
+        <div class="spot-card souvenir-card" data-cat="cosmetics florence" data-city="florence">
+          <div class="card-thumb-wrap">
+            <img src="https://images.unsplash.com/photo-1608248597359-2699a2245ba8?auto=format&fit=crop&w=350&q=80" alt="ザクロ石鹸 ＆ ローズウォーター" loading="lazy">
+            <span class="card-thumb-badge" style="background:#c05621;">SMN薬局</span>
+          </div>
+          <div class="spot-body">
+            <div class="spot-header-row">
+              <h3 class="spot-name-ja">ザクロ石鹸 ＆ ローズウォーター</h3>
+              <span class="spot-chip" style="color:#9333ea; font-weight:800;">€15〜35 (¥2,475〜5,775)</span>
+            </div>
+            <span class="spot-name-it">Sapone Melograno & Acqua di Rose (フィレンツェ)</span>
+            <div class="souvenir-badges-row">
+              <span class="sn-badge honmei">女性人気No.1</span>
+              <span class="sn-badge tokusan">トスカーナ銘品</span>
+              <span class="sn-badge ok-customs">持ち込みOK</span>
+            </div>
+            <p class="spot-desc">ザクロの高貴な香りと極上の保湿力を誇るクラシック石鹸と、中世修道士のレシピを受け継ぐ天然バラ蒸留水化粧水。パッケージも息をのむ美しさ。</p>
+            <div class="spot-mime-tip">
+              <strong>💡 【みめTip】</strong> ザクロ石鹸は個包装で約€15。友人や家族への上質なプレゼントに最適。シルクポーチ入りのポプリ（€25）もクローゼット用におすすめ！
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. Florence Leather -->
+        <div class="spot-card souvenir-card" data-cat="artisan florence" data-city="florence">
+          <div class="card-thumb-wrap">
+            <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=350&q=80" alt="フィレンツェ本革財布・コインケース" loading="lazy">
+            <span class="card-thumb-badge" style="background:#15803d;">伝統革工芸</span>
+          </div>
+          <div class="spot-body">
+            <div class="spot-header-row">
+              <h3 class="spot-name-ja">フィレンツェ本革財布・シームレスコインケース</h3>
+              <span class="spot-chip" style="color:#9333ea; font-weight:800;">€25〜120 (¥4,125〜)</span>
+            </div>
+            <span class="spot-name-it">Vera Pelle Fiorentina (Il Bussetto / フィレンツェ革工房)</span>
+            <div class="souvenir-badges-row">
+              <span class="sn-badge kinen">新婚お揃い</span>
+              <span class="sn-badge honmei">一生モノ</span>
+              <span class="sn-badge ok-customs">持ち込みOK</span>
+            </div>
+            <p class="spot-desc">トスカーナの植物タンニン鞣し革で作られる馬蹄型シームレスコインケースや上質レザー財布。縫い目がなく使い込むほど艶やかな飴色に育ちます。</p>
+            <div class="spot-mime-tip">
+              <strong>💡 【みめTip】</strong> 屋台露店ではなく実店舗の工房（Il BussettoやCuoio Officina等）で「Vera Pelle」刻印を確認して購入するのが安心。お揃いの色違いが素敵！
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. Murano Glass -->
+        <div class="spot-card souvenir-card" data-cat="artisan venice" data-city="venice">
+          <div class="card-thumb-wrap">
+            <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=350&q=80" alt="ベネチアンガラス ミルフィオリ" loading="lazy">
+            <span class="card-thumb-badge" style="background:#0284c7;">ベネチア名物</span>
+          </div>
+          <div class="spot-body">
+            <div class="spot-header-row">
+              <h3 class="spot-name-ja">ベネチアンガラス (Murano Glass)</h3>
+              <span class="spot-chip" style="color:#9333ea; font-weight:800;">€15〜80 (¥2,475〜13,200)</span>
+            </div>
+            <span class="spot-name-it">Vetro di Murano (ベネチア本島・ムラーノ島)</span>
+            <div class="souvenir-badges-row">
+              <span class="sn-badge kinen">記念アクセサリー</span>
+              <span class="sn-badge honmei">本命ギフト</span>
+              <span class="sn-badge ok-customs">持ち込みOK</span>
+            </div>
+            <p class="spot-desc">千の花を意味する「ミルフィオリ」のモザイクガラスペンダント、ピアス、時計、小皿。熟練マエストロの手吹きによる唯一無二の輝き。</p>
+            <div class="spot-mime-tip">
+              <strong>💡 【みめTip】</strong> 偽物（安価な輸入品）に注意！ヴェネツィア商工会議所の公認マーク「Vetro Artistico Murano」のシールが貼られた正規工房で購入を。
+            </div>
+          </div>
+        </div>
+
+        <!-- 7. White Truffle Salt & Oil -->
+        <div class="spot-card souvenir-card" data-cat="food supermarket florence" data-city="florence">
+          <div class="card-thumb-wrap">
+            <img src="https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?auto=format&fit=crop&w=350&q=80" alt="白トリュフ塩 ＆ トリュフオイル" loading="lazy">
+            <span class="card-thumb-badge" style="background:#ea580c;">高級食材</span>
+          </div>
+          <div class="spot-body">
+            <div class="spot-header-row">
+              <h3 class="spot-name-ja">白トリュフ塩 ＆ トリュフオイル</h3>
+              <span class="spot-chip" style="color:#9333ea; font-weight:800;">€8〜20 (¥1,320〜3,300)</span>
+            </div>
+            <span class="spot-name-it">Sale al Tartufo Bianco & Olio al Tartufo (フィレンツェ中央市場 / スーパー)</span>
+            <div class="souvenir-badges-row">
+              <span class="sn-badge jitaku">自宅用絶賛</span>
+              <span class="sn-badge honmei">グルメギフト</span>
+              <span class="sn-badge ok-customs">持ち込みOK (オイルは預け)</span>
+            </div>
+            <p class="spot-desc">ひと振りするだけで自宅の卵かけご飯、ステーキ、パスタ、フライドポテトがミシュラン級の香りに変身する魔法の調味料！</p>
+            <div class="spot-mime-tip">
+              <strong>💡 【みめTip】</strong> トリュフ塩は粉末なので機内持ち込みOKですが、香りが強いのでジップロック二重密閉推奨。オイルは必ずスーツケースへ！
+            </div>
+          </div>
+        </div>
+
+        <!-- 8. Parmigiano Reggiano 24M -->
+        <div class="spot-card souvenir-card" data-cat="food supermarket" data-city="all">
+          <div class="card-thumb-wrap">
+            <img src="https://images.unsplash.com/photo-1452195100486-9cc805987862?auto=format&fit=crop&w=350&q=80" alt="パルミジャーノ・レッジャーノ" loading="lazy">
+            <span class="card-thumb-badge" style="background:#15803d;">D.O.P. チーズ</span>
+          </div>
+          <div class="spot-body">
+            <div class="spot-header-row">
+              <h3 class="spot-name-ja">パルミジャーノ・レッジャーノ (24/36ヶ月熟成)</h3>
+              <span class="spot-chip" style="color:#9333ea; font-weight:800;">€5〜15 (¥825〜2,475)</span>
+            </div>
+            <span class="spot-name-it">Parmigiano Reggiano DOP (全都市 / スーパー)</span>
+            <div class="souvenir-badges-row">
+              <span class="sn-badge super">スーパー神コスパ</span>
+              <span class="sn-badge jitaku">自宅用</span>
+              <span class="sn-badge ok-customs">持ち込みOK</span>
+            </div>
+            <p class="spot-desc">イタリアチーズの王様。アミノ酸の白い結晶（ジャリジャリした旨味成分）が凝縮した24ヶ月〜36ヶ月熟成。日本の3分の1以下の価格で手に入ります！</p>
+            <div class="spot-mime-tip">
+              <strong>💡 【みめTip】</strong> スーパーの冷蔵コーナーにある「Sottovuoto（真空パック）」を購入すれば未開封で数ヶ月常温保管可能。検疫手続き不要で日本へ持ち込めます。
+            </div>
+          </div>
+        </div>
+
+        <!-- 9. Modena Balsamico -->
+        <div class="spot-card souvenir-card" data-cat="food" data-city="all">
+          <div class="card-thumb-wrap">
+            <img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=350&q=80" alt="モデナ産熟成バルサミコ酢" loading="lazy">
+            <span class="card-thumb-badge" style="background:#c05621;">伝統熟成酢</span>
+          </div>
+          <div class="spot-body">
+            <div class="spot-header-row">
+              <h3 class="spot-name-ja">モデナ産 熟成バルサミコ酢 (IGP/DOP)</h3>
+              <span class="spot-chip" style="color:#9333ea; font-weight:800;">€10〜45 (¥1,650〜7,425)</span>
+            </div>
+            <span class="spot-name-it">Aceto Balsamico di Modena IGP/DOP (全都市)</span>
+            <div class="souvenir-badges-row">
+              <span class="sn-badge honmei">本命ギフト</span>
+              <span class="sn-badge jitaku">自宅料理</span>
+              <span class="sn-badge ok-customs">持ち込みOK (預け荷物)</span>
+            </div>
+            <p class="spot-desc">木樽で長期熟成されたとろみと芳醇な甘み。パルミジャーノチーズに垂らしたり、バニラアイスやいちごにかけると極上のデザートに！</p>
+            <div class="spot-mime-tip">
+              <strong>💡 【みめTip】</strong> スーパーでは「Invecchiato（熟成）」またはメダル（銀・金）マーク付きを選ぶとハズレなし。ジュゼッペ・ジュスティ（Giusti）が鉄板名門。
+            </div>
+          </div>
+        </div>
+
+        <!-- 10. Sant'Eustachio Coffee -->
+        <div class="spot-card souvenir-card" data-cat="food sweets rome" data-city="rome">
+          <div class="card-thumb-wrap">
+            <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=350&q=80" alt="サンテウスタキオ コーヒー豆" loading="lazy">
+            <span class="card-thumb-badge" style="background:#b45309;">ローマ伝説の店</span>
+          </div>
+          <div class="spot-body">
+            <div class="spot-header-row">
+              <h3 class="spot-name-ja">サンテウスタキオ コーヒー豆 ＆ チョコがけ豆</h3>
+              <span class="spot-chip" style="color:#9333ea; font-weight:800;">€6〜15 (¥990〜2,475)</span>
+            </div>
+            <span class="spot-name-it">Sant'Eustachio Il Caffè - Chococafe (ローマ・パンテオン近く)</span>
+            <div class="souvenir-badges-row">
+              <span class="sn-badge honmei">ローマ限定</span>
+              <span class="sn-badge baramaki">ばらまき</span>
+              <span class="sn-badge ok-customs">持ち込みOK</span>
+            </div>
+            <p class="spot-desc">1938年創業、ローマで一番美味しいと称される名店の黄色いパッケージ。焙煎コーヒー豆を丸ごとダークチョコで包んだ「Chococafe」は手が止まらない美味しさ！</p>
+            <div class="spot-mime-tip">
+              <strong>💡 【みめTip】</strong> パンテオン散策時（Day 6）に立ち寄れます。黄色い缶入り（粉・豆）とチョコがけ豆の小箱セットがギフトに大人気。
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Customs Quarantine Rules Detail Section -->
+    <section class="section">
+      <div class="section-header">
+        <h3 class="section-title">✈️ 日本帰国時の免税範囲 ＆ パッキングチェック</h3>
+      </div>
+      <div class="table-responsive">
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th>品目</th>
+              <th>日本の免税範囲 (成人1人あたり)</th>
+              <th>持ち込み・パッキングの注意点</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>🍷 酒類 (ワイン・リキュール)</strong></td>
+              <td>3本 (各760ml程度まで)</td>
+              <td>100ml超は機内持込不可！二重ジップロック＋衣類で保護しスーツケースへ</td>
+            </tr>
+            <tr>
+              <td><strong>💄 香水</strong></td>
+              <td>2オンス (約56ml)</td>
+              <td>超過分は課税対象。SMN薬局の100ml瓶はスーツケースへ預け入れ</td>
+            </tr>
+            <tr>
+              <td><strong>🧀 チーズ (ハード系)</strong></td>
+              <td>合計20万円の枠内</td>
+              <td>真空パックのハード系（パルミジャーノ等）は検査不要で持込OK</td>
+            </tr>
+            <tr>
+              <td><strong>🚫 生ハム・サラミ・肉製品</strong></td>
+              <td><span style="color:#dc2626; font-weight:800;">持込不可 (0個)</span></td>
+              <td>家畜伝染病予防法により日本持込絶対禁止！空港検疫で没収＆高額罰金</td>
+            </tr>
+            <tr>
+              <td><strong>🎁 その他のお土産合計</strong></td>
+              <td>合計 20万円 (海外市価) まで</td>
+              <td>1品目ごとの海外市価が1万円以下のものは免税枠の計算から除外</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Bottom Tab Bar -->
+  <nav class="bottom-tab-bar">
+    <a href="index.html" class="tab-item">
+      <span class="tab-icon">🏠</span>
+      <span class="tab-label">ホーム</span>
+    </a>
+
+    <!-- Day Selection Drawer -->
+    <details class="day-popover-details" id="day-popover-details">
+      <summary class="tab-item">
+        <span class="tab-icon">📅</span>
+        <span class="tab-label">日程</span>
+      </summary>
+      <div class="day-popover-backdrop"></div>
+      <div class="day-popover-dropdown">
+        <div class="day-popover-header">
+          <span class="day-popover-title">📅 全8日間 日程詳細を選択</span>
+          <button type="button" class="day-popover-close" aria-label="閉じる">✕</button>
+        </div>
+        <div class="day-popover-grid">
+          <a href="day1.html" class="day-popover-item"><span class="dp-badge">Day 1</span> 11/15(日) 関空➔ミラノ</a>
+          <a href="day2.html" class="day-popover-item"><span class="dp-badge">Day 2</span> 11/16(月) ミラノ➔ベネチア</a>
+          <a href="day3.html" class="day-popover-item"><span class="dp-badge">Day 3</span> 11/17(火) ベネチア➔フィレンツェ</a>
+          <a href="day4.html" class="day-popover-item"><span class="dp-badge">Day 4</span> 11/18(水) フィレンツェ＆ピサ</a>
+          <a href="day5.html" class="day-popover-item"><span class="dp-badge">Day 5</span> 11/19(木) サンジミニャーノ➔ローマ</a>
+          <a href="day6.html" class="day-popover-item"><span class="dp-badge">Day 6</span> 11/20(金) ローマ＆バチカン自由</a>
+          <a href="day7.html" class="day-popover-item"><span class="dp-badge">Day 7</span> 11/21(土) ローマ➔FCO空港発</a>
+          <a href="day8.html" class="day-popover-item"><span class="dp-badge">Day 8</span> 11/22(日) 関空帰着・解散</a>
+        </div>
+      </div>
+    </details>
+
+    <a href="beginner-guide.html" class="tab-item">
+      <span class="tab-icon">🔰</span>
+      <span class="tab-label">初心者</span>
+    </a>
+    <a href="culture-trends.html" class="tab-item">
+      <span class="tab-icon">💡</span>
+      <span class="tab-label">あるある</span>
+    </a>
+    <a href="tips-survival.html" class="tab-item">
+      <span class="tab-icon">🚆</span>
+      <span class="tab-label">サバイバル</span>
+    </a>
+    <a href="tour-map.html" class="tab-item">
+      <span class="tab-icon">🗺️</span>
+      <span class="tab-label">MAP</span>
+    </a>
+    <a href="phrasebook.html" class="tab-item">
+      <span class="tab-icon">🗣️</span>
+      <span class="tab-label">会話</span>
+    </a>
+    <a href="free-meal-guide.html" class="tab-item">
+      <span class="tab-icon">🍽️</span>
+      <span class="tab-label">グルメ</span>
+    </a>
+    <a href="souvenir-guide.html" class="tab-item active">
+      <span class="tab-icon">🎁</span>
+      <span class="tab-label">お土産</span>
+    </a>
+  </nav>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <strong>🇮🇹 Kenta &amp; Megumi's Italian Honeymoon Portal</strong><br>
+        <span style="color:#64748b;">HIS Tour OI-KMI2811 (2026/11/15 - 11/22) | 監修: YouTube「イタリアガイドみめ (@mimeitalygaido)」</span>
+      </div>
+      <div style="display:flex; gap:6px; flex-wrap:wrap; margin-top:4px;">
+        <a href="index.html">ホーム</a>
+        <a href="beginner-guide.html">初心者安心</a>
+        <a href="culture-trends.html">あるある・トレンド</a>
+        <a href="tips-survival.html">交通サバイバル</a>
+        <a href="tour-map.html">MAP</a>
+        <a href="sightseeing-guide.html">観光</a>
+        <a href="phrasebook.html">会話</a>
+        <a href="free-meal-guide.html">グルメ</a>
+        <a href="souvenir-guide.html">お土産</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+  <script>
+    // Tax preset buttons
+    document.querySelectorAll('.btn-preset-tax').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const input = document.getElementById('tax-eur-input');
+        if (input) {
+          input.value = btn.dataset.amount;
+          input.dispatchEvent(new Event('input'));
+        }
+      });
+    });
+
+    document.addEventListener('click', function(e) {
+      document.querySelectorAll('details.day-popover-details, details.day-nav-details').forEach(function(d) {
+        if (!d.contains(e.target) && d.hasAttribute('open')) {
+          d.removeAttribute('open');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

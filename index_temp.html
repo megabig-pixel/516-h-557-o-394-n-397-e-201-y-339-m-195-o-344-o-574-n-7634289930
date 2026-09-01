@@ -141,95 +141,10 @@
       </div>
     </section>
 
-    <!-- Checklist Widget Section -->
-    <section class="section">
-      <div class="checklist-card">
-        <div class="section-header" style="margin-bottom:4px;">
-          <h3 class="section-title">🧳 旅行準備・持ち物チェックリスト（LocalStorage連動）</h3>
-          <div style="display:flex; gap:4px;">
-            <button type="button" class="btn btn-secondary" id="btn-select-all" style="font-size:0.65rem; padding:2px 6px;">全選択</button>
-            <button type="button" class="btn btn-secondary" id="btn-reset-all" style="font-size:0.65rem; padding:2px 6px;">リセット</button>
-          </div>
-        </div>
-        <div class="checklist-progress-text" style="font-size:0.72rem; font-weight:700; color:var(--primary-color);">準備進捗: 0 / 12 項目 (0%)</div>
-        <div class="checklist-progress-bar">
-          <div class="checklist-progress-fill"></div>
-        </div>
-        <div class="checklist-grid">
-          <label class="check-item"><input type="checkbox" data-id="chk_passport"> <span><b>パスポート原本</b>（残存有効期間90日以上・セキュリティポーチへ）</span></label>
-          <label class="check-item"><input type="checkbox" data-id="chk_wirelock"> <span><b>自転車用ワイヤーロック</b>（スーツケース2個連結・100均ダイヤル式）</span></label>
-          <label class="check-item"><input type="checkbox" data-id="chk_padlock"> <span><b>ダイヤル式南京錠</b>（街歩きリュックのファスナースライダー固定）</span></label>
-          <label class="check-item"><input type="checkbox" data-id="chk_strap"> <span><b>スマホショルダーストラップ</b>（斜めがけ・ひったくり＆落下防止）</span></label>
-          <label class="check-item"><input type="checkbox" data-id="chk_c_plug"> <span><b>Cタイプ変換プラグ 2〜3個</b>（イタリア丸ピン2本・ホテル充電用）</span></label>
-          <label class="check-item"><input type="checkbox" data-id="chk_tissue"> <span><b>水に流せるポケットティッシュ＆除菌シート</b>（トイレ＆食べ歩き用）</span></label>
-          <label class="check-item"><input type="checkbox" data-id="chk_stole"> <span><b>大判ストール</b>（教会見学の露出隠し＆11月の寒暖差防寒）</span></label>
-          <label class="check-item"><input type="checkbox" data-id="chk_slipper"> <span><b>使い捨てスリッパ ＆ 歯ブラシセット</b>（ホテル常備なし対策）</span></label>
-          <label class="check-item"><input type="checkbox" data-id="chk_esim"> <span><b>eSIM事前設定</b>（Airalo/Ubigi等・副回線インストール完了）</span></label>
-          <label class="check-item"><input type="checkbox" data-id="chk_creca"> <span><b>クレジットカード2枚以上</b>（Visa/Mastercard・暗証番号確認済）</span></label>
-          <label class="check-item"><input type="checkbox" data-id="chk_vjw"> <span><b>Visit Japan Web登録</b>（帰国時の税関電子申告用QR）</span></label>
-          <label class="check-item"><input type="checkbox" data-id="chk_insurance"> <span><b>海外旅行保険証券メモ</b>（24時間日本語救援ダイヤル控え）</span></label>
-        </div>
-      </div>
-    </section>
-
-    <!-- Currency & Tip Calculator Widget Section -->
-    <section class="section">
-      <div class="calc-card">
-        <div class="section-header" style="margin-bottom:6px;">
-          <h3 class="section-title">💶 ユーロ・円 ＆ 席料・チップ即時計算機</h3>
-          <span class="section-subtitle">2名分合計自動算出</span>
-        </div>
-        <div class="calc-grid">
-          <div>
-            <label style="font-size:0.7rem; color:var(--text-muted); font-weight:700;">料理・買物合計 (€)</label>
-            <input type="number" id="calc-euro-input" class="calc-input" value="45" min="0" step="1">
-            <div style="display:flex; gap:3px; margin-top:4px; flex-wrap:wrap;">
-              <button type="button" class="btn btn-secondary btn-preset-eur" data-amount="1.5" style="padding:2px 5px; font-size:0.62rem;">€1.5</button>
-              <button type="button" class="btn btn-secondary btn-preset-eur" data-amount="5" style="padding:2px 5px; font-size:0.62rem;">€5</button>
-              <button type="button" class="btn btn-secondary btn-preset-eur" data-amount="20" style="padding:2px 5px; font-size:0.62rem;">€20</button>
-              <button type="button" class="btn btn-secondary btn-preset-eur" data-amount="50" style="padding:2px 5px; font-size:0.62rem;">€50</button>
-              <button type="button" class="btn btn-secondary btn-preset-eur" data-amount="100" style="padding:2px 5px; font-size:0.62rem;">€100</button>
-            </div>
-          </div>
-          <div>
-            <label style="font-size:0.7rem; color:var(--text-muted); font-weight:700;">お二人分 総額予想</label>
-            <div class="calc-result-box">
-              <strong id="calc-result-eur" style="font-size:1.15rem; color:var(--primary-color);">€50.00</strong>
-              <div id="calc-result-jpy" style="font-size:0.75rem; color:var(--text-muted);">約 ¥8,250</div>
-            </div>
-          </div>
-        </div>
-        <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:4px; margin-top:4px;">
-          <div>
-            <label style="font-size:0.62rem; color:var(--text-muted);">為替レート (¥/€)</label>
-            <input type="number" id="calc-rate-input" class="calc-input" value="165" style="font-size:0.72rem; padding:3px 5px;">
-          </div>
-          <div>
-            <label style="font-size:0.62rem; color:var(--text-muted);">席料/人 (Coperto)</label>
-            <select id="calc-coperto-select" class="calc-input" style="font-size:0.72rem; padding:3px 2px;">
-              <option value="0">なし (€0)</option>
-              <option value="2" selected>標準 (€2.00)</option>
-              <option value="2.5">€2.50</option>
-              <option value="3">高級店 (€3.00)</option>
-            </select>
-          </div>
-          <div>
-            <label style="font-size:0.62rem; color:var(--text-muted);">チップ (任意)</label>
-            <select id="calc-tip-select" class="calc-input" style="font-size:0.72rem; padding:3px 2px;">
-              <option value="0" selected>0% (不要)</option>
-              <option value="5">5% (少額)</option>
-              <option value="10">10% (満足時)</option>
-            </select>
-          </div>
-        </div>
-        <div id="calc-result-breakdown" style="font-size:0.66rem; margin-top:4px;"></div>
-      </div>
-    </section>
-
     <!-- 8 Days Itinerary Summary Section -->
     <section class="section">
       <div class="section-header">
-        <h2 class="section-title">📅 デイリー詳細日程 (Day 1 〜 Day 8)</h2>
+        <h2 class="section-title">📅 8日間ツアースケジュール一覧</h2>
         <span class="section-subtitle">HIS Tour OI-KMI2811</span>
       </div>
       <div class="cards-grid">
@@ -309,7 +224,7 @@
       <span class="tab-label">ホーム</span>
     </a>
 
-    <!-- Day Selection Bottom Sheet Drawer -->
+    <!-- Day Selection Drawer -->
     <details class="day-popover-details" id="day-popover-details">
       <summary class="tab-item">
         <span class="tab-icon">📅</span>
