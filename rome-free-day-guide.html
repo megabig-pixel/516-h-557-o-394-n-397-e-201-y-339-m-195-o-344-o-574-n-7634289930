@@ -81,16 +81,38 @@
     </section>
 
   </main>
-  <!-- Bottom Tab Bar -->
+
+  <!-- Ultra-Compact Bottom Tab Bar -->
   <nav class="bottom-tab-bar">
     <a href="index.html" class="tab-item active">
       <span class="tab-icon">🏠</span>
       <span class="tab-label">ホーム</span>
     </a>
-    <button type="button" class="tab-item" id="btn-day-popover" onclick="window.toggleDayPopover && window.toggleDayPopover(true);">
-      <span class="tab-icon">📅</span>
-      <span class="tab-label">日程</span>
-    </button>
+
+    <!-- Native HTML5 Day Popover (Zero JS dependency) -->
+    <details class="day-popover-details" id="day-popover-details">
+      <summary class="tab-item">
+        <span class="tab-icon">📅</span>
+        <span class="tab-label">日程</span>
+      </summary>
+      <div class="day-popover-dropdown">
+        <div class="day-popover-header">
+          <span class="day-popover-title">📅 日程一覧を選択</span>
+          <button type="button" class="day-popover-close" onclick="this.closest('details').removeAttribute('open');">✕</button>
+        </div>
+        <div class="day-popover-grid">
+          <a href="day1.html" class="day-popover-item"><span class="dp-badge">Day 1</span> 11/15(日) 関空➔ミラノ</a>
+          <a href="day2.html" class="day-popover-item"><span class="dp-badge">Day 2</span> 11/16(月) ミラノ➔ベネチア</a>
+          <a href="day3.html" class="day-popover-item"><span class="dp-badge">Day 3</span> 11/17(火) ベネチア➔フィレンツェ</a>
+          <a href="day4.html" class="day-popover-item"><span class="dp-badge">Day 4</span> 11/18(水) フィレンツェ＆ピサ</a>
+          <a href="day5.html" class="day-popover-item"><span class="dp-badge">Day 5</span> 11/19(木) サンジミニャーノ➔ローマ</a>
+          <a href="day6.html" class="day-popover-item"><span class="dp-badge">Day 6</span> 11/20(金) ローマ＆バチカン自由</a>
+          <a href="day7.html" class="day-popover-item"><span class="dp-badge">Day 7</span> 11/21(土) ローマ➔FCO空港発</a>
+          <a href="day8.html" class="day-popover-item"><span class="dp-badge">Day 8</span> 11/22(日) 関空帰着・解散</a>
+        </div>
+      </div>
+    </details>
+
     <a href="beginner-guide.html" class="tab-item">
       <span class="tab-icon">🔰</span>
       <span class="tab-label">初心者</span>
@@ -117,24 +139,6 @@
     </a>
   </nav>
 
-  <!-- Day Selection Popover Menu (Appears Directly Above the '日程' Label) -->
-  <div id="day-popover-overlay" class="day-popover-overlay" onclick="window.toggleDayPopover && window.toggleDayPopover(false);"></div>
-  <div id="day-popover-menu" class="day-popover-menu">
-    <div class="day-popover-header">
-      <span class="day-popover-title">📅 日程詳細を選択</span>
-      <button type="button" class="day-popover-close" onclick="window.toggleDayPopover && window.toggleDayPopover(false);">✕</button>
-    </div>
-    <div class="day-popover-grid">
-      <a href="day1.html" class="day-popover-item"><span class="dp-badge">Day 1</span> 11/15(日) 関空➔ミラノ</a>
-      <a href="day2.html" class="day-popover-item"><span class="dp-badge">Day 2</span> 11/16(月) ミラノ➔ベネチア</a>
-      <a href="day3.html" class="day-popover-item"><span class="dp-badge">Day 3</span> 11/17(火) ベネチア➔フィレンツェ</a>
-      <a href="day4.html" class="day-popover-item"><span class="dp-badge">Day 4</span> 11/18(水) フィレンツェ＆ピサ</a>
-      <a href="day5.html" class="day-popover-item"><span class="dp-badge">Day 5</span> 11/19(木) サンジミニャーノ➔ローマ</a>
-      <a href="day6.html" class="day-popover-item"><span class="dp-badge">Day 6</span> 11/20(金) ローマ＆バチカン自由</a>
-      <a href="day7.html" class="day-popover-item"><span class="dp-badge">Day 7</span> 11/21(土) ローマ➔FCO空港発</a>
-      <a href="day8.html" class="day-popover-item"><span class="dp-badge">Day 8</span> 11/22(日) 関空帰着・解散</a>
-    </div>
-  </div>
   <!-- Site Footer -->
   <footer class="site-footer">
     <div class="container footer-inner">
@@ -153,7 +157,17 @@
       </div>
     </div>
   </footer>
+
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
   <script src="app.js"></script>
+  <script>
+    document.addEventListener('click', function(e) {
+      document.querySelectorAll('details.day-popover-details, details.day-nav-details').forEach(function(d) {
+        if (!d.contains(e.target) && d.hasAttribute('open')) {
+          d.removeAttribute('open');
+        }
+      });
+    });
+  </script>
 </body>
 </html>

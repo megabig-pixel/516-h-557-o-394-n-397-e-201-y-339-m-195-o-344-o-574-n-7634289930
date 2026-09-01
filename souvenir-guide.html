@@ -16,7 +16,7 @@
       <span class="hero-tag" style="background:#f3e8ff; color:#6b21a8;">🎁 厳選お土産 ＆ 免税ガイド</span>
       <h2 class="hero-title">イタリアお土産＆ショッピング完全ガイド</h2>
       <p class="hero-subtitle">
-        スーパーばらまき菓子、サンタ・マリア・ノヴェッラ薬局、本革製品、ワイン、最新免税手続き（€70.01〜）
+        スーパーばらまき菓子、SMN薬局、本革製品、ワイン、最新免税手続き（€70.01〜）
       </p>
     </div>
 
@@ -32,15 +32,15 @@
       <div class="mime-tips-grid">
         <div class="mime-tip-card">
           <h4>1. 免税（Tax Refund）は€70.01以上！</h4>
-          <p>2024年法改正で最低購入額が引き下げ。同一店舗1日€70.01以上で免税書類発行。空港Otello端末でパスポートをスキャンするだけで電子承認！</p>
+          <p>同一店舗1日€70.01以上で免税書類発行。空港Otello端末でパスポートスキャン電子承認！</p>
         </div>
         <div class="mime-tip-card">
           <h4>2. 液体物（オイル・ワイン）はスーツケース預け</h4>
-          <p>100mlを超える液体物は保安検査で没収されます。二重ジップロック＋衣類で巻いて必ずスーツケースへ。</p>
+          <p>100mlを超える液体物は機内持ち込み不可。二重ジップロック＋衣類で巻いて預け入れへ。</p>
         </div>
         <div class="mime-tip-card" style="border-color:#f87171;">
           <h4 style="color:#b91c1c;">3. 【絶対警告】肉製品は日本持ち込み厳禁！</h4>
-          <p>真空パックの生ハム・サラミ・ソーセージは日本の家畜伝染病予防法により持ち込み不可（最高300万円罰金）。現地で食べ切ること！</p>
+          <p>生ハム・サラミ・ソーセージは日本の家畜伝染病予防法により持ち込み不可（最高300万円罰金）。</p>
         </div>
       </div>
     </div>
@@ -70,15 +70,10 @@
     </section>
 
     <!-- Category Filter Chips -->
-    <div style="display:flex; gap:4px; overflow-x:auto; padding-bottom:6px; margin-bottom:10px; scrollbar-width:none;">
+    <div style="display:flex; gap:4px; overflow-x:auto; padding-bottom:6px; margin-bottom:8px; scrollbar-width:none;">
       <button class="day-chip filter-chip active" data-cat="all" style="min-width:60px;">全品目</button>
       <button class="day-chip filter-chip" data-cat="supermarket" style="min-width:95px;">🛒 スーパー・菓子</button>
       <button class="day-chip filter-chip" data-cat="artisan" style="min-width:95px;">🎨 伝統工芸・名品</button>
-    </div>
-
-    <!-- Search Input -->
-    <div style="margin-bottom:12px;">
-      <input type="text" id="search-input" class="calc-input" placeholder="🔍 商品名・ブランド・都市名で検索...">
     </div>
 
     <!-- Souvenirs Grid -->
@@ -86,146 +81,138 @@
       <div class="cards-grid">
         
       <div class="spot-card" data-cat="supermarket">
-        <div class="spot-img-wrap">
-          <img src="https://images.unsplash.com/photo-1549007994-cb92caebd54b?auto=format&fit=crop&w=600&q=80" alt="Baci (バッチ) チョコレート" loading="lazy">
-          <span class="spot-img-badge">スーパー・ばらまき</span>
+        <div class="spot-thumb-wrap">
+          <img src="https://images.unsplash.com/photo-1549007994-cb92caebd54b?auto=format&fit=crop&w=300&q=80" alt="Baci (バッチ) チョコレート" loading="lazy">
+          <span class="spot-thumb-badge">スーパー</span>
         </div>
         <div class="spot-body">
-          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:3px;">
-            <span class="spot-chip" style="background:#faf5ff; color:#9333ea; font-weight:800;">スーパー・ばらまき</span>
-            <span class="spot-chip" style="background:#f1f5f9; color:#475569;">目安: €3〜8</span>
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:2px;">
+            <h3 class="spot-name-ja">Baci (バッチ) チョコレート</h3>
+            <span class="spot-chip" style="color:#9333ea; font-weight:800; flex-shrink:0;">€3〜8</span>
           </div>
-          <h3 class="spot-name-ja">Baci (バッチ) チョコレート</h3>
-          <span class="spot-name-it">ブランド/産地: Perugina (全都市)</span>
-          <p class="spot-desc">イタリアの国民的ヘーゼルナッツチョコ。中に愛の格言メッセージが入っており新婚旅行のお土産に大人気！</p>
+          <span class="spot-name-it">Perugina (全都市)</span>
+          <p class="spot-desc">愛の格言メッセージが入ったヘーゼルナッツチョコ。新婚旅行土産の定番！</p>
           <div class="spot-mime-tip">
             <strong>💡 【みめTip】</strong> スーパー（Conad/Coop）で大袋を買うと空港の半額以下で手に入ります。
           </div>
         </div>
       </div>
       <div class="spot-card" data-cat="supermarket">
-        <div class="spot-img-wrap">
-          <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=600&q=80" alt="ポケットコーヒー (Pocket Coffee)" loading="lazy">
-          <span class="spot-img-badge">スーパー・ばらまき</span>
+        <div class="spot-thumb-wrap">
+          <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=300&q=80" alt="ポケットコーヒー (冬季限定)" loading="lazy">
+          <span class="spot-thumb-badge">スーパー</span>
         </div>
         <div class="spot-body">
-          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:3px;">
-            <span class="spot-chip" style="background:#faf5ff; color:#9333ea; font-weight:800;">スーパー・ばらまき</span>
-            <span class="spot-chip" style="background:#f1f5f9; color:#475569;">目安: €2〜5</span>
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:2px;">
+            <h3 class="spot-name-ja">ポケットコーヒー (冬季限定)</h3>
+            <span class="spot-chip" style="color:#9333ea; font-weight:800; flex-shrink:0;">€2〜5</span>
           </div>
-          <h3 class="spot-name-ja">ポケットコーヒー (Pocket Coffee)</h3>
-          <span class="spot-name-it">ブランド/産地: Ferrero (全都市 (冬季限定))</span>
-          <p class="spot-desc">ダークチョコの中に本物の液体エスプレッソが入った冬季限定品。噛むとコーヒーが溢れ出ます！</p>
+          <span class="spot-name-it">Ferrero (全都市)</span>
+          <p class="spot-desc">ダークチョコの中に本物の液状エスプレッソが入った冬季限定チョコ。</p>
           <div class="spot-mime-tip">
-            <strong>💡 【みめTip】</strong> 11月はまさに販売シーズン！飛行機の気圧変化に強いのでお土産に最適。
+            <strong>💡 【みめTip】</strong> 11月は販売シーズン！気圧変化に強くお土産に最適。
           </div>
         </div>
       </div>
       <div class="spot-card" data-cat="supermarket">
-        <div class="spot-img-wrap">
-          <img src="https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?auto=format&fit=crop&w=600&q=80" alt="白トリュフ塩 (Sale al Tartufo Bianco)" loading="lazy">
-          <span class="spot-img-badge">スーパー・ばらまき</span>
+        <div class="spot-thumb-wrap">
+          <img src="https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?auto=format&fit=crop&w=300&q=80" alt="白トリュフ塩 (Sale al Tartufo)" loading="lazy">
+          <span class="spot-thumb-badge">スーパー</span>
         </div>
         <div class="spot-body">
-          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:3px;">
-            <span class="spot-chip" style="background:#faf5ff; color:#9333ea; font-weight:800;">スーパー・ばらまき</span>
-            <span class="spot-chip" style="background:#f1f5f9; color:#475569;">目安: €6〜15</span>
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:2px;">
+            <h3 class="spot-name-ja">白トリュフ塩 (Sale al Tartufo)</h3>
+            <span class="spot-chip" style="color:#9333ea; font-weight:800; flex-shrink:0;">€6〜15</span>
           </div>
-          <h3 class="spot-name-ja">白トリュフ塩 (Sale al Tartufo Bianco)</h3>
-          <span class="spot-name-it">ブランド/産地: Tuscan Artisan (フィレンツェ/スーパー)</span>
-          <p class="spot-desc">ひと振りで料理が高級レストランの味に。卵かけご飯、ステーキ、パスタに抜群の万能調味料。</p>
+          <span class="spot-name-it">Tuscan (フィレンツェ)</span>
+          <p class="spot-desc">ひと振りで高級レストランの味。卵かけご飯、ステーキ、パスタに抜群。</p>
           <div class="spot-mime-tip">
-            <strong>💡 【みめTip】</strong> スーパーの調味料コーナーや中央市場で瓶入りを購入。香りが強いのでジップロック必須。
+            <strong>💡 【みめTip】</strong> スーパーや中央市場で瓶入りを購入。ジップロック必須。
           </div>
         </div>
       </div>
       <div class="spot-card" data-cat="artisan">
-        <div class="spot-img-wrap">
-          <img src="https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=600&q=80" alt="香水『王妃の水』＆ ザクロ石鹸" loading="lazy">
-          <span class="spot-img-badge">伝統工芸・名品</span>
+        <div class="spot-thumb-wrap">
+          <img src="https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=300&q=80" alt="香水『王妃の水』＆ ザクロ石鹸" loading="lazy">
+          <span class="spot-thumb-badge">名品</span>
         </div>
         <div class="spot-body">
-          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:3px;">
-            <span class="spot-chip" style="background:#faf5ff; color:#9333ea; font-weight:800;">伝統工芸・名品</span>
-            <span class="spot-chip" style="background:#f1f5f9; color:#475569;">目安: €15〜120</span>
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:2px;">
+            <h3 class="spot-name-ja">香水『王妃の水』＆ ザクロ石鹸</h3>
+            <span class="spot-chip" style="color:#9333ea; font-weight:800; flex-shrink:0;">€15〜120</span>
           </div>
-          <h3 class="spot-name-ja">香水『王妃の水』＆ ザクロ石鹸</h3>
-          <span class="spot-name-it">ブランド/産地: Santa Maria Novella (フィレンツェ)</span>
-          <p class="spot-desc">1221年創業の世界最古薬局。カトリーヌ・ド・メディシスに捧げられた高貴な柑橘系コロンと保湿石鹸。</p>
+          <span class="spot-name-it">SMN薬局 (フィレンツェ)</span>
+          <p class="spot-desc">1221年世界最古薬局。高貴な柑橘系コロンと保湿石鹸。</p>
           <div class="spot-mime-tip">
-            <strong>💡 【みめTip】</strong> フィレンツェ本店で購入すると美しいショッパー付き。€70.01以上で免税手続きを！
+            <strong>💡 【みめTip】</strong> フィレンツェ本店で購入するとショッパー付き。€70.01以上で免税！
           </div>
         </div>
       </div>
       <div class="spot-card" data-cat="artisan">
-        <div class="spot-img-wrap">
-          <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=600&q=80" alt="フィレンツェ伝統革製品 (財布・手袋)" loading="lazy">
-          <span class="spot-img-badge">伝統工芸・名品</span>
+        <div class="spot-thumb-wrap">
+          <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=300&q=80" alt="フィレンツェ本革財布・手袋" loading="lazy">
+          <span class="spot-thumb-badge">名品</span>
         </div>
         <div class="spot-body">
-          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:3px;">
-            <span class="spot-chip" style="background:#faf5ff; color:#9333ea; font-weight:800;">伝統工芸・名品</span>
-            <span class="spot-chip" style="background:#f1f5f9; color:#475569;">目安: €20〜150</span>
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:2px;">
+            <h3 class="spot-name-ja">フィレンツェ本革財布・手袋</h3>
+            <span class="spot-chip" style="color:#9333ea; font-weight:800; flex-shrink:0;">€20〜150</span>
           </div>
-          <h3 class="spot-name-ja">フィレンツェ伝統革製品 (財布・手袋)</h3>
-          <span class="spot-name-it">ブランド/産地: Il Bisonte / 本革露店 (フィレンツェ)</span>
-          <p class="spot-desc">トスカーナ植物タンニン鞣し革の財布、名刺入れ、柔らかい革手袋。使い込むほど飴色に変化。</p>
+          <span class="spot-name-it">Vera Pelle (フィレンツェ)</span>
+          <p class="spot-desc">トスカーナ植物タンニン鞣し革。使い込むほど飴色に変化。</p>
           <div class="spot-mime-tip">
-            <strong>💡 【みめTip】</strong> 市場の露店では「Vera Pelle（本革）」の刻印を確認。勝手に触らず「Posso toccare?」と一声。
+            <strong>💡 【みめTip】</strong> 市場の露店では「Vera Pelle（本革）」の刻印を確認。
           </div>
         </div>
       </div>
       <div class="spot-card" data-cat="artisan">
-        <div class="spot-img-wrap">
-          <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=600&q=80" alt="ベネチアンガラス (Murano Glass)" loading="lazy">
-          <span class="spot-img-badge">伝統工芸・名品</span>
+        <div class="spot-thumb-wrap">
+          <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=300&q=80" alt="ベネチアンガラス (Murano)" loading="lazy">
+          <span class="spot-thumb-badge">名品</span>
         </div>
         <div class="spot-body">
-          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:3px;">
-            <span class="spot-chip" style="background:#faf5ff; color:#9333ea; font-weight:800;">伝統工芸・名品</span>
-            <span class="spot-chip" style="background:#f1f5f9; color:#475569;">目安: €10〜80</span>
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:2px;">
+            <h3 class="spot-name-ja">ベネチアンガラス (Murano)</h3>
+            <span class="spot-chip" style="color:#9333ea; font-weight:800; flex-shrink:0;">€10〜80</span>
           </div>
-          <h3 class="spot-name-ja">ベネチアンガラス (Murano Glass)</h3>
-          <span class="spot-name-it">ブランド/産地: Murano Glass (ベネチア)</span>
-          <p class="spot-desc">マエストロの手吹きガラス。繊細なミルフィオリ（千の花）ペンダントやグラス。</p>
+          <span class="spot-name-it">Murano Glass (ベネチア)</span>
+          <p class="spot-desc">マエストロ手吹きガラス。繊細なミルフィオリペンダント。</p>
           <div class="spot-mime-tip">
-            <strong>💡 【みめTip】</strong> 安価な中国製偽物に注意。「Vetro Artistico Murano」の認定シールがある正規店で購入を。
+            <strong>💡 【みめTip】</strong> 認定シール「Vetro Artistico Murano」のある正規店で購入を。
           </div>
         </div>
       </div>
       <div class="spot-card" data-cat="artisan">
-        <div class="spot-img-wrap">
-          <img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=600&q=80" alt="伝統的モデナ産バルサミコ酢" loading="lazy">
-          <span class="spot-img-badge">伝統工芸・名品</span>
+        <div class="spot-thumb-wrap">
+          <img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=300&q=80" alt="モデナ産熟成バルサミコ酢" loading="lazy">
+          <span class="spot-thumb-badge">名品</span>
         </div>
         <div class="spot-body">
-          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:3px;">
-            <span class="spot-chip" style="background:#faf5ff; color:#9333ea; font-weight:800;">伝統工芸・名品</span>
-            <span class="spot-chip" style="background:#f1f5f9; color:#475569;">目安: €15〜50</span>
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:2px;">
+            <h3 class="spot-name-ja">モデナ産熟成バルサミコ酢</h3>
+            <span class="spot-chip" style="color:#9333ea; font-weight:800; flex-shrink:0;">€15〜50</span>
           </div>
-          <h3 class="spot-name-ja">伝統的モデナ産バルサミコ酢</h3>
-          <span class="spot-name-it">ブランド/産地: Aceto Balsamico Tradizionale (全都市)</span>
-          <p class="spot-desc">木樽で12年以上長期熟成。トロリと濃厚で甘酸っぱく、パルミジャーノやバニラアイスにかけて絶品。</p>
+          <span class="spot-name-it">Aceto Balsamico (全都市)</span>
+          <p class="spot-desc">木樽12年以上長期熟成。チーズやアイスにかけて絶品。</p>
           <div class="spot-mime-tip">
-            <strong>💡 【みめTip】</strong> 「D.O.P.」マークのついた熟成バルサミコは日本の半額以下で手に入ります。
+            <strong>💡 【みめTip】</strong> 「D.O.P.」マークの熟成バルサミコは日本の半額以下。
           </div>
         </div>
       </div>
       <div class="spot-card" data-cat="artisan">
-        <div class="spot-img-wrap">
-          <img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=600&q=80" alt="リモンチェッロ (Limoncello)" loading="lazy">
-          <span class="spot-img-badge">伝統工芸・名品</span>
+        <div class="spot-thumb-wrap">
+          <img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=300&q=80" alt="リモンチェッロ (Limoncello)" loading="lazy">
+          <span class="spot-thumb-badge">名品</span>
         </div>
         <div class="spot-body">
-          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:3px;">
-            <span class="spot-chip" style="background:#faf5ff; color:#9333ea; font-weight:800;">伝統工芸・名品</span>
-            <span class="spot-chip" style="background:#f1f5f9; color:#475569;">目安: €8〜20</span>
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:2px;">
+            <h3 class="spot-name-ja">リモンチェッロ (Limoncello)</h3>
+            <span class="spot-chip" style="color:#9333ea; font-weight:800; flex-shrink:0;">€8〜20</span>
           </div>
-          <h3 class="spot-name-ja">リモンチェッロ (Limoncello)</h3>
-          <span class="spot-name-it">ブランド/産地: Sorrento / Capri (ローマ/空港)</span>
-          <p class="spot-desc">南イタリアの太陽を浴びたレモンの皮から造られる爽やかな甘口リキュール。冷凍庫でキンキンに冷やして。</p>
+          <span class="spot-name-it">Sorrento (ローマ)</span>
+          <p class="spot-desc">南伊の太陽を浴びたレモン甘口リキュール。冷凍庫で冷やして。</p>
           <div class="spot-mime-tip">
-            <strong>💡 【みめTip】</strong> 液体物のため100ml超は機内持ち込み不可！タオルで厳重に包んでスーツケース預け入れへ。
+            <strong>💡 【みめTip】</strong> 液体物のため100ml超は機内持込不可！必ずスーツケースへ。
           </div>
         </div>
       </div>
@@ -233,16 +220,38 @@
     </section>
 
   </main>
-  <!-- Bottom Tab Bar -->
+
+  <!-- Ultra-Compact Bottom Tab Bar -->
   <nav class="bottom-tab-bar">
     <a href="index.html" class="tab-item">
       <span class="tab-icon">🏠</span>
       <span class="tab-label">ホーム</span>
     </a>
-    <button type="button" class="tab-item" id="btn-day-popover" onclick="window.toggleDayPopover && window.toggleDayPopover(true);">
-      <span class="tab-icon">📅</span>
-      <span class="tab-label">日程</span>
-    </button>
+
+    <!-- Native HTML5 Day Popover (Zero JS dependency) -->
+    <details class="day-popover-details" id="day-popover-details">
+      <summary class="tab-item">
+        <span class="tab-icon">📅</span>
+        <span class="tab-label">日程</span>
+      </summary>
+      <div class="day-popover-dropdown">
+        <div class="day-popover-header">
+          <span class="day-popover-title">📅 日程一覧を選択</span>
+          <button type="button" class="day-popover-close" onclick="this.closest('details').removeAttribute('open');">✕</button>
+        </div>
+        <div class="day-popover-grid">
+          <a href="day1.html" class="day-popover-item"><span class="dp-badge">Day 1</span> 11/15(日) 関空➔ミラノ</a>
+          <a href="day2.html" class="day-popover-item"><span class="dp-badge">Day 2</span> 11/16(月) ミラノ➔ベネチア</a>
+          <a href="day3.html" class="day-popover-item"><span class="dp-badge">Day 3</span> 11/17(火) ベネチア➔フィレンツェ</a>
+          <a href="day4.html" class="day-popover-item"><span class="dp-badge">Day 4</span> 11/18(水) フィレンツェ＆ピサ</a>
+          <a href="day5.html" class="day-popover-item"><span class="dp-badge">Day 5</span> 11/19(木) サンジミニャーノ➔ローマ</a>
+          <a href="day6.html" class="day-popover-item"><span class="dp-badge">Day 6</span> 11/20(金) ローマ＆バチカン自由</a>
+          <a href="day7.html" class="day-popover-item"><span class="dp-badge">Day 7</span> 11/21(土) ローマ➔FCO空港発</a>
+          <a href="day8.html" class="day-popover-item"><span class="dp-badge">Day 8</span> 11/22(日) 関空帰着・解散</a>
+        </div>
+      </div>
+    </details>
+
     <a href="beginner-guide.html" class="tab-item">
       <span class="tab-icon">🔰</span>
       <span class="tab-label">初心者</span>
@@ -269,24 +278,6 @@
     </a>
   </nav>
 
-  <!-- Day Selection Popover Menu (Appears Directly Above the '日程' Label) -->
-  <div id="day-popover-overlay" class="day-popover-overlay" onclick="window.toggleDayPopover && window.toggleDayPopover(false);"></div>
-  <div id="day-popover-menu" class="day-popover-menu">
-    <div class="day-popover-header">
-      <span class="day-popover-title">📅 日程詳細を選択</span>
-      <button type="button" class="day-popover-close" onclick="window.toggleDayPopover && window.toggleDayPopover(false);">✕</button>
-    </div>
-    <div class="day-popover-grid">
-      <a href="day1.html" class="day-popover-item"><span class="dp-badge">Day 1</span> 11/15(日) 関空➔ミラノ</a>
-      <a href="day2.html" class="day-popover-item"><span class="dp-badge">Day 2</span> 11/16(月) ミラノ➔ベネチア</a>
-      <a href="day3.html" class="day-popover-item"><span class="dp-badge">Day 3</span> 11/17(火) ベネチア➔フィレンツェ</a>
-      <a href="day4.html" class="day-popover-item"><span class="dp-badge">Day 4</span> 11/18(水) フィレンツェ＆ピサ</a>
-      <a href="day5.html" class="day-popover-item"><span class="dp-badge">Day 5</span> 11/19(木) サンジミニャーノ➔ローマ</a>
-      <a href="day6.html" class="day-popover-item"><span class="dp-badge">Day 6</span> 11/20(金) ローマ＆バチカン自由</a>
-      <a href="day7.html" class="day-popover-item"><span class="dp-badge">Day 7</span> 11/21(土) ローマ➔FCO空港発</a>
-      <a href="day8.html" class="day-popover-item"><span class="dp-badge">Day 8</span> 11/22(日) 関空帰着・解散</a>
-    </div>
-  </div>
   <!-- Site Footer -->
   <footer class="site-footer">
     <div class="container footer-inner">
@@ -305,7 +296,17 @@
       </div>
     </div>
   </footer>
+
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
   <script src="app.js"></script>
+  <script>
+    document.addEventListener('click', function(e) {
+      document.querySelectorAll('details.day-popover-details, details.day-nav-details').forEach(function(d) {
+        if (!d.contains(e.target) && d.hasAttribute('open')) {
+          d.removeAttribute('open');
+        }
+      });
+    });
+  </script>
 </body>
 </html>
