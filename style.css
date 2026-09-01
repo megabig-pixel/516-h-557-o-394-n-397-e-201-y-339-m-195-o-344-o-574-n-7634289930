@@ -941,3 +941,535 @@ footer.site-footer {
     padding: 4px 8px;
   }
 }
+
+/* ==========================================================================
+   初心者バイブル & インタラクティブウィジェット スタイル (Mime Guide Integrations)
+   ========================================================================== */
+
+/* 🔰 Mime Guide Highlight Banner */
+.mime-banner {
+  background: linear-gradient(135deg, #7c2d12 0%, #c2410c 50%, #ea580c 100%);
+  color: #ffffff;
+  border-radius: var(--radius-lg);
+  padding: 24px 20px;
+  margin-bottom: 32px;
+  box-shadow: 0 10px 25px -5px rgba(194, 65, 12, 0.35);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  border: 2px solid #fed7aa;
+  position: relative;
+  overflow: hidden;
+}
+
+.mime-banner::after {
+  content: "🇮🇹";
+  position: absolute;
+  right: -10px;
+  bottom: -15px;
+  font-size: 6rem;
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+.mime-badge-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.badge-mime {
+  background: #fef08a;
+  color: #854d0e;
+  font-size: 0.8rem;
+  font-weight: 800;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+}
+
+.mime-banner h3 {
+  font-size: 1.35rem;
+  font-weight: 800;
+  line-height: 1.35;
+  margin: 0;
+  color: #ffffff;
+}
+
+.mime-banner p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  opacity: 0.95;
+  margin: 0;
+}
+
+.mime-banner-btn {
+  align-self: flex-start;
+  background: #ffffff;
+  color: #c2410c !important;
+  font-weight: 700;
+  padding: 10px 20px;
+  border-radius: var(--radius-full);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s;
+  text-decoration: none !important;
+}
+
+.mime-banner-btn:hover {
+  transform: translateY(-2px);
+  background: #fff7ed;
+}
+
+/* Widgets Grid */
+.widgets-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
+  margin-bottom: 36px;
+}
+
+.widget-card {
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.widget-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 12px;
+  margin-bottom: 14px;
+}
+
+.widget-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* 🧳 Packing Checklist Widget */
+.progress-container {
+  margin-bottom: 14px;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 10px;
+  background: #e2e8f0;
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  margin-bottom: 6px;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--primary-light), var(--accent-olive));
+  transition: width 0.3s ease;
+}
+
+.progress-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.packing-filter-bar {
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+  margin-bottom: 12px;
+}
+
+.packing-filter-chip {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border-color);
+  background: #f8fafc;
+  color: var(--text-main);
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.packing-filter-chip.active {
+  background: var(--primary-color);
+  color: #ffffff;
+  border-color: var(--primary-color);
+}
+
+.checklist-items-scroll {
+  max-height: 280px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-right: 4px;
+}
+
+.checklist-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px;
+  background: #f8fafc;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.checklist-item:hover {
+  background: #f1f5f9;
+}
+
+.checklist-item.completed {
+  opacity: 0.6;
+  background: #f0fdf4;
+  border-color: #bbf7d0;
+}
+
+.checklist-item.completed .item-name {
+  text-decoration: line-through;
+  color: var(--text-muted);
+}
+
+.checklist-item input[type="checkbox"] {
+  margin-top: 3px;
+  width: 18px;
+  height: 18px;
+  accent-color: var(--primary-color);
+}
+
+.item-content {
+  flex: 1;
+}
+
+.item-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  margin-bottom: 2px;
+}
+
+.item-name {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.item-badge {
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+  background: #e2e8f0;
+  color: #475569;
+  white-space: nowrap;
+}
+
+.item-badge.badge-sacred {
+  background: #fef08a;
+  color: #854d0e;
+  border: 1px solid #facc15;
+}
+
+.item-desc {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  line-height: 1.35;
+  margin: 0;
+}
+
+/* 💶 Currency & Tip Calculator */
+.calc-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.calc-field {
+  flex: 1;
+}
+
+.calc-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+  display: block;
+}
+
+.calc-input {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 1rem;
+  font-weight: 700;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  color: var(--primary-color);
+}
+
+.calc-input:focus {
+  outline: none;
+  border-color: var(--primary-light);
+  box-shadow: 0 0 0 2px rgba(43, 108, 176, 0.2);
+}
+
+.calc-presets {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.calc-preset-btn {
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  background: #edf2f7;
+  border: 1px solid #cbd5e0;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+}
+
+.calc-preset-btn:hover {
+  background: #e2e8f0;
+}
+
+.coperto-box {
+  background: #fffaf0;
+  border: 1px solid #feebc8;
+  padding: 12px;
+  border-radius: var(--radius-md);
+  margin-top: 10px;
+}
+
+.coperto-box h5 {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #744210;
+  margin-bottom: 6px;
+}
+
+.coperto-inputs {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.coperto-inputs select {
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+  border: 1px solid #cbd5e0;
+  font-size: 0.8rem;
+}
+
+#calc-coperto-result {
+  font-size: 0.85rem;
+  color: #9a3412;
+}
+
+/* 🗣️ Italian Phrases Widget */
+.phrases-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: 280px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.phrase-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #f8fafc;
+  border: 1px solid var(--border-color);
+  padding: 8px 12px;
+  border-radius: var(--radius-md);
+}
+
+.phrase-texts {
+  display: flex;
+  flex-direction: column;
+}
+
+.phrase-it {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.phrase-kana {
+  font-size: 0.72rem;
+  color: var(--secondary-color);
+}
+
+.phrase-ja {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.btn-speak-phrase {
+  background: #e0e7ff;
+  color: #3730a3;
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.2s;
+}
+
+.btn-speak-phrase:hover {
+  background: #c7d2fe;
+}
+
+.btn-speak-phrase.playing {
+  background: #818cf8;
+  color: #ffffff;
+  transform: scale(1.1);
+}
+
+/* 🚨 Emergency SOS Modal */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(4px);
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.modal-overlay.active {
+  display: flex;
+}
+
+.modal-card {
+  background: #ffffff;
+  border-radius: var(--radius-lg);
+  max-width: 520px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 24px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.25);
+  border: 2px solid #ef4444;
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid #fee2e2;
+  padding-bottom: 12px;
+  margin-bottom: 16px;
+}
+
+.modal-header h3 {
+  font-size: 1.25rem;
+  color: #b91c1c;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-close-modal {
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #9ca3af;
+}
+
+.sos-call-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.sos-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  border-radius: var(--radius-md);
+  text-decoration: none !important;
+  color: #ffffff !important;
+  font-weight: 700;
+  text-align: center;
+  gap: 4px;
+}
+
+.sos-btn-police { background: #1d4ed8; }
+.sos-btn-ambulance { background: #dc2626; }
+.sos-btn-carabinieri { background: #1e293b; }
+.sos-btn-embassy { background: #047857; }
+
+.sos-btn span.num {
+  font-size: 1.3rem;
+}
+.sos-btn span.lbl {
+  font-size: 0.75rem;
+  opacity: 0.9;
+}
+
+.embassy-info-block {
+  background: #f8fafc;
+  border: 1px solid var(--border-color);
+  padding: 12px;
+  border-radius: var(--radius-md);
+  margin-bottom: 14px;
+  font-size: 0.85rem;
+}
+
+.embassy-info-block h4 {
+  font-size: 0.95rem;
+  color: var(--primary-color);
+  margin-bottom: 4px;
+}
+
+/* Mime Tip Callout on Day Cards */
+.mime-day-tip {
+  background: #fff7ed;
+  border-left: 4px solid #ea580c;
+  padding: 8px 12px;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  font-size: 0.82rem;
+  color: #9a3412;
+  margin-top: 8px;
+  line-height: 1.45;
+}

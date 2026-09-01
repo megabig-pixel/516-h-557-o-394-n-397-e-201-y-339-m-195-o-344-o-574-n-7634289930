@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>ローマ終日自由行動＆教会音楽 完全攻略ガイド | イタリア新婚旅行8日間 しおり</title>
+  <link rel="stylesheet" href="style.css">
+  <meta name="theme-color" content="#0071e3">
+</head>
+<body>
+  <!-- Sticky Top Navbar -->
+  <header class="navbar">
+    <div class="navbar-brand">
+      <span>🇮🇹</span>
+      <span>Andiamo! イタリア8日間</span>
+      <span class="tag-tour">HIS OI-KMI2811</span>
+    </div>
+    <div class="navbar-actions">
+      <span class="badge" style="background: var(--pink-light); color: var(--pink);">💍 Kenta & Megumi</span>
+    </div>
+  </header>
+
+
+  <main class="container">
+    <div class="day-switcher">
+      <a href="day1.html" class="day-pill"><span>Day 1</span><small>11/15(日)</small></a>
+      <a href="day2.html" class="day-pill"><span>Day 2</span><small>11/16(月)</small></a>
+      <a href="day3.html" class="day-pill"><span>Day 3</span><small>11/17(火)</small></a>
+      <a href="day4.html" class="day-pill"><span>Day 4</span><small>11/18(水)</small></a>
+      <a href="day5.html" class="day-pill"><span>Day 5</span><small>11/19(木)</small></a>
+      <a href="day6.html" class="day-pill"><span>Day 6</span><small>11/20(金)</small></a>
+      <a href="day7.html" class="day-pill"><span>Day 7</span><small>11/21(土)</small></a>
+      <a href="day8.html" class="day-pill"><span>Day 8</span><small>11/22(日)</small></a>
+      <a href="rome-free-day-guide.html" class="day-pill active" style="min-width:120px;"><span>🎻 ローマ特集</span><small>教会音楽・美術</small></a>
+    </div>
+
+
+    <!-- Hero Header -->
+    <div style="background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); color:#fff; padding:24px 18px; border-radius:var(--radius-lg); margin-bottom:20px; box-shadow:var(--shadow-md);">
+      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
+        <span class="hero-tag">Special Feature: ローマ自由行動特集</span>
+        <span class="mime-badge">🎥 イタリアガイドみめ 監修</span>
+      </div>
+      <h2 style="font-size: 1.6rem; font-weight: 800; margin: 8px 0;">永遠の都ローマ 自由行動 ＆ 教会音楽・美術完全攻略ガイド</h2>
+      <p style="font-size: 0.9rem; opacity: 0.95;">
+        合唱やクラシック音楽を愛するお二人に贈る、パイプオルガンと聖歌隊合唱が響き渡る歴史的教会、カラヴァッジョの名画、そして美味しいローマ下町グルメのモデルコース。
+      </p>
+    </div>
+
+
+    <!-- Mime-san Rome Church & Safety Handbook -->
+    <section class="section" style="margin-bottom: 28px;">
+      <div class="mime-callout" style="background:#fffaf0; border:2px solid #fdba74; border-left:8px solid #ea580c; border-radius:var(--radius-lg); padding:22px;">
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; margin-bottom:12px;">
+          <h3 style="font-size:1.25rem; font-weight:800; color:#c2410c; margin:0; display:flex; align-items:center; gap:8px;">
+            <span>🎥</span> イタリアガイドみめ直伝！ローマ教会巡り・音楽鑑賞 ＆ 安全ガイド
+          </h3>
+          <span class="mime-badge">音楽・合唱愛好家必読</span>
+        </div>
+
+
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:14px; margin-top:14px;">
+          
+          <div style="background:#ffffff; padding:14px; border-radius:var(--radius-md); border:1px solid #fed7aa;">
+            <strong style="color:#c2410c; font-size:0.95rem;">1. サン・ピエトロ大聖堂「夕のミサ（17:00）」</strong>
+            <p style="font-size:0.83rem; color:#431407; margin-top:4px; line-height:1.5;">
+              毎日17:00（日祝は10:30等）から大聖堂最奥の「司教座の祭壇（Cattedra di San Pietro）」で行われるミサでは、伝統あるジュリア聖歌隊（Cappella Giulia）の美しいポリフォニー合唱と荘厳なパイプオルガンが響き渡ります。信者でなくても誰でも無料で参列・拝聴できます（16:30頃に祭壇前の着席エリアへ）。
+            </p>
+          </div>
+
+
+          <div style="background:#ffffff; padding:14px; border-radius:var(--radius-md); border:1px solid #fed7aa;">
+            <strong style="color:#c2410c; font-size:0.95rem;">2. 教会入場時の服装ルール＆マナー</strong>
+            <p style="font-size:0.83rem; color:#431407; margin-top:4px; line-height:1.5;">
+              カトリックの神聖な祈りの場のため、肩が出るノースリーブや膝上ショートパンツ・ミニスカートは厳禁です。入口で警備員に止められます。男性は帽子を脱ぐのが鉄則。また、教会内でのフラッシュ撮影や通話、ミサ中の観光徘徊は慎みましょう。
+            </p>
+          </div>
+
+
+          <div style="background:#ffffff; padding:14px; border-radius:var(--radius-md); border:1px solid #fed7aa;">
+            <strong style="color:#c2410c; font-size:0.95rem;">3. カラヴァッジョ名画の無料巡礼ルート</strong>
+            <p style="font-size:0.83rem; color:#431407; margin-top:4px; line-height:1.5;">
+              ローマの教会には美術館級のカラヴァッジョ原画が無料で鑑賞できるスポットが3箇所あります：
+              <br>① <strong>サン・ルイジ・デイ・フランチェージ教会</strong>：『聖マタイの召命』三部作
+              <br>② <strong>サンタゴスティーノ教会</strong>：『ロレートの聖母』
+              <br>③ <strong>サンタ・マリア・デル・ポポロ教会</strong>：『聖ペテロの磔刑』『聖パウロの回心』
+              <br>※祭壇横の照明コイン機に€1〜2を入れると絵画が明るくライトアップされます！
+            </p>
+          </div>
+
+
+          <div style="background:#ffffff; padding:14px; border-radius:var(--radius-md); border:1px solid #fed7aa;">
+            <strong style="color:#c2410c; font-size:0.95rem;">4. 市内交通「Tap & Go（タッチ決済）」の乗り方</strong>
+            <p style="font-size:0.83rem; color:#431407; margin-top:4px; line-height:1.5;">
+              地下鉄（Metro）やバスは、改札や車内の黄色いリーダーにVisa/Mastercardのタッチ決済（Apple Pay対応）をピッとタッチするだけで乗車可能（1回€1.50 / 100分間有効）。切符売り場に並ぶ必要がありません。※バス車内では乗車直後に必ずタッチしましょう。
+            </p>
+          </div>
+
+
+          <div style="background:#ffffff; padding:14px; border-radius:var(--radius-md); border:1px solid #fed7aa; border-left:4px solid #dc2626;">
+            <strong style="color:#dc2626; font-size:0.95rem;">5. ローマの要注意エリア＆スリ撃退法</strong>
+            <p style="font-size:0.83rem; color:#7f1d1d; margin-top:4px; line-height:1.5;">
+              テルミニ駅構内、地下鉄車内、バチカン行き「64番バス」、コロッセオ・トレビの泉周辺はスリ集団の巣窟。乗降時の押し合い、赤ちゃんを抱いた女性グループ、ミサンガ売りには目を合わせず「No, grazie!」と毅然と断り、リュックは必ず体の前で抱えてください。
+            </p>
+          </div>
+
+
+          <div style="background:#ffffff; padding:14px; border-radius:var(--radius-md); border:1px solid #fed7aa;">
+            <strong style="color:#c2410c; font-size:0.95rem;">6. 水飲み場「ナゾーネ」＆トイレ対策</strong>
+            <p style="font-size:0.83rem; color:#431407; margin-top:4px; line-height:1.5;">
+              ローマ市内には約2,500箇所の「ナゾーネ（Nasone）」があり、水筒持参で冷たい天然水を無料で補給できます。公衆トイレは少ないため、バールでエスプレッソ（€1.2〜1.5）を飲んだ際に「Posso usare il bagno?（トイレをお借りできますか？）」とレシートを提示して利用するのがイタリア流のスマートな方法です。
+            </p>
+          </div>
+
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- 3 Recommended Model Courses -->
+    <section class="section">
+      <div class="section-header">
+        <h3 class="section-title">🗺️ ローマ自由行動 3大おすすめモデルコース</h3>
+      </div>
+
+
+      <!-- Course 1 -->
+      <div style="background:#ffffff; border:1px solid var(--border-color); border-radius:var(--radius-lg); padding:20px; margin-bottom:16px; box-shadow:var(--shadow-sm);">
+        <h4 style="color:var(--primary-color); font-size:1.1rem; font-weight:800; margin-bottom:6px;">【コース1】王道ハイライト満喫コース（古代ローマ＆バチカン）</h4>
+        <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:10px;">サン・ピエトロ大聖堂 ➔ バチカン美術館 ➔ ナヴォーナ広場 ➔ パンテオン ➔ トレビの泉 ➔ スペイン広場 ➔ コロッセオ夜景</p>
+        <p style="font-size:0.85rem; line-height:1.6;">
+          ローマの必見モニュメントを効率よく制覇する王道ルート。昼食はパンテオン近くの老舗アルマンド、おやつにポンピのティラミスやサンテウスタキオのエスプレッソを挟みながら歩く充実の一日です。
+        </p>
+      </div>
+
+
+      <!-- Course 2 -->
+      <div style="background:#ffffff; border:1px solid var(--border-color); border-radius:var(--radius-lg); padding:20px; margin-bottom:16px; box-shadow:var(--shadow-sm);">
+        <h4 style="color:var(--primary-color); font-size:1.1rem; font-weight:800; margin-bottom:6px;">【コース2】アート＆教会音楽至高のハネムーンコース</h4>
+        <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:10px;">ボルゲーゼ美術館 ➔ ピンチョの丘展望 ➔ サン・ルイジ教会（カラヴァッジョ） ➔ サンティニャツィオ教会 ➔ サン・ピエトロ大聖堂「17:00夕のミサ合唱」</p>
+        <p style="font-size:0.85rem; line-height:1.6;">
+          名作絵画と聖なる音楽の響きを深く味わう贅沢なコース。夕方はバチカンでジュリア聖歌隊のミサ合唱に耳を傾け、夜はトラステヴェレの隠れ家オステリアでキャンドルライトディナーを。
+        </p>
+      </div>
+
+
+      <!-- Course 3 -->
+      <div style="background:#ffffff; border:1px solid var(--border-color); border-radius:var(--radius-lg); padding:20px; box-shadow:var(--shadow-sm);">
+        <h4 style="color:var(--primary-color); font-size:1.1rem; font-weight:800; margin-bottom:6px;">【コース3】下町情緒と美食・ショッピング探訪コース</h4>
+        <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:10px;">カンポ・デ・フィオーリ朝市 ➔ 真実の口 ➔ ロッショーリ（絶品カルボナーラ） ➔ カストローニ（お土産調達） ➔ リナシェンテ屋上テラス</p>
+        <p style="font-size:0.85rem; line-height:1.6;">
+          活気ある市場でのフルーツつまみ食いから始まり、ローマ屈指の食材デパートでお買い物、夕暮れは屋上テラスでアペリティーボを楽しむ大人のゆったりプラン。
+        </p>
+      </div>
+    </section>
+
+
+  </main>
+
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-credits">
+        <h4>🇮🇹 Kenta & Megumi's Italian Honeymoon Portal</h4>
+        <p>HIS Tour OI-KMI2811 (2026/11/15 - 11/22) | Produced with ❤️ for Suzuki Family</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">トップポータル</a>
+        <a href="tour-map.html">ルートMAP</a>
+        <a href="free-meal-guide.html">グルメガイド</a>
+        <a href="souvenir-guide.html">お土産ガイド</a>
+        <a href="rome-free-day-guide.html">音楽教会ガイド</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <script src="app.js" defer></script>
+</body>
+</html>
