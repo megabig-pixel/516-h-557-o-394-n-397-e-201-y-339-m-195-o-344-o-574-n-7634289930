@@ -1,9 +1,11 @@
 /* ==========================================================================
-   イタリア新婚旅行ガイドポータル 共通JavaScript (app.js)
+   イタリア新婚旅行ガイドポータル 共通JavaScript (app.js v2)
    鈴木 健太・めぐみ 様 (HIS Tour OI-KMI2811: 2026年11月15日〜22日)
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
+  initCollapsibleHeader();
+  initDualClock();
   initChecklist();
   initCalculator();
   initSpeech();
@@ -11,7 +13,77 @@ document.addEventListener('DOMContentLoaded', () => {
   initEmergencyModal();
 });
 
-/* 1. Interactive Checklist with localStorage */
+/* 1. Collapsible Header (Hide on Scroll Down, Show on Scroll Up) */
+function initCollapsibleHeader() {
+  const header = document.getElementById('site-header');
+  if (!header) return;
+
+  let lastScrollY = window.scrollY;
+  let ticking = false;
+
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        const currentScrollY = window.scrollY;
+        
+        // Hide on scroll down after 60px, show on scroll up
+        if (currentScrollY > 60 && currentScrollY > lastScrollY) {
+          header.classList.add('header-hidden');
+        } else {
+          header.classList.remove('header-hidden');
+        }
+
+        lastScrollY = Math.max(0, currentScrollY);
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }, { passive: true });
+}
+
+/* 2. Dual Timezone Clock (Rome / Milan vs Japan) */
+function initDualClock() {
+  const romeEl = document.getElementById('clock-rome');
+  const japanEl = document.getElementById('clock-japan');
+  if (!romeEl && !japanEl) return;
+
+  function updateClocks() {
+    const now = new Date();
+    
+    // Rome time (Europe/Rome - UTC+1 winter / UTC+2 summer)
+    try {
+      const romeTimeStr = now.toLocaleTimeString('ja-JP', {
+        timeZone: 'Europe/Rome',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: false
+      });
+      if (romeEl) romeEl.textContent = romeTimeStr;
+    } catch (e) {
+      if (romeEl) romeEl.textContent = '--:--:--';
+    }
+
+    // Japan time (Asia/Tokyo - UTC+9)
+    try {
+      const japanTimeStr = now.toLocaleTimeString('ja-JP', {
+        timeZone: 'Asia/Tokyo',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: false
+      });
+      if (japanEl) japanEl.textContent = japanTimeStr;
+    } catch (e) {
+      if (japanEl) japanEl.textContent = '--:--:--';
+    }
+  }
+
+  updateClocks();
+  setInterval(updateClocks, 1000);
+}
+
+/* 3. Interactive Checklist with localStorage */
 function initChecklist() {
   const checkItems = document.querySelectorAll('.check-item input[type="checkbox"]');
   const progressFill = document.querySelector('.checklist-progress-fill');
@@ -20,7 +92,6 @@ function initChecklist() {
   
   if (checkItems.length === 0) return;
 
-  // Load saved state
   let savedState = {};
   try {
     savedState = JSON.parse(localStorage.getItem(storageKey)) || {};
@@ -92,10 +163,9 @@ function initChecklist() {
   updateProgress();
 }
 
-/* 2. Real-time Currency & Tip Calculator */
+/* 4. Real-time Currency & Tip Calculator */
 function initCalculator() {
   const euroInput = document.getElementById('calc-euro-input');
-  const yenInput = document.getElementById('calc-yen-input');
   const rateInput = document.getElementById('calc-rate-input');
   const copertoSelect = document.getElementById('calc-coperto-select');
   const tipSelect = document.getElementById('calc-tip-select');
@@ -146,7 +216,7 @@ function initCalculator() {
   calculate();
 }
 
-/* 3. Italian Speech Synthesis (Web Speech API) & Copy */
+/* 5. Italian Speech Synthesis (Web Speech API) & Copy */
 function initSpeech() {
   document.querySelectorAll('.speak-btn').forEach(btn => {
     btn.addEventListener('click', (e) => {
@@ -188,27 +258,27 @@ function initSpeech() {
   });
 }
 
-/* 4. Live Filter and Search */
+/* 6. Live Filter and Search */
 function initSearch() {
   const searchInput = document.getElementById('search-input');
   const filterChips = document.querySelectorAll('.filter-chip');
-  const spotCards = document.querySelectorAll('.spot-card, .restaurant-card, .souvenir-card');
+  const phraseCards = document.querySelectorAll('.phrase-card, .spot-card, .restaurant-card, .souvenir-card');
 
   if (!searchInput && filterChips.length === 0) return;
 
   function filterCards() {
     const query = searchInput ? searchInput.value.toLowerCase().trim() : '';
     const activeChip = document.querySelector('.filter-chip.active');
-    const selectedCity = activeChip ? activeChip.dataset.city : 'all';
+    const selectedCategory = activeChip ? activeChip.dataset.cat : 'all';
 
-    spotCards.forEach(card => {
-      const cardCity = card.dataset.city || '';
+    phraseCards.forEach(card => {
+      const cardCategory = card.dataset.cat || card.dataset.city || '';
       const text = card.textContent.toLowerCase();
       
-      const matchesCity = (selectedCity === 'all' || cardCity === selectedCity);
+      const matchesCat = (selectedCategory === 'all' || cardCategory === selectedCategory);
       const matchesQuery = (!query || text.includes(query));
 
-      if (matchesCity && matchesQuery) {
+      if (matchesCat && matchesQuery) {
         card.style.display = 'flex';
       } else {
         card.style.display = 'none';
@@ -230,7 +300,7 @@ function initSearch() {
   });
 }
 
-/* 5. Emergency Modal */
+/* 7. Emergency Modal */
 function initEmergencyModal() {
   const modal = document.getElementById('emergency-modal');
   const openBtns = document.querySelectorAll('.btn-open-sos');

@@ -9,25 +9,39 @@
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
 </head>
 <body>
-  <!-- Site Header -->
-  <header class="site-header">
+  <!-- Site Header (Collapsible on Scroll) -->
+  <header class="site-header" id="site-header">
     <div class="container header-inner">
       <a href="index.html" class="brand-title">
-        <span style="font-size: 1.5rem;">🇮🇹</span>
+        <span style="font-size: 1.4rem;">🇮🇹</span>
         <div>
           <h1>イタリア7都市周遊 8日間</h1>
           <span class="brand-subtitle">HIS Tour OI-KMI2811 | Kenta &amp; Megumi Honeymoon</span>
         </div>
       </a>
       <nav class="main-nav">
-        <a href="index.html" class="nav-link active">🏠 ホーム</a> <a href="beginner-guide.html" class="nav-link">🔰 初心者安心ガイド</a> <a href="tour-map.html" class="nav-link">🗺️ 全体ルートMAP</a> <a href="free-meal-guide.html" class="nav-link">🍽️ 自由食・グルメ</a> <a href="souvenir-guide.html" class="nav-link">🎁 お土産・買物</a> <a href="rome-free-day-guide.html" class="nav-link">🎻 ローマ自由行動</a>
+        <a href="index.html" class="nav-link active">🏠 ホーム</a> <a href="beginner-guide.html" class="nav-link">🔰 初心者安心ガイド</a> <a href="tour-map.html" class="nav-link">🗺️ 全体ルートMAP</a> <a href="phrasebook.html" class="nav-link">🗣️ 指差しイタリア語</a> <a href="free-meal-guide.html" class="nav-link">🍽️ 自由食・グルメ</a> <a href="souvenir-guide.html" class="nav-link">🎁 お土産・買物</a> <a href="rome-free-day-guide.html" class="nav-link">🎻 ローマ自由行動</a>
       </nav>
     </div>
   </header>
+  <!-- Dual World Clock Bar -->
+  <div class="clock-bar">
+    <div class="container clock-inner">
+      <div class="clock-item">
+        <span>🇮🇹 イタリア (ローマ/ミラノ):</span>
+        <span id="clock-rome" class="clock-time">--:--:--</span>
+      </div>
+      <div class="clock-item">
+        <span>🇯🇵 日本 (大阪/東京):</span>
+        <span id="clock-japan" class="clock-time">--:--:--</span>
+        <small style="color:#94a3b8;">(時差 -8時間)</small>
+      </div>
+    </div>
+  </div>
   <!-- Day Switcher Bar -->
   <div class="day-switcher-bar">
     <div class="day-switcher-scroll">
-      <a href="day1.html" class="day-chip"><span>Day 1</span><small>11/15 (日)</small></a> <a href="day2.html" class="day-chip"><span>Day 2</span><small>11/16 (月)</small></a> <a href="day3.html" class="day-chip"><span>Day 3</span><small>11/17 (火)</small></a> <a href="day4.html" class="day-chip"><span>Day 4</span><small>11/18 (水)</small></a> <a href="day5.html" class="day-chip"><span>Day 5</span><small>11/19 (木)</small></a> <a href="day6.html" class="day-chip"><span>Day 6</span><small>11/20 (金)</small></a> <a href="day7.html" class="day-chip"><span>Day 7</span><small>11/21 (土)</small></a> <a href="day8.html" class="day-chip"><span>Day 8</span><small>11/22 (日)</small></a> <a href="beginner-guide.html" class="day-chip"><span>🔰 初心者</span><small>安心バイブル</small></a> <a href="rome-free-day-guide.html" class="day-chip"><span>🎻 ローマ</span><small>教会音楽特集</small></a>
+      <a href="day1.html" class="day-chip"><span>Day 1</span><small>11/15 (日)</small></a> <a href="day2.html" class="day-chip"><span>Day 2</span><small>11/16 (月)</small></a> <a href="day3.html" class="day-chip"><span>Day 3</span><small>11/17 (火)</small></a> <a href="day4.html" class="day-chip"><span>Day 4</span><small>11/18 (水)</small></a> <a href="day5.html" class="day-chip"><span>Day 5</span><small>11/19 (木)</small></a> <a href="day6.html" class="day-chip"><span>Day 6</span><small>11/20 (金)</small></a> <a href="day7.html" class="day-chip"><span>Day 7</span><small>11/21 (土)</small></a> <a href="day8.html" class="day-chip"><span>Day 8</span><small>11/22 (日)</small></a> <a href="phrasebook.html" class="day-chip"><span>🗣️ 会話</span><small>指差し帳</small></a> <a href="beginner-guide.html" class="day-chip"><span>🔰 初心者</span><small>安心バイブル</small></a> <a href="rome-free-day-guide.html" class="day-chip"><span>🎻 ローマ</span><small>教会音楽特集</small></a>
     </div>
   </div>
   <main class="container">
@@ -80,10 +94,10 @@
       </div>
     </div>
 
-    <!-- Quick 4 Main Navigation Cards -->
+    <!-- 6 Main Navigation Cards -->
     <section class="section">
       <div class="section-header">
-        <h2 class="section-title">🧭 5大パーソナルガイド</h2>
+        <h2 class="section-title">🧭 6大パーソナルガイド</h2>
         <span class="section-subtitle">iPhoneでいつでもワンタップ確認</span>
       </div>
       <div class="cards-grid">
@@ -99,8 +113,16 @@
           <div class="spot-body">
             <h3 class="spot-name-ja">🗺️ 全体ルートMAP</h3>
             <span class="spot-name-it">Mappa dell'Itinerario</span>
-            <p class="spot-desc">Leaflet.js連動！7都市53スポット＋治安注意ポイント＋初心者向け名店をGPSピンとGoogle Maps連携で確認。</p>
+            <p class="spot-desc">日別ステップナビ・周辺500m拡大・全体俯瞰切り替え対応！53スポットをGPSピンとGoogle Maps連携で確認。</p>
             <a href="tour-map.html" class="btn btn-primary" style="margin-top:auto;">地図アプリを開く ➔</a>
+          </div>
+        </div>
+        <div class="spot-card">
+          <div class="spot-body">
+            <h3 class="spot-name-ja">🗣️ 指差しイタリア語</h3>
+            <span class="spot-name-it">Frasario Italiano Parlante</span>
+            <p class="spot-desc">厳選70フレーズ！レストラン、お土産屋、空港、駅、緊急時に使える音声発音＆ワンタップコピー機能付き。</p>
+            <a href="phrasebook.html" class="btn btn-primary" style="margin-top:auto;">会話帳を開く ➔</a>
           </div>
         </div>
         <div class="spot-card">
@@ -134,18 +156,18 @@
     <section class="section">
       <div class="checklist-card">
         <div class="checklist-header">
-          <h3 style="font-size:1.15rem; font-weight:800; color:var(--primary-color);">🧳 旅行準備・持ち物チェックリスト（LocalStorage連動）</h3>
+          <h3 style="font-size:1.1rem; font-weight:800; color:var(--primary-color);">🧳 旅行準備・持ち物チェックリスト（LocalStorage連動）</h3>
           <div>
-            <button id="btn-select-all" class="btn btn-secondary" style="padding:4px 10px; font-size:0.75rem;">全選択</button>
-            <button id="btn-reset-all" class="btn btn-secondary" style="padding:4px 10px; font-size:0.75rem;">リセット</button>
+            <button id="btn-select-all" class="btn btn-secondary" style="padding:3px 8px; font-size:0.72rem;">全選択</button>
+            <button id="btn-reset-all" class="btn btn-secondary" style="padding:3px 8px; font-size:0.72rem;">リセット</button>
           </div>
         </div>
         <div class="checklist-progress-bar">
           <div class="checklist-progress-fill" style="width: 0%;"></div>
         </div>
-        <div class="checklist-progress-text" style="font-size:0.8rem; font-weight:700; color:var(--text-muted); margin-bottom:12px;">準備完了: 0 / 12 項目 (0%)</div>
+        <div class="checklist-progress-text" style="font-size:0.78rem; font-weight:700; color:var(--text-muted); margin-bottom:10px;">準備完了: 0 / 12 項目 (0%)</div>
         
-        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:6px;">
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:5px;">
           <label class="check-item"><input type="checkbox" data-id="chk_sec_pouch"> <span><strong>【三種の神器①】</strong> 薄型セキュリティポーチ（パスポート原本・予備クレカ）</span></label>
           <label class="check-item"><input type="checkbox" data-id="chk_wire_lock"> <span><strong>【三種の神器②】</strong> 自転車用軽量ワイヤーロック（スーツケース2個連結）</span></label>
           <label class="check-item"><input type="checkbox" data-id="chk_padlock"> <span><strong>【三種の神器③】</strong> ダイヤル式ミニ南京錠（リュックファスナー固定）</span></label>
@@ -165,20 +187,20 @@
     <!-- Realtime Currency & Tip Calculator Widget -->
     <section class="section">
       <div class="calc-card">
-        <div class="section-header" style="margin-bottom:12px;">
-          <h3 class="section-title" style="font-size:1.15rem;">💶 ユーロ・円 ＆ 席料・チップ即時計算機</h3>
+        <div class="section-header" style="margin-bottom:10px;">
+          <h3 class="section-title" style="font-size:1.1rem;">💶 ユーロ・円 ＆ 席料・チップ即時計算機</h3>
           <span class="section-subtitle">お会計時にサッと確認！</span>
         </div>
         <div class="calc-grid">
           <div class="calc-input-group">
             <label>料理代金（ユーロ EUR €）</label>
             <input type="number" id="calc-euro-input" class="calc-input" placeholder="例: 45.00" value="40" step="0.5">
-            <div style="display:flex; gap:4px; margin-top:6px; flex-wrap:wrap;">
-              <button class="btn btn-secondary btn-preset-eur" data-amount="1.5" style="padding:2px 6px; font-size:0.72rem;">€1.5 カフェ</button>
-              <button class="btn btn-secondary btn-preset-eur" data-amount="5.0" style="padding:2px 6px; font-size:0.72rem;">€5 ジェラート</button>
-              <button class="btn btn-secondary btn-preset-eur" data-amount="20" style="padding:2px 6px; font-size:0.72rem;">€20 ランチ</button>
-              <button class="btn btn-secondary btn-preset-eur" data-amount="60" style="padding:2px 6px; font-size:0.72rem;">€60 ディナー</button>
-              <button class="btn btn-secondary btn-preset-eur" data-amount="70.01" style="padding:2px 6px; font-size:0.72rem;">€70.01 免税ライン</button>
+            <div style="display:flex; gap:4px; margin-top:5px; flex-wrap:wrap;">
+              <button class="btn btn-secondary btn-preset-eur" data-amount="1.5" style="padding:2px 6px; font-size:0.7rem;">€1.5 カフェ</button>
+              <button class="btn btn-secondary btn-preset-eur" data-amount="5.0" style="padding:2px 6px; font-size:0.7rem;">€5 ジェラート</button>
+              <button class="btn btn-secondary btn-preset-eur" data-amount="20" style="padding:2px 6px; font-size:0.7rem;">€20 ランチ</button>
+              <button class="btn btn-secondary btn-preset-eur" data-amount="60" style="padding:2px 6px; font-size:0.7rem;">€60 ディナー</button>
+              <button class="btn btn-secondary btn-preset-eur" data-amount="70.01" style="padding:2px 6px; font-size:0.7rem;">€70.01 免税ライン</button>
             </div>
           </div>
           <div class="calc-input-group">
@@ -189,7 +211,7 @@
               <option value="3.0">€3.0 (観光地・人気店)</option>
               <option value="4.0">€4.0 (高級店・広場沿い)</option>
             </select>
-            <label style="margin-top:6px;">チップ率（感謝の気持ち Mancia）</label>
+            <label style="margin-top:5px;">チップ率（感謝の気持ち Mancia）</label>
             <select id="calc-tip-select" class="calc-input">
               <option value="0" selected>0% (基本不要・サービス料込)</option>
               <option value="5">5% (親切なサービス)</option>
@@ -198,68 +220,10 @@
           </div>
         </div>
         <div class="calc-result-box">
-          <div style="font-size:0.85rem; color:var(--text-muted); font-weight:700;">お二人分のお支払い総額 目安</div>
-          <div id="calc-result-eur" style="font-size:1.8rem; font-weight:900; color:var(--primary-color); margin:4px 0;">€44.00</div>
-          <div id="calc-result-jpy" style="font-size:1.15rem; font-weight:800; color:var(--secondary-color);">約 ¥7,260</div>
-          <div id="calc-result-breakdown" style="margin-top:6px;"></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Essential Italian Phrases with Audio -->
-    <section class="section">
-      <div class="section-header">
-        <h2 class="section-title">🗣️ 必須イタリア語 指差しミニフレーズ</h2>
-        <span class="section-subtitle">🔊 ボタンで音声再生！</span>
-      </div>
-      <div class="phrase-grid">
-        <div class="phrase-card">
-          <div class="phrase-text-wrap">
-            <h5>挨拶（入店時・午前）</h5>
-            <div class="phrase-it">Buongiorno!</div>
-            <div class="phrase-kana">ボンジョルノ（こんにちは/おはよう）</div>
-          </div>
-          <button class="speak-btn" data-phrase="Buongiorno!">🔊</button>
-        </div>
-        <div class="phrase-card">
-          <div class="phrase-text-wrap">
-            <h5>感謝（退店時）</h5>
-            <div class="phrase-it">Grazie mille!</div>
-            <div class="phrase-kana">グラツィエ・ミッレ（どうもありがとう）</div>
-          </div>
-          <button class="speak-btn" data-phrase="Grazie mille!">🔊</button>
-        </div>
-        <div class="phrase-card">
-          <div class="phrase-text-wrap">
-            <h5>トイレを借りる（バール活用）</h5>
-            <div class="phrase-it">Posso usare il bagno?</div>
-            <div class="phrase-kana">ポッソ・ウザーレ・イル・バーニョ？</div>
-          </div>
-          <button class="speak-btn" data-phrase="Posso usare il bagno?">🔊</button>
-        </div>
-        <div class="phrase-card">
-          <div class="phrase-text-wrap">
-            <h5>商品を触っていいか確認</h5>
-            <div class="phrase-it">Posso toccare?</div>
-            <div class="phrase-kana">ポッソ・トッカーレ？（触ってもいいですか？）</div>
-          </div>
-          <button class="speak-btn" data-phrase="Posso toccare?">🔊</button>
-        </div>
-        <div class="phrase-card">
-          <div class="phrase-text-wrap">
-            <h5>お会計をお願いする</h5>
-            <div class="phrase-it">Il conto, per favore.</div>
-            <div class="phrase-kana">イル・コント・ペル・ファヴォーレ</div>
-          </div>
-          <button class="speak-btn" data-phrase="Il conto, per favore.">🔊</button>
-        </div>
-        <div class="phrase-card">
-          <div class="phrase-text-wrap">
-            <h5>料理を2人でシェアしたい</h5>
-            <div class="phrase-it">Possiamo dividerlo in due?</div>
-            <div class="phrase-kana">ポッシアーモ・ディヴィーデルロ・イン・ドゥーエ？</div>
-          </div>
-          <button class="speak-btn" data-phrase="Possiamo dividerlo in due?">🔊</button>
+          <div style="font-size:0.8rem; color:var(--text-muted); font-weight:700;">お二人分のお支払い総額 目安</div>
+          <div id="calc-result-eur" style="font-size:1.6rem; font-weight:900; color:var(--primary-color); margin:3px 0;">€44.00</div>
+          <div id="calc-result-jpy" style="font-size:1.1rem; font-weight:800; color:var(--secondary-color);">約 ¥7,260</div>
+          <div id="calc-result-breakdown" style="margin-top:4px;"></div>
         </div>
       </div>
     </section>
@@ -417,6 +381,10 @@
       <span class="tab-icon">🗺️</span>
       <span class="tab-label">ルートMAP</span>
     </a>
+    <a href="phrasebook.html" class="tab-item">
+      <span class="tab-icon">🗣️</span>
+      <span class="tab-label">会話帳</span>
+    </a>
     <a href="free-meal-guide.html" class="tab-item">
       <span class="tab-icon">🍽️</span>
       <span class="tab-label">グルメ</span>
@@ -441,6 +409,7 @@
         <a href="index.html">🏠 ホーム</a>
         <a href="beginner-guide.html">🔰 初心者安心ガイド</a>
         <a href="tour-map.html">🗺️ 全体ルートMAP</a>
+        <a href="phrasebook.html">🗣️ 指差しイタリア語</a>
         <a href="free-meal-guide.html">🍽️ 自由食・グルメ</a>
         <a href="souvenir-guide.html">🎁 お土産・買物</a>
         <a href="rome-free-day-guide.html">🎻 ローマ自由行動</a>

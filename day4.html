@@ -9,25 +9,39 @@
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
 </head>
 <body>
-  <!-- Site Header -->
-  <header class="site-header">
+  <!-- Site Header (Collapsible on Scroll) -->
+  <header class="site-header" id="site-header">
     <div class="container header-inner">
       <a href="index.html" class="brand-title">
-        <span style="font-size: 1.5rem;">🇮🇹</span>
+        <span style="font-size: 1.4rem;">🇮🇹</span>
         <div>
           <h1>イタリア7都市周遊 8日間</h1>
           <span class="brand-subtitle">HIS Tour OI-KMI2811 | Kenta &amp; Megumi Honeymoon</span>
         </div>
       </a>
       <nav class="main-nav">
-        <a href="index.html" class="nav-link active">🏠 ホーム</a> <a href="beginner-guide.html" class="nav-link">🔰 初心者安心ガイド</a> <a href="tour-map.html" class="nav-link">🗺️ 全体ルートMAP</a> <a href="free-meal-guide.html" class="nav-link">🍽️ 自由食・グルメ</a> <a href="souvenir-guide.html" class="nav-link">🎁 お土産・買物</a> <a href="rome-free-day-guide.html" class="nav-link">🎻 ローマ自由行動</a>
+        <a href="index.html" class="nav-link active">🏠 ホーム</a> <a href="beginner-guide.html" class="nav-link">🔰 初心者安心ガイド</a> <a href="tour-map.html" class="nav-link">🗺️ 全体ルートMAP</a> <a href="phrasebook.html" class="nav-link">🗣️ 指差しイタリア語</a> <a href="free-meal-guide.html" class="nav-link">🍽️ 自由食・グルメ</a> <a href="souvenir-guide.html" class="nav-link">🎁 お土産・買物</a> <a href="rome-free-day-guide.html" class="nav-link">🎻 ローマ自由行動</a>
       </nav>
     </div>
   </header>
+  <!-- Dual World Clock Bar -->
+  <div class="clock-bar">
+    <div class="container clock-inner">
+      <div class="clock-item">
+        <span>🇮🇹 イタリア (ローマ/ミラノ):</span>
+        <span id="clock-rome" class="clock-time">--:--:--</span>
+      </div>
+      <div class="clock-item">
+        <span>🇯🇵 日本 (大阪/東京):</span>
+        <span id="clock-japan" class="clock-time">--:--:--</span>
+        <small style="color:#94a3b8;">(時差 -8時間)</small>
+      </div>
+    </div>
+  </div>
   <!-- Day Switcher Bar -->
   <div class="day-switcher-bar">
     <div class="day-switcher-scroll">
-      <a href="day1.html" class="day-chip"><span>Day 1</span><small>11/15 (日)</small></a> <a href="day2.html" class="day-chip"><span>Day 2</span><small>11/16 (月)</small></a> <a href="day3.html" class="day-chip"><span>Day 3</span><small>11/17 (火)</small></a> <a href="day4.html" class="day-chip active"><span>Day 4</span><small>11/18 (水)</small></a> <a href="day5.html" class="day-chip"><span>Day 5</span><small>11/19 (木)</small></a> <a href="day6.html" class="day-chip"><span>Day 6</span><small>11/20 (金)</small></a> <a href="day7.html" class="day-chip"><span>Day 7</span><small>11/21 (土)</small></a> <a href="day8.html" class="day-chip"><span>Day 8</span><small>11/22 (日)</small></a> <a href="beginner-guide.html" class="day-chip"><span>🔰 初心者</span><small>安心バイブル</small></a> <a href="rome-free-day-guide.html" class="day-chip"><span>🎻 ローマ</span><small>教会音楽特集</small></a>
+      <a href="day1.html" class="day-chip"><span>Day 1</span><small>11/15 (日)</small></a> <a href="day2.html" class="day-chip"><span>Day 2</span><small>11/16 (月)</small></a> <a href="day3.html" class="day-chip"><span>Day 3</span><small>11/17 (火)</small></a> <a href="day4.html" class="day-chip active"><span>Day 4</span><small>11/18 (水)</small></a> <a href="day5.html" class="day-chip"><span>Day 5</span><small>11/19 (木)</small></a> <a href="day6.html" class="day-chip"><span>Day 6</span><small>11/20 (金)</small></a> <a href="day7.html" class="day-chip"><span>Day 7</span><small>11/21 (土)</small></a> <a href="day8.html" class="day-chip"><span>Day 8</span><small>11/22 (日)</small></a> <a href="phrasebook.html" class="day-chip"><span>🗣️ 会話</span><small>指差し帳</small></a> <a href="beginner-guide.html" class="day-chip"><span>🔰 初心者</span><small>安心バイブル</small></a> <a href="rome-free-day-guide.html" class="day-chip"><span>🎻 ローマ</span><small>教会音楽特集</small></a>
     </div>
   </div>
   <main class="container">
@@ -139,6 +153,10 @@
       <span class="tab-icon">🗺️</span>
       <span class="tab-label">ルートMAP</span>
     </a>
+    <a href="phrasebook.html" class="tab-item">
+      <span class="tab-icon">🗣️</span>
+      <span class="tab-label">会話帳</span>
+    </a>
     <a href="free-meal-guide.html" class="tab-item">
       <span class="tab-icon">🍽️</span>
       <span class="tab-label">グルメ</span>
@@ -163,6 +181,7 @@
         <a href="index.html">🏠 ホーム</a>
         <a href="beginner-guide.html">🔰 初心者安心ガイド</a>
         <a href="tour-map.html">🗺️ 全体ルートMAP</a>
+        <a href="phrasebook.html">🗣️ 指差しイタリア語</a>
         <a href="free-meal-guide.html">🍽️ 自由食・グルメ</a>
         <a href="souvenir-guide.html">🎁 お土産・買物</a>
         <a href="rome-free-day-guide.html">🎻 ローマ自由行動</a>
