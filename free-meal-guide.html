@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=no">
-  <title>イタリア自由食事＆レストラン完全ガイド｜HIS 8日間 7都市35選</title>
-  <meta name="description" content="YouTubeイタリアガイドみめ直伝のレストラン＆バール利用マナー、コペルト・チップ・お水ルールと7都市35店舗の名物グルメガイド">
+  <title>イタリア自由食事＆レストラン完全ガイド｜HIS 8日間 7都市</title>
+  <meta name="description" content="YouTubeイタリアガイドみめ直伝のレストラン＆バール利用マナー、コペルト・チップ・お水ルールと7都市名物グルメガイド">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
 </head>
@@ -13,11 +13,11 @@
 
     <!-- Hero Header -->
     <div class="hero-card" style="background: linear-gradient(135deg, #991b1b 0%, #dc2626 100%);">
-      <span class="hero-tag" style="background:#fee2e2; color:#991b1b;">🍽️ 7都市厳選35店舗・完全網羅</span>
+      <span class="hero-tag" style="background:#fee2e2; color:#991b1b;">🍽️ 7都市厳選 自由食＆名物グルメ</span>
       <h2 class="hero-title">イタリア自由食事＆レストラン完全ガイド</h2>
       <p class="hero-subtitle">
-        YouTube「イタリアガイドみめ (@mimeitalygaido)」直伝！<br>
-        失敗しないレストラン＆バール（Bar）の注文マナー、コペルト・お水・チップのルールと7都市名物グルメ
+        ルイーニ、最古バカロ、Tボーンステーキ、世界一ジェラート、本場カルボナーラ！<br>
+        席料（Coperto）・水・チップルールと名店ガイド
       </p>
     </div>
 
@@ -25,232 +25,486 @@
     <div class="mime-callout">
       <div class="mime-header">
         <div class="mime-title">
-          <span style="font-size: 1.5rem;">🍷</span>
+          <span style="font-size: 1.3rem;">🍷</span>
           <h3 style="margin:0;">【Mime直伝】イタリアレストラン＆バール利用マナー7箇条</h3>
         </div>
         <span class="mime-badge">必読マナー</span>
       </div>
       <div class="mime-tips-grid">
         <div class="mime-tip-card">
-          <h4>1. 席料（Coperto）とお水事情</h4>
-          <p>お水とおしぼりは有料です。水は「Acqua Naturale（ガスなし）」または「Acqua Frizzante（ガス入り）」を注文。コペルト（€1.5〜4）は合法的な席料・パン代です。</p>
+          <h4>1. 席料（Coperto）は合法的なパン代</h4>
+          <p>1人€1.5〜4程度が加算されます。パンを食べなくても引かれません。</p>
         </div>
         <div class="mime-tip-card">
-          <h4>2. バール（Bar）の立ち飲み vs 席料</h4>
-          <p>カウンター立ち飲み（al banco）はエスプレッソ€1.2〜1.5。テーブル席（al tavolo）に座るとサービス料が加算されます。トイレ利用は立ち飲み注文がスマート！</p>
+          <h4>2. お水は有料ボトル注文</h4>
+          <p>ガスなし＝Acqua Naturale、炭酸ガス入り＝Acqua Frizzante。</p>
         </div>
         <div class="mime-tip-card">
-          <h4>3. 1人1品注文ルールとシェアの頼み方</h4>
-          <p>2人で1品のみシェアは失礼。プリモ＋セコンド、またはピザ1枚＋前菜など1人1品注文が基本。「Possiamo dividerlo in due?」で取り皿をもらえます。</p>
+          <h4>3. チップ（Mancia）の常識</h4>
+          <p>基本不要。サービスが特別に良かった時に€1〜2、または端数繰り上げがスマート。</p>
         </div>
         <div class="mime-tip-card">
-          <h4>4. 魚料理の「時価（S.Q. / /100g）」注意</h4>
-          <p>メニューに「S.Q.」や「/100g」と書かれた魚介類は丸ごと1匹の重さ計算です。注文時に「Quanto costa questo?」と総額を確認しましょう。</p>
-        </div>
-        <div class="mime-tip-card">
-          <h4>5. スマートなチップ（Mancia）の考え方</h4>
-          <p>イタリアではチップは義務ではありません。素晴らしいサービスには端数切り上げ（例: €38➔€40）や小額紙幣（€5）を置くとスマートです。</p>
-        </div>
-        <div class="mime-tip-card">
-          <h4>6. 営業時間と予約のコツ</h4>
-          <p>ランチは12:30〜14:30、ディナーは19:30〜22:00（17時〜18時は閉まっています）。フィレンツェのビステッカやローマの人気店は事前予約推奨！</p>
+          <h4>4. お会計はテーブルで「Il conto, per favore」</h4>
+          <p>レジに立たず、着席したまま店員さんに手を挙げてサインジェスチャー。</p>
         </div>
       </div>
     </div>
 
     <!-- City Filter Chips -->
-    <div style="display:flex; gap:8px; overflow-x:auto; padding-bottom:12px; margin-bottom:16px; scrollbar-width:none;">
-      <button class="day-chip filter-chip active" data-city="all" style="min-width:60px;">すべて (35)</button>
-      <button class="day-chip filter-chip" data-city="milan" style="min-width:70px;">ミラノ (5)</button>
-      <button class="day-chip filter-chip" data-city="verona" style="min-width:70px;">ベローナ (4)</button>
-      <button class="day-chip filter-chip" data-city="venice" style="min-width:70px;">ベネチア (6)</button>
-      <button class="day-chip filter-chip" data-city="florence" style="min-width:75px;">フィレンツェ (7)</button>
-      <button class="day-chip filter-chip" data-city="sangimignano" style="min-width:90px;">サンジミニャーノ (4)</button>
-      <button class="day-chip filter-chip" data-city="rome" style="min-width:70px;">ローマ (9)</button>
+    <div style="display:flex; gap:4px; overflow-x:auto; padding-bottom:6px; margin-bottom:10px; scrollbar-width:none;">
+      <button class="day-chip filter-chip active" data-cat="all" style="min-width:55px;">全都市</button>
+      <button class="day-chip filter-chip" data-cat="milan" style="min-width:65px;">ミラノ</button>
+      <button class="day-chip filter-chip" data-cat="verona" style="min-width:65px;">ベローナ</button>
+      <button class="day-chip filter-chip" data-cat="venice" style="min-width:65px;">ベネチア</button>
+      <button class="day-chip filter-chip" data-cat="florence" style="min-width:75px;">フィレンツェ</button>
+      <button class="day-chip filter-chip" data-cat="pisa" style="min-width:55px;">ピサ</button>
+      <button class="day-chip filter-chip" data-cat="sangimignano" style="min-width:85px;">サンジミニャーノ</button>
+      <button class="day-chip filter-chip" data-cat="rome" style="min-width:65px;">ローマ</button>
     </div>
 
-    <!-- Search Input -->
-    <div style="margin-bottom:20px;">
-      <input type="text" id="search-input" class="calc-input" placeholder="🔍 レストラン名・料理名・エリアでリアルタイム検索...">
+    <!-- Live Search -->
+    <div style="margin-bottom:12px;">
+      <input type="text" id="search-input" class="calc-input" placeholder="🔍 料理名・店舗名・都市名で検索...">
     </div>
 
-    <!-- Restaurant Cards List (35 Curated Spots) -->
-    <div class="cards-grid">
-      <!-- Milan -->
-      <div class="spot-card restaurant-card" data-city="milan">
-        <div class="spot-img-wrap">
-          <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=600&auto=format&fit=crop&q=80" alt="ルイーニ">
-          <span class="spot-badge-overlay">ミラノ • パンツェロッティ</span>
-          <span class="spot-reserve-overlay free">テイクアウト</span>
-        </div>
+    <!-- Dining Cards Grid -->
+    <section class="section">
+      <div class="cards-grid">
+        
+      <div class="spot-card" data-city="milan">
         <div class="spot-body">
-          <h3 class="spot-name-ja">ルイーニ (Luini)</h3>
-          <span class="spot-name-it">Via Santa Radegonda 16, Milano • 予算: €3〜6</span>
-          <p class="spot-desc">1888年創業の超有名老舗。揚げたて熱々のモッツァレラ＆トマトの包み揚げピザ（Panzerotto）は行列必至の名物！</p>
-          <div class="spot-mime-tip"><strong>【みめTip】</strong> 回転が超早いので行列でもすぐ買えます！熱々チーズが吹き出すので火傷注意。ウェットティッシュ必須。</div>
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:4px;">
+            <span class="spot-chip" style="background:#fef2f2; color:#dc2626; font-weight:800;">ミラノ</span>
+            <span class="spot-chip" style="background:#f1f5f9; color:#475569;">予算: €3〜5</span>
+          </div>
+          <h3 class="spot-name-ja">ルイーニ (Luini Panzerotti)</h3>
+          <span class="spot-name-it">Luini • ミラノ名物・包み揚げピザ</span>
+          <p class="spot-desc">1888年創業。ドゥオーモ裏の超有名店。外はサクサク、中は熱々とろ〜りのモッツァレラ＆トマト！</p>
+          <div style="font-size:0.7rem; color:var(--text-muted); margin-bottom:4px;">
+            席料: なし (テイクアウト) | 予約: 予約不可 (行列だが高速回転)
+          </div>
+          <div class="spot-mime-tip">
+            <strong>💡 【みめTip】</strong> 行列でも5分で買えます。揚げたては熱いので火傷注意！ウェットティッシュ必携。
+          </div>
           <div class="spot-actions">
-            <a href="https://maps.google.com/?q=Luini+Milano" target="_blank" class="btn btn-maps">📍 Google Maps</a>
-            <a href="https://www.luini.it/" target="_blank" class="btn btn-secondary">🌐 公式サイト</a>
+            <a href="https://maps.google.com/?q=Luini+Panzerotti+Milano" target="_blank" class="btn btn-maps">📍 Google Mapsで開く</a>
           </div>
         </div>
       </div>
-
-      <div class="spot-card restaurant-card" data-city="milan">
-        <div class="spot-img-wrap">
-          <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=600&auto=format&fit=crop&q=80" alt="スポンティーニ">
-          <span class="spot-badge-overlay">ミラノ • 厚焼きピザ</span>
-          <span class="spot-reserve-overlay free">予約不要</span>
-        </div>
+      <div class="spot-card" data-city="milan">
         <div class="spot-body">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:4px;">
+            <span class="spot-chip" style="background:#fef2f2; color:#dc2626; font-weight:800;">ミラノ</span>
+            <span class="spot-chip" style="background:#f1f5f9; color:#475569;">予算: €6〜9</span>
+          </div>
           <h3 class="spot-name-ja">ピッツェリア・スポンティーニ (Spontini)</h3>
-          <span class="spot-name-it">Via Santa Radegonda 11, Milano • 予算: €6〜10</span>
-          <p class="spot-desc">底はカリカリ、生地はふわふわのミラノ風厚焼きマルゲリータピザ。ドゥオーモ近くで手軽に絶品ランチ。</p>
-          <div class="spot-mime-tip"><strong>【みめTip】</strong> カウンター立ち食いスタイルで手早く食べられます。チーズのボリューム満点！</div>
+          <span class="spot-name-it">Spontini • 極厚フワカリ・マルゲリータ</span>
+          <p class="spot-desc">1953年創業。底はカリッ、生地はフカフカ、チーズたっぷりの大迫力ピザスライス！</p>
+          <div style="font-size:0.7rem; color:var(--text-muted); margin-bottom:4px;">
+            席料: なし / カウンター | 予約: 予約不要
+          </div>
+          <div class="spot-mime-tip">
+            <strong>💡 【みめTip】</strong> ドゥオーモ近くに複数店舗あり。時間がないときのスピードランチに最適です。
+          </div>
           <div class="spot-actions">
-            <a href="https://maps.google.com/?q=Spontini+Duomo+Milano" target="_blank" class="btn btn-maps">📍 Google Maps</a>
+            <a href="https://maps.google.com/?q=Spontini+Duomo+Milano" target="_blank" class="btn btn-maps">📍 Google Mapsで開く</a>
           </div>
         </div>
       </div>
-
-      <!-- Venice -->
-      <div class="spot-card restaurant-card" data-city="venice">
-        <div class="spot-img-wrap">
-          <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=600&auto=format&fit=crop&q=80" alt="カフェ・フローリアン">
-          <span class="spot-badge-overlay">ベネチア • 世界最古のカフェ</span>
-          <span class="spot-reserve-overlay rec">名門カフェ</span>
-        </div>
+      <div class="spot-card" data-city="milan">
         <div class="spot-body">
-          <h3 class="spot-name-ja">カフェ・フローリアン (Caffè Florian)</h3>
-          <span class="spot-name-it">Piazza San Marco 57, Venezia • 予算: €15〜30</span>
-          <p class="spot-desc">1720年創業、世界最古のカフェ。サン・マルコ広場を眺めながら銀のトレイで供される極上カプチーノと生演奏。</p>
-          <div class="spot-mime-tip"><strong>【みめTip】</strong> オーケストラ生演奏中はミュージックチャージ（約€6/人）が加算されますが、新婚旅行最高の優雅な思い出になります！</div>
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:4px;">
+            <span class="spot-chip" style="background:#fef2f2; color:#dc2626; font-weight:800;">ミラノ</span>
+            <span class="spot-chip" style="background:#f1f5f9; color:#475569;">予算: €35〜50</span>
+          </div>
+          <h3 class="spot-name-ja">トラットリア・ミラネーゼ (Trattoria Milanese)</h3>
+          <span class="spot-name-it">Trattoria Milanese • 伝統ミラノ料理・老舗</span>
+          <p class="spot-desc">1933年創業。黄金色のサフランリゾット（Risotto alla Milanese）と骨付き仔牛肉カツレツ（Cotoletta）の最高峰。</p>
+          <div style="font-size:0.7rem; color:var(--text-muted); margin-bottom:4px;">
+            席料: €3.0 | 予約: 要予約推奨
+          </div>
+          <div class="spot-mime-tip">
+            <strong>💡 【みめTip】</strong> カツレツはレモンを絞ってサクサクでいただきます。白ワインとの相性抜群！
+          </div>
           <div class="spot-actions">
-            <a href="https://maps.google.com/?q=Caffe+Florian+Venezia" target="_blank" class="btn btn-maps">📍 Google Maps</a>
-            <a href="https://www.caffeflorian.com/" target="_blank" class="btn btn-secondary">🌐 公式サイト</a>
+            <a href="https://maps.google.com/?q=Trattoria+Milanese+Milano" target="_blank" class="btn btn-maps">📍 Google Mapsで開く</a>
           </div>
         </div>
       </div>
-
-      <div class="spot-card restaurant-card" data-city="venice">
-        <div class="spot-img-wrap">
-          <img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=600&auto=format&fit=crop&q=80" alt="カンティーナ・ド・モーリ">
-          <span class="spot-badge-overlay">ベネチア • 最古のバカロ</span>
-          <span class="spot-reserve-overlay free">立ち飲み</span>
-        </div>
+      <div class="spot-card" data-city="milan">
         <div class="spot-body">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:4px;">
+            <span class="spot-chip" style="background:#fef2f2; color:#dc2626; font-weight:800;">ミラノ</span>
+            <span class="spot-chip" style="background:#f1f5f9; color:#475569;">予算: €5〜15</span>
+          </div>
+          <h3 class="spot-name-ja">マルケージ 1824 (Marchesi 1824)</h3>
+          <span class="spot-name-it">Pasticceria Marchesi • プラダ傘下の歴史的パスティッチェリア</span>
+          <p class="spot-desc">ガッレリア2階にあるパステルグリーンの優雅なサロン。極上ペストリーとカプチーノ。</p>
+          <div style="font-size:0.7rem; color:var(--text-muted); margin-bottom:4px;">
+            席料: 席利用時あり | 予約: 予約不要
+          </div>
+          <div class="spot-mime-tip">
+            <strong>💡 【みめTip】</strong> 立ち飲みなら手頃な価格で貴族気分を味わえます。ガッレリアの眺めが絶景！
+          </div>
+          <div class="spot-actions">
+            <a href="https://maps.google.com/?q=Marchesi+1824+Galleria+Milano" target="_blank" class="btn btn-maps">📍 Google Mapsで開く</a>
+          </div>
+        </div>
+      </div>
+      <div class="spot-card" data-city="verona">
+        <div class="spot-body">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:4px;">
+            <span class="spot-chip" style="background:#fef2f2; color:#dc2626; font-weight:800;">ベローナ</span>
+            <span class="spot-chip" style="background:#f1f5f9; color:#475569;">予算: €30〜45</span>
+          </div>
+          <h3 class="spot-name-ja">トラットリア・アル・ポンピエーレ</h3>
+          <span class="spot-name-it">Trattoria al Pompiere • 名物アマローネリゾット・生ハム</span>
+          <p class="spot-desc">ジュリエットの家近く。高級赤ワインを贅沢に使ったリゾット（Risotto all'Amarone）と数十種の生ハムチーズ。</p>
+          <div style="font-size:0.7rem; color:var(--text-muted); margin-bottom:4px;">
+            席料: €2.5 | 予約: 要予約推奨
+          </div>
+          <div class="spot-mime-tip">
+            <strong>💡 【みめTip】</strong> ベローナ名物の濃厚アマローネリゾットは赤ワイン好きなら必食の一皿です。
+          </div>
+          <div class="spot-actions">
+            <a href="https://maps.google.com/?q=Trattoria+al+Pompiere+Verona" target="_blank" class="btn btn-maps">📍 Google Mapsで開く</a>
+          </div>
+        </div>
+      </div>
+      <div class="spot-card" data-city="verona">
+        <div class="spot-body">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:4px;">
+            <span class="spot-chip" style="background:#fef2f2; color:#dc2626; font-weight:800;">ベローナ</span>
+            <span class="spot-chip" style="background:#f1f5f9; color:#475569;">予算: €10〜20</span>
+          </div>
+          <h3 class="spot-name-ja">オステリア・デル・ブジャルド</h3>
+          <span class="spot-name-it">Osteria del Bugiardo • 活気あるワインバー・チケッティ</span>
+          <p class="spot-desc">自社ワイナリー直送のワインと小皿料理。地元客で賑わうカジュアルバル。</p>
+          <div style="font-size:0.7rem; color:var(--text-muted); margin-bottom:4px;">
+            席料: なし | 予約: 予約不要
+          </div>
+          <div class="spot-mime-tip">
+            <strong>💡 【みめTip】</strong> ワイングラス（€4〜）と生ハムクロスティーニでサクッと乾杯するのに最高！
+          </div>
+          <div class="spot-actions">
+            <a href="https://maps.google.com/?q=Osteria+del+Bugiardo+Verona" target="_blank" class="btn btn-maps">📍 Google Mapsで開く</a>
+          </div>
+        </div>
+      </div>
+      <div class="spot-card" data-city="venice">
+        <div class="spot-body">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:4px;">
+            <span class="spot-chip" style="background:#fef2f2; color:#dc2626; font-weight:800;">ベネチア</span>
+            <span class="spot-chip" style="background:#f1f5f9; color:#475569;">予算: €5〜12</span>
+          </div>
           <h3 class="spot-name-ja">カンティーナ・ド・モーリ (Cantina Do Mori)</h3>
-          <span class="spot-name-it">San Polo 429, Venezia • 予算: €8〜15</span>
-          <p class="spot-desc">1462年創業、カサノヴァも通ったベネチア最古の居酒屋（バカロ）。名物チケッティ（小皿前菜）と地ワイン。</p>
-          <div class="spot-mime-tip"><strong>【みめTip】</strong> ショーケースを指差して「Questo e questo（これとこれ）」で注文！ワインは「Un'ombra di bianco（白ワイン一杯）」でOK。</div>
+          <span class="spot-name-it">Cantina Do Mori • 1462年創業・ベネチア最古のバカロ</span>
+          <p class="spot-desc">カサノヴァも通った歴史的居酒屋。天井から吊るされた銅鍋とカウンターに並ぶ一口おつまみ（チケッティ）。</p>
+          <div style="font-size:0.7rem; color:var(--text-muted); margin-bottom:4px;">
+            席料: なし | 予約: 予約不可 (立ち飲み)
+          </div>
+          <div class="spot-mime-tip">
+            <strong>💡 【みめTip】</strong> 指差しで「Questo, per favore」と頼み、白ワイン（オンブラ €2〜）と一緒に流し込むのが粋！
+          </div>
           <div class="spot-actions">
-            <a href="https://maps.google.com/?q=Cantina+Do+Mori+Venezia" target="_blank" class="btn btn-maps">📍 Google Maps</a>
+            <a href="https://maps.google.com/?q=Cantina+Do+Mori+Venezia" target="_blank" class="btn btn-maps">📍 Google Mapsで開く</a>
           </div>
         </div>
       </div>
-
-      <!-- Florence -->
-      <div class="spot-card restaurant-card" data-city="florence">
-        <div class="spot-img-wrap">
-          <img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=600&auto=format&fit=crop&q=80" alt="トラットリア・ザザ">
-          <span class="spot-badge-overlay">フィレンツェ • Tボーンステーキ</span>
-          <span class="spot-reserve-overlay required">要予約推奨</span>
-        </div>
+      <div class="spot-card" data-city="venice">
         <div class="spot-body">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:4px;">
+            <span class="spot-chip" style="background:#fef2f2; color:#dc2626; font-weight:800;">ベネチア</span>
+            <span class="spot-chip" style="background:#f1f5f9; color:#475569;">予算: €4〜10</span>
+          </div>
+          <h3 class="spot-name-ja">アルチケッティ・バカロ (Arcicchetti Bakaro)</h3>
+          <span class="spot-name-it">Arcicchetti Bakaro • コスパ最強・絶品小皿料理</span>
+          <p class="spot-desc">全品€1.50均一の創作チケッティが常時30種類以上！運河沿いの広場で立ち飲み。</p>
+          <div style="font-size:0.7rem; color:var(--text-muted); margin-bottom:4px;">
+            席料: なし | 予約: 予約不要
+          </div>
+          <div class="spot-mime-tip">
+            <strong>💡 【みめTip】</strong> サケとリコッタ、トリュフクリームなど絶品。2人で5〜6個頼んでシェアが楽しい！
+          </div>
+          <div class="spot-actions">
+            <a href="https://maps.google.com/?q=Arcicchetti+Bakaro+Venezia" target="_blank" class="btn btn-maps">📍 Google Mapsで開く</a>
+          </div>
+        </div>
+      </div>
+      <div class="spot-card" data-city="venice">
+        <div class="spot-body">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:4px;">
+            <span class="spot-chip" style="background:#fef2f2; color:#dc2626; font-weight:800;">ベネチア</span>
+            <span class="spot-chip" style="background:#f1f5f9; color:#475569;">予算: €15〜30</span>
+          </div>
+          <h3 class="spot-name-ja">カフェ・フローリアン (Caffè Florian)</h3>
+          <span class="spot-name-it">Caffè Florian • 1720年創業・世界最古のカフェ</span>
+          <p class="spot-desc">サン・マルコ広場に面した歴史的サロン。銀のトレイでサーブされるホットチョコレートやカフェラテ。</p>
+          <div style="font-size:0.7rem; color:var(--text-muted); margin-bottom:4px;">
+            席料: 音楽料あり (€6/人) | 予約: 予約不要
+          </div>
+          <div class="spot-mime-tip">
+            <strong>💡 【みめTip】</strong> 生演奏を聴きながらの優雅な時間は新婚旅行の最高の思い出になります。
+          </div>
+          <div class="spot-actions">
+            <a href="https://maps.google.com/?q=Caffe+Florian+Venezia" target="_blank" class="btn btn-maps">📍 Google Mapsで開く</a>
+          </div>
+        </div>
+      </div>
+      <div class="spot-card" data-city="venice">
+        <div class="spot-body">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:4px;">
+            <span class="spot-chip" style="background:#fef2f2; color:#dc2626; font-weight:800;">ベネチア</span>
+            <span class="spot-chip" style="background:#f1f5f9; color:#475569;">予算: €6〜15</span>
+          </div>
+          <h3 class="spot-name-ja">オステリア・アル・スクエロ</h3>
+          <span class="spot-name-it">Osteria Al Squero • ゴンドラ造船所ビューのバカロ</span>
+          <p class="spot-desc">手作りチケッティとスプリッツ（Aperol Spritz）。目の前でゴンドラを修理する歴史的風景を眺めながら一杯。</p>
+          <div style="font-size:0.7rem; color:var(--text-muted); margin-bottom:4px;">
+            席料: なし | 予約: 予約不要
+          </div>
+          <div class="spot-mime-tip">
+            <strong>💡 【みめTip】</strong> アペロール・スプリッツ（オレンジ色のカクテル）を頼んで運河沿いで夕涼み！
+          </div>
+          <div class="spot-actions">
+            <a href="https://maps.google.com/?q=Osteria+Al+Squero+Venezia" target="_blank" class="btn btn-maps">📍 Google Mapsで開く</a>
+          </div>
+        </div>
+      </div>
+      <div class="spot-card" data-city="florence">
+        <div class="spot-body">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:4px;">
+            <span class="spot-chip" style="background:#fef2f2; color:#dc2626; font-weight:800;">フィレンツェ</span>
+            <span class="spot-chip" style="background:#f1f5f9; color:#475569;">予算: €30〜45</span>
+          </div>
           <h3 class="spot-name-ja">トラットリア・ザザ (Trattoria ZaZa)</h3>
-          <span class="spot-name-it">Piazza del Mercato Centrale 26R, Firenze • 予算: €35〜55</span>
-          <p class="spot-desc">中央市場前にあるトスカーナ料理の大人気店。炭火で豪快に焼き上げる名物ビステッカ・アッラ・フィオレンティーナ（Tボーンステーキ）。</p>
-          <div class="spot-mime-tip"><strong>【みめTip】</strong> ビステッカは最小1kg〜なので2人でシェアが鉄則！焼き加減は「Sangue（レア）」または「Media（ミディアム）」がおすすめ。</div>
+          <span class="spot-name-it">Trattoria ZaZa • 名物ビステッカ・人気No.1</span>
+          <p class="spot-desc">中央市場前。名物フィレンツェ風Tボーンステーキ（1kg〜）、トリュフクリームパスタ、トスカーナ前菜盛り合わせ。</p>
+          <div style="font-size:0.7rem; color:var(--text-muted); margin-bottom:4px;">
+            席料: €2.5 | 予約: Web予約推奨
+          </div>
+          <div class="spot-mime-tip">
+            <strong>💡 【みめTip】</strong> ビステッカは1kg〜のため2人でシェア注文！焼き加減はシェフおまかせ（al sangue / レア）が最も柔らかい。
+          </div>
           <div class="spot-actions">
-            <a href="https://maps.google.com/?q=Trattoria+ZaZa+Firenze" target="_blank" class="btn btn-maps">📍 Google Maps</a>
-            <a href="https://www.trattoriazaza.it/" target="_blank" class="btn btn-secondary">🌐 公式サイト</a>
+            <a href="https://maps.google.com/?q=Trattoria+ZaZa+Firenze" target="_blank" class="btn btn-maps">📍 Google Mapsで開く</a>
           </div>
         </div>
       </div>
-
-      <div class="spot-card restaurant-card" data-city="florence">
-        <div class="spot-img-wrap">
-          <img src="https://images.unsplash.com/photo-1509722747041-616f39b57569?w=600&auto=format&fit=crop&q=80" alt="アル・アンティコ・ヴィナイオ">
-          <span class="spot-badge-overlay">フィレンツェ • 伝説のパニーノ</span>
-          <span class="spot-reserve-overlay free">テイクアウト</span>
-        </div>
+      <div class="spot-card" data-city="florence">
         <div class="spot-body">
-          <h3 class="spot-name-ja">オール・アンティコ・ヴィナイオ (All'Antico Vinaio)</h3>
-          <span class="spot-name-it">Via dei Neri 65R, Firenze • 予算: €7〜10</span>
-          <p class="spot-desc">世界一有名なパニーノ専門店。焼きたてスキアッチャータに生ハム、トリュフクリーム、ペコリーノチーズを挟んだ超絶品！</p>
-          <div class="spot-mime-tip"><strong>【みめTip】</strong> おすすめは「La Favolosa（ラ・ファヴォローザ）」。ボリューム満点なので2人で1つシェアでも満足できます！</div>
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:4px;">
+            <span class="spot-chip" style="background:#fef2f2; color:#dc2626; font-weight:800;">フィレンツェ</span>
+            <span class="spot-chip" style="background:#f1f5f9; color:#475569;">予算: €7〜10</span>
+          </div>
+          <h3 class="spot-name-ja">オール・アンティコ・ヴィナイオ</h3>
+          <span class="spot-name-it">All'Antico Vinaio • 世界一のパニーノ専門店</span>
+          <p class="spot-desc">焼きたてフォカッチャに極上生ハム、トリュフクリーム、ペコリーノチーズを挟んだ超特大パニーノ！</p>
+          <div style="font-size:0.7rem; color:var(--text-muted); margin-bottom:4px;">
+            席料: なし | 予約: 予約不可 (行列だが進み早い)
+          </div>
+          <div class="spot-mime-tip">
+            <strong>💡 【みめTip】</strong> 定番の「La Favolosa」がおすすめ。1つで2人分くらいのボリュームがあります！
+          </div>
           <div class="spot-actions">
-            <a href="https://maps.google.com/?q=All+Antico+Vinaio+Firenze" target="_blank" class="btn btn-maps">📍 Google Maps</a>
+            <a href="https://maps.google.com/?q=All+Antico+Vinaio+Firenze" target="_blank" class="btn btn-maps">📍 Google Mapsで開く</a>
           </div>
         </div>
       </div>
-
-      <!-- San Gimignano -->
-      <div class="spot-card restaurant-card" data-city="sangimignano">
-        <div class="spot-img-wrap">
-          <img src="https://images.unsplash.com/photo-1560008511-11c63416e52d?w=600&auto=format&fit=crop&q=80" alt="ジェラテリア・ドンドリ">
-          <span class="spot-badge-overlay">サンジミニャーノ • 世界一ジェラート</span>
-          <span class="spot-reserve-overlay free">世界チャンピオン</span>
-        </div>
+      <div class="spot-card" data-city="florence">
         <div class="spot-body">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:4px;">
+            <span class="spot-chip" style="background:#fef2f2; color:#dc2626; font-weight:800;">フィレンツェ</span>
+            <span class="spot-chip" style="background:#f1f5f9; color:#475569;">予算: €15〜25</span>
+          </div>
+          <h3 class="spot-name-ja">トラットリア・マリオ (Trattoria Mario)</h3>
+          <span class="spot-name-it">Trattoria Mario • 1953年創業・地元民愛用食堂</span>
+          <p class="spot-desc">昔ながらのトスカーナ家庭料理。トスカーナパンと野菜の煮込みスープ（Ribollita）やラグーパスタ。</p>
+          <div style="font-size:0.7rem; color:var(--text-muted); margin-bottom:4px;">
+            席料: なし/低額 | 予約: ランチのみ・相席あり
+          </div>
+          <div class="spot-mime-tip">
+            <strong>💡 【みめTip】</strong> 気取らない下町の温かい雰囲気。ランチタイムのみ営業で本物のローカル味を体感できます。
+          </div>
+          <div class="spot-actions">
+            <a href="https://maps.google.com/?q=Trattoria+Mario+Firenze" target="_blank" class="btn btn-maps">📍 Google Mapsで開く</a>
+          </div>
+        </div>
+      </div>
+      <div class="spot-card" data-city="florence">
+        <div class="spot-body">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:4px;">
+            <span class="spot-chip" style="background:#fef2f2; color:#dc2626; font-weight:800;">フィレンツェ</span>
+            <span class="spot-chip" style="background:#f1f5f9; color:#475569;">予算: €3〜6</span>
+          </div>
+          <h3 class="spot-name-ja">ジェラテリア・ヴィヴォリ (Vivoli)</h3>
+          <span class="spot-name-it">Vivoli • 1930年創業・フィレンツェ最古ジェラート</span>
+          <p class="spot-desc">厳選素材と伝統製法。名物リゾット（お米入りジェラート）やクレマ、ピスタチオ。</p>
+          <div style="font-size:0.7rem; color:var(--text-muted); margin-bottom:4px;">
+            席料: なし | 予約: 予約不要
+          </div>
+          <div class="spot-mime-tip">
+            <strong>💡 【みめTip】</strong> コーンではなくカップ（Coppa）のみの提供が伝統の証。濃厚で滑らかな舌触り！
+          </div>
+          <div class="spot-actions">
+            <a href="https://maps.google.com/?q=Vivoli+Gelato+Firenze" target="_blank" class="btn btn-maps">📍 Google Mapsで開く</a>
+          </div>
+        </div>
+      </div>
+      <div class="spot-card" data-city="pisa">
+        <div class="spot-body">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:4px;">
+            <span class="spot-chip" style="background:#fef2f2; color:#dc2626; font-weight:800;">ピサ</span>
+            <span class="spot-chip" style="background:#f1f5f9; color:#475569;">予算: €15〜25</span>
+          </div>
+          <h3 class="spot-name-ja">トラットリア・ダ・ステリオ</h3>
+          <span class="spot-name-it">Trattoria da Stelio • ピサ郷土料理・地元食堂</span>
+          <p class="spot-desc">ひよこ豆の粉を焼いたピサ名物チェチーナ（Cecina）や手打ちパスタ。</p>
+          <div style="font-size:0.7rem; color:var(--text-muted); margin-bottom:4px;">
+            席料: €1.5 | 予約: 予約不要
+          </div>
+          <div class="spot-mime-tip">
+            <strong>💡 【みめTip】</strong> 斜塔周辺の観光客向け高額店を避け、一歩入った路地にある良心的なお店。
+          </div>
+          <div class="spot-actions">
+            <a href="https://maps.google.com/?q=Trattoria+da+Stelio+Pisa" target="_blank" class="btn btn-maps">📍 Google Mapsで開く</a>
+          </div>
+        </div>
+      </div>
+      <div class="spot-card" data-city="sangimignano">
+        <div class="spot-body">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:4px;">
+            <span class="spot-chip" style="background:#fef2f2; color:#dc2626; font-weight:800;">サンジミニャーノ</span>
+            <span class="spot-chip" style="background:#f1f5f9; color:#475569;">予算: €3〜5</span>
+          </div>
           <h3 class="spot-name-ja">ジェラテリア・ドンドリ (Gelateria Dondoli)</h3>
-          <span class="spot-name-it">Piazza della Cisterna 4, San Gimignano • 予算: €3〜6</span>
-          <p class="spot-desc">世界ジェラート大会連覇！名物「Crema di Santa Fina（サフラン＆松の実）」やトスカーナ白ワイン風味の極上ジェラート。</p>
-          <div class="spot-mime-tip"><strong>【みめTip】</strong> チステルナ広場の井戸の横で食べるのがお約束！サフラン風味とピスタチオのダブルが最高です。</div>
+          <span class="spot-name-it">Gelateria Dondoli • 世界ジェラート大会連覇</span>
+          <p class="spot-desc">世界チャンピオンSergio氏の最高傑作。名物サフラン＆松の実「Crema di Santa Fina」、トスカーナ白ワイン風味。</p>
+          <div style="font-size:0.7rem; color:var(--text-muted); margin-bottom:4px;">
+            席料: なし | 予約: 予約不可 (行列必至)
+          </div>
+          <div class="spot-mime-tip">
+            <strong>💡 【みめTip】</strong> チステルナ広場の古井戸の階段に腰掛けて食べるのが最高の至福です！
+          </div>
           <div class="spot-actions">
-            <a href="https://maps.google.com/?q=Gelateria+Dondoli+San+Gimignano" target="_blank" class="btn btn-maps">📍 Google Maps</a>
-            <a href="https://www.gelateriadondoli.com/" target="_blank" class="btn btn-secondary">🌐 公式サイト</a>
+            <a href="https://maps.google.com/?q=Gelateria+Dondoli+San+Gimignano" target="_blank" class="btn btn-maps">📍 Google Mapsで開く</a>
           </div>
         </div>
       </div>
-
-      <!-- Rome -->
-      <div class="spot-card restaurant-card" data-city="rome">
-        <div class="spot-img-wrap">
-          <img src="https://images.unsplash.com/photo-1612874742237-6526221588e3?w=600&auto=format&fit=crop&q=80" alt="ダ・エンツォ">
-          <span class="spot-badge-overlay">ローマ • 本場カルボナーラ</span>
-          <span class="spot-reserve-overlay required">行列必至</span>
-        </div>
+      <div class="spot-card" data-city="rome">
         <div class="spot-body">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:4px;">
+            <span class="spot-chip" style="background:#fef2f2; color:#dc2626; font-weight:800;">ローマ</span>
+            <span class="spot-chip" style="background:#f1f5f9; color:#475569;">予算: €25〜40</span>
+          </div>
           <h3 class="spot-name-ja">トラットリア・ダ・エンツォ (Da Enzo al 29)</h3>
-          <span class="spot-name-it">Via dei Vascellari 29, Roma • 予算: €25〜40</span>
-          <p class="spot-desc">トラステヴェレ地区の大行列店。グアンチャーレ（豚頬肉）とペコリーノチーズ、濃厚卵黄の生クリーム不使用の本場カルボナーラ。</p>
-          <div class="spot-mime-tip"><strong>【みめTip】</strong> 開店30分前（夜なら19:00前）に並ぶのがスムーズ！カルボナーラとカチョエペペは必食です。</div>
+          <span class="spot-name-it">Da Enzo al 29 • ローマ下町トラステヴェレの伝説店</span>
+          <p class="spot-desc">グアンチャーレ（豚頬肉塩漬け）と濃厚卵黄のカルボナーラ、ペコリーノチーズがガツンと効いたカチョエペペ。</p>
+          <div style="font-size:0.7rem; color:var(--text-muted); margin-bottom:4px;">
+            席料: €2.0 | 予約: 夜は開店前並び推奨
+          </div>
+          <div class="spot-mime-tip">
+            <strong>💡 【みめTip】</strong> テーブルの上にスマホを置かないよう注意！自家製マスカルポーネのティラミスも絶品。
+          </div>
           <div class="spot-actions">
-            <a href="https://maps.google.com/?q=Da+Enzo+al+29+Roma" target="_blank" class="btn btn-maps">📍 Google Maps</a>
-            <a href="https://www.daenzoal29.com/" target="_blank" class="btn btn-secondary">🌐 公式サイト</a>
+            <a href="https://maps.google.com/?q=Da+Enzo+al+29+Rome" target="_blank" class="btn btn-maps">📍 Google Mapsで開く</a>
           </div>
         </div>
       </div>
-
-      <div class="spot-card restaurant-card" data-city="rome">
-        <div class="spot-img-wrap">
-          <img src="https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=600&auto=format&fit=crop&q=80" alt="ポンピ">
-          <span class="spot-badge-overlay">ローマ • ティラミスの王様</span>
-          <span class="spot-reserve-overlay free">テイクアウト</span>
-        </div>
+      <div class="spot-card" data-city="rome">
         <div class="spot-body">
-          <h3 class="spot-name-ja">ポンピ (Pompi Tiramisù)</h3>
-          <span class="spot-name-it">Via della Croce 82, Roma • 予算: €5〜8</span>
-          <p class="spot-desc">1960年創業、ローマでティラミスといえばポンピ！定番クラシコ、ピスタチオ、イチゴのフレッシュティラミス。</p>
-          <div class="spot-mime-tip"><strong>【みめTip】</strong> スペイン広場近くの店舗でテイクアウトし、街歩きのおやつにぴったりです！</div>
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:4px;">
+            <span class="spot-chip" style="background:#fef2f2; color:#dc2626; font-weight:800;">ローマ</span>
+            <span class="spot-chip" style="background:#f1f5f9; color:#475569;">予算: €20〜35</span>
+          </div>
+          <h3 class="spot-name-ja">トンナレッロ (Tonnarello)</h3>
+          <span class="spot-name-it">Tonnarello • 鉄鍋で供される絶品パスタ</span>
+          <p class="spot-desc">太麺の手打ちトンナレッロパスタ。小鍋に入った熱々のカチョエペペとアマトリチャーナ。</p>
+          <div style="font-size:0.7rem; color:var(--text-muted); margin-bottom:4px;">
+            席料: €2.0 | 予約: 予約不可 (行列だが席数多)
+          </div>
+          <div class="spot-mime-tip">
+            <strong>💡 【みめTip】</strong> 大人気店ですがテラス席が多く回転は良好。ローマらしい賑やかな夜を楽しめます。
+          </div>
           <div class="spot-actions">
-            <a href="https://maps.google.com/?q=Pompi+Tiramisu+Roma" target="_blank" class="btn btn-maps">📍 Google Maps</a>
+            <a href="https://maps.google.com/?q=Tonnarello+Rome" target="_blank" class="btn btn-maps">📍 Google Mapsで開く</a>
           </div>
         </div>
       </div>
-    </div>
+      <div class="spot-card" data-city="rome">
+        <div class="spot-body">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:4px;">
+            <span class="spot-chip" style="background:#fef2f2; color:#dc2626; font-weight:800;">ローマ</span>
+            <span class="spot-chip" style="background:#f1f5f9; color:#475569;">予算: €4〜6</span>
+          </div>
+          <h3 class="spot-name-ja">ポンピ (Pompi Tiramisù)</h3>
+          <span class="spot-name-it">Pompi • ローマ名物・ティラミスの王様</span>
+          <p class="spot-desc">1960年創業。クラシコ（定番エスプレッソ）、ピスタチオ、イチゴ、バナナの濃厚ティラミスBOX。</p>
+          <div style="font-size:0.7rem; color:var(--text-muted); margin-bottom:4px;">
+            席料: なし (テイクアウト) | 予約: 予約不要
+          </div>
+          <div class="spot-mime-tip">
+            <strong>💡 【みめTip】</strong> スプーン付きの小箱でお持ち帰り。スペイン広場の近くのベンチでデザートに最適！
+          </div>
+          <div class="spot-actions">
+            <a href="https://maps.google.com/?q=Pompi+Tiramisu+Rome" target="_blank" class="btn btn-maps">📍 Google Mapsで開く</a>
+          </div>
+        </div>
+      </div>
+      <div class="spot-card" data-city="rome">
+        <div class="spot-body">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:4px;">
+            <span class="spot-chip" style="background:#fef2f2; color:#dc2626; font-weight:800;">ローマ</span>
+            <span class="spot-chip" style="background:#f1f5f9; color:#475569;">予算: €1.5〜4</span>
+          </div>
+          <h3 class="spot-name-ja">サンテウスタキオ・イル・カッフェ</h3>
+          <span class="spot-name-it">Sant'Eustachio Il Caffè • 1938年創業・ローマNo.1カフェ</span>
+          <p class="spot-desc">秘密の焙煎と木水を使った極上エスプレッソ。表面にきめ細かなクレマ（泡）が立つ「グラン・カフェ」。</p>
+          <div style="font-size:0.7rem; color:var(--text-muted); margin-bottom:4px;">
+            席料: 立ち飲みなし | 予約: 予約不要
+          </div>
+          <div class="spot-mime-tip">
+            <strong>💡 【みめTip】</strong> 砂糖入り（con zucchero）が標準なので、不要な場合は「senza zucchero」と注文時に伝えましょう。
+          </div>
+          <div class="spot-actions">
+            <a href="https://maps.google.com/?q=Sant+Eustachio+Il+Caffe+Rome" target="_blank" class="btn btn-maps">📍 Google Mapsで開く</a>
+          </div>
+        </div>
+      </div>
+      <div class="spot-card" data-city="rome">
+        <div class="spot-body">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:4px;">
+            <span class="spot-chip" style="background:#fef2f2; color:#dc2626; font-weight:800;">ローマ</span>
+            <span class="spot-chip" style="background:#f1f5f9; color:#475569;">予算: €4.5</span>
+          </div>
+          <h3 class="spot-name-ja">パスティフィーチョ・グエッラ</h3>
+          <span class="spot-name-it">Pastificio Guerra • スペイン広場すぐ・€4.5パスタ</span>
+          <p class="spot-desc">老舗製麺所が昼に出来立てパスタ2種類を€4.50（水付き）で提供する驚異のコスパ店。</p>
+          <div style="font-size:0.7rem; color:var(--text-muted); margin-bottom:4px;">
+            席料: なし | 予約: 予約不可 (毎日13時〜)
+          </div>
+          <div class="spot-mime-tip">
+            <strong>💡 【みめTip】</strong> 紙皿でテイクアウトしてサクッと立ち食い。安くて驚くほど本格的！
+          </div>
+          <div class="spot-actions">
+            <a href="https://maps.google.com/?q=Pastificio+Guerra+Rome" target="_blank" class="btn btn-maps">📍 Google Mapsで開く</a>
+          </div>
+        </div>
+      </div>
+      </div>
+    </section>
 
   </main>
-  <!-- Ultra-Compact Bottom Tab Bar -->
+  <!-- Ultra-Compact Bottom Tab Bar (Direct 100% Reliable Link) -->
   <nav class="bottom-tab-bar">
     <a href="index.html" class="tab-item">
       <span class="tab-icon">🏠</span>
       <span class="tab-label">ホーム</span>
     </a>
-    <button type="button" class="tab-item" id="btn-open-day-picker" onclick="window.openDayPicker && window.openDayPicker()">
+    <a href="itinerary.html" class="tab-item">
       <span class="tab-icon">📅</span>
       <span class="tab-label">日程</span>
-    </button>
+    </a>
     <a href="beginner-guide.html" class="tab-item">
       <span class="tab-icon">🔰</span>
       <span class="tab-label">初心者</span>
@@ -276,50 +530,6 @@
       <span class="tab-label">お土産</span>
     </a>
   </nav>
-
-  <!-- Day Picker Action Sheet Modal (Fail-safe Inline Handlers) -->
-  <div id="day-picker-modal" class="day-picker-overlay" onclick="if(event.target===this) window.closeDayPicker && window.closeDayPicker();">
-    <div class="day-picker-sheet">
-      <div class="day-picker-header">
-        <h3 style="font-size:0.88rem; font-weight:800; color:var(--primary-color); margin:0;">📅 日程詳細を選択 (Day 1 〜 Day 8)</h3>
-        <button type="button" id="btn-close-day-picker" class="day-picker-close" onclick="window.closeDayPicker && window.closeDayPicker();">✕</button>
-      </div>
-      <div class="day-picker-list">
-        <a href="day1.html" class="day-picker-item">
-          <span class="day-badge">Day 1</span>
-          <div class="day-info"><strong>11/15(日)</strong> 関空発 ➔ ドーハ乗継 ➔ 機中泊</div>
-        </a>
-        <a href="day2.html" class="day-picker-item">
-          <span class="day-badge">Day 2</span>
-          <div class="day-info"><strong>11/16(月)</strong> ミラノ観光 ➔ ベローナ ➔ ベネチア</div>
-        </a>
-        <a href="day3.html" class="day-picker-item">
-          <span class="day-badge">Day 3</span>
-          <div class="day-info"><strong>11/17(火)</strong> ベネチア ＆ ゴンドラ ➔ フィレンツェ</div>
-        </a>
-        <a href="day4.html" class="day-picker-item">
-          <span class="day-badge">Day 4</span>
-          <div class="day-info"><strong>11/18(水)</strong> フィレンツェ終日観光 ＆ ピサ斜塔</div>
-        </a>
-        <a href="day5.html" class="day-picker-item">
-          <span class="day-badge">Day 5</span>
-          <div class="day-info"><strong>11/19(木)</strong> サンジミニャーノ ＆ ピッツァ ➔ ローマ</div>
-        </a>
-        <a href="day6.html" class="day-picker-item">
-          <span class="day-badge">Day 6</span>
-          <div class="day-info"><strong>11/20(金)</strong> ローマ ＆ バチカン市国 終日自由行動</div>
-        </a>
-        <a href="day7.html" class="day-picker-item">
-          <span class="day-badge">Day 7</span>
-          <div class="day-info"><strong>11/21(土)</strong> ローマ自由行動 ➔ FCO空港発 ➔ 機中泊</div>
-        </a>
-        <a href="day8.html" class="day-picker-item">
-          <span class="day-badge">Day 8</span>
-          <div class="day-info"><strong>11/22(日)</strong> 関西国際空港 到着 ➔ 解散 ➔ ご自宅へ</div>
-        </a>
-      </div>
-    </div>
-  </div>
   <!-- Site Footer -->
   <footer class="site-footer">
     <div class="container footer-inner">
@@ -329,6 +539,7 @@
       </div>
       <div style="display:flex; gap:6px; flex-wrap:wrap;">
         <a href="index.html">ホーム</a>
+        <a href="itinerary.html">全8日間日程</a>
         <a href="beginner-guide.html">初心者安心</a>
         <a href="tour-map.html">MAP</a>
         <a href="sightseeing-guide.html">観光</a>

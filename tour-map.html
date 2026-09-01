@@ -11,10 +11,10 @@
 <body>
   <main class="container" style="padding-top: 6px;">
 
-    <!-- Compact Map Container Card (Fits Entirely in Single Screen) -->
+    <!-- Compact Map Container Card (320px Canvas per specification) -->
     <div style="background:#ffffff; border-radius:var(--radius-lg); border:1px solid var(--border-color); overflow:hidden; box-shadow:var(--shadow-sm); margin-bottom:10px;">
       
-      <!-- Compact Header & Day Navigator -->
+      <!-- Header & Day Navigator -->
       <div style="background:#1e293b; color:#ffffff; padding:6px 10px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:4px;">
         <div style="display:flex; align-items:center; gap:5px;">
           <button id="map-prev-day" class="btn btn-secondary" style="padding:2px 8px; font-size:0.7rem; min-height:26px; background:#334155; color:#fff !important; border-color:#475569;">◀ 前の日</button>
@@ -27,10 +27,10 @@
         </div>
       </div>
 
-      <!-- Compact Leaflet Map Canvas (Height 250px so whole UI fits in 1 screen) -->
-      <div id="tour-map" style="width:100%; height:250px; z-index:1;"></div>
+      <!-- Leaflet Map Canvas (320px Height as instructed) -->
+      <div id="tour-map" style="width:100%; height:320px; z-index:1;"></div>
 
-      <!-- Compact Current Day Summary Banner (With Direct Link in Initial Viewport) -->
+      <!-- Current Day Summary Banner -->
       <div id="map-day-summary-card" style="background:#f1f5f9; padding:6px 10px; border-top:1px solid var(--border-color); font-size:0.74rem;">
         <div style="display:flex; justify-content:space-between; align-items:center; gap:6px;">
           <div style="flex:1; overflow:hidden;">
@@ -295,16 +295,16 @@
     </script>
 
   </main>
-  <!-- Ultra-Compact Bottom Tab Bar -->
+  <!-- Ultra-Compact Bottom Tab Bar (Direct 100% Reliable Link) -->
   <nav class="bottom-tab-bar">
     <a href="index.html" class="tab-item">
       <span class="tab-icon">🏠</span>
       <span class="tab-label">ホーム</span>
     </a>
-    <button type="button" class="tab-item" id="btn-open-day-picker" onclick="window.openDayPicker && window.openDayPicker()">
+    <a href="itinerary.html" class="tab-item">
       <span class="tab-icon">📅</span>
       <span class="tab-label">日程</span>
-    </button>
+    </a>
     <a href="beginner-guide.html" class="tab-item">
       <span class="tab-icon">🔰</span>
       <span class="tab-label">初心者</span>
@@ -330,50 +330,6 @@
       <span class="tab-label">お土産</span>
     </a>
   </nav>
-
-  <!-- Day Picker Action Sheet Modal (Fail-safe Inline Handlers) -->
-  <div id="day-picker-modal" class="day-picker-overlay" onclick="if(event.target===this) window.closeDayPicker && window.closeDayPicker();">
-    <div class="day-picker-sheet">
-      <div class="day-picker-header">
-        <h3 style="font-size:0.88rem; font-weight:800; color:var(--primary-color); margin:0;">📅 日程詳細を選択 (Day 1 〜 Day 8)</h3>
-        <button type="button" id="btn-close-day-picker" class="day-picker-close" onclick="window.closeDayPicker && window.closeDayPicker();">✕</button>
-      </div>
-      <div class="day-picker-list">
-        <a href="day1.html" class="day-picker-item">
-          <span class="day-badge">Day 1</span>
-          <div class="day-info"><strong>11/15(日)</strong> 関空発 ➔ ドーハ乗継 ➔ 機中泊</div>
-        </a>
-        <a href="day2.html" class="day-picker-item">
-          <span class="day-badge">Day 2</span>
-          <div class="day-info"><strong>11/16(月)</strong> ミラノ観光 ➔ ベローナ ➔ ベネチア</div>
-        </a>
-        <a href="day3.html" class="day-picker-item">
-          <span class="day-badge">Day 3</span>
-          <div class="day-info"><strong>11/17(火)</strong> ベネチア ＆ ゴンドラ ➔ フィレンツェ</div>
-        </a>
-        <a href="day4.html" class="day-picker-item">
-          <span class="day-badge">Day 4</span>
-          <div class="day-info"><strong>11/18(水)</strong> フィレンツェ終日観光 ＆ ピサ斜塔</div>
-        </a>
-        <a href="day5.html" class="day-picker-item">
-          <span class="day-badge">Day 5</span>
-          <div class="day-info"><strong>11/19(木)</strong> サンジミニャーノ ＆ ピッツァ ➔ ローマ</div>
-        </a>
-        <a href="day6.html" class="day-picker-item">
-          <span class="day-badge">Day 6</span>
-          <div class="day-info"><strong>11/20(金)</strong> ローマ ＆ バチカン市国 終日自由行動</div>
-        </a>
-        <a href="day7.html" class="day-picker-item">
-          <span class="day-badge">Day 7</span>
-          <div class="day-info"><strong>11/21(土)</strong> ローマ自由行動 ➔ FCO空港発 ➔ 機中泊</div>
-        </a>
-        <a href="day8.html" class="day-picker-item">
-          <span class="day-badge">Day 8</span>
-          <div class="day-info"><strong>11/22(日)</strong> 関西国際空港 到着 ➔ 解散 ➔ ご自宅へ</div>
-        </a>
-      </div>
-    </div>
-  </div>
   <!-- Site Footer -->
   <footer class="site-footer">
     <div class="container footer-inner">
@@ -383,6 +339,7 @@
       </div>
       <div style="display:flex; gap:6px; flex-wrap:wrap;">
         <a href="index.html">ホーム</a>
+        <a href="itinerary.html">全8日間日程</a>
         <a href="beginner-guide.html">初心者安心</a>
         <a href="tour-map.html">MAP</a>
         <a href="sightseeing-guide.html">観光</a>
