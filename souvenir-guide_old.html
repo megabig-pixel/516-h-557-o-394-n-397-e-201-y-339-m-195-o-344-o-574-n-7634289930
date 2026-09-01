@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=no">
+  <title>イタリアお土産＆ショッピング完全ガイド｜HIS 8日間 25選</title>
+  <meta name="description" content="YouTubeイタリアガイドみめ直伝の免税手続き（€70.01〜）、液体物パッキング、肉製品持ち込み禁止警告と写真付きおすすめお土産">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+</head>
+<body>
+  <main class="container" style="padding-top: 6px;">
+
+    <!-- Hero Header -->
+    <div class="hero-card" style="background: linear-gradient(135deg, #6b21a8 0%, #9333ea 100%);">
+      <span class="hero-tag" style="background:#f3e8ff; color:#6b21a8;">🎁 厳選お土産 ＆ 免税ガイド</span>
+      <h2 class="hero-title">イタリアお土産＆ショッピング完全ガイド</h2>
+      <p class="hero-subtitle">
+        スーパーばらまき菓子、SMN薬局、本革製品、ワイン、最新免税手続き（€70.01〜）
+      </p>
+    </div>
+
+    <!-- Mime Shopping & Customs Rules -->
+    <div class="mime-callout">
+      <div class="mime-header">
+        <div class="mime-title">
+          <span style="font-size: 1.3rem;">🛍️</span>
+          <h3 style="margin:0;">【Mime直伝】お買い物・免税・パッキングの3大極意</h3>
+        </div>
+        <span class="mime-badge">超重要</span>
+      </div>
+      <div class="mime-tips-grid">
+        <div class="mime-tip-card">
+          <h4>1. 免税（Tax Refund）は€70.01以上！</h4>
+          <p>同一店舗1日€70.01以上で免税書類発行。空港Otello端末でパスポートスキャン電子承認！</p>
+        </div>
+        <div class="mime-tip-card">
+          <h4>2. 液体物（オイル・ワイン）はスーツケース預け</h4>
+          <p>100mlを超える液体物は機内持ち込み不可。二重ジップロック＋衣類で巻いて預け入れへ。</p>
+        </div>
+        <div class="mime-tip-card" style="border-color:#f87171;">
+          <h4 style="color:#b91c1c;">3. 【絶対警告】肉製品は日本持ち込み厳禁！</h4>
+          <p>生ハム・サラミ・ソーセージは日本の家畜伝染病予防法により持ち込み不可（最高300万円罰金）。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tax Refund Real-time Calculator -->
+    <section class="section">
+      <div class="calc-card">
+        <div class="section-header" style="margin-bottom:6px;">
+          <h3 class="section-title">💶 免税（Tax Refund）還付額シミュレーター</h3>
+          <span class="section-subtitle">2024年法改正 €70.01〜対応</span>
+        </div>
+        <div class="calc-grid">
+          <div>
+            <label style="font-size:0.7rem; color:var(--text-muted); font-weight:700;">購入金額 (€)</label>
+            <input type="number" id="tax-eur-input" class="calc-input" value="120" min="0" step="5">
+          </div>
+          <div>
+            <label style="font-size:0.7rem; color:var(--text-muted); font-weight:700;">予想還付金 (約12.5% 還元)</label>
+            <div class="calc-result-box">
+              <strong id="tax-refund-eur" style="font-size:1.1rem; color:#16a34a;">約 €15.00</strong>
+              <div id="tax-refund-jpy" style="font-size:0.75rem; color:var(--text-muted);">約 ¥2,475</div>
+            </div>
+          </div>
+        </div>
+        <div id="tax-status-msg" style="font-size:0.7rem; margin-top:2px;"></div>
+      </div>
+    </section>
+
+    <!-- Category Filter Chips -->
+    <div style="display:flex; gap:4px; overflow-x:auto; padding-bottom:6px; margin-bottom:8px; scrollbar-width:none;">
+      <button class="day-chip filter-chip active" data-cat="all" style="min-width:60px;">全品目</button>
+      <button class="day-chip filter-chip" data-cat="supermarket" style="min-width:95px;">🛒 スーパー・菓子</button>
+      <button class="day-chip filter-chip" data-cat="artisan" style="min-width:95px;">🎨 伝統工芸・名品</button>
+    </div>
+
+    <!-- Souvenirs Grid -->
+    <section class="section">
+      <div class="cards-grid">
+        
+      <div class="spot-card" data-cat="supermarket">
+        <div class="card-thumb-wrap">
+          <img src="https://images.unsplash.com/photo-1549007994-cb92caebd54b?auto=format&fit=crop&w=300&q=80" alt="Baci (バッチ) チョコレート" loading="lazy">
+          <span class="card-thumb-badge">スーパー</span>
+        </div>
+        <div class="spot-body">
+          <div class="spot-header-row">
+            <h3 class="spot-name-ja">Baci (バッチ) チョコレート</h3>
+            <span class="spot-chip" style="color:#9333ea; font-weight:800;">€3〜8</span>
+          </div>
+          <span class="spot-name-it">Perugina (全都市)</span>
+          <p class="spot-desc">愛の格言メッセージが入ったヘーゼルナッツチョコ。新婚旅行土産の定番！</p>
+          <div class="spot-mime-tip">
+            <strong>💡 【みめTip】</strong> スーパー（Conad/Coop）で大袋を買うと空港の半額以下で手に入ります。
+          </div>
+        </div>
+      </div>
+      <div class="spot-card" data-cat="supermarket">
+        <div class="card-thumb-wrap">
+          <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=300&q=80" alt="ポケットコーヒー (冬季限定)" loading="lazy">
+          <span class="card-thumb-badge">スーパー</span>
+        </div>
+        <div class="spot-body">
+          <div class="spot-header-row">
+            <h3 class="spot-name-ja">ポケットコーヒー (冬季限定)</h3>
+            <span class="spot-chip" style="color:#9333ea; font-weight:800;">€2〜5</span>
+          </div>
+          <span class="spot-name-it">Ferrero (全都市)</span>
+          <p class="spot-desc">ダークチョコの中に本物の液状エスプレッソが入った冬季限定チョコ。</p>
+          <div class="spot-mime-tip">
+            <strong>💡 【みめTip】</strong> 11月は販売シーズン！気圧変化に強くお土産に最適。
+          </div>
+        </div>
+      </div>
+      <div class="spot-card" data-cat="supermarket">
+        <div class="card-thumb-wrap">
+          <img src="https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?auto=format&fit=crop&w=300&q=80" alt="白トリュフ塩 (Sale al Tartufo)" loading="lazy">
+          <span class="card-thumb-badge">スーパー</span>
+        </div>
+        <div class="spot-body">
+          <div class="spot-header-row">
+            <h3 class="spot-name-ja">白トリュフ塩 (Sale al Tartufo)</h3>
+            <span class="spot-chip" style="color:#9333ea; font-weight:800;">€6〜15</span>
+          </div>
+          <span class="spot-name-it">Tuscan (フィレンツェ)</span>
+          <p class="spot-desc">ひと振りで高級レストランの味。卵かけご飯、ステーキ、パスタに抜群。</p>
+          <div class="spot-mime-tip">
+            <strong>💡 【みめTip】</strong> スーパーや中央市場で瓶入りを購入。ジップロック必須。
+          </div>
+        </div>
+      </div>
+      <div class="spot-card" data-cat="artisan">
+        <div class="card-thumb-wrap">
+          <img src="https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=300&q=80" alt="香水『王妃の水』＆ ザクロ石鹸" loading="lazy">
+          <span class="card-thumb-badge">名品</span>
+        </div>
+        <div class="spot-body">
+          <div class="spot-header-row">
+            <h3 class="spot-name-ja">香水『王妃の水』＆ ザクロ石鹸</h3>
+            <span class="spot-chip" style="color:#9333ea; font-weight:800;">€15〜120</span>
+          </div>
+          <span class="spot-name-it">SMN薬局 (フィレンツェ)</span>
+          <p class="spot-desc">1221年世界最古薬局。高貴な柑橘系コロンと保湿石鹸。</p>
+          <div class="spot-mime-tip">
+            <strong>💡 【みめTip】</strong> フィレンツェ本店で購入するとショッパー付き。€70.01以上で免税！
+          </div>
+        </div>
+      </div>
+      <div class="spot-card" data-cat="artisan">
+        <div class="card-thumb-wrap">
+          <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=300&q=80" alt="フィレンツェ本革財布・手袋" loading="lazy">
+          <span class="card-thumb-badge">名品</span>
+        </div>
+        <div class="spot-body">
+          <div class="spot-header-row">
+            <h3 class="spot-name-ja">フィレンツェ本革財布・手袋</h3>
+            <span class="spot-chip" style="color:#9333ea; font-weight:800;">€20〜150</span>
+          </div>
+          <span class="spot-name-it">Vera Pelle (フィレンツェ)</span>
+          <p class="spot-desc">トスカーナ植物タンニン鞣し革。使い込むほど飴色に変化。</p>
+          <div class="spot-mime-tip">
+            <strong>💡 【みめTip】</strong> 市場の露店では「Vera Pelle（本革）」の刻印を確認。
+          </div>
+        </div>
+      </div>
+      <div class="spot-card" data-cat="artisan">
+        <div class="card-thumb-wrap">
+          <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=300&q=80" alt="ベネチアンガラス (Murano)" loading="lazy">
+          <span class="card-thumb-badge">名品</span>
+        </div>
+        <div class="spot-body">
+          <div class="spot-header-row">
+            <h3 class="spot-name-ja">ベネチアンガラス (Murano)</h3>
+            <span class="spot-chip" style="color:#9333ea; font-weight:800;">€10〜80</span>
+          </div>
+          <span class="spot-name-it">Murano Glass (ベネチア)</span>
+          <p class="spot-desc">マエストロ手吹きガラス。繊細なミルフィオリペンダント。</p>
+          <div class="spot-mime-tip">
+            <strong>💡 【みめTip】</strong> 認定シール「Vetro Artistico Murano」のある正規店で購入を。
+          </div>
+        </div>
+      </div>
+      <div class="spot-card" data-cat="artisan">
+        <div class="card-thumb-wrap">
+          <img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=300&q=80" alt="モデナ産熟成バルサミコ酢" loading="lazy">
+          <span class="card-thumb-badge">名品</span>
+        </div>
+        <div class="spot-body">
+          <div class="spot-header-row">
+            <h3 class="spot-name-ja">モデナ産熟成バルサミコ酢</h3>
+            <span class="spot-chip" style="color:#9333ea; font-weight:800;">€15〜50</span>
+          </div>
+          <span class="spot-name-it">Aceto Balsamico (全都市)</span>
+          <p class="spot-desc">木樽12年以上長期熟成。チーズやアイスにかけて絶品。</p>
+          <div class="spot-mime-tip">
+            <strong>💡 【みめTip】</strong> 「D.O.P.」マークの熟成バルサミコは日本の半額以下。
+          </div>
+        </div>
+      </div>
+      <div class="spot-card" data-cat="artisan">
+        <div class="card-thumb-wrap">
+          <img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=300&q=80" alt="リモンチェッロ (Limoncello)" loading="lazy">
+          <span class="card-thumb-badge">名品</span>
+        </div>
+        <div class="spot-body">
+          <div class="spot-header-row">
+            <h3 class="spot-name-ja">リモンチェッロ (Limoncello)</h3>
+            <span class="spot-chip" style="color:#9333ea; font-weight:800;">€8〜20</span>
+          </div>
+          <span class="spot-name-it">Sorrento (ローマ)</span>
+          <p class="spot-desc">南伊の太陽を浴びたレモン甘口リキュール。冷凍庫で冷やして。</p>
+          <div class="spot-mime-tip">
+            <strong>💡 【みめTip】</strong> 液体物のため100ml超は機内持込不可！必ずスーツケースへ。
+          </div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Bottom Tab Bar -->
+    <!-- Bottom Tab Bar (iOS Safe Area Ready) -->
+  <nav class="bottom-tab-bar">
+    <a href="index.html" class="tab-item ">
+      <span class="tab-icon">🏠</span>
+      <span class="tab-label">ホーム</span>
+    </a>
+
+    <!-- Day Selection Bottom Sheet Drawer -->
+    <details class="day-popover-details" id="day-popover-details">
+      <summary class="tab-item ">
+        <span class="tab-icon">📅</span>
+        <span class="tab-label">日程</span>
+      </summary>
+      <div class="day-popover-backdrop"></div>
+      <div class="day-popover-dropdown">
+        <div class="day-popover-header">
+          <span class="day-popover-title">📅 全8日間 日程詳細を選択</span>
+          <button type="button" class="day-popover-close" aria-label="閉じる">✕</button>
+        </div>
+        <div class="day-popover-grid">
+          <a href="day1.html" class="day-popover-item"><span class="dp-badge">Day 1</span> 11/15(日) 関空➔ミラノ</a>
+          <a href="day2.html" class="day-popover-item"><span class="dp-badge">Day 2</span> 11/16(月) ミラノ➔ベネチア</a>
+          <a href="day3.html" class="day-popover-item"><span class="dp-badge">Day 3</span> 11/17(火) ベネチア➔フィレンツェ</a>
+          <a href="day4.html" class="day-popover-item"><span class="dp-badge">Day 4</span> 11/18(水) フィレンツェ＆ピサ</a>
+          <a href="day5.html" class="day-popover-item"><span class="dp-badge">Day 5</span> 11/19(木) サンジミニャーノ➔ローマ</a>
+          <a href="day6.html" class="day-popover-item"><span class="dp-badge">Day 6</span> 11/20(金) ローマ＆バチカン自由</a>
+          <a href="day7.html" class="day-popover-item"><span class="dp-badge">Day 7</span> 11/21(土) ローマ➔FCO空港発</a>
+          <a href="day8.html" class="day-popover-item"><span class="dp-badge">Day 8</span> 11/22(日) 関空帰着・解散</a>
+        </div>
+      </div>
+    </details>
+
+    <a href="beginner-guide.html" class="tab-item ">
+      <span class="tab-icon">🔰</span>
+      <span class="tab-label">初心者</span>
+    </a>
+    <a href="tour-map.html" class="tab-item ">
+      <span class="tab-icon">🗺️</span>
+      <span class="tab-label">MAP</span>
+    </a>
+    <a href="sightseeing-guide.html" class="tab-item ">
+      <span class="tab-icon">🏛️</span>
+      <span class="tab-label">観光</span>
+    </a>
+    <a href="phrasebook.html" class="tab-item ">
+      <span class="tab-icon">🗣️</span>
+      <span class="tab-label">会話</span>
+    </a>
+    <a href="free-meal-guide.html" class="tab-item ">
+      <span class="tab-icon">🍽️</span>
+      <span class="tab-label">グルメ</span>
+    </a>
+    <a href="souvenir-guide.html" class="tab-item active">
+      <span class="tab-icon">🎁</span>
+      <span class="tab-label">お土産</span>
+    </a>
+  </nav>
+
+  <!-- Site Footer -->
+    <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <strong>🇮🇹 Kenta &amp; Megumi's Italian Honeymoon Portal</strong><br>
+        <span style="color:#64748b;">HIS Tour OI-KMI2811 (2026/11/15 - 11/22) | 監修: YouTube「イタリアガイドみめ (@mimeitalygaido)」</span>
+      </div>
+      <div style="display:flex; gap:6px; flex-wrap:wrap;">
+        <a href="index.html">ホーム</a>
+        <a href="beginner-guide.html">初心者安心</a>
+        <a href="tour-map.html">MAP</a>
+        <a href="sightseeing-guide.html">観光</a>
+        <a href="phrasebook.html">会話</a>
+        <a href="free-meal-guide.html">グルメ</a>
+        <a href="souvenir-guide.html">お土産</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="app.js"></script>
+  <script>
+    document.addEventListener('click', function(e) {
+      document.querySelectorAll('details.day-popover-details, details.day-nav-details').forEach(function(d) {
+        if (!d.contains(e.target) && d.hasAttribute('open')) {
+          d.removeAttribute('open');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

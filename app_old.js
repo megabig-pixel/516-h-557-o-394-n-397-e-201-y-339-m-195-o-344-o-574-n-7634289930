@@ -1,9 +1,9 @@
 /* ==========================================================================
-   イタリア新婚旅行ガイドポータル 共通JavaScript (app.js v8)
+   イタリア新婚旅行ガイドポータル 共通JavaScript (app.js v7)
    鈴木 健太・めぐみ 様 (HIS Tour OI-KMI2811: 2026年11月15日〜22日)
    ========================================================================== */
 
-// Global Day Selection Popover Handler
+// Global Day Selection Popover Handler (Appears directly above the '日程' label)
 window.toggleDayPopover = function(show) {
   const menu = document.getElementById('day-popover-menu');
   const overlay = document.getElementById('day-popover-overlay');
@@ -196,14 +196,14 @@ function initTaxRefundCalculator() {
     if (total < 70.01) {
       taxRefundEur.textContent = '€0.00';
       taxRefundJpy.textContent = '¥0';
-      if (taxStatus) taxStatus.innerHTML = '<span style="color:#dc2626; font-weight:700;">※ 最低購入額 €70.01 未満のため免税対象外です</span>';
+      if (taxStatus) taxStatus.innerHTML = '<span style="color:#dc2626;">※ 最低購入額 €70.01 未満のため免税対象外です</span>';
     } else {
-      // Standard Italian VAT refund ~12.5% net
+      // Standard Italian standard VAT refund ~12.5% net
       const refund = total * 0.125;
       const jpy = Math.round(refund * rate);
       taxRefundEur.textContent = `約 €${refund.toFixed(2)}`;
       taxRefundJpy.textContent = `約 ¥${jpy.toLocaleString()}`;
-      if (taxStatus) taxStatus.innerHTML = '<span style="color:#16a34a; font-weight:700;">✅ 免税対象（空港Otello端末でパスポートスキャン電子承認）</span>';
+      if (taxStatus) taxStatus.innerHTML = '<span style="color:#16a34a; font-weight:700;">✅ 免税対象（空港Otello端末でパスポートスキャン）</span>';
     }
   }
 
@@ -254,7 +254,7 @@ function initSpeech() {
 function initSearch() {
   const searchInput = document.getElementById('search-input');
   const filterChips = document.querySelectorAll('.filter-chip');
-  const cards = document.querySelectorAll('.phrase-card, .spot-card, .restaurant-card, .souvenir-card, .aru-aru-card, .trend-card, .region-card');
+  const cards = document.querySelectorAll('.phrase-card, .spot-card, .restaurant-card, .souvenir-card');
 
   if (!searchInput && filterChips.length === 0) return;
 
@@ -264,10 +264,10 @@ function initSearch() {
     const selectedCategory = activeChip ? activeChip.dataset.cat : 'all';
 
     cards.forEach(card => {
-      const cardCategory = (card.dataset.cat || '') + ' ' + (card.dataset.city || '');
+      const cardCategory = card.dataset.cat || card.dataset.city || '';
       const text = card.textContent.toLowerCase();
       
-      const matchesCat = (selectedCategory === 'all' || cardCategory.includes(selectedCategory));
+      const matchesCat = (selectedCategory === 'all' || cardCategory === selectedCategory);
       const matchesQuery = (!query || text.includes(query));
 
       if (matchesCat && matchesQuery) {

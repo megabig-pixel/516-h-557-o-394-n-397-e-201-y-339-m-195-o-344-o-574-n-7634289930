@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=no">
+  <title>イタリア旅行 交通・通信・ホテル・緊急サバイバル完全攻略｜HIS 8日間</title>
+  <meta name="description" content="地下鉄Tap&Go、電車打刻ルール、ストライキ対策、eSIM設定、クレカ両替手数料トラップ回避、ホテルアメニティ、薬局・緊急SOS完全ガイド">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+</head>
+<body>
+  <main class="container" style="padding-top: 6px;">
+
+    <!-- Top Horizontal Quick Day Pills & Nav -->
+    <div class="day-quick-pills">
+      <a href="index.html" class="day-pill" style="min-width:45px;">🏠<small>Top</small></a>
+      <a href="beginner-guide.html" class="day-pill">🔰<small>初心者</small></a>
+      <a href="culture-trends.html" class="day-pill">💡<small>あるある</small></a>
+      <a href="tips-survival.html" class="day-pill active">🚆<small>サバイバル</small></a>
+      <a href="souvenir-guide.html" class="day-pill">🎁<small>お土産</small></a>
+      <a href="free-meal-guide.html" class="day-pill">🍽️<small>グルメ</small></a>
+      <a href="tour-map.html" class="day-pill">🗺️<small>MAP</small></a>
+    </div>
+
+    <!-- Hero Header -->
+    <div class="hero-card" style="background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);">
+      <span class="hero-tag" style="background:#dbeafe; color:#1e40af;">🚆 実践サバイバル ＆ 緊急SOS</span>
+      <h2 class="hero-title">イタリア旅行 交通・通信・ホテル・緊急サバイバル</h2>
+      <p class="hero-subtitle">
+        地下鉄Tap&Go・電車の打刻・スト対策・eSIM・クレカDCC手数料回避・ホテル事情・薬局＆大使館SOS
+      </p>
+    </div>
+
+    <!-- Mime 5 Survival Rules Callout -->
+    <div class="mime-callout">
+      <div class="mime-header">
+        <div class="mime-title">
+          <span style="font-size: 1.3rem;">🛡️</span>
+          <h3 style="margin:0;">【Mime直伝】現地トラブルゼロの5大サバイバル原則</h3>
+        </div>
+        <span class="mime-badge">完全防備</span>
+      </div>
+      <div class="mime-tips-grid">
+        <div class="mime-tip-card">
+          <h4>1. 地下鉄は「Tap & Go（タッチ決済）」が最強！</h4>
+          <p>切符売り場の長蛇の列に並ぶ必要なし！クレカやApple Payを改札機にかざすだけで即入場できます。</p>
+        </div>
+        <div class="mime-tip-card">
+          <h4>2. 普通列車（Regionale）は乗車前「打刻」絶対！</h4>
+          <p>紙の切符は駅の刻印機を通さないと即€50〜100の罰金！全席指定のFrecciarossa/Italoは打刻不要。</p>
+        </div>
+        <div class="mime-tip-card">
+          <h4>3. ATM画面は「Without Conversion」を選ぶ！</h4>
+          <p>キャッシング時に「With Conversion」を選ぶと10%前後の独自手数料で損します。「現地通貨建て（EUR）」を選択！</p>
+        </div>
+        <div class="mime-tip-card">
+          <h4>4. ホテルは歯ブラシ・スリッパ持参が必須</h4>
+          <p>4つ星ホテルでも使い捨てアメニティはありません。日本からマイスリッパ＆歯ブラシを持参しましょう。</p>
+        </div>
+        <div class="mime-tip-card">
+          <h4>5. 緊急通報は「112」＆ 大使館ダイヤル</h4>
+          <p>欧州統一緊急番号112は警察・救急・消防に対応。パスポート紛失時は在イタリア日本国大使館へ。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 1: Transportation & Transit Survival -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">🚆 交通・移動サバイバル完全攻略</h2>
+        <span class="section-subtitle">鉄道・地下鉄・バス・タクシー・ストライキ</span>
+      </div>
+
+      <div class="cards-grid">
+
+        <!-- Transit Card 1: Metro Tap & Go -->
+        <div class="survival-card">
+          <div class="survival-header">
+            <span class="survival-icon">🚇</span>
+            <h3 class="survival-title">ローマ・ミラノ地下鉄「Tap & Go」乗車法</h3>
+            <span class="survival-badge green">切符購入不要</span>
+          </div>
+          <p style="font-size:0.72rem; color:var(--text-muted);">券売機に並ばず、手持ちのクレジットカードでそのまま改札を通過できる最先端システム。</p>
+          <div class="survival-steps">
+            <div class="survival-step-item">
+              <span class="step-number">1</span>
+              <div>タッチ決済対応のクレジットカード（Visa/Mastercard）またはApple Pay/Google Payを用意。</div>
+            </div>
+            <div class="survival-step-item">
+              <span class="step-number">2</span>
+              <div>改札機の上部にある黒い「非接触リーダー（Tap & Goマーク）」にピッとかざす。</div>
+            </div>
+            <div class="survival-step-item">
+              <span class="step-number">3</span>
+              <div>ゲートが開いて入場！料金は自動的に1回券（ローマ€1.50 / ミラノ€2.20）が引き落とされます。</div>
+            </div>
+          </div>
+          <div class="spot-mime-tip" style="margin-top:6px;">
+            <strong>💡 【みめTip】</strong> お二人それぞれ別のクレジットカード（またはスマホとカード）でタッチしてください（1枚のカードで2人同時の入場は不可）。
+          </div>
+        </div>
+
+        <!-- Transit Card 2: Train & Timbrare -->
+        <div class="survival-card">
+          <div class="survival-header">
+            <span class="survival-icon">🚂</span>
+            <h3 class="survival-title">イタリア鉄道の乗り方 ＆ 打刻（Timbrare）</h3>
+            <span class="survival-badge red">罰金厳重注意</span>
+          </div>
+          <div class="survival-steps">
+            <div class="survival-step-item">
+              <span class="step-number">A</span>
+              <div><strong>高速列車（Frecciarossa / Italo）：</strong> 全席指定席。スマホのQRコード画面を車掌に見せるだけ（打刻不要！）。</div>
+            </div>
+            <div class="survival-step-item">
+              <span class="step-number">B</span>
+              <div><strong>普通列車（Regionale / ピサ行き等）：</strong> 紙の切符を購入した場合、乗車前に駅ホームの黄色または緑色の打刻機（Convalidatrice）に差し込んで日時を刻印！未刻印は無賃乗車扱い（€50〜100即時罰金）。</div>
+            </div>
+            <div class="survival-step-item">
+              <span class="step-number">C</span>
+              <div><strong>電光掲示板のホーム確認：</strong> 出発2〜5分前までホーム番号が決まらないのが普通です。慌てず電光掲示板前で待機。</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Transit Card 3: City Bus & Tram -->
+        <div class="survival-card">
+          <div class="survival-header">
+            <span class="survival-icon">🚌</span>
+            <h3 class="survival-title">市バス・トラムの乗り方マナー</h3>
+            <span class="survival-badge amber">車内販売なし</span>
+          </div>
+          <p style="font-size:0.72rem; color:var(--text-muted);">バスの運転手から切符を買うことはできません！</p>
+          <div class="survival-steps">
+            <div class="survival-step-item">
+              <span class="step-number">1</span>
+              <div>街中のタバコ屋「タバッキ（Tabacchi / 看板に大きなTマーク）」または地下鉄券売機で「Biglietto per autobus（バス切符）」を事前購入。</div>
+            </div>
+            <div class="survival-step-item">
+              <span class="step-number">2</span>
+              <div>バスに乗車後、車内にある小さな黄色い打刻機に切符を差し込んで刻印。</div>
+            </div>
+            <div class="survival-step-item">
+              <span class="step-number">3</span>
+              <div>刻印から90分〜100分間はバス・トラムが乗り放題になります。</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Transit Card 4: Taxi & Apps -->
+        <div class="survival-card">
+          <div class="survival-header">
+            <span class="survival-icon">🚕</span>
+            <h3 class="survival-title">タクシー利用法 ＆ ぼったくり完全回避</h3>
+            <span class="survival-badge blue">定額料金制度あり</span>
+          </div>
+          <div class="survival-steps">
+            <div class="survival-step-item">
+              <span class="step-number">1</span>
+              <div><strong>流しは止まらない：</strong> 路上で手を挙げても止まりません。広場の「TAXI乗り場」から乗車するか、配車アプリ「FreeNow」または「IT Taxi」を利用。</div>
+            </div>
+            <div class="survival-step-item">
+              <span class="step-number">2</span>
+              <div><strong>白タク見分け方：</strong> 車体が白色、屋根にTAXI行灯、ドアに市章マークと公認ライセンス番号が書かれている正規車のみ乗車。</div>
+            </div>
+            <div class="survival-step-item">
+              <span class="step-number">3</span>
+              <div><strong>空港一律定額運賃：</strong> ローマ・フィウミチーノ空港 (FCO) ➔ ローマ市内（城壁内）は一律固定料金 <b>€55</b>（荷物代込み）。乗車時に「Tariffa fissa, per favore?」と確認。</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Transit Card 5: Strike (Sciopero) -->
+        <div class="survival-card">
+          <div class="survival-header">
+            <span class="survival-icon">📢</span>
+            <h3 class="survival-title">ストライキ（Sciopero）の仕組みと対策</h3>
+            <span class="survival-badge amber">金曜日に多発</span>
+          </div>
+          <p style="font-size:0.72rem; color:var(--text-muted);">イタリアでは労働者の権利としてストライキが頻繁に行われますが、法律で厳格なルールがあります。</p>
+          <div class="survival-steps">
+            <div class="survival-step-item">
+              <span class="step-number">1</span>
+              <div><strong>事前予告が義務：</strong> 突発的なストは禁止されており、数週間〜数日前に必ず日程が公表されます。</div>
+            </div>
+            <div class="survival-step-item">
+              <span class="step-number">2</span>
+              <div><strong>最低保証運行時間（Fasce di Garanzia）：</strong> 通勤時間帯の「朝6:00〜9:00」および「夕方18:00〜21:00」は電車・バスが必ず運行されます。</div>
+            </div>
+            <div class="survival-step-item">
+              <span class="step-number">3</span>
+              <div><strong>本ツアーへの影響：</strong> HISツアーは専用貸切観光バスでの移動がメインのため、公共交通ストライキの影響をほとんど受けずに観光可能です！</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Section 2: Connectivity, Payments & ATM -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">💳 通信・スマホ・決済・両替サバイバル</h2>
+        <span class="section-subtitle">eSIM設定・クレカタッチ決済・ATM手数料トラップ</span>
+      </div>
+
+      <div class="cards-grid">
+
+        <!-- Card 1: eSIM Setup -->
+        <div class="survival-card">
+          <div class="survival-header">
+            <span class="survival-icon">📶</span>
+            <h3 class="survival-title">eSIM（Airalo / Ubigi 等）設定 ＆ トラブルシューティング</h3>
+            <span class="survival-badge green">日本出国前準備</span>
+          </div>
+          <div class="survival-steps">
+            <div class="survival-step-item">
+              <span class="step-number">1</span>
+              <div><strong>日本国内で事前設定：</strong> eSIMプロファイルをインストール（QRコードスキャン）。「イタリア用eSIM」と名前をつけておく。</div>
+            </div>
+            <div class="survival-step-item">
+              <span class="step-number">2</span>
+              <div><strong>マルペンサ空港到着時：</strong> 日本の主回線の「データローミング」をOFFにし、eSIM回線の「データローミング」をONにしてモバイルデータ通信をeSIMに切り替える。</div>
+            </div>
+            <div class="survival-step-item">
+              <span class="step-number">3</span>
+              <div><strong>繋がらない時の復活手順：</strong> 機内モードをON➔10秒後OFF、またはスマホ本体を再起動すると現地の提携電波（TIM / Vodafone / WINDTRE）を自動キャッチします。</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: Credit Card DCC Trap -->
+        <div class="survival-card">
+          <div class="survival-header">
+            <span class="survival-icon">🏧</span>
+            <h3 class="survival-title">【超重要】ATM両替・決済のDCC手数料トラップ回避法</h3>
+            <span class="survival-badge red">損金10%回避</span>
+          </div>
+          <div class="customs-warning-box" style="margin-bottom:6px;">
+            <strong>⚠️ DCC（Dynamic Currency Conversion）トラップとは？</strong><br>
+            ATMやカード決済端末で「日本円（JPY）で支払いますか？」と親切そうに聞かれますが、これを選ぶとお店・ATM側の超不利な独自レート（約8〜12%上乗せ）が適用されて大損します！
+          </div>
+          <div class="survival-steps">
+            <div class="survival-step-item">
+              <span class="step-number">✅</span>
+              <div><strong>鉄則：</strong> 画面に選択肢が出たら、必ず <b>「Without Conversion」</b> または <b>「Debit in EUR（ユーロ建て）」</b> を選択してください！日本のカード会社の公正な為替レートで引き落とされます。</div>
+            </div>
+            <div class="survival-step-item">
+              <span class="step-number">⚠️</span>
+              <div>街中の黄色い「Euronet」ATMは高額手数料がかかるため避け、大手銀行（Intesa Sanpaolo, UniCredit, BNP Paribas等）の店舗併設ATMを利用しましょう。</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: Contactless Payment & PIN -->
+        <div class="survival-card">
+          <div class="survival-header">
+            <span class="survival-icon">📱</span>
+            <h3 class="survival-title">イタリアのキャッシュレス ＆ クレジットカード事情</h3>
+            <span class="survival-badge green">99%タッチ決済OK</span>
+          </div>
+          <div class="survival-steps">
+            <div class="survival-step-item">
+              <span class="step-number">1</span>
+              <div>イタリアは屋台やバールでもタッチ決済（Apple Pay / Google Pay / コンタクトレスカード）が100%普及しています。</div>
+            </div>
+            <div class="survival-step-item">
+              <span class="step-number">2</span>
+              <div><strong>4桁暗証番号（PIN）：</strong> €50以上の買い物やICチップ差し込み時に暗証番号が必要になります。出発前に必ず確認しておきましょう。</div>
+            </div>
+            <div class="survival-step-item">
+              <span class="step-number">3</span>
+              <div><strong>ブランド：</strong> VisaとMastercardが最強。JCBやAmerican Expressは一部の個人店で使えないことがあるため、Visa/Mastercardを主軸に。</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Section 3: Hotel & Daily Life Survival -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">🏨 ホテル・水道水・滞在生活サバイバル</h2>
+        <span class="section-subtitle">アメニティ事情・硬水対策・宿泊税・暖房</span>
+      </div>
+
+      <div class="cards-grid">
+
+        <div class="survival-card">
+          <div class="survival-header">
+            <span class="survival-icon">🪥</span>
+            <h3 class="survival-title">イタリアホテルのアメニティ事情と持参物</h3>
+            <span class="survival-badge amber">持参必須</span>
+          </div>
+          <p style="font-size:0.72rem; color:var(--text-muted);">イタリアの環境保護基準とホテル文化により、使い捨てアメニティは用意されていません。</p>
+          <div style="font-size:0.72rem; line-height:1.45;">
+            ❌ <strong>ホテルにないもの:</strong> 歯ブラシ・歯磨き粉、室内スリッパ、パジャマ（ナイトウェア）、湯沸かしポット、ヘアブラシ、カミソリ、リンス/コンディショナー（シャンプー兼ボディソープのみが多い）。<br>
+            ⭕ <strong>日本から持参するもの:</strong> 使い捨てスリッパ（機内＆室内用）、使い慣れた歯ブラシ、高保湿トリートメント、折りたたみ湯沸かしケトル、Cタイプ変換プラグ（2〜3個）。
+          </div>
+        </div>
+
+        <div class="survival-card">
+          <div class="survival-header">
+            <span class="survival-icon">💧</span>
+            <h3 class="survival-title">水道水・ミネラルウォーター ＆ 硬水対策</h3>
+            <span class="survival-badge blue">硬水に注意</span>
+          </div>
+          <div style="font-size:0.72rem; line-height:1.45;">
+            🚰 <strong>水道水:</strong> 飲用可能ですが石灰分の多い硬水です。お腹がデリケートな方はスーパーでミネラルウォーター購入を推奨。<br>
+            🧴 <strong>水の種類:</strong><br>
+            - <b>Acqua Naturale（青/白キャップ）:</b> ガスなし普通の水<br>
+            - <b>Acqua Frizzante / Gassata（赤/緑キャップ）:</b> 炭酸ガス入り<br>
+            🧖 <strong>肌と髪のケア:</strong> 硬水で洗髪すると髪がギシギシし、肌が乾燥しやすいです。高保湿ハンドクリームとヘアオイルを毎晩たっぷり塗布！
+          </div>
+        </div>
+
+        <div class="survival-card">
+          <div class="survival-header">
+            <span class="survival-icon">💶</span>
+            <h3 class="survival-title">宿泊税（Tassa di Soggiorno / City Tax）</h3>
+            <span class="survival-badge green">チェックアウト時</span>
+          </div>
+          <div style="font-size:0.72rem; line-height:1.45;">
+            イタリア各都市の条例に基づき、宿泊客が市に直接納める地方税です（ツアー代金には含まれず現地払い）。<br>
+            - <b>相場:</b> 4つ星ホテルで1人1泊あたり約 €4〜7.50（ミラノ、ベネチア、フィレンツェ、ローマ）。<br>
+            - <b>支払方法:</b> チェックアウト時にフロントでクレジットカードまたは現金で支払います。
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Section 4: Health, Pharmacy & Emergency SOS -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">🚨 薬局・緊急SOS・大使館連絡先</h2>
+        <span class="section-subtitle">万が一のトラブル時もワンタップで安心発信</span>
+      </div>
+
+      <!-- Emergency Quick Call Buttons -->
+      <div class="calc-card" style="border-left:4px solid #dc2626; margin-bottom:10px;">
+        <h3 style="color:#b91c1c; font-size:0.85rem; margin-bottom:6px;">📞 緊急連絡先ワンタップ発信</h3>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:6px;">
+          <a href="tel:112" class="btn btn-primary" style="background:#dc2626; border-color:#dc2626; text-align:center; padding:6px 8px; font-size:0.72rem;">
+            🚨 112 (欧州総合緊急)
+          </a>
+          <a href="tel:+3906487991" class="btn btn-primary" style="background:#1e40af; border-color:#1e40af; text-align:center; padding:6px 8px; font-size:0.72rem;">
+            🏛️ 在伊日本国大使館(ローマ)
+          </a>
+          <a href="tel:+39026241141" class="btn btn-secondary" style="text-align:center; padding:6px 8px; font-size:0.72rem;">
+            🏛️ 在ミラノ総領事館
+          </a>
+          <button type="button" class="btn btn-secondary" id="btn-card-sos" style="text-align:center; padding:6px 8px; font-size:0.72rem;">
+            💳 クレカ紛失デスク一覧
+          </button>
+        </div>
+      </div>
+
+      <!-- Pharmacy Guide & Phrases -->
+      <div class="survival-card">
+        <div class="survival-header">
+          <span class="survival-icon">💊</span>
+          <h3 class="survival-title">街の薬局（Farmacia / 緑の十字マーク）活用法</h3>
+          <span class="survival-badge green">処方箋なしで購入可能</span>
+        </div>
+        <p style="font-size:0.72rem; color:var(--text-muted);">イタリアの薬局は緑色の点滅十字看板が目印。薬剤師に症状を伝えれば適切な市販薬を出してくれます。</p>
+        
+        <div class="table-responsive" style="margin-top:6px;">
+          <table class="compare-table">
+            <thead>
+              <tr>
+                <th>症状・用途</th>
+                <th>イタリアの代表的薬品名</th>
+                <th>伝えるイタリア語フレーズ</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>頭痛・発熱・生理痛</strong></td>
+                <td>Tachipirina (タキピリーナ / パラセタモール)</td>
+                <td>Ho mal di testa. (オ・マル・ディ・テスタ)</td>
+              </tr>
+              <tr>
+                <td><strong>胃痛・消化不良</strong></td>
+                <td>Maalox (マーロックス) / Biochetasi</td>
+                <td>Ho mal di stomaco. (オ・マル・ディ・ストーマコ)</td>
+              </tr>
+              <tr>
+                <td><strong>下痢・水あたり</strong></td>
+                <td>Enterogermina (エンテロジェルミナ) / Imodium</td>
+                <td>Ho la diarrea. (オ・ラ・ディアルレア)</td>
+              </tr>
+              <tr>
+                <td><strong>のどの痛み・咳</strong></td>
+                <td>Benagol (ベナゴール / トローチ)</td>
+                <td>Ho mal di gola. (オ・マル・ディ・ゴーラ)</td>
+              </tr>
+              <tr>
+                <td><strong>靴擦れ・絆創膏</strong></td>
+                <td>Cerotti per vesciche (Compeed靴擦れ用)</td>
+                <td>Ho una vescica al piede. (オ・ウナ・ヴェシーカ)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Passport Loss Guide -->
+      <div class="survival-card">
+        <div class="survival-header">
+          <span class="survival-icon">🛂</span>
+          <h3 class="survival-title">パスポート紛失・盗難時の緊急手続きフロー</h3>
+          <span class="survival-badge red">緊急対応手順</span>
+        </div>
+        <div class="survival-steps">
+          <div class="survival-step-item">
+            <span class="step-number">1</span>
+            <div><strong>添乗員に即報告：</strong> ツアー添乗員に状況を伝え、警察署（Questura / Carabinieri）で盗難届・紛失届（Denuncia di furto/smarrimento）を作成し、ポリスレポートを受領。</div>
+          </div>
+          <div class="survival-step-item">
+            <span class="step-number">2</span>
+            <div><strong>大使館・総領事館へ連絡：</strong> 「帰国のための渡航書」または緊急パスポートの発給申請を行います。</div>
+          </div>
+          <div class="survival-step-item">
+            <span class="step-number">3</span>
+            <div><strong>必要書類：</strong> ポリスレポート、パスポート用写真2枚（3.5×4.5cm）、戸籍謄本またはパスポートコピー、航空券控え。※日本からパスポートコピーと予備証明写真を持参していると手続きが劇的に早くなります！</div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Section 5: Honeymoon Photography & Romantic Tips -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">📸 ハネムーン写真撮影 ＆ ロマンチックTips</h2>
+        <span class="section-subtitle">スリに遭わずに素敵なツーショットを残す極意</span>
+      </div>
+
+      <div class="cards-grid">
+        <div class="survival-card">
+          <div class="survival-header">
+            <span class="survival-icon">📷</span>
+            <h3 class="survival-title">ツーショット撮影を誰に頼むべきか？</h3>
+            <span class="survival-badge green">安全第一</span>
+          </div>
+          <div style="font-size:0.72rem; line-height:1.45;">
+            ⭕ <strong>頼んで安全な人:</strong><br>
+            1. ツアー同行の仲間・HIS添乗員（一番確実＆安心！）<br>
+            2. 一眼レフカメラを持った観光客カップル（お互いに撮り合いっこ）<br>
+            3. 小さな子ども連れのファミリー観光客<br>
+            ❌ <strong>絶対に頼んではいけない人:</strong> 広場で親切そうに近づいてきて「写真撮ってあげようか？」と声をかけてくる人物（カメラ・スマホを持って走り去る持ち逃げスリの典型手口！）。
+          </div>
+          <div class="spot-mime-tip" style="margin-top:6px;">
+            <strong>🗣️ 頼むときのイタリア語:</strong> 「Ci può fare una foto, per favore? (チ・プオ・ファーレ・ウナ・フォト・ペル・ファヴォーレ？)」
+          </div>
+        </div>
+
+        <div class="survival-card">
+          <div class="survival-header">
+            <span class="survival-icon">🌅</span>
+            <h3 class="survival-title">7都市のベストフォトスポット ＆ 時間帯</h3>
+            <span class="survival-badge amber">絶景タイム</span>
+          </div>
+          <div style="font-size:0.72rem; line-height:1.45;">
+            ⚜️ <b>フィレンツェ:</b> ミケランジェロ広場（夕暮れ〜日没直後のブルーアワー）<br>
+            🎭 <b>ベネチア:</b> サン・マルコ広場＆ゴンドラ上（午前中の柔らかな光）<br>
+            🏛️ <b>ローマ:</b> トレビの泉（ライトアップ夜景または朝8時前の貸切時間帯）<br>
+            🗼 <b>ピサ:</b> 奇跡の広場（斜塔を2人で支える定番トリック写真！）<br>
+            🌹 <b>ベローナ:</b> ジュリエットの家の中庭（ジュリエット像右胸タッチ）
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Credit Card SOS Modal -->
+  <dialog id="card-sos-modal" style="border:none; border-radius:10px; padding:12px; max-width:90%; box-shadow:0 10px 25px rgba(0,0,0,0.3); margin:auto;">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px; border-bottom:1px solid #e2e8f0; padding-bottom:4px;">
+      <strong style="color:#b91c1c; font-size:0.85rem;">💳 主要クレジットカード緊急紛失デスク</strong>
+      <button type="button" onclick="document.getElementById('card-sos-modal').close()" style="background:none; border:none; font-size:1.1rem; cursor:pointer;">✕</button>
+    </div>
+    <div style="font-size:0.72rem; line-height:1.5;">
+      <p>万一カードを紛失・盗難された場合は直ちに利用停止連絡を行ってください。</p>
+      <ul style="padding-left:16px; margin:4px 0;">
+        <li><b>Visa Global Emergency:</b> +1-303-967-1090 (コレクトコール)</li>
+        <li><b>Mastercard Global:</b> +1-636-722-7111 (コレクトコール)</li>
+        <li><b>JCB 海外紛失受付:</b> +81-422-76-2114 (24時間日本語)</li>
+        <li><b>三井住友カード:</b> +81-3-6627-4137</li>
+        <li><b>楽天カード:</b> +81-92-474-9256</li>
+        <li><b>エポスカード:</b> +81-3-3383-0101</li>
+      </ul>
+      <p style="color:#64748b; font-size:0.65rem; margin-top:6px;">※国際電話のかけ方: 日本へかける場合は「+81」の後に市外局番の頭の「0」を取ってダイヤル。</p>
+    </div>
+  </dialog>
+
+  <!-- Bottom Tab Bar -->
+  <nav class="bottom-tab-bar">
+    <a href="index.html" class="tab-item">
+      <span class="tab-icon">🏠</span>
+      <span class="tab-label">ホーム</span>
+    </a>
+
+    <!-- Day Selection Drawer -->
+    <details class="day-popover-details" id="day-popover-details">
+      <summary class="tab-item">
+        <span class="tab-icon">📅</span>
+        <span class="tab-label">日程</span>
+      </summary>
+      <div class="day-popover-backdrop"></div>
+      <div class="day-popover-dropdown">
+        <div class="day-popover-header">
+          <span class="day-popover-title">📅 全8日間 日程詳細を選択</span>
+          <button type="button" class="day-popover-close" aria-label="閉じる">✕</button>
+        </div>
+        <div class="day-popover-grid">
+          <a href="day1.html" class="day-popover-item"><span class="dp-badge">Day 1</span> 11/15(日) 関空➔ミラノ</a>
+          <a href="day2.html" class="day-popover-item"><span class="dp-badge">Day 2</span> 11/16(月) ミラノ➔ベネチア</a>
+          <a href="day3.html" class="day-popover-item"><span class="dp-badge">Day 3</span> 11/17(火) ベネチア➔フィレンツェ</a>
+          <a href="day4.html" class="day-popover-item"><span class="dp-badge">Day 4</span> 11/18(水) フィレンツェ＆ピサ</a>
+          <a href="day5.html" class="day-popover-item"><span class="dp-badge">Day 5</span> 11/19(木) サンジミニャーノ➔ローマ</a>
+          <a href="day6.html" class="day-popover-item"><span class="dp-badge">Day 6</span> 11/20(金) ローマ＆バチカン自由</a>
+          <a href="day7.html" class="day-popover-item"><span class="dp-badge">Day 7</span> 11/21(土) ローマ➔FCO空港発</a>
+          <a href="day8.html" class="day-popover-item"><span class="dp-badge">Day 8</span> 11/22(日) 関空帰着・解散</a>
+        </div>
+      </div>
+    </details>
+
+    <a href="beginner-guide.html" class="tab-item">
+      <span class="tab-icon">🔰</span>
+      <span class="tab-label">初心者</span>
+    </a>
+    <a href="culture-trends.html" class="tab-item">
+      <span class="tab-icon">💡</span>
+      <span class="tab-label">あるある</span>
+    </a>
+    <a href="tips-survival.html" class="tab-item active">
+      <span class="tab-icon">🚆</span>
+      <span class="tab-label">サバイバル</span>
+    </a>
+    <a href="tour-map.html" class="tab-item">
+      <span class="tab-icon">🗺️</span>
+      <span class="tab-label">MAP</span>
+    </a>
+    <a href="phrasebook.html" class="tab-item">
+      <span class="tab-icon">🗣️</span>
+      <span class="tab-label">会話</span>
+    </a>
+    <a href="free-meal-guide.html" class="tab-item">
+      <span class="tab-icon">🍽️</span>
+      <span class="tab-label">グルメ</span>
+    </a>
+    <a href="souvenir-guide.html" class="tab-item">
+      <span class="tab-icon">🎁</span>
+      <span class="tab-label">お土産</span>
+    </a>
+  </nav>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <strong>🇮🇹 Kenta &amp; Megumi's Italian Honeymoon Portal</strong><br>
+        <span style="color:#64748b;">HIS Tour OI-KMI2811 (2026/11/15 - 11/22) | 監修: YouTube「イタリアガイドみめ (@mimeitalygaido)」</span>
+      </div>
+      <div style="display:flex; gap:6px; flex-wrap:wrap; margin-top:4px;">
+        <a href="index.html">ホーム</a>
+        <a href="beginner-guide.html">初心者安心</a>
+        <a href="culture-trends.html">あるある・トレンド</a>
+        <a href="tips-survival.html">交通サバイバル</a>
+        <a href="tour-map.html">MAP</a>
+        <a href="sightseeing-guide.html">観光</a>
+        <a href="phrasebook.html">会話</a>
+        <a href="free-meal-guide.html">グルメ</a>
+        <a href="souvenir-guide.html">お土産</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+  <script>
+    const cardSosBtn = document.getElementById('btn-card-sos');
+    const cardSosModal = document.getElementById('card-sos-modal');
+    if (cardSosBtn && cardSosModal) {
+      cardSosBtn.addEventListener('click', () => {
+        cardSosModal.showModal();
+      });
+    }
+
+    document.addEventListener('click', function(e) {
+      document.querySelectorAll('details.day-popover-details, details.day-nav-details').forEach(function(d) {
+        if (!d.contains(e.target) && d.hasAttribute('open')) {
+          d.removeAttribute('open');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
