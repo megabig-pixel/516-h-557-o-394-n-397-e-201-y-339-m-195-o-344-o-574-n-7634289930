@@ -1413,7 +1413,7 @@ a:hover {
   line-height: 1.55;
 }
 
-/* Full 9-Item Bottom Navigation Bar (High-Density Mobile-First) */
+/* Streamlined 5-Item Bottom Navigation Bar */
 .bottom-tab-bar {
   position: fixed;
   bottom: 0;
@@ -1424,12 +1424,12 @@ a:hover {
   -webkit-backdrop-filter: blur(16px);
   border-top: 1px solid rgba(0, 0, 0, 0.08);
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
-  padding: 2px 2px calc(2px + env(safe-area-inset-bottom));
+  padding: 4px 0 calc(2px + env(safe-area-inset-bottom));
   z-index: 10000;
   box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.05);
-  height: 50px;
+  height: 52px;
 }
 
 .tab-item {
@@ -1439,35 +1439,14 @@ a:hover {
   justify-content: center;
   color: var(--text-muted);
   text-decoration: none !important;
-  font-size: 0.62rem;
+  font-size: 0.72rem;
   font-weight: 700;
-  padding: 2px 1px;
+  padding: 2px 8px;
   flex: 1;
-  min-width: 0;
   cursor: pointer;
   background: none;
   border: none;
-  transition: all 0.12s ease;
-}
-
-.tab-item:hover, .tab-item.active {
-  color: var(--primary-color);
-}
-
-.tab-item.active .tab-icon {
-  transform: scale(1.12);
-}
-
-.tab-icon {
-  font-size: 1.1rem;
-  line-height: 1;
-  margin-bottom: 2px;
-}
-
-.tab-label {
-  white-space: nowrap;
-  letter-spacing: -0.02em;
-  line-height: 1;
+  transition: all 0.15s ease;
 }
 
 .tab-item:hover, .tab-item.active {
