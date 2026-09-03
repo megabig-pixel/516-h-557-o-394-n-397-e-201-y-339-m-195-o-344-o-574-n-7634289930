@@ -1,5 +1,5 @@
 /* ==========================================================================
-   イタリア新婚旅行ガイドポータル 統合スタイルシート (iOS / iPhone 超高密度・高視認性 v10)
+   イタリア新婚旅行ガイドポータル 統合スタイルシート (iOS / iPhone 超高密度 v9)
    鈴木 健太・めぐみ 様 (HIS Tour OI-KMI2811: 2026年11月15日〜22日)
    ========================================================================== */
 
@@ -43,13 +43,13 @@
 }
 
 html {
-  font-size: 15px; /* 13pxから15pxに拡大し、iPhoneでの可読性を劇的に改善 */
+  font-size: 13px; /* Scaled down for high-density mobile layout */
   scroll-behavior: smooth;
 }
 
 @media (max-width: 380px) {
   html {
-    font-size: 14px; /* 極小画面でも12.5pxから14pxへ拡大 */
+    font-size: 12.5px;
   }
 }
 
@@ -57,8 +57,8 @@ body {
   font-family: var(--font-base);
   background-color: var(--bg-main);
   color: var(--text-main);
-  line-height: 1.55; /* 行間を広げて読みやすさを向上 */
-  padding-bottom: 60px; /* Space for bottom tab bar */
+  line-height: 1.45;
+  padding-bottom: 56px; /* Space for bottom tab bar */
   -webkit-font-smoothing: antialiased;
 }
 
@@ -75,74 +75,9 @@ a:hover {
 /* Container */
 .container {
   width: 100%;
-  max-width: 920px;
+  max-width: 900px;
   margin: 0 auto;
-  padding: 0 10px;
-}
-
-/* Purpose-based Navigation Hub (どこに何があるか一目でわかるUI) */
-.purpose-nav-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 8px;
-  margin-bottom: 12px;
-}
-
-.purpose-nav-card {
-  background: #ffffff;
-  border: 1.5px solid var(--border-color);
-  border-radius: var(--radius-md);
-  padding: 10px 12px;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  text-decoration: none !important;
-  transition: all 0.15s ease;
-  box-shadow: var(--shadow-sm);
-  position: relative;
-}
-
-.purpose-nav-card:active, .purpose-nav-card:hover {
-  border-color: var(--primary-color);
-  background: #f8fafc;
-  transform: translateY(-1px);
-}
-
-.purpose-nav-header {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.purpose-nav-icon {
-  font-size: 1.4rem;
-  line-height: 1;
-}
-
-.purpose-nav-title {
-  font-size: 0.92rem;
-  font-weight: 800;
-  color: var(--primary-color);
-  margin: 0;
-}
-
-.purpose-nav-desc {
-  font-size: 0.76rem;
-  color: var(--text-muted);
-  line-height: 1.4;
-}
-
-.category-group-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 6px;
-  font-size: 0.96rem;
-  font-weight: 800;
-  color: var(--primary-color);
-  margin: 16px 0 8px;
-  padding-bottom: 4px;
-  border-bottom: 2px solid var(--border-color);
+  padding: 0 8px;
 }
 
 /* Top Horizontal Quick Day Pills */
@@ -151,7 +86,7 @@ a:hover {
   gap: 5px;
   overflow-x: auto;
   padding: 4px 0 6px;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
   scrollbar-width: none;
   -webkit-overflow-scrolling: touch;
 }
@@ -168,19 +103,19 @@ a:hover {
   background: #ffffff;
   border: 1px solid var(--border-color);
   border-radius: var(--radius-sm);
-  padding: 5px 9px;
-  min-width: 62px;
+  padding: 4px 8px;
+  min-width: 60px;
   flex-shrink: 0;
   color: var(--text-muted);
   text-decoration: none !important;
-  font-size: 0.78rem;
+  font-size: 0.72rem;
   font-weight: 800;
   line-height: 1.2;
   transition: all 0.15s ease;
 }
 
 .day-pill small {
-  font-size: 0.68rem;
+  font-size: 0.62rem;
   font-weight: 600;
   opacity: 0.85;
 }
@@ -240,14 +175,14 @@ a:hover {
   display: flex;
   flex-direction: column;
   gap: 4px;
-  max-height: 300px;
+  max-height: 280px;
   overflow-y: auto;
 }
 
 .dp-nav-link {
-  padding: 6px 9px;
+  padding: 5px 8px;
   border-radius: var(--radius-sm);
-  font-size: 0.8rem;
+  font-size: 0.72rem;
   font-weight: 700;
   color: var(--text-main);
   text-decoration: none !important;
@@ -272,10 +207,10 @@ a:hover {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding: 3px 0 calc(2px + env(safe-area-inset-bottom));
+  padding: 2px 0 calc(1px + env(safe-area-inset-bottom));
   z-index: 10000;
   box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.04);
-  height: 48px;
+  height: 46px;
 }
 
 .tab-item {
@@ -285,7 +220,7 @@ a:hover {
   justify-content: center;
   color: var(--text-muted);
   text-decoration: none !important;
-  font-size: 0.68rem;
+  font-size: 0.62rem;
   font-weight: 700;
   padding: 2px 4px;
   flex: 1;
@@ -301,7 +236,7 @@ a:hover {
 }
 
 .tab-icon {
-  font-size: 1.15rem;
+  font-size: 1.05rem;
   line-height: 1.1;
   margin-bottom: 1px;
 }
@@ -311,7 +246,7 @@ a:hover {
   letter-spacing: -0.02em;
 }
 
-/* Native Bottom Sheet Drawer for Day Selection */
+/* Native Bottom Sheet Drawer for Day Selection (Expands UPWARD from Footer) */
 .day-popover-details {
   position: static;
   flex: 1;
@@ -352,7 +287,7 @@ a:hover {
 
 .day-popover-dropdown {
   position: fixed;
-  bottom: 48px; /* Directly above bottom tab bar */
+  bottom: 46px; /* Directly above bottom tab bar */
   left: 8px;
   right: 8px;
   max-width: 500px;
@@ -361,7 +296,7 @@ a:hover {
   border: 1px solid var(--border-color);
   border-radius: var(--radius-lg) var(--radius-lg) 0 0;
   box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.15);
-  padding: 12px;
+  padding: 10px;
   z-index: 10001;
   display: flex;
   flex-direction: column;
@@ -379,11 +314,11 @@ a:hover {
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid #f1f5f9;
-  padding-bottom: 8px;
+  padding-bottom: 6px;
 }
 
 .day-popover-title {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   font-weight: 800;
   color: var(--primary-color);
 }
@@ -391,7 +326,7 @@ a:hover {
 .day-popover-close {
   background: none;
   border: none;
-  font-size: 1.1rem;
+  font-size: 1rem;
   cursor: pointer;
   color: var(--text-muted);
   padding: 0 4px;
@@ -400,18 +335,18 @@ a:hover {
 .day-popover-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 6px;
+  gap: 5px;
 }
 
 .day-popover-item {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 5px;
   background: #f8fafc;
   border: 1px solid var(--border-color);
   border-radius: var(--radius-sm);
-  padding: 8px 10px;
-  font-size: 0.8rem;
+  padding: 6px 8px;
+  font-size: 0.72rem;
   font-weight: 700;
   color: var(--text-main);
   text-decoration: none !important;
@@ -427,9 +362,9 @@ a:hover {
 .dp-badge {
   background: var(--primary-color);
   color: #ffffff;
-  font-size: 0.68rem;
+  font-size: 0.6rem;
   font-weight: 800;
-  padding: 2px 5px;
+  padding: 1px 4px;
   border-radius: var(--radius-sm);
   flex-shrink: 0;
 }
@@ -438,9 +373,9 @@ a:hover {
 .hero-card {
   background: linear-gradient(135deg, #1a365d 0%, #2b6cb0 100%);
   color: #ffffff;
-  padding: 12px 14px;
+  padding: 10px 10px;
   border-radius: var(--radius-lg);
-  margin: 4px 0 10px;
+  margin: 4px 0 8px;
   box-shadow: var(--shadow-sm);
 }
 
@@ -452,37 +387,37 @@ a:hover {
   display: inline-block;
   background: var(--accent-gold);
   color: #744210;
-  font-size: 0.74rem;
+  font-size: 0.65rem;
   font-weight: 800;
-  padding: 2px 8px;
+  padding: 1px 6px;
   border-radius: var(--radius-full);
   margin-bottom: 4px;
 }
 
 .hero-title {
-  font-size: 1.15rem;
+  font-size: 1.05rem;
   font-weight: 800;
-  line-height: 1.3;
-  margin-bottom: 4px;
+  line-height: 1.25;
+  margin-bottom: 2px;
 }
 
 .hero-subtitle {
-  font-size: 0.82rem;
-  opacity: 0.95;
-  line-height: 1.45;
+  font-size: 0.72rem;
+  opacity: 0.92;
+  line-height: 1.35;
 }
 
 .hero-meta-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 6px;
-  margin-top: 8px;
-  padding-top: 8px;
+  gap: 4px;
+  margin-top: 6px;
+  padding-top: 6px;
   border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .hero-meta-item {
-  font-size: 0.74rem;
+  font-size: 0.66rem;
   font-weight: 600;
 }
 
@@ -491,8 +426,8 @@ a:hover {
   background: #ffffff;
   border: 1px solid var(--border-color);
   border-radius: var(--radius-md);
-  padding: 8px 12px;
-  margin-bottom: 10px;
+  padding: 6px 10px;
+  margin-bottom: 8px;
   box-shadow: var(--shadow-sm);
 }
 
@@ -500,11 +435,11 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 6px;
+  margin-bottom: 4px;
 }
 
 .meal-status-header h3 {
-  font-size: 0.86rem;
+  font-size: 0.76rem;
   font-weight: 800;
   color: var(--primary-color);
   margin: 0;
@@ -519,12 +454,12 @@ a:hover {
 .meal-col {
   background: #f8fafc;
   border-radius: var(--radius-sm);
-  padding: 6px 8px;
+  padding: 4px 6px;
   text-align: center;
 }
 
 .meal-col-title {
-  font-size: 0.72rem;
+  font-size: 0.65rem;
   font-weight: 700;
   color: var(--text-muted);
   margin-bottom: 2px;
@@ -532,9 +467,9 @@ a:hover {
 
 .meal-badge {
   display: inline-block;
-  font-size: 0.74rem;
+  font-size: 0.65rem;
   font-weight: 800;
-  padding: 2px 6px;
+  padding: 1px 4px;
   border-radius: var(--radius-sm);
 }
 
@@ -554,8 +489,8 @@ a:hover {
   border: 1px solid #fdba74;
   border-left: 4px solid #ea580c;
   border-radius: var(--radius-md);
-  padding: 10px 12px;
-  margin-bottom: 12px;
+  padding: 8px 10px;
+  margin-bottom: 10px;
   box-shadow: var(--shadow-sm);
 }
 
@@ -563,17 +498,17 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 .mime-title {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
 }
 
 .mime-title h3 {
-  font-size: 0.94rem;
+  font-size: 0.84rem;
   font-weight: 800;
   color: #9a3412;
 }
@@ -581,66 +516,66 @@ a:hover {
 .mime-badge {
   background: #ea580c;
   color: #ffffff;
-  font-size: 0.72rem;
+  font-size: 0.62rem;
   font-weight: 800;
-  padding: 2px 7px;
+  padding: 2px 6px;
   border-radius: var(--radius-full);
 }
 
 .mime-tips-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 8px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 6px;
 }
 
 .mime-tip-card {
   background: #ffffff;
   border: 1px solid #fed7aa;
   border-radius: var(--radius-sm);
-  padding: 8px 10px;
+  padding: 6px 8px;
 }
 
 .mime-tip-card h4 {
-  font-size: 0.85rem;
+  font-size: 0.75rem;
   font-weight: 800;
   color: #c2410c;
-  margin-bottom: 4px;
+  margin-bottom: 2px;
 }
 
 .mime-tip-card p {
-  font-size: 0.82rem;
+  font-size: 0.7rem;
   color: var(--text-main);
-  line-height: 1.5;
+  line-height: 1.35;
 }
 
 /* Sections & Headers */
 .section {
-  margin-bottom: 16px;
+  margin-bottom: 12px;
 }
 
 .section-header {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 .section-title {
-  font-size: 1.05rem;
+  font-size: 0.9rem;
   font-weight: 800;
   color: var(--primary-color);
 }
 
 .section-subtitle {
-  font-size: 0.76rem;
+  font-size: 0.65rem;
   color: var(--text-muted);
 }
 
 /* Card Grids */
 .cards-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 8px;
 }
 
 @media (max-width: 540px) {
@@ -662,46 +597,37 @@ a:hover {
 }
 
 .spot-body {
-  padding: 10px 12px;
+  padding: 8px 10px;
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 4px;
   height: 100%;
 }
 
 .card-thumb-wrap {
   position: relative;
   width: 100%;
-  height: 165px; /* 写真の高さを拡大し見ごたえを強化 */
+  height: 115px;
   background: #e2e8f0;
   overflow: hidden;
-}
-
-.card-thumb-wrap.large-photo {
-  height: 200px; /* 観光地用の大型写真エリア */
 }
 
 .card-thumb-wrap img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.25s ease;
-}
-
-.spot-card:hover .card-thumb-wrap img {
-  transform: scale(1.03);
 }
 
 .card-thumb-badge {
   position: absolute;
-  top: 8px;
-  right: 8px;
-  background: rgba(0,0,0,0.72);
+  top: 6px;
+  right: 6px;
+  background: rgba(0,0,0,0.7);
   backdrop-filter: blur(4px);
   color: #ffffff;
-  font-size: 0.72rem;
+  font-size: 0.62rem;
   font-weight: 700;
-  padding: 2px 7px;
+  padding: 1px 6px;
   border-radius: var(--radius-sm);
 }
 
@@ -713,32 +639,32 @@ a:hover {
 }
 
 .spot-name-ja {
-  font-size: 0.98rem; /* タイトルサイズ拡大 */
+  font-size: 0.86rem;
   font-weight: 800;
   color: var(--primary-color);
   margin: 0;
 }
 
 .spot-name-it {
-  font-size: 0.78rem;
+  font-size: 0.7rem;
   font-weight: 700;
   color: var(--secondary-color);
 }
 
 .spot-desc {
-  font-size: 0.88rem; /* 0.72remから大幅に拡大し、読みにくさを解消 */
+  font-size: 0.72rem;
   color: var(--text-main);
-  line-height: 1.55;
+  line-height: 1.38;
 }
 
 .spot-mime-tip {
   background: #fffaf0;
   border: 1px solid #fed7aa;
   border-radius: var(--radius-sm);
-  padding: 7px 9px;
-  font-size: 0.84rem; /* 拡大 */
+  padding: 5px 7px;
+  font-size: 0.68rem;
   color: #9a3412;
-  line-height: 1.5;
+  line-height: 1.35;
   margin-top: 4px;
 }
 
@@ -746,7 +672,7 @@ a:hover {
 .schedule-container {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
 }
 
 .schedule-card {
@@ -760,61 +686,61 @@ a:hover {
 }
 
 .schedule-time-col {
-  width: 52px;
+  width: 44px;
   background: #f1f5f9;
   border-right: 1px solid var(--border-color);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  padding-top: 10px;
+  padding-top: 8px;
   flex-shrink: 0;
 }
 
 .schedule-time-badge {
-  font-size: 0.82rem;
+  font-size: 0.72rem;
   font-weight: 800;
   color: var(--primary-color);
 }
 
 .schedule-card .card-thumb-wrap {
-  width: 90px;
+  width: 75px;
   height: auto;
-  min-height: 90px;
+  min-height: 75px;
   flex-shrink: 0;
 }
 
 .schedule-content-col {
-  padding: 8px 10px;
+  padding: 6px 8px;
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 2px;
   justify-content: center;
 }
 
 .schedule-transit-badge {
   align-self: flex-start;
-  font-size: 0.72rem;
+  font-size: 0.62rem;
   font-weight: 700;
   color: #0369a1;
   background: #e0f2fe;
-  padding: 2px 6px;
+  padding: 1px 5px;
   border-radius: var(--radius-sm);
 }
 
 .schedule-title {
-  font-size: 0.92rem;
+  font-size: 0.8rem;
   font-weight: 800;
   color: var(--primary-color);
   margin: 0;
-  line-height: 1.35;
+  line-height: 1.25;
 }
 
 .schedule-desc {
-  font-size: 0.84rem;
+  font-size: 0.68rem;
   color: var(--text-main);
-  line-height: 1.5;
+  line-height: 1.35;
 }
 
 /* Buttons */
@@ -822,10 +748,10 @@ a:hover {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 5px;
-  font-size: 0.84rem; /* ボタン文字拡大 */
+  gap: 4px;
+  font-size: 0.75rem;
   font-weight: 700;
-  padding: 8px 14px;
+  padding: 6px 12px;
   border-radius: var(--radius-sm);
   border: 1px solid transparent;
   cursor: pointer;
@@ -864,8 +790,8 @@ a:hover {
   background: #ffffff;
   border: 1px solid var(--border-color);
   border-radius: var(--radius-sm);
-  padding: 5px 10px;
-  font-size: 0.78rem;
+  padding: 3px 8px;
+  font-size: 0.68rem;
   font-weight: 700;
   color: var(--text-muted);
   cursor: pointer;
@@ -883,17 +809,17 @@ a:hover {
   background: #ffffff;
   border-radius: var(--radius-md);
   border: 1px solid var(--border-color);
-  padding: 12px;
-  margin-bottom: 12px;
+  padding: 10px;
+  margin-bottom: 10px;
 }
 
 .checklist-progress-bar {
   width: 100%;
-  height: 8px;
+  height: 6px;
   background: #e2e8f0;
   border-radius: var(--radius-full);
   overflow: hidden;
-  margin: 8px 0;
+  margin: 6px 0;
 }
 
 .checklist-progress-fill {
@@ -906,17 +832,17 @@ a:hover {
 .checklist-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 6px;
-  margin-top: 8px;
+  gap: 4px;
+  margin-top: 6px;
 }
 
 .check-item {
   display: flex;
   align-items: flex-start;
-  gap: 8px;
-  padding: 6px 8px;
+  gap: 6px;
+  padding: 4px 6px;
   border-radius: var(--radius-sm);
-  font-size: 0.86rem; /* 拡大 */
+  font-size: 0.72rem;
   background: #f8fafc;
 }
 
@@ -927,9 +853,9 @@ a:hover {
 }
 
 .check-item input[type="checkbox"] {
-  margin-top: 3px;
-  width: 17px;
-  height: 17px;
+  margin-top: 2px;
+  width: 15px;
+  height: 15px;
   accent-color: var(--primary-color);
   cursor: pointer;
 }
@@ -939,21 +865,21 @@ a:hover {
   background: #ffffff;
   border-radius: var(--radius-md);
   border: 1px solid var(--border-color);
-  padding: 12px;
-  margin-bottom: 12px;
+  padding: 10px;
+  margin-bottom: 10px;
 }
 
 .calc-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 8px;
-  margin-bottom: 8px;
+  gap: 6px;
+  margin-bottom: 6px;
 }
 
 .calc-input {
   width: 100%;
-  padding: 7px 10px;
-  font-size: 1rem; /* 16pxに相当し、iOSの意図しないズームインを防止 */
+  padding: 5px 8px;
+  font-size: 0.85rem;
   font-weight: 700;
   border: 1px solid var(--border-color);
   border-radius: var(--radius-sm);
@@ -964,12 +890,12 @@ a:hover {
   background: #f8fafc;
   border: 1px solid var(--border-color);
   border-radius: var(--radius-sm);
-  padding: 6px 10px;
+  padding: 4px 8px;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   justify-content: center;
-  min-height: 48px;
+  min-height: 44px;
 }
 
 /* Phrase Card & Audio */
@@ -977,11 +903,11 @@ a:hover {
   background: #ffffff;
   border: 1px solid var(--border-color);
   border-radius: var(--radius-md);
-  padding: 10px 12px;
+  padding: 8px 10px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 8px;
+  gap: 6px;
   box-shadow: var(--shadow-sm);
 }
 
@@ -990,25 +916,25 @@ a:hover {
 }
 
 .phrase-category-badge {
-  font-size: 0.72rem;
+  font-size: 0.62rem;
   font-weight: 800;
   color: var(--text-muted);
 }
 
 .phrase-ja {
-  font-size: 0.9rem;
+  font-size: 0.78rem;
   font-weight: 800;
   color: var(--primary-color);
 }
 
 .phrase-it {
-  font-size: 0.95rem;
+  font-size: 0.82rem;
   font-weight: 800;
   color: #c2410c;
 }
 
 .phrase-kana {
-  font-size: 0.78rem;
+  font-size: 0.66rem;
   color: var(--text-muted);
 }
 
@@ -1016,13 +942,13 @@ a:hover {
   background: #eff6ff;
   border: 1px solid #bfdbfe;
   border-radius: 50%;
-  width: 36px;
-  height: 36px;
+  width: 30px;
+  height: 30px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  font-size: 1.1rem;
+  font-size: 0.95rem;
   flex-shrink: 0;
   transition: transform 0.15s ease, background 0.15s ease;
 }
@@ -1036,13 +962,13 @@ a:hover {
   background: #f1f5f9;
   border: 1px solid var(--border-color);
   border-radius: 50%;
-  width: 36px;
-  height: 36px;
+  width: 30px;
+  height: 30px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  font-size: 1rem;
+  font-size: 0.88rem;
   flex-shrink: 0;
   transition: background 0.15s ease;
 }
@@ -1058,10 +984,10 @@ a:hover {
 /* City Filter Chips */
 .city-filter-chips {
   display: flex;
-  gap: 5px;
+  gap: 4px;
   overflow-x: auto;
-  padding-bottom: 8px;
-  margin-bottom: 10px;
+  padding-bottom: 6px;
+  margin-bottom: 8px;
   scrollbar-width: none;
   -webkit-overflow-scrolling: touch;
 }
@@ -1074,16 +1000,16 @@ a:hover {
   background: #ffffff;
   border: 1px solid var(--border-color);
   border-radius: var(--radius-md);
-  padding: 12px;
-  margin-bottom: 12px;
+  padding: 10px;
+  margin-bottom: 10px;
   box-shadow: var(--shadow-sm);
   overflow-x: auto;
 }
 .diagram-box h4 {
-  font-size: 0.92rem;
+  font-size: 0.82rem;
   font-weight: 800;
   color: var(--primary-color);
-  margin-bottom: 8px;
+  margin-bottom: 6px;
   display: flex;
   align-items: center;
   gap: 6px;
@@ -1098,7 +1024,74 @@ a:hover {
   display: block;
   width: 100%;
   height: auto;
-  min-width: 300px;
+  min-width: 290px;
+}
+
+/* Visual Flow Steps */
+.flow-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 6px;
+  margin: 6px 0;
+}
+.flow-step-card {
+  background: #f8fafc;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.flow-step-badge {
+  background: var(--primary-color);
+  color: #ffffff;
+  font-size: 0.6rem;
+  font-weight: 800;
+  padding: 1px 5px;
+  border-radius: var(--radius-full);
+  align-self: flex-start;
+  margin-bottom: 4px;
+}
+.flow-step-title {
+  font-size: 0.74rem;
+  font-weight: 800;
+  color: var(--text-main);
+  margin-bottom: 2px;
+}
+.flow-step-desc {
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  line-height: 1.35;
+}
+
+/* Comparison Matrix Cards */
+.compare-matrix-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 8px;
+  margin-bottom: 8px;
+}
+.compare-matrix-col {
+  background: #ffffff;
+  border: 1.5px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 8px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.compare-matrix-col.highlight {
+  border-color: #f97316;
+  background: #fffaf0;
+}
+.compare-matrix-header {
+  font-size: 0.84rem;
+  font-weight: 800;
+  color: var(--primary-color);
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 4px;
+  margin-bottom: 4px;
 }
 
 /* Aru-Aru Cards */
@@ -1107,11 +1100,11 @@ a:hover {
   border-radius: var(--radius-md);
   border: 1px solid var(--border-color);
   box-shadow: var(--shadow-sm);
-  padding: 12px;
-  margin-bottom: 10px;
+  padding: 10px;
+  margin-bottom: 8px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 6px;
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 .aru-aru-header {
@@ -1123,41 +1116,41 @@ a:hover {
 .aru-aru-num {
   background: linear-gradient(135deg, #c05621 0%, #dd6b20 100%);
   color: #ffffff;
-  font-size: 0.74rem;
+  font-size: 0.65rem;
   font-weight: 800;
-  padding: 3px 8px;
+  padding: 2px 7px;
   border-radius: var(--radius-full);
   flex-shrink: 0;
 }
 .aru-aru-level {
-  font-size: 0.78rem;
+  font-size: 0.68rem;
   font-weight: 700;
   color: #eab308;
 }
 .aru-aru-title {
-  font-size: 0.96rem; /* 拡大 */
+  font-size: 0.85rem;
   font-weight: 800;
   color: var(--primary-color);
   margin: 0;
-  line-height: 1.4;
+  line-height: 1.3;
 }
 .aru-aru-voice {
   background: #f8fafc;
   border-left: 3px solid #94a3b8;
-  padding: 8px 10px;
+  padding: 6px 8px;
   border-radius: var(--radius-sm);
-  font-size: 0.88rem; /* 0.72remから拡大 */
+  font-size: 0.72rem;
   color: #475569;
-  line-height: 1.55;
+  line-height: 1.4;
 }
 .aru-aru-solution {
   background: #f0fdf4;
   border: 1px solid #bbf7d0;
-  padding: 8px 10px;
+  padding: 6px 8px;
   border-radius: var(--radius-sm);
-  font-size: 0.88rem; /* 0.72remから拡大 */
+  font-size: 0.72rem;
   color: #166534;
-  line-height: 1.55;
+  line-height: 1.4;
 }
 
 /* Trend & Food Cards */
@@ -1167,14 +1160,14 @@ a:hover {
   border: 1px solid var(--border-color);
   box-shadow: var(--shadow-sm);
   overflow: hidden;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
   display: flex;
   flex-direction: column;
 }
 .trend-thumb-wrap {
   position: relative;
   width: 100%;
-  height: 165px;
+  height: 140px;
   overflow: hidden;
   background: #e2e8f0;
 }
@@ -1189,49 +1182,49 @@ a:hover {
   left: 8px;
   background: #dc2626;
   color: #ffffff;
-  font-size: 0.72rem;
+  font-size: 0.65rem;
   font-weight: 800;
-  padding: 3px 8px;
+  padding: 2px 7px;
   border-radius: var(--radius-full);
   box-shadow: 0 1px 3px rgba(0,0,0,0.3);
 }
 .trend-body {
-  padding: 12px;
+  padding: 10px;
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 5px;
 }
 .trend-title-ja {
-  font-size: 1rem; /* 拡大 */
+  font-size: 0.9rem;
   font-weight: 800;
   color: var(--primary-color);
   margin: 0;
 }
 .trend-title-it {
-  font-size: 0.82rem;
+  font-size: 0.72rem;
   font-weight: 700;
   color: var(--secondary-color);
 }
 .trend-analogy {
   background: #fef2f2;
   border: 1px dashed #f87171;
-  padding: 6px 10px;
+  padding: 5px 8px;
   border-radius: var(--radius-sm);
-  font-size: 0.84rem; /* 拡大 */
+  font-size: 0.72rem;
   color: #991b1b;
   font-weight: 700;
 }
 .trend-desc {
-  font-size: 0.88rem; /* 0.73remから拡大 */
+  font-size: 0.73rem;
   color: var(--text-main);
-  line-height: 1.55;
+  line-height: 1.45;
 }
 .trend-spots-box {
   background: #eff6ff;
   border: 1px solid #bfdbfe;
-  padding: 7px 10px;
+  padding: 6px 8px;
   border-radius: var(--radius-sm);
-  font-size: 0.82rem;
+  font-size: 0.7rem;
   color: #1e40af;
 }
 
@@ -1241,40 +1234,40 @@ a:hover {
   border: 1px solid var(--border-color);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-sm);
-  padding: 12px;
-  margin-bottom: 10px;
+  padding: 10px;
+  margin-bottom: 8px;
 }
 .fashion-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid #f1f5f9;
-  padding-bottom: 6px;
-  margin-bottom: 8px;
+  padding-bottom: 5px;
+  margin-bottom: 6px;
 }
 .fashion-title {
-  font-size: 0.94rem;
+  font-size: 0.85rem;
   font-weight: 800;
-  color: #831843;
+  color: #831843; /* Rose Deep */
   margin: 0;
 }
 .fashion-badge {
-  font-size: 0.72rem;
+  font-size: 0.65rem;
   font-weight: 800;
   background: #fce7f3;
   color: #9d174d;
-  padding: 2px 8px;
+  padding: 2px 7px;
   border-radius: var(--radius-full);
 }
 .fashion-rule-box {
   background: #fdf2f8;
   border-left: 3px solid #f472b6;
-  padding: 8px 10px;
+  padding: 6px 8px;
   border-radius: var(--radius-sm);
-  font-size: 0.86rem;
+  font-size: 0.72rem;
   color: #831843;
-  line-height: 1.5;
-  margin: 6px 0;
+  line-height: 1.4;
+  margin: 4px 0;
 }
 
 /* Local Chain Store Cards */
@@ -1283,11 +1276,11 @@ a:hover {
   border: 1px solid var(--border-color);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-sm);
-  padding: 12px;
-  margin-bottom: 10px;
+  padding: 10px;
+  margin-bottom: 8px;
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 4px;
 }
 .chain-header {
   display: flex;
@@ -1296,14 +1289,14 @@ a:hover {
   gap: 6px;
 }
 .chain-name-ja {
-  font-size: 0.96rem;
+  font-size: 0.88rem;
   font-weight: 800;
   color: var(--primary-color);
 }
 .chain-badge {
-  font-size: 0.72rem;
+  font-size: 0.62rem;
   font-weight: 800;
-  padding: 2px 7px;
+  padding: 2px 6px;
   border-radius: var(--radius-full);
   background: #dbeafe;
   color: #1e40af;
@@ -1312,8 +1305,8 @@ a:hover {
   background: #fff7ed;
   border: 1px solid #ffedd5;
   border-radius: var(--radius-sm);
-  padding: 6px 10px;
-  font-size: 0.84rem;
+  padding: 4px 8px;
+  font-size: 0.7rem;
   color: #c2410c;
   font-weight: 700;
 }
@@ -1324,36 +1317,36 @@ a:hover {
   border-radius: var(--radius-md);
   border: 1px solid var(--border-color);
   box-shadow: var(--shadow-sm);
-  padding: 12px;
-  margin-bottom: 10px;
+  padding: 10px;
+  margin-bottom: 8px;
 }
 .region-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid #f1f5f9;
-  padding-bottom: 6px;
-  margin-bottom: 8px;
+  padding-bottom: 5px;
+  margin-bottom: 6px;
 }
 .region-title {
-  font-size: 0.94rem;
+  font-size: 0.85rem;
   font-weight: 800;
   color: var(--primary-color);
   margin: 0;
 }
 .region-tag {
-  font-size: 0.72rem;
+  font-size: 0.65rem;
   font-weight: 800;
   background: #e0f2fe;
   color: #0369a1;
-  padding: 2px 7px;
+  padding: 2px 6px;
   border-radius: var(--radius-full);
 }
 .region-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 8px;
-  font-size: 0.84rem;
+  gap: 6px;
+  font-size: 0.7rem;
 }
 @media (max-width: 480px) {
   .region-grid {
@@ -1366,14 +1359,14 @@ a:hover {
   width: 100%;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
   border-radius: var(--radius-md);
   border: 1px solid var(--border-color);
 }
 .compare-table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 0.84rem; /* 0.72remから拡大 */
+  font-size: 0.72rem;
   background: #ffffff;
   white-space: nowrap;
 }
@@ -1381,12 +1374,12 @@ a:hover {
   background: #f1f5f9;
   color: var(--primary-color);
   font-weight: 800;
-  padding: 8px 10px;
+  padding: 6px 8px;
   border-bottom: 1px solid var(--border-color);
   text-align: left;
 }
 .compare-table td {
-  padding: 8px 10px;
+  padding: 6px 8px;
   border-bottom: 1px solid #f1f5f9;
   color: var(--text-main);
 }
@@ -1397,28 +1390,28 @@ a:hover {
   border-radius: var(--radius-md);
   border: 1px solid var(--border-color);
   box-shadow: var(--shadow-sm);
-  padding: 12px;
-  margin-bottom: 10px;
+  padding: 10px;
+  margin-bottom: 8px;
 }
 .survival-header {
   display: flex;
   align-items: center;
-  gap: 8px;
-  margin-bottom: 8px;
+  gap: 6px;
+  margin-bottom: 6px;
 }
 .survival-icon {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
 }
 .survival-title {
-  font-size: 0.94rem;
+  font-size: 0.84rem;
   font-weight: 800;
   color: var(--primary-color);
   margin: 0;
 }
 .survival-badge {
-  font-size: 0.72rem;
+  font-size: 0.62rem;
   font-weight: 800;
-  padding: 2px 7px;
+  padding: 2px 6px;
   border-radius: var(--radius-full);
   margin-left: auto;
 }
@@ -1430,26 +1423,26 @@ a:hover {
 .survival-steps {
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  margin-top: 8px;
+  gap: 5px;
+  margin-top: 6px;
 }
 .survival-step-item {
   display: flex;
   align-items: flex-start;
-  gap: 8px;
-  font-size: 0.86rem; /* 拡大 */
-  line-height: 1.5;
+  gap: 6px;
+  font-size: 0.72rem;
+  line-height: 1.35;
 }
 .step-number {
   background: var(--primary-color);
   color: #ffffff;
-  width: 19px;
-  height: 19px;
+  width: 17px;
+  height: 17px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.68rem;
+  font-size: 0.6rem;
   font-weight: 800;
   flex-shrink: 0;
   margin-top: 1px;
@@ -1460,21 +1453,21 @@ a:hover {
   background: #fef2f2;
   border: 1.5px solid #ef4444;
   border-radius: var(--radius-md);
-  padding: 10px 12px;
-  margin-bottom: 10px;
+  padding: 8px 10px;
+  margin-bottom: 8px;
 }
 
 /* Souvenir Badges */
 .souvenir-badges-row {
   display: flex;
-  gap: 5px;
+  gap: 4px;
   flex-wrap: wrap;
-  margin: 6px 0;
+  margin: 4px 0;
 }
 .sn-badge {
-  font-size: 0.72rem; /* 0.6remから拡大 */
+  font-size: 0.6rem;
   font-weight: 800;
-  padding: 2px 6px;
+  padding: 1px 5px;
   border-radius: var(--radius-sm);
 }
 .sn-badge.baramaki { background: #fef3c7; color: #92400e; }
@@ -1491,12 +1484,12 @@ a:hover {
   background: #ffffff;
   border: 1px solid var(--border-color);
   border-radius: var(--radius-md);
-  margin-bottom: 10px;
+  margin-bottom: 8px;
   overflow: hidden;
 }
 .details-box summary {
-  padding: 10px 12px;
-  font-size: 0.88rem; /* 拡大 */
+  padding: 8px 10px;
+  font-size: 0.78rem;
   font-weight: 800;
   color: var(--primary-color);
   cursor: pointer;
@@ -1514,18 +1507,18 @@ a:hover {
   background: #f1f5f9;
 }
 .details-content {
-  padding: 12px;
-  font-size: 0.84rem; /* 拡大 */
-  line-height: 1.55;
+  padding: 10px;
+  font-size: 0.73rem;
+  line-height: 1.45;
 }
 
 /* Footer */
 footer.site-footer {
   background: #111827;
   color: #9ca3af;
-  padding: 14px 0 10px;
-  margin-top: 16px;
-  font-size: 0.74rem;
+  padding: 12px 0 8px;
+  margin-top: 14px;
+  font-size: 0.68rem;
 }
 
 .footer-inner {
