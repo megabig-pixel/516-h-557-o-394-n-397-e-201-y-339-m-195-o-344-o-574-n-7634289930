@@ -80,7 +80,7 @@
       <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
         <div style="display:flex; gap:4px; align-items:center;">
           <button id="map-prev-day" class="btn btn-secondary" style="padding:3px 8px; font-size:0.72rem;">◀ 前日</button>
-          <span id="map-day-indicator" style="font-size:0.78rem; font-weight:800; color:var(--primary-color);">📅 Day 2: ミラノ&rarr;ベローナ&rarr;ベネチア</span>
+          <span id="map-day-indicator" style="font-size:0.78rem; font-weight:800; color:var(--primary-color);">📅 Day 2: ミラノ➔ベローナ➔ベネチア</span>
           <button id="map-next-day" class="btn btn-secondary" style="padding:3px 8px; font-size:0.72rem;">翌日 ▶</button>
         </div>
         <div style="display:flex; gap:4px;">
@@ -101,10 +101,10 @@
       <!-- Current Day Summary Box -->
       <div id="day-summary-box" style="background:#f8fafc; border-radius:var(--radius-sm); border:1px solid var(--border-color); padding:6px 8px; margin-top:8px; display:flex; justify-content:space-between; align-items:center;">
         <div>
-          <strong id="day-summary-title" style="font-size:0.78rem; color:var(--primary-color);">Day 2: ミラノ半日観光 &rarr; ベローナ散策 &rarr; ベネチア歓迎ディナー</strong><br>
+          <strong id="day-summary-title" style="font-size:0.78rem; color:var(--primary-color);">Day 2: ミラノ半日観光 ➔ ベローナ散策 ➔ ベネチア歓迎ディナー</strong><br>
           <small id="day-summary-desc" style="color:var(--text-muted); font-size:0.68rem;">移動: 専用バス約290km | 朝ホテル込 / 昼各自 / 夕ツアー込</small>
         </div>
-        <a id="day-summary-link" href="day2.html" class="btn btn-primary" style="font-size:0.68rem; padding:3px 8px; white-space:nowrap;">Day 2 しおり &rarr;</a>
+        <a id="day-summary-link" href="day2.html" class="btn btn-primary" style="font-size:0.68rem; padding:3px 8px; white-space:nowrap;">Day 2 しおり ➔</a>
       </div>
     </div>
 
@@ -170,14 +170,13 @@
   </main>
 
   <!-- Bottom Tab Bar (iOS Safe Area Ready) -->
-    <!-- STREAMLINED 5-ITEM BOTTOM TAB BAR -->
   <nav class="bottom-tab-bar">
     <a href="index.html" class="tab-item ">
       <span class="tab-icon">🏠</span>
       <span class="tab-label">ホーム</span>
     </a>
 
-    <!-- Day Selection Drawer -->
+    <!-- Day Selection Bottom Sheet Drawer -->
     <details class="day-popover-details" id="day-popover-details">
       <summary class="tab-item ">
         <span class="tab-icon">📅</span>
@@ -190,21 +189,33 @@
           <button type="button" class="day-popover-close" aria-label="閉じる">✕</button>
         </div>
         <div class="day-popover-grid">
-          <a href="day1.html" class="day-popover-item"><span class="dp-badge">Day 1</span> 11/15(日) 関空 &rarr; ミラノ</a>
-          <a href="day2.html" class="day-popover-item"><span class="dp-badge">Day 2</span> 11/16(月) ミラノ &rarr; ベネチア</a>
-          <a href="day3.html" class="day-popover-item"><span class="dp-badge">Day 3</span> 11/17(火) ベネチア &rarr; フィレンツェ</a>
-          <a href="day4.html" class="day-popover-item"><span class="dp-badge">Day 4</span> 11/18(水) フィレンツェ ＆ ピサ</a>
-          <a href="day5.html" class="day-popover-item"><span class="dp-badge">Day 5</span> 11/19(木) サンジミニャーノ &rarr; ローマ</a>
-          <a href="day6.html" class="day-popover-item"><span class="dp-badge">Day 6</span> 11/20(金) ローマ ＆ バチカン自由</a>
-          <a href="day7.html" class="day-popover-item"><span class="dp-badge">Day 7</span> 11/21(土) ローマ &rarr; FCO空港発</a>
+          <a href="day1.html" class="day-popover-item"><span class="dp-badge">Day 1</span> 11/15(日) 関空➔ミラノ</a>
+          <a href="day2.html" class="day-popover-item"><span class="dp-badge">Day 2</span> 11/16(月) ミラノ➔ベネチア</a>
+          <a href="day3.html" class="day-popover-item"><span class="dp-badge">Day 3</span> 11/17(火) ベネチア➔フィレンツェ</a>
+          <a href="day4.html" class="day-popover-item"><span class="dp-badge">Day 4</span> 11/18(水) フィレンツェ＆ピサ</a>
+          <a href="day5.html" class="day-popover-item"><span class="dp-badge">Day 5</span> 11/19(木) サンジミニャーノ➔ローマ</a>
+          <a href="day6.html" class="day-popover-item"><span class="dp-badge">Day 6</span> 11/20(金) ローマ＆バチカン自由</a>
+          <a href="day7.html" class="day-popover-item"><span class="dp-badge">Day 7</span> 11/21(土) ローマ➔FCO空港発</a>
           <a href="day8.html" class="day-popover-item"><span class="dp-badge">Day 8</span> 11/22(日) 関空帰着・解散</a>
         </div>
       </div>
     </details>
 
+    <a href="beginner-guide.html" class="tab-item ">
+      <span class="tab-icon">🔰</span>
+      <span class="tab-label">初心者</span>
+    </a>
     <a href="tour-map.html" class="tab-item active">
       <span class="tab-icon">🗺️</span>
       <span class="tab-label">MAP</span>
+    </a>
+    <a href="sightseeing-guide.html" class="tab-item ">
+      <span class="tab-icon">🏛️</span>
+      <span class="tab-label">観光</span>
+    </a>
+    <a href="phrasebook.html" class="tab-item ">
+      <span class="tab-icon">🗣️</span>
+      <span class="tab-label">会話</span>
     </a>
     <a href="free-meal-guide.html" class="tab-item ">
       <span class="tab-icon">🍽️</span>
@@ -252,14 +263,14 @@
       }).addTo(map);
 
       const dayConfig = {
-        1: { title: "Day 1: 関西国際空港 出発 &rarr; ドーハ乗継 &rarr; ミラノ着", desc: "移動: 国際線フライト &rarr; 専用バス | 食事: 機内食 / 軽食", center: [45.6300, 8.7230], zoom: 11, link: "day1.html" },
-        2: { title: "Day 2: ミラノ半日観光 &rarr; ベローナ散策 &rarr; ベネチア歓迎ディナー", desc: "移動: 専用バス約290km | 朝ホテル込 / 昼各自 / 夕ツアー込", center: [45.4642, 9.1919], zoom: 12, link: "day2.html" },
-        3: { title: "Day 3: 水の都ベネチア観光 ＆ ゴンドラ遊覧 &rarr; フィレンツェへ", desc: "移動: 専用ボート ＆ 専用バス約260km | 朝ホテル込 / 昼各自 / 夕各自", center: [45.4342, 12.3389], zoom: 13, link: "day3.html" },
+        1: { title: "Day 1: 関西国際空港 出発 ➔ ドーハ乗継 ➔ ミラノ着", desc: "移動: 国際線フライト ➔ 専用バス | 食事: 機内食 / 軽食", center: [45.6300, 8.7230], zoom: 11, link: "day1.html" },
+        2: { title: "Day 2: ミラノ半日観光 ➔ ベローナ散策 ➔ ベネチア歓迎ディナー", desc: "移動: 専用バス約290km | 朝ホテル込 / 昼各自 / 夕ツアー込", center: [45.4642, 9.1919], zoom: 12, link: "day2.html" },
+        3: { title: "Day 3: 水の都ベネチア観光 ＆ ゴンドラ遊覧 ➔ フィレンツェへ", desc: "移動: 専用ボート ＆ 専用バス約260km | 朝ホテル込 / 昼各自 / 夕各自", center: [45.4342, 12.3389], zoom: 13, link: "day3.html" },
         4: { title: "Day 4: フィレンツェ終日観光 ＆ 【OP】ピサの斜塔", desc: "移動: 徒歩・市内バス（ピサ約170km）| 朝ホテル込 / 昼各自 / 夕各自", center: [43.7731, 11.2560], zoom: 12, link: "day4.html" },
-        5: { title: "Day 5: サンジミニャーノ ＆ ピッツァ昼食 &rarr; 永遠の都ローマへ", desc: "移動: 専用バス約280km | 朝ホテル込 / 昼ピッツァ込 / 夕各自", center: [43.4677, 11.0433], zoom: 12, link: "day5.html" },
+        5: { title: "Day 5: サンジミニャーノ ＆ ピッツァ昼食 ➔ 永遠の都ローマへ", desc: "移動: 専用バス約280km | 朝ホテル込 / 昼ピッツァ込 / 夕各自", center: [43.4677, 11.0433], zoom: 12, link: "day5.html" },
         6: { title: "Day 6: ローマ ＆ バチカン市国 終日自由行動・音楽教会散策", desc: "移動: 地下鉄・徒歩 | 朝ホテル込 / 昼各自 / 夕各自ラストディナー", center: [41.9022, 12.4700], zoom: 13, link: "day6.html" },
-        7: { title: "Day 7: ローマ自由行動 &rarr; FCO空港発 &rarr; 免税手続き &rarr; 帰国便", desc: "移動: 専用バス &rarr; 国際線フライト | 朝ホテル込 / 昼各自 / 夕機内食", center: [41.7999, 12.2462], zoom: 11, link: "day7.html" },
-        8: { title: "Day 8: 関西国際空港 到着 &rarr; ツアー解散 &rarr; ご自宅へ", desc: "移動: 国際線フライト &rarr; JR/南海 | 食事: 機内食 / ご自宅", center: [34.4347, 135.2440], zoom: 10, link: "day8.html" }
+        7: { title: "Day 7: ローマ自由行動 ➔ FCO空港発 ➔ 免税手続き ➔ 帰国便", desc: "移動: 専用バス ➔ 国際線フライト | 朝ホテル込 / 昼各自 / 夕機内食", center: [41.7999, 12.2462], zoom: 11, link: "day7.html" },
+        8: { title: "Day 8: 関西国際空港 到着 ➔ ツアー解散 ➔ ご自宅へ", desc: "移動: 国際線フライト ➔ JR/南海 | 食事: 機内食 / ご自宅", center: [34.4347, 135.2440], zoom: 10, link: "day8.html" }
       };
 
       const allSpots = [
@@ -897,7 +908,7 @@
                 <strong style="color:${getMarkerColor(s.cat)};">${s.name}</strong>
                 <span style="color:var(--secondary-color); font-size:0.68rem;">(${dist}m)</span>
                 <div style="color:#7c2d12; font-size:0.68rem;">💡 ${s.tip}</div>
-                <a href="${s.url}" target="_blank" style="font-size:0.68rem; color:#2563eb; font-weight:700;">Maps &rarr;</a>
+                <a href="${s.url}" target="_blank" style="font-size:0.68rem; color:#2563eb; font-weight:700;">Maps ➔</a>
               </div>
             `;
           }).join('');
@@ -980,12 +991,12 @@
         const sumDesc = document.getElementById('day-summary-desc');
         const sumLink = document.getElementById('day-summary-link');
 
-        if (ind) ind.textContent = `📅 Day ${activeDay}: ${config.title.split('&rarr;')[0]}`;
+        if (ind) ind.textContent = `📅 Day ${activeDay}: ${config.title.split('➔')[0]}`;
         if (sumTitle) sumTitle.textContent = config.title;
         if (sumDesc) sumDesc.textContent = config.desc;
         if (sumLink) {
           sumLink.href = config.link;
-          sumLink.textContent = `Day ${activeDay} しおり &rarr;`;
+          sumLink.textContent = `Day ${activeDay} しおり ➔`;
         }
 
         map.flyTo(config.center, config.zoom, { duration: 1.0 });
@@ -1023,16 +1034,6 @@
       });
 
       setDay(2);
-    });
-  </script>
-
-  <script>
-    document.addEventListener('click', function(e) {
-      document.querySelectorAll('details.day-popover-details, details.day-nav-details').forEach(function(d) {
-        if (!d.contains(e.target) && d.hasAttribute('open')) {
-          d.removeAttribute('open');
-        }
-      });
     });
   </script>
 </body>
