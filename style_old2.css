@@ -1,5 +1,5 @@
 /* ==========================================================================
-   イタリア新婚旅行ガイドポータル 統合スタイルシート (iOS / iPhone 超高密度 v9)
+   イタリア新婚旅行ガイドポータル 統合スタイルシート (iOS / iPhone 超高密度 v8)
    鈴木 健太・めぐみ 様 (HIS Tour OI-KMI2811: 2026年11月15日〜22日)
    ========================================================================== */
 
@@ -978,7 +978,7 @@ a:hover {
 }
 
 /* ==========================================================================
-   追加スタイル: あるある・トレンド・ファッション・ご当地チェーン用 (完全統合版)
+   追加スタイル: あるある・トレンド・サバイバル・強化お土産用 (完全統合版)
    ========================================================================== */
 
 /* City Filter Chips */
@@ -993,105 +993,6 @@ a:hover {
 }
 .city-filter-chips::-webkit-scrollbar {
   display: none;
-}
-
-/* Visual Diagram Containers & SVG */
-.diagram-box {
-  background: #ffffff;
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-md);
-  padding: 10px;
-  margin-bottom: 10px;
-  box-shadow: var(--shadow-sm);
-  overflow-x: auto;
-}
-.diagram-box h4 {
-  font-size: 0.82rem;
-  font-weight: 800;
-  color: var(--primary-color);
-  margin-bottom: 6px;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-.diagram-svg-wrap {
-  width: 100%;
-  max-width: 100%;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-}
-.diagram-svg-wrap svg {
-  display: block;
-  width: 100%;
-  height: auto;
-  min-width: 290px;
-}
-
-/* Visual Flow Steps */
-.flow-steps-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-  gap: 6px;
-  margin: 6px 0;
-}
-.flow-step-card {
-  background: #f8fafc;
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-sm);
-  padding: 8px;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-}
-.flow-step-badge {
-  background: var(--primary-color);
-  color: #ffffff;
-  font-size: 0.6rem;
-  font-weight: 800;
-  padding: 1px 5px;
-  border-radius: var(--radius-full);
-  align-self: flex-start;
-  margin-bottom: 4px;
-}
-.flow-step-title {
-  font-size: 0.74rem;
-  font-weight: 800;
-  color: var(--text-main);
-  margin-bottom: 2px;
-}
-.flow-step-desc {
-  font-size: 0.65rem;
-  color: var(--text-muted);
-  line-height: 1.35;
-}
-
-/* Comparison Matrix Cards */
-.compare-matrix-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 8px;
-  margin-bottom: 8px;
-}
-.compare-matrix-col {
-  background: #ffffff;
-  border: 1.5px solid var(--border-color);
-  border-radius: var(--radius-md);
-  padding: 8px 10px;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-.compare-matrix-col.highlight {
-  border-color: #f97316;
-  background: #fffaf0;
-}
-.compare-matrix-header {
-  font-size: 0.84rem;
-  font-weight: 800;
-  color: var(--primary-color);
-  border-bottom: 1px solid var(--border-color);
-  padding-bottom: 4px;
-  margin-bottom: 4px;
 }
 
 /* Aru-Aru Cards */
@@ -1226,89 +1127,6 @@ a:hover {
   border-radius: var(--radius-sm);
   font-size: 0.7rem;
   color: #1e40af;
-}
-
-/* Fashion & Dress Code Cards */
-.fashion-card {
-  background: #ffffff;
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-sm);
-  padding: 10px;
-  margin-bottom: 8px;
-}
-.fashion-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-bottom: 1px solid #f1f5f9;
-  padding-bottom: 5px;
-  margin-bottom: 6px;
-}
-.fashion-title {
-  font-size: 0.85rem;
-  font-weight: 800;
-  color: #831843; /* Rose Deep */
-  margin: 0;
-}
-.fashion-badge {
-  font-size: 0.65rem;
-  font-weight: 800;
-  background: #fce7f3;
-  color: #9d174d;
-  padding: 2px 7px;
-  border-radius: var(--radius-full);
-}
-.fashion-rule-box {
-  background: #fdf2f8;
-  border-left: 3px solid #f472b6;
-  padding: 6px 8px;
-  border-radius: var(--radius-sm);
-  font-size: 0.72rem;
-  color: #831843;
-  line-height: 1.4;
-  margin: 4px 0;
-}
-
-/* Local Chain Store Cards */
-.chain-card {
-  background: #ffffff;
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-sm);
-  padding: 10px;
-  margin-bottom: 8px;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-.chain-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 6px;
-}
-.chain-name-ja {
-  font-size: 0.88rem;
-  font-weight: 800;
-  color: var(--primary-color);
-}
-.chain-badge {
-  font-size: 0.62rem;
-  font-weight: 800;
-  padding: 2px 6px;
-  border-radius: var(--radius-full);
-  background: #dbeafe;
-  color: #1e40af;
-}
-.chain-specialty {
-  background: #fff7ed;
-  border: 1px solid #ffedd5;
-  border-radius: var(--radius-sm);
-  padding: 4px 8px;
-  font-size: 0.7rem;
-  color: #c2410c;
-  font-weight: 700;
 }
 
 /* Regional History & Culture Cards */
