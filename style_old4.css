@@ -1,0 +1,1537 @@
+/* ==========================================================================
+   イタリア新婚旅行ガイドポータル 統合スタイルシート (iOS / iPhone 超高密度・高視認性 v10)
+   鈴木 健太・めぐみ 様 (HIS Tour OI-KMI2811: 2026年11月15日〜22日)
+   ========================================================================== */
+
+:root {
+  --primary-color: #1a365d;       /* Deep Mediterranean Navy */
+  --primary-light: #2b6cb0;
+  --secondary-color: #c05621;     /* Tuscan Terracotta */
+  --secondary-light: #dd6b20;
+  --accent-gold: #d69e2e;         /* Italian Renaissance Gold */
+  --accent-olive: #2f855a;        /* Italian Olive Green */
+  
+  --bg-main: #f8fafc;
+  --bg-card: #ffffff;
+  --bg-card-hover: #fbfcfe;
+  --text-main: #1e293b;
+  --text-muted: #64748b;
+  --border-color: #e2e8f0;
+  
+  /* Badges */
+  --badge-included: #15803d;
+  --badge-included-bg: #dcfce7;
+  --badge-free: #c2410c;
+  --badge-free-bg: #ffedd5;
+  
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 10px;
+  --radius-full: 9999px;
+  
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-md: 0 2px 5px rgba(0,0,0,0.06);
+  
+  --font-base: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Hiragino Sans", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  font-size: 15px; /* 13pxから15pxに拡大し、iPhoneでの可読性を劇的に改善 */
+  scroll-behavior: smooth;
+}
+
+@media (max-width: 380px) {
+  html {
+    font-size: 14px; /* 極小画面でも12.5pxから14pxへ拡大 */
+  }
+}
+
+body {
+  font-family: var(--font-base);
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  line-height: 1.55; /* 行間を広げて読みやすさを向上 */
+  padding-bottom: 60px; /* Space for bottom tab bar */
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--primary-light);
+  text-decoration: none;
+  transition: opacity 0.15s ease;
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+/* Purpose-based Navigation Hub (どこに何があるか一目でわかるUI) */
+.purpose-nav-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.purpose-nav-card {
+  background: #ffffff;
+  border: 1.5px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  text-decoration: none !important;
+  transition: all 0.15s ease;
+  box-shadow: var(--shadow-sm);
+  position: relative;
+}
+
+.purpose-nav-card:active, .purpose-nav-card:hover {
+  border-color: var(--primary-color);
+  background: #f8fafc;
+  transform: translateY(-1px);
+}
+
+.purpose-nav-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.purpose-nav-icon {
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+.purpose-nav-title {
+  font-size: 0.92rem;
+  font-weight: 800;
+  color: var(--primary-color);
+  margin: 0;
+}
+
+.purpose-nav-desc {
+  font-size: 0.76rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+.category-group-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  font-size: 0.96rem;
+  font-weight: 800;
+  color: var(--primary-color);
+  margin: 16px 0 8px;
+  padding-bottom: 4px;
+  border-bottom: 2px solid var(--border-color);
+}
+
+/* Top Horizontal Quick Day Pills */
+.day-quick-pills {
+  display: flex;
+  gap: 5px;
+  overflow-x: auto;
+  padding: 4px 0 6px;
+  margin-bottom: 8px;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.day-quick-pills::-webkit-scrollbar {
+  display: none;
+}
+
+.day-pill {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 5px 9px;
+  min-width: 62px;
+  flex-shrink: 0;
+  color: var(--text-muted);
+  text-decoration: none !important;
+  font-size: 0.78rem;
+  font-weight: 800;
+  line-height: 1.2;
+  transition: all 0.15s ease;
+}
+
+.day-pill small {
+  font-size: 0.68rem;
+  font-weight: 600;
+  opacity: 0.85;
+}
+
+.day-pill:hover {
+  background: #f1f5f9;
+  color: var(--primary-color);
+}
+
+.day-pill.active {
+  background: var(--primary-color);
+  border-color: var(--primary-color);
+  color: #ffffff;
+  box-shadow: 0 1px 4px rgba(26, 54, 93, 0.25);
+}
+
+.day-pill.active small {
+  color: var(--accent-gold);
+  font-weight: 800;
+}
+
+/* Top Day Navigation Strip (Prev / Select / Next) */
+.day-nav-strip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.day-nav-details {
+  position: relative;
+  flex: 1;
+}
+
+.day-nav-details summary {
+  list-style: none;
+  width: 100%;
+  cursor: pointer;
+}
+
+.day-nav-details summary::-webkit-details-marker {
+  display: none;
+}
+
+.day-nav-dropdown {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  padding: 6px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.dp-nav-link {
+  padding: 6px 9px;
+  border-radius: var(--radius-sm);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-main);
+  text-decoration: none !important;
+  background: #f8fafc;
+}
+
+.dp-nav-link:hover {
+  background: #eff6ff;
+  color: var(--primary-color);
+}
+
+/* Ultra-Compact Bottom Tab Bar */
+.bottom-tab-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 3px 0 calc(2px + env(safe-area-inset-bottom));
+  z-index: 10000;
+  box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.04);
+  height: 48px;
+}
+
+.tab-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  text-decoration: none !important;
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 2px 4px;
+  flex: 1;
+  min-width: 0;
+  cursor: pointer;
+  background: none;
+  border: none;
+  transition: all 0.12s ease;
+}
+
+.tab-item:hover, .tab-item.active {
+  color: var(--primary-color);
+}
+
+.tab-icon {
+  font-size: 1.15rem;
+  line-height: 1.1;
+  margin-bottom: 1px;
+}
+
+.tab-label {
+  white-space: nowrap;
+  letter-spacing: -0.02em;
+}
+
+/* Native Bottom Sheet Drawer for Day Selection */
+.day-popover-details {
+  position: static;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.day-popover-details summary {
+  list-style: none;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--text-muted);
+}
+
+.day-popover-details summary::-webkit-details-marker {
+  display: none;
+}
+
+.day-popover-backdrop {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 9999;
+}
+
+.day-popover-details[open] .day-popover-backdrop {
+  display: block;
+}
+
+.day-popover-dropdown {
+  position: fixed;
+  bottom: 48px; /* Directly above bottom tab bar */
+  left: 8px;
+  right: 8px;
+  max-width: 500px;
+  margin: 0 auto;
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.15);
+  padding: 12px;
+  z-index: 10001;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  animation: slideUp 0.18s ease;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(100%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.day-popover-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #f1f5f9;
+  padding-bottom: 8px;
+}
+
+.day-popover-title {
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: var(--primary-color);
+}
+
+.day-popover-close {
+  background: none;
+  border: none;
+  font-size: 1.1rem;
+  cursor: pointer;
+  color: var(--text-muted);
+  padding: 0 4px;
+}
+
+.day-popover-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+}
+
+.day-popover-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #f8fafc;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 8px 10px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-main);
+  text-decoration: none !important;
+  transition: all 0.12s ease;
+}
+
+.day-popover-item:hover, .day-popover-item:active {
+  background: #eff6ff;
+  border-color: var(--primary-light);
+  color: var(--primary-color);
+}
+
+.dp-badge {
+  background: var(--primary-color);
+  color: #ffffff;
+  font-size: 0.68rem;
+  font-weight: 800;
+  padding: 2px 5px;
+  border-radius: var(--radius-sm);
+  flex-shrink: 0;
+}
+
+/* Compact Hero Card */
+.hero-card {
+  background: linear-gradient(135deg, #1a365d 0%, #2b6cb0 100%);
+  color: #ffffff;
+  padding: 12px 14px;
+  border-radius: var(--radius-lg);
+  margin: 4px 0 10px;
+  box-shadow: var(--shadow-sm);
+}
+
+.hero-card.hero-day {
+  background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+}
+
+.hero-tag {
+  display: inline-block;
+  background: var(--accent-gold);
+  color: #744210;
+  font-size: 0.74rem;
+  font-weight: 800;
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  margin-bottom: 4px;
+}
+
+.hero-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  line-height: 1.3;
+  margin-bottom: 4px;
+}
+
+.hero-subtitle {
+  font-size: 0.82rem;
+  opacity: 0.95;
+  line-height: 1.45;
+}
+
+.hero-meta-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 6px;
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.hero-meta-item {
+  font-size: 0.74rem;
+  font-weight: 600;
+}
+
+/* Compact Meal Status Box */
+.meal-status-box {
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 8px 12px;
+  margin-bottom: 10px;
+  box-shadow: var(--shadow-sm);
+}
+
+.meal-status-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.meal-status-header h3 {
+  font-size: 0.86rem;
+  font-weight: 800;
+  color: var(--primary-color);
+  margin: 0;
+}
+
+.meal-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+}
+
+.meal-col {
+  background: #f8fafc;
+  border-radius: var(--radius-sm);
+  padding: 6px 8px;
+  text-align: center;
+}
+
+.meal-col-title {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  margin-bottom: 2px;
+}
+
+.meal-badge {
+  display: inline-block;
+  font-size: 0.74rem;
+  font-weight: 800;
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+}
+
+.meal-badge.included {
+  background: var(--badge-included-bg);
+  color: var(--badge-included);
+}
+
+.meal-badge.free {
+  background: var(--badge-free-bg);
+  color: var(--badge-free);
+}
+
+/* Mime Callout Box */
+.mime-callout {
+  background: #fffaf0;
+  border: 1px solid #fdba74;
+  border-left: 4px solid #ea580c;
+  border-radius: var(--radius-md);
+  padding: 10px 12px;
+  margin-bottom: 12px;
+  box-shadow: var(--shadow-sm);
+}
+
+.mime-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.mime-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.mime-title h3 {
+  font-size: 0.94rem;
+  font-weight: 800;
+  color: #9a3412;
+}
+
+.mime-badge {
+  background: #ea580c;
+  color: #ffffff;
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 2px 7px;
+  border-radius: var(--radius-full);
+}
+
+.mime-tips-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 8px;
+}
+
+.mime-tip-card {
+  background: #ffffff;
+  border: 1px solid #fed7aa;
+  border-radius: var(--radius-sm);
+  padding: 8px 10px;
+}
+
+.mime-tip-card h4 {
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: #c2410c;
+  margin-bottom: 4px;
+}
+
+.mime-tip-card p {
+  font-size: 0.82rem;
+  color: var(--text-main);
+  line-height: 1.5;
+}
+
+/* Sections & Headers */
+.section {
+  margin-bottom: 16px;
+}
+
+.section-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.section-title {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--primary-color);
+}
+
+.section-subtitle {
+  font-size: 0.76rem;
+  color: var(--text-muted);
+}
+
+/* Card Grids */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 10px;
+}
+
+@media (max-width: 540px) {
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Spot Card */
+.spot-card {
+  background: var(--bg-card);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.spot-body {
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  height: 100%;
+}
+
+.card-thumb-wrap {
+  position: relative;
+  width: 100%;
+  height: 165px; /* 写真の高さを拡大し見ごたえを強化 */
+  background: #e2e8f0;
+  overflow: hidden;
+}
+
+.card-thumb-wrap.large-photo {
+  height: 200px; /* 観光地用の大型写真エリア */
+}
+
+.card-thumb-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.25s ease;
+}
+
+.spot-card:hover .card-thumb-wrap img {
+  transform: scale(1.03);
+}
+
+.card-thumb-badge {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: rgba(0,0,0,0.72);
+  backdrop-filter: blur(4px);
+  color: #ffffff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: var(--radius-sm);
+}
+
+.spot-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px;
+}
+
+.spot-name-ja {
+  font-size: 0.98rem; /* タイトルサイズ拡大 */
+  font-weight: 800;
+  color: var(--primary-color);
+  margin: 0;
+}
+
+.spot-name-it {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--secondary-color);
+}
+
+.spot-desc {
+  font-size: 0.88rem; /* 0.72remから大幅に拡大し、読みにくさを解消 */
+  color: var(--text-main);
+  line-height: 1.55;
+}
+
+.spot-mime-tip {
+  background: #fffaf0;
+  border: 1px solid #fed7aa;
+  border-radius: var(--radius-sm);
+  padding: 7px 9px;
+  font-size: 0.84rem; /* 拡大 */
+  color: #9a3412;
+  line-height: 1.5;
+  margin-top: 4px;
+}
+
+/* Schedule Card */
+.schedule-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.schedule-card {
+  background: var(--bg-card);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  overflow: hidden;
+  align-items: stretch;
+}
+
+.schedule-time-col {
+  width: 52px;
+  background: #f1f5f9;
+  border-right: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 10px;
+  flex-shrink: 0;
+}
+
+.schedule-time-badge {
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: var(--primary-color);
+}
+
+.schedule-card .card-thumb-wrap {
+  width: 90px;
+  height: auto;
+  min-height: 90px;
+  flex-shrink: 0;
+}
+
+.schedule-content-col {
+  padding: 8px 10px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  justify-content: center;
+}
+
+.schedule-transit-badge {
+  align-self: flex-start;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #0369a1;
+  background: #e0f2fe;
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+}
+
+.schedule-title {
+  font-size: 0.92rem;
+  font-weight: 800;
+  color: var(--primary-color);
+  margin: 0;
+  line-height: 1.35;
+}
+
+.schedule-desc {
+  font-size: 0.84rem;
+  color: var(--text-main);
+  line-height: 1.5;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  font-size: 0.84rem; /* ボタン文字拡大 */
+  font-weight: 700;
+  padding: 8px 14px;
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  text-decoration: none !important;
+}
+
+.btn-primary {
+  background: var(--primary-color);
+  color: #ffffff;
+}
+.btn-primary:hover {
+  background: var(--primary-light);
+  color: #ffffff;
+}
+
+.btn-secondary {
+  background: #ffffff;
+  color: var(--text-main);
+  border-color: var(--border-color);
+}
+.btn-secondary:hover {
+  background: #f1f5f9;
+}
+
+.btn-orange {
+  background: var(--secondary-color);
+  color: #ffffff;
+}
+.btn-orange:hover {
+  background: var(--secondary-light);
+  color: #ffffff;
+}
+
+.day-chip {
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 5px 10px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.day-chip:hover, .day-chip.active {
+  background: var(--primary-color);
+  border-color: var(--primary-color);
+  color: #ffffff;
+}
+
+/* Interactive Checklist */
+.checklist-card {
+  background: #ffffff;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  padding: 12px;
+  margin-bottom: 12px;
+}
+
+.checklist-progress-bar {
+  width: 100%;
+  height: 8px;
+  background: #e2e8f0;
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  margin: 8px 0;
+}
+
+.checklist-progress-fill {
+  height: 100%;
+  background: var(--badge-included);
+  width: 0%;
+  transition: width 0.25s ease;
+}
+
+.checklist-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.check-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 6px 8px;
+  border-radius: var(--radius-sm);
+  font-size: 0.86rem; /* 拡大 */
+  background: #f8fafc;
+}
+
+.check-item.checked {
+  background: #f0fdf4;
+  text-decoration: line-through;
+  color: var(--text-muted);
+}
+
+.check-item input[type="checkbox"] {
+  margin-top: 3px;
+  width: 17px;
+  height: 17px;
+  accent-color: var(--primary-color);
+  cursor: pointer;
+}
+
+/* Calculator Card */
+.calc-card {
+  background: #ffffff;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  padding: 12px;
+  margin-bottom: 12px;
+}
+
+.calc-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.calc-input {
+  width: 100%;
+  padding: 7px 10px;
+  font-size: 1rem; /* 16pxに相当し、iOSの意図しないズームインを防止 */
+  font-weight: 700;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  box-sizing: border-box;
+}
+
+.calc-result-box {
+  background: #f8fafc;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 6px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  min-height: 48px;
+}
+
+/* Phrase Card & Audio */
+.phrase-card {
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 10px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  box-shadow: var(--shadow-sm);
+}
+
+.phrase-text-wrap {
+  flex: 1;
+}
+
+.phrase-category-badge {
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: var(--text-muted);
+}
+
+.phrase-ja {
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: var(--primary-color);
+}
+
+.phrase-it {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #c2410c;
+}
+
+.phrase-kana {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.speak-btn {
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.speak-btn:active {
+  transform: scale(0.92);
+  background: #dbeafe;
+}
+
+.copy-phrase-btn {
+  background: #f1f5f9;
+  border: 1px solid var(--border-color);
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1rem;
+  flex-shrink: 0;
+  transition: background 0.15s ease;
+}
+
+.copy-phrase-btn:active {
+  background: #e2e8f0;
+}
+
+/* ==========================================================================
+   追加スタイル: あるある・トレンド・ファッション・ご当地チェーン用 (完全統合版)
+   ========================================================================== */
+
+/* City Filter Chips */
+.city-filter-chips {
+  display: flex;
+  gap: 5px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+  margin-bottom: 10px;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+.city-filter-chips::-webkit-scrollbar {
+  display: none;
+}
+
+/* Visual Diagram Containers & SVG */
+.diagram-box {
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 12px;
+  margin-bottom: 12px;
+  box-shadow: var(--shadow-sm);
+  overflow-x: auto;
+}
+.diagram-box h4 {
+  font-size: 0.92rem;
+  font-weight: 800;
+  color: var(--primary-color);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.diagram-svg-wrap {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.diagram-svg-wrap svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  min-width: 300px;
+}
+
+/* Aru-Aru Cards */
+.aru-aru-card {
+  background: var(--bg-card);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  padding: 12px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.aru-aru-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+}
+.aru-aru-num {
+  background: linear-gradient(135deg, #c05621 0%, #dd6b20 100%);
+  color: #ffffff;
+  font-size: 0.74rem;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: var(--radius-full);
+  flex-shrink: 0;
+}
+.aru-aru-level {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #eab308;
+}
+.aru-aru-title {
+  font-size: 0.96rem; /* 拡大 */
+  font-weight: 800;
+  color: var(--primary-color);
+  margin: 0;
+  line-height: 1.4;
+}
+.aru-aru-voice {
+  background: #f8fafc;
+  border-left: 3px solid #94a3b8;
+  padding: 8px 10px;
+  border-radius: var(--radius-sm);
+  font-size: 0.88rem; /* 0.72remから拡大 */
+  color: #475569;
+  line-height: 1.55;
+}
+.aru-aru-solution {
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  padding: 8px 10px;
+  border-radius: var(--radius-sm);
+  font-size: 0.88rem; /* 0.72remから拡大 */
+  color: #166534;
+  line-height: 1.55;
+}
+
+/* Trend & Food Cards */
+.trend-card {
+  background: var(--bg-card);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  margin-bottom: 12px;
+  display: flex;
+  flex-direction: column;
+}
+.trend-thumb-wrap {
+  position: relative;
+  width: 100%;
+  height: 165px;
+  overflow: hidden;
+  background: #e2e8f0;
+}
+.trend-thumb-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.trend-badge-hot {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background: #dc2626;
+  color: #ffffff;
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: var(--radius-full);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+.trend-body {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.trend-title-ja {
+  font-size: 1rem; /* 拡大 */
+  font-weight: 800;
+  color: var(--primary-color);
+  margin: 0;
+}
+.trend-title-it {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--secondary-color);
+}
+.trend-analogy {
+  background: #fef2f2;
+  border: 1px dashed #f87171;
+  padding: 6px 10px;
+  border-radius: var(--radius-sm);
+  font-size: 0.84rem; /* 拡大 */
+  color: #991b1b;
+  font-weight: 700;
+}
+.trend-desc {
+  font-size: 0.88rem; /* 0.73remから拡大 */
+  color: var(--text-main);
+  line-height: 1.55;
+}
+.trend-spots-box {
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  padding: 7px 10px;
+  border-radius: var(--radius-sm);
+  font-size: 0.82rem;
+  color: #1e40af;
+}
+
+/* Fashion & Dress Code Cards */
+.fashion-card {
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  padding: 12px;
+  margin-bottom: 10px;
+}
+.fashion-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #f1f5f9;
+  padding-bottom: 6px;
+  margin-bottom: 8px;
+}
+.fashion-title {
+  font-size: 0.94rem;
+  font-weight: 800;
+  color: #831843;
+  margin: 0;
+}
+.fashion-badge {
+  font-size: 0.72rem;
+  font-weight: 800;
+  background: #fce7f3;
+  color: #9d174d;
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+}
+.fashion-rule-box {
+  background: #fdf2f8;
+  border-left: 3px solid #f472b6;
+  padding: 8px 10px;
+  border-radius: var(--radius-sm);
+  font-size: 0.86rem;
+  color: #831843;
+  line-height: 1.5;
+  margin: 6px 0;
+}
+
+/* Local Chain Store Cards */
+.chain-card {
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  padding: 12px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.chain-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+}
+.chain-name-ja {
+  font-size: 0.96rem;
+  font-weight: 800;
+  color: var(--primary-color);
+}
+.chain-badge {
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 2px 7px;
+  border-radius: var(--radius-full);
+  background: #dbeafe;
+  color: #1e40af;
+}
+.chain-specialty {
+  background: #fff7ed;
+  border: 1px solid #ffedd5;
+  border-radius: var(--radius-sm);
+  padding: 6px 10px;
+  font-size: 0.84rem;
+  color: #c2410c;
+  font-weight: 700;
+}
+
+/* Regional History & Culture Cards */
+.region-card {
+  background: var(--bg-card);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  padding: 12px;
+  margin-bottom: 10px;
+}
+.region-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #f1f5f9;
+  padding-bottom: 6px;
+  margin-bottom: 8px;
+}
+.region-title {
+  font-size: 0.94rem;
+  font-weight: 800;
+  color: var(--primary-color);
+  margin: 0;
+}
+.region-tag {
+  font-size: 0.72rem;
+  font-weight: 800;
+  background: #e0f2fe;
+  color: #0369a1;
+  padding: 2px 7px;
+  border-radius: var(--radius-full);
+}
+.region-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  font-size: 0.84rem;
+}
+@media (max-width: 480px) {
+  .region-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Comparison Tables */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: 12px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+}
+.compare-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.84rem; /* 0.72remから拡大 */
+  background: #ffffff;
+  white-space: nowrap;
+}
+.compare-table th {
+  background: #f1f5f9;
+  color: var(--primary-color);
+  font-weight: 800;
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--border-color);
+  text-align: left;
+}
+.compare-table td {
+  padding: 8px 10px;
+  border-bottom: 1px solid #f1f5f9;
+  color: var(--text-main);
+}
+
+/* Survival Cards */
+.survival-card {
+  background: var(--bg-card);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  padding: 12px;
+  margin-bottom: 10px;
+}
+.survival-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+.survival-icon {
+  font-size: 1.3rem;
+}
+.survival-title {
+  font-size: 0.94rem;
+  font-weight: 800;
+  color: var(--primary-color);
+  margin: 0;
+}
+.survival-badge {
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 2px 7px;
+  border-radius: var(--radius-full);
+  margin-left: auto;
+}
+.survival-badge.green { background: #dcfce7; color: #15803d; }
+.survival-badge.amber { background: #fef3c7; color: #92400e; }
+.survival-badge.red { background: #fee2e2; color: #991b1b; }
+.survival-badge.blue { background: #e0f2fe; color: #0369a1; }
+
+.survival-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 8px;
+}
+.survival-step-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 0.86rem; /* 拡大 */
+  line-height: 1.5;
+}
+.step-number {
+  background: var(--primary-color);
+  color: #ffffff;
+  width: 19px;
+  height: 19px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.68rem;
+  font-weight: 800;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* Custom Warnings */
+.customs-warning-box {
+  background: #fef2f2;
+  border: 1.5px solid #ef4444;
+  border-radius: var(--radius-md);
+  padding: 10px 12px;
+  margin-bottom: 10px;
+}
+
+/* Souvenir Badges */
+.souvenir-badges-row {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+  margin: 6px 0;
+}
+.sn-badge {
+  font-size: 0.72rem; /* 0.6remから拡大 */
+  font-weight: 800;
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+}
+.sn-badge.baramaki { background: #fef3c7; color: #92400e; }
+.sn-badge.honmei { background: #fce7f3; color: #9d174d; }
+.sn-badge.kinen { background: #ede9fe; color: #5b21b6; }
+.sn-badge.jitaku { background: #e0f2fe; color: #0369a1; }
+.sn-badge.super { background: #dcfce7; color: #15803d; }
+.sn-badge.tokusan { background: #ffedd5; color: #9a3412; }
+.sn-badge.ok-customs { background: #dcfce7; color: #166534; border: 1px solid #86efac; }
+.sn-badge.no-customs { background: #fee2e2; color: #991b1b; border: 1px solid #fca5a5; }
+
+/* Details Accordion Box */
+.details-box {
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+.details-box summary {
+  padding: 10px 12px;
+  font-size: 0.88rem; /* 拡大 */
+  font-weight: 800;
+  color: var(--primary-color);
+  cursor: pointer;
+  background: #f8fafc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+}
+.details-box summary::-webkit-details-marker {
+  display: none;
+}
+.details-box[open] summary {
+  border-bottom: 1px solid var(--border-color);
+  background: #f1f5f9;
+}
+.details-content {
+  padding: 12px;
+  font-size: 0.84rem; /* 拡大 */
+  line-height: 1.55;
+}
+
+/* Footer */
+footer.site-footer {
+  background: #111827;
+  color: #9ca3af;
+  padding: 14px 0 10px;
+  margin-top: 16px;
+  font-size: 0.74rem;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+}
