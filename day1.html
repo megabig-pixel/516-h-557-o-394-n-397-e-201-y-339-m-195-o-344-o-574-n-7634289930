@@ -13,6 +13,7 @@
 
     <!-- Top Horizontal Quick Day Pills & Navigation Strip -->
     <div class="day-quick-pills">
+      <a href="schedule.html" class="day-pill shiori-highlight"><span class="dp-day">📋 しおり</span><span class="dp-date">全日程表</span></a>
       <a href="day1.html" class="day-pill active"><span class="dp-day">Day 1</span><span class="dp-date">11/15</span></a>
       <a href="day2.html" class="day-pill "><span class="dp-day">Day 2</span><span class="dp-date">11/16</span></a>
       <a href="day3.html" class="day-pill "><span class="dp-day">Day 3</span><span class="dp-date">11/17</span></a>
@@ -46,6 +47,63 @@
       <h2 class="hero-title">Day 1: 関西空港 15:25集合 &rarr; カタール航空 QR803便 17:55発 &rarr; ドーハ乗継（機中泊）</h2>
       <p class="hero-subtitle">2026年11月15日(日) • 関空第1T 4階 団体カウンターNO.11集合（15:25厳守） &rarr; QR803便（17:55発） &rarr; ドーハ（23:35着）</p>
     </div>
+
+    <!-- Official Shiori Booklet Schedule Table for Day 1 -->
+    <section class="section" style="margin-bottom: 12px;">
+      <div class="section-header" style="margin-bottom:6px;">
+        <h3 class="section-title" style="font-size:0.96rem;">📋 【公式しおり】Day 1 タイムスケジュール概要</h3>
+        <a href="schedule.html#shiori-day1" class="btn btn-secondary" style="font-size:0.72rem; padding:3px 8px;">全8日間しおり一覧を見る &rarr;</a>
+      </div>
+    <!-- Day 1 Shiori Box -->
+    <div class="shiori-day-box" id="shiori-day1">
+      <div class="shiori-day-header">
+        <div class="shiori-day-title">
+          <span class="shiori-day-badge">日程 1日目</span>
+          <span>2026年11月15日(日) 関西空港発 &rarr; ドーハ乗継</span>
+        </div>
+        <div class="shiori-day-meals">
+          <span class="shiori-meal-pill">朝: ×</span>
+          <span class="shiori-meal-pill">昼: ×</span>
+          <span class="shiori-meal-pill on">夕: 機内</span>
+        </div>
+      </div>
+      <div class="shiori-rows">
+        <div class="shiori-row">
+          <div class="shiori-col-meta">
+            <span class="shiori-city">関西空港</span>
+            <span class="shiori-time reserved">15:25 集合</span>
+            <span class="shiori-transport-mobile">📍 第1T 4階</span>
+          </div>
+          <div class="shiori-col-transport">ご集合</div>
+          <div class="shiori-col-detail">
+            <div class="shiori-green-bar">関西空港 第1ターミナルビル4階 団体カウンター NO.11（HIS看板前）ご集合</div>
+            <p class="shiori-detail-text">
+              ※お時間は厳守でお願いいたします。受付は集合時間（15:25）より開始いたします。<br>
+              ※添乗員がお待ちしております。（当日緊急連絡先：050-1752-5472）
+            </p>
+          </div>
+        </div>
+        <div class="shiori-row">
+          <div class="shiori-col-meta">
+            <span class="shiori-city">関西空港発<br>ドーハ着</span>
+            <span class="shiori-time">17:55 発<br>23:35 着</span>
+            <span class="shiori-transport-mobile">✈️ QR803便</span>
+          </div>
+          <div class="shiori-col-transport">航空機<br>(QR803)</div>
+          <div class="shiori-col-detail">
+            <p class="shiori-detail-text">
+              ✈️ <strong>カタール航空 QR803便</strong>（所要約11時間40分）にてドーハへ。<br>
+              23:35 ドーハ着後、ミラノ行きQR123便（翌01:30発）へ乗り継ぎ。
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="shiori-hotel-footer">
+        <span>🌙 宿泊：【機中泊】</span>
+        <a href="day1.html" class="btn btn-secondary" style="font-size:0.74rem; padding:3px 8px;">Day 1 詳細ページ &rarr;</a>
+      </div>
+    </div>
+    </section>
 
     <!-- Meal Status Box -->
     <div class="meal-status-box">
@@ -177,57 +235,51 @@
 
   </main>
 
-  <!-- FULL 9-ITEM BOTTOM TAB BAR (全ページ完全統一ナビゲーション) -->
+    <!-- FULL 9-ITEM BOTTOM TAB BAR (全ページ完全統一ナビゲーション) -->
   <nav class="bottom-tab-bar">
     <a href="index.html" class="tab-item ">
       <span class="tab-icon">🏠</span>
       <span class="tab-label">ホーム</span>
     </a>
 
+    <a href="schedule.html" class="tab-item ">
+      <span class="tab-icon">📋</span>
+      <span class="tab-label">しおり表</span>
+    </a>
+
     <!-- Day Selection Drawer -->
     <details class="day-popover-details" id="day-popover-details">
       <summary class="tab-item active">
         <span class="tab-icon">📅</span>
-        <span class="tab-label">日程</span>
+        <span class="tab-label">日別詳細</span>
       </summary>
       <div class="day-popover-backdrop"></div>
       <div class="day-popover-dropdown">
         <div class="day-popover-header">
-          <span class="day-popover-title">📅 全8日間 日程詳細を選択</span>
+          <span class="day-popover-title">📅 全8日間 日程詳細 ＆ しおり一覧</span>
           <button type="button" class="day-popover-close" aria-label="閉じる">✕</button>
         </div>
+        <a href="schedule.html" class="btn btn-primary" style="width:100%; margin-bottom:4px; background:#d97706;">📋 全8日間「しおり型タイムスケジュール表」を一気見 &rarr;</a>
         <div class="day-popover-grid">
-          <a href="day1.html" class="day-popover-item"><span class="dp-badge">Day 1</span> 11/15(日) 関空17:55発 &rarr; 機中泊</a>
+          <a href="day1.html" class="day-popover-item"><span class="dp-badge">Day 1</span> 11/15(日) 関空15:25集合・17:55発</a>
           <a href="day2.html" class="day-popover-item"><span class="dp-badge">Day 2</span> 11/16(月) ミラノ &rarr; ベローナ &rarr; ベネチア</a>
           <a href="day3.html" class="day-popover-item"><span class="dp-badge">Day 3</span> 11/17(火) ベネチア &rarr; スーパー &rarr; プラート</a>
           <a href="day4.html" class="day-popover-item"><span class="dp-badge">Day 4</span> 11/18(水) ミケランジェロ広場 ＆ フィレンツェ10h</a>
           <a href="day5.html" class="day-popover-item"><span class="dp-badge">Day 5</span> 11/19(木) サンジミニャーノ &rarr; ローマ観光</a>
-          <a href="day6.html" class="day-popover-item"><span class="dp-badge">Day 6</span> 11/20(金) コロッセオ・バチカン・夕のミサ</a>
-          <a href="day7.html" class="day-popover-item"><span class="dp-badge">Day 7</span> 11/21(土) ローマ自由 &rarr; 15:10 FCO空港発</a>
+          <a href="day6.html" class="day-popover-item" style="border-color:#dc2626; background:#fff1f2;"><span class="dp-badge" style="background:#dc2626;">Day 6</span> 11/20(金) コロッセオ・バチカン・夕ミサ</a>
+          <a href="day7.html" class="day-popover-item"><span class="dp-badge">Day 7</span> 11/21(土) ローマ自由 &rarr; 15:10 FCO発</a>
           <a href="day8.html" class="day-popover-item"><span class="dp-badge">Day 8</span> 11/22(日) 16:25 関空帰着・解散</a>
         </div>
       </div>
     </details>
 
-    <a href="beginner-guide.html" class="tab-item ">
-      <span class="tab-icon">🔰</span>
-      <span class="tab-label">初心者</span>
-    </a>
-    <a href="culture-trends.html" class="tab-item ">
-      <span class="tab-icon">💡</span>
-      <span class="tab-label">トレンド</span>
-    </a>
-    <a href="tips-survival.html" class="tab-item ">
-      <span class="tab-icon">🚆</span>
-      <span class="tab-label">サバイバル</span>
-    </a>
     <a href="tour-map.html" class="tab-item ">
       <span class="tab-icon">🗺️</span>
       <span class="tab-label">MAP</span>
     </a>
-    <a href="phrasebook.html" class="tab-item ">
-      <span class="tab-icon">🗣️</span>
-      <span class="tab-label">会話</span>
+    <a href="sightseeing-guide.html" class="tab-item ">
+      <span class="tab-icon">🏛️</span>
+      <span class="tab-label">観光</span>
     </a>
     <a href="free-meal-guide.html" class="tab-item ">
       <span class="tab-icon">🍽️</span>
@@ -236,6 +288,14 @@
     <a href="souvenir-guide.html" class="tab-item ">
       <span class="tab-icon">🎁</span>
       <span class="tab-label">お土産</span>
+    </a>
+    <a href="tips-survival.html" class="tab-item ">
+      <span class="tab-icon">🚆</span>
+      <span class="tab-label">サバイバル</span>
+    </a>
+    <a href="phrasebook.html" class="tab-item ">
+      <span class="tab-icon">🗣️</span>
+      <span class="tab-label">会話</span>
     </a>
   </nav>
 
