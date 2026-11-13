@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=no">
+  <title>初めてのイタリア旅行 完全安心バイブル | YouTube「イタリアガイドみめ」直伝</title>
+  <meta name="description" content="三種の神器、罰金回避10選、イタリアの食文化・生活習慣、レストラン・教会エチケット、スリ完全防御マニュアル">
+  <link rel="stylesheet" href="style.css?v=16">
+  <style>
+
+/* === v16 iPhone-First Shiori & Responsive Layout Override === */
+.compare-table {
+  white-space: normal !important;
+  word-break: break-word;
+  width: 100%;
+  border-collapse: collapse;
+}
+.btn, .hero-cta-btn, .btn-maps {
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.section-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+@media (min-width: 640px) {
+  .section-header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+/* Shiori Legend Bar */
+.shiori-legend-bar {
+  background: #ffffff;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 10px;
+  padding: 10px 12px;
+  margin-bottom: 14px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #1e293b;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.06);
+}
+
+/* Shiori Day Box (Official Booklet Style - 100% iPhone Width Fit) */
+.shiori-day-box {
+  background: #ffffff;
+  border: 2px solid #1e293b;
+  border-radius: 12px;
+  margin-bottom: 16px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.08);
+}
+.shiori-day-box.highlight-day6 {
+  border-color: #dc2626;
+  box-shadow: 0 4px 14px rgba(220, 38, 38, 0.16);
+}
+.shiori-day-header {
+  background: #1e293b;
+  color: #ffffff;
+  padding: 10px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.shiori-day-box.highlight-day6 .shiori-day-header {
+  background: linear-gradient(90deg, #991b1c 0%, #dc2626 100%);
+}
+.shiori-day-title {
+  font-size: 0.94rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  line-height: 1.3;
+}
+.shiori-day-badge {
+  background: #f59e0b;
+  color: #ffffff;
+  font-size: 0.74rem;
+  font-weight: 900;
+  padding: 2px 7px;
+  border-radius: 5px;
+  white-space: nowrap;
+}
+.shiori-day-meals {
+  display: flex;
+  gap: 4px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+.shiori-meal-pill {
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.18);
+  color: #f8fafc;
+  white-space: nowrap;
+}
+.shiori-meal-pill.on {
+  background: #dcfce7;
+  color: #166534;
+}
+
+/* 2-Column iPhone-Fit Shiori Rows (No Duplicate Columns, Zero Horizontal Overflow) */
+.shiori-rows {
+  display: flex;
+  flex-direction: column;
+}
+.shiori-row {
+  display: grid;
+  grid-template-columns: 92px 1fr;
+  border-bottom: 1px solid #cbd5e1;
+  font-size: 0.85rem;
+}
+.shiori-row:last-child {
+  border-bottom: none;
+}
+.shiori-col-meta {
+  background: #f8fafc;
+  border-right: 1px solid #cbd5e1;
+  padding: 9px 7px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 4px;
+}
+.shiori-city {
+  font-weight: 800;
+  color: #0f2b48;
+  font-size: 0.82rem;
+  line-height: 1.25;
+}
+.shiori-time {
+  display: inline-block;
+  font-size: 0.74rem;
+  font-weight: 800;
+  color: #0369a1;
+  background: #e0f2fe;
+  padding: 2px 5px;
+  border-radius: 4px;
+  width: fit-content;
+  line-height: 1.2;
+}
+.shiori-time.reserved {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+.shiori-transport-tag {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #475569;
+  line-height: 1.25;
+}
+.shiori-col-detail {
+  padding: 9px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+}
+.shiori-green-bar {
+  background: #2e6b3e;
+  color: #ffffff;
+  font-size: 0.8rem;
+  font-weight: 800;
+  padding: 4px 8px;
+  border-radius: 4px;
+  line-height: 1.35;
+}
+.shiori-red-bar {
+  background: #be123c;
+  color: #ffffff;
+  font-size: 0.8rem;
+  font-weight: 800;
+  padding: 4px 8px;
+  border-radius: 4px;
+  line-height: 1.35;
+}
+.shiori-detail-text {
+  font-size: 0.84rem;
+  color: #0f172a;
+  line-height: 1.5;
+  margin: 0;
+  word-break: break-word;
+}
+.shiori-hotel-footer {
+  background: #f1f5f9;
+  border-top: 1.5px solid #94a3b8;
+  padding: 8px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: #0f2b48;
+}
+
+/* Home Page Compact At-a-Glance Schedule List (iPhone 100% Fit) */
+.quick-shiori-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.quick-shiori-card {
+  background: #ffffff;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.06);
+}
+.quick-shiori-card.day6-special {
+  border: 2px solid #dc2626;
+  background: #fffafa;
+}
+.qsc-header {
+  background: #1e293b;
+  color: #ffffff;
+  padding: 7px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+}
+.quick-shiori-card.day6-special .qsc-header {
+  background: linear-gradient(90deg, #991b1b 0%, #dc2626 100%);
+}
+.qsc-day-route {
+  font-size: 0.86rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.qsc-day-badge {
+  background: #f59e0b;
+  color: #ffffff;
+  font-size: 0.72rem;
+  font-weight: 900;
+  padding: 1px 6px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+.qsc-meals {
+  font-size: 0.7rem;
+  font-weight: 700;
+  background: rgba(255,255,255,0.16);
+  padding: 2px 6px;
+  border-radius: 4px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.qsc-body {
+  padding: 8px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 0.82rem;
+  line-height: 1.48;
+  color: #1e293b;
+}
+.qsc-line {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 6px;
+  align-items: baseline;
+}
+.qsc-time {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #0369a1;
+  background: #e0f2fe;
+  padding: 1px 4px;
+  border-radius: 3px;
+  text-align: center;
+  white-space: nowrap;
+}
+.qsc-time.red {
+  color: #b91c1c;
+  background: #fee2e2;
+}
+.qsc-footer {
+  background: #f8fafc;
+  border-top: 1px solid #e2e8f0;
+  padding: 6px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: #334155;
+}
+
+  </style>
+  <style>
+
+/* === v16 iPhone-First Shiori & Responsive Layout Override === */
+.compare-table {
+  white-space: normal !important;
+  word-break: break-word;
+  width: 100%;
+  border-collapse: collapse;
+}
+.btn, .hero-cta-btn, .btn-maps {
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.section-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+@media (min-width: 640px) {
+  .section-header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+/* Shiori Legend Bar */
+.shiori-legend-bar {
+  background: #ffffff;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 10px;
+  padding: 10px 12px;
+  margin-bottom: 14px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #1e293b;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.06);
+}
+
+/* Shiori Day Box (Official Booklet Style - 100% iPhone Width Fit) */
+.shiori-day-box {
+  background: #ffffff;
+  border: 2px solid #1e293b;
+  border-radius: 12px;
+  margin-bottom: 16px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.08);
+}
+.shiori-day-box.highlight-day6 {
+  border-color: #dc2626;
+  box-shadow: 0 4px 14px rgba(220, 38, 38, 0.16);
+}
+.shiori-day-header {
+  background: #1e293b;
+  color: #ffffff;
+  padding: 10px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.shiori-day-box.highlight-day6 .shiori-day-header {
+  background: linear-gradient(90deg, #991b1c 0%, #dc2626 100%);
+}
+.shiori-day-title {
+  font-size: 0.94rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  line-height: 1.3;
+}
+.shiori-day-badge {
+  background: #f59e0b;
+  color: #ffffff;
+  font-size: 0.74rem;
+  font-weight: 900;
+  padding: 2px 7px;
+  border-radius: 5px;
+  white-space: nowrap;
+}
+.shiori-day-meals {
+  display: flex;
+  gap: 4px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+.shiori-meal-pill {
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.18);
+  color: #f8fafc;
+  white-space: nowrap;
+}
+.shiori-meal-pill.on {
+  background: #dcfce7;
+  color: #166534;
+}
+
+/* 2-Column iPhone-Fit Shiori Rows (No Duplicate Columns, Zero Horizontal Overflow) */
+.shiori-rows {
+  display: flex;
+  flex-direction: column;
+}
+.shiori-row {
+  display: grid;
+  grid-template-columns: 92px 1fr;
+  border-bottom: 1px solid #cbd5e1;
+  font-size: 0.85rem;
+}
+.shiori-row:last-child {
+  border-bottom: none;
+}
+.shiori-col-meta {
+  background: #f8fafc;
+  border-right: 1px solid #cbd5e1;
+  padding: 9px 7px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 4px;
+}
+.shiori-city {
+  font-weight: 800;
+  color: #0f2b48;
+  font-size: 0.82rem;
+  line-height: 1.25;
+}
+.shiori-time {
+  display: inline-block;
+  font-size: 0.74rem;
+  font-weight: 800;
+  color: #0369a1;
+  background: #e0f2fe;
+  padding: 2px 5px;
+  border-radius: 4px;
+  width: fit-content;
+  line-height: 1.2;
+}
+.shiori-time.reserved {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+.shiori-transport-tag {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #475569;
+  line-height: 1.25;
+}
+.shiori-col-detail {
+  padding: 9px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+}
+.shiori-green-bar {
+  background: #2e6b3e;
+  color: #ffffff;
+  font-size: 0.8rem;
+  font-weight: 800;
+  padding: 4px 8px;
+  border-radius: 4px;
+  line-height: 1.35;
+}
+.shiori-red-bar {
+  background: #be123c;
+  color: #ffffff;
+  font-size: 0.8rem;
+  font-weight: 800;
+  padding: 4px 8px;
+  border-radius: 4px;
+  line-height: 1.35;
+}
+.shiori-detail-text {
+  font-size: 0.84rem;
+  color: #0f172a;
+  line-height: 1.5;
+  margin: 0;
+  word-break: break-word;
+}
+.shiori-hotel-footer {
+  background: #f1f5f9;
+  border-top: 1.5px solid #94a3b8;
+  padding: 8px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: #0f2b48;
+}
+
+/* Home Page Compact At-a-Glance Schedule List (iPhone 100% Fit) */
+.quick-shiori-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.quick-shiori-card {
+  background: #ffffff;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.06);
+}
+.quick-shiori-card.day6-special {
+  border: 2px solid #dc2626;
+  background: #fffafa;
+}
+.qsc-header {
+  background: #1e293b;
+  color: #ffffff;
+  padding: 7px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+}
+.quick-shiori-card.day6-special .qsc-header {
+  background: linear-gradient(90deg, #991b1b 0%, #dc2626 100%);
+}
+.qsc-day-route {
+  font-size: 0.86rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.qsc-day-badge {
+  background: #f59e0b;
+  color: #ffffff;
+  font-size: 0.72rem;
+  font-weight: 900;
+  padding: 1px 6px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+.qsc-meals {
+  font-size: 0.7rem;
+  font-weight: 700;
+  background: rgba(255,255,255,0.16);
+  padding: 2px 6px;
+  border-radius: 4px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.qsc-body {
+  padding: 8px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 0.82rem;
+  line-height: 1.48;
+  color: #1e293b;
+}
+.qsc-line {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 6px;
+  align-items: baseline;
+}
+.qsc-time {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #0369a1;
+  background: #e0f2fe;
+  padding: 1px 4px;
+  border-radius: 3px;
+  text-align: center;
+  white-space: nowrap;
+}
+.qsc-time.red {
+  color: #b91c1c;
+  background: #fee2e2;
+}
+.qsc-footer {
+  background: #f8fafc;
+  border-top: 1px solid #e2e8f0;
+  padding: 6px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: #334155;
+}
+
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+</head>
+<body>
+  <main class="container" style="padding-top: 6px;">
+
+    <!-- Top Horizontal Quick Day Pills & Nav -->
+    <div class="day-quick-pills">
+      <a href="schedule.html" class="day-pill shiori-highlight"><span class="dp-day">📋 しおり</span><span class="dp-date">全日程表</span></a>
+      <a href="index.html" class="day-pill" style="min-width:45px;">🏠<small>Top</small></a>
+      <a href="beginner-guide.html" class="day-pill active">🔰<small>初心者</small></a>
+      <a href="culture-trends.html" class="day-pill">💡<small>あるある</small></a>
+      <a href="tips-survival.html" class="day-pill">🚆<small>サバイバル</small></a>
+      <a href="souvenir-guide.html" class="day-pill">🎁<small>お土産</small></a>
+      <a href="free-meal-guide.html" class="day-pill">🍽️<small>グルメ</small></a>
+      <a href="tour-map.html" class="day-pill">🗺️<small>MAP</small></a>
+    </div>
+
+    <!-- Hero Header -->
+    <div class="hero-card" style="background: linear-gradient(135deg, #b45309 0%, #d97706 100%);">
+      <span class="hero-tag" style="background:#fef3c7; color:#92400e;">🔰 YouTube「イタリアガイドみめ」特別監修</span>
+      <h2 class="hero-title">初めてのイタリア旅行 完全安心バイブル</h2>
+      <p class="hero-subtitle">
+        イタリア在住28年の公認観光ガイド・片庭みめさん（@mimeitalygaido）直伝！<br>
+        三種の神器・罰金回避10選・イタリアの文化・食事作法・ホテル事情・スリ完全防御マニュアル
+      </p>
+    </div>
+
+    <!-- 1. 三種の神器 & 持ち物10選 -->
+    <section class="section">
+      <div class="mime-callout">
+        <div class="mime-header">
+          <div class="mime-title">
+            <span style="font-size: 1.5rem;">🎒</span>
+            <h3 style="margin:0;">【Mime直伝】イタリア旅行「三種の神器」＆ 必須持ち物10選</h3>
+          </div>
+          <span class="mime-badge">日本から持参必須</span>
+        </div>
+        <div class="mime-tips-grid">
+          <div class="mime-tip-card">
+            <h4>👑 三種の神器 第1位：薄型セキュリティポーチ</h4>
+            <p><strong>【使い方】</strong> パスポート原本、予備クレカ、高額紙幣（€50札以上）を入れ、服の下（インナーの上）に着用。<br>
+            ※イタリアでは外国人のパスポート原本携帯が法律上の義務です（コピー不可）。人前でポーチを開けるのは厳禁！日中使う少額コインは別のダミー財布へ。</p>
+          </div>
+          <div class="mime-tip-card">
+            <h4>👑 三種の神器 第2位：自転車用軽量ワイヤーロック</h4>
+            <p><strong>【使い方】</strong> バス預け時やホテルロビー、列車の荷物置き場でお二人分のスーツケース2個を連結固定。<br>
+            ※スーツケース2個を連結すると重くて絶対に一瞬で持ち去れません。100均のダイヤル式で十分効果絶大！</p>
+          </div>
+          <div class="mime-tip-card">
+            <h4>👑 三種の神器 第3位：ダイヤル式南京錠</h4>
+            <p><strong>【使い方】</strong> 街歩き用リュックやサコッシュのファスナースライダー同士をロック。<br>
+            ※スリは「開けるのに3秒以上かかるバッグ」を避けて別のターゲットを狙います。南京錠があるだけで抑止力100点。</p>
+          </div>
+          <div class="mime-tip-card">
+            <h4>📱 スマホ用ショルダーストラップ（斜めがけ）</h4>
+            <p>歩きながらの写真撮影時や、テラス席での置き引き防止。ストラップを手首や首にかけておけば、ひったくりや手元からの落下を完全に防げます。</p>
+          </div>
+          <div class="mime-tip-card">
+            <h4>🧻 水に流せるポケットティッシュ＆除菌シート</h4>
+            <p>公衆トイレやバールのトイレは紙がない確率が非常に高いです。除菌ウェットティッシュは食べ歩き時の手指消毒にも大活躍。</p>
+          </div>
+          <div class="mime-tip-card">
+            <h4>🧣 大判ストール / 羽織りもの</h4>
+            <p>教会見学時の露出（肩・膝）隠しに必須。11月中旬の朝晩の寒暖差対策にも重宝します。</p>
+          </div>
+          <div class="mime-tip-card">
+            <h4>🔌 Cタイプ / SEタイプ 変換プラグ</h4>
+            <p>イタリアのコンセント（丸ピン2本）対応。スマホ2台＋モバイルバッテリー同時充電用に2〜3個必須。</p>
+          </div>
+          <div class="mime-tip-card">
+            <h4>🥿 使い捨て室内スリッパ ＆ 歯ブラシセット</h4>
+            <p>イタリアのホテルにはスリッパ・歯ブラシが一切置かれていません。機内でも使える使い捨てスリッパを持参しましょう。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. 罰金回避 10選 -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">⚠️ 知らないと高額罰金！イタリアの罰金ルール 10選</h2>
+        <span class="section-subtitle">観光客が最も引っかかりやすい落とし穴</span>
+      </div>
+      <div class="cards-grid">
+        <div class="spot-card">
+          <div class="spot-body">
+            <span class="spot-chip" style="background:#fee2e2; color:#991b1b;">罰金 €50〜100</span>
+            <h3 class="spot-name-ja">① 電車・バスの刻印（Timbrare）忘れ</h3>
+            <p class="spot-desc">普通列車（Regionale）や市バス・トラムの紙切符は、乗車前に駅や車内の打刻機で日時を刻印しないと「無賃乗車」とみなされ即座に高額罰金！</p>
+          </div>
+        </div>
+        <div class="spot-card">
+          <div class="spot-body">
+            <span class="spot-chip" style="background:#fee2e2; color:#991b1b;">罰金 €160〜400</span>
+            <h3 class="spot-name-ja">② スペイン階段での座り込み・飲食</h3>
+            <p class="spot-desc">ローマのスペイン広場の階段に座ること、物を食べることは世界遺産保護条例で全面禁止。警察官が笛を鳴らして取り締まっています。</p>
+          </div>
+        </div>
+        <div class="spot-card">
+          <div class="spot-body">
+            <span class="spot-chip" style="background:#fee2e2; color:#991b1b;">罰金 €500</span>
+            <h3 class="spot-name-ja">③ 歴史的噴水に手足を浸す・入水</h3>
+            <p class="spot-desc">トレビの泉やナヴォーナ広場の噴水に手足を入れたり、フチに腰掛けて足を浸す行為は厳禁！コイン投げは立った状態で行います。</p>
+          </div>
+        </div>
+        <div class="spot-card">
+          <div class="spot-body">
+            <span class="spot-chip" style="background:#fee2e2; color:#991b1b;">罰金 €100〜500</span>
+            <h3 class="spot-name-ja">④ サン・マルコ広場でのハトへの餌やり</h3>
+            <p class="spot-desc">ベネチアのサン・マルコ広場でハトに餌をあげる行為は条例で禁止。広場周辺で親しげに餌を渡してくる人物は高額請求詐欺です！</p>
+          </div>
+        </div>
+        <div class="spot-card">
+          <div class="spot-body">
+            <span class="spot-chip" style="background:#fee2e2; color:#991b1b;">罰金 €100〜500</span>
+            <h3 class="spot-name-ja">⑤ ベネチア橋上での立ち止まり妨害</h3>
+            <p class="spot-desc">リアルト橋やため息橋などの狭い橋の上でスーツケースを広げたり、通行を遮断して長時間の撮影を行うと罰金対象になります。</p>
+          </div>
+        </div>
+        <div class="spot-card">
+          <div class="spot-body">
+            <span class="spot-chip" style="background:#fee2e2; color:#991b1b;">罰金 €333〜10,000</span>
+            <h3 class="spot-name-ja">⑥ 路上での偽ブランド品購入</h3>
+            <p class="spot-desc">露店で売られている偽ブランドバッグや偽財布を買うと、購入者側も処罰の対象になります。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Bottom Tab Bar -->
+    <!-- STREAMLINED 5-ITEM BOTTOM TAB BAR -->
+    <!-- FULL 9-ITEM BOTTOM TAB BAR (全ページ完全統一ナビゲーション) -->
+    <!-- FULL 9-ITEM BOTTOM TAB BAR (全ページ完全統一ナビゲーション) -->
+    <!-- FULL 9-ITEM BOTTOM TAB BAR (全ページ完全統一ナビゲーション) -->
+  <nav class="bottom-tab-bar">
+    <a href="index.html" class="tab-item active">
+      <span class="tab-icon">🏠</span>
+      <span class="tab-label">ホーム</span>
+    </a>
+
+    <a href="schedule.html" class="tab-item ">
+      <span class="tab-icon">📋</span>
+      <span class="tab-label">しおり表</span>
+    </a>
+
+    <!-- Day Selection Drawer -->
+    <details class="day-popover-details" id="day-popover-details">
+      <summary class="tab-item ">
+        <span class="tab-icon">📅</span>
+        <span class="tab-label">日別詳細</span>
+      </summary>
+      <div class="day-popover-backdrop"></div>
+      <div class="day-popover-dropdown">
+        <div class="day-popover-header">
+          <span class="day-popover-title">📅 全8日間 日程詳細 ＆ しおり一覧</span>
+          <button type="button" class="day-popover-close" aria-label="閉じる">✕</button>
+        </div>
+        <a href="schedule.html" class="btn btn-primary" style="width:100%; margin-bottom:4px; background:#d97706;">📋 全8日間「しおり型タイムスケジュール表」を一気見 &rarr;</a>
+        <div class="day-popover-grid">
+          <a href="day1.html" class="day-popover-item"><span class="dp-badge">Day 1</span> 11/15(日) 関空15:25集合・17:55発</a>
+          <a href="day2.html" class="day-popover-item"><span class="dp-badge">Day 2</span> 11/16(月) ミラノ &rarr; ベローナ &rarr; ベネチア</a>
+          <a href="day3.html" class="day-popover-item"><span class="dp-badge">Day 3</span> 11/17(火) ベネチア &rarr; スーパー &rarr; プラート</a>
+          <a href="day4.html" class="day-popover-item"><span class="dp-badge">Day 4</span> 11/18(水) ミケランジェロ広場 ＆ フィレンツェ10h</a>
+          <a href="day5.html" class="day-popover-item"><span class="dp-badge">Day 5</span> 11/19(木) サンジミニャーノ &rarr; ローマ観光</a>
+          <a href="day6.html" class="day-popover-item" style="border-color:#dc2626; background:#fff1f2;"><span class="dp-badge" style="background:#dc2626;">Day 6</span> 11/20(金) コロッセオ・バチカン・夕ミサ</a>
+          <a href="day7.html" class="day-popover-item"><span class="dp-badge">Day 7</span> 11/21(土) ローマ自由 &rarr; 15:10 FCO発</a>
+          <a href="day8.html" class="day-popover-item"><span class="dp-badge">Day 8</span> 11/22(日) 16:25 関空帰着・解散</a>
+        </div>
+      </div>
+    </details>
+
+    <a href="tour-map.html" class="tab-item ">
+      <span class="tab-icon">🗺️</span>
+      <span class="tab-label">MAP</span>
+    </a>
+    <a href="sightseeing-guide.html" class="tab-item ">
+      <span class="tab-icon">🏛️</span>
+      <span class="tab-label">観光</span>
+    </a>
+    <a href="free-meal-guide.html" class="tab-item ">
+      <span class="tab-icon">🍽️</span>
+      <span class="tab-label">グルメ</span>
+    </a>
+    <a href="souvenir-guide.html" class="tab-item ">
+      <span class="tab-icon">🎁</span>
+      <span class="tab-label">お土産</span>
+    </a>
+    <a href="tips-survival.html" class="tab-item ">
+      <span class="tab-icon">🚆</span>
+      <span class="tab-label">サバイバル</span>
+    </a>
+    <a href="phrasebook.html" class="tab-item ">
+      <span class="tab-icon">🗣️</span>
+      <span class="tab-label">会話</span>
+    </a>
+  </nav>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <strong>🇮🇹 Kenta &amp; Megumi's Italian Honeymoon Portal</strong><br>
+        <span style="color:#64748b;">HIS Tour OI-KMI2811 (2026/11/15 - 11/22) | 監修: YouTube「イタリアガイドみめ (@mimeitalygaido)」</span>
+      </div>
+      <div style="display:flex; gap:6px; flex-wrap:wrap; margin-top:4px;">
+        <a href="index.html">ホーム</a>
+        <a href="beginner-guide.html">初心者安心</a>
+        <a href="culture-trends.html">あるある・トレンド</a>
+        <a href="tips-survival.html">交通サバイバル</a>
+        <a href="tour-map.html">MAP</a>
+        <a href="sightseeing-guide.html">観光</a>
+        <a href="phrasebook.html">会話</a>
+        <a href="free-meal-guide.html">グルメ</a>
+        <a href="souvenir-guide.html">お土産</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+  <script>
+    document.addEventListener('click', function(e) {
+      document.querySelectorAll('details.day-popover-details, details.day-nav-details').forEach(function(d) {
+        if (!d.contains(e.target) && d.hasAttribute('open')) {
+          d.removeAttribute('open');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
