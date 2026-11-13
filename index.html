@@ -5,7 +5,307 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=no">
   <title>アンディアーモ！イタリア8日間 新婚旅行ガイドポータル | 鈴木 健太・めぐみ 様</title>
   <meta name="description" content="HIS Impresso アンディアーモ！イタリア8日間（2026/11/15〜11/22）公式しおり・確定ホテル3軒・6日目ローマ＆バチカン予約済スケジュール完全統合ポータル">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=16">
+  <style>
+
+/* === v16 iPhone-First Shiori & Responsive Layout Override === */
+.compare-table {
+  white-space: normal !important;
+  word-break: break-word;
+  width: 100%;
+  border-collapse: collapse;
+}
+.btn, .hero-cta-btn, .btn-maps {
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.section-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+@media (min-width: 640px) {
+  .section-header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+/* Shiori Legend Bar */
+.shiori-legend-bar {
+  background: #ffffff;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 10px;
+  padding: 10px 12px;
+  margin-bottom: 14px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #1e293b;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.06);
+}
+
+/* Shiori Day Box (Official Booklet Style - 100% iPhone Width Fit) */
+.shiori-day-box {
+  background: #ffffff;
+  border: 2px solid #1e293b;
+  border-radius: 12px;
+  margin-bottom: 16px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.08);
+}
+.shiori-day-box.highlight-day6 {
+  border-color: #dc2626;
+  box-shadow: 0 4px 14px rgba(220, 38, 38, 0.16);
+}
+.shiori-day-header {
+  background: #1e293b;
+  color: #ffffff;
+  padding: 10px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.shiori-day-box.highlight-day6 .shiori-day-header {
+  background: linear-gradient(90deg, #991b1c 0%, #dc2626 100%);
+}
+.shiori-day-title {
+  font-size: 0.94rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  line-height: 1.3;
+}
+.shiori-day-badge {
+  background: #f59e0b;
+  color: #ffffff;
+  font-size: 0.74rem;
+  font-weight: 900;
+  padding: 2px 7px;
+  border-radius: 5px;
+  white-space: nowrap;
+}
+.shiori-day-meals {
+  display: flex;
+  gap: 4px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+.shiori-meal-pill {
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.18);
+  color: #f8fafc;
+  white-space: nowrap;
+}
+.shiori-meal-pill.on {
+  background: #dcfce7;
+  color: #166534;
+}
+
+/* 2-Column iPhone-Fit Shiori Rows (No Duplicate Columns, Zero Horizontal Overflow) */
+.shiori-rows {
+  display: flex;
+  flex-direction: column;
+}
+.shiori-row {
+  display: grid;
+  grid-template-columns: 92px 1fr;
+  border-bottom: 1px solid #cbd5e1;
+  font-size: 0.85rem;
+}
+.shiori-row:last-child {
+  border-bottom: none;
+}
+.shiori-col-meta {
+  background: #f8fafc;
+  border-right: 1px solid #cbd5e1;
+  padding: 9px 7px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 4px;
+}
+.shiori-city {
+  font-weight: 800;
+  color: #0f2b48;
+  font-size: 0.82rem;
+  line-height: 1.25;
+}
+.shiori-time {
+  display: inline-block;
+  font-size: 0.74rem;
+  font-weight: 800;
+  color: #0369a1;
+  background: #e0f2fe;
+  padding: 2px 5px;
+  border-radius: 4px;
+  width: fit-content;
+  line-height: 1.2;
+}
+.shiori-time.reserved {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+.shiori-transport-tag {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #475569;
+  line-height: 1.25;
+}
+.shiori-col-detail {
+  padding: 9px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+}
+.shiori-green-bar {
+  background: #2e6b3e;
+  color: #ffffff;
+  font-size: 0.8rem;
+  font-weight: 800;
+  padding: 4px 8px;
+  border-radius: 4px;
+  line-height: 1.35;
+}
+.shiori-red-bar {
+  background: #be123c;
+  color: #ffffff;
+  font-size: 0.8rem;
+  font-weight: 800;
+  padding: 4px 8px;
+  border-radius: 4px;
+  line-height: 1.35;
+}
+.shiori-detail-text {
+  font-size: 0.84rem;
+  color: #0f172a;
+  line-height: 1.5;
+  margin: 0;
+  word-break: break-word;
+}
+.shiori-hotel-footer {
+  background: #f1f5f9;
+  border-top: 1.5px solid #94a3b8;
+  padding: 8px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: #0f2b48;
+}
+
+/* Home Page Compact At-a-Glance Schedule List (iPhone 100% Fit) */
+.quick-shiori-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.quick-shiori-card {
+  background: #ffffff;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.06);
+}
+.quick-shiori-card.day6-special {
+  border: 2px solid #dc2626;
+  background: #fffafa;
+}
+.qsc-header {
+  background: #1e293b;
+  color: #ffffff;
+  padding: 7px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+}
+.quick-shiori-card.day6-special .qsc-header {
+  background: linear-gradient(90deg, #991b1b 0%, #dc2626 100%);
+}
+.qsc-day-route {
+  font-size: 0.86rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.qsc-day-badge {
+  background: #f59e0b;
+  color: #ffffff;
+  font-size: 0.72rem;
+  font-weight: 900;
+  padding: 1px 6px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+.qsc-meals {
+  font-size: 0.7rem;
+  font-weight: 700;
+  background: rgba(255,255,255,0.16);
+  padding: 2px 6px;
+  border-radius: 4px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.qsc-body {
+  padding: 8px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 0.82rem;
+  line-height: 1.48;
+  color: #1e293b;
+}
+.qsc-line {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 6px;
+  align-items: baseline;
+}
+.qsc-time {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #0369a1;
+  background: #e0f2fe;
+  padding: 1px 4px;
+  border-radius: 3px;
+  text-align: center;
+  white-space: nowrap;
+}
+.qsc-time.red {
+  color: #b91c1c;
+  background: #fee2e2;
+}
+.qsc-footer {
+  background: #f8fafc;
+  border-top: 1px solid #e2e8f0;
+  padding: 6px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: #334155;
+}
+
+  </style>
 </head>
 <body>
   <main class="container" style="padding-top: 6px;">
@@ -47,114 +347,171 @@
       </div>
     </header>
 
-    <!-- 1. AT-A-GLANCE 8-DAY MASTER SHIORI TABLE (ひと目でわかる全8日間早見表) -->
+        <!-- 1. AT-A-GLANCE 8-DAY MASTER SHIORI LIST (iPhone画面幅に100%収まる早見表) -->
     <section class="section" id="section-master-schedule">
       <div class="section-header">
-        <h2 class="section-title">📋 ひと目でわかる！全8日間タイムスケジュール早見表</h2>
-        <a href="schedule.html" class="btn btn-primary" style="font-size:0.75rem; padding:4px 10px;">📖 詳細しおり表ページへ &rarr;</a>
+        <h2 class="section-title">📋 ひと目でわかる！全8日間スケジュール早見表</h2>
+        <a href="schedule.html" class="btn btn-primary" style="font-size:0.78rem; padding:6px 12px;">📖 詳しい「しおり表」ページを開く &rarr;</a>
       </div>
 
-      <div class="table-responsive" style="box-shadow: var(--shadow-sm);">
-        <table class="compare-table">
-          <thead>
-            <tr style="background:#1e293b; color:#fff;">
-              <th style="background:#1e293b; color:#fff; width:90px;">日程</th>
-              <th style="background:#1e293b; color:#fff; width:115px;">都市・移動</th>
-              <th style="background:#1e293b; color:#fff;">時間・主なスケジュール（●入場 ◎下車 ○車窓 🎟️予約済）</th>
-              <th style="background:#1e293b; color:#fff; width:75px;">食事</th>
-              <th style="background:#1e293b; color:#fff; width:130px;">確定宿泊ホテル</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><a href="day1.html" style="font-weight:800;">Day 1<br>11/15(日)</a></td>
-              <td><strong>関西空港</strong><br>&darr; 空路(QR803)<br><strong>ドーハ乗継</strong></td>
-              <td>
-                <strong style="color:#b91c1c;">15:25</strong> 関空第1T 4階 団体カウンターNO.11集合（HIS看板前）<br>
-                <strong>17:55</strong> 関空発（QR803便・約11h40m）&rarr; <strong>23:35</strong> ドーハ着
-              </td>
-              <td>朝:×<br>昼:×<br>夕:機内</td>
-              <td><strong>【機中泊】</strong></td>
-            </tr>
-            <tr>
-              <td><a href="day2.html" style="font-weight:800;">Day 2<br>11/16(月)</a></td>
-              <td><strong>ミラノ</strong><br>&darr; 160km/2.5h<br><strong>ベローナ</strong><br>&darr; 115km/1.75h<br><strong>ベネチア</strong></td>
-              <td>
-                <strong>01:30</strong> ドーハ発（QR123）&rarr; <strong>06:55</strong> ミラノ着・市内へ<br>
-                <strong>午前：</strong> <span style="background:#dcfce7; color:#166534; font-weight:700; padding:1px 5px; border-radius:3px;">ミラノ自由行動(約3h／昼食含)</span> ガッレリア、ドゥオーモ、スカラ座<br>
-                <strong>午後：</strong> <span style="background:#dcfce7; color:#166534; font-weight:700; padding:1px 5px; border-radius:3px;">【世界遺産】ベローナ各自散策(約1h)</span> ジュリエットの家<br>
-                <strong>夜：</strong> ベネチアにて <strong>🍴 3コースディナー</strong>
-              </td>
-              <td>朝:×<br>昼:×<br><strong style="color:#15803d;">夕:○</strong></td>
-              <td><strong>Smart Holiday</strong><br><small>（ベネチア・メストレ）<br>バスタブ○/シャンプー○</small></td>
-            </tr>
-            <tr>
-              <td><a href="day3.html" style="font-weight:800;">Day 3<br>11/17(火)</a></td>
-              <td><strong>ベネチア本島</strong><br>&darr; 246km/3.75h<br><strong>プラート</strong></td>
-              <td>
-                <strong>午前：</strong> <span style="background:#dcfce7; color:#166534; font-weight:700; padding:1px 5px; border-radius:3px;">【世界遺産】ベネチア自由行動(約4h／昼食含)</span><br>
-                <strong>午後：</strong> 専用車でプラートへ移動。<strong>🛒 途中、地元のスーパーマーケットに立ち寄ります！</strong>
-              </td>
-              <td><strong style="color:#15803d;">朝:○</strong><br>昼:×<br>夕:×</td>
-              <td><strong>President Prato</strong><br><small>（プラート 1泊目）<br>冷蔵庫○/シャンプー×</small></td>
-            </tr>
-            <tr>
-              <td><a href="day4.html" style="font-weight:800;">Day 4<br>11/18(水)</a></td>
-              <td><strong>フィレンツェ</strong><br>（往復専用車）</td>
-              <td>
-                <strong>午前：</strong> 絶景フォトスポット <strong>◎ミケランジェロ広場</strong> へご案内<br>
-                <strong>日中〜夜：</strong> <span style="background:#dcfce7; color:#166534; font-weight:700; padding:1px 5px; border-radius:3px;">【世界遺産】フィレンツェで自由行動(約10h／昼・夕食含)</span><br>
-                <strong>夜：</strong> 再集合後、専用車でプラートのホテルへ帰館
-              </td>
-              <td><strong style="color:#15803d;">朝:○</strong><br>昼:×<br>夕:×</td>
-              <td><strong>President Prato</strong><br><small>（プラート 2連泊目）</small></td>
-            </tr>
-            <tr>
-              <td><a href="day5.html" style="font-weight:800;">Day 5<br>11/19(木)</a></td>
-              <td><strong>サンジミニャーノ</strong><br>&darr; 279km/4h<br><strong>ローマ</strong></td>
-              <td>
-                <strong>午前：</strong> <span style="background:#dcfce7; color:#166534; font-weight:700; padding:1px 5px; border-radius:3px;">【世界遺産】サンジミニャーノ各自散策(約1h)</span> 塔の街・ドンドリ<br>
-                <strong>昼食：</strong> <strong>🍕 本場ピザ「マルゲリータ＆カプリチョーザ」ハーフ＆ハーフ</strong><br>
-                <strong>午後：</strong> <span style="background:#dcfce7; color:#166534; font-weight:700; padding:1px 5px; border-radius:3px;">【世界遺産】バチカンとローマ観光(約4h)</span> ◎サンピエトロ寺院、◎スペイン広場、◎トレビの泉、○コロッセオ(車窓)
-              </td>
-              <td><strong style="color:#15803d;">朝:○</strong><br><strong style="color:#15803d;">昼:○</strong><br>夕:×</td>
-              <td><strong>Mercure Roma Centro St. John</strong><br><small>（ローマ 1泊目）<br>コロッセオ徒歩12分・ポット○</small></td>
-            </tr>
-            <tr style="background:#fff1f2;">
-              <td><a href="day6.html" style="font-weight:800; color:#be123c;">Day 6 ★<br>11/20(金)</a></td>
-              <td><strong style="color:#be123c;">ローマ ＆<br>バチカン市国</strong><br><small>(徒歩＆地下鉄A線)</small></td>
-              <td>
-                <span style="background:#be123c; color:#fff; font-weight:800; padding:2px 6px; border-radius:3px;">★健太様・めぐみ様 6日目（20日）確定スケジュール</span><br>
-                ● <strong>08:30</strong> <strong>🎟️ コロッセオとパラティーノの丘（予約済み）</strong>※ホテルから徒歩12分<br>
-                ● <strong>15:00</strong> <strong>🎟️ バチカン美術館（予約済み）</strong>※Manzoni駅&rarr;Ottaviano駅直通<br>
-                ● <strong>16:00</strong> <strong>⛪ サン・ピエトロ大聖堂 見学</strong>（ピエタ像・大天蓋）<br>
-                ● <strong>18:00</strong> <strong>🎵 サン・ピエトロ大聖堂「夕のミサ」を聴きにいく</strong>
-              </td>
-              <td><strong style="color:#15803d;">朝:○</strong><br>昼:×<br>夕:×</td>
-              <td><strong>Mercure Roma Centro St. John</strong><br><small>（ローマ 2連泊目）</small></td>
-            </tr>
-            <tr>
-              <td><a href="day7.html" style="font-weight:800;">Day 7<br>11/21(土)</a></td>
-              <td><strong>ローマ</strong><br>&darr; 空路(QR132)<br><strong>ドーハ乗継</strong></td>
-              <td>
-                <strong>午前：</strong> 出発までローマ自由行動（チェックアウトは午前中・12:00まで）<br>
-                <strong>午後：</strong> 専用車で空港へ &rarr; <strong>15:10</strong> ローマ発（QR132便・約5h25m）&rarr; <strong>22:35</strong> ドーハ着
-              </td>
-              <td><strong style="color:#15803d;">朝:○</strong><br>昼:×<br>夕:機内</td>
-              <td><strong>【機中泊】</strong></td>
-            </tr>
-            <tr>
-              <td><a href="day8.html" style="font-weight:800;">Day 8<br>11/22(日)</a></td>
-              <td><strong>ドーハ</strong><br>&darr; 空路(QR802)<br><strong>関西空港</strong></td>
-              <td>
-                <strong>00:55</strong> ドーハ発（QR802便・約9h30m）<br>
-                <strong>16:25</strong> <strong>関西国際空港着。着後、解散となります。</strong>
-              </td>
-              <td>朝:機内<br>昼:機内<br>夕:自宅</td>
-              <td><strong>ご自宅（千里丘）</strong></td>
-            </tr>
-          </tbody>
-        </table>
+      <div class="quick-shiori-list">
+        <!-- Day 1 -->
+        <div class="quick-shiori-card">
+          <div class="qsc-header">
+            <div class="qsc-day-route">
+              <span class="qsc-day-badge">Day 1｜11/15(日)</span>
+              <span>関西空港 &rarr; ドーハ乗継</span>
+            </div>
+            <span class="qsc-meals">朝:× 昼:× 夕:機内</span>
+          </div>
+          <div class="qsc-body">
+            <div class="qsc-line"><span class="qsc-time red">15:25</span><span><strong>関空第1T 4階 団体NO.11集合（HIS看板前・厳守）</strong></span></div>
+            <div class="qsc-line"><span class="qsc-time">17:55</span><span>関空発（QR803便・約11h40m）&rarr; 23:35 ドーハ着</span></div>
+          </div>
+          <div class="qsc-footer">
+            <span>🌙 宿泊：【機中泊】</span>
+            <a href="day1.html">Day 1 詳細 &rarr;</a>
+          </div>
+        </div>
+
+        <!-- Day 2 -->
+        <div class="quick-shiori-card">
+          <div class="qsc-header">
+            <div class="qsc-day-route">
+              <span class="qsc-day-badge">Day 2｜11/16(月)</span>
+              <span>ミラノ &rarr; ベローナ &rarr; ベネチア</span>
+            </div>
+            <span class="qsc-meals">朝:× 昼:× 夕:○</span>
+          </div>
+          <div class="qsc-body">
+            <div class="qsc-line"><span class="qsc-time">06:55</span><span>ミラノ着（QR123便）&rarr; 専用車でミラノ市内へ</span></div>
+            <div class="qsc-line"><span class="qsc-time">午前</span><span><strong>【ミラノ自由行動 約3時間】</strong>ガッレリア・ドゥオーモ・スカラ座（各自昼食）</span></div>
+            <div class="qsc-line"><span class="qsc-time">午後</span><span>専用車でベローナへ &rarr; <strong>【世界遺産ベローナ散策 約1時間】</strong>ジュリエットの家</span></div>
+            <div class="qsc-line"><span class="qsc-time">夜</span><span>ベネチアへ移動 &rarr; <strong>🍴 3コースディナー</strong></span></div>
+          </div>
+          <div class="qsc-footer">
+            <span>🏨 泊：<strong>Smart Holiday</strong>（ベネチア・バスタブ○/シャンプー○）</span>
+            <a href="day2.html">Day 2 詳細 &rarr;</a>
+          </div>
+        </div>
+
+        <!-- Day 3 -->
+        <div class="quick-shiori-card">
+          <div class="qsc-header">
+            <div class="qsc-day-route">
+              <span class="qsc-day-badge">Day 3｜11/17(火)</span>
+              <span>ベネチア本島 &rarr; スーパー &rarr; プラート</span>
+            </div>
+            <span class="qsc-meals">朝:○ 昼:× 夕:×</span>
+          </div>
+          <div class="qsc-body">
+            <div class="qsc-line"><span class="qsc-time">午前</span><span><strong>【世界遺産ベネチア自由行動 約4時間】</strong>サン・マルコ広場・ゴンドラ・バカロ（各自昼食）</span></div>
+            <div class="qsc-line"><span class="qsc-time">午後</span><span>専用車でプラートへ（約3h45m）<strong>🛒 途中、地元のスーパーマーケットに立ち寄り！</strong></span></div>
+          </div>
+          <div class="qsc-footer">
+            <span>🏨 泊：<strong>President Prato</strong>（プラート1泊目・冷蔵庫○/シャンプー×）</span>
+            <a href="day3.html">Day 3 詳細 &rarr;</a>
+          </div>
+        </div>
+
+        <!-- Day 4 -->
+        <div class="quick-shiori-card">
+          <div class="qsc-header">
+            <div class="qsc-day-route">
+              <span class="qsc-day-badge">Day 4｜11/18(水)</span>
+              <span>ミケランジェロ広場 ＆ フィレンツェ10h</span>
+            </div>
+            <span class="qsc-meals">朝:○ 昼:× 夕:×</span>
+          </div>
+          <div class="qsc-body">
+            <div class="qsc-line"><span class="qsc-time">午前</span><span>絶景パノラマ <strong>◎ミケランジェロ広場</strong> へご案内</span></div>
+            <div class="qsc-line"><span class="qsc-time">日中〜夜</span><span><strong>【世界遺産フィレンツェ自由行動 約10時間】</strong>ドゥオーモ・ヴェッキオ橋・SMN薬局・名物Tボーンステーキ（各自昼・夕食）</span></div>
+            <div class="qsc-line"><span class="qsc-time">夜</span><span>再集合後、専用車でプラートのホテルへ帰館</span></div>
+          </div>
+          <div class="qsc-footer">
+            <span>🏨 泊：<strong>President Prato</strong>（プラート2連泊目）</span>
+            <a href="day4.html">Day 4 詳細 &rarr;</a>
+          </div>
+        </div>
+
+        <!-- Day 5 -->
+        <div class="quick-shiori-card">
+          <div class="qsc-header">
+            <div class="qsc-day-route">
+              <span class="qsc-day-badge">Day 5｜11/19(木)</span>
+              <span>サンジミニャーノ &rarr; ローマ観光</span>
+            </div>
+            <span class="qsc-meals">朝:○ 昼:○ 夕:×</span>
+          </div>
+          <div class="qsc-body">
+            <div class="qsc-line"><span class="qsc-time">午前</span><span><strong>【世界遺産サンジミニャーノ散策 約1時間】</strong>塔の街・世界一ジェラートDondoli</span></div>
+            <div class="qsc-line"><span class="qsc-time">昼食</span><span><strong>🍕 本場ピザ「マルゲリータ＆カプリチョーザ」ハーフ＆ハーフ</strong></span></div>
+            <div class="qsc-line"><span class="qsc-time">午後</span><span><strong>【バチカンとローマ観光 約4時間】</strong>◎サンピエトロ寺院・◎スペイン広場・◎トレビの泉・○コロッセオ(車窓)</span></div>
+          </div>
+          <div class="qsc-footer">
+            <span>🏨 泊：<strong>Mercure Roma Centro St. John</strong>（コロッセオ徒歩12分・ポット○）</span>
+            <a href="day5.html">Day 5 詳細 &rarr;</a>
+          </div>
+        </div>
+
+        <!-- Day 6 (Highlighted Confirmed Plan) -->
+        <div class="quick-shiori-card day6-special">
+          <div class="qsc-header">
+            <div class="qsc-day-route">
+              <span class="qsc-day-badge" style="background:#fef08a; color:#991b1b;">Day 6｜11/20(金) ★確定予定</span>
+              <span>ローマ ＆ バチカン終日自由行動</span>
+            </div>
+            <span class="qsc-meals">朝:○ 昼:× 夕:×</span>
+          </div>
+          <div class="qsc-body">
+            <div class="qsc-line"><span class="qsc-time red">08:30</span><span><strong>🎟️ コロッセオとパラティーノの丘（予約済み）</strong>※ホテルから徒歩12〜15分</span></div>
+            <div class="qsc-line"><span class="qsc-time red">15:00</span><span><strong>🎟️ バチカン美術館（予約済み）</strong>※地下鉄A線Manzoni駅&rarr;Ottaviano駅直通</span></div>
+            <div class="qsc-line"><span class="qsc-time red">16:00</span><span><strong>⛪ サン・ピエトロ大聖堂 見学</strong>（ピエタ像・大天蓋）</span></div>
+            <div class="qsc-line"><span class="qsc-time red">18:00</span><span><strong>🎵 サン・ピエトロ大聖堂「夕のミサ」を聴きにいく</strong></span></div>
+          </div>
+          <div class="qsc-footer" style="background:#fff1f2;">
+            <span style="color:#991b1b;">🏨 泊：<strong>Mercure Roma Centro St. John</strong>（ローマ2連泊目）</span>
+            <a href="day6.html" style="color:#dc2626; font-weight:800;">Day 6 詳細 &rarr;</a>
+          </div>
+        </div>
+
+        <!-- Day 7 -->
+        <div class="quick-shiori-card">
+          <div class="qsc-header">
+            <div class="qsc-day-route">
+              <span class="qsc-day-badge">Day 7｜11/21(土)</span>
+              <span>ローマ自由行動 &rarr; 15:10 帰国便</span>
+            </div>
+            <span class="qsc-meals">朝:○ 昼:× 夕:機内</span>
+          </div>
+          <div class="qsc-body">
+            <div class="qsc-line"><span class="qsc-time">午前</span><span>出発までローマ自由行動（ホテルチェックアウトは午前中・12:00まで）</span></div>
+            <div class="qsc-line"><span class="qsc-time">15:10</span><span>専用車で空港へ &rarr; ローマ発（QR132便・約5h25m）&rarr; 22:35 ドーハ着</span></div>
+          </div>
+          <div class="qsc-footer">
+            <span>🌙 宿泊：【機中泊】</span>
+            <a href="day7.html">Day 7 詳細 &rarr;</a>
+          </div>
+        </div>
+
+        <!-- Day 8 -->
+        <div class="quick-shiori-card">
+          <div class="qsc-header">
+            <div class="qsc-day-route">
+              <span class="qsc-day-badge">Day 8｜11/22(日)</span>
+              <span>ドーハ &rarr; 16:25 関西空港着</span>
+            </div>
+            <span class="qsc-meals">朝:機 昼:機 夕:自宅</span>
+          </div>
+          <div class="qsc-body">
+            <div class="qsc-line"><span class="qsc-time">00:55</span><span>ドーハ発（QR802便・約9h30m）</span></div>
+            <div class="qsc-line"><span class="qsc-time red">16:25</span><span><strong>関西国際空港着。着後、解散となります。</strong></span></div>
+          </div>
+          <div class="qsc-footer">
+            <span>🏠 ご自宅（千里丘）へ帰着</span>
+            <a href="day8.html">Day 8 詳細 &rarr;</a>
+          </div>
+        </div>
       </div>
     </section>
 

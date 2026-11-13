@@ -4,8 +4,308 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=no">
   <title>旅のしおり・全8日間タイムスケジュール一覧表 | イタリア新婚旅行8日間</title>
-  <meta name="description" content="HIS Impresso『アンディアーモ！イタリア8日間』公式しおり完全再現スケジュール表。フライト・確定ホテル3軒・6日目（11/20）ローマ＆バチカン予約済スケジュールを一目で確認">
-  <link rel="stylesheet" href="style.css">
+  <meta name="description" content="HIS Impresso『アンディアーモ！イタリア8日間』公式しおり完全再現スケジュール表。iPhone画面幅に100%最適化">
+  <link rel="stylesheet" href="style.css?v=16">
+  <style>
+
+/* === v16 iPhone-First Shiori & Responsive Layout Override === */
+.compare-table {
+  white-space: normal !important;
+  word-break: break-word;
+  width: 100%;
+  border-collapse: collapse;
+}
+.btn, .hero-cta-btn, .btn-maps {
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.section-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+@media (min-width: 640px) {
+  .section-header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+/* Shiori Legend Bar */
+.shiori-legend-bar {
+  background: #ffffff;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 10px;
+  padding: 10px 12px;
+  margin-bottom: 14px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #1e293b;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.06);
+}
+
+/* Shiori Day Box (Official Booklet Style - 100% iPhone Width Fit) */
+.shiori-day-box {
+  background: #ffffff;
+  border: 2px solid #1e293b;
+  border-radius: 12px;
+  margin-bottom: 16px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.08);
+}
+.shiori-day-box.highlight-day6 {
+  border-color: #dc2626;
+  box-shadow: 0 4px 14px rgba(220, 38, 38, 0.16);
+}
+.shiori-day-header {
+  background: #1e293b;
+  color: #ffffff;
+  padding: 10px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.shiori-day-box.highlight-day6 .shiori-day-header {
+  background: linear-gradient(90deg, #991b1c 0%, #dc2626 100%);
+}
+.shiori-day-title {
+  font-size: 0.94rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  line-height: 1.3;
+}
+.shiori-day-badge {
+  background: #f59e0b;
+  color: #ffffff;
+  font-size: 0.74rem;
+  font-weight: 900;
+  padding: 2px 7px;
+  border-radius: 5px;
+  white-space: nowrap;
+}
+.shiori-day-meals {
+  display: flex;
+  gap: 4px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+.shiori-meal-pill {
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.18);
+  color: #f8fafc;
+  white-space: nowrap;
+}
+.shiori-meal-pill.on {
+  background: #dcfce7;
+  color: #166534;
+}
+
+/* 2-Column iPhone-Fit Shiori Rows (No Duplicate Columns, Zero Horizontal Overflow) */
+.shiori-rows {
+  display: flex;
+  flex-direction: column;
+}
+.shiori-row {
+  display: grid;
+  grid-template-columns: 92px 1fr;
+  border-bottom: 1px solid #cbd5e1;
+  font-size: 0.85rem;
+}
+.shiori-row:last-child {
+  border-bottom: none;
+}
+.shiori-col-meta {
+  background: #f8fafc;
+  border-right: 1px solid #cbd5e1;
+  padding: 9px 7px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 4px;
+}
+.shiori-city {
+  font-weight: 800;
+  color: #0f2b48;
+  font-size: 0.82rem;
+  line-height: 1.25;
+}
+.shiori-time {
+  display: inline-block;
+  font-size: 0.74rem;
+  font-weight: 800;
+  color: #0369a1;
+  background: #e0f2fe;
+  padding: 2px 5px;
+  border-radius: 4px;
+  width: fit-content;
+  line-height: 1.2;
+}
+.shiori-time.reserved {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+.shiori-transport-tag {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #475569;
+  line-height: 1.25;
+}
+.shiori-col-detail {
+  padding: 9px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+}
+.shiori-green-bar {
+  background: #2e6b3e;
+  color: #ffffff;
+  font-size: 0.8rem;
+  font-weight: 800;
+  padding: 4px 8px;
+  border-radius: 4px;
+  line-height: 1.35;
+}
+.shiori-red-bar {
+  background: #be123c;
+  color: #ffffff;
+  font-size: 0.8rem;
+  font-weight: 800;
+  padding: 4px 8px;
+  border-radius: 4px;
+  line-height: 1.35;
+}
+.shiori-detail-text {
+  font-size: 0.84rem;
+  color: #0f172a;
+  line-height: 1.5;
+  margin: 0;
+  word-break: break-word;
+}
+.shiori-hotel-footer {
+  background: #f1f5f9;
+  border-top: 1.5px solid #94a3b8;
+  padding: 8px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: #0f2b48;
+}
+
+/* Home Page Compact At-a-Glance Schedule List (iPhone 100% Fit) */
+.quick-shiori-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.quick-shiori-card {
+  background: #ffffff;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.06);
+}
+.quick-shiori-card.day6-special {
+  border: 2px solid #dc2626;
+  background: #fffafa;
+}
+.qsc-header {
+  background: #1e293b;
+  color: #ffffff;
+  padding: 7px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+}
+.quick-shiori-card.day6-special .qsc-header {
+  background: linear-gradient(90deg, #991b1b 0%, #dc2626 100%);
+}
+.qsc-day-route {
+  font-size: 0.86rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.qsc-day-badge {
+  background: #f59e0b;
+  color: #ffffff;
+  font-size: 0.72rem;
+  font-weight: 900;
+  padding: 1px 6px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+.qsc-meals {
+  font-size: 0.7rem;
+  font-weight: 700;
+  background: rgba(255,255,255,0.16);
+  padding: 2px 6px;
+  border-radius: 4px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.qsc-body {
+  padding: 8px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 0.82rem;
+  line-height: 1.48;
+  color: #1e293b;
+}
+.qsc-line {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 6px;
+  align-items: baseline;
+}
+.qsc-time {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #0369a1;
+  background: #e0f2fe;
+  padding: 1px 4px;
+  border-radius: 3px;
+  text-align: center;
+  white-space: nowrap;
+}
+.qsc-time.red {
+  color: #b91c1c;
+  background: #fee2e2;
+}
+.qsc-footer {
+  background: #f8fafc;
+  border-top: 1px solid #e2e8f0;
+  padding: 6px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: #334155;
+}
+
+  </style>
 </head>
 <body>
   <main class="container" style="padding-top: 6px;">
@@ -14,39 +314,36 @@
     <div class="day-quick-pills">
       <a href="index.html" class="day-pill" style="min-width:50px;"><span class="dp-day">🏠</span><span class="dp-date">Top</span></a>
       <a href="schedule.html" class="day-pill shiori-highlight active"><span class="dp-day">📋 しおり</span><span class="dp-date">全日程表</span></a>
-      <a href="#shiori-day1" class="day-pill"><span class="dp-day">Day 1</span><span class="dp-date">11/15(日)</span></a>
-      <a href="#shiori-day2" class="day-pill"><span class="dp-day">Day 2</span><span class="dp-date">11/16(月)</span></a>
-      <a href="#shiori-day3" class="day-pill"><span class="dp-day">Day 3</span><span class="dp-date">11/17(火)</span></a>
-      <a href="#shiori-day4" class="day-pill"><span class="dp-day">Day 4</span><span class="dp-date">11/18(水)</span></a>
-      <a href="#shiori-day5" class="day-pill"><span class="dp-day">Day 5</span><span class="dp-date">11/19(木)</span></a>
-      <a href="#shiori-day6" class="day-pill" style="border-color:#dc2626; color:#b91c1c;"><span class="dp-day">Day 6★</span><span class="dp-date">11/20(金)</span></a>
-      <a href="#shiori-day7" class="day-pill"><span class="dp-day">Day 7</span><span class="dp-date">11/21(土)</span></a>
-      <a href="#shiori-day8" class="day-pill"><span class="dp-day">Day 8</span><span class="dp-date">11/22(日)</span></a>
+      <a href="#shiori-day1" class="day-pill"><span class="dp-day">Day 1</span><span class="dp-date">11/15</span></a>
+      <a href="#shiori-day2" class="day-pill"><span class="dp-day">Day 2</span><span class="dp-date">11/16</span></a>
+      <a href="#shiori-day3" class="day-pill"><span class="dp-day">Day 3</span><span class="dp-date">11/17</span></a>
+      <a href="#shiori-day4" class="day-pill"><span class="dp-day">Day 4</span><span class="dp-date">11/18</span></a>
+      <a href="#shiori-day5" class="day-pill"><span class="dp-day">Day 5</span><span class="dp-date">11/19</span></a>
+      <a href="#shiori-day6" class="day-pill" style="border-color:#dc2626; color:#b91c1c;"><span class="dp-day">Day 6★</span><span class="dp-date">11/20</span></a>
+      <a href="#shiori-day7" class="day-pill"><span class="dp-day">Day 7</span><span class="dp-date">11/21</span></a>
+      <a href="#shiori-day8" class="day-pill"><span class="dp-day">Day 8</span><span class="dp-date">11/22</span></a>
       <a href="#shiori-flights" class="day-pill"><span class="dp-day">✈️ 便名</span><span class="dp-date">フライト</span></a>
       <a href="#shiori-hotels" class="day-pill"><span class="dp-day">🏨 宿</span><span class="dp-date">3ホテル</span></a>
     </div>
 
     <!-- Hero Header -->
     <header class="hero-card" style="background: linear-gradient(135deg, #0f2b48 0%, #1e3a8a 100%);">
-      <span class="hero-tag">📋 HIS Impresso 公式「しおり.pdf」完全再現＋個人予約統合</span>
-      <h1 class="hero-title">アンディアーモ！イタリア8日間 タイムスケジュール一覧（旅のしおり）</h1>
+      <span class="hero-tag">📋 HIS Impresso 公式「しおり.pdf」再現＋個人予約統合</span>
+      <h1 class="hero-title">アンディアーモ！イタリア8日間 旅のしおり（全日程表）</h1>
       <p class="hero-subtitle">
         2026年11月15日(日) 15:25 関空集合 〜 11月22日(日) 16:25 関空帰着<br>
-        全8日間の「都市・時間・交通・行程・食事・宿泊ホテル」と「6日目ローマ予約済スケジュール」がひと目でわかる一覧ページです。
+        横スクロールなしでiPhone画面でひと目で確認できる公式スケジュール表です。
       </p>
     </header>
 
-    <!-- Legend & Filter Bar -->
+    <!-- Legend Bar -->
     <div class="shiori-legend-bar">
       <div>
         <strong>【記号の見方】</strong>
-        <span style="margin-left:6px;">●＝入場観光</span>
-        <span style="margin-left:6px;">◎＝下車・外観観光</span>
-        <span style="margin-left:6px;">○＝車窓観光</span>
-        <span style="margin-left:6px; color:#dc2626;">🎟️＝個人予約済</span>
+        <span>●＝入場観光 ／ ◎＝下車観光 ／ ○＝車窓観光 ／ <span style="color:#dc2626;">🎟️＝個人予約済</span></span>
       </div>
-      <div style="font-size:0.75rem; color:var(--text-muted);">
-        早朝 3:00〜 / 朝 6:00〜 / 午前 8:00〜 / 午後 12:00〜 / 夕刻 16:00〜 / 夜 18:00〜
+      <div style="font-size:0.74rem; color:#64748b; font-weight:600;">
+        時間目安：早朝3:00〜 / 朝6:00〜 / 午前8:00〜 / 午後12:00〜 / 夕刻16:00〜 / 夜18:00〜
       </div>
     </div>
 
@@ -54,7 +351,6 @@
     <section class="section" id="shiori-all-days">
       <div class="section-header">
         <h2 class="section-title">🗓️ 全8日間 タイムスケジュール本表（Day 1 〜 Day 8）</h2>
-        <span class="section-subtitle">各日の「詳細ページ」ボタンから時間別ガイドへ移動できます</span>
       </div>
 
     <!-- Day 1 Shiori Box -->
@@ -62,12 +358,12 @@
       <div class="shiori-day-header">
         <div class="shiori-day-title">
           <span class="shiori-day-badge">日程 1日目</span>
-          <span>2026年11月15日(日) 関西空港発 &rarr; ドーハ乗継</span>
+          <span>11/15(日) 関西空港発 &rarr; ドーハ乗継</span>
         </div>
         <div class="shiori-day-meals">
-          <span class="shiori-meal-pill">朝: ×</span>
-          <span class="shiori-meal-pill">昼: ×</span>
-          <span class="shiori-meal-pill on">夕: 機内</span>
+          <span class="shiori-meal-pill">朝:×</span>
+          <span class="shiori-meal-pill">昼:×</span>
+          <span class="shiori-meal-pill on">夕:機内</span>
         </div>
       </div>
       <div class="shiori-rows">
@@ -75,14 +371,13 @@
           <div class="shiori-col-meta">
             <span class="shiori-city">関西空港</span>
             <span class="shiori-time reserved">15:25 集合</span>
-            <span class="shiori-transport-mobile">📍 第1T 4階</span>
+            <span class="shiori-transport-tag">📍 第1T 4階</span>
           </div>
-          <div class="shiori-col-transport">ご集合</div>
           <div class="shiori-col-detail">
-            <div class="shiori-green-bar">関西空港 第1ターミナルビル4階 団体カウンター NO.11（HIS看板前）ご集合</div>
+            <div class="shiori-green-bar">関西空港 第1ターミナル4階 団体カウンター NO.11（HIS看板前）ご集合</div>
             <p class="shiori-detail-text">
-              ※お時間は厳守でお願いいたします。受付は集合時間（15:25）より開始いたします。<br>
-              ※添乗員がお待ちしております。（当日緊急連絡先：050-1752-5472）
+              ※お時間は厳守でお願いいたします。受付は15:25より開始。<br>
+              ※当日緊急連絡先：HISエアポートアシスタンス <a href="tel:05017525472" style="font-weight:800;">050-1752-5472</a>
             </p>
           </div>
         </div>
@@ -90,12 +385,11 @@
           <div class="shiori-col-meta">
             <span class="shiori-city">関西空港発<br>ドーハ着</span>
             <span class="shiori-time">17:55 発<br>23:35 着</span>
-            <span class="shiori-transport-mobile">✈️ QR803便</span>
+            <span class="shiori-transport-tag">✈️ QR803便<br>(約11h40m)</span>
           </div>
-          <div class="shiori-col-transport">航空機<br>(QR803)</div>
           <div class="shiori-col-detail">
             <p class="shiori-detail-text">
-              ✈️ <strong>カタール航空 QR803便</strong>（所要約11時間40分）にてドーハへ。<br>
+              ✈️ <strong>カタール航空 QR803便</strong>にて空路ドーハへ。<br>
               23:35 ドーハ着後、ミラノ行きQR123便（翌01:30発）へ乗り継ぎ。
             </p>
           </div>
@@ -103,7 +397,7 @@
       </div>
       <div class="shiori-hotel-footer">
         <span>🌙 宿泊：【機中泊】</span>
-        <a href="day1.html" class="btn btn-secondary" style="font-size:0.74rem; padding:3px 8px;">Day 1 詳細ページ &rarr;</a>
+        <a href="day1.html" class="btn btn-secondary" style="font-size:0.74rem; padding:4px 8px;">Day 1 詳細 &rarr;</a>
       </div>
     </div>
     <!-- Day 2 Shiori Box -->
@@ -111,12 +405,12 @@
       <div class="shiori-day-header">
         <div class="shiori-day-title">
           <span class="shiori-day-badge">日程 2日目</span>
-          <span>2026年11月16日(月) ミラノ &rarr; ベローナ &rarr; ベネチア</span>
+          <span>11/16(月) ミラノ &rarr; ベローナ &rarr; ベネチア</span>
         </div>
         <div class="shiori-day-meals">
-          <span class="shiori-meal-pill">朝: ×</span>
-          <span class="shiori-meal-pill">昼: ×</span>
-          <span class="shiori-meal-pill on">夕: ○(3コース)</span>
+          <span class="shiori-meal-pill">朝:×</span>
+          <span class="shiori-meal-pill">昼:×</span>
+          <span class="shiori-meal-pill on">夕:○</span>
         </div>
       </div>
       <div class="shiori-rows">
@@ -124,13 +418,12 @@
           <div class="shiori-col-meta">
             <span class="shiori-city">ドーハ発<br>ミラノ着</span>
             <span class="shiori-time">01:30 発<br>06:55 着</span>
-            <span class="shiori-transport-mobile">✈️ QR123 / 🚌 専用車</span>
+            <span class="shiori-transport-tag">✈️ QR123便<br>🚌 専用車</span>
           </div>
-          <div class="shiori-col-transport">航空機(QR123)<br>🚌 専用車</div>
           <div class="shiori-col-detail">
             <p class="shiori-detail-text">
-              ✈️ <strong>カタール航空 QR123便</strong>（約7時間25分）にて空路、ミラノへ。<br>
-              06:55 ミラノ着。到着後、🚌 専用車でミラノ市内へ。
+              ✈️ <strong>カタール航空 QR123便</strong>（約7時間25分）にてミラノへ。<br>
+              06:55 ミラノ着後、🚌 専用車でミラノ市内へ。
             </p>
           </div>
         </div>
@@ -138,13 +431,12 @@
           <div class="shiori-col-meta">
             <span class="shiori-city">ミラノ</span>
             <span class="shiori-time">午前</span>
-            <span class="shiori-transport-mobile">🚶 自由行動(約3h)</span>
+            <span class="shiori-transport-tag">🚶 自由3時間</span>
           </div>
-          <div class="shiori-col-transport">徒歩散策</div>
           <div class="shiori-col-detail">
             <div class="shiori-green-bar">ミラノ自由行動（約3時間／各自昼食時間含む）</div>
             <p class="shiori-detail-text">
-              ヴィットーリオ・エマヌエーレ2世のガッレリア、ドゥオーモ、スカラ座など見所たくさん！ファッションの街ミラノをご自由にお楽しみください♪（ルイーニの包み揚げピザ等で各自昼食）
+              ヴィットーリオ・エマヌエーレ2世のガッレリア、ドゥオーモ、スカラ座など見所たくさん！ファッションの街ミラノをご自由にお楽しみください♪
             </p>
           </div>
         </div>
@@ -152,11 +444,10 @@
           <div class="shiori-col-meta">
             <span class="shiori-city">ベローナ</span>
             <span class="shiori-time">午後</span>
-            <span class="shiori-transport-mobile">🚌 専用車(160km)</span>
+            <span class="shiori-transport-tag">🚌 160km<br>(約2時間30分)</span>
           </div>
-          <div class="shiori-col-transport">🚌 専用車<br>(約2時間30分)</div>
           <div class="shiori-col-detail">
-            <p class="shiori-detail-text">🚌 ベローナへ（160km／約2時間30分）【休憩回数の目安：1回】</p>
+            <p class="shiori-detail-text">🚌 専用車でベローナへ【休憩目安：1回】</p>
             <div class="shiori-green-bar">【世界遺産】ベローナ各自散策（約1時間）</div>
             <p class="shiori-detail-text">ベローナの街（ジュリエットの家・右胸タッチ、アレーナ等）をご自由にお楽しみください♪</p>
           </div>
@@ -165,20 +456,19 @@
           <div class="shiori-col-meta">
             <span class="shiori-city">ベネチア</span>
             <span class="shiori-time">夕刻〜夜</span>
-            <span class="shiori-transport-mobile">🚌 専用車(115km)</span>
+            <span class="shiori-transport-tag">🚌 115km<br>(約1時間45分)</span>
           </div>
-          <div class="shiori-col-transport">🚌 専用車<br>(約1時間45分)</div>
           <div class="shiori-col-detail">
             <p class="shiori-detail-text">
-              🚌 ベネチアへ（115km／約1時間45分）<br>
+              🚌 専用車でベネチアへ。<br>
               🍴 <strong>夕食は3コースディナーをお召し上がりください。</strong>
             </p>
           </div>
         </div>
       </div>
       <div class="shiori-hotel-footer">
-        <span>🏨 【ベネチア（メストレ地区）泊】確定ホテル：<strong>Smart Holiday（スマート ホリデイ）</strong>（バスタブ○・シャンプー○・ポット×）</span>
-        <a href="day2.html" class="btn btn-secondary" style="font-size:0.74rem; padding:3px 8px;">Day 2 詳細ページ &rarr;</a>
+        <span>🏨 【ベネチア（メストレ）泊】<strong>Smart Holiday</strong>（バスタブ○・シャンプー○）</span>
+        <a href="day2.html" class="btn btn-secondary" style="font-size:0.74rem; padding:4px 8px;">Day 2 詳細 &rarr;</a>
       </div>
     </div>
     <!-- Day 3 Shiori Box -->
@@ -186,12 +476,12 @@
       <div class="shiori-day-header">
         <div class="shiori-day-title">
           <span class="shiori-day-badge">日程 3日目</span>
-          <span>2026年11月17日(火) ベネチア本島 &rarr; 地元スーパー &rarr; プラート</span>
+          <span>11/17(火) ベネチア本島 &rarr; スーパー &rarr; プラート</span>
         </div>
         <div class="shiori-day-meals">
-          <span class="shiori-meal-pill on">朝: ○</span>
-          <span class="shiori-meal-pill">昼: ×</span>
-          <span class="shiori-meal-pill">夕: ×</span>
+          <span class="shiori-meal-pill on">朝:○</span>
+          <span class="shiori-meal-pill">昼:×</span>
+          <span class="shiori-meal-pill">夕:×</span>
         </div>
       </div>
       <div class="shiori-rows">
@@ -199,35 +489,32 @@
           <div class="shiori-col-meta">
             <span class="shiori-city">ベネチア</span>
             <span class="shiori-time">午前</span>
-            <span class="shiori-transport-mobile">🚌 専用車＆🚤 船</span>
+            <span class="shiori-transport-tag">🚌 専用車<br>🚤 船</span>
           </div>
-          <div class="shiori-col-transport">🚌 専用車<br>🚤 船</div>
           <div class="shiori-col-detail">
-            <p class="shiori-detail-text">🚌 ＆ 🚤 ベネチア本島へ</p>
             <div class="shiori-green-bar">【世界遺産】ベネチア自由行動（約4時間／各自昼食時間含む）</div>
             <p class="shiori-detail-text">
-              水の都ベネチアで迷路のような街並みをご自由にお楽しみください♪（サン・マルコ広場、ため息橋、リアルト橋、ゴンドラ遊覧、カフェ・フローリアン、バカロ巡り等）
+              水の都ベネチアで迷路のような街並みをご自由にお楽しみください♪（サン・マルコ広場、ため息橋、リアルト橋、ゴンドラ、カフェ・フローリアン、バカロ等）
             </p>
           </div>
         </div>
         <div class="shiori-row">
           <div class="shiori-col-meta">
-            <span class="shiori-city">プラート<br><small>(フィレンツェ代替都市)</small></span>
+            <span class="shiori-city">プラート<br><small>(フィレンツェ代替)</small></span>
             <span class="shiori-time">午後</span>
-            <span class="shiori-transport-mobile">🚌 専用車(246km)</span>
+            <span class="shiori-transport-tag">🚌 246km<br>(約3時間45分)</span>
           </div>
-          <div class="shiori-col-transport">🚌 専用車<br>(約3時間45分)</div>
           <div class="shiori-col-detail">
             <p class="shiori-detail-text">
-              🚌 プラートへ（246km／約3時間45分）【休憩回数の目安：1回】<br>
-              🛒 <strong>途中、地元のスーパーマーケットに立ち寄ります。</strong>（バラマキお土産・Baciチョコ・パスタ・水・軽食の買い出し大チャンス！エコバッグ必携）
+              🚌 専用車でプラートへ【休憩目安：1回】<br>
+              🛒 <strong>途中、地元のスーパーマーケットに立ち寄ります。</strong>（バラマキお土産・Baciチョコ・パスタ・水・軽食の買い出し！エコバッグ必携）
             </p>
           </div>
         </div>
       </div>
       <div class="shiori-hotel-footer">
-        <span>🏨 【プラート泊（2連泊・1泊目）】確定ホテル：<strong>President Prato（プレジデント プラート）</strong>（冷蔵庫○・石鹸シャンプー×要持参）</span>
-        <a href="day3.html" class="btn btn-secondary" style="font-size:0.74rem; padding:3px 8px;">Day 3 詳細ページ &rarr;</a>
+        <span>🏨 【プラート泊（1泊目）】<strong>President Prato</strong>（冷蔵庫○・シャンプー×）</span>
+        <a href="day3.html" class="btn btn-secondary" style="font-size:0.74rem; padding:4px 8px;">Day 3 詳細 &rarr;</a>
       </div>
     </div>
     <!-- Day 4 Shiori Box -->
@@ -235,30 +522,28 @@
       <div class="shiori-day-header">
         <div class="shiori-day-title">
           <span class="shiori-day-badge">日程 4日目</span>
-          <span>2026年11月18日(水) ミケランジェロ広場 ＆ フィレンツェ自由行動10時間</span>
+          <span>11/18(水) ミケランジェロ広場 ＆ フィレンツェ10h</span>
         </div>
         <div class="shiori-day-meals">
-          <span class="shiori-meal-pill on">朝: ○</span>
-          <span class="shiori-meal-pill">昼: ×</span>
-          <span class="shiori-meal-pill">夕: ×</span>
+          <span class="shiori-meal-pill on">朝:○</span>
+          <span class="shiori-meal-pill">昼:×</span>
+          <span class="shiori-meal-pill">夕:×</span>
         </div>
       </div>
       <div class="shiori-rows">
         <div class="shiori-row">
           <div class="shiori-col-meta">
-            <span class="shiori-city">プラート<br>&darr;<br>フィレンツェ</span>
+            <span class="shiori-city">フィレンツェ</span>
             <span class="shiori-time">午前〜夜</span>
-            <span class="shiori-transport-mobile">🚌 専用車 / 🚶 自由10h</span>
+            <span class="shiori-transport-tag">🚌 専用車<br>🚶 自由10h</span>
           </div>
-          <div class="shiori-col-transport">🚌 専用車</div>
           <div class="shiori-col-detail">
             <p class="shiori-detail-text">
-              🚌 フィレンツェへ。<br>
-              📸 フィレンツェのフォトスポット、フィレンツェの美しい街並みが一望できる <strong>◎ミケランジェロ広場</strong> へご案内します。
+              📸 フィレンツェの美しい街並みが一望できる <strong>◎ミケランジェロ広場</strong> へご案内します。
             </p>
             <div class="shiori-green-bar">【世界遺産】フィレンツェで自由行動♪（約10時間／各自昼食・夕食時間含む）</div>
             <p class="shiori-detail-text">
-              花の都フィレンツェでショッピングや観光などご自由にお楽しみください♪（花の聖母大聖堂、ヴェッキオ橋、サンタ・マリア・ノヴェッラ薬局、ウフィツィ美術館、名物1kg Tボーンステーキ等）
+              花の都フィレンツェでショッピングや観光などご自由にお楽しみください♪（ドゥオーモ、ヴェッキオ橋、サンタ・マリア・ノヴェッラ薬局、1kg Tボーンステーキ等）
             </p>
           </div>
         </div>
@@ -266,17 +551,16 @@
           <div class="shiori-col-meta">
             <span class="shiori-city">プラート</span>
             <span class="shiori-time">夜</span>
-            <span class="shiori-transport-mobile">🚌 専用車</span>
+            <span class="shiori-transport-tag">🚌 専用車</span>
           </div>
-          <div class="shiori-col-transport">🚌 専用車</div>
           <div class="shiori-col-detail">
-            <p class="shiori-detail-text">再集合後、🚌 ホテルへご案内します。</p>
+            <p class="shiori-detail-text">再集合後、🚌 専用車でホテルへご案内します。</p>
           </div>
         </div>
       </div>
       <div class="shiori-hotel-footer">
-        <span>🏨 【プラート泊（2連泊・2泊目）】確定ホテル：<strong>President Prato（プレジデント プラート）</strong></span>
-        <a href="day4.html" class="btn btn-secondary" style="font-size:0.74rem; padding:3px 8px;">Day 4 詳細ページ &rarr;</a>
+        <span>🏨 【プラート泊（2連泊目）】<strong>President Prato</strong></span>
+        <a href="day4.html" class="btn btn-secondary" style="font-size:0.74rem; padding:4px 8px;">Day 4 詳細 &rarr;</a>
       </div>
     </div>
     <!-- Day 5 Shiori Box -->
@@ -284,128 +568,122 @@
       <div class="shiori-day-header">
         <div class="shiori-day-title">
           <span class="shiori-day-badge">日程 5日目</span>
-          <span>2026年11月19日(木) サンジミニャーノ &rarr; ピザ昼食 &rarr; バチカン・ローマ4h観光</span>
+          <span>11/19(木) サンジミニャーノ &rarr; ローマ観光</span>
         </div>
         <div class="shiori-day-meals">
-          <span class="shiori-meal-pill on">朝: ○(※1)</span>
-          <span class="shiori-meal-pill on">昼: ○(ピザ)</span>
-          <span class="shiori-meal-pill">夕: ×</span>
+          <span class="shiori-meal-pill on">朝:○</span>
+          <span class="shiori-meal-pill on">昼:○(ピザ)</span>
+          <span class="shiori-meal-pill">夕:×</span>
         </div>
       </div>
       <div class="shiori-rows">
         <div class="shiori-row">
           <div class="shiori-col-meta">
-            <span class="shiori-city">プラート<br>&darr;<br>サンジミニャーノ</span>
+            <span class="shiori-city">サンジミ<br>ニャーノ</span>
             <span class="shiori-time">朝〜午前</span>
-            <span class="shiori-transport-mobile">🚌 専用車(70km)</span>
+            <span class="shiori-transport-tag">🚌 70km<br>(約1時間)</span>
           </div>
-          <div class="shiori-col-transport">🚌 専用車<br>(約1時間)</div>
           <div class="shiori-col-detail">
-            <p class="shiori-detail-text">🚌 サンジミニャーノへ（70km／約1時間）<small>（※1）ホテル出発時間により朝食ボックスになる場合がございます。</small></p>
             <div class="shiori-green-bar">【世界遺産】サンジミニャーノ各自散策（約1時間）</div>
-            <p class="shiori-detail-text">中世の街並みが残る「塔の街」をご自由にお楽しみください♪（チステルナ広場、世界一ジェラート店Dondoli等）</p>
+            <p class="shiori-detail-text">
+              中世の街並みが残る「塔の街」をご自由にお楽しみください♪（チステルナ広場、世界一ジェラート店Dondoli等）<small>※出発時間により朝食BOXの場合あり</small>
+            </p>
           </div>
         </div>
         <div class="shiori-row">
           <div class="shiori-col-meta">
             <span class="shiori-city">ローマ</span>
             <span class="shiori-time">午後</span>
-            <span class="shiori-transport-mobile">🚌 専用車(279km)</span>
+            <span class="shiori-transport-tag">🚌 279km<br>(約4時間)</span>
           </div>
-          <div class="shiori-col-transport">🚌 専用車<br>(約4時間)</div>
           <div class="shiori-col-detail">
             <p class="shiori-detail-text">
-              🚌 ローマへ（279km／約4時間）【休憩回数の目安：1回】<br>
+              🚌 ローマへ【休憩目安：1回】<br>
               🍕 <strong>昼食は本場イタリアのピザ！「マルゲリータ＆カプリチョーザ」のハーフ＆ハーフをお召し上がりください。</strong>
             </p>
             <div class="shiori-green-bar">【世界遺産】バチカンとローマ観光（約4時間）</div>
             <p class="shiori-detail-text">
-              <strong>◎サン・ピエトロ寺院、◎スペイン広場、◎トレビの泉、【世界遺産】○コロッセオ（車窓）</strong>へご案内します。<br>
-              お泊まりはフリータイム中の観光・移動に便利なテルミニ駅周辺ホテルにゆったり2連泊！！
+              <strong>◎サン・ピエトロ寺院、◎スペイン広場、◎トレビの泉、【世界遺産】○コロッセオ（車窓）</strong>へご案内します。
             </p>
           </div>
         </div>
       </div>
       <div class="shiori-hotel-footer">
-        <span>🏨 【ローマ泊（2連泊・1泊目）】確定ホテル：<strong>Mercure Roma Centro St. John</strong>（Manzoni駅徒歩5分・コロッセオ徒歩12分・ポット○）</span>
-        <a href="day5.html" class="btn btn-secondary" style="font-size:0.74rem; padding:3px 8px;">Day 5 詳細ページ &rarr;</a>
+        <span>🏨 【ローマ泊（1泊目）】<strong>Mercure Roma Centro St. John</strong>（コロッセオ徒歩12分・ポット○）</span>
+        <a href="day5.html" class="btn btn-secondary" style="font-size:0.74rem; padding:4px 8px;">Day 5 詳細 &rarr;</a>
       </div>
     </div>
     <!-- Day 6 Shiori Box (★ユーザー確定スケジュール完全組み込み) -->
     <div class="shiori-day-box highlight-day6" id="shiori-day6">
       <div class="shiori-day-header">
         <div class="shiori-day-title">
-          <span class="shiori-day-badge" style="background:#fef08a; color:#991b1b;">日程 6日目 ★確定予定</span>
-          <span>2026年11月20日(金) ローマでまる1日自由行動♪（予約済スケジュール）</span>
+          <span class="shiori-day-badge" style="background:#fef08a; color:#991b1b;">日程 6日目 ★確定</span>
+          <span>11/20(金) ローマ終日自由行動（予約済プラン）</span>
         </div>
         <div class="shiori-day-meals">
-          <span class="shiori-meal-pill on">朝: ○</span>
-          <span class="shiori-meal-pill">昼: ×</span>
-          <span class="shiori-meal-pill">夕: ×</span>
+          <span class="shiori-meal-pill on">朝:○</span>
+          <span class="shiori-meal-pill">昼:×</span>
+          <span class="shiori-meal-pill">夕:×</span>
         </div>
       </div>
       <div class="shiori-rows">
         <div class="shiori-row">
           <div class="shiori-col-meta">
-            <span class="shiori-city">ローマ<br><small>(古代ローマ)</small></span>
+            <span class="shiori-city">ローマ</span>
             <span class="shiori-time reserved">08:30 予約済</span>
-            <span class="shiori-transport-mobile">🚶 ホテルから徒歩12分</span>
+            <span class="shiori-transport-tag">🚶 ホテルから<br>徒歩12〜15分</span>
           </div>
-          <div class="shiori-col-transport">🚶 徒歩<br>(約12〜15分)</div>
           <div class="shiori-col-detail">
-            <div class="shiori-red-bar">🎟️ 08:30 【予約済み】●コロッセオ と ●パラティーノの丘（＆フォロ・ロマーノ）</div>
+            <div class="shiori-red-bar">🎟️ 08:30 【予約済み】コロッセオ と パラティーノの丘</div>
             <p class="shiori-detail-text">
-              <strong>07:45〜08:00頃</strong> 宿泊ホテル（Mercure Roma Centro St. John）を出発。Via di S. Giovanni in Laterano通りを直進し徒歩約12〜15分でコロッセオへ！<br>
-              <strong>08:30</strong> 予約枠にてコロッセオ内部・パラティーノの丘・フォロ・ロマーノを入場観光（<strong>パスポート原本必携</strong>）。
+              <strong>07:45頃</strong> ホテル（Mercure St. John）を徒歩出発（直進約1km）。<br>
+              <strong>08:30</strong> コロッセオ内部・パラティーノの丘・フォロ・ロマーノ入場観光（<strong>パスポート原本必携</strong>）。
             </p>
           </div>
         </div>
         <div class="shiori-row">
           <div class="shiori-col-meta">
-            <span class="shiori-city">ローマ市内<br>&darr;<br>バチカン</span>
+            <span class="shiori-city">ローマ市内<br>&rarr; バチカン</span>
             <span class="shiori-time">12:00〜14:30</span>
-            <span class="shiori-transport-mobile">🍽️ 昼食 ＆ 🚇 地下鉄A線</span>
+            <span class="shiori-transport-tag">🍽️ ランチ<br>🚇 地下鉄A線</span>
           </div>
-          <div class="shiori-col-transport">🚇 地下鉄A線<br>(Tap&amp;Go)</div>
           <div class="shiori-col-detail">
             <p class="shiori-detail-text">
-              ローマ名物パスタランチ＆小休憩後、地下鉄A線（ホテル最寄 <strong>Manzoni駅</strong> または Termini駅 &rarr; <strong>Ottaviano駅</strong> 直通約15分）でバチカン市国へ移動。
+              ローマ名物パスタ昼食後、地下鉄A線（<strong>Manzoni駅</strong> または Termini駅 &rarr; <strong>Ottaviano駅</strong> 直通約15分）でバチカンへ移動。
             </p>
           </div>
         </div>
         <div class="shiori-row">
           <div class="shiori-col-meta">
-            <span class="shiori-city">バチカン市国</span>
+            <span class="shiori-city">バチカン</span>
             <span class="shiori-time reserved">15:00 予約済</span>
-            <span class="shiori-transport-mobile">🎟️ 優先入場</span>
+            <span class="shiori-transport-tag">🎟️ 優先入場</span>
           </div>
-          <div class="shiori-col-transport">徒歩見学</div>
           <div class="shiori-col-detail">
-            <div class="shiori-red-bar">🎨 15:00 【予約済み】●バチカン美術館 ＆ ●システィーナ礼拝堂</div>
+            <div class="shiori-red-bar">🎨 15:00 【予約済み】バチカン美術館 ＆ システィーナ礼拝堂</div>
             <p class="shiori-detail-text">
-              <strong>15:00</strong> 予約枠でバチカン美術館へ入場。地図のギャラリー、ラファエロの間、ミケランジェロ『最後の審判』『天地創造』のシスティーナ礼拝堂を鑑賞。
+              地図のギャラリー、ラファエロの間、ミケランジェロ『最後の審判』『天地創造』のシスティーナ礼拝堂を鑑賞。
             </p>
           </div>
         </div>
         <div class="shiori-row">
           <div class="shiori-col-meta">
-            <span class="shiori-city">バチカン市国</span>
+            <span class="shiori-city">バチカン</span>
             <span class="shiori-time reserved">16:00 見学<br>18:00 ミサ</span>
-            <span class="shiori-transport-mobile">⛪ 大聖堂・夕のミサ</span>
+            <span class="shiori-transport-tag">⛪ 大聖堂<br>🎵 夕のミサ</span>
           </div>
-          <div class="shiori-col-transport">聖堂参列</div>
           <div class="shiori-col-detail">
-            <div class="shiori-red-bar">⛪ 16:00 ●サン・ピエトロ大聖堂 ＆ 🎵 18:00「夕のミサ」を聴きにいく</div>
+            <div class="shiori-red-bar">⛪ 16:00 サン・ピエトロ大聖堂 ＆ 🎵 18:00「夕のミサ」を聴きにいく</div>
             <p class="shiori-detail-text">
-              <strong>16:00</strong> <strong>サン・ピエトロ大聖堂</strong>へ入場（ミケランジェロ『ピエタ像』、ベルニーニ『大天蓋』を見学）。<br>
-              <strong>18:00</strong> <strong>サン・ピエトロ大聖堂にて「夕のミサ」を聴きにいく</strong>（荘厳なパイプオルガンと聖歌の響きを拝聴 ※肩・膝露出厳禁）。ミサ後、サン・ピエトロ広場の夜景とローマ最後の記念ディナーへ！
+              <strong>16:00</strong> <strong>サン・ピエトロ大聖堂</strong>見学（『ピエタ像』・『大天蓋』）。<br>
+              <strong>18:00</strong> <strong>夕のミサを聴きにいく</strong>（荘厳なパイプオルガンと聖歌を拝聴 ※肩・膝露出厳禁）。ミサ後、ローマ最後の記念ディナーへ！
             </p>
           </div>
         </div>
       </div>
       <div class="shiori-hotel-footer">
-        <span>🏨 【ローマ泊（2連泊・2泊目）】確定ホテル：<strong>Mercure Roma Centro St. John</strong>（Ottaviano駅から地下鉄A線でManzoni駅へ直通帰館）</span>
-        <a href="day6.html" class="btn btn-primary" style="background:#dc2626; font-size:0.74rem; padding:3px 8px;">Day 6 完全ガイド &rarr;</a>
+        <span>🏨 【ローマ泊（2連泊目）】<strong>Mercure Roma Centro St. John</strong></span>
+        <a href="day6.html" class="btn btn-primary" style="background:#dc2626; font-size:0.74rem; padding:4px 8px;">Day 6 詳細 &rarr;</a>
       </div>
     </div>
     <!-- Day 7 Shiori Box -->
@@ -413,12 +691,12 @@
       <div class="shiori-day-header">
         <div class="shiori-day-title">
           <span class="shiori-day-badge">日程 7日目</span>
-          <span>2026年11月21日(土) 出発までローマ自由行動 &rarr; 15:10 ローマ発(QR132)</span>
+          <span>11/21(土) ローマ自由行動 &rarr; 15:10 帰国便</span>
         </div>
         <div class="shiori-day-meals">
-          <span class="shiori-meal-pill on">朝: ○</span>
-          <span class="shiori-meal-pill">昼: ×</span>
-          <span class="shiori-meal-pill on">夕: 機内</span>
+          <span class="shiori-meal-pill on">朝:○</span>
+          <span class="shiori-meal-pill">昼:×</span>
+          <span class="shiori-meal-pill on">夕:機内</span>
         </div>
       </div>
       <div class="shiori-rows">
@@ -426,13 +704,12 @@
           <div class="shiori-col-meta">
             <span class="shiori-city">ローマ</span>
             <span class="shiori-time">午前〜午後</span>
-            <span class="shiori-transport-mobile">🚶 自由行動 / 🚌 専用車</span>
+            <span class="shiori-transport-tag">🚶 自由行動<br>🚌 専用車</span>
           </div>
-          <div class="shiori-col-transport">🚌 専用車</div>
           <div class="shiori-col-detail">
             <p class="shiori-detail-text">
-              <strong>出発までローマ自由行動（チェックアウトは午前中・12:00までとなります）</strong><br>
-              午後、🚌 専用車でフィウミチーノ空港へご案内します。（空港にてOtello免税手続き＆搭乗手続き）
+              <strong>出発までローマ自由行動（チェックアウトは午前中・12:00まで）</strong><br>
+              午後、🚌 専用車で空港へご案内します。（Otello免税手続き＆搭乗手続き）
             </p>
           </div>
         </div>
@@ -440,12 +717,11 @@
           <div class="shiori-col-meta">
             <span class="shiori-city">ローマ発<br>ドーハ着</span>
             <span class="shiori-time">15:10 発<br>22:35 着</span>
-            <span class="shiori-transport-mobile">✈️ QR132便</span>
+            <span class="shiori-transport-tag">✈️ QR132便<br>(約5h25m)</span>
           </div>
-          <div class="shiori-col-transport">航空機<br>(QR132)</div>
           <div class="shiori-col-detail">
             <p class="shiori-detail-text">
-              ✈️ <strong>カタール航空 QR132便</strong>（所要約5時間25分）にて（ドーハ乗継）空路、帰国の途へ。<br>
+              ✈️ <strong>カタール航空 QR132便</strong>にてドーハへ。<br>
               22:35 ドーハ着後、関西空港行きQR802便（翌00:55発）へ乗り継ぎ。
             </p>
           </div>
@@ -453,7 +729,7 @@
       </div>
       <div class="shiori-hotel-footer">
         <span>🌙 宿泊：【機中泊】</span>
-        <a href="day7.html" class="btn btn-secondary" style="font-size:0.74rem; padding:3px 8px;">Day 7 詳細ページ &rarr;</a>
+        <a href="day7.html" class="btn btn-secondary" style="font-size:0.74rem; padding:4px 8px;">Day 7 詳細 &rarr;</a>
       </div>
     </div>
     <!-- Day 8 Shiori Box -->
@@ -461,12 +737,12 @@
       <div class="shiori-day-header">
         <div class="shiori-day-title">
           <span class="shiori-day-badge">日程 8日目</span>
-          <span>2026年11月22日(日) ドーハ 00:55発(QR802) &rarr; 16:25 関西空港着・解散</span>
+          <span>11/22(日) ドーハ 00:55発 &rarr; 16:25 関空帰着</span>
         </div>
         <div class="shiori-day-meals">
-          <span class="shiori-meal-pill on">朝: 機内</span>
-          <span class="shiori-meal-pill on">昼: 機内</span>
-          <span class="shiori-meal-pill">夕: 自宅</span>
+          <span class="shiori-meal-pill on">朝:機内</span>
+          <span class="shiori-meal-pill on">昼:機内</span>
+          <span class="shiori-meal-pill">夕:自宅</span>
         </div>
       </div>
       <div class="shiori-rows">
@@ -474,155 +750,180 @@
           <div class="shiori-col-meta">
             <span class="shiori-city">ドーハ発<br>関西空港着</span>
             <span class="shiori-time">00:55 発<br>16:25 着</span>
-            <span class="shiori-transport-mobile">✈️ QR802便</span>
+            <span class="shiori-transport-tag">✈️ QR802便<br>(約9h30m)</span>
           </div>
-          <div class="shiori-col-transport">航空機<br>(QR802)</div>
           <div class="shiori-col-detail">
             <p class="shiori-detail-text">
-              ✈️ <strong>カタール航空 QR802便</strong>（所要約9時間30分）にて関西国際空港へ。<br>
-              <strong>16:25 関西空港着。着後、解散となります。</strong>（Visit Japan Web税関ゲート通過後、ご自宅へ）
+              ✈️ <strong>カタール航空 QR802便</strong>にて関西国際空港へ。<br>
+              <strong>16:25 関西空港着。着後、解散となります。</strong>
             </p>
           </div>
         </div>
       </div>
       <div class="shiori-hotel-footer">
-        <span>🏠 お帰りなさいませ！ご自宅（千里丘）へ帰着</span>
-        <a href="day8.html" class="btn btn-secondary" style="font-size:0.74rem; padding:3px 8px;">Day 8 詳細ページ &rarr;</a>
+        <span>🏠 ご自宅（千里丘）へ無事帰着</span>
+        <a href="day8.html" class="btn btn-secondary" style="font-size:0.74rem; padding:4px 8px;">Day 8 詳細 &rarr;</a>
       </div>
     </div>
     </section>
 
-    <!-- 2. FLIGHTS & MEETING INFO TABLE (しおりp.1〜2) -->
+    <!-- 2. FLIGHTS & MEETING INFO (iPhone-Fit Shiori Box) -->
     <section class="section" id="shiori-flights">
       <div class="section-header">
-        <h2 class="section-title">✈️ ご集合 ＆ ご利用フライト一覧（しおり p.1〜2）</h2>
-        <span class="section-subtitle">QR＝カタール航空</span>
+        <h2 class="section-title">✈️ ご集合 ＆ ご利用フライト（しおり p.1〜2）</h2>
       </div>
 
-      <div class="spot-card" style="margin-bottom:12px; border: 2px solid #0f2b48;">
-        <div class="spot-body">
-          <h3 class="spot-name-ja">📍 出発当日のご集合・緊急連絡先</h3>
-          <p class="spot-desc">
-            ● <strong>ご出発日：</strong> 2026年11月15日(日)　<strong>ご集合時間：【15:25】（時間厳守）</strong><br>
-            ● <strong>ご集合場所：</strong> <strong>関西空港 第1ターミナルビル4階 団体カウンター NO.11（HIS看板前）</strong> ※添乗員がお待ちしております。<br>
-            ● <strong>出発当日の緊急連絡先：</strong> H.I.S. エアポートアシスタンスサービス（関西国際空港） 📞 <a href="tel:05017525472" style="font-weight:800; color:#dc2626;">050-1752-5472</a>（営業時間 7:00〜22:00）<br>
-            ● <strong>イタリア現地手配会社：</strong> G2 TRAVEL（ローマ） 📞 <a href="tel:+390694506410" style="font-weight:800; color:#dc2626;">+(39) 06-9450-6410</a>（営業時間 07:00〜21:00 MON-SUN）
-          </p>
+      <div class="shiori-day-box">
+        <div class="shiori-day-header">
+          <div class="shiori-day-title">
+            <span class="shiori-day-badge">ご集合・連絡先</span>
+            <span>関西国際空港 第1ターミナル4階</span>
+          </div>
+        </div>
+        <div class="shiori-rows">
+          <div class="shiori-row">
+            <div class="shiori-col-meta">
+              <span class="shiori-city">ご集合</span>
+              <span class="shiori-time reserved">11/15 15:25</span>
+            </div>
+            <div class="shiori-col-detail">
+              <p class="shiori-detail-text">
+                <strong>関西空港 第1ターミナルビル4階 団体カウンター NO.11（HIS看板前）</strong><br>
+                ※15:25厳守（受付開始）
+              </p>
+            </div>
+          </div>
+          <div class="shiori-row">
+            <div class="shiori-col-meta">
+              <span class="shiori-city">緊急連絡先</span>
+              <span class="shiori-transport-tag">📞 控え</span>
+            </div>
+            <div class="shiori-col-detail">
+              <p class="shiori-detail-text">
+                ● <strong>関空HISアシスタンス：</strong> <a href="tel:05017525472" style="font-weight:800; color:#dc2626;">050-1752-5472</a>（7:00〜22:00）<br>
+                ● <strong>現地手配 G2 TRAVEL（ローマ）：</strong> <a href="tel:+390694506410" style="font-weight:800; color:#dc2626;">+(39) 06-9450-6410</a>（7:00〜21:00）
+              </p>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div class="table-responsive">
-        <table class="compare-table">
-          <thead>
-            <tr>
-              <th>区間</th>
-              <th>日付</th>
-              <th>発着都市</th>
-              <th>時間</th>
-              <th>便名</th>
-              <th>飛行時間</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td rowspan="2"><strong>往路</strong></td>
-              <td>2026年11月15日(日)</td>
-              <td>関西空港 発 &rarr; ドーハ 着</td>
-              <td><strong>17:55 発</strong> &rarr; 23:35 着</td>
-              <td><strong>QR803</strong></td>
-              <td>約11時間40分</td>
-            </tr>
-            <tr>
-              <td>2026年11月16日(月)</td>
-              <td>ドーハ 発 &rarr; ミラノ 着</td>
-              <td><strong>01:30 発</strong> &rarr; <strong>06:55 着</strong></td>
-              <td><strong>QR123</strong></td>
-              <td>約7時間25分</td>
-            </tr>
-            <tr>
-              <td rowspan="2"><strong>復路</strong></td>
-              <td>2026年11月21日(土)</td>
-              <td>ローマ 発 &rarr; ドーハ 着</td>
-              <td><strong>15:10 発</strong> &rarr; 22:35 着</td>
-              <td><strong>QR132</strong></td>
-              <td>約5時間25分</td>
-            </tr>
-            <tr>
-              <td>2026年11月22日(日)</td>
-              <td>ドーハ 発 &rarr; 関西空港 着</td>
-              <td><strong>00:55 発</strong> &rarr; <strong>16:25 着</strong></td>
-              <td><strong>QR802</strong></td>
-              <td>約9時間30分</td>
-            </tr>
-          </tbody>
-        </table>
+      <div class="shiori-day-box">
+        <div class="shiori-day-header">
+          <div class="shiori-day-title">
+            <span class="shiori-day-badge">ご利用フライト</span>
+            <span>カタール航空（QR）往復4便</span>
+          </div>
+        </div>
+        <div class="shiori-rows">
+          <div class="shiori-row">
+            <div class="shiori-col-meta">
+              <span class="shiori-city">往路①<br>11/15(日)</span>
+              <span class="shiori-time">QR803便</span>
+              <span class="shiori-transport-tag">約11h40m</span>
+            </div>
+            <div class="shiori-col-detail">
+              <p class="shiori-detail-text"><strong>関西空港 17:55発</strong> &rarr; <strong>ドーハ 23:35着</strong></p>
+            </div>
+          </div>
+          <div class="shiori-row">
+            <div class="shiori-col-meta">
+              <span class="shiori-city">往路②<br>11/16(月)</span>
+              <span class="shiori-time">QR123便</span>
+              <span class="shiori-transport-tag">約7h25m</span>
+            </div>
+            <div class="shiori-col-detail">
+              <p class="shiori-detail-text"><strong>ドーハ 01:30発</strong> &rarr; <strong>ミラノ（マルペンサ）06:55着</strong></p>
+            </div>
+          </div>
+          <div class="shiori-row">
+            <div class="shiori-col-meta">
+              <span class="shiori-city">復路①<br>11/21(土)</span>
+              <span class="shiori-time">QR132便</span>
+              <span class="shiori-transport-tag">約5h25m</span>
+            </div>
+            <div class="shiori-col-detail">
+              <p class="shiori-detail-text"><strong>ローマ（FCO）15:10発</strong> &rarr; <strong>ドーハ 22:35着</strong></p>
+            </div>
+          </div>
+          <div class="shiori-row">
+            <div class="shiori-col-meta">
+              <span class="shiori-city">復路②<br>11/22(日)</span>
+              <span class="shiori-time">QR802便</span>
+              <span class="shiori-transport-tag">約9h30m</span>
+            </div>
+            <div class="shiori-col-detail">
+              <p class="shiori-detail-text"><strong>ドーハ 00:55発</strong> &rarr; <strong>関西空港 16:25着（着後解散）</strong></p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- 3. CONFIRMED HOTELS TABLE (しおりp.3 ＆ ホテル一覧.pdf) -->
+    <!-- 3. CONFIRMED HOTELS (iPhone-Fit Shiori Box) -->
     <section class="section" id="shiori-hotels">
       <div class="section-header">
-        <h2 class="section-title">🏨 ご利用予定ホテル ＆ 設備一覧（しおり p.3・ホテル一覧PDF）</h2>
-        <span class="section-subtitle">全3軒・4つ星ホテル確定</span>
+        <h2 class="section-title">🏨 ご利用予定ホテル ＆ 設備（しおり p.3・ホテル一覧PDF）</h2>
       </div>
 
-      <div class="table-responsive">
-        <table class="compare-table">
-          <thead>
-            <tr>
-              <th>宿泊日・都市</th>
-              <th>ホテル名・住所・TEL</th>
-              <th>客室設備（○あり / ×なし）</th>
-              <th>マップ</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>Day 2 (11/16 月)</strong><br>ベネチア<br><small>（メストレ地区・1泊）</small></td>
-              <td>
-                <strong>Smart Holiday（スマート ホリデイ）</strong><br>
-                Via Dell 'Essiccatoio 38, Venice, 30173, ITALY<br>
-                TEL: (39) 041 61 1088<br>
-                <small>IN 14:00 / OUT 11:00 | 市税目安: €0.5〜5.0</small>
-              </td>
-              <td>
-                ✅ Wi-Fi無料、<strong>バスタブ○</strong>、シャワー○、ドライヤー○、<strong>石鹸/シャンプー○</strong>、金庫○、ミニバー○<br>
-                ❌ <strong>歯ブラシ×、ポット×、冷蔵庫×</strong>
-              </td>
-              <td><a href="https://maps.google.com/?q=Hotel+Smart+Holiday+Via+Dell+Essiccatoio+38+Mestre" target="_blank" class="btn btn-maps">📍 Map</a></td>
-            </tr>
-            <tr>
-              <td><strong>Day 3・4 (11/17–18)</strong><br>プラート<br><small>（フィレンツェ代替・2連泊）</small></td>
-              <td>
-                <strong>President Prato（プレジデント プラート）</strong><br>
-                Via Arrigo Simintendi 20, Prato, 59100, ITALY<br>
-                TEL: (+39) 05 743 0251<br>
-                <small>IN 15:00 / OUT 11:00 | 市税目安: €1.50〜2.00</small>
-              </td>
-              <td>
-                ✅ Wi-Fi無料、シャワー○、ドライヤー○、金庫○、ミニバー○、<strong>冷蔵庫○</strong>、バスタブ△(一部)<br>
-                ❌ <strong>歯ブラシ×、石鹸/シャンプー×(要持参)、ポット×、テレビ×</strong>
-              </td>
-              <td><a href="https://maps.google.com/?q=Hotel+President+Via+Arrigo+Simintendi+20+Prato" target="_blank" class="btn btn-maps">📍 Map</a></td>
-            </tr>
-            <tr>
-              <td><strong>Day 5・6 (11/19–20)</strong><br>ローマ<br><small>（テルミニ駅周辺・2連泊）</small></td>
-              <td>
-                <strong>Mercure Roma Centro St. John</strong><br>
-                <small>（メルキュール ローマ チェントロ セントジョン）</small><br>
-                Via Matteo Boiardo 30, Rome, 00185, ITALY<br>
-                TEL: (39) 069 799 7045<br>
-                <small style="color:#dc2626; font-weight:700;">★地下鉄A線Manzoni駅徒歩5分・コロッセオ徒歩12〜15分！</small><br>
-                <small>IN 14:00 / OUT 12:00 | 市税目安: €4.00〜10.00</small>
-              </td>
-              <td>
-                ✅ Wi-Fi無料、<strong>湯沸かしポット○</strong>、テレビ○、シャワー○、ドライヤー○、金庫○、バスタブ△(一部)<br>
-                ❌ <strong>歯ブラシ×、石鹸/シャンプー×(要持参)、冷蔵庫×、ミニバー×</strong>
-              </td>
-              <td><a href="https://maps.google.com/?q=Mercure+Roma+Centro+St+John+Via+Matteo+Boiardo+30+Rome" target="_blank" class="btn btn-maps">📍 Map</a></td>
-            </tr>
-          </tbody>
-        </table>
+      <div class="shiori-day-box">
+        <div class="shiori-day-header">
+          <div class="shiori-day-title">
+            <span class="shiori-day-badge">確定ホテル 3軒</span>
+            <span>全館Wi-Fi無料・4つ星クラス</span>
+          </div>
+        </div>
+        <div class="shiori-rows">
+          <div class="shiori-row">
+            <div class="shiori-col-meta">
+              <span class="shiori-city">ベネチア<br><small>(メストレ)</small></span>
+              <span class="shiori-time">11/16 (1泊)</span>
+              <span class="shiori-transport-tag">IN 14:00<br>OUT 11:00</span>
+            </div>
+            <div class="shiori-col-detail">
+              <div class="shiori-green-bar">Smart Holiday（スマート ホリデイ）</div>
+              <p class="shiori-detail-text">
+                📍 Via Dell 'Essiccatoio 38, Venice | 📞 (39) 041 61 1088<br>
+                ✅ <strong>バスタブ○、石鹸/シャンプー○</strong>、ドライヤー○、金庫○<br>
+                ❌ 歯ブラシ×、ポット×、冷蔵庫× ｜ 市税目安：€0.5〜5.0
+              </p>
+              <a href="https://maps.google.com/?q=Hotel+Smart+Holiday+Via+Dell+Essiccatoio+38+Mestre" target="_blank" class="btn-maps">📍 Google Maps</a>
+            </div>
+          </div>
+          <div class="shiori-row">
+            <div class="shiori-col-meta">
+              <span class="shiori-city">プラート<br><small>(フィレンツェ代替)</small></span>
+              <span class="shiori-time">11/17・18<br>(2連泊)</span>
+              <span class="shiori-transport-tag">IN 15:00<br>OUT 11:00</span>
+            </div>
+            <div class="shiori-col-detail">
+              <div class="shiori-green-bar">President Prato（プレジデント プラート）</div>
+              <p class="shiori-detail-text">
+                📍 Via Arrigo Simintendi 20, Prato | 📞 (+39) 05 743 0251<br>
+                ✅ <strong>冷蔵庫○</strong>、シャワー○、ドライヤー○、金庫○、バスタブ△<br>
+                ❌ 歯ブラシ×、<strong>石鹸/シャンプー×(要持参)</strong>、ポット× ｜ 市税目安：€1.5〜2.0
+              </p>
+              <a href="https://maps.google.com/?q=Hotel+President+Via+Arrigo+Simintendi+20+Prato" target="_blank" class="btn-maps">📍 Google Maps</a>
+            </div>
+          </div>
+          <div class="shiori-row">
+            <div class="shiori-col-meta">
+              <span class="shiori-city">ローマ<br><small>(テルミニ周辺)</small></span>
+              <span class="shiori-time reserved">11/19・20<br>(2連泊)</span>
+              <span class="shiori-transport-tag">IN 14:00<br>OUT 12:00</span>
+            </div>
+            <div class="shiori-col-detail">
+              <div class="shiori-red-bar">Mercure Roma Centro St. John（メルキュール セントジョン）</div>
+              <p class="shiori-detail-text">
+                📍 Via Matteo Boiardo 30, Rome | 📞 (39) 069 799 7045<br>
+                ★ <strong>Manzoni駅徒歩5分・コロッセオまで徒歩約12〜15分！</strong><br>
+                ✅ <strong>湯沸かしポット○</strong>、シャワー○、ドライヤー○、金庫○、バスタブ△<br>
+                ❌ 歯ブラシ×、<strong>石鹸/シャンプー×(要持参)</strong>、冷蔵庫× ｜ 市税目安：€4.0〜10.0
+              </p>
+              <a href="https://maps.google.com/?q=Mercure+Roma+Centro+St+John+Via+Matteo+Boiardo+30+Rome" target="_blank" class="btn-maps">📍 Google Maps</a>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 

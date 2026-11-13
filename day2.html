@@ -5,7 +5,607 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=no">
   <title>Day 2 (11/16 月) ミラノ自由行動3h &rarr; ベローナ散策1h &rarr; ベネチア3コースディナー | イタリア新婚旅行8日間</title>
   <meta name="description" content="Day 2: ミラノ到着・市内自由行動（約3時間） &rarr; ベローナ散策 &rarr; ベネチア3コースディナー。HIS Impresso公式しおり・確定ホテル・現地ガイドノウハウ完全対応">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=16">
+  <style>
+
+/* === v16 iPhone-First Shiori & Responsive Layout Override === */
+.compare-table {
+  white-space: normal !important;
+  word-break: break-word;
+  width: 100%;
+  border-collapse: collapse;
+}
+.btn, .hero-cta-btn, .btn-maps {
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.section-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+@media (min-width: 640px) {
+  .section-header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+/* Shiori Legend Bar */
+.shiori-legend-bar {
+  background: #ffffff;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 10px;
+  padding: 10px 12px;
+  margin-bottom: 14px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #1e293b;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.06);
+}
+
+/* Shiori Day Box (Official Booklet Style - 100% iPhone Width Fit) */
+.shiori-day-box {
+  background: #ffffff;
+  border: 2px solid #1e293b;
+  border-radius: 12px;
+  margin-bottom: 16px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.08);
+}
+.shiori-day-box.highlight-day6 {
+  border-color: #dc2626;
+  box-shadow: 0 4px 14px rgba(220, 38, 38, 0.16);
+}
+.shiori-day-header {
+  background: #1e293b;
+  color: #ffffff;
+  padding: 10px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.shiori-day-box.highlight-day6 .shiori-day-header {
+  background: linear-gradient(90deg, #991b1c 0%, #dc2626 100%);
+}
+.shiori-day-title {
+  font-size: 0.94rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  line-height: 1.3;
+}
+.shiori-day-badge {
+  background: #f59e0b;
+  color: #ffffff;
+  font-size: 0.74rem;
+  font-weight: 900;
+  padding: 2px 7px;
+  border-radius: 5px;
+  white-space: nowrap;
+}
+.shiori-day-meals {
+  display: flex;
+  gap: 4px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+.shiori-meal-pill {
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.18);
+  color: #f8fafc;
+  white-space: nowrap;
+}
+.shiori-meal-pill.on {
+  background: #dcfce7;
+  color: #166534;
+}
+
+/* 2-Column iPhone-Fit Shiori Rows (No Duplicate Columns, Zero Horizontal Overflow) */
+.shiori-rows {
+  display: flex;
+  flex-direction: column;
+}
+.shiori-row {
+  display: grid;
+  grid-template-columns: 92px 1fr;
+  border-bottom: 1px solid #cbd5e1;
+  font-size: 0.85rem;
+}
+.shiori-row:last-child {
+  border-bottom: none;
+}
+.shiori-col-meta {
+  background: #f8fafc;
+  border-right: 1px solid #cbd5e1;
+  padding: 9px 7px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 4px;
+}
+.shiori-city {
+  font-weight: 800;
+  color: #0f2b48;
+  font-size: 0.82rem;
+  line-height: 1.25;
+}
+.shiori-time {
+  display: inline-block;
+  font-size: 0.74rem;
+  font-weight: 800;
+  color: #0369a1;
+  background: #e0f2fe;
+  padding: 2px 5px;
+  border-radius: 4px;
+  width: fit-content;
+  line-height: 1.2;
+}
+.shiori-time.reserved {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+.shiori-transport-tag {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #475569;
+  line-height: 1.25;
+}
+.shiori-col-detail {
+  padding: 9px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+}
+.shiori-green-bar {
+  background: #2e6b3e;
+  color: #ffffff;
+  font-size: 0.8rem;
+  font-weight: 800;
+  padding: 4px 8px;
+  border-radius: 4px;
+  line-height: 1.35;
+}
+.shiori-red-bar {
+  background: #be123c;
+  color: #ffffff;
+  font-size: 0.8rem;
+  font-weight: 800;
+  padding: 4px 8px;
+  border-radius: 4px;
+  line-height: 1.35;
+}
+.shiori-detail-text {
+  font-size: 0.84rem;
+  color: #0f172a;
+  line-height: 1.5;
+  margin: 0;
+  word-break: break-word;
+}
+.shiori-hotel-footer {
+  background: #f1f5f9;
+  border-top: 1.5px solid #94a3b8;
+  padding: 8px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: #0f2b48;
+}
+
+/* Home Page Compact At-a-Glance Schedule List (iPhone 100% Fit) */
+.quick-shiori-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.quick-shiori-card {
+  background: #ffffff;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.06);
+}
+.quick-shiori-card.day6-special {
+  border: 2px solid #dc2626;
+  background: #fffafa;
+}
+.qsc-header {
+  background: #1e293b;
+  color: #ffffff;
+  padding: 7px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+}
+.quick-shiori-card.day6-special .qsc-header {
+  background: linear-gradient(90deg, #991b1b 0%, #dc2626 100%);
+}
+.qsc-day-route {
+  font-size: 0.86rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.qsc-day-badge {
+  background: #f59e0b;
+  color: #ffffff;
+  font-size: 0.72rem;
+  font-weight: 900;
+  padding: 1px 6px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+.qsc-meals {
+  font-size: 0.7rem;
+  font-weight: 700;
+  background: rgba(255,255,255,0.16);
+  padding: 2px 6px;
+  border-radius: 4px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.qsc-body {
+  padding: 8px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 0.82rem;
+  line-height: 1.48;
+  color: #1e293b;
+}
+.qsc-line {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 6px;
+  align-items: baseline;
+}
+.qsc-time {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #0369a1;
+  background: #e0f2fe;
+  padding: 1px 4px;
+  border-radius: 3px;
+  text-align: center;
+  white-space: nowrap;
+}
+.qsc-time.red {
+  color: #b91c1c;
+  background: #fee2e2;
+}
+.qsc-footer {
+  background: #f8fafc;
+  border-top: 1px solid #e2e8f0;
+  padding: 6px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: #334155;
+}
+
+  </style>
+  <style>
+
+/* === v16 iPhone-First Shiori & Responsive Layout Override === */
+.compare-table {
+  white-space: normal !important;
+  word-break: break-word;
+  width: 100%;
+  border-collapse: collapse;
+}
+.btn, .hero-cta-btn, .btn-maps {
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.section-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+@media (min-width: 640px) {
+  .section-header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+/* Shiori Legend Bar */
+.shiori-legend-bar {
+  background: #ffffff;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 10px;
+  padding: 10px 12px;
+  margin-bottom: 14px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #1e293b;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.06);
+}
+
+/* Shiori Day Box (Official Booklet Style - 100% iPhone Width Fit) */
+.shiori-day-box {
+  background: #ffffff;
+  border: 2px solid #1e293b;
+  border-radius: 12px;
+  margin-bottom: 16px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.08);
+}
+.shiori-day-box.highlight-day6 {
+  border-color: #dc2626;
+  box-shadow: 0 4px 14px rgba(220, 38, 38, 0.16);
+}
+.shiori-day-header {
+  background: #1e293b;
+  color: #ffffff;
+  padding: 10px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.shiori-day-box.highlight-day6 .shiori-day-header {
+  background: linear-gradient(90deg, #991b1c 0%, #dc2626 100%);
+}
+.shiori-day-title {
+  font-size: 0.94rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  line-height: 1.3;
+}
+.shiori-day-badge {
+  background: #f59e0b;
+  color: #ffffff;
+  font-size: 0.74rem;
+  font-weight: 900;
+  padding: 2px 7px;
+  border-radius: 5px;
+  white-space: nowrap;
+}
+.shiori-day-meals {
+  display: flex;
+  gap: 4px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+.shiori-meal-pill {
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.18);
+  color: #f8fafc;
+  white-space: nowrap;
+}
+.shiori-meal-pill.on {
+  background: #dcfce7;
+  color: #166534;
+}
+
+/* 2-Column iPhone-Fit Shiori Rows (No Duplicate Columns, Zero Horizontal Overflow) */
+.shiori-rows {
+  display: flex;
+  flex-direction: column;
+}
+.shiori-row {
+  display: grid;
+  grid-template-columns: 92px 1fr;
+  border-bottom: 1px solid #cbd5e1;
+  font-size: 0.85rem;
+}
+.shiori-row:last-child {
+  border-bottom: none;
+}
+.shiori-col-meta {
+  background: #f8fafc;
+  border-right: 1px solid #cbd5e1;
+  padding: 9px 7px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 4px;
+}
+.shiori-city {
+  font-weight: 800;
+  color: #0f2b48;
+  font-size: 0.82rem;
+  line-height: 1.25;
+}
+.shiori-time {
+  display: inline-block;
+  font-size: 0.74rem;
+  font-weight: 800;
+  color: #0369a1;
+  background: #e0f2fe;
+  padding: 2px 5px;
+  border-radius: 4px;
+  width: fit-content;
+  line-height: 1.2;
+}
+.shiori-time.reserved {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+.shiori-transport-tag {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #475569;
+  line-height: 1.25;
+}
+.shiori-col-detail {
+  padding: 9px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+}
+.shiori-green-bar {
+  background: #2e6b3e;
+  color: #ffffff;
+  font-size: 0.8rem;
+  font-weight: 800;
+  padding: 4px 8px;
+  border-radius: 4px;
+  line-height: 1.35;
+}
+.shiori-red-bar {
+  background: #be123c;
+  color: #ffffff;
+  font-size: 0.8rem;
+  font-weight: 800;
+  padding: 4px 8px;
+  border-radius: 4px;
+  line-height: 1.35;
+}
+.shiori-detail-text {
+  font-size: 0.84rem;
+  color: #0f172a;
+  line-height: 1.5;
+  margin: 0;
+  word-break: break-word;
+}
+.shiori-hotel-footer {
+  background: #f1f5f9;
+  border-top: 1.5px solid #94a3b8;
+  padding: 8px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: #0f2b48;
+}
+
+/* Home Page Compact At-a-Glance Schedule List (iPhone 100% Fit) */
+.quick-shiori-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.quick-shiori-card {
+  background: #ffffff;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.06);
+}
+.quick-shiori-card.day6-special {
+  border: 2px solid #dc2626;
+  background: #fffafa;
+}
+.qsc-header {
+  background: #1e293b;
+  color: #ffffff;
+  padding: 7px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+}
+.quick-shiori-card.day6-special .qsc-header {
+  background: linear-gradient(90deg, #991b1b 0%, #dc2626 100%);
+}
+.qsc-day-route {
+  font-size: 0.86rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.qsc-day-badge {
+  background: #f59e0b;
+  color: #ffffff;
+  font-size: 0.72rem;
+  font-weight: 900;
+  padding: 1px 6px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+.qsc-meals {
+  font-size: 0.7rem;
+  font-weight: 700;
+  background: rgba(255,255,255,0.16);
+  padding: 2px 6px;
+  border-radius: 4px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.qsc-body {
+  padding: 8px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 0.82rem;
+  line-height: 1.48;
+  color: #1e293b;
+}
+.qsc-line {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 6px;
+  align-items: baseline;
+}
+.qsc-time {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #0369a1;
+  background: #e0f2fe;
+  padding: 1px 4px;
+  border-radius: 3px;
+  text-align: center;
+  white-space: nowrap;
+}
+.qsc-time.red {
+  color: #b91c1c;
+  background: #fee2e2;
+}
+.qsc-footer {
+  background: #f8fafc;
+  border-top: 1px solid #e2e8f0;
+  padding: 6px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: #334155;
+}
+
+  </style>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
 </head>
 <body>
@@ -48,23 +648,23 @@
       <p class="hero-subtitle">2026年11月16日(月) • QR123便 ミラノ06:55着 &rarr; ミラノ自由行動(3h) &rarr; ベローナ散策(1h) &rarr; ベネチア【Smart Holiday泊】</p>
     </div>
 
-    <!-- Official Shiori Booklet Schedule Table for Day 2 -->
+            <!-- Official Shiori Booklet Schedule Table for Day 2 -->
     <section class="section" style="margin-bottom: 12px;">
       <div class="section-header" style="margin-bottom:6px;">
         <h3 class="section-title" style="font-size:0.96rem;">📋 【公式しおり】Day 2 タイムスケジュール概要</h3>
-        <a href="schedule.html#shiori-day2" class="btn btn-secondary" style="font-size:0.72rem; padding:3px 8px;">全8日間しおり一覧を見る &rarr;</a>
+        <a href="schedule.html#shiori-day2" class="btn btn-secondary" style="font-size:0.75rem; padding:4px 10px;">📖 全8日間しおり表へ &rarr;</a>
       </div>
     <!-- Day 2 Shiori Box -->
     <div class="shiori-day-box" id="shiori-day2">
       <div class="shiori-day-header">
         <div class="shiori-day-title">
           <span class="shiori-day-badge">日程 2日目</span>
-          <span>2026年11月16日(月) ミラノ &rarr; ベローナ &rarr; ベネチア</span>
+          <span>11/16(月) ミラノ &rarr; ベローナ &rarr; ベネチア</span>
         </div>
         <div class="shiori-day-meals">
-          <span class="shiori-meal-pill">朝: ×</span>
-          <span class="shiori-meal-pill">昼: ×</span>
-          <span class="shiori-meal-pill on">夕: ○(3コース)</span>
+          <span class="shiori-meal-pill">朝:×</span>
+          <span class="shiori-meal-pill">昼:×</span>
+          <span class="shiori-meal-pill on">夕:○</span>
         </div>
       </div>
       <div class="shiori-rows">
@@ -72,13 +672,12 @@
           <div class="shiori-col-meta">
             <span class="shiori-city">ドーハ発<br>ミラノ着</span>
             <span class="shiori-time">01:30 発<br>06:55 着</span>
-            <span class="shiori-transport-mobile">✈️ QR123 / 🚌 専用車</span>
+            <span class="shiori-transport-tag">✈️ QR123便<br>🚌 専用車</span>
           </div>
-          <div class="shiori-col-transport">航空機(QR123)<br>🚌 専用車</div>
           <div class="shiori-col-detail">
             <p class="shiori-detail-text">
-              ✈️ <strong>カタール航空 QR123便</strong>（約7時間25分）にて空路、ミラノへ。<br>
-              06:55 ミラノ着。到着後、🚌 専用車でミラノ市内へ。
+              ✈️ <strong>カタール航空 QR123便</strong>（約7時間25分）にてミラノへ。<br>
+              06:55 ミラノ着後、🚌 専用車でミラノ市内へ。
             </p>
           </div>
         </div>
@@ -86,13 +685,12 @@
           <div class="shiori-col-meta">
             <span class="shiori-city">ミラノ</span>
             <span class="shiori-time">午前</span>
-            <span class="shiori-transport-mobile">🚶 自由行動(約3h)</span>
+            <span class="shiori-transport-tag">🚶 自由3時間</span>
           </div>
-          <div class="shiori-col-transport">徒歩散策</div>
           <div class="shiori-col-detail">
             <div class="shiori-green-bar">ミラノ自由行動（約3時間／各自昼食時間含む）</div>
             <p class="shiori-detail-text">
-              ヴィットーリオ・エマヌエーレ2世のガッレリア、ドゥオーモ、スカラ座など見所たくさん！ファッションの街ミラノをご自由にお楽しみください♪（ルイーニの包み揚げピザ等で各自昼食）
+              ヴィットーリオ・エマヌエーレ2世のガッレリア、ドゥオーモ、スカラ座など見所たくさん！ファッションの街ミラノをご自由にお楽しみください♪
             </p>
           </div>
         </div>
@@ -100,11 +698,10 @@
           <div class="shiori-col-meta">
             <span class="shiori-city">ベローナ</span>
             <span class="shiori-time">午後</span>
-            <span class="shiori-transport-mobile">🚌 専用車(160km)</span>
+            <span class="shiori-transport-tag">🚌 160km<br>(約2時間30分)</span>
           </div>
-          <div class="shiori-col-transport">🚌 専用車<br>(約2時間30分)</div>
           <div class="shiori-col-detail">
-            <p class="shiori-detail-text">🚌 ベローナへ（160km／約2時間30分）【休憩回数の目安：1回】</p>
+            <p class="shiori-detail-text">🚌 専用車でベローナへ【休憩目安：1回】</p>
             <div class="shiori-green-bar">【世界遺産】ベローナ各自散策（約1時間）</div>
             <p class="shiori-detail-text">ベローナの街（ジュリエットの家・右胸タッチ、アレーナ等）をご自由にお楽しみください♪</p>
           </div>
@@ -113,20 +710,19 @@
           <div class="shiori-col-meta">
             <span class="shiori-city">ベネチア</span>
             <span class="shiori-time">夕刻〜夜</span>
-            <span class="shiori-transport-mobile">🚌 専用車(115km)</span>
+            <span class="shiori-transport-tag">🚌 115km<br>(約1時間45分)</span>
           </div>
-          <div class="shiori-col-transport">🚌 専用車<br>(約1時間45分)</div>
           <div class="shiori-col-detail">
             <p class="shiori-detail-text">
-              🚌 ベネチアへ（115km／約1時間45分）<br>
+              🚌 専用車でベネチアへ。<br>
               🍴 <strong>夕食は3コースディナーをお召し上がりください。</strong>
             </p>
           </div>
         </div>
       </div>
       <div class="shiori-hotel-footer">
-        <span>🏨 【ベネチア（メストレ地区）泊】確定ホテル：<strong>Smart Holiday（スマート ホリデイ）</strong>（バスタブ○・シャンプー○・ポット×）</span>
-        <a href="day2.html" class="btn btn-secondary" style="font-size:0.74rem; padding:3px 8px;">Day 2 詳細ページ &rarr;</a>
+        <span>🏨 【ベネチア（メストレ）泊】<strong>Smart Holiday</strong>（バスタブ○・シャンプー○）</span>
+        <a href="day2.html" class="btn btn-secondary" style="font-size:0.74rem; padding:4px 8px;">Day 2 詳細 &rarr;</a>
       </div>
     </div>
     </section>

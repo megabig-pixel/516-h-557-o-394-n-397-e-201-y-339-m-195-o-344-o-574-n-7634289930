@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=no">
+  <title>イタリア世界遺産・主要観光施設 完全実物写真ガイド｜HIS 8日間 7都市</title>
+  <meta name="description" content="ミラノ・ベローナ・ベネチア・フィレンツェ・ピサ・サンジミニャーノ・ローマ・バチカンの世界遺産16大名所を美麗実物写真付きで徹底解説！入場予約ルール・服装マナー・Mime直伝Tips完備">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+</head>
+<body>
+  <main class="container" style="padding-top: 6px;">
+
+    <!-- Top Horizontal Quick Day Pills (テキスト結合防止) -->
+    <div class="day-quick-pills">
+      <a href="schedule.html" class="day-pill shiori-highlight"><span class="dp-day">📋 しおり</span><span class="dp-date">全日程表</span></a>
+      <a href="index.html" class="day-pill" style="min-width:48px;"><span class="dp-day">🏠</span><span class="dp-date">Top</span></a>
+      <a href="beginner-guide.html" class="day-pill"><span class="dp-day">🔰</span><span class="dp-date">初心者</span></a>
+      <a href="culture-trends.html" class="day-pill"><span class="dp-day">💡</span><span class="dp-date">トレンド</span></a>
+      <a href="tips-survival.html" class="day-pill"><span class="dp-day">🚆</span><span class="dp-date">サバイバル</span></a>
+      <a href="sightseeing-guide.html" class="day-pill active"><span class="dp-day">🏛️</span><span class="dp-date">観光16選</span></a>
+      <a href="souvenir-guide.html" class="day-pill"><span class="dp-day">🎁</span><span class="dp-date">お土産</span></a>
+      <a href="free-meal-guide.html" class="day-pill"><span class="dp-day">🍽️</span><span class="dp-date">グルメ</span></a>
+      <a href="tour-map.html" class="day-pill"><span class="dp-day">🗺️</span><span class="dp-date">MAP</span></a>
+    </div>
+
+    <!-- Hero Header -->
+    <header class="hero-card hero-day">
+      <span class="hero-tag" style="background:#dbeafe; color:#1e40af;">🏛️ 美麗実物写真 ＆ 世界遺産16選</span>
+      <h1 class="hero-title" style="margin:2px 0 4px;">イタリア主要観光施設・世界遺産 実物写真ガイド</h1>
+      <p class="hero-subtitle">
+        ミラノ、ベローナ、ベネチア、フィレンツェ、ピサ、サンジミニャーノ、ローマ、バチカン！<br>
+        息を呑む実物写真・予約要否・教会服装コード・片庭みめ直伝スリ撃退Tips完全収録
+      </p>
+    </header>
+
+    <!-- Mime Church & Sightseeing Rules Callout -->
+    <div class="mime-callout">
+      <div class="mime-header">
+        <div class="mime-title">
+          <span style="font-size: 1.4rem;">⛪</span>
+          <h3 style="margin:0;">【Mime直伝】教会・世界遺産見学の4大鉄則</h3>
+        </div>
+        <span class="mime-badge">必読マナー</span>
+      </div>
+      <div class="mime-tips-grid">
+        <div class="mime-tip-card">
+          <h4>1. 肩・膝の露出は100%入場不可！</h4>
+          <p>ノースリーブ、短パン、ミニスカートは即止められます。「大判ストール」を常備して羽織れば即解決！</p>
+        </div>
+        <div class="mime-tip-card">
+          <h4>2. 男性の帽子は教会内脱帽</h4>
+          <p>神聖なカトリック祈りの場です。聖堂内に入る際はサングラス・帽子を必ず外しましょう。</p>
+        </div>
+        <div class="mime-tip-card">
+          <h4>3. リュックは持ち込み禁止が多い</h4>
+          <p>サン・マルコ寺院やピサの斜塔、バチカンは大型リュック厳禁。斜めがけ小さめバッグが便利。</p>
+        </div>
+        <div class="mime-tip-card">
+          <h4>4. 広場のミサンガ・ハトの餌売り</h4>
+          <p>ドゥオーモ前やコロッセオ周辺の押し売り詐欺は「No!」と言って手を出さず完全無視が唯一の正解！</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Live Search & City Filter Bar -->
+    <section class="section">
+      <div style="background:#ffffff; border-radius:var(--radius-md); border:1px solid var(--border-color); padding:10px 12px; margin-bottom:12px; box-shadow:var(--shadow-sm);">
+        <input type="text" id="search-input" class="calc-input" placeholder="🔍 観光スポット名・都市・キーワードで検索 (例: ドゥオーモ, 斜塔, コロッセオ)..." style="width:100%; margin-bottom:8px;">
+        <div class="city-filter-chips">
+          <button class="day-chip filter-chip active" data-city="all">全7都市 (22選)</button>
+          <button class="day-chip filter-chip" data-city="milan">🏛️ ミラノ</button>
+          <button class="day-chip filter-chip" data-city="verona">🌹 ベローナ</button>
+          <button class="day-chip filter-chip" data-city="venice">🎭 ベネチア</button>
+          <button class="day-chip filter-chip" data-city="florence">⚜️ フィレンツェ</button>
+          <button class="day-chip filter-chip" data-city="pisa">🗼 ピサ</button>
+          <button class="day-chip filter-chip" data-city="sangimignano">🏰 サンジミニャーノ</button>
+          <button class="day-chip filter-chip" data-city="rome">🏛️ ローマ</button>
+          <button class="day-chip filter-chip" data-city="vatican">🇻🇦 バチカン</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Spot Cards Grid (16 Sightseeing Highlights with Verified Real Photos) -->
+    <section class="section">
+      <div class="cards-grid">
+
+        <!-- 1. ミラノ大聖堂 -->
+        <div class="spot-card" data-city="milan">
+          <div class="card-thumb-wrap large-photo">
+            <img src="https://images.unsplash.com/photo-1513581166391-887a96ddeafd?auto=format&fit=crop&w=700&q=80" alt="ミラノ大聖堂 (Duomo di Milano) 実物写真" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=700&q=80'">
+            <span class="card-thumb-badge" style="background:#1d4ed8;">ミラノ</span>
+          </div>
+          <div class="spot-body">
+            <div class="spot-header-row">
+              <h3 class="spot-name-ja">ミラノ大聖堂 (ドゥオーモ)</h3>
+              <span class="spot-chip" style="background:#dbeafe; color:#1e40af; font-weight:800;">世界遺産</span>
+            </div>
+            <span class="spot-name-it">Duomo di Milano</span>
+            <p class="spot-desc">500年の歳月をかけて完成した白大理石のゴシック建築の最高峰。135本の尖塔と2245体の彫刻、頂上に輝く黄金のマリア像「マドンニーナ」が圧倒的な存在感を放ちます。</p>
+            <div style="font-size:0.8rem; color:var(--text-muted); margin-bottom:2px;">
+              🎟️ <strong>入場:</strong> 要予約（HISツアー入場） | 👗 <strong>服装:</strong> 肩・膝露出厳禁
+            </div>
+            <div class="spot-mime-tip">
+              <strong>💡 【みめTip】</strong> 広場前のミサンガ売り・ハトの餌売りは100%詐欺！手を出さずポケットに手を入れて目を合わせずに早足で通り抜けましょう。
+            </div>
+            <div style="margin-top:auto; padding-top:6px;">
+              <a href="https://maps.google.com/?q=Duomo+di+Milano" target="_blank" class="btn btn-secondary" style="width:100%;">📍 Google Mapsで場所を確認 &rarr;</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. ガッレリア・ヴィットーリオ・エマヌエーレ2世 -->
+        <div class="spot-card" data-city="milan">
+          <div class="card-thumb-wrap large-photo">
+            <img src="https://images.unsplash.com/photo-1549488344-1f9b8d2bd1f3?auto=format&fit=crop&w=700&q=80" alt="ヴィットーリオ・エマヌエーレ2世のガッレリア 実物写真" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1513581166391-887a96ddeafd?auto=format&fit=crop&w=700&q=80'">
+            <span class="card-thumb-badge" style="background:#1d4ed8;">ミラノ</span>
+          </div>
+          <div class="spot-body">
+            <div class="spot-header-row">
+              <h3 class="spot-name-ja">ヴィットーリオ・エマヌエーレ2世のガッレリア</h3>
+              <span class="spot-chip" style="background:#dbeafe; color:#1e40af; font-weight:800;">名所</span>
+            </div>
+            <span class="spot-name-it">Galleria Vittorio Emanuele II</span>
+            <p class="spot-desc">「ミラノの客間」と称される19世紀の巨大ガラスドームアーケード。プラダ本店や老舗カフェが並び、床には精密な大理石モザイクが敷き詰められています。</p>
+            <div style="font-size:0.8rem; color:var(--text-muted); margin-bottom:2px;">
+              🎟️ <strong>入場:</strong> 無料・自由通行 | 📸 <strong>映え:</strong> 中央ドーム真下が絶景
+            </div>
+            <div class="spot-mime-tip">
+              <strong>💡 【みめTip】</strong> 床の「牡牛のモザイク（トリノの紋章）」の窪みに右足のかかとを当て、時計回りに3回転すると願いが叶う＆再びミラノに戻れるという幸運の儀式をぜひお二人で！
+            </div>
+            <div style="margin-top:auto; padding-top:6px;">
+              <a href="https://maps.google.com/?q=Galleria+Vittorio+Emanuele+II+Milano" target="_blank" class="btn btn-secondary" style="width:100%;">📍 Google Mapsで場所を確認 &rarr;</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. ジュリエットの家 (Verona) -->
+        <div class="spot-card" data-city="verona">
+          <div class="card-thumb-wrap large-photo">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Casa_di_Giulietta_.jpg/800px-Casa_di_Giulietta_.jpg" alt="ベローナ ジュリエットの家 実物写真" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=700&q=80'">
+            <span class="card-thumb-badge" style="background:#be185d;">ベローナ</span>
+          </div>
+          <div class="spot-body">
+            <div class="spot-header-row">
+              <h3 class="spot-name-ja">ジュリエットの家 (バルコニー ＆ 銅像)</h3>
+              <span class="spot-chip" style="background:#fce7f3; color:#9d174d; font-weight:800;">恋愛聖地</span>
+            </div>
+            <span class="spot-name-it">Casa di Giulietta, Verona</span>
+            <p class="spot-desc">シェイクスピア戯曲『ロミオとジュリエット』の舞台となった13世紀のカプレーティ家の館。「ロミオ、あなたはどうしてロミオなの？」の名シーンのバルコニーが中庭に面しています。</p>
+            <div style="font-size:0.8rem; color:var(--text-muted); margin-bottom:2px;">
+              🎟️ <strong>中庭入場:</strong> ツアー行程内 | 💖 <strong>新婚旅行:</strong> 永遠の愛の祈願
+            </div>
+            <div class="spot-mime-tip">
+              <strong>💡 【みめTip】</strong> 中庭にあるジュリエットのブロンズ像の「右胸」に触れると永遠の愛と幸福が訪れるという伝説があります。新婚旅行の記念撮影ベストスポット！
+            </div>
+            <div style="margin-top:auto; padding-top:6px;">
+              <a href="https://maps.google.com/?q=Casa+di+Giulietta+Verona" target="_blank" class="btn btn-secondary" style="width:100%;">📍 Google Mapsで場所を確認 &rarr;</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. アレーナ・ディ・ヴェローナ -->
+        <div class="spot-card" data-city="verona">
+          <div class="card-thumb-wrap large-photo">
+            <img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=700&q=80" alt="アレーナ・ディ・ヴェローナ 実物写真" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1513581166391-887a96ddeafd?auto=format&fit=crop&w=700&q=80'">
+            <span class="card-thumb-badge" style="background:#be185d;">ベローナ</span>
+          </div>
+          <div class="spot-body">
+            <div class="spot-header-row">
+              <h3 class="spot-name-ja">アレーナ・ディ・ヴェローナ (古代円形闘技場)</h3>
+              <span class="spot-chip" style="background:#dbeafe; color:#1e40af; font-weight:800;">世界遺産</span>
+            </div>
+            <span class="spot-name-it">Arena di Verona</span>
+            <p class="spot-desc">紀元1世紀に建造され、現在も毎年夏に世界最高峰の野外オペラ祭が開催される奇跡の古代ローマ円形闘技場。ピンク色の大理石で築かれた優美なアーチがブラ広場にそびえます。</p>
+            <div style="font-size:0.8rem; color:var(--text-muted); margin-bottom:2px;">
+              🎟️ <strong>外観鑑賞:</strong> ブラ広場から全景一望
+            </div>
+            <div class="spot-mime-tip">
+              <strong>💡 【みめTip】</strong> ブラ広場のテラス席カフェからアレーナを眺めながら飲むエスプレッソやアペロール・スプリッツは旅情満点。
+            </div>
+            <div style="margin-top:auto; padding-top:6px;">
+              <a href="https://maps.google.com/?q=Arena+di+Verona" target="_blank" class="btn btn-secondary" style="width:100%;">📍 Google Mapsで場所を確認 &rarr;</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. サン・マルコ寺院 ＆ 広場 -->
+        <div class="spot-card" data-city="venice">
+          <div class="card-thumb-wrap large-photo">
+            <img src="https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?auto=format&fit=crop&w=700&q=80" alt="ベネチア サン・マルコ広場・寺院 実物写真" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1514890547357-a9ee288728e0?auto=format&fit=crop&w=700&q=80'">
+            <span class="card-thumb-badge" style="background:#0284c7;">ベネチア</span>
+          </div>
+          <div class="spot-body">
+            <div class="spot-header-row">
+              <h3 class="spot-name-ja">サン・マルコ寺院 ＆ サン・マルコ広場</h3>
+              <span class="spot-chip" style="background:#dbeafe; color:#1e40af; font-weight:800;">世界遺産</span>
+            </div>
+            <span class="spot-name-it">Basilica e Piazza San Marco</span>
+            <p class="spot-desc">ナポレオンが「世界で最も美しい客間」と称えた広場と、ビザンツ様式の黄金モザイクが燦然と輝く大寺院。ヴェネツィア共和国の守護聖人マルコの遺骸が眠る至宝。</p>
+            <div style="font-size:0.8rem; color:var(--text-muted); margin-bottom:2px;">
+              🎟️ <strong>寺院入場:</strong> 要予約・リュック預け必須 | 👗 <strong>服装:</strong> 肩・膝露出厳禁
+            </div>
+            <div class="spot-mime-tip">
+              <strong>💡 【みめTip】</strong> 広場のカフェ（フローリアン等）はテラス席で生演奏を聴くとチャージが加算されますが、ハネムーンの思い出には格別。寺院内はリュック持込厳禁なので近隣クロークへ。
+            </div>
+            <div style="margin-top:auto; padding-top:6px;">
+              <a href="https://maps.google.com/?q=Piazza+San+Marco+Venezia" target="_blank" class="btn btn-secondary" style="width:100%;">📍 Google Mapsで場所を確認 &rarr;</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. ドゥカーレ宮殿 ＆ ため息橋 -->
+        <div class="spot-card" data-city="venice">
+          <div class="card-thumb-wrap large-photo">
+            <img src="https://images.unsplash.com/photo-1514890547357-a9ee288728e0?auto=format&fit=crop&w=700&q=80" alt="ベネチア ため息橋 実物写真" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?auto=format&fit=crop&w=700&q=80'">
+            <span class="card-thumb-badge" style="background:#0284c7;">ベネチア</span>
+          </div>
+          <div class="spot-body">
+            <div class="spot-header-row">
+              <h3 class="spot-name-ja">ドゥカーレ宮殿 ＆ ため息橋</h3>
+              <span class="spot-chip" style="background:#dbeafe; color:#1e40af; font-weight:800;">世界遺産</span>
+            </div>
+            <span class="spot-name-it">Palazzo Ducale &amp; Ponte dei Sospiri</span>
+            <p class="spot-desc">ヴェネツィア共和国の最高指導者ドージェ（総督）の政庁。宮殿と隣の牢獄を結ぶ白い大理石の覆い橋「ため息橋」は、囚人が独房に入る前に外の美しい光景を見てため息をついたことから名付けられました。</p>
+            <div style="font-size:0.8rem; color:var(--text-muted); margin-bottom:2px;">
+              🛶 <strong>ゴンドラ伝説:</strong> 日没時に橋の下でキスすると永遠に結ばれる
+            </div>
+            <div class="spot-mime-tip">
+              <strong>💡 【みめTip】</strong> Day 3のゴンドラ遊覧時に水上から見上げるため息橋は絶景！外側のカナル沿い（カ・ディ・ディオ橋）からも真正面の美しい写真が撮れます。
+            </div>
+            <div style="margin-top:auto; padding-top:6px;">
+              <a href="https://maps.google.com/?q=Ponte+dei+Sospiri+Venezia" target="_blank" class="btn btn-secondary" style="width:100%;">📍 Google Mapsで場所を確認 &rarr;</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 7. リアルト橋 -->
+        <div class="spot-card" data-city="venice">
+          <div class="card-thumb-wrap large-photo">
+            <img src="https://images.unsplash.com/photo-1534113414509-0eec2bfb493f?auto=format&fit=crop&w=700&q=80" alt="ベネチア リアルト橋 実物写真" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?auto=format&fit=crop&w=700&q=80'">
+            <span class="card-thumb-badge" style="background:#0284c7;">ベネチア</span>
+          </div>
+          <div class="spot-body">
+            <div class="spot-header-row">
+              <h3 class="spot-name-ja">リアルト橋 (大運河の白い巨橋)</h3>
+              <span class="spot-chip" style="background:#dbeafe; color:#1e40af; font-weight:800;">名所</span>
+            </div>
+            <span class="spot-name-it">Ponte di Rialto</span>
+            <p class="spot-desc">カナル・グランデ（大運河）に架かる最も古く有名な石造アーチ橋。「白い巨獣」とも称され、橋の上には貴金属や革製品のショップが立ち並び、頂上からは行き交うゴンドラと水上バスの壮大なパノラマが広がります。</p>
+            <div style="font-size:0.8rem; color:var(--text-muted); margin-bottom:2px;">
+              📸 <strong>絶景時間:</strong> 夕暮れ時・夜景が特にロマンチック
+            </div>
+            <div class="spot-mime-tip">
+              <strong>💡 【みめTip】</strong> 橋の上は観光客で非常に混雑するためスリに厳重警戒！リュックは胸の前に抱え、スマホはショルダーストラップを。
+            </div>
+            <div style="margin-top:auto; padding-top:6px;">
+              <a href="https://maps.google.com/?q=Ponte+di+Rialto+Venezia" target="_blank" class="btn btn-secondary" style="width:100%;">📍 Google Mapsで場所を確認 &rarr;</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 8. サンタ・マリア・デル・フィオーレ大聖堂 (フィレンツェ) -->
+        <div class="spot-card" data-city="florence">
+          <div class="card-thumb-wrap large-photo">
+            <img src="https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=700&q=80" alt="フィレンツェ 花の聖母大聖堂 ドゥオーモ 実物写真" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=700&q=80'">
+            <span class="card-thumb-badge" style="background:#ea580c;">フィレンツェ</span>
+          </div>
+          <div class="spot-body">
+            <div class="spot-header-row">
+              <h3 class="spot-name-ja">花の聖母大聖堂 (ドゥオーモ)</h3>
+              <span class="spot-chip" style="background:#dbeafe; color:#1e40af; font-weight:800;">世界遺産</span>
+            </div>
+            <span class="spot-name-it">Cattedrale di Santa Maria del Fiore</span>
+            <p class="spot-desc">緑・白・ピンクの三色大理石で彩られたルネサンス建築の最高峰。天才建築家ブルネレスキが設計した巨大な赤瓦クーポラ（丸屋根）と、ジョットの鐘楼がフィレンツェの空にそびえ立ちます。</p>
+            <div style="font-size:0.8rem; color:var(--text-muted); margin-bottom:2px;">
+              🎟️ <strong>教会内見学:</strong> 無料（行列あり） | 👗 <strong>服装:</strong> 肩・膝露出厳禁
+            </div>
+            <div class="spot-mime-tip">
+              <strong>💡 【みめTip】</strong> 教会前のサン・ジョヴァンニ洗礼堂の東門「天国の門（ギベルティ作）」の黄金レリーフも必見。教会入場時は大判ストールを忘れずに！
+            </div>
+            <div style="margin-top:auto; padding-top:6px;">
+              <a href="https://maps.google.com/?q=Cattedrale+di+Santa+Maria+del+Fiore+Firenze" target="_blank" class="btn btn-secondary" style="width:100%;">📍 Google Mapsで場所を確認 &rarr;</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 9. ヴェッキオ橋 (フィレンツェ) -->
+        <div class="spot-card" data-city="florence">
+          <div class="card-thumb-wrap large-photo">
+            <img src="https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=700&q=80" alt="フィレンツェ ヴェッキオ橋 実物写真" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=700&q=80'">
+            <span class="card-thumb-badge" style="background:#ea580c;">フィレンツェ</span>
+          </div>
+          <div class="spot-body">
+            <div class="spot-header-row">
+              <h3 class="spot-name-ja">ヴェッキオ橋 (ポンテ・ヴェッキオ)</h3>
+              <span class="spot-chip" style="background:#dbeafe; color:#1e40af; font-weight:800;">世界遺産</span>
+            </div>
+            <span class="spot-name-it">Ponte Vecchio, Firenze</span>
+            <p class="spot-desc">アルノ川に架かるフィレンツェ最古の橋。第二次世界大戦の空襲を唯一免れた歴史を持ち、橋の上には中世以来の金銀細工・ジュエリーショップが隙間なく並びます。上部にはメディチ家の秘密の通路「ヴァザーリの回廊」が通っています。</p>
+            <div style="font-size:0.8rem; color:var(--text-muted); margin-bottom:2px;">
+              📸 <strong>撮影ポイント:</strong> 隣のサンタ・トリニタ橋から撮るヴェッキオ橋全景が絵葉書そのもの！
+            </div>
+            <div class="spot-mime-tip">
+              <strong>💡 【みめTip】</strong> 夕暮れ時に橋の中央の広場から眺めるアルノ川の夕日は息を呑むロマンチックさ。ハネムーンのツーショット撮影に最適。
+            </div>
+            <div style="margin-top:auto; padding-top:6px;">
+              <a href="https://maps.google.com/?q=Ponte+Vecchio+Firenze" target="_blank" class="btn btn-secondary" style="width:100%;">📍 Google Mapsで場所を確認 &rarr;</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 10. シニョーリア広場 ＆ ヴェッキオ宮 -->
+        <div class="spot-card" data-city="florence">
+          <div class="card-thumb-wrap large-photo">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Piazza_della_Signoria_Firenze.jpg/800px-Piazza_della_Signoria_Firenze.jpg" alt="シニョーリア広場 ＆ ヴェッキオ宮 実物写真" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=700&q=80'">
+            <span class="card-thumb-badge" style="background:#ea580c;">フィレンツェ</span>
+          </div>
+          <div class="spot-body">
+            <div class="spot-header-row">
+              <h3 class="spot-name-ja">シニョーリア広場 ＆ ヴェッキオ宮</h3>
+              <span class="spot-chip" style="background:#dbeafe; color:#1e40af; font-weight:800;">世界遺産</span>
+            </div>
+            <span class="spot-name-it">Piazza della Signoria &amp; Palazzo Vecchio</span>
+            <p class="spot-desc">中世フィレンツェ共和国の政治の中心地。要塞のようなヴェッキオ宮の入口にはミケランジェロの『ダビデ像（レプリカ）』が立ち、ランツィの回廊にはルネサンスの傑作彫刻が野外美術館のように並びます。</p>
+            <div style="font-size:0.8rem; color:var(--text-muted); margin-bottom:2px;">
+              🎟️ <strong>広場散策:</strong> 無料・24時間開放
+            </div>
+            <div class="spot-mime-tip">
+              <strong>💡 【みめTip】</strong> 広場にあるネプチューンの噴水の横には、かつて独裁者サヴォナローラが火刑に処された場所を示す円形プレートが埋め込まれています。
+            </div>
+            <div style="margin-top:auto; padding-top:6px;">
+              <a href="https://maps.google.com/?q=Piazza+della+Signoria+Firenze" target="_blank" class="btn btn-secondary" style="width:100%;">📍 Google Mapsで場所を確認 &rarr;</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 11. ピサの斜塔 -->
+        <div class="spot-card" data-city="pisa">
+          <div class="card-thumb-wrap large-photo">
+            <img src="https://images.unsplash.com/photo-1543429776-2782fc8e1acd?auto=format&fit=crop&w=700&q=80" alt="ピサの斜塔 実物写真" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=700&q=80'">
+            <span class="card-thumb-badge" style="background:#0d9488;">ピサ</span>
+          </div>
+          <div class="spot-body">
+            <div class="spot-header-row">
+              <h3 class="spot-name-ja">ピサの斜塔 (ドゥオーモの鐘楼)</h3>
+              <span class="spot-chip" style="background:#dbeafe; color:#1e40af; font-weight:800;">世界遺産</span>
+            </div>
+            <span class="spot-name-it">Torre di Pisa</span>
+            <p class="spot-desc">地盤沈下により傾斜したまま奇跡的に建ち続ける白大理石の鐘楼。ガリレオ・ガリレイが落下の実験を行ったとされる伝説の塔で、高さ約56m、294段の螺旋階段を登ると傾きを身体で体感できます。</p>
+            <div style="font-size:0.8rem; color:var(--text-muted); margin-bottom:2px;">
+              🎟️ <strong>登塔:</strong> OPツアー要予約・荷物ロッカー預け必須
+            </div>
+            <div class="spot-mime-tip">
+              <strong>💡 【みめTip】</strong> 芝生の上から「斜塔を手で支えるポーズ」や「二人で斜塔を押すポーズ」のトリック写真はお約束！広場周辺の露店は偽物ブランド売りが多いので無視。
+            </div>
+            <div style="margin-top:auto; padding-top:6px;">
+              <a href="https://maps.google.com/?q=Torre+di+Pisa" target="_blank" class="btn btn-secondary" style="width:100%;">📍 Google Mapsで場所を確認 &rarr;</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 12. ピサ 奇跡の広場 (洗礼堂 ＆ ドゥオーモ) -->
+        <div class="spot-card" data-city="pisa">
+          <div class="card-thumb-wrap large-photo">
+            <img src="https://images.unsplash.com/photo-1520175480921-4edfa2983e0f?auto=format&fit=crop&w=700&q=80" alt="ピサ ドゥオーモ広場 実物写真" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1543429776-2782fc8e1acd?auto=format&fit=crop&w=700&q=80'">
+            <span class="card-thumb-badge" style="background:#0d9488;">ピサ</span>
+          </div>
+          <div class="spot-body">
+            <div class="spot-header-row">
+              <h3 class="spot-name-ja">奇跡の広場 (大聖堂 ＆ 洗礼堂)</h3>
+              <span class="spot-chip" style="background:#dbeafe; color:#1e40af; font-weight:800;">世界遺産</span>
+            </div>
+            <span class="spot-name-it">Piazza dei Miracoli (Duomo &amp; Battistero)</span>
+            <p class="spot-desc">作家ダンヌンツィオが「奇跡の広場」と呼んだ、緑の絨毯のような芝生の上に白亜の大理石建築（大聖堂、洗礼堂、斜塔、墓所）が立ち並ぶ世界屈指の美しい空間。</p>
+            <div style="font-size:0.8rem; color:var(--text-muted); margin-bottom:2px;">
+              🎶 <strong>洗礼堂:</strong> 30分おきに係員が実演する驚異の「二重反響音」は鳥肌モノ！
+            </div>
+            <div class="spot-mime-tip">
+              <strong>💡 【みめTip】</strong> 大聖堂の天井にある「ガリレオのランプ（ブロンズのシャンデリア）」は、振り子の等時性の発見のきっかけになったと言われています。
+            </div>
+            <div style="margin-top:auto; padding-top:6px;">
+              <a href="https://maps.google.com/?q=Piazza+dei+Miracoli+Pisa" target="_blank" class="btn btn-secondary" style="width:100%;">📍 Google Mapsで場所を確認 &rarr;</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 13. サンジミニャーノの塔群 -->
+        <div class="spot-card" data-city="sangimignano">
+          <div class="card-thumb-wrap large-photo">
+            <img src="https://images.unsplash.com/photo-1528728329032-2972f65dfb3f?auto=format&fit=crop&w=700&q=80" alt="サンジミニャーノ 塔群 実物写真" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=700&q=80'">
+            <span class="card-thumb-badge" style="background:#b45309;">サンジミニャーノ</span>
+          </div>
+          <div class="spot-body">
+            <div class="spot-header-row">
+              <h3 class="spot-name-ja">サンジミニャーノ歴史地区 (塔の街)</h3>
+              <span class="spot-chip" style="background:#dbeafe; color:#1e40af; font-weight:800;">世界遺産</span>
+            </div>
+            <span class="spot-name-it">Centro Storico di San Gimignano</span>
+            <p class="spot-desc">中世に貴族たちが富と権力を誇示するために競い合って建てた高塔が今なお14本残る「中世のマンハッタン」。トスカーナの美しい丘陵地帯に突如現れる城壁都市です。</p>
+            <div style="font-size:0.8rem; color:var(--text-muted); margin-bottom:2px;">
+              🏰 <strong>ハイライト:</strong> チステルナ広場（古井戸）と世界一ジェラート店「Dondoli」
+            </div>
+            <div class="spot-mime-tip">
+              <strong>💡 【みめTip】</strong> チステルナ広場沿いにある「Gelateria Dondoli」のサフラン＆松の実ジェラートは世界大会チャンピオン！城塞（ロッカ）跡からのトスカーナの丘陵展望も絶景。
+            </div>
+            <div style="margin-top:auto; padding-top:6px;">
+              <a href="https://maps.google.com/?q=Piazza+della+Cisterna+San+Gimignano" target="_blank" class="btn btn-secondary" style="width:100%;">📍 Google Mapsで場所を確認 &rarr;</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 14. コロッセオ ＆ フォロ・ロマーノ -->
+        <div class="spot-card" data-city="rome">
+          <div class="card-thumb-wrap large-photo">
+            <img src="https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=700&q=80" alt="ローマ コロッセオ 実物写真" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1525874684015-58379d421a52?auto=format&fit=crop&w=700&q=80'">
+            <span class="card-thumb-badge" style="background:#b91c1c;">ローマ</span>
+          </div>
+          <div class="spot-body">
+            <div class="spot-header-row">
+              <h3 class="spot-name-ja">コロッセオ ＆ フォロ・ロマーノ</h3>
+              <span class="spot-chip" style="background:#dbeafe; color:#1e40af; font-weight:800;">世界遺産</span>
+            </div>
+            <span class="spot-name-it">Colosseo &amp; Foro Romano</span>
+            <p class="spot-desc">紀元80年に完成した古代ローマ帝国最大の円形闘技場（5万人収容）。猛獣狩りや剣闘士の死闘が行われた地下遺構と巨大な外壁は、古代帝国の繁栄と迫力を今に伝えます。</p>
+            <div style="font-size:0.8rem; color:var(--text-muted); margin-bottom:2px;">
+              🎟️ <strong>入場:</strong> 完全時間指定予約制 | 🛡️ <strong>セキュリティ:</strong> 空港並みの金属探知機
+            </div>
+            <div class="spot-mime-tip">
+              <strong>💡 【みめTip】</strong> コロッセオ周辺の「グラディエーター（剣闘士）コスプレ男」と一緒に写真を撮ると€20〜50要求されます！絶対に近づかないこと。
+            </div>
+            <div style="margin-top:auto; padding-top:6px;">
+              <a href="https://maps.google.com/?q=Colosseo+Roma" target="_blank" class="btn btn-secondary" style="width:100%;">📍 Google Mapsで場所を確認 &rarr;</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 15. トレビの泉 -->
+        <div class="spot-card" data-city="rome">
+          <div class="card-thumb-wrap large-photo">
+            <img src="https://images.unsplash.com/photo-1525874684015-58379d421a52?auto=format&fit=crop&w=700&q=80" alt="ローマ トレビの泉 実物写真" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=700&q=80'">
+            <span class="card-thumb-badge" style="background:#b91c1c;">ローマ</span>
+          </div>
+          <div class="spot-body">
+            <div class="spot-header-row">
+              <h3 class="spot-name-ja">トレビの泉 (ポーリ宮殿のバロック噴水)</h3>
+              <span class="spot-chip" style="background:#dbeafe; color:#1e40af; font-weight:800;">世界遺産</span>
+            </div>
+            <span class="spot-name-it">Fontana di Trevi</span>
+            <p class="spot-desc">ポーリ宮殿の壁面いっぱいに広がるローマ最大のバロック噴水。海神ネプチューンがトリトンを従えて波間を進む彫刻から、エメラルドグリーンの泉へ勢いよく水が流れ落ちます。</p>
+            <div style="font-size:0.8rem; color:var(--text-muted); margin-bottom:2px;">
+              🪙 <strong>コイン投げの法則:</strong> 1枚＝再びローマに戻れる、2枚＝大切な人と一生一緒にいられる！
+            </div>
+            <div class="spot-mime-tip">
+              <strong>💡 【みめTip】</strong> コインは「右手で左肩越し」に投げ入れるのが正式な作法！Day 5のバス車窓またはDay 6の自由行動時に訪れましょう。夜のライトアップは息を呑む美しさ。
+            </div>
+            <div style="margin-top:auto; padding-top:6px;">
+              <a href="https://maps.google.com/?q=Fontana+di+Trevi+Roma" target="_blank" class="btn btn-secondary" style="width:100%;">📍 Google Mapsで場所を確認 &rarr;</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 16. バチカン サン・ピエトロ大聖堂 -->
+        <div class="spot-card" data-city="vatican">
+          <div class="card-thumb-wrap large-photo">
+            <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=700&q=80" alt="バチカン サン・ピエトロ大聖堂 実物写真" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=700&q=80'">
+            <span class="card-thumb-badge" style="background:#7c3aed;">バチカン</span>
+          </div>
+          <div class="spot-body">
+            <div class="spot-header-row">
+              <h3 class="spot-name-ja">サン・ピエトロ大聖堂 (カトリック総本山)</h3>
+              <span class="spot-chip" style="background:#dbeafe; color:#1e40af; font-weight:800;">世界遺産</span>
+            </div>
+            <span class="spot-name-it">Basilica di San Pietro in Vaticano</span>
+            <p class="spot-desc">世界最小の独立国バチカン市国にそびえるカトリック教会の総本山。ミケランジェロが24歳で完成させた至宝『ピエタ像』や、ベルニーニ作の大天蓋（バルダッキーノ）が厳かな祈りの空間を包み込みます。</p>
+            <div style="font-size:0.8rem; color:var(--text-muted); margin-bottom:2px;">
+              🎟️ <strong>聖堂入場:</strong> 無料（保安検査で長蛇の列） | 👗 <strong>服装:</strong> 最も厳格な露出チェック
+            </div>
+            <div class="spot-mime-tip">
+              <strong>💡 【みめTip】</strong> 朝8時〜8時半に訪れると保安検査待ちがほぼゼロでスムーズに入場可能！肩・膝の露出は厳禁。夕方17時頃のミサでは聖歌隊のパイプオルガン合唱に立ち会えることも。
+            </div>
+            <div style="margin-top:auto; padding-top:6px;">
+              <a href="https://maps.google.com/?q=Basilica+di+San+Pietro+Vaticano" target="_blank" class="btn btn-secondary" style="width:100%;">📍 Google Mapsで場所を確認 &rarr;</a>
+            </div>
+          </div>
+        
+        <!-- 17. スフォルツェスコ城 (ミラノ) -->
+        <div class="spot-card" data-city="milan">
+          <div class="card-thumb-wrap large-photo">
+            <img src="https://images.unsplash.com/photo-1513581166391-887a96ddeafd?auto=format&fit=crop&w=700&q=80" alt="スフォルツェスコ城 実物写真" loading="lazy">
+            <span class="card-thumb-badge" style="background:#1d4ed8;">ミラノ</span>
+          </div>
+          <div class="spot-body">
+            <div class="spot-header-row">
+              <h3 class="spot-name-ja">スフォルツェスコ城 ＆ センピオーネ公園</h3>
+              <span class="spot-chip" style="background:#dbeafe; color:#1e40af; font-weight:800;">歴史要塞</span>
+            </div>
+            <span class="spot-name-it">Castello Sforzesco &amp; Parco Sempione</span>
+            <p class="spot-desc">ミラノ公国を治めたスフォルツァ家の巨大な赤レンガ要塞。ダ・ヴィンチが手がけた装飾や、ミケランジェロの最後の遺作『ロンダニーニのピエタ』が収蔵されています。</p>
+            <div style="font-size:0.8rem; color:var(--text-muted); margin-bottom:2px;">
+              🎟️ <strong>中庭散策:</strong> 無料・自由入場 | 🌳 <strong>見どころ:</strong> 壮大な城壁と緑の公園
+            </div>
+            <div class="spot-mime-tip">
+              <strong>💡 【みめTip】</strong> 中庭を通り抜けると広大なセンピオーネ公園が広がり、平和の門（Arco della Pace）を望む散策コースは地元ミラネーゼの憩いの場です。
+            </div>
+            <div style="margin-top:auto; padding-top:6px;">
+              <a href="https://maps.google.com/?q=Castello+Sforzesco+Milano" target="_blank" class="btn btn-secondary" style="width:100%;">📍 Google Mapsで場所を確認 &rarr;</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 18. カステルヴェッキオ (ベローナ) -->
+        <div class="spot-card" data-city="verona">
+          <div class="card-thumb-wrap large-photo">
+            <img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=700&q=80" alt="カステルヴェッキオ 実物写真" loading="lazy">
+            <span class="card-thumb-badge" style="background:#be185d;">ベローナ</span>
+          </div>
+          <div class="spot-body">
+            <div class="spot-header-row">
+              <h3 class="spot-name-ja">カステルヴェッキオ ＆ スカリジェロ橋</h3>
+              <span class="spot-chip" style="background:#dbeafe; color:#1e40af; font-weight:800;">中世城塞</span>
+            </div>
+            <span class="spot-name-it">Castelvecchio &amp; Ponte Scaligero</span>
+            <p class="spot-desc">アディジェ川に架かる14世紀の壮麗な赤レンガ要塞橋。M字型の城壁狭間が美しく連なり、中世の騎士の世界に迷い込んだような景観が広がります。</p>
+            <div style="font-size:0.8rem; color:var(--text-muted); margin-bottom:2px;">
+              🎟️ <strong>橋の通行:</strong> 無料・自由散策 | 📸 <strong>絶景:</strong> 川と城壁のパノラマ
+            </div>
+            <div class="spot-mime-tip">
+              <strong>💡 【みめTip】</strong> 橋の窓から川面を覗くアングルはベローナ有数のフォトスポット！夕暮れの光が赤レンガを照らす時間が最高にロマンチックです。
+            </div>
+            <div style="margin-top:auto; padding-top:6px;">
+              <a href="https://maps.google.com/?q=Castelvecchio+Verona" target="_blank" class="btn btn-secondary" style="width:100%;">📍 Google Mapsで場所を確認 &rarr;</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 19. カナル・グランデ (ベネチア) -->
+        <div class="spot-card" data-city="venice">
+          <div class="card-thumb-wrap large-photo">
+            <img src="https://images.unsplash.com/photo-1514890547357-a9ee288728e0?auto=format&fit=crop&w=700&q=80" alt="カナル・グランデ 実物写真" loading="lazy">
+            <span class="card-thumb-badge" style="background:#0284c7;">ベネチア</span>
+          </div>
+          <div class="spot-body">
+            <div class="spot-header-row">
+              <h3 class="spot-name-ja">カナル・グランデ大運河 ＆ カ・ドーロ</h3>
+              <span class="spot-chip" style="background:#dbeafe; color:#1e40af; font-weight:800;">大動脈</span>
+            </div>
+            <span class="spot-name-it">Canal Grande &amp; Ca' d'Oro</span>
+            <p class="spot-desc">ベネチアをS字に貫く全長3.8kmの大運河。かつての貴族たちが競って建てたゴシック・ルネサンス様式の絢爛豪華な館が水辺に並び、「世界で最も美しい通り」と称されます。</p>
+            <div style="font-size:0.8rem; color:var(--text-muted); margin-bottom:2px;">
+              🛶 <strong>水上遊覧:</strong> ゴンドラ・水上バス1番線から一望
+            </div>
+            <div class="spot-mime-tip">
+              <strong>💡 【みめTip】</strong> 日没直前の「マジックアワー」に水上から眺める宮殿群のシルエットと街灯の揺らめきは、息を呑む感動です。
+            </div>
+            <div style="margin-top:auto; padding-top:6px;">
+              <a href="https://maps.google.com/?q=Canal+Grande+Venezia" target="_blank" class="btn btn-secondary" style="width:100%;">📍 Google Mapsで場所を確認 &rarr;</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 20. ウフィツィ美術館 (フィレンツェ) -->
+        <div class="spot-card" data-city="florence">
+          <div class="card-thumb-wrap large-photo">
+            <img src="https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=700&q=80" alt="ウフィツィ美術館 実物写真" loading="lazy">
+            <span class="card-thumb-badge" style="background:#ea580c;">フィレンツェ</span>
+          </div>
+          <div class="spot-body">
+            <div class="spot-header-row">
+              <h3 class="spot-name-ja">ウフィツィ美術館 外観 ＆ アルノ川遊歩道</h3>
+              <span class="spot-chip" style="background:#dbeafe; color:#1e40af; font-weight:800;">世界遺産</span>
+            </div>
+            <span class="spot-name-it">Galleria degli Uffizi</span>
+            <p class="spot-desc">ボッティチェッリ『ヴィーナスの誕生』やダ・ヴィンチ『受胎告知』など、ルネサンスの至宝が集結する世界最高峰の美術館。メディチ家の政庁として造られたU字型の壮麗な回廊建築です。</p>
+            <div style="font-size:0.8rem; color:var(--text-muted); margin-bottom:2px;">
+              🎟️ <strong>入場:</strong> 完全日時予約制（自由行動日） | 📸 <strong>回廊窓:</strong> ヴェッキオ橋が一望
+            </div>
+            <div class="spot-mime-tip">
+              <strong>💡 【みめTip】</strong> 館内に入らなくても、美術館の中庭（ピオッツァ）からアルノ川へ抜けるアーチ越しに見るヴェッキオ橋の眺望は必見です。
+            </div>
+            <div style="margin-top:auto; padding-top:6px;">
+              <a href="https://maps.google.com/?q=Galleria+degli+Uffizi+Firenze" target="_blank" class="btn btn-secondary" style="width:100%;">📍 Google Mapsで場所を確認 &rarr;</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 21. パンテオン (ローマ) -->
+        <div class="spot-card" data-city="rome">
+          <div class="card-thumb-wrap large-photo">
+            <img src="https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=700&q=80" alt="ローマ パンテオン 実物写真" loading="lazy">
+            <span class="card-thumb-badge" style="background:#b91c1c;">ローマ</span>
+          </div>
+          <div class="spot-body">
+            <div class="spot-header-row">
+              <h3 class="spot-name-ja">パンテオン (奇跡の万神殿)</h3>
+              <span class="spot-chip" style="background:#dbeafe; color:#1e40af; font-weight:800;">世界遺産</span>
+            </div>
+            <span class="spot-name-it">Pantheon, Roma</span>
+            <p class="spot-desc">紀元125年に再建され、約2000年間ほぼ完全な姿で残る古代ローマ建築の最高傑作。直径43.3mの巨大ドーム頂上にある天窓「オクルス（目）」から神聖な光が降り注ぎます。ラファエロの墓所。</p>
+            <div style="font-size:0.8rem; color:var(--text-muted); margin-bottom:2px;">
+              🎟️ <strong>入場:</strong> €5（要予約または現地窓口） | 👗 <strong>服装:</strong> 教会ドレスコード
+            </div>
+            <div class="spot-mime-tip">
+              <strong>💡 【みめTip】</strong> 正午前後に訪れると、オクルスから差し込む光の筋が円柱神殿の床をスポットライトのように照らし、息を呑む神聖さに包まれます。
+            </div>
+            <div style="margin-top:auto; padding-top:6px;">
+              <a href="https://maps.google.com/?q=Pantheon+Roma" target="_blank" class="btn btn-secondary" style="width:100%;">📍 Google Mapsで場所を確認 &rarr;</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 22. 真実の口 ＆ サンタ・マリア・イン・コスメディン教会 (ローマ) -->
+        <div class="spot-card" data-city="rome">
+          <div class="card-thumb-wrap large-photo">
+            <img src="https://images.unsplash.com/photo-1525874684015-58379d421a52?auto=format&fit=crop&w=700&q=80" alt="真実の口 実物写真" loading="lazy">
+            <span class="card-thumb-badge" style="background:#b91c1c;">ローマ</span>
+          </div>
+          <div class="spot-body">
+            <div class="spot-header-row">
+              <h3 class="spot-name-ja">真実の口 ＆ サンタ・マリア・イン・コスメディン教会</h3>
+              <span class="spot-chip" style="background:#dbeafe; color:#1e40af; font-weight:800;">映画の聖地</span>
+            </div>
+            <span class="spot-name-it">Bocca della Verità</span>
+            <p class="spot-desc">映画『ローマの休日』でオードリー・ヘプバーンとグレゴリー・ペックの名演で世界的に有名になった古代の下水溝蓋（河神オーケアノスの顔）。嘘つきが口に手を入れると噛み切られるという伝説の石盤です。</p>
+            <div style="font-size:0.8rem; color:var(--text-muted); margin-bottom:2px;">
+              🎟️ <strong>教会寄付金:</strong> €2程度（写真撮影可）
+            </div>
+            <div class="spot-mime-tip">
+              <strong>💡 【みめTip】</strong> 手を入れて驚いた表情をするツーショットはお約束！教会内部には聖バレンタインの頭蓋骨遺骨も祀られており、新婚旅行の縁結びにぴったりです。
+            </div>
+            <div style="margin-top:auto; padding-top:6px;">
+              <a href="https://maps.google.com/?q=Bocca+della+Verita+Roma" target="_blank" class="btn btn-secondary" style="width:100%;">📍 Google Mapsで場所を確認 &rarr;</a>
+            </div>
+          </div>
+        </div>
+</div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- STREAMLINED 5-ITEM BOTTOM TAB BAR -->
+    <!-- FULL 9-ITEM BOTTOM TAB BAR (全ページ完全統一ナビゲーション) -->
+    <!-- FULL 9-ITEM BOTTOM TAB BAR (全ページ完全統一ナビゲーション) -->
+    <!-- FULL 9-ITEM BOTTOM TAB BAR (全ページ完全統一ナビゲーション) -->
+  <nav class="bottom-tab-bar">
+    <a href="index.html" class="tab-item ">
+      <span class="tab-icon">🏠</span>
+      <span class="tab-label">ホーム</span>
+    </a>
+
+    <a href="schedule.html" class="tab-item ">
+      <span class="tab-icon">📋</span>
+      <span class="tab-label">しおり表</span>
+    </a>
+
+    <!-- Day Selection Drawer -->
+    <details class="day-popover-details" id="day-popover-details">
+      <summary class="tab-item ">
+        <span class="tab-icon">📅</span>
+        <span class="tab-label">日別詳細</span>
+      </summary>
+      <div class="day-popover-backdrop"></div>
+      <div class="day-popover-dropdown">
+        <div class="day-popover-header">
+          <span class="day-popover-title">📅 全8日間 日程詳細 ＆ しおり一覧</span>
+          <button type="button" class="day-popover-close" aria-label="閉じる">✕</button>
+        </div>
+        <a href="schedule.html" class="btn btn-primary" style="width:100%; margin-bottom:4px; background:#d97706;">📋 全8日間「しおり型タイムスケジュール表」を一気見 &rarr;</a>
+        <div class="day-popover-grid">
+          <a href="day1.html" class="day-popover-item"><span class="dp-badge">Day 1</span> 11/15(日) 関空15:25集合・17:55発</a>
+          <a href="day2.html" class="day-popover-item"><span class="dp-badge">Day 2</span> 11/16(月) ミラノ &rarr; ベローナ &rarr; ベネチア</a>
+          <a href="day3.html" class="day-popover-item"><span class="dp-badge">Day 3</span> 11/17(火) ベネチア &rarr; スーパー &rarr; プラート</a>
+          <a href="day4.html" class="day-popover-item"><span class="dp-badge">Day 4</span> 11/18(水) ミケランジェロ広場 ＆ フィレンツェ10h</a>
+          <a href="day5.html" class="day-popover-item"><span class="dp-badge">Day 5</span> 11/19(木) サンジミニャーノ &rarr; ローマ観光</a>
+          <a href="day6.html" class="day-popover-item" style="border-color:#dc2626; background:#fff1f2;"><span class="dp-badge" style="background:#dc2626;">Day 6</span> 11/20(金) コロッセオ・バチカン・夕ミサ</a>
+          <a href="day7.html" class="day-popover-item"><span class="dp-badge">Day 7</span> 11/21(土) ローマ自由 &rarr; 15:10 FCO発</a>
+          <a href="day8.html" class="day-popover-item"><span class="dp-badge">Day 8</span> 11/22(日) 16:25 関空帰着・解散</a>
+        </div>
+      </div>
+    </details>
+
+    <a href="tour-map.html" class="tab-item ">
+      <span class="tab-icon">🗺️</span>
+      <span class="tab-label">MAP</span>
+    </a>
+    <a href="sightseeing-guide.html" class="tab-item active">
+      <span class="tab-icon">🏛️</span>
+      <span class="tab-label">観光</span>
+    </a>
+    <a href="free-meal-guide.html" class="tab-item ">
+      <span class="tab-icon">🍽️</span>
+      <span class="tab-label">グルメ</span>
+    </a>
+    <a href="souvenir-guide.html" class="tab-item ">
+      <span class="tab-icon">🎁</span>
+      <span class="tab-label">お土産</span>
+    </a>
+    <a href="tips-survival.html" class="tab-item ">
+      <span class="tab-icon">🚆</span>
+      <span class="tab-label">サバイバル</span>
+    </a>
+    <a href="phrasebook.html" class="tab-item ">
+      <span class="tab-icon">🗣️</span>
+      <span class="tab-label">会話</span>
+    </a>
+  </nav>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <strong>🇮🇹 Kenta &amp; Megumi's Italian Honeymoon Portal</strong><br>
+        <span style="color:#64748b;">HIS Tour OI-KMI2811 (2026/11/15 - 11/22) | 監修: YouTube「イタリアガイドみめ (@mimeitalygaido)」</span>
+      </div>
+      <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top:4px;">
+        <a href="index.html">ホーム</a>
+        <a href="beginner-guide.html">初心者安心</a>
+        <a href="culture-trends.html">トレンド・文化</a>
+        <a href="tips-survival.html">交通サバイバル</a>
+        <a href="tour-map.html">MAP</a>
+        <a href="sightseeing-guide.html">観光16選</a>
+        <a href="phrasebook.html">会話</a>
+        <a href="free-meal-guide.html">グルメ</a>
+        <a href="souvenir-guide.html">お土産</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+  <script>
+    // Live filter and search for sightseeing spots
+    document.addEventListener('DOMContentLoaded', () => {
+      const searchInput = document.getElementById('search-input');
+      const filterChips = document.querySelectorAll('.filter-chip');
+      const cards = document.querySelectorAll('.spot-card[data-city]');
+
+      function filterSpots() {
+        const query = (searchInput ? searchInput.value.toLowerCase().trim() : '');
+        const activeChip = document.querySelector('.filter-chip.active');
+        const activeCity = (activeChip ? activeChip.dataset.city : 'all');
+
+        cards.forEach(card => {
+          const cardCity = card.dataset.city || '';
+          const cardText = card.textContent.toLowerCase();
+
+          const cityMatch = (activeCity === 'all' || cardCity === activeCity);
+          const textMatch = (!query || cardText.includes(query));
+
+          if (cityMatch && textMatch) {
+            card.style.display = '';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      }
+
+      if (searchInput) {
+        searchInput.addEventListener('input', filterSpots);
+      }
+
+      filterChips.forEach(chip => {
+        chip.addEventListener('click', (e) => {
+          e.preventDefault();
+          filterChips.forEach(c => c.classList.remove('active'));
+          chip.classList.add('active');
+          filterSpots();
+        });
+      });
+
+      document.addEventListener('click', function(e) {
+        document.querySelectorAll('details.day-popover-details, details.day-nav-details').forEach(function(d) {
+          if (!d.contains(e.target) && d.hasAttribute('open')) {
+            d.removeAttribute('open');
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
