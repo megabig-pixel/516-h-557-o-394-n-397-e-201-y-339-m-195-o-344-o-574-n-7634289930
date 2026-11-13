@@ -6,7 +6,7 @@
 <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=no" name="viewport"/>
 <title>旅のしおり・全8日間タイムスケジュール一覧表 | イタリア新婚旅行8日間</title>
 <meta content="HIS Impresso『アンディアーモ！イタリア8日間』公式しおり完全再現スケジュール表。iPhone画面幅に100%最適化" name="description"/>
-<link href="style.css?v=18" rel="stylesheet"/>
+<link href="style.css?v=19" rel="stylesheet"/>
 <style>
 
 /* ==========================================================================
@@ -1169,24 +1169,138 @@ body {
     padding: 7px 8px;
   }
 }
+
+
+/* ==========================================================================
+   v19 COMPREHENSIVE UX ENHANCEMENTS (Confirmed Events Bar + Active Nav + Clean UI)
+   ========================================================================== */
+
+/* 1. 4-Key Time-Locked Events Quick Strip (集合・OP・予約済) */
+.tt-confirmed-strip {
+  background: #ffffff;
+  border: 1px solid #fecdd3;
+  border-left: 4px solid #e11d48;
+  border-radius: 10px;
+  padding: 10px 12px;
+  margin-bottom: 14px;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+}
+.tt-cs-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+.tt-cs-title {
+  font-size: 0.84rem;
+  font-weight: 900;
+  color: #9f1239;
+  letter-spacing: 0.01em;
+}
+.tt-cs-sub {
+  font-size: 0.68rem;
+  color: #64748b;
+  font-weight: 600;
+}
+.tt-cs-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 6px;
+}
+.tt-cs-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 7px;
+  background: #fff1f2;
+  border: 1px solid #ffe4e6;
+  border-radius: 7px;
+  padding: 6px 8px;
+  text-decoration: none;
+  color: #1e293b;
+  transition: background 0.15s;
+}
+.tt-cs-item:hover {
+  background: #ffe4e6;
+}
+.tt-cs-time {
+  background: #e11d48;
+  color: #ffffff;
+  font-size: 0.68rem;
+  font-weight: 900;
+  padding: 2px 6px;
+  border-radius: 4px;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.25;
+}
+.tt-cs-time.op-gondola {
+  background: #0284c7;
+}
+.tt-cs-body {
+  font-size: 0.73rem;
+  line-height: 1.3;
+}
+.tt-cs-body strong {
+  color: #0f172a;
+  font-weight: 800;
+  display: block;
+}
+.tt-cs-body span {
+  font-size: 0.66rem;
+  color: #475569;
+}
+
+@media (max-width: 520px) {
+  .tt-cs-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 2. Active Day Quick Pill Highlight */
+.day-quick-pills a.day-pill.active-pill {
+  background: #0f172a !important;
+  color: #ffffff !important;
+  border-color: #0f172a !important;
+  font-weight: 900 !important;
+}
+.day-quick-pills a.day-pill.d6.active-pill {
+  background: #be123c !important;
+  color: #ffffff !important;
+  border-color: #be123c !important;
+}
+
+/* 3. Clean Editorial Summary Box (replaces noisy legacy mime-callout) */
+.mime-callout {
+  background: #f8fafc !important;
+  border: 1px solid #cbd5e1 !important;
+  border-left: 4px solid #0f172a !important;
+  border-radius: 10px !important;
+  padding: 10px 12px !important;
+  margin-bottom: 14px !important;
+  box-shadow: none !important;
+}
+.mime-callout-avatar {
+  display: none !important;
+}
+.mime-callout-title {
+  font-size: 0.84rem !important;
+  font-weight: 800 !important;
+  color: #0f172a !important;
+  margin-bottom: 4px !important;
+}
+.mime-callout-text {
+  font-size: 0.76rem !important;
+  color: #334155 !important;
+  line-height: 1.5 !important;
+  margin: 0 !important;
+}
 </style></head>
 <body>
 <main class="container" style="padding-top: 6px;">
 <!-- Top Quick Jump Bar -->
-<div class="day-quick-pills">
-<a class="day-pill" href="index.html" style="min-width:50px;"><span class="dp-day">🏠</span><span class="dp-date">Top</span></a>
-<a class="day-pill shiori-highlight active" href="schedule.html"><span class="dp-day">📋 しおり</span><span class="dp-date">全日程表</span></a>
-<a class="day-pill" href="#shiori-day1"><span class="dp-day">Day 1</span><span class="dp-date">11/15</span></a>
-<a class="day-pill" href="#shiori-day2"><span class="dp-day">Day 2</span><span class="dp-date">11/16</span></a>
-<a class="day-pill" href="#shiori-day3"><span class="dp-day">Day 3</span><span class="dp-date">11/17</span></a>
-<a class="day-pill" href="#shiori-day4"><span class="dp-day">Day 4</span><span class="dp-date">11/18</span></a>
-<a class="day-pill" href="#shiori-day5"><span class="dp-day">Day 5</span><span class="dp-date">11/19</span></a>
-<a class="day-pill" href="#shiori-day6" style="border-color:#dc2626; color:#b91c1c;"><span class="dp-day">Day 6★</span><span class="dp-date">11/20</span></a>
-<a class="day-pill" href="#shiori-day7"><span class="dp-day">Day 7</span><span class="dp-date">11/21</span></a>
-<a class="day-pill" href="#shiori-day8"><span class="dp-day">Day 8</span><span class="dp-date">11/22</span></a>
-<a class="day-pill" href="#shiori-flights"><span class="dp-day">✈️ 便名</span><span class="dp-date">フライト</span></a>
-<a class="day-pill" href="#shiori-hotels"><span class="dp-day">🏨 宿</span><span class="dp-date">3ホテル</span></a>
-</div>
+<div class="day-quick-pills"><a class="day-pill" href="index.html">🏠 トップ</a><a class="day-pill active-pill" href="schedule.html">📋 しおり表</a><a class="day-pill" href="day1.html">Day 1 (11/15)</a><a class="day-pill" href="day2.html">Day 2 (11/16)</a><a class="day-pill" href="day3.html">Day 3 (11/17)</a><a class="day-pill" href="day4.html">Day 4 (11/18)</a><a class="day-pill" href="day5.html">Day 5 (11/19)</a><a class="day-pill d6" href="day6.html">Day 6 (11/20)</a><a class="day-pill" href="day7.html">Day 7 (11/21)</a><a class="day-pill" href="day8.html">Day 8 (11/22)</a><a class="day-pill" href="tour-map.html">🗺️ MAP</a></div>
 <!-- Hero Header -->
 <header class="hero-card" style="background: linear-gradient(135deg, #0f2b48 0%, #1e3a8a 100%);">
 <span class="hero-tag">📋 HIS Impresso 公式「しおり.pdf」再現＋個人予約統合</span>
@@ -1201,7 +1315,43 @@ body {
 <section class="section" id="shiori-all-days">
 <div class="section-header">
 <h2 class="section-title">🗓️ 全8日間 タイムテーブル本表（Day 1 〜 Day 8）</h2>
-<span class="section-subtitle">公式しおりの時間区分＋現地での目安時刻＋自由時間の観光・食べ歩きを統合</span>
+<span class="section-subtitle">公式しおり＋Day 3 ゴンドラ遊覧（9:30頃OP）＋Day 6 ローマ予約＋自由時間スポット完全統合</span>
+</div>
+<div class="tt-confirmed-strip">
+<div class="tt-cs-header">
+<span class="tt-cs-title">🎟️ 厳守・オプショナル・個人予約済 4大確定スケジュール</span>
+<span class="tt-cs-sub">タップすると該当日のタイムテーブルへ移動します</span>
+</div>
+<div class="tt-cs-grid">
+<a class="tt-cs-item" href="#shiori-day1" onclick="selectTimetableDay(1); return false;">
+<span class="tt-cs-time">Day 1｜15:25</span>
+<div class="tt-cs-body">
+<strong>関空第1T 4階 団体カウンターNO.11集合</strong>
+<span>11/15(日) HIS看板前（時間厳守）</span>
+</div>
+</a>
+<a class="tt-cs-item" href="#shiori-day3" onclick="selectTimetableDay(3); return false;">
+<span class="tt-cs-time op-gondola">Day 3｜09:30頃</span>
+<div class="tt-cs-body">
+<strong>🚣 ベネチア名物 ゴンドラ遊覧（OP）</strong>
+<span>11/17(火) オプショナルツアー乗船</span>
+</div>
+</a>
+<a class="tt-cs-item" href="#shiori-day6" onclick="selectTimetableDay(6); return false;">
+<span class="tt-cs-time">Day 6｜08:30</span>
+<div class="tt-cs-body">
+<strong>🏛️ コロッセオ＆パラティーノの丘 入場</strong>
+<span>11/20(金) 個人予約済（パスポート原本必携）</span>
+</div>
+</a>
+<a class="tt-cs-item" href="#shiori-day6" onclick="selectTimetableDay(6); return false;">
+<span class="tt-cs-time">Day 6｜15:00〜</span>
+<div class="tt-cs-body">
+<strong>🎨 15:00 バチカン美術館 → 16:00 大聖堂＆18:00 夕のミサ</strong>
+<span>11/20(金) 個人予約済＋夕のミサ参列</span>
+</div>
+</a>
+</div>
 </div>
 <div class="tt-matrix-card">
 <div class="tt-matrix-header">
@@ -1209,8 +1359,8 @@ body {
 <span class="tt-matrix-sub">※行をタップすると下の詳細タイムラインが切り替わります</span>
 </div>
 <div class="tt-legend-strip">
+<span class="tt-leg-item"><span class="tt-dot resv"></span>🎟️ 予約済・OP・集合厳守</span>
 <span class="tt-leg-item"><span class="tt-dot free"></span>🟢 自由行動・食べ歩き</span>
-<span class="tt-leg-item"><span class="tt-dot resv"></span>🎟️ 個人予約・集合厳守</span>
 <span class="tt-leg-item"><span class="tt-dot tour"></span>🏛️ ツアー観光</span>
 <span class="tt-leg-item"><span class="tt-dot meal"></span>🍽️ ツアー食事</span>
 <span class="tt-leg-item"><span class="tt-dot move"></span>✈️🚌 移動</span>
@@ -1235,8 +1385,8 @@ body {
 </div>
 </td>
 <td><span class="ttm-chip move">出発準備・関空へ移動</span></td>
-<td><span class="ttm-chip resv">15:25 関空第1T 4F集合(厳守)</span><span class="ttm-chip move">17:55 関空発 QR803便</span></td>
-<td><span class="ttm-chip move">23:35 ドーハ着・乗継</span><span class="ttm-chip free">✨空港Lamp Bear散策</span><span class="ttm-hotel">🌙 機中泊</span></td>
+<td><span class="ttm-chip resv">🎟️ 15:25 関空第1T 4F集合(厳守)</span><span class="ttm-chip move">✈️ 17:55 関空発 QR803便</span></td>
+<td><span class="ttm-chip move">23:35 ドーハ着・乗継</span><span class="ttm-chip free">🟢 空港Lamp Bear・The Orchard散策</span><span class="ttm-hotel">🌙 機中泊</span></td>
 </tr>
 <tr class="tt-m-row" onclick="selectTimetableDay(2)">
 <td>
@@ -1247,9 +1397,9 @@ body {
 <span class="ttm-meals">朝:× 昼:自由 夕:○</span>
 </div>
 </td>
-<td><span class="ttm-chip move">06:55 ミラノ着</span><span class="ttm-chip free">🟢 ミラノ自由3h(ドゥオーモ・Luini食べ歩き)</span></td>
-<td><span class="ttm-chip move">🚌 ベローナへ(2.5h)</span><span class="ttm-chip free">🟢 ベローナ散策1h(ジュリエットの家)</span></td>
-<td><span class="ttm-chip move">🚌 ベネチアへ(1.75h)</span><span class="ttm-chip meal">🍽️ 3コースディナー</span><span class="ttm-hotel">🏨 スマート ホリデイ泊</span></td>
+<td><span class="ttm-chip move">✈️ 06:55 ミラノ着</span><span class="ttm-chip free">🟢 ミラノ自由3h(ドゥオーモ・Luini食べ歩き)</span></td>
+<td><span class="ttm-chip move">🚌 ベローナへ(160km/2.5h)</span><span class="ttm-chip free">🟢 ベローナ散策1h(ジュリエットの家)</span></td>
+<td><span class="ttm-chip move">🚌 ベネチアへ(115km/1.75h)</span><span class="ttm-chip meal">🍽️ ベネチア3コース夕食</span><span class="ttm-hotel">🏨 スマート ホリデイ泊</span></td>
 </tr>
 <tr class="tt-m-row" onclick="selectTimetableDay(3)">
 <td>
@@ -1260,8 +1410,8 @@ body {
 <span class="ttm-meals">朝:○ 昼:自由 夕:自由</span>
 </div>
 </td>
-<td><span class="ttm-chip tour">🏛️ 本島観光＆🚣ゴンドラ</span><span class="ttm-chip free">🟢 ベネチア自由(バーカロ食べ歩き・リアルト橋)</span></td>
-<td><span class="ttm-chip move">🚤・🚌 プラートへ(3.75h)</span><span class="ttm-chip free">🛒 途中現地スーパー立寄</span></td>
+<td><span class="ttm-chip tour">🚤 本島上陸・サンマルコ広場</span><span class="ttm-chip resv">🎟️ 09:30頃 ゴンドラ遊覧(OP)</span><span class="ttm-chip free">🟢 10:15〜 本島自由＆バーカロ食べ歩き</span></td>
+<td><span class="ttm-chip move">🚤・🚌 プラートへ(246km/3.75h)</span><span class="ttm-chip free">🛒 途中現地スーパー立寄</span></td>
 <td><span class="ttm-chip free">🍽️ プラート周辺自由夕食</span><span class="ttm-hotel">🏨 プレジデント プラート泊</span></td>
 </tr>
 <tr class="tt-m-row" onclick="selectTimetableDay(4)">
@@ -1275,7 +1425,7 @@ body {
 </td>
 <td><span class="ttm-chip tour">📸 ミケランジェロ広場絶景</span><span class="ttm-chip free">🟢 フィレンツェ自由開始(ドゥオーモ・薬局)</span></td>
 <td><span class="ttm-chip free">🟢 中央市場・All'Antico Vinaio食べ歩き＆ヴェッキオ橋・革市場</span></td>
-<td><span class="ttm-chip free">🥩 Zà Zà等でTボーンステーキ夕食</span><span class="ttm-chip move">20:00頃 バスでプラート帰着</span><span class="ttm-hotel">🏨 プラート連泊</span></td>
+<td><span class="ttm-chip free">🥩 Zà Zà等で1kg Tボーンステーキ夕食</span><span class="ttm-chip move">🚌 20:00頃 プラート帰着</span><span class="ttm-hotel">🏨 プラート連泊</span></td>
 </tr>
 <tr class="tt-m-row" onclick="selectTimetableDay(5)">
 <td>
@@ -1283,11 +1433,11 @@ body {
 <span class="ttm-dnum">Day 5</span>
 <span class="ttm-date">11/19(木)</span>
 <span class="ttm-city">塔の街→ローマ</span>
-<span class="ttm-meals">朝:○ 昼:ピッツァ 夕:自由</span>
+<span class="ttm-meals">朝:○ 昼:ピザ 夕:自由</span>
 </div>
 </td>
-<td><span class="ttm-chip move">🚌 塔の街へ(1.5h)</span><span class="ttm-chip free">🟢 サンジミニャーノ散策1h(世界一ジェラート)</span></td>
-<td><span class="ttm-chip move">🚌 ローマへ(4h)</span><span class="ttm-chip meal">🍕 ピッツァ昼食</span><span class="ttm-chip tour">🏛️ トレヴィの泉・スペイン広場</span></td>
+<td><span class="ttm-chip move">🚌 塔の街へ(70km/1h)</span><span class="ttm-chip free">🟢 サンジミニャーノ散策1h(Dondoliジェラート)</span></td>
+<td><span class="ttm-chip move">🚌 ローマへ(279km/4h)</span><span class="ttm-chip meal">🍕 マルゲリータ＆カプリチョーザ昼食</span><span class="ttm-chip tour">🏛️ バチカン・ローマ観光4h(トレビ・スペイン広場)</span></td>
 <td><span class="ttm-chip free">🍷 モンティ地区等で自由夕食</span><span class="ttm-hotel">🏨 メルキュール ローマ泊</span></td>
 </tr>
 <tr class="tt-m-row highlight-day6" onclick="selectTimetableDay(6)">
@@ -1313,7 +1463,7 @@ body {
 </div>
 </td>
 <td><span class="ttm-chip free">🟢 出発までローマ自由(Regoliマリトッツォ・スーパー)</span></td>
-<td><span class="ttm-chip move">🚌 空港へ送迎</span><span class="ttm-chip move">15:10 ローマ発 QR132便</span></td>
+<td><span class="ttm-chip move">🚌 空港へ送迎・免税手続</span><span class="ttm-chip move">✈️ 15:10 ローマ発 QR132便</span></td>
 <td><span class="ttm-chip move">22:35 ドーハ着・乗継</span><span class="ttm-hotel">🌙 機中泊</span></td>
 </tr>
 <tr class="tt-m-row" onclick="selectTimetableDay(8)">
@@ -1325,8 +1475,8 @@ body {
 <span class="ttm-meals">朝:機内 昼:機内 夕:×</span>
 </div>
 </td>
-<td><span class="ttm-chip move">00:55 ドーハ発 QR802便(機内食2回)</span></td>
-<td><span class="ttm-chip move">16:25 関西国際空港着・解散</span></td>
+<td><span class="ttm-chip move">✈️ 00:55 ドーハ発 QR802便(機内食2回)</span></td>
+<td><span class="ttm-chip move">🛬 16:25 関西国際空港着・解散</span></td>
 <td><span class="ttm-chip tour">🏠 千里丘のご自宅へ帰着</span></td>
 </tr>
 </tbody>
@@ -1341,7 +1491,7 @@ body {
 <div class="tt-day-head">
 <div class="tt-head-left">
 <span class="tt-day-badge">DAY 1</span>
-<span class="tt-day-date-route">11/15(日)｜関西空港 → ドーハ乗継</span>
+<span class="tt-day-date-route">11/15(日)｜関西空港 15:25集合 → ドーハ乗継</span>
 </div>
 <div class="tt-head-right">
 <div class="tt-meal-group"><span class="tt-meal-tag">朝:×</span><span class="tt-meal-tag">昼:×</span><span class="tt-meal-tag has-meal">夕:機内</span></div>
@@ -1361,7 +1511,7 @@ body {
 <span class="tt-city-pill">📍 関西空港 第1T 4階</span>
 </div>
 <div class="tt-event-title">団体カウンター NO.11（HIS看板前）ご集合</div>
-<p class="tt-event-desc">パスポート・モバイルバッテリー（手荷物預け不可）を確認。当日緊急連絡先：<a href="tel:05017525472" style="font-weight:800;color:#be123c;">050-1752-5472</a></p>
+<p class="tt-event-desc">パスポート・モバイルバッテリー（預け荷物不可・機内持込必須）を確認。当日緊急連絡先：<a href="tel:05017525472" style="font-weight:800;color:#be123c;">050-1752-5472</a></p>
 </div>
 </div>
 <div class="tt-node type-move">
@@ -1454,7 +1604,7 @@ body {
 <span class="tt-badge">🟢 ミラノ自由行動（約3時間・各自昼食）</span>
 <span class="tt-city-pill">📍 ミラノ中心部</span>
 </div>
-<div class="tt-event-title">【世界遺産】ミラノ自由散策（◎ガッレリア・◎ドゥオーモ・◎スカラ座）</div>
+<div class="tt-event-title">【世界遺産】ミラノ自由行動（◎ガッレリア・◎ドゥオーモ・◎スカラ座）</div>
 <p class="tt-event-desc">ドゥオーモ広場を起点に徒歩5分圏内に全主要スポットと食べ歩き通りが密集！</p>
 <div class="tt-free-spots">
 <div class="tt-spot-box">
@@ -1481,7 +1631,7 @@ body {
 <span class="tt-city-pill">📍 ミラノ → ベローナ</span>
 </div>
 <div class="tt-event-title">専用バスにてロミオとジュリエットの舞台・ベローナへ</div>
-<p class="tt-event-desc">高速道路でロンバルディア州からヴェネト州へ東進。車内で休憩・充電。</p>
+<p class="tt-event-desc">高速道路でロンバルディア州からヴェネト州へ東進（途中サービスエリア休憩目安1回）。</p>
 </div>
 </div>
 <div class="tt-node type-free">
@@ -1539,7 +1689,7 @@ body {
 <div class="tt-day-head">
 <div class="tt-head-left">
 <span class="tt-day-badge">DAY 3</span>
-<span class="tt-day-date-route">11/17(火)｜ベネチア本島 → プラート</span>
+<span class="tt-day-date-route">11/17(火)｜ベネチア本島（9:30頃ゴンドラOP＋自由散策） → プラート</span>
 </div>
 <div class="tt-head-right">
 <div class="tt-meal-group"><span class="tt-meal-tag has-meal">朝:○</span><span class="tt-meal-tag">昼:自由</span><span class="tt-meal-tag">夕:自由</span></div>
@@ -1549,33 +1699,49 @@ body {
 <div class="tt-node type-tour">
 <div class="tt-time-axis">
 <span class="tt-node-dot"></span>
-<span class="tt-period-label">朝〜午前</span>
-<span class="tt-clock-main">08:30頃</span>
-<span class="tt-clock-sub">〜10:30頃</span>
+<span class="tt-period-label">朝〜09:30</span>
+<span class="tt-clock-main">08:00頃</span>
+<span class="tt-clock-sub">〜09:30頃</span>
 </div>
 <div class="tt-event-card">
 <div class="tt-event-top">
-<span class="tt-badge">🚤 ボート ＋ 🏛️ 現地ガイド観光 ＋ 🚣 ゴンドラ</span>
-<span class="tt-city-pill">📍 ベネチア本島</span>
+<span class="tt-badge">🚌 専用車 ＋ 🚤 ボート移動 ＋ 🏛️ 広場散策</span>
+<span class="tt-city-pill">📍 メストレ → ベネチア本島</span>
 </div>
-<div class="tt-event-title">【世界遺産】ベネチア本島 徒歩観光 ＆ 名物ゴンドラ遊覧（約30分）</div>
-<p class="tt-event-desc">◎サン・マルコ広場、◎サン・マルコ寺院、◎ドゥカーレ宮殿、◎ため息の橋、●ヴェネチアン・グラス工房を見学後、運河を巡るゴンドラ遊覧へ！</p>
+<div class="tt-event-title">ベネチア本島へ上陸（約4時間滞在開始）→ サン・マルコ広場＆ため息の橋</div>
+<p class="tt-event-desc">ボートで本島へ上陸後、09:30頃のゴンドラ乗船集合まで、◎サン・マルコ広場、◎サン・マルコ寺院（外観）、◎ドゥカーレ宮殿（外観）、◎ため息の橋を見学。</p>
+</div>
+</div>
+<div class="tt-node type-resv">
+<div class="tt-time-axis">
+<span class="tt-node-dot"></span>
+<span class="tt-period-label">OP申込済</span>
+<span class="tt-clock-main">09:30頃</span>
+<span class="tt-clock-sub">〜10:10頃</span>
+</div>
+<div class="tt-event-card">
+<div class="tt-event-top">
+<span class="tt-badge">🎟️🚣 オプショナルツアー（09:30頃乗船）</span>
+<span class="tt-city-pill">📍 ベネチア本島 水路</span>
+</div>
+<div class="tt-event-title">【オプショナルツアー】ベネチア名物 ゴンドラ遊覧</div>
+<p class="tt-event-desc">水の都ならではの細い運河（リオ）や美しい小橋の下をゴンドラで優雅に巡るハイライト体験！乗船前に添乗員さんと下船後の再集合時刻（13:00〜13:30頃目安）を確認しておきましょう。</p>
 </div>
 </div>
 <div class="tt-node type-free">
 <div class="tt-time-axis">
 <span class="tt-node-dot"></span>
 <span class="tt-period-label">午前〜昼</span>
-<span class="tt-clock-main">10:30頃</span>
-<span class="tt-clock-sub">〜13:30頃</span>
+<span class="tt-clock-main">10:10頃</span>
+<span class="tt-clock-sub">〜13:00頃(約3h)</span>
 </div>
 <div class="tt-event-card">
 <div class="tt-event-top">
-<span class="tt-badge">🟢 ベネチア本島 自由行動（ガイドと計約4時間・各自昼食）</span>
+<span class="tt-badge">🟢 ゴンドラ下船後の自由行動（各自昼食）</span>
 <span class="tt-city-pill">📍 サン・マルコ〜リアルト橋</span>
 </div>
-<div class="tt-event-title">リアルト橋・バーカロ街でチケッティ＆海鮮フリット食べ歩き</div>
-<p class="tt-event-desc">サン・マルコ広場からリアルト橋まで徒歩約12分。路地裏の立ち飲み居酒屋（バーカロ）巡りが最高！</p>
+<div class="tt-event-title">【世界遺産】ベネチア本島フリータイム！リアルト橋＆バーカロ食べ歩き</div>
+<p class="tt-event-desc">ゴンドラ下船後、サン・マルコ広場からリアルト橋（徒歩約12分）へ迷路のような路地を散策しながら、立ち飲み居酒屋（バーカロ）でチケッティ＆海鮮フリットランチ！</p>
 <div class="tt-free-spots">
 <div class="tt-spot-box">
 <span class="tt-spot-box-title">🏛️ 自由時間で行ける観光スポット</span>
@@ -1583,7 +1749,7 @@ body {
 </div>
 <div class="tt-spot-box">
 <span class="tt-spot-box-title">🍕 食べ歩き街・名物グルメ</span>
-<ul class="tt-spot-list"><li><strong>リアルト橋西側バーカロ街</strong>：<strong>Cantina Do Mori</strong>・<strong>All'Arco</strong>（1個€2〜3のおつまみチケッティ＆グラスワイン）</li><li><strong>海鮮フリット食べ歩き</strong>：<strong>Fritto Inn</strong> / <strong>Acqua e Mais</strong>（揚げたてイカ・エビの紙コーン）</li><li><strong>Gelatoteca Suso</strong>（リアルト橋徒歩2分・ピスタチオジェラート名店）</li></ul>
+<ul class="tt-spot-list"><li><strong>リアルト橋西側バーカロ街</strong>：<strong>Cantina Do Mori</strong>・<strong>All'Arco</strong>（1個€2〜3のおつまみチケッティ＆グラスワイン）</li><li><strong>海鮮フリット食べ歩き</strong>：<strong>Fritto Inn</strong> / <strong>Acqua e Mais</strong>（揚げたてイカ・エビの紙コーン）</li><li><strong>Gelatoteca Suso</strong>（リアルト橋徒歩2分・ピスタチオジェラート名店）、<strong>カフェ・フローリアン</strong></li></ul>
 </div>
 </div>
 </div>
@@ -1592,7 +1758,7 @@ body {
 <div class="tt-time-axis">
 <span class="tt-node-dot"></span>
 <span class="tt-period-label">午後</span>
-<span class="tt-clock-main">14:00頃</span>
+<span class="tt-clock-main">13:30頃</span>
 <span class="tt-clock-sub">〜18:00頃(3.75h)</span>
 </div>
 <div class="tt-event-card">
@@ -1600,8 +1766,8 @@ body {
 <span class="tt-badge">🚤 ボート ＋ 🚌 専用車（246km / 約3時間45分）</span>
 <span class="tt-city-pill">📍 ベネチア → プラート</span>
 </div>
-<div class="tt-event-title">専用車でトスカーナ州プラートへ移動（途中 🛒現地スーパー立ち寄り）</div>
-<p class="tt-event-desc">移動途中に現地スーパーマーケットへ立ち寄り！ばらまき用お菓子・生ハム・チーズ・水・ワインや今夜の軽食をお得に調達できます。</p>
+<div class="tt-event-title">専用車でトスカーナ州プラートへ移動（途中 🛒地元スーパー立ち寄り）</div>
+<p class="tt-event-desc">移動途中に現地スーパーマーケットへ立ち寄り！バラマキ用Baciチョコ・パスタ・生ハム・チーズ・水・ワインや今夜の部屋食をお得に調達できます（エコバッグ必携）。</p>
 </div>
 </div>
 <div class="tt-node type-meal">
@@ -1617,7 +1783,7 @@ body {
 <span class="tt-city-pill">📍 プラート</span>
 </div>
 <div class="tt-event-title">プレジデント プラート着（夕食は自由食）</div>
-<p class="tt-event-desc">※プレジデント プラートは石鹸・シャンプーが「×」のため持参したバス用品を使用してください。</p>
+<p class="tt-event-desc">※プレジデント プラートは冷蔵庫（○）あり！一方、石鹸・シャンプーが「×」のため持参したバス用品を使用してください。</p>
 </div>
 </div>
 </div>
@@ -1633,7 +1799,7 @@ body {
 <div class="tt-day-head">
 <div class="tt-head-left">
 <span class="tt-day-badge">DAY 4</span>
-<span class="tt-day-date-route">11/18(水)｜フィレンツェ終日（約10時間）</span>
+<span class="tt-day-date-route">11/18(水)｜ミケランジェロ広場 → フィレンツェ自由行動10h</span>
 </div>
 <div class="tt-head-right">
 <div class="tt-meal-group"><span class="tt-meal-tag has-meal">朝:○</span><span class="tt-meal-tag">昼:自由</span><span class="tt-meal-tag">夕:自由</span></div>
@@ -1669,15 +1835,15 @@ body {
 <span class="tt-city-pill">📍 フィレンツェ歴史地区</span>
 </div>
 <div class="tt-event-title">【世界遺産】フィレンツェ終日フリータイム（観光＆食べ歩きモデル時間割）</div>
-<p class="tt-event-desc"><strong>【おすすめ時間割】</strong><br/>・<strong>10:00〜12:00</strong>：ドゥオーモ・ジョットの鐘楼 → サンタ・マリア・ノヴェッラ薬局（徒歩10分）<br/>・<strong>12:00〜13:30</strong>：中央市場（Da Nerbone / 2Fフードコート）またはデ・ネーリ通り（All'Antico Vinaio）で食べ歩きランチ<br/>・<strong>13:30〜17:30</strong>：シニョーリア広場 → ヴェッキオ橋 → 新市場のイノシシ像＆革製品マーケット → カフェ休憩<br/>・<strong>17:30〜19:30</strong>：Trattoria Zà Zà 等で名物ビステッカ（Tボーンステーキ）ディナー</p>
+<p class="tt-event-desc"><strong>【おすすめ時間割】</strong><br/>・<strong>10:00〜12:00</strong>：ドゥオーモ・ジョットの鐘楼 → サンタ・マリア・ノヴェッラ薬局（徒歩10分）<br/>・<strong>12:00〜13:30</strong>：中央市場（Da Nerbone / 2Fフードコート）またはデ・ネーリ通り（All'Antico Vinaio）で食べ歩きランチ<br/>・<strong>13:30〜17:30</strong>：シニョーリア広場 → ヴェッキオ橋 → 新市場のイノシシ像＆革製品マーケット → カフェ休憩（Caffè Gilli）<br/>・<strong>17:30〜19:30</strong>：Trattoria Zà Zà 等で名物1kg Tボーンステーキ（ビステッカ）ディナー</p>
 <div class="tt-free-spots">
 <div class="tt-spot-box">
 <span class="tt-spot-box-title">🏛️ 自由時間で行ける観光スポット</span>
-<ul class="tt-spot-list"><li><strong>ドゥオーモ（花の聖母寺）＆ ジョットの鐘楼</strong></li><li><strong>シニョーリア広場 ＆ ヴェッキオ橋</strong>（彫像群と貴金属店が並ぶ橋）</li><li><strong>サンタ・マリア・ノヴェッラ薬局</strong>（800年の歴史を誇る世界最古の薬局）</li><li><strong>新市場のイノシシ像（ポルチェッリーノ）＆ 革製品市場</strong></li></ul>
+<ul class="tt-spot-list"><li><strong>ドゥオーモ（花の聖母大聖堂）＆ ジョットの鐘楼</strong></li><li><strong>シニョーリア広場 ＆ ヴェッキオ橋</strong>（彫像群と貴金属店が並ぶ橋）</li><li><strong>サンタ・マリア・ノヴェッラ薬局</strong>（800年の歴史を誇る世界最古の薬局）</li><li><strong>新市場のイノシシ像（ポルチェッリーノ）＆ 革製品市場</strong></li></ul>
 </div>
 <div class="tt-spot-box">
 <span class="tt-spot-box-title">🍕 食べ歩き街・名物グルメ</span>
-<ul class="tt-spot-list"><li><strong>デ・ネーリ通り</strong>：<strong>All'Antico Vinaio</strong>（世界一有名なスキアッチャータサンド）・<strong>Gelateria Dei Neri</strong></li><li><strong>中央市場（メルカート・チェントラーレ）</strong>：1F <strong>Da Nerbone</strong>（牛モツ煮ランプレドットパニーノ）＆2Fフードホール</li><li><strong>Trattoria Zà Zà</strong>（中央市場前・名物Tボーンステーキでディナー）</li></ul>
+<ul class="tt-spot-list"><li><strong>デ・ネーリ通り</strong>：<strong>All'Antico Vinaio</strong>（世界一有名なスキアッチャータサンド）・<strong>Gelateria Dei Neri</strong></li><li><strong>中央市場（メルカート・チェントラーレ）</strong>：1F <strong>Da Nerbone</strong>（牛モツ煮ランプレドットパニーノ）＆2Fフードホール</li><li><strong>Trattoria Zà Zà</strong>（中央市場前・名物1kg Tボーンステーキでディナー）</li></ul>
 </div>
 </div>
 </div>
@@ -1694,8 +1860,8 @@ body {
 <span class="tt-badge">🚌 再集合・専用車送迎</span>
 <span class="tt-city-pill">📍 フィレンツェ → プラート</span>
 </div>
-<div class="tt-event-title">フィレンツェ指定場所にて再集合後、専用車でホテルへ帰着</div>
-<p class="tt-event-desc">翌朝のローマ移動に備えて荷物をパッキング。</p>
+<div class="tt-event-title">フィレンツェ指定場所にて再集合後、専用車でプラートのホテルへ帰着</div>
+<p class="tt-event-desc">翌朝のサンジミニャーノ・ローマ移動に備えて荷物をパッキング。</p>
 </div>
 </div>
 </div>
@@ -1711,10 +1877,10 @@ body {
 <div class="tt-day-head">
 <div class="tt-head-left">
 <span class="tt-day-badge">DAY 5</span>
-<span class="tt-day-date-route">11/19(木)｜サンジミニャーノ → ローマ</span>
+<span class="tt-day-date-route">11/19(木)｜サンジミニャーノ → ピザ昼食 → バチカン・ローマ4h観光</span>
 </div>
 <div class="tt-head-right">
-<div class="tt-meal-group"><span class="tt-meal-tag has-meal">朝:○</span><span class="tt-meal-tag has-meal">昼:ピッツァ</span><span class="tt-meal-tag">夕:自由</span></div>
+<div class="tt-meal-group"><span class="tt-meal-tag has-meal">朝:○</span><span class="tt-meal-tag has-meal">昼:ピザ</span><span class="tt-meal-tag">夕:自由</span></div>
 </div>
 </div>
 <div class="tt-track">
@@ -1723,30 +1889,30 @@ body {
 <span class="tt-node-dot"></span>
 <span class="tt-period-label">朝</span>
 <span class="tt-clock-main">08:00頃</span>
-<span class="tt-clock-sub">〜09:30頃(1.5h)</span>
+<span class="tt-clock-sub">〜09:00頃(1h)</span>
 </div>
 <div class="tt-event-card">
 <div class="tt-event-top">
-<span class="tt-badge">🚌 専用車移動（78km / 約1時間30分）</span>
+<span class="tt-badge">🚌 専用車移動（70km / 約1時間）</span>
 <span class="tt-city-pill">📍 プラート → サンジミニャーノ</span>
 </div>
-<div class="tt-event-title">専用車で丘の上の「美しい塔の街」サンジミニャーノへ</div>
-<p class="tt-event-desc">トスカーナの美しいブドウ畑と糸杉の丘陵地帯をドライブ。</p>
+<div class="tt-event-title">専用車で中世の街並みが残る「塔の街」サンジミニャーノへ</div>
+<p class="tt-event-desc">※しおり注記：ホテル出発時間により朝食は朝食ボックスになる場合があります。</p>
 </div>
 </div>
 <div class="tt-node type-free">
 <div class="tt-time-axis">
 <span class="tt-node-dot"></span>
 <span class="tt-period-label">午前</span>
-<span class="tt-clock-main">09:30頃</span>
-<span class="tt-clock-sub">〜10:30頃(1h)</span>
+<span class="tt-clock-main">09:00頃</span>
+<span class="tt-clock-sub">〜10:00頃(1h)</span>
 </div>
 <div class="tt-event-card">
 <div class="tt-event-top">
-<span class="tt-badge">🟢 サンジミニャーノ自由散策（約1時間）</span>
+<span class="tt-badge">🟢 サンジミニャーノ各自散策（約1時間）</span>
 <span class="tt-city-pill">📍 サンジミニャーノ旧市街</span>
 </div>
-<div class="tt-event-title">【世界遺産】サンジミニャーノ散策（チステルナ広場＆食べ歩き）</div>
+<div class="tt-event-title">【世界遺産】サンジミニャーノ自由散策（チステルナ広場＆食べ歩き）</div>
 <p class="tt-event-desc">サン・ジョヴァンニ門からメインストリートを歩いてチステルナ広場へ（片道約7分）。</p>
 <div class="tt-free-spots">
 <div class="tt-spot-box">
@@ -1764,39 +1930,39 @@ body {
 <div class="tt-time-axis">
 <span class="tt-node-dot"></span>
 <span class="tt-period-label">昼〜午後</span>
-<span class="tt-clock-main">10:30頃</span>
-<span class="tt-clock-sub">〜15:00頃(4h)</span>
+<span class="tt-clock-main">10:00頃</span>
+<span class="tt-clock-sub">〜14:30頃(4h)</span>
 </div>
 <div class="tt-event-card">
 <div class="tt-event-top">
 <span class="tt-badge">🚌 専用車（279km / 約4時間）＋ 🍕 昼食</span>
 <span class="tt-city-pill">📍 サンジミニャーノ → ローマ</span>
 </div>
-<div class="tt-event-title">専用車でローマへ移動 → 🍕本場イタリアンピッツァの昼食（ツアー付）</div>
-<p class="tt-event-desc">ローマ到着後、レストランにて焼きたてピッツァのランチ。</p>
+<div class="tt-event-title">ローマへ移動 → 🍕本場ピザ「マルゲリータ＆カプリチョーザ」ハーフ＆ハーフの昼食</div>
+<p class="tt-event-desc">休憩目安1回を挟みながらローマへ南下。到着後、焼きたて2種ハーフ＆ハーフピッツァのランチ（ツアー付）。</p>
 </div>
 </div>
 <div class="tt-node type-tour">
 <div class="tt-time-axis">
 <span class="tt-node-dot"></span>
 <span class="tt-period-label">午後</span>
-<span class="tt-clock-main">15:00頃</span>
-<span class="tt-clock-sub">〜18:00頃</span>
+<span class="tt-clock-main">14:30頃</span>
+<span class="tt-clock-sub">〜18:30頃(4h)</span>
 </div>
 <div class="tt-event-card">
 <div class="tt-event-top">
-<span class="tt-badge">🏛️ ローマ市内 車窓＆下車観光</span>
-<span class="tt-city-pill">📍 ローマ歴史地区</span>
+<span class="tt-badge">🏛️ バチカンとローマ観光（約4時間）</span>
+<span class="tt-city-pill">📍 バチカン・ローマ市内</span>
 </div>
-<div class="tt-event-title">【世界遺産】ローマ市内観光（○ヴェネチア広場・○チルコ・マッシモ・◎トレヴィの泉・◎スペイン広場）</div>
-<p class="tt-event-desc">トレヴィの泉でのコイン投げやスペイン広場の散策を添乗員・ガイドと巡ります。</p>
+<div class="tt-event-title">【世界遺産】◎サン・ピエトロ寺院、◎スペイン広場、◎トレビの泉、○コロッセオ（車窓）</div>
+<p class="tt-event-desc"><strong>💡 Day 6との完璧な連携：</strong>この5日目に「トレビの泉・スペイン広場」を下車観光し、コロッセオとサン・ピエトロの位置関係を下見できるため、翌6日目は予約済の「コロッセオ内部・バチカン美術館・夕のミサ」と「パンテオン・ナヴォーナ広場」に100%集中できます！</p>
 </div>
 </div>
 <div class="tt-node type-free">
 <div class="tt-time-axis">
 <span class="tt-node-dot"></span>
 <span class="tt-period-label">夜</span>
-<span class="tt-clock-main">18:30頃</span>
+<span class="tt-clock-main">19:00頃</span>
 <span class="tt-clock-sub">ホテル着</span>
 </div>
 <div class="tt-event-card">
@@ -1821,7 +1987,7 @@ body {
 <div class="tt-day-head">
 <div class="tt-head-left">
 <span class="tt-day-badge">DAY 6</span>
-<span class="tt-day-date-route">11/20(金)｜【確定】ローマ終日自由行動</span>
+<span class="tt-day-date-route">11/20(金)｜【確定】ローマ終日自由行動（コロッセオ＆バチカン予約済）</span>
 </div>
 <div class="tt-head-right">
 <div class="tt-meal-group"><span class="tt-meal-tag has-meal">朝:○</span><span class="tt-meal-tag">昼:自由</span><span class="tt-meal-tag">夕:自由</span></div>
@@ -1841,7 +2007,7 @@ body {
 <span class="tt-city-pill">📍 ホテル → コロッセオ</span>
 </div>
 <div class="tt-event-title">朝食後、ホテルからコロッセオへ徒歩移動（パスポート原本必携！）</div>
-<p class="tt-event-desc">Via San Giovanni in Laterano 通りをまっすぐ歩くと正面にコロッセオが現れます。</p>
+<p class="tt-event-desc">Via San Giovanni in Laterano 通りをまっすぐ西へ歩くと正面にコロッセオが現れます。</p>
 </div>
 </div>
 <div class="tt-node type-resv">
@@ -1873,7 +2039,7 @@ body {
 <span class="tt-city-pill">📍 コロッセオ → バチカン方面</span>
 </div>
 <div class="tt-event-title">バチカン15:00予約までの3時間！選べる2大観光＆食べ歩きルート</div>
-<p class="tt-event-desc">体力と気分に合わせて「王道街歩きルートA」または「バチカン隣接グルメ街ルートB」を選択！</p>
+<p class="tt-event-desc">前日（Day 5）にトレビの泉とスペイン広場は訪問済なので、未訪問の「パンテオン・ナヴォーナ広場（ルートA）」または「バチカン隣プラティ地区グルメ（ルートB）」へ！</p>
 <div class="tt-free-spots">
 <div class="tt-spot-box">
 <span class="tt-spot-box-title">🏛️ 自由時間で行ける観光スポット</span>
