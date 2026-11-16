@@ -1,0 +1,3274 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>全体ツアールートMAP ＆ 確定宿泊ホテル3軒 | イタリア新婚旅行8日間</title>
+<meta content="HISイタリア8日間ツアールート、各都市観光スポット、レストラン、お土産店、宿泊ホテル候補一覧を完全網羅したインタラクティブMAP" name="description"/>
+<link href="style.css?v=22" rel="stylesheet"/>
+<style>
+
+/* ==========================================================================
+   v17 Minimalist Editorial UI (Simple, Stylish, iPhone-First)
+   ========================================================================== */
+:root {
+  --primary-color: #0f172a;       /* Deep Slate Ink */
+  --primary-light: #2563eb;       /* Clean Accent Blue */
+  --secondary-color: #c2410c;     /* Warm Terracotta */
+  --accent-gold: #d97706;
+  --bg-main: #f8fafc;             /* Soft Alabaster */
+  --bg-card: #ffffff;
+  --text-main: #0f172a;
+  --text-sub: #475569;
+  --text-muted: #64748b;
+  --border-color: #e2e8f0;
+  --border-light: #f1f5f9;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.04);
+  --shadow-md: 0 4px 16px rgba(15, 23, 42, 0.06);
+}
+
+body {
+  background-color: #f8fafc;
+  color: #0f172a;
+  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  line-height: 1.6;
+  padding-bottom: 72px;
+}
+
+.container {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 14px;
+}
+
+/* Clean Top Pill Bar */
+.day-quick-pills {
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  padding: 10px 0;
+  margin-bottom: 4px;
+  scrollbar-width: none;
+}
+.day-quick-pills::-webkit-scrollbar { display: none; }
+
+.day-pill {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 6px 11px;
+  min-width: 58px;
+  flex-shrink: 0;
+  color: #475569;
+  text-decoration: none !important;
+  transition: all 0.15s ease;
+}
+.day-pill .dp-day { font-size: 0.76rem; font-weight: 800; line-height: 1.15; }
+.day-pill .dp-date { font-size: 0.66rem; font-weight: 600; color: #94a3b8; margin-top: 2px; }
+.day-pill.active {
+  background: #0f172a;
+  border-color: #0f172a;
+  color: #ffffff;
+}
+.day-pill.active .dp-date { color: #cbd5e1; }
+.day-pill.shiori-highlight {
+  background: #fffbeb;
+  border-color: #fde68a;
+  color: #b45309;
+}
+.day-pill.shiori-highlight.active {
+  background: #b45309;
+  border-color: #b45309;
+  color: #ffffff;
+}
+
+/* Minimalist Hero Header */
+.hero-minimal {
+  background: #0f172a;
+  color: #ffffff;
+  padding: 20px 18px;
+  border-radius: 16px;
+  margin: 4px 0 18px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.12);
+}
+.hero-eyebrow {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: #94a3b8;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+.hero-minimal h1 {
+  font-size: 1.28rem;
+  font-weight: 800;
+  line-height: 1.35;
+  margin-bottom: 6px;
+  letter-spacing: -0.01em;
+}
+.hero-minimal p {
+  font-size: 0.82rem;
+  color: #cbd5e1;
+  line-height: 1.55;
+  margin-bottom: 14px;
+}
+.hero-minimal-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+.hero-chip {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #f8fafc;
+  font-size: 0.74rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+.hero-btn-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+@media (max-width: 440px) {
+  .hero-btn-group { grid-template-columns: 1fr; }
+}
+.btn-sleek {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 0.84rem;
+  font-weight: 700;
+  text-decoration: none !important;
+  white-space: nowrap;
+}
+.btn-sleek.primary { background: #ffffff; color: #0f172a; }
+.btn-sleek.accent { background: rgba(255,255,255,0.14); color: #ffffff; border: 1px solid rgba(255,255,255,0.25); }
+
+/* Section Headers */
+.section { margin-bottom: 24px; }
+.section-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  margin-bottom: 12px;
+}
+@media (min-width: 600px) {
+  .section-header {
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-between;
+  }
+}
+.section-title {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.01em;
+}
+.section-subtitle {
+  font-size: 0.76rem;
+  color: #64748b;
+}
+
+/* Unified Sleek Schedule Cards (Used on Index & Schedule pages) */
+.sleek-day-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.sleek-day-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+  transition: border-color 0.15s ease;
+}
+.sleek-day-card.is-highlight {
+  border: 1.5px solid #e11d48;
+}
+.sdc-top {
+  background: #f8fafc;
+  border-bottom: 1px solid #e2e8f0;
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+.sleek-day-card.is-highlight .sdc-top {
+  background: #fff1f2;
+  border-bottom-color: #fecdd3;
+}
+.sdc-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.sdc-day-tag {
+  background: #0f172a;
+  color: #ffffff;
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 2px 8px;
+  border-radius: 6px;
+  white-space: nowrap;
+}
+.sleek-day-card.is-highlight .sdc-day-tag {
+  background: #e11d48;
+}
+.sdc-route {
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+.sdc-meals {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #64748b;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  padding: 2px 7px;
+  border-radius: 6px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.sdc-body {
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+.sdc-row {
+  display: grid;
+  grid-template-columns: 62px 1fr;
+  gap: 8px;
+  align-items: baseline;
+  font-size: 0.84rem;
+  line-height: 1.48;
+}
+.sdc-time {
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: #475569;
+  background: #f1f5f9;
+  padding: 2px 6px;
+  border-radius: 5px;
+  text-align: center;
+  white-space: nowrap;
+}
+.sdc-time.accent {
+  background: #ffe4e6;
+  color: #be123c;
+  font-weight: 800;
+}
+.sdc-text {
+  color: #1e293b;
+  word-break: break-word;
+}
+.sdc-free-box {
+  margin-top: 4px;
+  background: #f8fafc;
+  border-left: 3px solid #0f172a;
+  padding: 7px 10px;
+  border-radius: 0 8px 8px 0;
+  font-size: 0.78rem;
+  color: #334155;
+  line-height: 1.45;
+}
+.sleek-day-card.is-highlight .sdc-free-box {
+  border-left-color: #e11d48;
+  background: #fffafa;
+}
+.sdc-footer {
+  border-top: 1px solid #f1f5f9;
+  padding: 8px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  background: #fcfcfd;
+  font-size: 0.76rem;
+  color: #475569;
+}
+.sdc-link {
+  font-weight: 800;
+  color: #2563eb;
+  white-space: nowrap;
+  text-decoration: none !important;
+}
+
+/* Shiori Full Table Page (schedule.html & dayX.html) */
+.shiori-day-box {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 14px;
+  margin-bottom: 16px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+}
+.shiori-day-box.highlight-day6 {
+  border: 1.5px solid #e11d48;
+}
+.shiori-day-header {
+  background: #0f172a;
+  color: #ffffff;
+  padding: 11px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.shiori-day-box.highlight-day6 .shiori-day-header {
+  background: #be123c;
+}
+.shiori-day-title {
+  font-size: 0.92rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.shiori-day-badge {
+  background: rgba(255,255,255,0.18);
+  color: #ffffff;
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 2px 8px;
+  border-radius: 5px;
+  white-space: nowrap;
+}
+.shiori-day-meals {
+  display: flex;
+  gap: 4px;
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+.shiori-meal-pill {
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.14);
+  color: #e2e8f0;
+  white-space: nowrap;
+}
+.shiori-meal-pill.on {
+  background: #dcfce7;
+  color: #166534;
+  font-weight: 800;
+}
+.shiori-rows { display: flex; flex-direction: column; }
+.shiori-row {
+  display: grid;
+  grid-template-columns: 88px 1fr;
+  border-bottom: 1px solid #f1f5f9;
+  font-size: 0.84rem;
+}
+.shiori-row:last-child { border-bottom: none; }
+.shiori-col-meta {
+  background: #f8fafc;
+  border-right: 1px solid #f1f5f9;
+  padding: 10px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.shiori-city { font-weight: 800; color: #0f172a; font-size: 0.8rem; line-height: 1.25; }
+.shiori-time {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #334155;
+  background: #e2e8f0;
+  padding: 1px 5px;
+  border-radius: 4px;
+  width: fit-content;
+}
+.shiori-time.reserved { background: #ffe4e6; color: #be123c; font-weight: 800; }
+.shiori-transport-tag { font-size: 0.68rem; color: #64748b; line-height: 1.25; }
+.shiori-col-detail {
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+}
+.shiori-green-bar {
+  background: #f0fdf4;
+  border-left: 3px solid #16a34a;
+  color: #166534;
+  font-size: 0.8rem;
+  font-weight: 800;
+  padding: 4px 8px;
+  border-radius: 0 4px 4px 0;
+}
+.shiori-red-bar {
+  background: #fff1f2;
+  border-left: 3px solid #e11d48;
+  color: #9f1239;
+  font-size: 0.8rem;
+  font-weight: 800;
+  padding: 4px 8px;
+  border-radius: 0 4px 4px 0;
+}
+.shiori-detail-text {
+  font-size: 0.83rem;
+  color: #334155;
+  line-height: 1.5;
+  margin: 0;
+}
+.shiori-hotel-footer {
+  background: #f8fafc;
+  border-top: 1px solid #e2e8f0;
+  padding: 9px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #334155;
+}
+
+/* Free Time Sightseeing & Food-Walking Section on Day Pages */
+.free-explore-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+@media (max-width: 560px) {
+  .free-explore-grid { grid-template-columns: 1fr; }
+}
+.explore-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 14px;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.03);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.explore-card-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: #0f172a;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #f1f5f9;
+}
+.explore-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding-bottom: 7px;
+  border-bottom: 1px dashed #e2e8f0;
+}
+.explore-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+.explore-item-top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 6px;
+}
+.explore-name {
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+.explore-meta {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #64748b;
+  background: #f1f5f9;
+  padding: 1px 6px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+.explore-desc {
+  font-size: 0.79rem;
+  color: #475569;
+  line-height: 1.45;
+}
+.explore-map-link {
+  font-size: 0.73rem;
+  font-weight: 700;
+  color: #2563eb;
+  margin-top: 1px;
+  display: inline-block;
+}
+
+/* Minimal Guide Directory Grid (Index Page) */
+.guide-tile-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+@media (min-width: 600px) {
+  .guide-tile-grid { grid-template-columns: repeat(3, 1fr); }
+}
+.guide-tile {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  text-decoration: none !important;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.03);
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+.guide-tile:hover {
+  transform: translateY(-1px);
+  border-color: #94a3b8;
+}
+.gt-icon { font-size: 1.25rem; line-height: 1; margin-bottom: 2px; }
+.gt-title { font-size: 0.86rem; font-weight: 800; color: #0f172a; line-height: 1.3; }
+.gt-desc { font-size: 0.72rem; color: #64748b; line-height: 1.35; }
+
+/* Clean Step Timeline on Day Pages */
+.schedule-container { display: flex; flex-direction: column; gap: 8px; }
+.schedule-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 12px;
+  display: grid;
+  grid-template-columns: 58px 1fr;
+  gap: 10px;
+  align-items: start;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.03);
+}
+.schedule-card > .card-thumb-wrap { display: none; }
+.schedule-time-badge {
+  background: #f1f5f9;
+  color: #0f172a;
+  font-size: 0.75rem;
+  font-weight: 800;
+  padding: 4px 6px;
+  border-radius: 6px;
+  text-align: center;
+  width: 100%;
+  display: block;
+}
+.schedule-transit-badge {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #64748b;
+  margin-bottom: 2px;
+}
+.schedule-title {
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1.35;
+  margin: 0 0 3px 0;
+}
+.schedule-desc {
+  font-size: 0.81rem;
+  color: #475569;
+  line-height: 1.5;
+  margin: 0;
+}
+.spot-mime-tip {
+  background: #f8fafc;
+  border-left: 2.5px solid #94a3b8;
+  border-top: none; border-right: none; border-bottom: none;
+  border-radius: 0 4px 4px 0;
+  padding: 5px 8px;
+  font-size: 0.77rem;
+  color: #475569;
+  margin-top: 4px;
+}
+
+  </style>
+<style>
+
+/* ==========================================================================
+   v17 Minimalist Editorial UI (Simple, Stylish, iPhone-First)
+   ========================================================================== */
+:root {
+  --primary-color: #0f172a;       /* Deep Slate Ink */
+  --primary-light: #2563eb;       /* Clean Accent Blue */
+  --secondary-color: #c2410c;     /* Warm Terracotta */
+  --accent-gold: #d97706;
+  --bg-main: #f8fafc;             /* Soft Alabaster */
+  --bg-card: #ffffff;
+  --text-main: #0f172a;
+  --text-sub: #475569;
+  --text-muted: #64748b;
+  --border-color: #e2e8f0;
+  --border-light: #f1f5f9;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.04);
+  --shadow-md: 0 4px 16px rgba(15, 23, 42, 0.06);
+}
+
+body {
+  background-color: #f8fafc;
+  color: #0f172a;
+  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  line-height: 1.6;
+  padding-bottom: 72px;
+}
+
+.container {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 14px;
+}
+
+/* Clean Top Pill Bar */
+.day-quick-pills {
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  padding: 10px 0;
+  margin-bottom: 4px;
+  scrollbar-width: none;
+}
+.day-quick-pills::-webkit-scrollbar { display: none; }
+
+.day-pill {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 6px 11px;
+  min-width: 58px;
+  flex-shrink: 0;
+  color: #475569;
+  text-decoration: none !important;
+  transition: all 0.15s ease;
+}
+.day-pill .dp-day { font-size: 0.76rem; font-weight: 800; line-height: 1.15; }
+.day-pill .dp-date { font-size: 0.66rem; font-weight: 600; color: #94a3b8; margin-top: 2px; }
+.day-pill.active {
+  background: #0f172a;
+  border-color: #0f172a;
+  color: #ffffff;
+}
+.day-pill.active .dp-date { color: #cbd5e1; }
+.day-pill.shiori-highlight {
+  background: #fffbeb;
+  border-color: #fde68a;
+  color: #b45309;
+}
+.day-pill.shiori-highlight.active {
+  background: #b45309;
+  border-color: #b45309;
+  color: #ffffff;
+}
+
+/* Minimalist Hero Header */
+.hero-minimal {
+  background: #0f172a;
+  color: #ffffff;
+  padding: 20px 18px;
+  border-radius: 16px;
+  margin: 4px 0 18px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.12);
+}
+.hero-eyebrow {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: #94a3b8;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+.hero-minimal h1 {
+  font-size: 1.28rem;
+  font-weight: 800;
+  line-height: 1.35;
+  margin-bottom: 6px;
+  letter-spacing: -0.01em;
+}
+.hero-minimal p {
+  font-size: 0.82rem;
+  color: #cbd5e1;
+  line-height: 1.55;
+  margin-bottom: 14px;
+}
+.hero-minimal-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+.hero-chip {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #f8fafc;
+  font-size: 0.74rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+.hero-btn-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+@media (max-width: 440px) {
+  .hero-btn-group { grid-template-columns: 1fr; }
+}
+.btn-sleek {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 0.84rem;
+  font-weight: 700;
+  text-decoration: none !important;
+  white-space: nowrap;
+}
+.btn-sleek.primary { background: #ffffff; color: #0f172a; }
+.btn-sleek.accent { background: rgba(255,255,255,0.14); color: #ffffff; border: 1px solid rgba(255,255,255,0.25); }
+
+/* Section Headers */
+.section { margin-bottom: 24px; }
+.section-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  margin-bottom: 12px;
+}
+@media (min-width: 600px) {
+  .section-header {
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-between;
+  }
+}
+.section-title {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.01em;
+}
+.section-subtitle {
+  font-size: 0.76rem;
+  color: #64748b;
+}
+
+/* Unified Sleek Schedule Cards (Used on Index & Schedule pages) */
+.sleek-day-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.sleek-day-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+  transition: border-color 0.15s ease;
+}
+.sleek-day-card.is-highlight {
+  border: 1.5px solid #e11d48;
+}
+.sdc-top {
+  background: #f8fafc;
+  border-bottom: 1px solid #e2e8f0;
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+.sleek-day-card.is-highlight .sdc-top {
+  background: #fff1f2;
+  border-bottom-color: #fecdd3;
+}
+.sdc-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.sdc-day-tag {
+  background: #0f172a;
+  color: #ffffff;
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 2px 8px;
+  border-radius: 6px;
+  white-space: nowrap;
+}
+.sleek-day-card.is-highlight .sdc-day-tag {
+  background: #e11d48;
+}
+.sdc-route {
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+.sdc-meals {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #64748b;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  padding: 2px 7px;
+  border-radius: 6px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.sdc-body {
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+.sdc-row {
+  display: grid;
+  grid-template-columns: 62px 1fr;
+  gap: 8px;
+  align-items: baseline;
+  font-size: 0.84rem;
+  line-height: 1.48;
+}
+.sdc-time {
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: #475569;
+  background: #f1f5f9;
+  padding: 2px 6px;
+  border-radius: 5px;
+  text-align: center;
+  white-space: nowrap;
+}
+.sdc-time.accent {
+  background: #ffe4e6;
+  color: #be123c;
+  font-weight: 800;
+}
+.sdc-text {
+  color: #1e293b;
+  word-break: break-word;
+}
+.sdc-free-box {
+  margin-top: 4px;
+  background: #f8fafc;
+  border-left: 3px solid #0f172a;
+  padding: 7px 10px;
+  border-radius: 0 8px 8px 0;
+  font-size: 0.78rem;
+  color: #334155;
+  line-height: 1.45;
+}
+.sleek-day-card.is-highlight .sdc-free-box {
+  border-left-color: #e11d48;
+  background: #fffafa;
+}
+.sdc-footer {
+  border-top: 1px solid #f1f5f9;
+  padding: 8px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  background: #fcfcfd;
+  font-size: 0.76rem;
+  color: #475569;
+}
+.sdc-link {
+  font-weight: 800;
+  color: #2563eb;
+  white-space: nowrap;
+  text-decoration: none !important;
+}
+
+/* Shiori Full Table Page (schedule.html & dayX.html) */
+.shiori-day-box {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 14px;
+  margin-bottom: 16px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+}
+.shiori-day-box.highlight-day6 {
+  border: 1.5px solid #e11d48;
+}
+.shiori-day-header {
+  background: #0f172a;
+  color: #ffffff;
+  padding: 11px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.shiori-day-box.highlight-day6 .shiori-day-header {
+  background: #be123c;
+}
+.shiori-day-title {
+  font-size: 0.92rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.shiori-day-badge {
+  background: rgba(255,255,255,0.18);
+  color: #ffffff;
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 2px 8px;
+  border-radius: 5px;
+  white-space: nowrap;
+}
+.shiori-day-meals {
+  display: flex;
+  gap: 4px;
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+.shiori-meal-pill {
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.14);
+  color: #e2e8f0;
+  white-space: nowrap;
+}
+.shiori-meal-pill.on {
+  background: #dcfce7;
+  color: #166534;
+  font-weight: 800;
+}
+.shiori-rows { display: flex; flex-direction: column; }
+.shiori-row {
+  display: grid;
+  grid-template-columns: 88px 1fr;
+  border-bottom: 1px solid #f1f5f9;
+  font-size: 0.84rem;
+}
+.shiori-row:last-child { border-bottom: none; }
+.shiori-col-meta {
+  background: #f8fafc;
+  border-right: 1px solid #f1f5f9;
+  padding: 10px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.shiori-city { font-weight: 800; color: #0f172a; font-size: 0.8rem; line-height: 1.25; }
+.shiori-time {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #334155;
+  background: #e2e8f0;
+  padding: 1px 5px;
+  border-radius: 4px;
+  width: fit-content;
+}
+.shiori-time.reserved { background: #ffe4e6; color: #be123c; font-weight: 800; }
+.shiori-transport-tag { font-size: 0.68rem; color: #64748b; line-height: 1.25; }
+.shiori-col-detail {
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+}
+.shiori-green-bar {
+  background: #f0fdf4;
+  border-left: 3px solid #16a34a;
+  color: #166534;
+  font-size: 0.8rem;
+  font-weight: 800;
+  padding: 4px 8px;
+  border-radius: 0 4px 4px 0;
+}
+.shiori-red-bar {
+  background: #fff1f2;
+  border-left: 3px solid #e11d48;
+  color: #9f1239;
+  font-size: 0.8rem;
+  font-weight: 800;
+  padding: 4px 8px;
+  border-radius: 0 4px 4px 0;
+}
+.shiori-detail-text {
+  font-size: 0.83rem;
+  color: #334155;
+  line-height: 1.5;
+  margin: 0;
+}
+.shiori-hotel-footer {
+  background: #f8fafc;
+  border-top: 1px solid #e2e8f0;
+  padding: 9px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #334155;
+}
+
+/* Free Time Sightseeing & Food-Walking Section on Day Pages */
+.free-explore-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+@media (max-width: 560px) {
+  .free-explore-grid { grid-template-columns: 1fr; }
+}
+.explore-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 14px;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.03);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.explore-card-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: #0f172a;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #f1f5f9;
+}
+.explore-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding-bottom: 7px;
+  border-bottom: 1px dashed #e2e8f0;
+}
+.explore-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+.explore-item-top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 6px;
+}
+.explore-name {
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+.explore-meta {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #64748b;
+  background: #f1f5f9;
+  padding: 1px 6px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+.explore-desc {
+  font-size: 0.79rem;
+  color: #475569;
+  line-height: 1.45;
+}
+.explore-map-link {
+  font-size: 0.73rem;
+  font-weight: 700;
+  color: #2563eb;
+  margin-top: 1px;
+  display: inline-block;
+}
+
+/* Minimal Guide Directory Grid (Index Page) */
+.guide-tile-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+@media (min-width: 600px) {
+  .guide-tile-grid { grid-template-columns: repeat(3, 1fr); }
+}
+.guide-tile {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  text-decoration: none !important;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.03);
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+.guide-tile:hover {
+  transform: translateY(-1px);
+  border-color: #94a3b8;
+}
+.gt-icon { font-size: 1.25rem; line-height: 1; margin-bottom: 2px; }
+.gt-title { font-size: 0.86rem; font-weight: 800; color: #0f172a; line-height: 1.3; }
+.gt-desc { font-size: 0.72rem; color: #64748b; line-height: 1.35; }
+
+/* Clean Step Timeline on Day Pages */
+.schedule-container { display: flex; flex-direction: column; gap: 8px; }
+.schedule-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 12px;
+  display: grid;
+  grid-template-columns: 58px 1fr;
+  gap: 10px;
+  align-items: start;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.03);
+}
+.schedule-card > .card-thumb-wrap { display: none; }
+.schedule-time-badge {
+  background: #f1f5f9;
+  color: #0f172a;
+  font-size: 0.75rem;
+  font-weight: 800;
+  padding: 4px 6px;
+  border-radius: 6px;
+  text-align: center;
+  width: 100%;
+  display: block;
+}
+.schedule-transit-badge {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #64748b;
+  margin-bottom: 2px;
+}
+.schedule-title {
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1.35;
+  margin: 0 0 3px 0;
+}
+.schedule-desc {
+  font-size: 0.81rem;
+  color: #475569;
+  line-height: 1.5;
+  margin: 0;
+}
+.spot-mime-tip {
+  background: #f8fafc;
+  border-left: 2.5px solid #94a3b8;
+  border-top: none; border-right: none; border-bottom: none;
+  border-radius: 0 4px 4px 0;
+  padding: 5px 8px;
+  font-size: 0.77rem;
+  color: #475569;
+  margin-top: 4px;
+}
+
+  </style>
+<style>
+
+/* === v16 iPhone-First Shiori & Responsive Layout Override === */
+.compare-table {
+  white-space: normal !important;
+  word-break: break-word;
+  width: 100%;
+  border-collapse: collapse;
+}
+.btn, .hero-cta-btn, .btn-maps {
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.section-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+@media (min-width: 640px) {
+  .section-header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+/* Shiori Legend Bar */
+.shiori-legend-bar {
+  background: #ffffff;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 10px;
+  padding: 10px 12px;
+  margin-bottom: 14px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #1e293b;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.06);
+}
+
+/* Shiori Day Box (Official Booklet Style - 100% iPhone Width Fit) */
+.shiori-day-box {
+  background: #ffffff;
+  border: 2px solid #1e293b;
+  border-radius: 12px;
+  margin-bottom: 16px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.08);
+}
+.shiori-day-box.highlight-day6 {
+  border-color: #dc2626;
+  box-shadow: 0 4px 14px rgba(220, 38, 38, 0.16);
+}
+.shiori-day-header {
+  background: #1e293b;
+  color: #ffffff;
+  padding: 10px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.shiori-day-box.highlight-day6 .shiori-day-header {
+  background: linear-gradient(90deg, #991b1c 0%, #dc2626 100%);
+}
+.shiori-day-title {
+  font-size: 0.94rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  line-height: 1.3;
+}
+.shiori-day-badge {
+  background: #f59e0b;
+  color: #ffffff;
+  font-size: 0.74rem;
+  font-weight: 900;
+  padding: 2px 7px;
+  border-radius: 5px;
+  white-space: nowrap;
+}
+.shiori-day-meals {
+  display: flex;
+  gap: 4px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+.shiori-meal-pill {
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.18);
+  color: #f8fafc;
+  white-space: nowrap;
+}
+.shiori-meal-pill.on {
+  background: #dcfce7;
+  color: #166534;
+}
+
+/* 2-Column iPhone-Fit Shiori Rows (No Duplicate Columns, Zero Horizontal Overflow) */
+.shiori-rows {
+  display: flex;
+  flex-direction: column;
+}
+.shiori-row {
+  display: grid;
+  grid-template-columns: 92px 1fr;
+  border-bottom: 1px solid #cbd5e1;
+  font-size: 0.85rem;
+}
+.shiori-row:last-child {
+  border-bottom: none;
+}
+.shiori-col-meta {
+  background: #f8fafc;
+  border-right: 1px solid #cbd5e1;
+  padding: 9px 7px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 4px;
+}
+.shiori-city {
+  font-weight: 800;
+  color: #0f2b48;
+  font-size: 0.82rem;
+  line-height: 1.25;
+}
+.shiori-time {
+  display: inline-block;
+  font-size: 0.74rem;
+  font-weight: 800;
+  color: #0369a1;
+  background: #e0f2fe;
+  padding: 2px 5px;
+  border-radius: 4px;
+  width: fit-content;
+  line-height: 1.2;
+}
+.shiori-time.reserved {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+.shiori-transport-tag {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #475569;
+  line-height: 1.25;
+}
+.shiori-col-detail {
+  padding: 9px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+}
+.shiori-green-bar {
+  background: #2e6b3e;
+  color: #ffffff;
+  font-size: 0.8rem;
+  font-weight: 800;
+  padding: 4px 8px;
+  border-radius: 4px;
+  line-height: 1.35;
+}
+.shiori-red-bar {
+  background: #be123c;
+  color: #ffffff;
+  font-size: 0.8rem;
+  font-weight: 800;
+  padding: 4px 8px;
+  border-radius: 4px;
+  line-height: 1.35;
+}
+.shiori-detail-text {
+  font-size: 0.84rem;
+  color: #0f172a;
+  line-height: 1.5;
+  margin: 0;
+  word-break: break-word;
+}
+.shiori-hotel-footer {
+  background: #f1f5f9;
+  border-top: 1.5px solid #94a3b8;
+  padding: 8px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: #0f2b48;
+}
+
+/* Home Page Compact At-a-Glance Schedule List (iPhone 100% Fit) */
+.quick-shiori-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.quick-shiori-card {
+  background: #ffffff;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.06);
+}
+.quick-shiori-card.day6-special {
+  border: 2px solid #dc2626;
+  background: #fffafa;
+}
+.qsc-header {
+  background: #1e293b;
+  color: #ffffff;
+  padding: 7px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+}
+.quick-shiori-card.day6-special .qsc-header {
+  background: linear-gradient(90deg, #991b1b 0%, #dc2626 100%);
+}
+.qsc-day-route {
+  font-size: 0.86rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.qsc-day-badge {
+  background: #f59e0b;
+  color: #ffffff;
+  font-size: 0.72rem;
+  font-weight: 900;
+  padding: 1px 6px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+.qsc-meals {
+  font-size: 0.7rem;
+  font-weight: 700;
+  background: rgba(255,255,255,0.16);
+  padding: 2px 6px;
+  border-radius: 4px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.qsc-body {
+  padding: 8px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 0.82rem;
+  line-height: 1.48;
+  color: #1e293b;
+}
+.qsc-line {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 6px;
+  align-items: baseline;
+}
+.qsc-time {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #0369a1;
+  background: #e0f2fe;
+  padding: 1px 4px;
+  border-radius: 3px;
+  text-align: center;
+  white-space: nowrap;
+}
+.qsc-time.red {
+  color: #b91c1c;
+  background: #fee2e2;
+}
+.qsc-footer {
+  background: #f8fafc;
+  border-top: 1px solid #e2e8f0;
+  padding: 6px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: #334155;
+}
+
+  </style>
+<link crossorigin="" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" rel="stylesheet"/>
+<style>
+    #tour-map {
+      width: 100%;
+      height: 52vh;
+      min-height: 320px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-sm);
+      z-index: 10;
+    }
+    .map-controls-panel {
+      background: #ffffff;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-color);
+      padding: 8px;
+      margin: 8px 0 10px;
+      box-shadow: var(--shadow-sm);
+    }
+    .map-filters-bar {
+      display: flex;
+      gap: 5px;
+      overflow-x: auto;
+      padding-bottom: 4px;
+      margin-bottom: 8px;
+      scrollbar-width: none;
+    }
+    .map-filters-bar::-webkit-scrollbar { display: none; }
+    .nearby-drawer {
+      display: none;
+      background: #ffffff;
+      border: 2px solid var(--primary-light);
+      border-radius: var(--radius-md);
+      padding: 8px;
+      margin-top: 8px;
+      box-shadow: var(--shadow-md);
+      animation: fadeIn 0.2s ease-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+<style id="v17-critical-inline">
+/* ==========================================================================
+   v18 SMART TIMETABLE SYSTEM (8-Day Matrix + Railway-Style Vertical Timeline)
+   ========================================================================== */
+
+/* 1. 8-Day At-A-Glance Matrix (午前 / 午後 / 夜・宿) */
+.tt-matrix-card {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 18px;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+}
+.tt-matrix-header {
+  background: #0f172a;
+  color: #ffffff;
+  padding: 10px 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.tt-matrix-title {
+  font-size: 0.9rem;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+}
+.tt-matrix-sub {
+  font-size: 0.72rem;
+  color: #cbd5e1;
+}
+.tt-legend-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 7px 10px;
+  background: #f8fafc;
+  border-bottom: 1px solid #e2e8f0;
+  font-size: 0.7rem;
+  color: #334155;
+  align-items: center;
+}
+.tt-leg-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-weight: 700;
+}
+.tt-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.tt-dot.free { background: #10b981; }
+.tt-dot.resv { background: #e11d48; }
+.tt-dot.tour { background: #0284c7; }
+.tt-dot.move { background: #64748b; }
+.tt-dot.meal { background: #f59e0b; }
+
+.tt-matrix-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+.tt-matrix-table th {
+  background: #f1f5f9;
+  color: #1e293b;
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 6px 4px;
+  border-bottom: 1px solid #cbd5e1;
+  border-right: 1px solid #e2e8f0;
+  text-align: center;
+}
+.tt-matrix-table th:last-child { border-right: none; }
+.tt-matrix-table th.col-day { width: 22%; }
+.tt-matrix-table th.col-slot { width: 26%; }
+
+.tt-matrix-table tr.tt-m-row {
+  border-bottom: 1px solid #e2e8f0;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.tt-matrix-table tr.tt-m-row:last-child { border-bottom: none; }
+.tt-matrix-table tr.tt-m-row:hover { background: #f8fafc; }
+.tt-matrix-table tr.tt-m-row.highlight-day6 { background: #fff1f2; }
+
+.tt-matrix-table td {
+  padding: 6px 4px;
+  vertical-align: top;
+  border-right: 1px solid #f1f5f9;
+  font-size: 0.72rem;
+  line-height: 1.35;
+  color: #1e293b;
+  word-break: break-word;
+}
+.tt-matrix-table td:last-child { border-right: none; }
+
+.ttm-day-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.ttm-dnum {
+  font-weight: 800;
+  color: #0f172a;
+  font-size: 0.76rem;
+}
+.ttm-dnum.d6 { color: #be123c; }
+.ttm-date {
+  font-size: 0.66rem;
+  color: #475569;
+  font-weight: 700;
+}
+.ttm-city {
+  font-size: 0.66rem;
+  color: #0284c7;
+  font-weight: 700;
+  line-height: 1.2;
+}
+.ttm-meals {
+  font-size: 0.62rem;
+  color: #64748b;
+  background: #f1f5f9;
+  border-radius: 3px;
+  padding: 1px 3px;
+  display: inline-block;
+  margin-top: 1px;
+  width: fit-content;
+}
+
+.ttm-chip {
+  display: block;
+  border-radius: 4px;
+  padding: 2px 4px;
+  margin-bottom: 3px;
+  font-size: 0.68rem;
+  line-height: 1.25;
+  font-weight: 600;
+}
+.ttm-chip:last-child { margin-bottom: 0; }
+.ttm-chip.free {
+  background: #ecfdf5;
+  color: #065f46;
+  border-left: 2.5px solid #10b981;
+  font-weight: 700;
+}
+.ttm-chip.resv {
+  background: #ffe4e6;
+  color: #9f1239;
+  border-left: 2.5px solid #e11d48;
+  font-weight: 800;
+}
+.ttm-chip.tour {
+  background: #f0f9ff;
+  color: #075985;
+  border-left: 2.5px solid #0284c7;
+}
+.ttm-chip.move {
+  background: #f8fafc;
+  color: #334155;
+  border-left: 2.5px solid #94a3b8;
+}
+.ttm-chip.meal {
+  background: #fffbeb;
+  color: #92400e;
+  border-left: 2.5px solid #f59e0b;
+}
+.ttm-hotel {
+  display: block;
+  font-size: 0.64rem;
+  color: #475569;
+  font-weight: 700;
+  margin-top: 2px;
+}
+
+/* 2. Interactive Day Filter Bar */
+.tt-filter-bar {
+  display: flex;
+  gap: 5px;
+  overflow-x: auto;
+  padding: 8px 4px;
+  margin-bottom: 12px;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: rgba(248, 250, 252, 0.96);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid #e2e8f0;
+}
+.tt-filter-bar::-webkit-scrollbar { display: none; }
+.tt-filter-btn {
+  flex: 0 0 auto;
+  border: 1px solid #cbd5e1;
+  background: #ffffff;
+  color: #334155;
+  border-radius: 999px;
+  padding: 5px 11px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.15s;
+  line-height: 1.2;
+}
+.tt-filter-btn.active {
+  background: #0f172a;
+  color: #ffffff;
+  border-color: #0f172a;
+  box-shadow: 0 1px 4px rgba(15, 23, 42, 0.2);
+}
+.tt-filter-btn.d6-btn {
+  border-color: #fda4af;
+  color: #be123c;
+}
+.tt-filter-btn.d6-btn.active {
+  background: #be123c;
+  color: #ffffff;
+  border-color: #be123c;
+}
+
+/* 3. Vertical Time-Axis Timetable Card (tt-day-card) */
+.tt-day-card {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  margin-bottom: 16px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+}
+.tt-day-card.d6-card {
+  border: 1.5px solid #f43f5e;
+}
+.tt-day-head {
+  background: #0f172a;
+  color: #ffffff;
+  padding: 10px 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.tt-day-card.d6-card .tt-day-head {
+  background: linear-gradient(90deg, #881337 0%, #be123c 100%);
+}
+.tt-head-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.tt-day-badge {
+  background: #ffffff;
+  color: #0f172a;
+  font-size: 0.74rem;
+  font-weight: 900;
+  padding: 2px 8px;
+  border-radius: 4px;
+  letter-spacing: 0.02em;
+}
+.tt-day-card.d6-card .tt-day-badge {
+  color: #9f1239;
+}
+.tt-day-date-route {
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: #ffffff;
+}
+.tt-head-right {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.tt-meal-group {
+  display: inline-flex;
+  gap: 3px;
+}
+.tt-meal-tag {
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.14);
+  color: #e2e8f0;
+}
+.tt-meal-tag.has-meal {
+  background: #fef3c7;
+  color: #92400e;
+  font-weight: 800;
+}
+
+/* Vertical Track Nodes */
+.tt-track {
+  padding: 10px 10px 6px 8px;
+}
+.tt-node {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+}
+.tt-time-axis {
+  width: 78px;
+  flex: 0 0 78px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding-right: 12px;
+  padding-top: 2px;
+  padding-bottom: 12px;
+  position: relative;
+  text-align: right;
+  border-right: 2px solid #cbd5e1;
+}
+.tt-node:last-child .tt-time-axis {
+  border-right-color: transparent;
+}
+.tt-node-dot {
+  position: absolute;
+  right: -6px;
+  top: 5px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #64748b;
+  border: 2px solid #ffffff;
+  box-shadow: 0 0 0 1.5px #cbd5e1;
+}
+.tt-node.type-free .tt-node-dot {
+  background: #10b981;
+  box-shadow: 0 0 0 2px #a7f3d0;
+  width: 12px;
+  height: 12px;
+  right: -7px;
+}
+.tt-node.type-resv .tt-node-dot {
+  background: #e11d48;
+  box-shadow: 0 0 0 2px #fecdd3;
+  width: 12px;
+  height: 12px;
+  right: -7px;
+}
+.tt-node.type-tour .tt-node-dot {
+  background: #0284c7;
+  box-shadow: 0 0 0 1.5px #bae6fd;
+}
+.tt-node.type-meal .tt-node-dot {
+  background: #f59e0b;
+  box-shadow: 0 0 0 1.5px #fde68a;
+}
+
+.tt-period-label {
+  font-size: 0.64rem;
+  font-weight: 800;
+  padding: 1px 4px;
+  border-radius: 3px;
+  background: #f1f5f9;
+  color: #475569;
+  margin-bottom: 2px;
+  line-height: 1.1;
+}
+.tt-node.type-free .tt-period-label {
+  background: #d1fae5;
+  color: #065f46;
+}
+.tt-node.type-resv .tt-period-label {
+  background: #ffe4e6;
+  color: #9f1239;
+}
+.tt-clock-main {
+  font-size: 0.82rem;
+  font-weight: 900;
+  color: #0f172a;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.15;
+}
+.tt-node.type-resv .tt-clock-main {
+  color: #be123c;
+}
+.tt-node.type-free .tt-clock-main {
+  color: #047857;
+}
+.tt-clock-sub {
+  font-size: 0.64rem;
+  color: #64748b;
+  font-weight: 600;
+  line-height: 1.15;
+  margin-top: 1px;
+}
+
+/* Right Content Box of each Node */
+.tt-event-card {
+  flex: 1;
+  min-width: 0;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-left: 3.5px solid #94a3b8;
+}
+.tt-node.type-free .tt-event-card {
+  background: #f0fdf4;
+  border-color: #bbf7d0;
+  border-left: 4px solid #10b981;
+}
+.tt-node.type-resv .tt-event-card {
+  background: #fff1f2;
+  border-color: #fecdd3;
+  border-left: 4px solid #e11d48;
+}
+.tt-node.type-tour .tt-event-card {
+  background: #f0f9ff;
+  border-color: #bae6fd;
+  border-left: 3.5px solid #0284c7;
+}
+.tt-node.type-meal .tt-event-card {
+  background: #fffbeb;
+  border-color: #fde68a;
+  border-left: 3.5px solid #f59e0b;
+}
+
+.tt-event-top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 4px;
+}
+.tt-badge {
+  font-size: 0.66rem;
+  font-weight: 800;
+  padding: 1px 6px;
+  border-radius: 4px;
+  background: #e2e8f0;
+  color: #1e293b;
+}
+.tt-node.type-free .tt-badge {
+  background: #10b981;
+  color: #ffffff;
+}
+.tt-node.type-resv .tt-badge {
+  background: #e11d48;
+  color: #ffffff;
+}
+.tt-node.type-tour .tt-badge {
+  background: #0284c7;
+  color: #ffffff;
+}
+.tt-node.type-meal .tt-badge {
+  background: #d97706;
+  color: #ffffff;
+}
+.tt-city-pill {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #475569;
+}
+.tt-event-title {
+  font-size: 0.86rem;
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1.35;
+  margin-bottom: 3px;
+}
+.tt-event-desc {
+  font-size: 0.77rem;
+  color: #334155;
+  line-height: 1.45;
+  margin: 0;
+}
+
+/* Inline Free-Time Spot Grid inside Timetable Node */
+.tt-free-spots {
+  margin-top: 7px;
+  padding-top: 6px;
+  border-top: 1px dashed #86efac;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+}
+.tt-spot-box {
+  background: #ffffff;
+  border: 1px solid #d1fae5;
+  border-radius: 6px;
+  padding: 6px 8px;
+}
+.tt-spot-box-title {
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: #065f46;
+  margin-bottom: 3px;
+  display: block;
+}
+.tt-spot-list {
+  margin: 0;
+  padding-left: 13px;
+  font-size: 0.72rem;
+  color: #1e293b;
+  line-height: 1.4;
+}
+.tt-spot-list li {
+  margin-bottom: 2px;
+}
+.tt-spot-list li:last-child {
+  margin-bottom: 0;
+}
+
+/* Day Footer (Hotel + Link) */
+.tt-day-foot {
+  background: #f8fafc;
+  border-top: 1px solid #e2e8f0;
+  padding: 8px 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 0.76rem;
+  color: #1e293b;
+}
+.tt-hotel-info {
+  font-weight: 700;
+  color: #0f172a;
+}
+.tt-hotel-meta {
+  font-size: 0.68rem;
+  color: #475569;
+  display: block;
+}
+.tt-detail-link {
+  background: #0f172a;
+  color: #ffffff !important;
+  text-decoration: none;
+  font-size: 0.73rem;
+  font-weight: 800;
+  padding: 5px 10px;
+  border-radius: 6px;
+  white-space: nowrap;
+}
+
+@media (max-width: 520px) {
+  .tt-free-spots {
+    grid-template-columns: 1fr;
+  }
+  .tt-time-axis {
+    width: 68px;
+    flex: 0 0 68px;
+    padding-right: 9px;
+  }
+  .tt-clock-main {
+    font-size: 0.76rem;
+  }
+  .tt-event-card {
+    margin-left: 8px;
+    padding: 7px 8px;
+  }
+}
+
+
+/* ==========================================================================
+   v19 COMPREHENSIVE UX ENHANCEMENTS (Confirmed Events Bar + Active Nav + Clean UI)
+   ========================================================================== */
+
+/* 1. 4-Key Time-Locked Events Quick Strip (集合・OP・予約済) */
+.tt-confirmed-strip {
+  background: #ffffff;
+  border: 1px solid #fecdd3;
+  border-left: 4px solid #e11d48;
+  border-radius: 10px;
+  padding: 10px 12px;
+  margin-bottom: 14px;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+}
+.tt-cs-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+.tt-cs-title {
+  font-size: 0.84rem;
+  font-weight: 900;
+  color: #9f1239;
+  letter-spacing: 0.01em;
+}
+.tt-cs-sub {
+  font-size: 0.68rem;
+  color: #64748b;
+  font-weight: 600;
+}
+.tt-cs-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 6px;
+}
+.tt-cs-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 7px;
+  background: #fff1f2;
+  border: 1px solid #ffe4e6;
+  border-radius: 7px;
+  padding: 6px 8px;
+  text-decoration: none;
+  color: #1e293b;
+  transition: background 0.15s;
+}
+.tt-cs-item:hover {
+  background: #ffe4e6;
+}
+.tt-cs-time {
+  background: #e11d48;
+  color: #ffffff;
+  font-size: 0.68rem;
+  font-weight: 900;
+  padding: 2px 6px;
+  border-radius: 4px;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.25;
+}
+.tt-cs-time.op-gondola {
+  background: #0284c7;
+}
+.tt-cs-body {
+  font-size: 0.73rem;
+  line-height: 1.3;
+}
+.tt-cs-body strong {
+  color: #0f172a;
+  font-weight: 800;
+  display: block;
+}
+.tt-cs-body span {
+  font-size: 0.66rem;
+  color: #475569;
+}
+
+@media (max-width: 520px) {
+  .tt-cs-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 2. Active Day Quick Pill Highlight */
+.day-quick-pills a.day-pill.active-pill {
+  background: #0f172a !important;
+  color: #ffffff !important;
+  border-color: #0f172a !important;
+  font-weight: 900 !important;
+}
+.day-quick-pills a.day-pill.d6.active-pill {
+  background: #be123c !important;
+  color: #ffffff !important;
+  border-color: #be123c !important;
+}
+
+/* 3. Clean Editorial Summary Box (replaces noisy legacy mime-callout) */
+.mime-callout {
+  background: #f8fafc !important;
+  border: 1px solid #cbd5e1 !important;
+  border-left: 4px solid #0f172a !important;
+  border-radius: 10px !important;
+  padding: 10px 12px !important;
+  margin-bottom: 14px !important;
+  box-shadow: none !important;
+}
+.mime-callout-avatar {
+  display: none !important;
+}
+.mime-callout-title {
+  font-size: 0.84rem !important;
+  font-weight: 800 !important;
+  color: #0f172a !important;
+  margin-bottom: 4px !important;
+}
+.mime-callout-text {
+  font-size: 0.76rem !important;
+  color: #334155 !important;
+  line-height: 1.5 !important;
+  margin: 0 !important;
+}
+</style></head>
+<body>
+<main class="container" style="padding-top: 6px;"><div class="day-quick-pills"><a class="day-pill" href="index.html">🏠 トップ</a><a class="day-pill" href="schedule.html">📋 しおり表</a><a class="day-pill" href="day1.html">Day 1 (11/15)</a><a class="day-pill" href="day2.html">Day 2 (11/16)</a><a class="day-pill" href="day3.html">Day 3 (11/17)</a><a class="day-pill" href="day4.html">Day 4 (11/18)</a><a class="day-pill" href="day5.html">Day 5 (11/19)</a><a class="day-pill d6" href="day6.html">Day 6 (11/20)</a><a class="day-pill" href="day7.html">Day 7 (11/21)</a><a class="day-pill" href="day8.html">Day 8 (11/22)</a><a class="day-pill active-pill" href="tour-map.html">🗺️ MAP</a></div>
+<!-- Hero Header -->
+<div class="hero-card" style="background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);">
+<span class="hero-tag">🗺️ インタラクティブGPSナビ</span>
+<h2 class="hero-title">全体ツアールートMAP ＆ 確定宿泊ホテル3軒</h2>
+<p class="hero-subtitle">
+        ミラノ・ベローナ・ベネチア・フィレンツェ・ピサ・サンジミニャーノ・ローマの観光地、レストラン、お土産店、宿泊ホテル候補（メストレ・トスカーナ・テルミニ駅周辺）を完全網羅！
+      </p>
+</div>
+<!-- Map Container -->
+<div id="tour-map"></div>
+<!-- Map Controls Panel -->
+<div class="map-controls-panel">
+<!-- Category Filter Chips -->
+<div class="map-filters-bar">
+<button class="day-chip map-filter-cat active" data-cat="all">全て表示</button>
+<button class="day-chip map-filter-cat" data-cat="sightseeing">🏛️ 観光・名所</button>
+<button class="day-chip map-filter-cat" data-cat="dining">🍽️ グルメ・カフェ</button>
+<button class="day-chip map-filter-cat" data-cat="souvenir">🎁 お土産・免税</button>
+<button class="day-chip map-filter-cat" data-cat="hotel">🏨 確定宿泊ホテル</button>
+</div>
+<!-- Day Navigation and View Controls -->
+<div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
+<div style="display:flex; gap:4px; align-items:center;">
+<button class="btn btn-secondary" id="map-prev-day" style="padding:3px 8px; font-size:0.72rem;">◀ 前日</button>
+<span id="map-day-indicator" style="font-size:0.78rem; font-weight:800; color:var(--primary-color);">📅 Day 2: ミラノ→ベローナ→ベネチア</span>
+<button class="btn btn-secondary" id="map-next-day" style="padding:3px 8px; font-size:0.72rem;">翌日 ▶</button>
+</div>
+<div style="display:flex; gap:4px;">
+<button class="btn btn-primary" id="btn-zoom-city" style="padding:3px 8px; font-size:0.72rem;">🔍 都市拡大</button>
+<button class="btn btn-secondary" id="btn-zoom-italy" style="padding:3px 8px; font-size:0.72rem;">🇮🇹 全体俯瞰</button>
+</div>
+</div>
+<!-- Nearby Facilities Drawer (Appears when a pin is tapped) -->
+<div class="nearby-drawer" id="nearby-drawer">
+<div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px; border-bottom:1px solid var(--border-color); padding-bottom:4px;">
+<span id="nearby-spot-title" style="font-size:0.8rem; font-weight:800; color:var(--primary-color);">📍 周辺スポット情報</span>
+<button class="btn btn-secondary" id="btn-close-nearby" style="padding:1px 6px; font-size:0.68rem;">✕ 閉じる</button>
+</div>
+<div id="nearby-items-grid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:5px;"></div>
+</div>
+<!-- Current Day Summary Box -->
+<div id="day-summary-box" style="background:#f8fafc; border-radius:var(--radius-sm); border:1px solid var(--border-color); padding:6px 8px; margin-top:8px; display:flex; justify-content:space-between; align-items:center;">
+<div>
+<strong id="day-summary-title" style="font-size:0.78rem; color:var(--primary-color);">Day 2: ミラノ半日観光 → ベローナ散策 → ベネチア歓迎ディナー</strong><br/>
+<small id="day-summary-desc" style="color:var(--text-muted); font-size:0.68rem;">移動: 専用バス約290km | 朝ホテル込 / 昼各自 / 夕ツアー込</small>
+</div>
+<a class="btn btn-primary" href="day2.html" id="day-summary-link" style="font-size:0.68rem; padding:3px 8px; white-space:nowrap;">Day 2 しおり →</a>
+</div>
+</div>
+<!-- Confirmed Hotels Information Card (しおり・ホテル一覧PDF準拠) -->
+<section class="section" style="margin-top:14px;">
+<div class="section-header">
+<h2 class="section-title">🏨 ご利用確定ホテル一覧（全3軒・4つ星）</h2>
+<span class="section-subtitle">公式「しおり.pdf」「ホテル一覧.pdf」確定情報</span>
+</div>
+<div class="cards-grid">
+<!-- 1. Venice Mestre: Smart Holiday -->
+<div class="spot-card" style="border: 2px solid #0284c7;">
+<div class="spot-body">
+<span class="hero-tag" style="background:#0284c7; color:#fff;">Day 2 (11/16 月) 1泊 • ベネチア（メストレ地区）</span>
+<h3 class="spot-name-ja">Smart Holiday（スマート ホリデイ）</h3>
+<span class="spot-name-it">Via Dell 'Essiccatoio 38, Venice, 30173, ITALY | TEL: (39) 041 61 1088</span>
+<p class="spot-desc">
+              ● <strong>グレード：</strong> 4つ星（全90室・4階建 / チェックイン14:00・アウト11:00）<br/>
+              ● <strong>設備○：</strong> Wi-Fi客室無料、<strong>バスタブ○</strong>、シャワー○、ドライヤー○、<strong>石鹸/シャンプー○</strong>、セーフティボックス○、ミニバー○<br/>
+              ● <strong>設備×：</strong> 歯ブラシ×、湯沸かしポット×、冷蔵庫×<br/>
+              ● <strong>宿泊税：</strong> 1泊1名 €0.5〜€5.0 目安
+            </p>
+<a class="btn btn-primary" href="https://maps.google.com/?q=Hotel+Smart+Holiday+Via+Dell+Essiccatoio+38+Mestre" style="margin-top:auto;" target="_blank">📍 Google Mapsで開く →</a>
+</div>
+</div>
+<!-- 2. Prato (Florence): President Prato -->
+<div class="spot-card" style="border: 2px solid #7c3aed;">
+<div class="spot-body">
+<span class="hero-tag" style="background:#7c3aed; color:#fff;">Day 3 &amp; 4 (11/17-18) 2連泊 • プラート（フィレンツェ代替都市）</span>
+<h3 class="spot-name-ja">President Prato（プレジデント プラート）</h3>
+<span class="spot-name-it">Via Arrigo Simintendi 20, Prato, 59100, ITALY | TEL: (+39) 05 743 0251</span>
+<p class="spot-desc">
+              ● <strong>グレード：</strong> 4つ星（全78室・4階建 / チェックイン15:00・アウト11:00）<br/>
+              ● <strong>設備○：</strong> Wi-Fi全館無料、シャワー○、ドライヤー○、セーフティボックス○、ミニバー○、<strong>冷蔵庫○</strong>、バスタブ△（一部）<br/>
+              ● <strong>設備×：</strong> 歯ブラシ×、<strong>石鹸/シャンプー×（持参品活用）</strong>、湯沸かしポット×、テレビ×<br/>
+              ● <strong>宿泊税：</strong> 1泊1名 €1.50〜€2.00 目安
+            </p>
+<a class="btn btn-primary" href="https://maps.google.com/?q=Hotel+President+Via+Arrigo+Simintendi+20+Prato" style="margin-top:auto;" target="_blank">📍 Google Mapsで開く →</a>
+</div>
+</div>
+<!-- 3. Rome: Mercure Roma Centro St. John -->
+<div class="spot-card" style="border: 2px solid #dc2626;">
+<div class="spot-body">
+<span class="hero-tag" style="background:#dc2626; color:#fff;">Day 5 &amp; 6 (11/19-20) 2連泊 • ローマ（テルミニ駅周辺）</span>
+<h3 class="spot-name-ja">Mercure Roma Centro St. John（メルキュール ローマ チェントロ セントジョン）</h3>
+<span class="spot-name-it">Via Matteo Boiardo 30, Rome, 00185, ITALY | TEL: (39) 069 799 7045</span>
+<p class="spot-desc">
+              ● <strong>神立地：</strong> <strong>地下鉄A線Manzoni駅徒歩5分・コロッセオまで徒歩約12〜15分！</strong>（6日目朝8:30のコロッセオ予約に最高の立地！）<br/>
+              ● <strong>設備○：</strong> Wi-Fi全館無料、<strong>湯沸かしポット○</strong>、テレビ○、シャワー○、ドライヤー○、セーフティボックス○、バスタブ△<br/>
+              ● <strong>設備○追加：</strong> <strong>石鹸/シャンプー○</strong>、<strong>ポット○</strong>、テレビ○<br/>● <strong>設備×：</strong> 冷蔵庫×（歯ブラシ・ミニバーは空欄/不明）<br/>
+              ● <strong>宿泊税：</strong> 1泊1名 €4.00〜€10.00 目安
+            </p>
+<a class="btn btn-primary" href="https://maps.google.com/?q=Mercure+Roma+Centro+St+John+Via+Matteo+Boiardo+30+Rome" style="margin-top:auto;" target="_blank">📍 Google Mapsで開く →</a>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Tab Bar (iOS Safe Area Ready) -->
+<!-- STREAMLINED 5-ITEM BOTTOM TAB BAR -->
+<!-- FULL 9-ITEM BOTTOM TAB BAR (全ページ完全統一ナビゲーション) -->
+<!-- FULL 9-ITEM BOTTOM TAB BAR (全ページ完全統一ナビゲーション) -->
+<!-- FULL 9-ITEM BOTTOM TAB BAR (全ページ完全統一ナビゲーション) -->
+<nav class="bottom-tab-bar">
+<a class="tab-item" href="index.html">
+<span class="tab-icon">🏠</span>
+<span class="tab-label">ホーム</span>
+</a>
+<a class="tab-item" href="schedule.html">
+<span class="tab-icon">📋</span>
+<span class="tab-label">しおり表</span>
+</a>
+<!-- Day Selection Drawer -->
+<details class="day-popover-details" id="day-popover-details">
+<summary class="tab-item">
+<span class="tab-icon">📅</span>
+<span class="tab-label">日別詳細</span>
+</summary>
+<div class="day-popover-backdrop"></div>
+<div class="day-popover-dropdown">
+<div class="day-popover-header">
+<span class="day-popover-title">📅 全8日間 日程詳細 ＆ しおり一覧</span>
+<button aria-label="閉じる" class="day-popover-close" type="button">✕</button>
+</div>
+<a class="btn btn-primary" href="schedule.html" style="width:100%; margin-bottom:4px; background:#d97706;">📋 全8日間「しおり型タイムスケジュール表」を一気見 →</a>
+<div class="day-popover-grid">
+<a class="day-popover-item" href="day1.html"><span class="dp-badge">Day 1</span> 11/15(日) 関空15:25集合・17:55発</a>
+<a class="day-popover-item" href="day2.html"><span class="dp-badge">Day 2</span> 11/16(月) ミラノ → ベローナ → ベネチア</a>
+<a class="day-popover-item" href="day3.html"><span class="dp-badge">Day 3</span> 11/17(火) ベネチア → スーパー → プラート</a>
+<a class="day-popover-item" href="day4.html"><span class="dp-badge">Day 4</span> 11/18(水) ミケランジェロ広場 ＆ フィレンツェ10h</a>
+<a class="day-popover-item" href="day5.html"><span class="dp-badge">Day 5</span> 11/19(木) サンジミニャーノ → ローマ観光</a>
+<a class="day-popover-item" href="day6.html" style="border-color:#dc2626; background:#fff1f2;"><span class="dp-badge" style="background:#dc2626;">Day 6</span> 11/20(金) コロッセオ・バチカン・夕ミサ</a>
+<a class="day-popover-item" href="day7.html"><span class="dp-badge">Day 7</span> 11/21(土) ローマ自由 → 15:10 FCO発</a>
+<a class="day-popover-item" href="day8.html"><span class="dp-badge">Day 8</span> 11/22(日) 16:25 関空帰着・解散</a>
+</div>
+</div>
+</details>
+<a class="tab-item active" href="tour-map.html">
+<span class="tab-icon">🗺️</span>
+<span class="tab-label">MAP</span>
+</a>
+<a class="tab-item" href="sightseeing-guide.html">
+<span class="tab-icon">🏛️</span>
+<span class="tab-label">観光</span>
+</a>
+<a class="tab-item" href="free-meal-guide.html">
+<span class="tab-icon">🍽️</span>
+<span class="tab-label">グルメ</span>
+</a>
+<a class="tab-item" href="souvenir-guide.html">
+<span class="tab-icon">🎁</span>
+<span class="tab-label">お土産</span>
+</a>
+<a class="tab-item" href="tips-survival.html">
+<span class="tab-icon">🚆</span>
+<span class="tab-label">サバイバル</span>
+</a>
+<a class="tab-item" href="phrasebook.html">
+<span class="tab-icon">🗣️</span>
+<span class="tab-label">会話</span>
+</a>
+</nav>
+<!-- Site Footer -->
+<footer class="site-footer">
+<div class="container footer-inner">
+<div>
+<strong>🇮🇹 Kenta &amp; Megumi's Italian Honeymoon Portal</strong><br/>
+<span style="color:#64748b;">HIS Tour OI-KMI2811 (2026/11/15 - 11/22) | 監修: YouTube「イタリアガイドみめ (@mimeitalygaido)」</span>
+</div>
+<div style="display:flex; gap:6px; flex-wrap:wrap;">
+<a href="index.html">ホーム</a>
+<a href="beginner-guide.html">初心者安心</a>
+<a href="tour-map.html">MAP</a>
+<a href="sightseeing-guide.html">観光</a>
+<a href="phrasebook.html">会話</a>
+<a href="free-meal-guide.html">グルメ</a>
+<a href="souvenir-guide.html">お土産</a>
+</div>
+</div>
+</footer>
+<script crossorigin="" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="app.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (typeof L === 'undefined') return;
+
+      const map = L.map('tour-map', {
+        zoomControl: true,
+        scrollWheelZoom: true
+      }).setView([43.2, 11.8], 6);
+
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '© OpenStreetMap contributors'
+      }).addTo(map);
+
+            const dayConfig = {
+        1: { title: "Day 1: 関空15:25集合 &rarr; 17:55発(QR803) &rarr; ドーハ乗継（機中泊）", desc: "移動: カタール航空 QR803便（約11h40m） | 食事: 機内食", center: [45.6300, 8.7230], zoom: 11, link: "day1.html" },
+        2: { title: "Day 2: ミラノ06:55着・自由行動(3h) &rarr; ベローナ(1h) &rarr; ベネチア【Smart Holiday泊】", desc: "移動: 専用バス | 朝× / 昼各自 / 夕3コースディナー込", center: [45.4642, 9.1919], zoom: 12, link: "day2.html" },
+        3: { title: "Day 3: 専用車でベネチア本島へ・自由行動(約4h/9:30頃ゴンドラOP) &rarr; 地元スーパー立寄 &rarr; プラート【President Prato泊】", desc: "移動: 専用車(246km/約3時間45分) | 朝○ / 昼各自 / 夕各自", center: [45.4342, 12.3389], zoom: 13, link: "day3.html" },
+        4: { title: "Day 4: ◎ミケランジェロ広場 ＆ フィレンツェ自由10h（★10:30 ウフィツィ美術館予約済）【President Prato連泊】", desc: "移動: 専用バス＆徒歩 | 朝○ / 昼各自 / 夕各自", center: [43.7731, 11.2560], zoom: 13, link: "day4.html" },
+        5: { title: "Day 5: サンジミニャーノ(1h) &rarr; 半々ピザ昼食 &rarr; バチカン・ローマ4h観光【Mercure泊】", desc: "移動: 専用バス(349km) | 朝○ / 昼マルゲリータ＆カプリチョーザ込 / 夕各自", center: [43.4677, 11.0433], zoom: 12, link: "day5.html" },
+        6: { title: "Day 6: 【確定】8:30コロッセオ＆パラティーノ &rarr; 15:00バチカン美術館 &rarr; 16:00サンピエトロ &rarr; 18:00夕のミサ", desc: "移動: ホテルから徒歩＆地下鉄A線(Manzoni&rarr;Ottaviano) | 朝○ / 昼各自 / 夕各自", center: [41.8950, 12.4800], zoom: 13, link: "day6.html" },
+        7: { title: "Day 7: 出発までローマ自由行動 &rarr; 15:10 FCO空港発(QR132) &rarr; ドーハ乗継", desc: "移動: 専用バス &rarr; QR132便 | 朝○ / 昼各自 / 夕機内食", center: [41.7999, 12.2462], zoom: 11, link: "day7.html" },
+        8: { title: "Day 8: ドーハ00:55発(QR802) &rarr; 16:25 関西国際空港着・解散", desc: "移動: QR802便（約9h30m） | 食事: 機内食 / ご自宅", center: [34.4347, 135.2440], zoom: 10, link: "day8.html" }
+      };
+
+      const allSpots = [
+  {
+    "id": "h_confirmed_smart_holiday",
+    "day": 2,
+    "city": "Mestre (Venice)",
+    "cat": "hotel",
+    "name": "【確定ホテル】Smart Holiday（スマート ホリデイ）",
+    "lat": 45.5015,
+    "lng": 12.2468,
+    "tip": "Day 2確定4つ星ホテル！Via Dell 'Essiccatoio 38 / バスタブ○・シャンプー○・ポット×",
+    "url": "https://maps.google.com/?q=Hotel+Smart+Holiday+Via+Dell+Essiccatoio+38+Mestre"
+  },
+  {
+    "id": "h_confirmed_president_prato",
+    "day": 3,
+    "city": "Prato (Florence)",
+    "cat": "hotel",
+    "name": "【確定ホテル】President Prato（プレジデント プラート 2連泊）",
+    "lat": 43.8778,
+    "lng": 11.1012,
+    "tip": "Day 3・4確定4つ星ホテル！Via Arrigo Simintendi 20 / 冷蔵庫○・シャンプー×・ポット×",
+    "url": "https://maps.google.com/?q=Hotel+President+Via+Arrigo+Simintendi+20+Prato"
+  },
+  {
+    "id": "h_confirmed_mercure_st_john",
+    "day": 5,
+    "city": "Rome (Manzoni / Termini)",
+    "cat": "hotel",
+    "name": "【確定ホテル】Mercure Roma Centro St. John（2連泊）",
+    "lat": 41.8888,
+    "lng": 12.5042,
+    "tip": "Day 5・6確定4つ星ホテル！Manzoni駅徒歩5分・コロッセオへ徒歩12分・湯沸かしポット○！",
+    "url": "https://maps.google.com/?q=Mercure+Roma+Centro+St+John+Via+Matteo+Boiardo+30+Rome"
+  },
+  {
+    "id": "h_confirmed_mercure_st_john_d6",
+    "day": 6,
+    "city": "Rome (Manzoni / Termini)",
+    "cat": "hotel",
+    "name": "【確定ホテル】Mercure Roma Centro St. John（6日目拠点）",
+    "lat": 41.8888,
+    "lng": 12.5042,
+    "tip": "8:30コロッセオへ徒歩直行！15:00バチカンへはManzoni駅から地下鉄A線直通！",
+    "url": "https://maps.google.com/?q=Mercure+Roma+Centro+St+John+Via+Matteo+Boiardo+30+Rome"
+  },
+  {
+    "id": "s_duomo",
+    "day": 2,
+    "city": "Milan",
+    "cat": "sightseeing",
+    "name": "ミラノ大聖堂 (Duomo)",
+    "lat": 45.4642,
+    "lng": 9.1919,
+    "tip": "肩・膝隠すストール必須。ハト餌・ミサンガ売り完全無視！",
+    "url": "https://maps.google.com/?q=Duomo+di+Milano"
+  },
+  {
+    "id": "s_galleria",
+    "day": 2,
+    "city": "Milan",
+    "cat": "sightseeing",
+    "name": "ガッレリア・アーケード",
+    "lat": 45.4658,
+    "lng": 9.19,
+    "tip": "牡牛モザイクで踵3回転幸運ジンクス！",
+    "url": "https://maps.google.com/?q=Galleria+Vittorio+Emanuele+II+Milano"
+  },
+  {
+    "id": "s_scala",
+    "day": 2,
+    "city": "Milan",
+    "cat": "sightseeing",
+    "name": "スカラ座 (歌劇場)",
+    "lat": 45.4674,
+    "lng": 9.1895,
+    "tip": "オペラの聖地。合唱・音楽好き必見。",
+    "url": "https://maps.google.com/?q=Teatro+alla+Scala+Milano"
+  },
+  {
+    "id": "s_sforzesco",
+    "day": 2,
+    "city": "Milan",
+    "cat": "sightseeing",
+    "name": "スフォルツェスコ城",
+    "lat": 45.4705,
+    "lng": 9.1793,
+    "tip": "ミケランジェロ最後のピエタ像収蔵。中庭見学無料。",
+    "url": "https://maps.google.com/?q=Castello+Sforzesco+Milano"
+  },
+  {
+    "id": "d_luini",
+    "day": 2,
+    "city": "Milan",
+    "cat": "dining",
+    "name": "ルイーニ (包み揚げピザ)",
+    "lat": 45.4656,
+    "lng": 9.1925,
+    "tip": "熱々モッツァレラ＆トマト！ウェットティッシュ必須。",
+    "url": "https://maps.google.com/?q=Luini+Panzerotti+Milano"
+  },
+  {
+    "id": "d_spontini",
+    "day": 2,
+    "city": "Milan",
+    "cat": "dining",
+    "name": "スポンティーニ (厚焼きピザ)",
+    "lat": 45.4657,
+    "lng": 9.1928,
+    "tip": "カリカリふわふわのマルゲリータ！",
+    "url": "https://maps.google.com/?q=Spontini+Duomo+Milano"
+  },
+  {
+    "id": "g_rinascente",
+    "day": 2,
+    "city": "Milan",
+    "cat": "souvenir",
+    "name": "リナシェンテ百貨店",
+    "lat": 45.4651,
+    "lng": 9.1932,
+    "tip": "7階フードホールでお土産＆綺麗トイレ。",
+    "url": "https://maps.google.com/?q=Rinascente+Milano"
+  },
+  {
+    "id": "s_giulietta",
+    "day": 2,
+    "city": "Verona",
+    "cat": "sightseeing",
+    "name": "ジュリエットの家",
+    "lat": 45.4419,
+    "lng": 10.9984,
+    "tip": "右胸に触れると永遠の愛の幸運！",
+    "url": "https://maps.google.com/?q=Casa+di+Giulietta+Verona"
+  },
+  {
+    "id": "s_arena",
+    "day": 2,
+    "city": "Verona",
+    "cat": "sightseeing",
+    "name": "アレーナ (古代闘技場)",
+    "lat": 45.439,
+    "lng": 10.9944,
+    "tip": "紀元1世紀の古代闘技場。",
+    "url": "https://maps.google.com/?q=Arena+di+Verona"
+  },
+  {
+    "id": "s_sanmarco",
+    "day": 3,
+    "city": "Venice",
+    "cat": "sightseeing",
+    "name": "サン・マルコ大聖堂",
+    "lat": 45.4342,
+    "lng": 12.3389,
+    "tip": "黄金のモザイク天井。バールでトイレ利用。",
+    "url": "https://maps.google.com/?q=Piazza+San+Marco+Venezia"
+  },
+  {
+    "id": "s_ducale",
+    "day": 3,
+    "city": "Venice",
+    "cat": "sightseeing",
+    "name": "ドゥカーレ宮殿＆ため息橋",
+    "lat": 45.4338,
+    "lng": 12.3406,
+    "tip": "ゴンドラでため息橋下キス＝永遠の愛！",
+    "url": "https://maps.google.com/?q=Palazzo+Ducale+Venezia"
+  },
+  {
+    "id": "d_florian",
+    "day": 3,
+    "city": "Venice",
+    "cat": "dining",
+    "name": "カフェ・フローリアン",
+    "lat": 45.4336,
+    "lng": 12.3382,
+    "tip": "1720年創業世界最古カフェ。",
+    "url": "https://maps.google.com/?q=Caffe+Florian+Venezia"
+  },
+  {
+    "id": "d_domori",
+    "day": 3,
+    "city": "Venice",
+    "cat": "dining",
+    "name": "カンティーナ・ド・モーリ",
+    "lat": 45.4385,
+    "lng": 12.334,
+    "tip": "最古バカロ。チケッティと白ワイン。",
+    "url": "https://maps.google.com/?q=Cantina+Do+Mori+Venezia"
+  },
+  {
+    "id": "s_rialto",
+    "day": 3,
+    "city": "Venice",
+    "cat": "sightseeing",
+    "name": "リアルト橋",
+    "lat": 45.438,
+    "lng": 12.3359,
+    "tip": "大運河パノラマ絶景！スリ注意。",
+    "url": "https://maps.google.com/?q=Ponte+di+Rialto+Venezia"
+  },
+  {
+    "id": "s_michelangelo",
+    "day": 4,
+    "city": "Florence",
+    "cat": "sightseeing",
+    "name": "ミケランジェロ広場",
+    "lat": 43.7629,
+    "lng": 11.265,
+    "tip": "フィレンツェ全景パノラマ記念撮影！",
+    "url": "https://maps.google.com/?q=Piazzale+Michelangelo+Firenze"
+  },
+  {
+    "id": "s_duomo_fl",
+    "day": 4,
+    "city": "Florence",
+    "cat": "sightseeing",
+    "name": "フィレンツェ大聖堂",
+    "lat": 43.7731,
+    "lng": 11.256,
+    "tip": "赤褐色のクーポラと大理石ファサード。",
+    "url": "https://maps.google.com/?q=Duomo+Firenze"
+  },
+  {
+    "id": "s_vecchio",
+    "day": 4,
+    "city": "Florence",
+    "cat": "sightseeing",
+    "name": "ポンテ・ヴェッキオ",
+    "lat": 43.768,
+    "lng": 11.2532,
+    "tip": "最古の橋。金銀ジュエリー店街。",
+    "url": "https://maps.google.com/?q=Ponte+Vecchio+Firenze"
+  },
+  {
+    "id": "g_smn",
+    "day": 4,
+    "city": "Florence",
+    "cat": "souvenir",
+    "name": "SMN世界最古薬局",
+    "lat": 43.7744,
+    "lng": 11.2483,
+    "tip": "王妃の水、ザクロ石鹸。€70.01〜免税！",
+    "url": "https://maps.google.com/?q=Santa+Maria+Novella+Pharmacy+Firenze"
+  },
+  {
+    "id": "d_zaza",
+    "day": 4,
+    "city": "Florence",
+    "cat": "dining",
+    "name": "トラットリア・ザザ",
+    "lat": 43.7766,
+    "lng": 11.2536,
+    "tip": "名物Tボーンステーキ2人シェア！",
+    "url": "https://maps.google.com/?q=Trattoria+ZaZa+Firenze"
+  },
+  {
+    "id": "s_pisa",
+    "day": 4,
+    "city": "Pisa",
+    "cat": "sightseeing",
+    "name": "ピサの斜塔＆奇跡の広場",
+    "lat": 43.723,
+    "lng": 10.3966,
+    "tip": "【超重要】乗車前打刻厳守！罰金回避。",
+    "url": "https://maps.google.com/?q=Tower+of+Pisa"
+  },
+  {
+    "id": "s_cisterna",
+    "day": 5,
+    "city": "San Gimignano",
+    "cat": "sightseeing",
+    "name": "チステルナ広場",
+    "lat": 43.4677,
+    "lng": 11.0433,
+    "tip": "中世の塔の街世界遺産。",
+    "url": "https://maps.google.com/?q=Piazza+della+Cisterna+San+Gimignano"
+  },
+  {
+    "id": "d_dondoli",
+    "day": 5,
+    "city": "San Gimignano",
+    "cat": "dining",
+    "name": "ドンドリジェラート",
+    "lat": 43.4677,
+    "lng": 11.0435,
+    "tip": "世界一サフラン＆松の実ジェラート！",
+    "url": "https://maps.google.com/?q=Gelateria+Dondoli+San+Gimignano"
+  },
+  {
+    "id": "s_vatican",
+    "day": 6,
+    "city": "Rome",
+    "cat": "sightseeing",
+    "name": "バチカン美術館＆システィーナ",
+    "lat": 41.9065,
+    "lng": 12.4536,
+    "tip": "最後の審判は完全撮影禁止・私語厳禁！",
+    "url": "https://maps.google.com/?q=Vatican+Museums"
+  },
+  {
+    "id": "s_sanpietro",
+    "day": 6,
+    "city": "Rome",
+    "cat": "sightseeing",
+    "name": "サン・ピエトロ大聖堂 (夕ミサ)",
+    "lat": 41.9022,
+    "lng": 12.4539,
+    "tip": "17:00聖歌隊合唱＆オルガン無料拝聴！",
+    "url": "https://maps.google.com/?q=St+Peter+Basilica+Rome"
+  },
+  {
+    "id": "s_colosseo",
+    "day": 6,
+    "city": "Rome",
+    "cat": "sightseeing",
+    "name": "コロッセオ＆フォロロマーノ",
+    "lat": 41.8902,
+    "lng": 12.4922,
+    "tip": "ミサンガ売り完全無視！",
+    "url": "https://maps.google.com/?q=Colosseum+Rome"
+  },
+  {
+    "id": "s_trevi",
+    "day": 5,
+    "city": "Rome",
+    "cat": "sightseeing",
+    "name": "トレビの泉",
+    "lat": 41.9009,
+    "lng": 12.4833,
+    "tip": "コイン2枚で愛する人と一生一緒！",
+    "url": "https://maps.google.com/?q=Trevi+Fountain+Rome"
+  },
+  {
+    "id": "s_pantheon",
+    "day": 6,
+    "city": "Rome",
+    "cat": "sightseeing",
+    "name": "パンテオン (万神殿)",
+    "lat": 41.8986,
+    "lng": 12.4769,
+    "tip": "古代ローマ建築の奇跡。音響絶美。",
+    "url": "https://maps.google.com/?q=Pantheon+Rome"
+  },
+  {
+    "id": "s_spagna",
+    "day": 6,
+    "city": "Rome",
+    "cat": "sightseeing",
+    "name": "スペイン広場階段",
+    "lat": 41.906,
+    "lng": 12.4828,
+    "tip": "階段での飲食・座り込み禁止。",
+    "url": "https://maps.google.com/?q=Piazza+di+Spagna+Rome"
+  },
+  {
+    "id": "s_sanluigi",
+    "day": 6,
+    "city": "Rome",
+    "cat": "sightseeing",
+    "name": "サン・ルイジ教会",
+    "lat": 41.8997,
+    "lng": 12.475,
+    "tip": "カラヴァッジョ三部作無料鑑賞！",
+    "url": "https://maps.google.com/?q=San+Luigi+dei+Francesi+Rome"
+  },
+  {
+    "id": "d_denzo",
+    "day": 6,
+    "city": "Rome",
+    "cat": "dining",
+    "name": "トラットリア・ダ・エンツォ",
+    "lat": 41.8878,
+    "lng": 12.477,
+    "tip": "本場濃厚カルボナーラ＆カチョエペペ！",
+    "url": "https://maps.google.com/?q=Da+Enzo+al+29+Rome"
+  },
+  {
+    "id": "d_pompi",
+    "day": 6,
+    "city": "Rome",
+    "cat": "dining",
+    "name": "ポンピ (ティラミス)",
+    "lat": 41.9054,
+    "lng": 12.48,
+    "tip": "ティラミスの王様！",
+    "url": "https://maps.google.com/?q=Pompi+Tiramisu+Rome"
+  },
+  {
+    "id": "h_plaza_mestre",
+    "day": 2,
+    "city": "Mestre (Venice)",
+    "cat": "hotel",
+    "name": "ホテル プラザ (Hotel Plaza Mestre)",
+    "lat": 45.4828,
+    "lng": 12.2323,
+    "tip": "メストレ駅前すぐ！本島行きバス・電車に直結した大型快適スーペリアホテル。",
+    "url": "https://maps.google.com/?q=Hotel+Plaza+Mestre"
+  },
+  {
+    "id": "h_leonardo_mestre",
+    "day": 2,
+    "city": "Mestre (Venice)",
+    "cat": "hotel",
+    "name": "レオナルド ロイヤル ホテル ベネチア メストレ",
+    "lat": 45.4815,
+    "lng": 12.2348,
+    "tip": "モダンで上質な4つ星スーペリア。清潔感と充実した設備がハネムーンに好評。",
+    "url": "https://maps.google.com/?q=Leonardo+Royal+Hotel+Venice+Mestre"
+  },
+  {
+    "id": "h_bologna_mestre",
+    "day": 2,
+    "city": "Mestre (Venice)",
+    "cat": "hotel",
+    "name": "ベストウェスタン プラス ホテル ボローニャ",
+    "lat": 45.4831,
+    "lng": 12.233,
+    "tip": "メストレ駅正面。落ち着いたインテリアと美味しい朝食が人気。",
+    "url": "https://maps.google.com/?q=Best+Western+Plus+Hotel+Bologna+Mestre"
+  },
+  {
+    "id": "h_nh_laguna",
+    "day": 2,
+    "city": "Mestre (Venice)",
+    "cat": "hotel",
+    "name": "NH ベネチア ラグーナ パレス",
+    "lat": 45.482,
+    "lng": 12.253,
+    "tip": "近代的なラグーナマリーナ沿いホテル。広々とした客室で快適滞在。",
+    "url": "https://maps.google.com/?q=NH+Venezia+Laguna+Palace"
+  },
+  {
+    "id": "h_delfino_mestre",
+    "day": 2,
+    "city": "Mestre (Venice)",
+    "cat": "hotel",
+    "name": "ホテル デルフィーノ (Hotel Delfino)",
+    "lat": 45.4852,
+    "lng": 12.2395,
+    "tip": "ポポロ通り沿い。ベネチア本島行きバス停が目の前でアクセス抜群。",
+    "url": "https://maps.google.com/?q=Hotel+Delfino+Mestre"
+  },
+  {
+    "id": "h_ambasciatori_mestre",
+    "day": 2,
+    "city": "Mestre (Venice)",
+    "cat": "hotel",
+    "name": "ホテル アンバシアトーリ (Hotel Ambasciatori)",
+    "lat": 45.4845,
+    "lng": 12.2385,
+    "tip": "デルフィーノ隣接の4つ星。フィットネスやレストランも完備。",
+    "url": "https://maps.google.com/?q=Hotel+Ambasciatori+Mestre"
+  },
+  {
+    "id": "h_tritone_mestre",
+    "day": 2,
+    "city": "Mestre (Venice)",
+    "cat": "hotel",
+    "name": "ホテル トリトーネ (Hotel Tritone)",
+    "lat": 45.4825,
+    "lng": 12.2338,
+    "tip": "メストレ駅目の前。早朝出発や夜間到着にも安心の好ロケーション。",
+    "url": "https://maps.google.com/?q=Hotel+Tritone+Mestre"
+  },
+  {
+    "id": "h_bb_calenzano",
+    "day": 3,
+    "city": "Calenzano (Florence)",
+    "cat": "hotel",
+    "name": "B&B ホテル フィレンツェ カレンツァーノ ファースト",
+    "lat": 43.856,
+    "lng": 11.1645,
+    "tip": "高速IC近くでツアーバス発着に便利。モダンで機能的な客室。",
+    "url": "https://maps.google.com/?q=BB+Hotel+Firenze+Calenzano+First"
+  },
+  {
+    "id": "h_delta_florence",
+    "day": 3,
+    "city": "Calenzano (Florence)",
+    "cat": "hotel",
+    "name": "ホテル デルタ フィレンツェ (Hotel Delta Florence)",
+    "lat": 43.858,
+    "lng": 11.168,
+    "tip": "カレンツァーノの大型4つ星ホテル。広々としたロビーとレストラン完備。",
+    "url": "https://maps.google.com/?q=Hotel+Delta+Florence+Calenzano"
+  },
+  {
+    "id": "h_art_miro",
+    "day": 3,
+    "city": "Calenzano (Florence)",
+    "cat": "hotel",
+    "name": "アート ホテル ミロ (Art Hotel Miro)",
+    "lat": 43.8568,
+    "lng": 11.1632,
+    "tip": "ミロのアート作品を配したお洒落なホテル。快適なベッドとバスタブ付き客室多数。",
+    "url": "https://maps.google.com/?q=Art+Hotel+Miro+Calenzano"
+  },
+  {
+    "id": "h_president_prato",
+    "day": 3,
+    "city": "Prato (Florence)",
+    "cat": "hotel",
+    "name": "ホテル プレジデント プラート (Hotel President)",
+    "lat": 43.8745,
+    "lng": 11.0965,
+    "tip": "プラート駅近く。トスカーナ観光の拠点として静かで落ち着いた環境。",
+    "url": "https://maps.google.com/?q=Hotel+President+Prato"
+  },
+  {
+    "id": "h_starhotels_vespucci",
+    "day": 4,
+    "city": "Campi Bisenzio (Florence)",
+    "cat": "hotel",
+    "name": "スターホテルズ ヴェスプッチ (Starhotels Vespucci)",
+    "lat": 43.824,
+    "lng": 11.137,
+    "tip": "洗練されたイタリアンブランドホテル。大型ショッピングモール至近。",
+    "url": "https://maps.google.com/?q=Starhotels+Vespucci+Campi+Bisenzio"
+  },
+  {
+    "id": "h_croce_malta",
+    "day": 4,
+    "city": "Montecatini Terme",
+    "cat": "hotel",
+    "name": "グランド ホテル クローチェ ディ マルタ",
+    "lat": 43.886,
+    "lng": 10.771,
+    "tip": "名門温泉保養地モンテカティーニの優雅な4つ星。トスカーナの風情を満喫。",
+    "url": "https://maps.google.com/?q=Grand+Hotel+Croce+di+Malta+Montecatini"
+  },
+  {
+    "id": "h_nilhotel",
+    "day": 4,
+    "city": "Florence",
+    "cat": "hotel",
+    "name": "ニルホテル フィレンツェ (NilHotel Florence)",
+    "lat": 43.798,
+    "lng": 11.222,
+    "tip": "フィレンツェ北部ノボリ地区の4つ星スーペリア。市内中心部へトラムで直結。",
+    "url": "https://maps.google.com/?q=NilHotel+Florence"
+  },
+  {
+    "id": "h_archimede_rome",
+    "day": 5,
+    "city": "Rome (Termini)",
+    "cat": "hotel",
+    "name": "ホテル アルキメーデ (Hotel Archimede Roma)",
+    "lat": 41.9038,
+    "lng": 12.502,
+    "tip": "テルミニ駅北側徒歩3分！地下鉄・バスでのローマ自由行動に最高のロケーション。",
+    "url": "https://maps.google.com/?q=Hotel+Archimede+Roma"
+  },
+  {
+    "id": "h_starhotels_metropole",
+    "day": 5,
+    "city": "Rome (Termini)",
+    "cat": "hotel",
+    "name": "スターホテルズ メトロポール (Starhotels Metropole)",
+    "lat": 41.9002,
+    "lng": 12.4975,
+    "tip": "オペラ座近くの洗練された4つ星スーペリア。治安も良く上質なハネムーン滞在。",
+    "url": "https://maps.google.com/?q=Starhotels+Metropole+Roma"
+  },
+  {
+    "id": "h_royal_santina",
+    "day": 5,
+    "city": "Rome (Termini)",
+    "cat": "hotel",
+    "name": "ベストウェスタン プレミア ホテル ロイヤル サンティーナ",
+    "lat": 41.9035,
+    "lng": 12.5025,
+    "tip": "テルミニ駅マルサラ口すぐ。LED照明とモダンな客室設備が評判の4つ星。",
+    "url": "https://maps.google.com/?q=Hotel+Royal+Santina+Roma"
+  },
+  {
+    "id": "h_universo_rome",
+    "day": 5,
+    "city": "Rome (Termini)",
+    "cat": "hotel",
+    "name": "ベストウェスタン プラス ホテル ユニバース",
+    "lat": 41.9008,
+    "lng": 12.4978,
+    "tip": "オペラ座隣接。広々とした客室とバラエティ豊かな朝食ビュッフェが魅力。",
+    "url": "https://maps.google.com/?q=Hotel+Universo+Roma"
+  },
+  {
+    "id": "h_gioberti_art",
+    "day": 6,
+    "city": "Rome (Termini)",
+    "cat": "hotel",
+    "name": "ジョベルティ アート ホテル (Gioberti Art Hotel)",
+    "lat": 41.8998,
+    "lng": 12.5005,
+    "tip": "テルミニ駅徒歩2分。現代アートが彩るスタイリッシュな4つ星スーペリア。",
+    "url": "https://maps.google.com/?q=Gioberti+Art+Hotel+Roma"
+  },
+  {
+    "id": "h_massimo_dazeglio",
+    "day": 6,
+    "city": "Rome (Termini)",
+    "cat": "hotel",
+    "name": "ホテル マッシモ ダゼリオ (Hotel Massimo d'Azeglio)",
+    "lat": 41.8997,
+    "lng": 12.4985,
+    "tip": "1875年創業の老舗名門。クラシカルな木調の落ち着いた雰囲気。",
+    "url": "https://maps.google.com/?q=Hotel+Massimo+dAzeglio+Roma"
+  },
+  {
+    "id": "h_nord_nuova",
+    "day": 6,
+    "city": "Rome (Termini)",
+    "cat": "hotel",
+    "name": "ホテル ノルド ヌオーヴァ ローマ",
+    "lat": 41.9012,
+    "lng": 12.4988,
+    "tip": "テルミニ駅徒歩3分。ローマの街並みを見渡せるルーフトップバー付き。",
+    "url": "https://maps.google.com/?q=Hotel+Nord+Nuova+Roma"
+  },
+  {
+    "id": "h_unahotels_deco",
+    "day": 6,
+    "city": "Rome (Termini)",
+    "cat": "hotel",
+    "name": "ウナホテルズ デコ ローマ (UNAHOTELS Decò Roma)",
+    "lat": 41.9005,
+    "lng": 12.4972,
+    "tip": "アールデコ様式の洗練された高級感。テルミニ駅近で自由行動に抜群。",
+    "url": "https://maps.google.com/?q=UNAHOTELS+Deco+Roma"
+  }
+];
+
+      let currentMarkers = [];
+      let activeCircle = null;
+
+      function getMarkerColor(cat) {
+        if (cat === 'sightseeing') return '#2563eb';
+        if (cat === 'dining') return '#dc2626';
+        if (cat === 'souvenir') return '#9333ea';
+        if (cat === 'hotel') return '#059669'; // Green for Hotels
+        return '#d97706';
+      }
+
+      function getMarkerIconLabel(s) {
+        if (s.cat === 'hotel') return '🏨';
+        return s.day;
+      }
+
+      function calculateDistance(lat1, lon1, lat2, lon2) {
+        const R = 6371e3;
+        const φ1 = lat1 * Math.PI/180;
+        const φ2 = lat2 * Math.PI/180;
+        const Δφ = (lat2-lat1) * Math.PI/180;
+        const Δλ = (lon2-lon1) * Math.PI/180;
+        const a = Math.sin(Δφ/2) * Math.sin(Δφ/2) +
+                  Math.cos(φ1) * Math.cos(φ2) *
+                  Math.sin(Δλ/2) * Math.sin(Δλ/2);
+        const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+        return Math.round(R * c);
+      }
+
+      function showNearbyFacilities(spot) {
+        const drawer = document.getElementById('nearby-drawer');
+        const titleEl = document.getElementById('nearby-spot-title');
+        const gridEl = document.getElementById('nearby-items-grid');
+        if (!drawer || !gridEl) return;
+
+        titleEl.innerHTML = `📍 <strong>${spot.name}</strong> の周辺（1km以内）`;
+        
+        const nearby = allSpots.filter(s => s.id !== spot.id && calculateDistance(spot.lat, spot.lng, s.lat, s.lng) <= 1000);
+
+        if (nearby.length === 0) {
+          gridEl.innerHTML = '<div style="color:var(--text-muted); padding:4px; font-size:0.72rem;">半径1km以内に他の登録スポットはありません。</div>';
+        } else {
+          gridEl.innerHTML = nearby.map(s => {
+            const dist = calculateDistance(spot.lat, spot.lng, s.lat, s.lng);
+            return `
+              <div style="background:#f8fafc; border:1px solid var(--border-color); border-radius:4px; padding:4px 6px; font-size:0.72rem;">
+                <strong style="color:${getMarkerColor(s.cat)};">${s.name}</strong>
+                <span style="color:var(--secondary-color); font-size:0.68rem;">(${dist}m)</span>
+                <div style="color:#7c2d12; font-size:0.68rem;">💡 ${s.tip}</div>
+                <a href="${s.url}" target="_blank" style="font-size:0.68rem; color:#2563eb; font-weight:700;">Maps &rarr;</a>
+              </div>
+            `;
+          }).join('');
+        }
+
+        drawer.style.display = 'block';
+      }
+
+      function renderMarkers(filterDay = null, filterCat = 'all') {
+        currentMarkers.forEach(m => map.removeLayer(m));
+        currentMarkers = [];
+        if (activeCircle) map.removeLayer(activeCircle);
+
+        allSpots.forEach(s => {
+          const matchesDay = (filterDay === null || s.day === filterDay);
+          const matchesCat = (filterCat === 'all' || s.cat === filterCat);
+
+          if (matchesDay && matchesCat) {
+            const color = getMarkerColor(s.cat);
+            const iconLabel = getMarkerIconLabel(s);
+            const customIcon = L.divIcon({
+              className: 'custom-map-pin',
+              html: `<div style="background:${color}; width:22px; height:22px; border-radius:50%; border:2px solid #fff; box-shadow:0 1px 4px rgba(0,0,0,0.35); display:flex; align-items:center; justify-content:center; color:#fff; font-size:10px; font-weight:900;">${iconLabel}</div>`,
+              iconSize: [22, 22],
+              iconAnchor: [11, 11]
+            });
+
+            const marker = L.marker([s.lat, s.lng], { icon: customIcon }).addTo(map);
+            
+            marker.bindPopup(`
+              <div style="font-family:sans-serif; min-width:190px; font-size:0.78rem;">
+                <strong style="color:#1a365d;">${s.name}</strong><br>
+                <span style="color:#64748b; font-size:0.7rem;">${s.city} • Day ${s.day}</span>
+                <p style="color:#c2410c; margin:4px 0; font-size:0.72rem; line-height:1.35;">💡 ${s.tip}</p>
+                <a href="${s.url}" target="_blank" style="background:#ea4335; color:#fff; padding:2px 6px; border-radius:3px; font-size:0.68rem; text-decoration:none; font-weight:700; display:inline-block;">📍 Google Mapsで開く</a>
+              </div>
+            `);
+
+            marker.on('click', () => {
+              map.flyTo([s.lat, s.lng], 15, { duration: 0.8 });
+              if (activeCircle) map.removeLayer(activeCircle);
+              activeCircle = L.circle([s.lat, s.lng], {
+                radius: 1000,
+                color: color,
+                fillColor: color,
+                fillOpacity: 0.12,
+                weight: 1.5,
+                dashArray: '3, 3'
+              }).addTo(map);
+
+              showNearbyFacilities(s);
+            });
+
+            currentMarkers.push(marker);
+          }
+        });
+      }
+
+      const routeCoords = [
+        [45.6300, 8.7230],  // MXP (Day 1)
+        [45.4642, 9.1919],  // Milan (Day 2)
+        [45.4390, 10.9944], // Verona (Day 2)
+        [45.4342, 12.3389], // Venice (Day 3)
+        [43.7731, 11.2560], // Florence (Day 4)
+        [43.7230, 10.3966], // Pisa (Day 4)
+        [43.4677, 11.0433], // San Gimignano (Day 5)
+        [41.9022, 12.4539], // Rome (Day 5, 6)
+        [41.7999, 12.2462]  // FCO (Day 7)
+      ];
+      L.polyline(routeCoords, { color: '#2563eb', weight: 3, opacity: 0.7, dashArray: '5, 6' }).addTo(map);
+
+      let activeDay = 2;
+
+      function setDay(dayNum) {
+        activeDay = Math.max(1, Math.min(8, dayNum));
+        const config = dayConfig[activeDay];
+
+        const ind = document.getElementById('map-day-indicator');
+        const sumTitle = document.getElementById('day-summary-title');
+        const sumDesc = document.getElementById('day-summary-desc');
+        const sumLink = document.getElementById('day-summary-link');
+
+        if (ind) ind.textContent = `📅 Day ${activeDay}: ${config.title.split('&rarr;')[0]}`;
+        if (sumTitle) sumTitle.textContent = config.title;
+        if (sumDesc) sumDesc.textContent = config.desc;
+        if (sumLink) {
+          sumLink.href = config.link;
+          sumLink.textContent = `Day ${activeDay} しおり &rarr;`;
+        }
+
+        map.flyTo(config.center, config.zoom, { duration: 1.0 });
+        const activeFilter = document.querySelector('.map-filter-cat.active')?.dataset.cat || 'all';
+        renderMarkers(activeDay, activeFilter);
+      }
+
+      document.getElementById('map-prev-day')?.addEventListener('click', () => setDay(activeDay - 1));
+      document.getElementById('map-next-day')?.addEventListener('click', () => setDay(activeDay + 1));
+
+      document.getElementById('btn-zoom-italy')?.addEventListener('click', () => {
+        map.flyTo([43.0, 12.5], 6, { duration: 1.0 });
+        const activeFilter = document.querySelector('.map-filter-cat.active')?.dataset.cat || 'all';
+        renderMarkers(null, activeFilter);
+      });
+
+      document.getElementById('btn-zoom-city')?.addEventListener('click', () => {
+        const config = dayConfig[activeDay];
+        map.flyTo(config.center, config.zoom + 2, { duration: 0.8 });
+      });
+
+      document.getElementById('btn-close-nearby')?.addEventListener('click', () => {
+        document.getElementById('nearby-drawer').style.display = 'none';
+        if (activeCircle) map.removeLayer(activeCircle);
+      });
+
+      document.querySelectorAll('.map-filter-cat').forEach(chip => {
+        chip.addEventListener('click', (e) => {
+          e.preventDefault();
+          document.querySelectorAll('.map-filter-cat').forEach(c => c.classList.remove('active'));
+          chip.classList.add('active');
+          const day = (activeDay === null) ? null : activeDay;
+          renderMarkers(day, chip.dataset.cat);
+        });
+      });
+
+      setDay(2);
+    });
+  </script>
+<script>
+    document.addEventListener('click', function(e) {
+      document.querySelectorAll('details.day-popover-details, details.day-nav-details').forEach(function(d) {
+        if (!d.contains(e.target) && d.hasAttribute('open')) {
+          d.removeAttribute('open');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
