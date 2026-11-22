@@ -6,7 +6,7 @@
 <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=no" name="viewport"/>
 <title>Day 5 (11/19 木) サンジミニャーノ散策 → 半々ピザ昼食 → バチカン・ローマ4h観光 | イタリア新婚旅行8日間</title>
 <meta content="Day 5: サンジミニャーノ散策 → マルゲリータ＆カプリチョーザ昼食 → バチカン・ローマ4時間観光。HIS Impresso公式しおり・確定ホテル・現地ガイドノウハウ完全対応" name="description"/>
-<link href="style.css?v=22" rel="stylesheet"/>
+<link href="style.css?v=27" rel="stylesheet"/>
 <style>
 
 /* ==========================================================================
@@ -2196,11 +2196,294 @@ body {
   line-height: 1.5 !important;
   margin: 0 !important;
 }
+
+
+/* ==========================================================================
+   v25 TRIP SUMMARY & EXPENSE / FOOD REVIEW STYLES
+   ========================================================================== */
+.sum-kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.sum-kpi-card {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  padding: 10px 12px;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+}
+.sum-kpi-card.primary {
+  grid-column: 1 / -1;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  color: #ffffff;
+  border-color: #0f172a;
+}
+.sum-kpi-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #64748b;
+  display: block;
+  margin-bottom: 2px;
+}
+.sum-kpi-card.primary .sum-kpi-label { color: #cbd5e1; }
+.sum-kpi-val {
+  font-size: 1.25rem;
+  font-weight: 900;
+  color: #0f172a;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.2;
+}
+.sum-kpi-card.primary .sum-kpi-val { font-size: 1.55rem; color: #fde68a; }
+.sum-kpi-sub {
+  font-size: 0.68rem;
+  color: #475569;
+  margin-top: 3px;
+  display: block;
+  line-height: 1.35;
+}
+.sum-kpi-card.primary .sum-kpi-sub { color: #e2e8f0; }
+
+.sum-chart-box {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  padding: 12px;
+  margin-bottom: 16px;
+}
+.sum-bar-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 7px;
+  font-size: 0.74rem;
+}
+.sum-bar-row:last-child { margin-bottom: 0; }
+.sum-bar-day {
+  width: 66px;
+  flex: 0 0 66px;
+  font-weight: 800;
+  color: #0f172a;
+}
+.sum-bar-track {
+  flex: 1;
+  height: 16px;
+  background: #f1f5f9;
+  border-radius: 999px;
+  overflow: hidden;
+  display: flex;
+}
+.sum-bar-fill-shared { background: #0284c7; height: 100%; }
+.sum-bar-fill-personal { background: #e11d48; height: 100%; }
+.sum-bar-amt {
+  width: 74px;
+  flex: 0 0 74px;
+  text-align: right;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  color: #0f172a;
+}
+
+.exp-day-card {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  overflow: hidden;
+}
+.exp-day-head {
+  background: #f1f5f9;
+  padding: 9px 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #cbd5e1;
+}
+.exp-day-title { font-size: 0.85rem; font-weight: 900; color: #0f172a; }
+.exp-day-total { font-size: 0.85rem; font-weight: 900; color: #0284c7; font-variant-numeric: tabular-nums; }
+.exp-table { width: 100%; border-collapse: collapse; }
+.exp-table td {
+  padding: 7px 10px;
+  border-bottom: 1px solid #f1f5f9;
+  font-size: 0.77rem;
+  color: #1e293b;
+  vertical-align: middle;
+}
+.exp-table tr:last-child td { border-bottom: none; }
+.exp-table tr.exp-personal-row { background: #fff1f2; }
+.exp-item-name { font-weight: 700; }
+.exp-tag {
+  display: inline-block;
+  font-size: 0.64rem;
+  font-weight: 800;
+  padding: 1px 5px;
+  border-radius: 4px;
+  margin-left: 4px;
+}
+.exp-tag.kenta { background: #dbeafe; color: #1e40af; }
+.exp-tag.megu { background: #fce7f3; color: #9d174d; }
+.exp-tag.refund { background: #dcfce7; color: #166534; }
+.exp-orig { text-align: right; font-variant-numeric: tabular-nums; color: #475569; white-space: nowrap; width: 24%; }
+.exp-jpy { text-align: right; font-weight: 800; font-variant-numeric: tabular-nums; color: #0f172a; white-space: nowrap; width: 22%; }
+
+.food-verdict-grid { display: grid; grid-template-columns: 1fr; gap: 10px; }
+.fv-card {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  padding: 12px;
+}
+.fv-card.good { border-left: 4px solid #10b981; background: #f0fdf4; border-color: #bbf7d0; }
+.fv-card.ok { border-left: 4px solid #f59e0b; background: #fffbeb; border-color: #fde68a; }
+.fv-card.bad { border-left: 4px solid #ef4444; background: #fef2f2; border-color: #fecaca; }
+.fv-card.overall { border-left: 4px solid #0f172a; background: #f8fafc; }
+
+.fv-title { font-size: 0.9rem; font-weight: 900; margin-bottom: 8px; color: #0f172a; }
+.fv-chips { display: flex; flex-wrap: wrap; gap: 5px; }
+.fv-chip {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+.fv-card.good .fv-chip { border-color: #86efac; color: #065f46; }
+.fv-card.ok .fv-chip { border-color: #fcd34d; color: #92400e; }
+.fv-card.bad .fv-chip { border-color: #fca5a5; color: #991b1b; }
+
+.fv-list { margin: 0; padding-left: 18px; font-size: 0.8rem; line-height: 1.6; color: #1e293b; }
+
+.trip-complete-banner {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  color: #ffffff;
+  border-radius: 12px;
+  padding: 12px 14px;
+  margin-bottom: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.tcb-text strong { display: block; font-size: 0.92rem; color: #fde68a; margin-bottom: 2px; }
+.tcb-text span { font-size: 0.75rem; color: #e2e8f0; }
+.tcb-btn {
+  background: #fde68a;
+  color: #0f172a !important;
+  font-size: 0.78rem;
+  font-weight: 900;
+  padding: 7px 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+/* ==========================================================================
+   v26 SIGHTSEEING REVIEW & 6-CITY IMPRESSIONS STYLES
+   ========================================================================== */
+.tips-review-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.tr-card {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-left: 3.5px solid #0284c7;
+  border-radius: 10px;
+  padding: 10px 11px;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+}
+.tr-card.warn {
+  border-left-color: #e11d48;
+  background: #fff1f2;
+  border-color: #fecdd3;
+}
+.tr-card.money {
+  border-left-color: #d97706;
+  background: #fffbeb;
+  border-color: #fde68a;
+}
+.tr-card.music {
+  border-left-color: #7c3aed;
+  background: #f5f3ff;
+  border-color: #ddd6fe;
+}
+.tr-title {
+  font-size: 0.8rem;
+  font-weight: 900;
+  color: #0f172a;
+  margin-bottom: 4px;
+  display: block;
+}
+.tr-desc {
+  font-size: 0.74rem;
+  color: #334155;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.city-review-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 9px;
+}
+.cr-card {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+}
+.cr-card.wide {
+  grid-column: 1 / -1;
+}
+.cr-head {
+  background: #0f172a;
+  color: #ffffff;
+  padding: 7px 11px;
+  font-size: 0.82rem;
+  font-weight: 800;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.cr-head span.cr-day {
+  font-size: 0.68rem;
+  background: rgba(255, 255, 255, 0.16);
+  padding: 1px 6px;
+  border-radius: 4px;
+  color: #e2e8f0;
+}
+.cr-list {
+  margin: 0;
+  padding: 9px 12px 10px 24px;
+  font-size: 0.76rem;
+  color: #1e293b;
+  line-height: 1.55;
+}
+.cr-list li {
+  margin-bottom: 3px;
+}
+.cr-list li:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 560px) {
+  .tips-review-grid,
+  .city-review-grid {
+    grid-template-columns: 1fr;
+  }
+}
 </style></head>
 <body>
 <main class="container" style="padding-top: 6px;">
 <!-- Top Horizontal Quick Day Pills & Navigation Strip -->
-<div class="day-quick-pills"><a class="day-pill" href="index.html">🏠 トップ</a><a class="day-pill" href="schedule.html">📋 しおり表</a><a class="day-pill" href="day1.html">Day 1 (11/15)</a><a class="day-pill" href="day2.html">Day 2 (11/16)</a><a class="day-pill" href="day3.html">Day 3 (11/17)</a><a class="day-pill" href="day4.html">Day 4 (11/18)</a><a class="day-pill active-pill" href="day5.html">Day 5 (11/19)</a><a class="day-pill d6" href="day6.html">Day 6 (11/20)</a><a class="day-pill" href="day7.html">Day 7 (11/21)</a><a class="day-pill" href="day8.html">Day 8 (11/22)</a><a class="day-pill" href="tour-map.html">🗺️ MAP</a></div>
+<div class="day-quick-pills"><a class="day-pill" href="index.html">🏠 トップ</a><a class="day-pill d6" href="summary.html">💰 総決算・感想</a><a class="day-pill" href="schedule.html">📋 しおり表</a><a class="day-pill" href="day1.html">Day 1 (11/15)</a><a class="day-pill" href="day2.html">Day 2 (11/16)</a><a class="day-pill" href="day3.html">Day 3 (11/17)</a><a class="day-pill" href="day4.html">Day 4 (11/18)</a><a class="day-pill active-pill" href="day5.html">Day 5 (11/19)</a><a class="day-pill d6" href="day6.html">Day 6 (11/20)</a><a class="day-pill" href="day7.html">Day 7 (11/21)</a><a class="day-pill" href="day8.html">Day 8 (11/22)</a><a class="day-pill" href="tour-map.html">🗺️ MAP</a></div>
 <div class="day-nav-strip">
 <a class="btn btn-secondary" href="day4.html">◀ Day 4</a>
 <details class="day-nav-details">
@@ -2337,6 +2620,27 @@ body {
 <span class="tt-hotel-meta">設備：Wi-Fi全館無料・★石鹸/シャンプー○・★ポット○・テレビ○・ドライヤー○ ／ バスタブ△・冷蔵庫×（Manzoni駅徒歩約5分）</span>
 </div>
 <a class="tt-detail-link" href="schedule.html#shiori-day5">📖 全8日間しおり表へ ›</a>
+</div>
+</div>
+</section><section class="section" id="day-real-review" style="margin-top: 14px;">
+<div class="section-header">
+<h2 class="section-title">✍️ Day 5 帰国後リアル感想（サンジミニャーノ ＆ 演奏会）</h2>
+<span class="section-subtitle">実際に行ってみた率直な感想まとめ</span>
+</div>
+<div class="city-review-grid">
+<div class="cr-card">
+<div class="cr-head"><span>🏰 サンジミニャーノ</span><span class="cr-day">Day 5 午前</span></div>
+<ul class="cr-list">
+<li>イタリアの中心地とは違った田舎っぽい雰囲気だった</li>
+<li>坂がいっぱい</li>
+</ul>
+</div>
+<div class="cr-card">
+<div class="cr-head"><span>🎻 オペラ・演奏会</span><span class="cr-day">Day 5 夜</span></div>
+<ul class="cr-list">
+<li>オペラコンサートなど各演奏会はネットから簡単に予約できる</li>
+<li>演奏会は20:00〜20:30開始が多く、朝や昼間から聴くのは難しい（ツアー自由時間では移動の兼ね合いで聴きに行きづらいことも）</li>
+</ul>
 </div>
 </div>
 </section>
