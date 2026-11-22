@@ -3299,3 +3299,103 @@ body {
   text-decoration: none;
   white-space: nowrap;
 }
+
+
+/* ==========================================================================
+   v26 SIGHTSEEING REVIEW & 6-CITY IMPRESSIONS STYLES
+   ========================================================================== */
+.tips-review-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.tr-card {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-left: 3.5px solid #0284c7;
+  border-radius: 10px;
+  padding: 10px 11px;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+}
+.tr-card.warn {
+  border-left-color: #e11d48;
+  background: #fff1f2;
+  border-color: #fecdd3;
+}
+.tr-card.money {
+  border-left-color: #d97706;
+  background: #fffbeb;
+  border-color: #fde68a;
+}
+.tr-card.music {
+  border-left-color: #7c3aed;
+  background: #f5f3ff;
+  border-color: #ddd6fe;
+}
+.tr-title {
+  font-size: 0.8rem;
+  font-weight: 900;
+  color: #0f172a;
+  margin-bottom: 4px;
+  display: block;
+}
+.tr-desc {
+  font-size: 0.74rem;
+  color: #334155;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.city-review-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 9px;
+}
+.cr-card {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+}
+.cr-card.wide {
+  grid-column: 1 / -1;
+}
+.cr-head {
+  background: #0f172a;
+  color: #ffffff;
+  padding: 7px 11px;
+  font-size: 0.82rem;
+  font-weight: 800;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.cr-head span.cr-day {
+  font-size: 0.68rem;
+  background: rgba(255, 255, 255, 0.16);
+  padding: 1px 6px;
+  border-radius: 4px;
+  color: #e2e8f0;
+}
+.cr-list {
+  margin: 0;
+  padding: 9px 12px 10px 24px;
+  font-size: 0.76rem;
+  color: #1e293b;
+  line-height: 1.55;
+}
+.cr-list li {
+  margin-bottom: 3px;
+}
+.cr-list li:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 560px) {
+  .tips-review-grid,
+  .city-review-grid {
+    grid-template-columns: 1fr;
+  }
+}
