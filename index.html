@@ -6,7 +6,7 @@
 <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=no" name="viewport"/>
 <title>イタリア8日間 新婚旅行ポータル | 鈴木 健太・めぐみ 様</title>
 <meta content="HIS Impresso アンディアーモ！イタリア8日間（2026/11/15〜11/22）公式しおり・確定ホテル・自由時間観光＆食べ歩きガイド" name="description"/>
-<link href="style.css?v=24" rel="stylesheet"/>
+<link href="style.css?v=25" rel="stylesheet"/>
 <style>
 
 /* ==========================================================================
@@ -1296,11 +1296,195 @@ body {
   line-height: 1.5 !important;
   margin: 0 !important;
 }
+
+
+/* ==========================================================================
+   v25 TRIP SUMMARY & EXPENSE / FOOD REVIEW STYLES
+   ========================================================================== */
+.sum-kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.sum-kpi-card {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  padding: 10px 12px;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+}
+.sum-kpi-card.primary {
+  grid-column: 1 / -1;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  color: #ffffff;
+  border-color: #0f172a;
+}
+.sum-kpi-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #64748b;
+  display: block;
+  margin-bottom: 2px;
+}
+.sum-kpi-card.primary .sum-kpi-label { color: #cbd5e1; }
+.sum-kpi-val {
+  font-size: 1.25rem;
+  font-weight: 900;
+  color: #0f172a;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.2;
+}
+.sum-kpi-card.primary .sum-kpi-val { font-size: 1.55rem; color: #fde68a; }
+.sum-kpi-sub {
+  font-size: 0.68rem;
+  color: #475569;
+  margin-top: 3px;
+  display: block;
+  line-height: 1.35;
+}
+.sum-kpi-card.primary .sum-kpi-sub { color: #e2e8f0; }
+
+.sum-chart-box {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  padding: 12px;
+  margin-bottom: 16px;
+}
+.sum-bar-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 7px;
+  font-size: 0.74rem;
+}
+.sum-bar-row:last-child { margin-bottom: 0; }
+.sum-bar-day {
+  width: 66px;
+  flex: 0 0 66px;
+  font-weight: 800;
+  color: #0f172a;
+}
+.sum-bar-track {
+  flex: 1;
+  height: 16px;
+  background: #f1f5f9;
+  border-radius: 999px;
+  overflow: hidden;
+  display: flex;
+}
+.sum-bar-fill-shared { background: #0284c7; height: 100%; }
+.sum-bar-fill-personal { background: #e11d48; height: 100%; }
+.sum-bar-amt {
+  width: 74px;
+  flex: 0 0 74px;
+  text-align: right;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  color: #0f172a;
+}
+
+.exp-day-card {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  overflow: hidden;
+}
+.exp-day-head {
+  background: #f1f5f9;
+  padding: 9px 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #cbd5e1;
+}
+.exp-day-title { font-size: 0.85rem; font-weight: 900; color: #0f172a; }
+.exp-day-total { font-size: 0.85rem; font-weight: 900; color: #0284c7; font-variant-numeric: tabular-nums; }
+.exp-table { width: 100%; border-collapse: collapse; }
+.exp-table td {
+  padding: 7px 10px;
+  border-bottom: 1px solid #f1f5f9;
+  font-size: 0.77rem;
+  color: #1e293b;
+  vertical-align: middle;
+}
+.exp-table tr:last-child td { border-bottom: none; }
+.exp-table tr.exp-personal-row { background: #fff1f2; }
+.exp-item-name { font-weight: 700; }
+.exp-tag {
+  display: inline-block;
+  font-size: 0.64rem;
+  font-weight: 800;
+  padding: 1px 5px;
+  border-radius: 4px;
+  margin-left: 4px;
+}
+.exp-tag.kenta { background: #dbeafe; color: #1e40af; }
+.exp-tag.megu { background: #fce7f3; color: #9d174d; }
+.exp-tag.refund { background: #dcfce7; color: #166534; }
+.exp-orig { text-align: right; font-variant-numeric: tabular-nums; color: #475569; white-space: nowrap; width: 24%; }
+.exp-jpy { text-align: right; font-weight: 800; font-variant-numeric: tabular-nums; color: #0f172a; white-space: nowrap; width: 22%; }
+
+.food-verdict-grid { display: grid; grid-template-columns: 1fr; gap: 10px; }
+.fv-card {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  padding: 12px;
+}
+.fv-card.good { border-left: 4px solid #10b981; background: #f0fdf4; border-color: #bbf7d0; }
+.fv-card.ok { border-left: 4px solid #f59e0b; background: #fffbeb; border-color: #fde68a; }
+.fv-card.bad { border-left: 4px solid #ef4444; background: #fef2f2; border-color: #fecaca; }
+.fv-card.overall { border-left: 4px solid #0f172a; background: #f8fafc; }
+
+.fv-title { font-size: 0.9rem; font-weight: 900; margin-bottom: 8px; color: #0f172a; }
+.fv-chips { display: flex; flex-wrap: wrap; gap: 5px; }
+.fv-chip {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+.fv-card.good .fv-chip { border-color: #86efac; color: #065f46; }
+.fv-card.ok .fv-chip { border-color: #fcd34d; color: #92400e; }
+.fv-card.bad .fv-chip { border-color: #fca5a5; color: #991b1b; }
+
+.fv-list { margin: 0; padding-left: 18px; font-size: 0.8rem; line-height: 1.6; color: #1e293b; }
+
+.trip-complete-banner {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  color: #ffffff;
+  border-radius: 12px;
+  padding: 12px 14px;
+  margin-bottom: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.tcb-text strong { display: block; font-size: 0.92rem; color: #fde68a; margin-bottom: 2px; }
+.tcb-text span { font-size: 0.75rem; color: #e2e8f0; }
+.tcb-btn {
+  background: #fde68a;
+  color: #0f172a !important;
+  font-size: 0.78rem;
+  font-weight: 900;
+  padding: 7px 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  white-space: nowrap;
+}
 </style></head>
 <body>
 <main class="container" style="padding-top: 6px;">
 <!-- Top Quick Pill Bar -->
-<div class="day-quick-pills"><a class="day-pill active-pill" href="index.html">🏠 トップ</a><a class="day-pill" href="schedule.html">📋 しおり表</a><a class="day-pill" href="day1.html">Day 1 (11/15)</a><a class="day-pill" href="day2.html">Day 2 (11/16)</a><a class="day-pill" href="day3.html">Day 3 (11/17)</a><a class="day-pill" href="day4.html">Day 4 (11/18)</a><a class="day-pill" href="day5.html">Day 5 (11/19)</a><a class="day-pill d6" href="day6.html">Day 6 (11/20)</a><a class="day-pill" href="day7.html">Day 7 (11/21)</a><a class="day-pill" href="day8.html">Day 8 (11/22)</a><a class="day-pill" href="tour-map.html">🗺️ MAP</a></div>
+<div class="day-quick-pills"><a class="day-pill active-pill" href="index.html">🏠 トップ</a><a class="day-pill d6" href="summary.html">💰 総決算・感想</a><a class="day-pill" href="schedule.html">📋 しおり表</a><a class="day-pill" href="day1.html">Day 1 (11/15)</a><a class="day-pill" href="day2.html">Day 2 (11/16)</a><a class="day-pill" href="day3.html">Day 3 (11/17)</a><a class="day-pill" href="day4.html">Day 4 (11/18)</a><a class="day-pill" href="day5.html">Day 5 (11/19)</a><a class="day-pill d6" href="day6.html">Day 6 (11/20)</a><a class="day-pill" href="day7.html">Day 7 (11/21)</a><a class="day-pill" href="day8.html">Day 8 (11/22)</a><a class="day-pill" href="tour-map.html">🗺️ MAP</a></div>
 <!-- Minimalist Stylish Hero -->
 <header class="hero-minimal">
 <div class="hero-eyebrow">KENTA &amp; MEGUMI HONEYMOON • 2026.11.15 – 11.22</div>
@@ -1315,7 +1499,13 @@ body {
 </div>
 </header>
 <!-- 1. UNIFIED 8-DAY SCHEDULE & FREE-TIME HIGHLIGHTS (シンプルに1つに統合された8日間スケジュール) -->
-<section class="section" id="section-schedule">
+<div class="trip-complete-banner">
+<div class="tcb-text">
+<strong>🎉 帰国完了！旅の総決算（支出・グルメ感想）を公開</strong>
+<span>実質総支出 281,589円（1€=185円 / 1QAR=48円換算・免税還付込）＆ 実食グルメ評価まとめ</span>
+</div>
+<a class="tcb-btn" href="summary.html">💰 総決算を見る ›</a>
+</div><section class="section" id="section-schedule">
 <div class="section-header">
 <h2 class="section-title">🗓️ 全8日間 タイムテーブル ＆ 自由時間ガイド（公式しおり完全準拠）</h2>
 <span class="section-subtitle">予約・オプショナル5大確定予定、全8日間マトリクス表、日別縦軸タイムラインをひと目で確認できます</span>
@@ -2353,7 +2543,11 @@ body {
 <h2 class="section-title">🧭 テーマ別ガイド</h2>
 <span class="section-subtitle">知りたい項目をすぐ開ける専用ページ</span>
 </div>
-<div class="guide-tile-grid">
+<div class="guide-tile-grid"><a class="guide-tile" href="summary.html" style="border: 1.5px solid #d97706; background: #fffbeb;">
+<span class="gt-icon">💰</span>
+<span class="gt-title">旅の総決算・感想</span>
+<span class="gt-desc">全支出28.1万円＆実食評価</span>
+</a>
 <a class="guide-tile" href="schedule.html">
 <span class="gt-icon">📋</span>
 <span class="gt-title">しおり全日程表</span>
